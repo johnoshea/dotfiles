@@ -1,0 +1,20 @@
+if (&term =~ "xterm") || (&term =~ "screen")
+    " ...unless we're running Terminal.app (16 only)
+    if ($TERM_PROGRAM =~ "Apple_Terminal") && ($TERM_PROGRAM_VERSION <= 240.2)
+        set t_Co=16
+    else
+        set t_Co=256
+    endif
+endif
+
+set background=dark             " I prefer dark backgrounds
+
+try
+    colorscheme base16-default
+catch /^Vim\%((\a\+)\)\=:E185/
+    try
+        colorscheme zenburn
+    catch /^Vim\%((\a\+)\)\=:E185/
+        colorscheme darkblue
+    endtry
+endtry

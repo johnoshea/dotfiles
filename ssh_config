@@ -1,0 +1,11 @@
+IdentityFile ~/.ssh/id_dsa
+
+# Proxy everything through remote gateway
+Host *.wordbank.com
+ProxyCommand ssh ${WORK_GATEWAY} nc %h 22
+ForwardAgent yes
+User johno
+
+# Multiplex multiple connections
+ControlMaster auto
+ControlPath ~/.ssh/master-%r@%h:%p

@@ -1,0 +1,128 @@
+highlight Hint       font-size: 14px; background: rgba(210,1,133,0.8) !important; border: 2px solid rgb(165,1,105); padding: 3px; border-radius: 3px; font-weight: bold; margin-left: -5px; color: white; font-family: Helvetica; line-height:1em;
+highlight HintActive background: rgba(145,197,43,0.8)    !important;
+highlight HintElem   background: rgba(255, 209, 20, 0.7) !important;
+highlight StatusLine -moz-appearance: none !important; font-weight: bold; background: transparent !important; border: 0px !important; min-height: 22px !important; text-shadow: none !important; font: normal 16px/1 'Menlo' !important; padding: 3px 0px 3px 5px !important;
+highlight CmdLine    padding: 1px !important; font: normal 16px 'Menlo' !important;
+highlight CmdOutput  font: normal 14px 'Menlo' !important;
+highlight CompItem   font: normal 14px 'Menlo' !important;
+
+highlight Find   background: #d6c149; color: #000;
+
+set runtimepath=/Users/johno/.pentadactyl
+set guioptions="BbCrs"
+set editor='/usr/local/bin/mvim -f +<line> <file>'
+set followhints=1
+set hintkeys="asdfg;lkjh"
+set showtabline=multitab
+set showstatuslinks=command
+set titlestring=""
+
+" Need this to let the Gmail label field work without needing the mouse
+set strictfocus=*:laissez-faire
+
+map ',' <leader>
+
+colorscheme zenburn
+
+set defsearch=ddg
+:command -nargs=* ddg open ddg <args>
+
+map -modes=n gm -builtin :buffer<Space>mail.google.com<Return>
+map -modes=n ^ -builtin <C-^>
+
+" Keys to pass through to the underlying site
+" Google Mail
+set passkeys=mail.google.com:xsem!#rR*aAvtN[]{}z.IU=-gidac/?lujkonp
+" DuckDuckGo
+set passkeys+="https://duckduckgo\.com/":jkv
+" Twitter
+set passkeys+="https://twitter\.com/":jkg/?.nrm
+
+" FASTER PLEASE
+nmap -builtin j 3j
+nmap -builtin k 3k
+
+" Go to the second input field.
+" Useful for skipping over search fields, etc.
+nmap -builtin gI 2gi
+
+" Switch tabs with parens
+nmap -builtin ) :tn<CR>
+nmap -builtin ( :tp<CR>
+
+" Console toggle
+nmap -builtin <c-g> <m-a-k><esc>
+imap -builtin <c-g> <esc><m-a-k><esc>
+
+" Inspect element toggle
+nmap -builtin <c-i> <m-a-i>
+imap -builtin <c-i> <esc><m-a-i>
+
+" Show bookmarks
+nmap -builtin <C-l> :tabopen chrome://browser/content/bookmarks/bookmarksPanel.xul<CR>
+nmap -builtin L :tabopen chrome://browser/content/bookmarks/bookmarksPanel.xul<CR>
+
+" Open help in a new tab
+set newtab+=help
+
+" YES YES YES REMOVE THE IDIOCY
+nmap -builtin <bs> <nop>
+
+" Find
+" perform incremental searching
+set incfind
+" highlight search results
+set hlfind
+" only consider case if an upper case char is used
+set findcase=smart
+
+" Clear search highlighting and normal highlighting.
+nmap -builtin <Leader><space> <esc>:noh<CR>
+
+" Shut up.
+javascript dactyl.beep = function() { return false; }
+
+" Site/app-specific code -------------------------------------------------- {{{
+" OmniFocus --------------------------------------------------------------- {{{
+map -g user <Leader>o -js add_to_omnifocus()
+:js <<EOOFJS
+  add_to_omnifocus = function() {
+    window.location='omnifocus:///add?note='+encodeURIComponent(buffer.URL)+'&name='+encodeURIComponent(buffer.title)
+  }
+EOOFJS
+
+" }}}
+" Instapaper -------------------------------------------------------------- {{{
+cookies www.instapaper.com allow
+:js <<EOIP5JS
+    iprl5 =function() {
+    var d=buffer.doc;
+    z=d.createElement('scr'+'ipt');
+    b=d.body;
+    try {
+        if (!b)
+            throw(0);
+        d.title='(Saving...) '+d.title;
+        z.setAttribute('src','http://www.instapaper.com/j/jzhEul2IDgmh?u='+encodeURIComponent(d.location.href)+'&t='+(new Date().getTime()));
+        b.appendChild(z);
+    } catch (e) {
+        alert('Please wait until the page has loaded.');
+    }
+}
+EOIP5JS
+map -g user <leader>i -js iprl5()
+
+" }}}
+" Delibar ----------------------------------------------------------------- {{{
+:js <<EODBJS
+    delibar = function() {
+        var d = buffer.doc;
+        d.location='Delibar://bpost'+'&!p!&'+d.location.href+'&!p!&'+encodeURIComponent(buffer.title)+'&!p!&'+encodeURIComponent(d.getSelection());
+    }
+EODBJS
+map -g user <leader>d -js delibar()
+
+" }}}
+" }}}
+
+command! jstoggle :js (function() { var p = "javascript.enabled"; prefs.set(p, !prefs.get(p)); dactyl.echo(p+" is now set to "+prefs.get(p)+"\n") })()

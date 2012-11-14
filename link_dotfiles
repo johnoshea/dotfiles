@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Bail on unitialized values
+set -u
+# Bail on errors
+set -e
+
+mkdir ~/Code
+for f in gvimrc inputrc rvmrc tmux.conf vim_colors vimrc pentadactylrc ackrc
+do
+    # echo line for debugging only
+    echo ln -s "~/Code/dotfiles/${f}" "~/.${f}"
+    ln -s "~/Code/dotfiles/${f}" "~/.${f}"
+done
+
