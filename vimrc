@@ -729,6 +729,7 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_cache_dir = expand("~/.vim/tmp")
 let g:ctrlp_max_files = 10000
+let g:ctrlp_clear_cache_on_exit = 0
 
 if has("unix")
     let g:ctrlp_user_command = {
