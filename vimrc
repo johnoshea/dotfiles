@@ -192,7 +192,7 @@ cnoremap w!! %!sudo tee > /dev/null %
 " <leader>cd      cd to the directory of the current buffer
 nnoremap <leader>cd :lcd %:h<CR>
 " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
-nnoremap <leader>no :lcd ~/Dropbox/Notes<cr>
+nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:CtrlP<cr>
 " Calling applications
 nnoremap <leader>ma :silent !open -a Marked.app '%:p'<cr>
 
@@ -477,7 +477,7 @@ nnoremap <Leader>P P'[v']=
 " }}}
 " Plugins ----------------------------------------------------------------- {{{
 nnoremap <leader>t :TagbarToggle<CR>
-nnoremap <leader>gu :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>y :YRShow<CR>
 nnoremap <leader>ss :SessionSave<space>
@@ -822,12 +822,52 @@ let g:indent_guides_guide_size = 1
 " SuperTab ---------------------------------------------------------------- {{{
 let g:SuperTabSetDefaultCompletionType = 'context'
 " }}}
-" DrawIt ------------------------------------------------------------------ {{{
-let g:DrChipTopLvlMenu = 'Plugin'
 " EasyMotion -------------------------------------------------------------- {{{
 let g:EasyMotion_mapping_w = '<Space>'
 let g:EasyMotion_mapping_b = '<leader><Space>'
 " }}}
+" Python mode ------------------------------------------------------------- {{{
+" Keys:
+" K             Show python docs
+" <Ctrl-Space>  Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 1
+
+" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+" }}}
+" NerdTree ---------------------------------------------------------------- {{{
+nnoremap <leader>n :NERDTreeToggle<CR>
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
