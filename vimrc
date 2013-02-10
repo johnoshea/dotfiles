@@ -303,8 +303,11 @@ if &t_Co > 2 || has("gui_running")
     syntax sync fromstart
 endif
 
-if v:version >= 703
+if exists('+colorcolumn')
     set colorcolumn=80
+else
+    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+    match OverLength /\%81v.\+/
 endif
 
 " }}}
@@ -457,6 +460,12 @@ augroup END
 
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
+
+" Make 'H' and 'L' go to first/last line onscreen regardless of scrolloffset
+execute 'nnoremap H H'.&l:scrolloff.'k'
+execute 'vnoremap H H'.&l:scrolloff.'k'
+execute 'nnoremap L L'.&l:scrolloff.'j'
+execute 'vnoremap L L'.&l:scrolloff.'j'
 
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
