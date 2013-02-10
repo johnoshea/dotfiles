@@ -48,7 +48,6 @@ Bundle 'sjl/clam.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Figlet.vim'
-Bundle 'DrawIt'
 Bundle 'LargeFile'
 " Filetypes/file formats
 Bundle 'hallison/vim-markdown'
@@ -62,8 +61,11 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/badwolf'
 Bundle 'Zenburn'
-Bundle 'blackgate/tropikos-vim-theme'
 Bundle 'chriskempson/base16-vim'
+" Experimental
+Bundle 'kshenoy/vim-signature'
+Bundle 'klen/python-mode'
+Bundle 'scrooloose/nerdtree'
 
 
 " }}}
