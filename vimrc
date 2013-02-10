@@ -269,10 +269,6 @@ set foldlevel=4                 " By default, show them all though
                                 " The following open closed folds
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 
-" Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
-
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
 nnoremap zO zCzO
@@ -828,6 +824,10 @@ let g:SuperTabSetDefaultCompletionType = 'context'
 " }}}
 " DrawIt ------------------------------------------------------------------ {{{
 let g:DrChipTopLvlMenu = 'Plugin'
+" EasyMotion -------------------------------------------------------------- {{{
+let g:EasyMotion_mapping_w = '<Space>'
+let g:EasyMotion_mapping_b = '<leader><Space>'
+" }}}
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
