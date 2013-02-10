@@ -9,7 +9,7 @@ highlight CompItem   font: normal 14px 'Menlo' !important;
 highlight Find   background: #d6c149; color: #000;
 
 set runtimepath=/Users/johno/.pentadactyl
-set guioptions="BbCrs"
+set guioptions="BbCrsT"
 set editor='/usr/local/bin/mvim -f +<line> <file>'
 set followhints=1
 set hintkeys="asdfg;lkjh"
@@ -31,8 +31,8 @@ map -modes=n gm -builtin :buffer<Space>mail.google.com<Return>
 map -modes=n ^ -builtin <C-^>
 
 " Keys to pass through to the underlying site
-" Google Mail
-set passkeys=mail.google.com:xsem!#rR*aAvtN[]{}z.IU=-gidac/?lujkonp
+" Google
+set passkeys=google.com:xsem!#rR*aAvtN[]{}z.IU=-gidac/?lujkonp
 " DuckDuckGo
 set passkeys+="https://duckduckgo\.com/":jkv
 " Twitter
