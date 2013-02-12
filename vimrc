@@ -66,6 +66,7 @@ Bundle 'chriskempson/base16-vim'
 Bundle 'kshenoy/vim-signature'
 " Bundle 'klen/python-mode'
 Bundle 'scrooloose/nerdtree'
+Bundle 'xolox/vim-easytags'
 
 
 " }}}
@@ -121,6 +122,7 @@ set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
+set updatetime=4000             " One of my plugins is setting this too aggressively
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
