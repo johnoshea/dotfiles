@@ -64,7 +64,7 @@ Bundle 'Zenburn'
 Bundle 'chriskempson/base16-vim'
 " Experimental
 Bundle 'kshenoy/vim-signature'
-Bundle 'klen/python-mode'
+" Bundle 'klen/python-mode'
 Bundle 'scrooloose/nerdtree'
 
 
