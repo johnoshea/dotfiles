@@ -66,6 +66,7 @@ Bundle 'chriskempson/base16-vim'
 Bundle 'kshenoy/vim-signature'
 " Bundle 'klen/python-mode'
 Bundle 'scrooloose/nerdtree'
+Bundle 'CSApprox'
 Bundle 'xolox/vim-easytags'
 
 
