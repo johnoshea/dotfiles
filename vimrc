@@ -136,7 +136,6 @@ set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
-set updatetime=4000             " One of my plugins is setting this too aggressively
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
@@ -898,6 +897,9 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+
+" Stop easytags complaining
+let g:pymode_updatetime = 4000
 " }}}
 " NerdTree ---------------------------------------------------------------- {{{
 nnoremap <leader>n :NERDTreeToggle<CR>
