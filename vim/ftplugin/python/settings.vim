@@ -27,7 +27,7 @@
 "
 "    For highlight doc-tests:
 "let python_highlight_doctests=1
-j
+
 "    If you want all Python highlightings above:
 let python_highlight_all=1
 "
