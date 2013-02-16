@@ -239,9 +239,17 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 
 " Ack integration
 if has("macunix")
-    let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
+    if filereadable('/usr/local/bin/ag')
+        let g:ackprg="/usr/local/bin/ag -H --nocolor --nogroup --column"
+    else
+        let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
+    endif
 else
-    let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+    if filereadable('/usr/local/bin/ag')
+        let g:ackprg="/usr/local/bin/ag -H --nocolor --nogroup --column"
+    else
+        let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+    endif
 endif
 " ... there is an intentional space at the end of this line:
 nnoremap <leader>a :Ack<space>
