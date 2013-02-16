@@ -19,35 +19,53 @@ Bundle 'gmarik/vundle'
 " }}}
 " Bundles ----------------------------------------------------------------- {{{
 
+" Completion
 " Supertab needs to load before UltiSnips
 Bundle 'ervandew/supertab'
 " Bundle 'SirVer/ultisnips'
+Bundle 'kana/vim-smartinput'
+
+" Coding
 Bundle 'klen/python-mode'
+Bundle 'scrooloose/syntastic'
+
+" Navigation
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
+Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-commentary'
-Bundle 'scrooloose/syntastic'
+
+" Tags
+Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-easytags'
+
+" Editing
 Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-git'
-Bundle 'ZoomWin'
 Bundle 'YankRing.vim'
-Bundle 'sjl/tslime.vim'
 Bundle 'godlygeek/tabular'
+
+" Git
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+
+" Display
 Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'kana/vim-smartinput'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'xolox/vim-session'
+Bundle 'ZoomWin'
+Bundle 'kshenoy/vim-signature'
+
+" System / program integration
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/vitality.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'sjl/tslime.vim'
 Bundle 'LargeFile'
+
 " Filetypes/file formats
 Bundle 'hallison/vim-markdown'
 Bundle 'tpope/vim-abolish'
@@ -56,17 +74,13 @@ Bundle 'TWiki-Syntax'
 Bundle 'django.vim'
 Bundle 'csv.vim'
 Bundle 'pangloss/vim-javascript'
+
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/badwolf'
 Bundle 'Zenburn'
 Bundle 'chriskempson/base16-vim'
-" Experimental
-Bundle 'kshenoy/vim-signature'
-" Bundle 'klen/python-mode'
-Bundle 'scrooloose/nerdtree'
 Bundle 'CSApprox'
-Bundle 'xolox/vim-easytags'
 
 
 " }}}
