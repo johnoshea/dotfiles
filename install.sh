@@ -42,13 +42,13 @@ make_symlinks () {
     ln -sf ${DOTFILES}/vim_colors ~/.vim_colors
     ln -sf ${DOTFILES}/vimrc ~/.vimrc
 
-    ln -sf ${ZPREZTO}/zlogin ~/.zlogin
-    ln -sf ${ZPREZTO}/zlogout ~/.zlogout
-    ln -sf ${ZPREZTO}/zprezto ~/.zprezto
-    ln -sf ${ZPREZTO}/zpreztorc ~/.zpreztorc
-    ln -sf ${ZPREZTO}/zprofile ~/.zprofile
-    ln -sf ${ZPREZTO}/zshenv ~/.zshenv
-    ln -sf ${ZPREZTO}/zshrc ~/.zshrc
+    ln -sf ${ZPREZTO}/runcoms/zlogin ~/.zlogin
+    ln -sf ${ZPREZTO}/runcoms/zlogout ~/.zlogout
+    ln -sf ${ZPREZTO}/runcoms/zprezto ~/.zprezto
+    ln -sf ${ZPREZTO}/runcoms/zpreztorc ~/.zpreztorc
+    ln -sf ${ZPREZTO}/runcoms/zprofile ~/.zprofile
+    ln -sf ${ZPREZTO}/runcoms/zshenv ~/.zshenv
+    ln -sf ${ZPREZTO}/runcoms/zshrc ~/.zshrc
 }
 
 update_vim_submodules () {
