@@ -22,6 +22,7 @@ update_repos () {
 
 checkout_repos () {
     echo "Checking out repos"
+    rm -rf ${DOTFILES} && clone https://github.com/johnoshea/dotfiles.git ${DOTFILES}
     rm -rf ${ZPREZTO} && clone https://github.com/johnoshea/zprezto.git ${ZPREZTO}
 }
 
