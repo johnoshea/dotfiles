@@ -4,7 +4,7 @@
 
 " For use as:
 "    $ vim -u bundles.vim +BundleInstall +q
-source bundles.vim
+source ~/Code/dotfiles/bundles.vim
 
 " }}}
 " Basic settings ---------------------------------------------------------- {{{
