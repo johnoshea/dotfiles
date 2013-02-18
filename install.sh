@@ -23,6 +23,8 @@ update_repos () {
 checkout_repos () {
     echo "Checking out repos"
     rm -rf ${DOTFILES} && git clone https://github.com/johnoshea/dotfiles.git ${DOTFILES}
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    vim -u bundles.vim +BundleInstall +qa
     rm -rf ${ZPREZTO} && git clone https://github.com/johnoshea/prezto.git ${ZPREZTO}
 }
 
@@ -54,10 +56,7 @@ make_symlinks () {
 update_vim_submodules () {
     echo "Updating vim submodules"
     cd ${DOTFILES}
-    mkdir -p ~/.vim/tmp/undo
-    git submodule init
-    git submodule update
-    git submodule foreach git pull origin master --recurse-submodules
+    vim -u bundles.vim +BundleInstall! +q
 }
 
 update_zprezto_submodules () {
