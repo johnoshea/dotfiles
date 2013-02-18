@@ -10,22 +10,22 @@ main () {
 
     # Basic directory structure
     cd ~
-	if [ -d Code ]; then
-		# If it's already there, 'new' will have to be passed in explicitly for
-		# a 'start from scratch' operation, otherwise we assume it's just an update
-	    UPDATE=1
-	else
-		mkdir Code
-		UPDATE=0
-	fi
+    if [ -d Code ]; then
+        # If it's already there, 'new' will have to be passed in explicitly for
+        # a 'start from scratch' operation, otherwise we assume it's just an update
+        UPDATE=1
+    else
+        mkdir Code
+        UPDATE=0
+    fi
 
     make_symlinks
     if [ ${UPDATE} -eq 0 ]; then
-		checkout_repos
+        checkout_repos
     else
-		update_repos
-		update_vim_submodules
-		update_zprezto_submodules
+        update_repos
+        update_vim_submodules
+        update_zprezto_submodules
     fi
 }
 
@@ -89,9 +89,9 @@ update_zprezto_submodules () {
 }
 
 if [ x"$1" = x"new" ]; then
-	UPDATE=0
+    UPDATE=0
 else
-	UPDATE=1
+    UPDATE=1
 fi
 main
 
