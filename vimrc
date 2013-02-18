@@ -64,7 +64,7 @@ Bundle 'kshenoy/vim-signature'
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'sjl/tslime.vim'
-Bundle 'LargeFile'
+" Bundle 'LargeFile'
 
 " Filetypes/file formats
 Bundle 'hallison/vim-markdown'
