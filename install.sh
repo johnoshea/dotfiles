@@ -1,31 +1,47 @@
-#!/bin/sh
+#!/bin/bash
 
-DOTFILES='~/Code/dotfiles'
-ZPREZTO='~/Code/zprezto'
+main () {
+    DOTFILES='Code/dotfiles'
+    ZPREZTO='Code/zprezto'
 
-if [ x"$1" = x"new" ]; then
-    REMOVE_EXISTING=1
-fi
+    # Bail if anything's unset
+    set -e
+    set -u
 
-# Bail if anything's unset
-set -e
-set -u
+    # Basic directory structure
+    cd ~
+	if [ -d Code ]; then
+		# If it's already there, 'new' will have to be passed in explicitly for
+		# a 'start from scratch' operation, otherwise we assume it's just an update
+	    UPDATE=1
+	else
+		mkdir Code
+		UPDATE=0
+	fi
 
-# Basic directory structure
-test -d ~/Code || mkdir ~/Code
+    make_symlinks
+    if [ ${UPDATE} -eq 0 ]; then
+		checkout_repos
+    else
+		update_repos
+		update_vim_submodules
+		update_zprezto_submodules
+    fi
+}
 
 update_repos () {
     echo "Updating repos"
-    cd ${ZPREZTO} && git pull
-    cd ${DOTFILES} && git pull
+    cd ~/${ZPREZTO} && git pull
+    cd ~/${DOTFILES} && git pull
 }
 
 checkout_repos () {
     echo "Checking out repos"
     rm -rf ${DOTFILES} && git clone https://github.com/johnoshea/dotfiles.git ${DOTFILES}
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    vim -u bundles.vim +BundleInstall +qa
+    vim -u ${DOTFILES}/bundles.vim +BundleInstall +qa
     rm -rf ${ZPREZTO} && git clone https://github.com/johnoshea/prezto.git ${ZPREZTO}
+    update_zprezto_submodules
 }
 
 
@@ -36,6 +52,8 @@ make_symlinks () {
     ln -sf ${DOTFILES}/dotjs ~/.js
     ln -sf ${DOTFILES}/gvimrc ~/.gvimrc
     ln -sf ${DOTFILES}/inputrc ~/.inputrc
+    ln -sf ${DOTFILES}/noserc ~/.noserc
+    ln -sf ${DOTFILES}/psqlrc ~/.psqlrc
     ln -sf ${DOTFILES}/rvmrc ~/.rvmrc
     ln -sf ${DOTFILES}/ssh_config ~/.ssh/config
     ln -sf ${DOTFILES}/tmux.conf ~/.tmux.conf
@@ -50,28 +68,27 @@ make_symlinks () {
     ln -sf ${ZPREZTO}/runcoms/zprofile ~/.zprofile
     ln -sf ${ZPREZTO}/runcoms/zshenv ~/.zshenv
     ln -sf ${ZPREZTO}/runcoms/zshrc ~/.zshrc
-    ln -sf ${ZPREZTO}/zprezto ~/.zprezto
+    ln -sf ${ZPREZTO} ~/.zprezto
 }
 
 update_vim_submodules () {
     echo "Updating vim submodules"
-    cd ${DOTFILES}
-    vim -u bundles.vim +BundleInstall! +q
+    cd ~/${DOTFILES}
+    vim -u bundles.vim +BundleInstall! +qa
 }
 
 update_zprezto_submodules () {
     echo "Updating zprezto submodules"
-    cd ${ZPREZTO}
+    cd ~/${ZPREZTO}
     git submodule init
     git submodule update
     git submodule foreach git pull origin master --recurse-submodules
 }
 
-make_symlinks
-if [ ${REMOVE_EXISTING} ]; then
-    checkout_repos
+if [ x"$1" = x"new" ]; then
+	UPDATE=0
 else
-    update_repos
+	UPDATE=1
 fi
-update_vim_submodules
-update_zprezto_submodules
+main
+
