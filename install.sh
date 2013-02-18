@@ -22,8 +22,8 @@ update_repos () {
 
 checkout_repos () {
     echo "Checking out repos"
-    rm -rf ${DOTFILES} && clone https://github.com/johnoshea/dotfiles.git ${DOTFILES}
-    rm -rf ${ZPREZTO} && clone https://github.com/johnoshea/zprezto.git ${ZPREZTO}
+    rm -rf ${DOTFILES} && git clone https://github.com/johnoshea/dotfiles.git ${DOTFILES}
+    rm -rf ${ZPREZTO} && git clone https://github.com/johnoshea/zprezto.git ${ZPREZTO}
 }
 
 
@@ -44,11 +44,11 @@ make_symlinks () {
 
     ln -sf ${ZPREZTO}/runcoms/zlogin ~/.zlogin
     ln -sf ${ZPREZTO}/runcoms/zlogout ~/.zlogout
-    ln -sf ${ZPREZTO}/runcoms/zprezto ~/.zprezto
     ln -sf ${ZPREZTO}/runcoms/zpreztorc ~/.zpreztorc
     ln -sf ${ZPREZTO}/runcoms/zprofile ~/.zprofile
     ln -sf ${ZPREZTO}/runcoms/zshenv ~/.zshenv
     ln -sf ${ZPREZTO}/runcoms/zshrc ~/.zshrc
+    ln -sf ${ZPREZTO}/zprezto ~/.zprezto
 }
 
 update_vim_submodules () {
