@@ -2,6 +2,11 @@
 " Author: John O'Shea <john.m.oshea@gmail.com>
 " Source: <https://github.com/johnoshea/dotfiles>
 
+" Server-local settings: mostly used to disable plugins
+if filereadable('~/.vim.local')
+    source ~/.vim.local
+end
+
 " For use as:
 "    $ vim -u bundles.vim +BundleInstall +q
 source ~/Code/dotfiles/bundles.vim
