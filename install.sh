@@ -55,6 +55,9 @@ make_symlinks () {
     ln -sf ${DOTFILES}/noserc ~/.noserc
     ln -sf ${DOTFILES}/psqlrc ~/.psqlrc
     ln -sf ${DOTFILES}/rvmrc ~/.rvmrc
+    if [ ! -d ~/.ssh ]; then
+        mkdir ~/.ssh
+    fi
     ln -sf ${DOTFILES}/ssh_config ~/.ssh/config
     ln -sf ${DOTFILES}/tmux.conf ~/.tmux.conf
     ln -sf ${DOTFILES}/terminfo ~/.terminfo
