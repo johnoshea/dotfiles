@@ -23,7 +23,7 @@ update_repos () {
 checkout_repos () {
     echo "Checking out repos"
     rm -rf ${DOTFILES} && git clone https://github.com/johnoshea/dotfiles.git ${DOTFILES}
-    rm -rf ${ZPREZTO} && git clone https://github.com/johnoshea/zprezto.git ${ZPREZTO}
+    rm -rf ${ZPREZTO} && git clone https://github.com/johnoshea/prezto.git ${ZPREZTO}
 }
 
 
@@ -60,7 +60,7 @@ update_vim_submodules () {
     git submodule foreach git pull origin master --recurse-submodules
 }
 
-update_zprezto_submoules () {
+update_zprezto_submodules () {
     echo "Updating zprezto submodules"
     cd ${ZPREZTO}
     git submodule init
@@ -73,6 +73,6 @@ if [ ${REMOVE_EXISTING} ]; then
     checkout_repos
 else
     update_repos
-    update_vim_submodules
-    update_zprezto_submoules
 fi
+update_vim_submodules
+update_zprezto_submodules
