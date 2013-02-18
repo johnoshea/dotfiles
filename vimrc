@@ -64,7 +64,7 @@ Bundle 'kshenoy/vim-signature'
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'sjl/tslime.vim'
-" Bundle 'LargeFile'
+Bundle 'LargeFile'
 
 " Filetypes/file formats
 Bundle 'hallison/vim-markdown'
@@ -80,7 +80,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/badwolf'
 Bundle 'Zenburn'
 Bundle 'chriskempson/base16-vim'
-" Bundle 'CSApprox'
+Bundle 'CSApprox'
 
 
 " }}}
