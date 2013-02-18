@@ -76,7 +76,10 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/badwolf'
 Bundle 'Zenburn'
 Bundle 'chriskempson/base16-vim'
-Bundle 'CSApprox'
+if has('gui')
+    " Needed for pre 7.3 vims
+    Bundle 'CSApprox'
+end
 
 filetype plugin indent on       " Needed for Vundle
 
