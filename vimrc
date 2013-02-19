@@ -679,6 +679,7 @@ call Pl#Theme#InsertSegment('charcode', 'after', 'filetype')
 " }}}
 " ctrlp ------------------------------------------------------------------- {{{
 let g:ctrlp_map = '<c-t>'
+nnoremap ; :CtrlPBuffer<cr>
 let g:ctrlp_switch_buffer = 2
 let g:ctrlp_use_caching = 1
 let g:ctrlp_max_height = 20
