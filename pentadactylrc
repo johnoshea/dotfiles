@@ -54,14 +54,6 @@ nmap -builtin ( :tp<CR>
 nmap -builtin <c-g> <m-a-k><esc>
 imap -builtin <c-g> <esc><m-a-k><esc>
 
-" Inspect element toggle
-nmap -builtin <c-i> <m-a-i>
-imap -builtin <c-i> <esc><m-a-i>
-
-" Show bookmarks
-nmap -builtin <C-l> :tabopen chrome://browser/content/bookmarks/bookmarksPanel.xul<CR>
-nmap -builtin L :tabopen chrome://browser/content/bookmarks/bookmarksPanel.xul<CR>
-
 " Open help in a new tab
 set newtab+=help
 
