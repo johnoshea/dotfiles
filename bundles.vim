@@ -44,6 +44,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'godlygeek/tabular'
+Bundle 'dhruvasagar/vim-table-mode'
 
 " Git
 Bundle 'tpope/vim-fugitive'
