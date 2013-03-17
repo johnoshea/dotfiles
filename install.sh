@@ -1,8 +1,8 @@
 #!/bin/bash
 
 main () {
-    DOTFILES='Code/dotfiles'
-    ZPREZTO='Code/zprezto'
+    DOTFILES="~/Code/dotfiles"
+    ZPREZTO="~/Code/zprezto"
 
     # Bail if anything's unset
     set -e
