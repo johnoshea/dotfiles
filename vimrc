@@ -437,9 +437,10 @@ nnoremap <Leader>P P'[v']=
 nnoremap <leader>t :TagbarToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
-nnoremap <leader>y :YRShow<CR>
 nnoremap <leader>ss :SessionSave<space>
 nnoremap <leader>os :SessionOpen<space>
+nnoremap <leader>y <Plug>yankstack_substitute_older_paste
+nnoremap <leader>Y <Plug>yankstack_substitute_newer_paste
 " }}}
 " Compiling --------------------------------------------------------------- {{{
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
@@ -563,10 +564,6 @@ augroup END
 " Fugitive ---------------------------------------------------------------- {{{
 " Auto-clean fugitive buffers.
 autocmd BufReadPost fugitive://* set bufhidden=delete
-
-" Disable YankRing for Fugitive windows
-autocmd BufWinEnter */.git/index exe ":YRToggle 0"
-autocmd BufWinLeave */.git/index exe ":YRToggle 1"
 
 " }}}
 " Zsh --------------------------------------------------------------------- {{{

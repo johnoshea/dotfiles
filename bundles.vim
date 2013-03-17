@@ -42,7 +42,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'YankRing.vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'godlygeek/tabular'
 
 " Git
