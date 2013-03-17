@@ -1,4 +1,3 @@
-vim/yankring_history_v2.txt
 *.swp
 vim/tmp
 stuff_for_vim.txt
@@ -6,3 +5,4 @@ vim/sessions/*.lock
 vim/.netrwhist
 vim/bundle/*
 vim/local/*
+vim/sessions/*
