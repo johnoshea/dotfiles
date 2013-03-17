@@ -753,6 +753,9 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_enable_balloons = 1
 "TODO uncomment this next line if the check_on_open setting is unbearable
 " let g:syntastic_disabled_filetypes = ['html', 'md']
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
