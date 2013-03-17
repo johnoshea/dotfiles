@@ -437,13 +437,17 @@ nnoremap <Leader>P P'[v']=
 
 " }}}
 " Plugins ----------------------------------------------------------------- {{{
-nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>b :TagbarToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>ss :SessionSave<space>
 nnoremap <leader>os :SessionOpen<space>
 nnoremap <leader>y <Plug>yankstack_substitute_older_paste
 nnoremap <leader>Y <Plug>yankstack_substitute_newer_paste
+nnoremap <leader>T :CtrlPBufTag<CR>
+nnoremap <leader>t :CtrlPTag<CR>
+nnoremap ; :CtrlPBuffer<cr>
+
 " }}}
 " Compiling --------------------------------------------------------------- {{{
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
@@ -679,7 +683,6 @@ call Pl#Theme#InsertSegment('charcode', 'after', 'filetype')
 " }}}
 " ctrlp ------------------------------------------------------------------- {{{
 let g:ctrlp_map = '<c-t>'
-nnoremap ; :CtrlPBuffer<cr>
 let g:ctrlp_switch_buffer = 2
 let g:ctrlp_use_caching = 1
 let g:ctrlp_max_height = 20
@@ -696,6 +699,11 @@ if has("unix")
         \   'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
         \ }
 endif
+
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtClearCache()':      ['<c-r>'],
+\ }
+
 
 " }}}
 " Fugitive ---------------------------------------------------------------- {{{
