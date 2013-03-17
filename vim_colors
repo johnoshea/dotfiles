@@ -10,7 +10,7 @@ endif
 set background=dark             " I prefer dark backgrounds
 
 try
-    colorscheme badwolf
+    colorscheme railscasts
 catch /^Vim\%((\a\+)\)\=:E185/
     try
         colorscheme zenburn
