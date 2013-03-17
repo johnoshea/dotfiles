@@ -301,13 +301,16 @@ if exists('+undofile')
     if !isdirectory(expand("~/.vim/tmp/undo"))
         !mkdir -p ~/.vim/tmp/undo
     endif
-    set backupdir=~/.vim/tmp//
-    set undodir=~/.vim/tmp/undo//,/tmp//
+    set backupdir^=~/.vim/tmp// " Backups are written to ~/.vim/tmp/ if possible
+    set directory^=~/.vim/tmp// " Swapfiles are also written to ~/.vim/tmp too
+    set undodir^=~/.vim/tmp/undo//,/tmp//
     set backup
     set undofile
     " Make Vim able to edit crontab files again.
     set backupskip=/tmp/*,/private/tmp/*"
     set noswapfile
+    set backupskip= " There are no files that shouldn't be backed up.
+    set updatetime=5000 " Write swap files after 5 seconds of inactivity.
 endif
 
 " }}}
