@@ -661,6 +661,7 @@ call Pl#Theme#InsertSegment('charcode', 'after', 'filetype')
 
 " }}}
 " ctrlp ------------------------------------------------------------------- {{{
+let g:path_to_matcher = "/usr/local/bin/matcher"
 let g:ctrlp_map = '<c-t>'
 let g:ctrlp_switch_buffer = 2
 let g:ctrlp_use_caching = 1
@@ -669,6 +670,10 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_cache_dir = expand("~/.vim/tmp")
 let g:ctrlp_max_files = 10000
 let g:ctrlp_clear_cache_on_exit = 0
+
+if filereadable(g:path_to_matcher)
+    let g:ctrlp_match_func = { 'match': 'GoodMatch' }
+endif
 
 if has("unix")
     let g:ctrlp_user_command = {
@@ -682,6 +687,29 @@ endif
 let g:ctrlp_prompt_mappings = {
     \ 'PrtClearCache()':      ['<c-r>'],
 \ }
+
+function! GoodMatch(items, str, limit, mmode, ispath, crfile, regex)
+  " Used by the 'matcher' program / ctrl-p add-on
+  " Create a cache file if not yet exists
+  let cachefile = ctrlp#utils#cachedir().'/matcher.cache'
+  if !( filereadable(cachefile) && a:items == readfile(cachefile) )
+    call writefile(a:items, cachefile)
+  endif
+  if !filereadable(cachefile)
+    return []
+  endif
+
+  " a:mmode is currently ignored. In the future, we should probably do
+  " something about that. the matcher behaves like "full-line".
+  let cmd = g:path_to_matcher.' --limit '.a:limit.' --manifest '.cachefile.' '
+  if !( exists('g:ctrlp_dotfiles') && g:ctrlp_dotfiles )
+    let cmd = cmd.'--no-dotfiles '
+  endif
+  let cmd = cmd.a:str
+
+  return split(system(cmd), "\n")
+
+endfunction
 
 
 " }}}
