@@ -18,7 +18,7 @@ Bundle 'gmarik/vundle'
 " Completion
 " Supertab needs to load before UltiSnips
 Bundle 'ervandew/supertab'
-" Bundle 'SirVer/ultisnips'
+Bundle 'SirVer/ultisnips'
 Bundle 'kana/vim-smartinput'
 
 " Coding
@@ -56,6 +56,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'xolox/vim-session'
 Bundle 'ZoomWin'
 Bundle 'kshenoy/vim-signature'
+Bundle "airblade/vim-gitgutter"
 
 " System / program integration
 Bundle 'sjl/clam.vim'
@@ -81,6 +82,12 @@ if has('gui')
     " Needed for pre 7.3 vims
     Bundle 'CSApprox'
 end
+
+" Experimental
+Bundle "paradigm/TextObjectify"
+Bundle "tpope/vim-dispatch"
+Bundle "szw/vim-tags"
+Bundle "kbarrette/mediummode"
 
 filetype plugin indent on       " Needed for Vundle
 
