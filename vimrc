@@ -472,10 +472,10 @@ nnoremap <D-s> :w<CR>
 noremap <C-W>\| :vsplit<CR><C-W>l
 noremap <C-W>- :split<CR><C-W>j
 noremap <C-W><C-W> <C-W>w
-nnoremap <silent> <C-h> <C-w><
+nnoremap <silent> <C-h> <C-w>>
 nnoremap <silent> <C-j> <C-w>+
 nnoremap <silent> <C-k> <C-w>-
-nnoremap <silent> <C-l> <C-w>>
+nnoremap <silent> <C-l> <C-w><
 
 " }}}
 " Lines ------------------------------------------------------------------- {{{
