@@ -27,7 +27,9 @@ set display=lastline,uhex       " Show unprintables as hex and show as much of l
 set lazyredraw                  " Set lazy redraw, to speed up macros and the like
 set sessionoptions+=winpos      " Save window positions as well
 set hidden                      " Allow movement to another buffer w/o saving the current one
-set clipboard=unnamed           " Use the system clipboard for copy/paste
+if $TMUX == ''
+    set clipboard=unnamed       " Use the system clipboard for copy/paste (but not inside tmux)
+end
 set showmatch                   " Show matching bracket
 set matchtime=3                 " (for only 0.3s)
 set confirm                     " Get confirmation before we do anything stupid
