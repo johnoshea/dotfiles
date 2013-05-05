@@ -3,8 +3,8 @@
 " Source: <https://github.com/johnoshea/dotfiles>
 
 " Server-local settings: mostly used to disable plugins
-if filereadable('~/.vim.local')
-    source ~/.vim.local
+if filereadable('~/.vimrc.local')
+    source ~/.vimrc.local
 end
 
 " For use as:
