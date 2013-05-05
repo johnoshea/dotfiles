@@ -660,6 +660,12 @@ let g:Powerline_symbols = 'fancy'
 call Pl#Theme#InsertSegment('charcode', 'after', 'filetype')
 
 " }}}
+" Yankstack --------------------------------------------------------------- {{{
+let g:yankstack_map_keys = 0
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+" }}}
 " ctrlp ------------------------------------------------------------------- {{{
 let g:path_to_matcher = "/usr/local/bin/matcher"
 let g:ctrlp_map = '<c-t>'
@@ -779,9 +785,6 @@ let g:tslime_normal_mapping = '<localleader>t'
 let g:tslime_visual_mapping = '<localleader>t'
 let g:tslime_vars_mapping = '<localleader>T'
 
-" }}}
-" YankRing ---------------------------------------------------------------- {{{
-let g:yankring_manual_clipboard_check = 0
 " }}}
 " vim-session ------------------------------------------------------------- {{{
 let g:session_autoload = 'no'
