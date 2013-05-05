@@ -427,11 +427,6 @@ nnoremap <leader>1 :call ToggleNumbers()<CR>
 set pastetoggle=<localleader>p
 
 " }}}
-" Re-indent pasted text --------------------------------------------------- {{{
-nnoremap <Leader>p p'[v']=
-nnoremap <Leader>P P'[v']=
-
-" }}}
 " Plugins ----------------------------------------------------------------- {{{
 nnoremap <leader>b :TagbarToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
@@ -484,15 +479,6 @@ inoremap <C-k> <Esc>O
 nnoremap J mzJ`z
 " <ctrl>j         Join lines in insert mode
 inoremap <C-j> <C-o>J
-
-" }}}
-" Words ------------------------------------------------------------------- {{{
-" gl  Push word left
-nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l><tab>h
-" gr  Push word right
-nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l><tab>h
-" gw  Swap words
-nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<cr><c-o><c-l><tab>h
 
 " }}}
 " }}}
@@ -658,9 +644,6 @@ nnoremap <leader>U gUiw
 nnoremap <leader>L guiw
 inoremap <C-u> <esc>gUiwea
 inoremap <C-l> <esc>guiwea
-
-" <leader>case    Turns visually selected camelCase into camel_case
-vnoremap <leader>case :s/\v\C(([a-z]+)([A-Z]))/\2_\l\3/g<CR>
 
 " Use Q for formatting the current paragraph (or visual selection)
 vnoremap Q gq
