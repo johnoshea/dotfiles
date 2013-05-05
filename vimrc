@@ -942,6 +942,9 @@ augroup FTMisc
             \ endif
     autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
         \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
+    " Restore the 'hit return to open the file under the cursor' behaviour for
+    " quickfix windows only
+    autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 augroup END
 
 " }}}
