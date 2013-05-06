@@ -87,7 +87,6 @@ end
 Bundle "paradigm/TextObjectify"
 Bundle "tpope/vim-dispatch"
 Bundle "szw/vim-tags"
-Bundle "kbarrette/mediummode"
 
 filetype plugin indent on       " Needed for Vundle
 
