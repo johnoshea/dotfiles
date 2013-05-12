@@ -319,9 +319,9 @@ cnoremap s/ s/\v
 
 autocmd VimEnter * nohls
 
-" turn off highlighted results (set nohlsearch) when pressing enter.
+" turn off highlighted results (set nohlsearch)
 " just pressing n or N will turn the highlight back again
-nnoremap <cr> :nohls<cr>
+nnoremap <localleader>n :nohls<cr>
 
 " Centre screen around searches
 nnoremap n nzz
@@ -944,9 +944,6 @@ augroup FTMisc
             \ endif
     autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
         \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
-    " Restore the 'hit return to open the file under the cursor' behaviour for
-    " quickfix windows only
-    autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 augroup END
 
 " }}}
