@@ -235,9 +235,6 @@ function! MyFoldText() " {{{
 endfunction " }}}
 set foldtext=MyFoldText()
 
-" <leader>f          Fold everything apart from searched-for terms
-nnoremap <leader>f :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>
-
 " }}}
 " Colors ------------------------------------------------------------------ {{{
 

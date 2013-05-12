@@ -44,7 +44,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'godlygeek/tabular'
-Bundle 'dhruvasagar/vim-table-mode'
 
 " Git
 Bundle 'tpope/vim-fugitive'
@@ -56,7 +55,6 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'xolox/vim-session'
 Bundle 'ZoomWin'
 Bundle 'kshenoy/vim-signature'
-Bundle "airblade/vim-gitgutter"
 
 " System / program integration
 Bundle 'sjl/clam.vim'
