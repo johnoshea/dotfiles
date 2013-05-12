@@ -772,6 +772,8 @@ let g:syntastic_enable_balloons = 1
 "TODO uncomment this next line if the check_on_open setting is unbearable
 " let g:syntastic_disabled_filetypes = ['html', 'md']
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args="--max-complexity 12"
 
 if !&diff
     let g:syntastic_auto_loc_list = 1
@@ -824,11 +826,11 @@ let g:pymode_rope = 1
 let g:pymode_doc = 1
 let g:pymode_doc_key = 'K'
 
-"Linting
-let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
+"Linting - Syntastic handles this
+let g:pymode_lint = 0
+let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
 " Auto check on save
-let g:pymode_lint_write = 1
+let g:pymode_lint_write = 0
 
 " Support virtualenv
 let g:pymode_virtualenv = 1
