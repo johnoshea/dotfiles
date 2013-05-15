@@ -1,8 +1,8 @@
 #!/bin/bash
 
 main () {
-    DOTFILES="~/Code/dotfiles"
-    ZPREZTO="~/Code/zprezto"
+    DOTFILES="Code/dotfiles"
+    ZPREZTO="Code/zprezto"
 
     # Bail if anything's unset
     set -e
@@ -37,41 +37,41 @@ update_repos () {
 
 checkout_repos () {
     echo "Checking out repos"
-    rm -rf ${DOTFILES} && git clone https://github.com/johnoshea/dotfiles.git ${DOTFILES}
+    rm -rf ~/${DOTFILES} && git clone https://github.com/johnoshea/dotfiles.git ~/${DOTFILES}
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    vim -u ${DOTFILES}/bundles.vim +BundleInstall +qa
-    rm -rf ${ZPREZTO} && git clone https://github.com/johnoshea/prezto.git ${ZPREZTO}
+    vim -u ~/${DOTFILES}/bundles.vim +BundleInstall +qa
+    rm -rf ~/${ZPREZTO} && git clone https://github.com/johnoshea/prezto.git ~/${ZPREZTO}
     update_zprezto_submodules
 }
 
 
 make_symlinks () {
     echo "Creating dotfile symlinks"
-    ln -sf ${DOTFILES}/ackrc ~/.ackrc
-    ln -sf ${DOTFILES}/dotcss ~/.css
-    ln -sf ${DOTFILES}/dotjs ~/.js
-    ln -sf ${DOTFILES}/gvimrc ~/.gvimrc
-    ln -sf ${DOTFILES}/inputrc ~/.inputrc
-    ln -sf ${DOTFILES}/noserc ~/.noserc
-    ln -sf ${DOTFILES}/psqlrc ~/.psqlrc
-    ln -sf ${DOTFILES}/rvmrc ~/.rvmrc
+    ln -sf ~/${DOTFILES}/ackrc ~/.ackrc
+    ln -sf ~/${DOTFILES}/dotcss ~/.css
+    ln -sf ~/${DOTFILES}/dotjs ~/.js
+    ln -sf ~/${DOTFILES}/gvimrc ~/.gvimrc
+    ln -sf ~/${DOTFILES}/inputrc ~/.inputrc
+    ln -sf ~/${DOTFILES}/noserc ~/.noserc
+    ln -sf ~/${DOTFILES}/psqlrc ~/.psqlrc
+    ln -sf ~/${DOTFILES}/rvmrc ~/.rvmrc
     if [ ! -d ~/.ssh ]; then
         mkdir ~/.ssh
     fi
-    ln -sf ${DOTFILES}/ssh_config ~/.ssh/config
-    ln -sf ${DOTFILES}/tmux.conf ~/.tmux.conf
-    ln -sf ${DOTFILES}/terminfo ~/.terminfo
-    ln -sf ${DOTFILES}/vim ~/.vim
-    ln -sf ${DOTFILES}/vim_colors ~/.vim_colors
-    ln -sf ${DOTFILES}/vimrc ~/.vimrc
+    ln -sf ~/${DOTFILES}/ssh_config ~/.ssh/config
+    ln -sf ~/${DOTFILES}/tmux.conf ~/.tmux.conf
+    ln -sf ~/${DOTFILES}/terminfo ~/.terminfo
+    ln -sf ~/${DOTFILES}/vim ~/.vim
+    ln -sf ~/${DOTFILES}/vim_colors ~/.vim_colors
+    ln -sf ~/${DOTFILES}/vimrc ~/.vimrc
 
-    ln -sf ${ZPREZTO}/runcoms/zlogin ~/.zlogin
-    ln -sf ${ZPREZTO}/runcoms/zlogout ~/.zlogout
-    ln -sf ${ZPREZTO}/runcoms/zpreztorc ~/.zpreztorc
-    ln -sf ${ZPREZTO}/runcoms/zprofile ~/.zprofile
-    ln -sf ${ZPREZTO}/runcoms/zshenv ~/.zshenv
-    ln -sf ${ZPREZTO}/runcoms/zshrc ~/.zshrc
-    ln -sf ${ZPREZTO} ~/.zprezto
+    ln -sf ~/${ZPREZTO}/runcoms/zlogin ~/.zlogin
+    ln -sf ~/${ZPREZTO}/runcoms/zlogout ~/.zlogout
+    ln -sf ~/${ZPREZTO}/runcoms/zpreztorc ~/.zpreztorc
+    ln -sf ~/${ZPREZTO}/runcoms/zprofile ~/.zprofile
+    ln -sf ~/${ZPREZTO}/runcoms/zshenv ~/.zshenv
+    ln -sf ~/${ZPREZTO}/runcoms/zshrc ~/.zshrc
+    ln -sf ~/${ZPREZTO} ~/.zprezto
 }
 
 update_vim_submodules () {
