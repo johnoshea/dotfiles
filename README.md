@@ -6,6 +6,6 @@ A collection of some of my config files
 
 To install:
 
-    ln -s /path/to/dotfiles/vim ~/.vim
-    ln -s /path/to/dotfiles/vimrc ~/.vimrc
-    ln -s /path/to/dotfiles/gvimrc ~/.vimrc
+    wget https://raw.github.com/johnoshea/dotfiles/master/install.sh
+    chmod +x install.sh
+    ./install.sh
