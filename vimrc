@@ -138,6 +138,8 @@ nnoremap <leader>cd :lcd %:h<CR>
 nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:CtrlP<cr>
 " Calling applications
 nnoremap <leader>ma :silent !open -a Marked.app '%:p'<cr>
+" Disable "F1 for help"
+nnoremap <F1> <nop>
 
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
