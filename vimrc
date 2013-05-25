@@ -460,6 +460,11 @@ inoremap <C-q><C-q> <ESC>:bw!<CR>
 inoremap <D-s> <ESC>:w<CR>i
 nnoremap <D-s> :w<CR>
 
+nnoremap gb :ls<CR>:b<Space>
+
+set wildcharm=<C-z>
+nnoremap <leader>f :b <C-z>
+
 " }}}
 " Windows ----------------------------------------------------------------- {{{
 " Tmux-like split panes navigation
