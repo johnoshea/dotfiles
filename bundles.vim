@@ -81,6 +81,9 @@ if has('gui')
     Bundle 'CSApprox'
 end
 
+" Utilities/dependencies
+Bundle "xolox/vim-misc"
+
 " Experimental
 Bundle "paradigm/TextObjectify"
 Bundle "tpope/vim-dispatch"
