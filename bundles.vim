@@ -89,6 +89,7 @@ Bundle "paradigm/TextObjectify"
 Bundle "tpope/vim-dispatch"
 Bundle "szw/vim-tags"
 Bundle "dhruvasagar/vim-table-mode"
+Bundle "Valloric/YouCompleteMe"
 
 filetype plugin indent on       " Needed for Vundle
 

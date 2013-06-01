@@ -807,6 +807,11 @@ let g:indent_guides_guide_size = 1
 " }}}
 " SuperTab ---------------------------------------------------------------- {{{
 let g:SuperTabSetDefaultCompletionType = 'context'
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
+" }}}
+" YouCompleteMe ----------------------------------------------------------- {{{
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>’, ‘<Up>']
 " }}}
 " EasyMotion -------------------------------------------------------------- {{{
 let g:EasyMotion_mapping_w = '<Space>'
