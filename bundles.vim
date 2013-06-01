@@ -88,6 +88,7 @@ Bundle "xolox/vim-misc"
 Bundle "paradigm/TextObjectify"
 Bundle "tpope/vim-dispatch"
 Bundle "szw/vim-tags"
+Bundle "dhruvasagar/vim-table-mode"
 
 filetype plugin indent on       " Needed for Vundle
 
