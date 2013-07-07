@@ -420,8 +420,6 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>ss :SessionSave<space>
 nnoremap <leader>os :SessionOpen<space>
-nnoremap <leader>y <Plug>yankstack_substitute_older_paste
-nnoremap <leader>Y <Plug>yankstack_substitute_newer_paste
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap ; :CtrlPBuffer<cr>
@@ -651,6 +649,8 @@ let g:airline_enable_syntastic = 1
 let g:yankstack_map_keys = 0
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+imap <c-p> <c-o><Plug>yankstack_substitute_older_paste
+imap <c-P> <c-o><Plug>yankstack_substitute_newer_paste
 
 " }}}
 " ctrlp ------------------------------------------------------------------- {{{
