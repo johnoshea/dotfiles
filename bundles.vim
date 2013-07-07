@@ -67,6 +67,9 @@ Bundle 'othree/html5.vim'
 Bundle 'TWiki-Syntax'
 Bundle 'django.vim'
 Bundle 'csv.vim'
+       " Javascript
+Bundle 'marijnh/tern_for_vim'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 
 " Colorschemes
@@ -88,6 +91,7 @@ Bundle "tpope/vim-dispatch"
 Bundle "szw/vim-tags"
 Bundle "dhruvasagar/vim-table-mode"
 Bundle "Valloric/YouCompleteMe"
+Bundle "tpope/vim-sleuth"
 Bundle "tomtom/tcomment_vim"
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "bling/vim-airline"
