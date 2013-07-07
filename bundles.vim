@@ -37,7 +37,6 @@ Bundle 'xolox/vim-easytags'
 
 " Editing
 Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -89,6 +88,7 @@ Bundle "tpope/vim-dispatch"
 Bundle "szw/vim-tags"
 Bundle "dhruvasagar/vim-table-mode"
 Bundle "Valloric/YouCompleteMe"
+Bundle "tomtom/tcomment_vim"
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "bling/vim-airline"
 
