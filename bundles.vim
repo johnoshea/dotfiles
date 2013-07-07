@@ -90,6 +90,7 @@ Bundle "tpope/vim-dispatch"
 Bundle "szw/vim-tags"
 Bundle "dhruvasagar/vim-table-mode"
 Bundle "Valloric/YouCompleteMe"
+Bundle "christoomey/vim-tmux-navigator"
 
 filetype plugin indent on       " Needed for Vundle
 
