@@ -310,12 +310,6 @@ endif
 
 " }}}
 " Searching --------------------------------------------------------------- {{{
-" Fix broken vim regexes when searching
-" http://stevelosh.com/blog/2010/09/coming-home-to-vim/#important-vimrc-lines
-nnoremap / /\v
-vnoremap / /\v
-cnoremap s/ s/\v
-
 autocmd VimEnter * nohls
 
 " turn off highlighted results (set nohlsearch)
@@ -407,12 +401,6 @@ augroup END
 
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
-
-" Make 'H' and 'L' go to first/last line onscreen regardless of scrolloffset
-execute 'nnoremap H H'.&l:scrolloff.'k'
-execute 'vnoremap H H'.&l:scrolloff.'k'
-execute 'nnoremap L L'.&l:scrolloff.'j'
-execute 'vnoremap L L'.&l:scrolloff.'j'
 
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
