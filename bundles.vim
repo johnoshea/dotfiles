@@ -27,7 +27,6 @@ Bundle 'scrooloose/syntastic'
 
 " Navigation
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
@@ -91,6 +90,7 @@ Bundle "szw/vim-tags"
 Bundle "dhruvasagar/vim-table-mode"
 Bundle "Valloric/YouCompleteMe"
 Bundle "christoomey/vim-tmux-navigator"
+Bundle "bling/vim-airline"
 
 filetype plugin indent on       " Needed for Vundle
 

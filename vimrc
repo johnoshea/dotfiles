@@ -655,10 +655,9 @@ nnoremap Q gqap
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 
 " }}}
-" Powerline --------------------------------------------------------------- {{{
-let g:Powerline_symbols = 'fancy'
-call Pl#Theme#InsertSegment('charcode', 'after', 'filetype')
-
+" Airline ----------------------------------------------------------------- {{{
+let g:airline_enable_fugitive = 1
+let g:airline_enable_syntastic = 1
 " }}}
 " Yankstack --------------------------------------------------------------- {{{
 let g:yankstack_map_keys = 0
