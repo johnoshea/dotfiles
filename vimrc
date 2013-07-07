@@ -453,10 +453,10 @@ nnoremap <D-Right> :bnext<CR>
 nnoremap <D-Left> :bprev<CR>
 inoremap <D-Right> <ESC>:bnext<CR>
 inoremap <D-Left> <ESC>:bprev<CR>
-nnoremap <C-q> <ESC>:bw<CR>
-nnoremap <C-q><C-q> <ESC>:bw!<CR>
-inoremap <C-q> <ESC>:bw<CR>
-inoremap <C-q><C-q> <ESC>:bw!<CR>
+nnoremap <C-c> <ESC>:bw<CR>
+nnoremap <C-c><C-c> <ESC>:bw!<CR>
+inoremap <C-c> <ESC>:bw<CR>
+inoremap <C-c><C-c> <ESC>:bw!<CR>
 inoremap <D-s> <ESC>:w<CR>i
 nnoremap <D-s> :w<CR>
 
