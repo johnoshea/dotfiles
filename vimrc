@@ -10,6 +10,7 @@ end
 " For use as:
 "    $ vim -u bundles.vim +BundleInstall +q
 source ~/Code/dotfiles/bundles.vim
+"TODO work out if I need a Mac-only local bundles setup
 
 " }}}
 " Basic settings ---------------------------------------------------------- {{{

@@ -90,11 +90,14 @@ Bundle "paradigm/TextObjectify"
 Bundle "tpope/vim-dispatch"
 Bundle "szw/vim-tags"
 Bundle "dhruvasagar/vim-table-mode"
-Bundle "Valloric/YouCompleteMe"
+if has("patch584")
+    Bundle "Valloric/YouCompleteMe"
+endif
 Bundle "tpope/vim-sleuth"
 Bundle "tomtom/tcomment_vim"
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "bling/vim-airline"
+Bundle "mhinz/vim-signify"
 
 filetype plugin indent on       " Needed for Vundle
 
