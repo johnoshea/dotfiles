@@ -181,32 +181,32 @@ nnoremap <leader>a :Ack<space>
 " Multi-line searching
 " *	Multiline search (for whole words) forward
 vnoremap <silent> * :<C-U>
-			\let old_reg=getreg('"')<bar>
-			\let old_regmode=getregtype('"')<cr>
-			\gvy/<C-R><C-R>=substitute(
-			\escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<cr><cr>
-			\:call setreg('"', old_reg, old_regmode)<cr>
-" #	Multiline search (for whole words) backward
+                        \let old_reg=getreg('"')<bar>
+                        \let old_regmode=getregtype('"')<cr>
+                        \gvy/<C-R><C-R>=substitute(
+                        \escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<cr><cr>
+                        \:call setreg('"', old_reg, old_regmode)<cr>
+" #     Multiline search (for whole words) backward
 vnoremap <silent> # :<C-U>
-			\let old_reg=getreg('"')<bar>
-			\let old_regmode=getregtype('"')<cr>
-			\gvy?<C-R><C-R>=substitute(
-			\escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<cr><cr>
-			\:call setreg('"', old_reg, old_regmode)<cr>
-" *	Multiline search forward
+                        \let old_reg=getreg('"')<bar>
+                        \let old_regmode=getregtype('"')<cr>
+                        \gvy?<C-R><C-R>=substitute(
+                        \escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<cr><cr>
+                        \:call setreg('"', old_reg, old_regmode)<cr>
+" *     Multiline search forward
 vnoremap <silent> g* :<C-U>
-			\let old_reg=getreg('"')<bar>
-			\let old_regmode=getregtype('"')<cr>
-			\gvy/<C-R><C-R>=substitute(
-			\escape(@", '\\/.*$^~[]'), '\_s\+', '\\_s\\+', 'g')<cr><cr>
-			\:call setreg('"', old_reg, old_regmode)<cr>
-" #	Multiline search backward
+                        \let old_reg=getreg('"')<bar>
+                        \let old_regmode=getregtype('"')<cr>
+                        \gvy/<C-R><C-R>=substitute(
+                        \escape(@", '\\/.*$^~[]'), '\_s\+', '\\_s\\+', 'g')<cr><cr>
+                        \:call setreg('"', old_reg, old_regmode)<cr>
+" #     Multiline search backward
 vnoremap <silent> # :<C-U>
-			\let old_reg=getreg('"')<bar>
-			\let old_regmode=getregtype('"')<cr>
-			\gvy?<C-R><C-R>=substitute(
-			\escape(@", '\\/.*$^~[]'), '\_s\+', '\\_s\\+', 'g')<cr><cr>
-			\:call setreg('"', old_reg, old_regmode)<cr>
+                        \let old_reg=getreg('"')<bar>
+                        \let old_regmode=getregtype('"')<cr>
+                        \gvy?<C-R><C-R>=substitute(
+                        \escape(@", '\\/.*$^~[]'), '\_s\+', '\\_s\\+', 'g')<cr><cr>
+                        \:call setreg('"', old_reg, old_regmode)<cr>
 
 " }}}
 " Folding ----------------------------------------------------------------- {{{
