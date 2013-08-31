@@ -9,3 +9,4 @@ User johno
 # Multiplex multiple connections
 ControlMaster auto
 ControlPath ~/.ssh/master-%r@%h:%p
+ControlPersist yes
