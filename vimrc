@@ -769,6 +769,7 @@ let g:syntastic_enable_balloons = 1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
+let g:syntastic_html_validator_parser='html5'
 
 if !&diff
     let g:syntastic_auto_loc_list = 1
