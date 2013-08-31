@@ -24,8 +24,10 @@ map ',' <leader>
 
 colorscheme zenburn
 
-set defsearch=ddg
+"set defsearch=ddg
+set defsearch=sam
 :command -nargs=* ddg open ddg <args>
+:command -nargs=* sam open sam <args>
 
 map -modes=n gm -builtin :buffer<Space>mail.google.com<Return>
 map -modes=n ^ -builtin <C-^>
