@@ -651,6 +651,8 @@ let g:airline_linecolumn_prefix = '␊ '
 let g:airline_branch_prefix = '⎇ '
 let g:airline_paste_symbol = 'ρ'
 let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " }}}
 " Yankstack --------------------------------------------------------------- {{{
