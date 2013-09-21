@@ -98,6 +98,8 @@ Bundle 'xolox/vim-misc'
 Bundle 'tpope/vim-sleuth'
 
 " Experimental
+Bundle 'tpope/vim-eunuch'
+Bundle 'junegunn/vim-easy-align'
 
 filetype plugin indent on       " Needed for Vundle
 
