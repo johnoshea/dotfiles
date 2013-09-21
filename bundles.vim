@@ -72,16 +72,12 @@ Bundle 'szw/vim-tags'
 Bundle 'christoomey/vim-tmux-navigator'
 
 " Filetypes/file formats
-Bundle 'hallison/vim-markdown'
 Bundle 'tpope/vim-abolish'
-Bundle 'othree/html5.vim'
 Bundle 'TWiki-Syntax'
 Bundle 'django.vim'
-Bundle 'csv.vim'
        " Javascript
 Bundle 'marijnh/tern_for_vim'
 Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
@@ -100,6 +96,7 @@ Bundle 'tpope/vim-sleuth'
 " Experimental
 Bundle 'tpope/vim-eunuch'
 Bundle 'junegunn/vim-easy-align'
+Bundle 'sheerun/vim-polyglot'
 
 filetype plugin indent on       " Needed for Vundle
 
