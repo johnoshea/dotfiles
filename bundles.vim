@@ -42,6 +42,12 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'godlygeek/tabular'
+Bundle 'paradigm/TextObjectify'
+Bundle 'dhruvasagar/vim-table-mode'
+if has("patch584")
+    Bundle "Valloric/YouCompleteMe"
+endif
+Bundle 'tomtom/tcomment_vim'
 
 " Git
 Bundle 'tpope/vim-fugitive'
@@ -53,12 +59,17 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'xolox/vim-session'
 Bundle 'ZoomWin'
 Bundle 'kshenoy/vim-signature'
+Bundle 'bling/vim-airline'
+Bundle 'mhinz/vim-signify'
 
 " System / program integration
 Bundle 'sjl/clam.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'sjl/tslime.vim'
 Bundle 'LargeFile'
+Bundle 'tpope/vim-dispatch'
+Bundle 'szw/vim-tags'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " Filetypes/file formats
 Bundle 'hallison/vim-markdown'
@@ -83,21 +94,10 @@ if has('gui')
 end
 
 " Utilities/dependencies
-Bundle "xolox/vim-misc"
+Bundle 'xolox/vim-misc'
+Bundle 'tpope/vim-sleuth'
 
 " Experimental
-Bundle "paradigm/TextObjectify"
-Bundle "tpope/vim-dispatch"
-Bundle "szw/vim-tags"
-Bundle "dhruvasagar/vim-table-mode"
-if has("patch584")
-    Bundle "Valloric/YouCompleteMe"
-endif
-Bundle "tpope/vim-sleuth"
-Bundle "tomtom/tcomment_vim"
-Bundle "christoomey/vim-tmux-navigator"
-Bundle "bling/vim-airline"
-Bundle "mhinz/vim-signify"
 
 filetype plugin indent on       " Needed for Vundle
 
