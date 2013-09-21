@@ -98,6 +98,7 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'mattn/emmet-vim'
+Bundle 'jmcantrell/vim-virtualenv'
 
 filetype plugin indent on       " Needed for Vundle
 
