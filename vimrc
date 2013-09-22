@@ -682,11 +682,19 @@ if filereadable(g:path_to_matcher)
 endif
 
 if has("unix")
+
+    if executable('ag')
+        " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+        let g:ctrlp_user_cmd_fallback = 'ag %s -l --nocolor -g "" | head -' . g:ctrlp_max_files
+    else
+        let g:ctrlp_user_cmd_fallback = 'find %s -type f | head -' . g:ctrlp_max_files
+    endif
+
     let g:ctrlp_user_command = {
         \   'types': {
         \       1: ['.git', 'cd %s && git ls-files']
         \   },
-        \   'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
+        \   'fallback': g:ctrlp_user_cmd_fallback
         \ }
 endif
 
