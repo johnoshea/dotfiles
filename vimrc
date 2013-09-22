@@ -168,11 +168,11 @@ nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
 
 " Ack integration
-if has("macunix")
-    if filereadable('/usr/local/bin/ag')
-        let g:ackprg="/usr/local/bin/ag --nocolor --nogroup --column"
-    else
-        let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
+if executable('ag')
+    let g:ackprg="ag --nocolor --nogroup --column"
+else
+    if executable('ack')
+        let g:ackprg="ack -H --nocolor --nogroup --column"
     endif
 endif
 " ... there is an intentional space at the end of this line:
