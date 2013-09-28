@@ -660,8 +660,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " }}}
 " Yankstack --------------------------------------------------------------- {{{
 let g:yankstack_map_keys = 0
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
+nmap <c-p> <Plug>yankstack_substitute_older_paste
+nmap <c-P> <Plug>yankstack_substitute_newer_paste
 imap <c-p> <c-o><Plug>yankstack_substitute_older_paste
 imap <c-P> <c-o><Plug>yankstack_substitute_newer_paste
 
