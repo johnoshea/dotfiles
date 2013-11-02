@@ -819,8 +819,11 @@ let g:SuperTabSetDefaultCompletionType = 'context'
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
 " }}}
 " YouCompleteMe ----------------------------------------------------------- {{{
+let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-S-TAB>’, ‘<Up>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
 " }}}
 " EasyMotion -------------------------------------------------------------- {{{
 function! g:QuickMotion()
