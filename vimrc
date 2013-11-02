@@ -819,8 +819,14 @@ let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>’, ‘<Up>']
 " }}}
 " EasyMotion -------------------------------------------------------------- {{{
-let g:EasyMotion_mapping_w = '<Space>'
-let g:EasyMotion_mapping_b = '<leader><Space>'
+function! g:QuickMotion()
+  let s=&scrolloff
+  setlocal scrolloff=0
+  keepjumps normal! H
+  call EasyMotion#F(0, 0)
+  let &l:scrolloff = s
+endfunction
+nnoremap <silent> <Space> :call g:QuickMotion()<cr>
 " }}}
 " Python mode ------------------------------------------------------------- {{{
 " Keys:
