@@ -434,6 +434,7 @@ nnoremap <leader>os :SessionOpen<space>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap ; :CtrlPBuffer<cr>
+vnoremap <silent> <Enter> :EasyAlign<Enter>
 
 " }}}
 " Compiling --------------------------------------------------------------- {{{
