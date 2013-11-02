@@ -141,6 +141,10 @@ nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:CtrlP<cr>
 nnoremap <leader>ma :silent !open -a Marked.app '%:p'<cr>
 " Disable "F1 for help"
 nnoremap <F1> <nop>
+" Open help in a vertical split instead of the default horizontal split
+" http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
+cabbrev h <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'h')<cr>
+cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>
 
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
