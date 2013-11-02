@@ -84,6 +84,10 @@ set formatoptions+=croqn
 "                  ||+---- Insert comment leader after 'o' or 'O'
 "                  |+----- Insert comment leader after <Enter>
 "                  +------ Auto-wrap comments
+" Delete comment character when joining commented lines
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j
+endif
 
 set shortmess=aTItO
 "             |||||
