@@ -9,4 +9,6 @@ User johno
 # Multiplex multiple connections
 ControlMaster auto
 ControlPath ~/.ssh/master-%r@%h:%p
-ControlPersist yes
+# TODO figure out how to have the following either work on Linux-based systems
+#      or just not take effect
+# ControlPersist yes
