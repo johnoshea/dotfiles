@@ -54,7 +54,6 @@ make_symlinks () {
     ln -sf ~/${DOTFILES}/inputrc ~/.inputrc
     ln -sf ~/${DOTFILES}/noserc ~/.noserc
     ln -sf ~/${DOTFILES}/psqlrc ~/.psqlrc
-    ln -sf ~/${DOTFILES}/rvmrc ~/.rvmrc
     if [ ! -d ~/.ssh ]; then
         mkdir ~/.ssh
     fi
