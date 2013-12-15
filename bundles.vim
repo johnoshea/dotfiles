@@ -81,8 +81,6 @@ Bundle 'jelera/vim-javascript-syntax'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'sjl/badwolf'
-Bundle 'Zenburn'
 Bundle 'dhruvasagar/vim-railscasts-theme'
 if has('gui')
     " Needed for pre 7.3 vims
