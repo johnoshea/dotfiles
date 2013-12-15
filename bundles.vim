@@ -44,7 +44,7 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'godlygeek/tabular'
 Bundle 'paradigm/TextObjectify'
 Bundle 'dhruvasagar/vim-table-mode'
-if has("patch584")
+if v:version > 703 || v:version == 703 && has("patch584")
     Bundle "Valloric/YouCompleteMe"
 endif
 Bundle 'tomtom/tcomment_vim'
