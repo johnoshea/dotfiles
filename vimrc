@@ -881,9 +881,6 @@ let g:pymode_folding = 0
 " Stop easytags complaining
 let g:easytags_updatetime_warn = 2000
 " }}}
-" NerdTree ---------------------------------------------------------------- {{{
-nnoremap <leader>n :NERDTreeToggle<CR>
-" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/Code/dotfiles/vimrc<cr>:lcd ~/Code/dotfiles<cr>

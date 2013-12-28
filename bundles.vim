@@ -28,7 +28,6 @@ Bundle 'scrooloose/syntastic'
 " Navigation
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
 
 " Tags
