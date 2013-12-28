@@ -97,6 +97,7 @@ Bundle 'sheerun/vim-polyglot'
 Bundle 'mattn/emmet-vim'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'osyo-manga/vim-over'
+Bundle 'tpope/vim-vinegar'
 
 filetype plugin indent on       " Needed for Vundle
 
