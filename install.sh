@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 main () {
     DOTFILES="Code/dotfiles"
@@ -27,6 +27,11 @@ main () {
         update_vim_submodules
         update_zprezto_submodules
     fi
+
+    if [ "`uname -s`" == "Darwin" ]; then
+        echo "Applying OSX-specific settings"
+        source ~/${DOTFILES}/osx
+    fi
 }
 
 update_repos () {
@@ -54,6 +59,8 @@ make_symlinks () {
     ln -sf ~/${DOTFILES}/inputrc ~/.inputrc
     ln -sf ~/${DOTFILES}/noserc ~/.noserc
     ln -sf ~/${DOTFILES}/psqlrc ~/.psqlrc
+    ln -sf ~/${DOTFILES}/curlrc ~/.curlrc
+    ln -sf ~/${DOTFILES}/wgetrc ~/.wgetrc
     if [ ! -d ~/.ssh ]; then
         mkdir ~/.ssh
     fi
@@ -76,7 +83,7 @@ make_symlinks () {
 update_vim_submodules () {
     echo "Updating vim submodules"
     cd ~/${DOTFILES}
-    vim -u bundles.vim +BundleInstall! +qa
+    TERM=xterm-256color vim -u bundles.vim +BundleInstall! +qa
 }
 
 update_zprezto_submodules () {
