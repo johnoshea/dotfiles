@@ -879,7 +879,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_folding = 0
 
 " Stop easytags complaining
-let g:easytags_updatetime_warn = 2000
+let g:easytags_updatetime_warn = 0
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
