@@ -1009,6 +1009,9 @@ augroup FTOptions
     autocmd FileType help setlocal ai fo+=2n | silent! setlocal nospell
     autocmd FileType help nnoremap <silent><buffer> q :q<CR>
     autocmd FileType html setlocal iskeyword+=~
+    autocmd FileType html let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
+    autocmd FileType html let g:html_indent_script1="inc"
+    autocmd FileType html let g:html_indent_style1="inc"
     autocmd FileType perl silent! compiler perl
     autocmd FileType text,txt setlocal tw=78 linebreak nolist
     autocmd FileType vim  setlocal ai et sta sw=4 sts=4 keywordprg=:help
