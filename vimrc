@@ -959,6 +959,15 @@ augroup FTMisc
             \ unlet b:chmod_exe |
             \ if getline(1) =~ '^#!' | let b:chmod_new="+x" | endif |
             \ endif
+
+    function! EnsureDirExists ()
+      let required_dir = expand("%:h")
+      if !isdirectory(required_dir)
+        call mkdir(required_dir, 'p')
+      endif
+    endfunction
+    autocmd BufWritePre * :call EnsureDirExists()
+
     autocmd BufWritePost,FileWritePost * if exists("b:chmod_new")|
             \ silent! execute "!chmod ".b:chmod_new." <afile>"|
             \ unlet b:chmod_new|
