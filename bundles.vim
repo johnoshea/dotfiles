@@ -26,7 +26,6 @@ Bundle 'klen/python-mode'
 Bundle 'scrooloose/syntastic'
 
 " Navigation
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 
@@ -98,6 +97,8 @@ Bundle 'mattn/emmet-vim'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'osyo-manga/vim-over'
 Bundle 'tpope/vim-vinegar'
+" Swap out easymotion for vim-sneak
+Bundle 'justinmk/vim-sneak'
 
 filetype plugin indent on       " Needed for Vundle
 
