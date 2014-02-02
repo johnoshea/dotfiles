@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/vundle/
 filetype off
 call vundle#rc()
 
-" let Vundle manage Vundle
+" let Vundle mange Vundle
 " required!
 Bundle 'gmarik/vundle'
 
@@ -28,6 +28,7 @@ Bundle 'scrooloose/syntastic'
 " Navigation
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 
 " Tags
 Bundle 'majutsushi/tagbar'
@@ -97,8 +98,31 @@ Bundle 'mattn/emmet-vim'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'osyo-manga/vim-over'
 Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-markdown'
+
 " Swap out easymotion for vim-sneak
 Bundle 'justinmk/vim-sneak'
+
+" ----------------------------------------------------------------------------
+" Adds gr command to replace text (takes a motion) similar to v(motion)p but
+" also cuts text into black hole register so it is repeatable. So really it's
+" similar to v(motion)"_p
+" ----------------------------------------------------------------------------
+Bundle 'ReplaceWithRegister'
+
+" ColorV is a color view/pick/edit/design/scheme tool
+Bundle 'Rykka/colorv.vim'
+" needed for fetching schemes online.
+Bundle 'mattn/webapi-vim'
+
+" gitv is a 'gitk clone' plugin
+" Usage:
+"   :Gitv
+Bundle 'gregsexton/gitv'
+
+" vim-pentadactyl syntax
+Bundle 'joedicastro/vim-pentadactyl'
 
 filetype plugin indent on       " Needed for Vundle
 
