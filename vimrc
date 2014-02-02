@@ -832,15 +832,17 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
 " }}}
-" EasyMotion -------------------------------------------------------------- {{{
-function! g:QuickMotion()
-  let s=&scrolloff
-  setlocal scrolloff=0
-  keepjumps normal! H
-  call EasyMotion#F(0, 0)
-  let &l:scrolloff = s
-endfunction
-nnoremap <silent> <Space> :call g:QuickMotion()<cr>
+" vim-sneak --------------------------------------------------------------- {{{
+nmap f <Plug>SneakForward
+xmap f <Plug>VSneakForward
+nmap F <Plug>SneakBackward
+xmap F <Plug>VSneakBackward
+nmap s <Plug>SneakStreak
+
+nmap <enter> <Plug>SneakNext
+xmap <enter> <Plug>VSneakNext
+nmap <bs> <Plug>SneakPrevious
+xmap <bs> <Plug>VSneakPrevious
 " }}}
 " Python mode ------------------------------------------------------------- {{{
 " Keys:
