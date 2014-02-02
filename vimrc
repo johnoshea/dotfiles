@@ -151,6 +151,34 @@ cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>
 " Try using space to toggle folds
 nnoremap <space> za
 
+" TODO find out what's borking my command windodw
+" Experimental - not sure how responsive this will be on a spinning disk
+" machine
+"
+" Swap default ':', '/' and '?' with cmdline-window equivalent.
+nnoremap : q:
+xnoremap : q:
+nnoremap / q/
+xnoremap / q/
+nnoremap ? q?
+xnoremap ? q?
+nnoremap q: :
+xnoremap q: :
+nnoremap q/ /
+xnoremap q/ /
+nnoremap q? ?
+xnoremap q? ?
+
+augroup command_window
+    autocmd!
+    " have <Ctrl-C> leave cmdline-window
+    autocmd CmdwinEnter * nnoremap <buffer> <C-c> :q\|echo ""<cr>
+    autocmd CmdwinEnter * inoremap <buffer> <C-c> <esc>:q\|echo ""<cr>
+    " start command line window in insert mode and no line numbers
+    autocmd CmdwinEnter * startinsert
+    autocmd CmdwinEnter * set nonumber
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+augroup END
 
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
