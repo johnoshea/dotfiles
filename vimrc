@@ -37,6 +37,7 @@ set visualbell                  " Flash instead of beeping
 set browsedir=current           " Open up the file-browser in the current directory
 set encoding=utf-8              " UTF-8 please, this is the 21st century
 set tenc=utf-8                  " And set UTF-8 for the terminal too
+set nobomb                      " Don't write a Byte Order Mark
 set matchpairs+=<:>             " Match angle-brackets as well by default
 set linebreak                   " Break lines at a sensible place
 set noerrorbells                " Error bells are annoying
