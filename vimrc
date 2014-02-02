@@ -148,6 +148,9 @@ nnoremap <F1> <nop>
 " http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
 cabbrev h <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'h')<cr>
 cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>
+" Try using space to toggle folds
+nnoremap <space> za
+
 
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
