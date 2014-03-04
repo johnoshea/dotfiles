@@ -252,9 +252,9 @@ vnoremap <silent> # :<C-U>
 " }}}
 " Folding ----------------------------------------------------------------- {{{
 set foldenable                  " Enable folds
-set foldmethod=marker           " Try using manual folds for a while
+set foldmethod=indent           " Try using indent-based folds for a while
 set foldnestmax=4               " Only go 4 levels deep
-set foldlevel=4                 " By default, show them all though
+set foldlevel=99                " By default, show them all though
                                 " The following open closed folds
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 
