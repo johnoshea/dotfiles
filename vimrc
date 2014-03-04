@@ -190,6 +190,7 @@ set softtabstop=4               " # spaces that a tab counts for
 set expandtab                   " Turn all tabs to spaces on save
 set smarttab                    " Use 'shiftwidth' spaces instead of tabs
 set autoindent                  " Copy indent from current line when starting a new one
+filetype plugin indent on
 
 " }}}
 " Searching --------------------------------------------------------------- {{{
