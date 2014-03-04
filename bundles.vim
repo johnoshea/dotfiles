@@ -16,8 +16,6 @@ Bundle 'gmarik/vundle'
 " Bundles ----------------------------------------------------------------- {{{
 
 " Completion
-" Supertab needs to load before UltiSnips
-Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 Bundle 'kana/vim-smartinput'
 
