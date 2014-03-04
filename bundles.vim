@@ -39,11 +39,10 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'tpope/vim-surround'
 Bundle 'godlygeek/tabular'
-Bundle 'paradigm/TextObjectify'
 Bundle 'dhruvasagar/vim-table-mode'
-if v:version > 703 || v:version == 703 && has("patch584")
-    Bundle "Valloric/YouCompleteMe"
-endif
+" if v:version > 703 || v:version == 703 && has("patch584")
+"     Bundle "Valloric/YouCompleteMe"
+" endif
 Bundle 'tomtom/tcomment_vim'
 
 " Git
@@ -121,6 +120,12 @@ Bundle 'gregsexton/gitv'
 
 " vim-pentadactyl syntax
 Bundle 'joedicastro/vim-pentadactyl'
+
+" Add new text objects
+Bundle 'wellle/targets.vim'
+
+" Swap text using cx...
+Bundle 'tommcdo/vim-exchange'
 
 filetype plugin indent on       " Needed for Vundle
 
