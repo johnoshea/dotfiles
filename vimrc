@@ -835,10 +835,6 @@ vnoremap ! :ClamVisual<space>
 " Indent Guides ----------------------------------------------------------- {{{
 let g:indent_guides_guide_size = 1
 " }}}
-" SuperTab ---------------------------------------------------------------- {{{
-let g:SuperTabSetDefaultCompletionType = 'context'
-let g:SuperTabDefaultCompletionType = '<C-Tab>'
-" }}}
 " YouCompleteMe ----------------------------------------------------------- {{{
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
