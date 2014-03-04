@@ -162,6 +162,23 @@ augroup command_window
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 augroup END
 
+" Zip Right
+"
+" Moves the character under the cursor to the end of the line.  Handy when you
+" have something like:
+"
+"     foo
+"
+" And you want to wrap it in a method call, so you type:
+"
+"     println()foo
+"
+" Once you hit escape your cursor is on the closing paren, so you can 'zip' it
+" over to the right with this mapping.
+"
+" This should preserve your last yank/delete as well.
+nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
+
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
 " For an explanation of the 'tabs vs spaces' used below, see
