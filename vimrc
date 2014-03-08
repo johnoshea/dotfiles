@@ -865,7 +865,7 @@ nmap f <Plug>SneakForward
 xmap f <Plug>VSneakForward
 nmap F <Plug>SneakBackward
 xmap F <Plug>VSneakBackward
-nmap s <Plug>SneakStreak
+let g:sneak#streak = 1
 
 nmap <enter> <Plug>SneakNext
 xmap <enter> <Plug>VSneakNext
