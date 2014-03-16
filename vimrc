@@ -561,43 +561,6 @@ inoremap <C-j> <C-o>J
 " }}}
 " }}}
 " Filetypes --------------------------------------------------------------- {{{
-" CSS --------------------------------------------------------------------- {{{
-augroup ft_css
-    au!
-
-    au BufNewFile,BufRead *.less setlocal filetype=less
-
-    au Filetype less,css setlocal foldmethod=marker
-    au Filetype less,css setlocal foldmarker={,}
-    au Filetype less,css setlocal omnifunc=csscomplete#CompleteCSS
-    au Filetype less,css setlocal iskeyword+=-
-
-    " Use <leader>S to sort properties.  Turns this:
-    "
-    "     p {
-    "         width: 200px;
-    "         height: 100px;
-    "         background: red;
-    "
-    "         ...
-    "     }
-    "
-    " into this:
-
-    "     p {
-    "         background: red;
-    "         height: 100px;
-    "         width: 200px;
-    "
-    "         ...
-    "     }
-    au BufNewFile,BufRead *.less,*.css nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
-
-    " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
-    " positioned inside of them AND the following code doesn't get unfolded.
-    au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
-augroup END
-
 " }}}
 " Django ------------------------------------------------------------------ {{{
 augroup ft_django
@@ -1071,14 +1034,12 @@ augroup FTOptions
     autocmd FileType markdown               setlocal ai et sta sw=2 sts=2 tw=72
     autocmd FileType javascript             setlocal ai et sta sw=2 sts=2 ts=2 cin isk+=$
     autocmd FileType apache,sql             setlocal ai et sta sw=4 sts=4
-    autocmd FileType tex,css,scss           setlocal ai et sta sw=2 sts=2
     autocmd FileType html,xhtml             setlocal ai et sta sw=2 sts=2
     autocmd FileType xml,xsd,xslt           setlocal ai et sta sw=2 sts=2 ts=2
     autocmd FileType text,txt,mail          setlocal ai com=fb:*,fb:-,n:>
     autocmd FileType sh,zsh,csh             inoremap <silent> <buffer> <C-X>! #!/bin/<C-R>=&ft<CR>
     autocmd FileType perl,python,ruby       inoremap <silent> <buffer> <C-X>! #!/usr/bin/env <C-R>=&ft<CR>
     autocmd FileType sh,zsh,csh,tcsh,perl,python,ruby imap <buffer> <C-X>& <C-X>!<Esc>o <C-U># $I<C-V>d$<Esc>o <C-U><C-X>^<Esc>o <C-U><C-G>u
-    autocmd FileType css  silent! setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
     autocmd FileType gitcommit,gitrebase setlocal colorcolumn=50,72
     autocmd FileType gitcommit setlocal spell
