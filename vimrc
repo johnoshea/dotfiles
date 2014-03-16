@@ -1034,7 +1034,6 @@ augroup FTOptions
     autocmd FileType markdown               setlocal ai et sta sw=2 sts=2 tw=72
     autocmd FileType javascript             setlocal ai et sta sw=2 sts=2 ts=2 cin isk+=$
     autocmd FileType apache,sql             setlocal ai et sta sw=4 sts=4
-    autocmd FileType html,xhtml             setlocal ai et sta sw=2 sts=2
     autocmd FileType xml,xsd,xslt           setlocal ai et sta sw=2 sts=2 ts=2
     autocmd FileType text,txt,mail          setlocal ai com=fb:*,fb:-,n:>
     autocmd FileType sh,zsh,csh             inoremap <silent> <buffer> <C-X>! #!/bin/<C-R>=&ft<CR>
@@ -1048,10 +1047,6 @@ augroup FTOptions
     autocmd FileType help setlocal nospell
     autocmd FileType help setlocal ai fo+=2n | silent! setlocal nospell
     autocmd FileType help nnoremap <silent><buffer> q :q<CR>
-    autocmd FileType html setlocal iskeyword+=~
-    autocmd FileType html let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
-    autocmd FileType html let g:html_indent_script1="inc"
-    autocmd FileType html let g:html_indent_style1="inc"
     autocmd FileType perl silent! compiler perl
     autocmd FileType text,txt setlocal tw=78 linebreak nolist
     autocmd FileType vim  setlocal ai et sta sw=4 sts=4 keywordprg=:help
