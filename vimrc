@@ -923,7 +923,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup FTCheck
     autocmd!
     autocmd BufNewFile,BufRead */apache2/[ms]*-*/* set ft=apache
-    autocmd BufNewFile,BufRead smb.conf.master set ft=samba
 augroup END
 
 " }}}
