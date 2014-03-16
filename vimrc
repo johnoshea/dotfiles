@@ -561,7 +561,6 @@ inoremap <C-j> <C-o>J
 " }}}
 " }}}
 " Filetypes --------------------------------------------------------------- {{{
-" }}}
 " Text -------------------------------------------------------------------- {{{
 augroup Text
     autocmd FileType text setlocal textwidth=78
@@ -576,15 +575,6 @@ augroup END
 " Auto-clean fugitive buffers.
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" }}}
-" Zsh --------------------------------------------------------------------- {{{
-" Correctly syntax highlight our various zsh-related files
-autocmd BufEnter */oh-my-zsh/* setfiletype zsh
-" }}}
-" Json -------------------------------------------------------------------- {{{
-nnoremap <leader>j !!python -mjson.tool<cr>
-nnoremap <leader>J :%!python -mjson.tool<cr>
-vnoremap <leader>j :!python -mjson.tool<cr>
 " }}}
 " }}}
 " Arrow keys -------------------------------------------------------------- {{{
@@ -673,9 +663,6 @@ nnoremap Q gqap
 
 " }}}
 " Plugin settings --------------------------------------------------------- {{{
-" Ultisnips --------------------------------------------------------------- {{{
-
-" }}}
 " Airline ----------------------------------------------------------------- {{{
 let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
@@ -795,12 +782,6 @@ let g:tagbar_singleclick = 1
 let g:tagbar_usearrows = 1
 
 " }}}
-" Solarized --------------------------------------------------------------- {{{
-let g:solarized_termcolors=256
-let g:solarized_contrast = "high"
-let g:solarized_termtrans = 0
-
-" }}}
 " Syntastic --------------------------------------------------------------- {{{
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 1
@@ -847,7 +828,6 @@ let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 let g:ycm_collect_identifiers_from_tags_files = 1
-let g:SuperTabDefaultCompletionType = '<C-Tab>'
 " }}}
 " vim-sneak --------------------------------------------------------------- {{{
 nmap f <Plug>SneakForward
@@ -911,9 +891,7 @@ nnoremap <leader>v :e ~/Code/dotfiles/vimrc<cr>:lcd ~/Code/dotfiles<cr>
 " automatically source the .vimrc file if I change it
 " the bang (!) forces it to overwrite this command rather than stack it
 au! BufWritePost .vimrc :source ~/.vimrc
-au! BufWritePost .gvimrc :source ~/.gvimrc
 au! BufWritePost vimrc :source ~/.vimrc
-au! BufWritePost gvimrc :source ~/.gvimrc
 
 " }}}
 " Text objects ------------------------------------------------------------ {{{
@@ -955,11 +933,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup FTCheck
     autocmd!
     autocmd BufNewFile,BufRead */apache2/[ms]*-*/* set ft=apache
-    autocmd BufNewFile,BufRead /etc/udev/*.rules set ft=udev
-    autocmd BufRead * if ! did_filetype() && getline(1)." ".getline(2).
-            \ " ".getline(3) =~? '<\%(!DOCTYPE \)\=html\>' | setf html | endif
     autocmd BufNewFile,BufRead *.txt,README,INSTALL,NEWS,TODO if &ft == ""|set ft=text|endif
-    autocmd BufNewFile,BufRead *vim_colors set ft=vim
     autocmd BufNewFile,BufRead smb.conf.master set ft=samba
 augroup END
 
@@ -968,14 +942,6 @@ augroup END
 " Bunch of stuff lifted from Tim Pope's vimrc
 augroup FTMisc
     autocmd!
-
-    autocmd BufNewFile */init.d/*
-            \ if filereadable("/etc/init.d/skeleton") |
-            \   0r /etc/init.d/skeleton |
-            \   $delete |
-            \   silent! execute "%s/\\$\\(Id\\):[^$]*\\$/$\\1$/eg" |
-            \ endif |
-            \ set ft=sh | 1
 
     autocmd BufNewFile  * let b:chmod_exe=1
     autocmd BufWritePre * if exists("b:chmod_exe") |
