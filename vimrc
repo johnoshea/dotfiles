@@ -36,6 +36,7 @@ set whichwrap+=<,>,[,]          " <left> and <right> move over line endings
 set visualbell                  " Flash instead of beeping
 set browsedir=current           " Open up the file-browser in the current directory
 set encoding=utf-8              " UTF-8 please, this is the 21st century
+set termencoding=utf-8          " UTF-8 please, this is the 21st century
 set tenc=utf-8                  " And set UTF-8 for the terminal too
 set nobomb                      " Don't write a Byte Order Mark
 set matchpairs+=<:>             " Match angle-brackets as well by default
@@ -108,6 +109,57 @@ set completeopt=longest,menu,menuone,preview
 "               |       +------- Use popup menu with completions
 "               +--------------- Insert longest completion match
 
+
+" }}}
+" Colors/GUI -------------------------------------------------------------- {{{
+let os=substitute(system('uname'), '\n', '', '')
+
+if has('gui_running')
+  colorscheme railscasts
+
+  set guioptions=egmt
+
+    set lines=60
+    set columns=180
+
+  if os == 'Darwin'
+    set guifont=Menlo:h14
+    set fuoptions=maxvert,maxhorz
+    set clipboard^=unnamed
+
+  elseif os == 'Linux'
+    set guifont=Bitstream\ Vera\ Sans\ Mono:h10
+    set guioptions-=m
+    set clipboard^=unnamedplus
+
+  elseif os = 'Windows'
+    set guifont=Consolas:h12
+    set guioptions-=m
+    set clipboard^=unnamedplus
+
+  endif
+
+else
+  if &t_Co >= 256
+    colorscheme railscasts
+
+  elseif &t_Co < 256
+    colorscheme darkblue
+
+  endif
+
+  if os == 'Darwin'
+    set clipboard^=unnamed
+
+  elseif os == 'Linux'
+    set clipboard^=unnamedplus
+
+  elseif os == 'Windows'
+    set clipboard^=unnamed
+
+  endif
+
+endif
 
 " }}}
 " Keystrokes -------------------------------------------------------------- {{{
