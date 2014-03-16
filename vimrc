@@ -561,16 +561,6 @@ inoremap <C-j> <C-o>J
 " }}}
 " }}}
 " Filetypes --------------------------------------------------------------- {{{
-" Text -------------------------------------------------------------------- {{{
-augroup Text
-    autocmd FileType text setlocal textwidth=78
-    autocmd FileType text setlocal dictionary=/usr/share/dict/words
-    autocmd FileType text setlocal spelllang=en_gb
-    autocmd FileType text setlocal spell
-    autocmd FileType text setlocal spellsuggest=10
-augroup END
-
-" }}}
 " Fugitive ---------------------------------------------------------------- {{{
 " Auto-clean fugitive buffers.
 autocmd BufReadPost fugitive://* set bufhidden=delete
@@ -933,7 +923,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup FTCheck
     autocmd!
     autocmd BufNewFile,BufRead */apache2/[ms]*-*/* set ft=apache
-    autocmd BufNewFile,BufRead *.txt,README,INSTALL,NEWS,TODO if &ft == ""|set ft=text|endif
     autocmd BufNewFile,BufRead smb.conf.master set ft=samba
 augroup END
 
@@ -982,7 +971,6 @@ augroup FTOptions
     autocmd FileType javascript             setlocal ai et sta sw=2 sts=2 ts=2 cin isk+=$
     autocmd FileType apache,sql             setlocal ai et sta sw=4 sts=4
     autocmd FileType xml,xsd,xslt           setlocal ai et sta sw=2 sts=2 ts=2
-    autocmd FileType text,txt,mail          setlocal ai com=fb:*,fb:-,n:>
     autocmd FileType sh,zsh,csh             inoremap <silent> <buffer> <C-X>! #!/bin/<C-R>=&ft<CR>
     autocmd FileType perl,python,ruby       inoremap <silent> <buffer> <C-X>! #!/usr/bin/env <C-R>=&ft<CR>
     autocmd FileType sh,zsh,csh,tcsh,perl,python,ruby imap <buffer> <C-X>& <C-X>!<Esc>o <C-U># $I<C-V>d$<Esc>o <C-U><C-X>^<Esc>o <C-U><C-G>u
@@ -995,7 +983,6 @@ augroup FTOptions
     autocmd FileType help setlocal ai fo+=2n | silent! setlocal nospell
     autocmd FileType help nnoremap <silent><buffer> q :q<CR>
     autocmd FileType perl silent! compiler perl
-    autocmd FileType text,txt setlocal tw=78 linebreak nolist
     autocmd FileType vim  setlocal ai et sta sw=4 sts=4 keywordprg=:help
     autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
     autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
