@@ -142,21 +142,16 @@ if has('gui_running')
 else
   if &t_Co >= 256
     colorscheme railscasts
-
-  elseif &t_Co < 256
+  else
     colorscheme darkblue
-
   endif
 
   if os == 'Darwin'
     set clipboard^=unnamed
-
   elseif os == 'Linux'
     set clipboard^=unnamedplus
-
   elseif os == 'Windows'
     set clipboard^=unnamed
-
   endif
 
 endif
@@ -335,7 +330,6 @@ set foldtext=MyFoldText()
 " }}}
 " Colors ------------------------------------------------------------------ {{{
 
-source ~/.vim_colors
 " Switch syntax highlighting on, when the terminal has colors
 if &t_Co > 2 || has("gui_running")
     syntax on
