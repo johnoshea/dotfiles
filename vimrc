@@ -919,11 +919,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " }}}
-" Filename -> filetype mappings ------------------------------------------- {{{
-augroup FTCheck
-    autocmd!
-    autocmd BufNewFile,BufRead */apache2/[ms]*-*/* set ft=apache
-augroup END
 
 " }}}
 " Filetype-specific actions ----------------------------------------------- {{{
@@ -968,7 +963,6 @@ augroup FTOptions
     autocmd FileType perl,python            setlocal ai et sta sw=4 sts=4
     autocmd FileType markdown               setlocal ai et sta sw=2 sts=2 tw=72
     autocmd FileType javascript             setlocal ai et sta sw=2 sts=2 ts=2 cin isk+=$
-    autocmd FileType apache,sql             setlocal ai et sta sw=4 sts=4
     autocmd FileType xml,xsd,xslt           setlocal ai et sta sw=2 sts=2 ts=2
     autocmd FileType sh,zsh,csh             inoremap <silent> <buffer> <C-X>! #!/bin/<C-R>=&ft<CR>
     autocmd FileType perl,python,ruby       inoremap <silent> <buffer> <C-X>! #!/usr/bin/env <C-R>=&ft<CR>
