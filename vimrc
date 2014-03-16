@@ -957,8 +957,6 @@ augroup FTOptions
     autocmd FileType markdown               setlocal ai et sta sw=2 sts=2 tw=72
     autocmd FileType javascript             setlocal ai et sta sw=2 sts=2 ts=2 cin isk+=$
     autocmd FileType xml,xsd,xslt           setlocal ai et sta sw=2 sts=2 ts=2
-    autocmd FileType sh,zsh,csh             inoremap <silent> <buffer> <C-X>! #!/bin/<C-R>=&ft<CR>
-    autocmd FileType sh,zsh,csh,tcsh,perl,python,ruby imap <buffer> <C-X>& <C-X>!<Esc>o <C-U># $I<C-V>d$<Esc>o <C-U><C-X>^<Esc>o <C-U><C-G>u
     autocmd FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
     autocmd FileType gitcommit,gitrebase setlocal colorcolumn=50,72
     autocmd FileType gitcommit setlocal spell
