@@ -914,10 +914,6 @@ endfunction
 " Autocommands ------------------------------------------------------------ {{{
 " Autocomplete ------------------------------------------------------------ {{{
 autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" }}}
 
 " }}}
 " Filetype-specific actions ----------------------------------------------- {{{
@@ -952,21 +948,6 @@ augroup END
 " Filetype-specific settings ---------------------------------------------- {{{
 augroup FTOptions
     autocmd!
-    autocmd FileType c,cpp,cs,java          setlocal ai et sta sw=4 sts=4 cin
-    autocmd FileType sh,csh,zsh             setlocal ai et sta sw=4 sts=4
-    autocmd FileType markdown               setlocal ai et sta sw=2 sts=2 tw=72
-    autocmd FileType javascript             setlocal ai et sta sw=2 sts=2 ts=2 cin isk+=$
-    autocmd FileType xml,xsd,xslt           setlocal ai et sta sw=2 sts=2 ts=2
-    autocmd FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
-    autocmd FileType gitcommit,gitrebase setlocal colorcolumn=50,72
-    autocmd FileType gitcommit setlocal spell
-    autocmd FileType gitrebase nnoremap <buffer> S :Cycle<CR>
-    " Don't spell check help
-    autocmd FileType help setlocal nospell
-    autocmd FileType help setlocal ai fo+=2n | silent! setlocal nospell
-    autocmd FileType help nnoremap <silent><buffer> q :q<CR>
-    autocmd FileType perl silent! compiler perl
-    autocmd FileType vim  setlocal ai et sta sw=4 sts=4 keywordprg=:help
     autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
     autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
 augroup END
