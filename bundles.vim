@@ -76,7 +76,6 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'jelera/vim-javascript-syntax'
 
 " Colorschemes
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'dhruvasagar/vim-railscasts-theme'
 if has('gui')
     " Needed for pre 7.3 vims
