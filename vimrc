@@ -945,11 +945,6 @@ augroup FTMisc
             \ unlet b:chmod_new|
             \ endif
 
-    autocmd BufWritePre,FileWritePre /etc/* if &ft == "dns" |
-            \ exe "normal msHmt" |
-            \ exe "gl/^\\s*\\d\\+\\s*;\\s*Serial$/normal ^\<C-A>" |
-            \ exe "normal g`tztg`s" |
-            \ endif
     autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
         \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
 augroup END
