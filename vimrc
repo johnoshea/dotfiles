@@ -914,7 +914,6 @@ endfunction
 " Autocommands ------------------------------------------------------------ {{{
 " Autocomplete ------------------------------------------------------------ {{{
 autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
@@ -955,12 +954,10 @@ augroup FTOptions
     autocmd!
     autocmd FileType c,cpp,cs,java          setlocal ai et sta sw=4 sts=4 cin
     autocmd FileType sh,csh,zsh             setlocal ai et sta sw=4 sts=4
-    autocmd FileType perl,python            setlocal ai et sta sw=4 sts=4
     autocmd FileType markdown               setlocal ai et sta sw=2 sts=2 tw=72
     autocmd FileType javascript             setlocal ai et sta sw=2 sts=2 ts=2 cin isk+=$
     autocmd FileType xml,xsd,xslt           setlocal ai et sta sw=2 sts=2 ts=2
     autocmd FileType sh,zsh,csh             inoremap <silent> <buffer> <C-X>! #!/bin/<C-R>=&ft<CR>
-    autocmd FileType perl,python,ruby       inoremap <silent> <buffer> <C-X>! #!/usr/bin/env <C-R>=&ft<CR>
     autocmd FileType sh,zsh,csh,tcsh,perl,python,ruby imap <buffer> <C-X>& <C-X>!<Esc>o <C-U># $I<C-V>d$<Esc>o <C-U><C-X>^<Esc>o <C-U><C-G>u
     autocmd FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
     autocmd FileType gitcommit,gitrebase setlocal colorcolumn=50,72
