@@ -126,5 +126,8 @@ Bundle 'wellle/targets.vim'
 " Swap text using cx...
 Bundle 'tommcdo/vim-exchange'
 
+" Expand text regions
+Bundle "terryma/vim-expand-region"
+
 filetype plugin indent on       " Needed for Vundle
 
