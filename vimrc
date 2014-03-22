@@ -151,8 +151,8 @@ endif
 
 " }}}
 " Keystrokes -------------------------------------------------------------- {{{
-let mapleader=","
-let maplocalleader="\\"
+let mapleader="\<Space>"
+let maplocalleader=","
 
 " Typos
 command! -bang E e<bang>
