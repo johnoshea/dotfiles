@@ -500,8 +500,6 @@ set pastetoggle=<localleader>p
 nnoremap <leader>b :TagbarToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
-nnoremap <leader>ss :SessionSave<space>
-nnoremap <leader>os :SessionOpen<space>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap ; :CtrlPBuffer<cr>
@@ -782,12 +780,6 @@ let g:tslime_normal_mapping = '<localleader>t'
 let g:tslime_visual_mapping = '<localleader>t'
 let g:tslime_vars_mapping = '<localleader>T'
 
-" }}}
-" vim-session ------------------------------------------------------------- {{{
-let g:session_autoload = 'no'
-let g:session_autosave = 'no'
-let g:session_default_to_last = 0
-let g:session_command_aliases = 1
 " }}}
 " Clam -------------------------------------------------------------------- {{{
 nnoremap ! :Clam<space>

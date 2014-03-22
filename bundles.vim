@@ -52,7 +52,6 @@ Bundle 'tpope/vim-git'
 " Display
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'xolox/vim-session'
 Bundle 'ZoomWin'
 Bundle 'kshenoy/vim-signature'
 Bundle 'bling/vim-airline'
@@ -128,6 +127,9 @@ Bundle 'tommcdo/vim-exchange'
 
 " Expand text regions
 Bundle "terryma/vim-expand-region"
+
+" Semi-automatic sessions
+Bundle "tpope/vim-obsession"
 
 filetype plugin indent on       " Needed for Vundle
 
