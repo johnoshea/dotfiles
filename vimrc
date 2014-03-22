@@ -10,7 +10,6 @@ end
 " For use as:
 "    $ vim -u bundles.vim +BundleInstall +q
 source ~/Code/dotfiles/bundles.vim
-"TODO work out if I need a Mac-only local bundles setup
 
 " }}}
 " Basic settings ---------------------------------------------------------- {{{
@@ -49,7 +48,6 @@ set splitright                  " When splitting vertically, split to the right
 set splitbelow                  " When splitting horizontally, split below
 set scrolloff=3                 " Don't go right to the edge of the window when scrolling
 set sidescrolloff=5             " Lines visible to the left/right of cursor when scrolling
-set tabpagemax=128              " Maximum number of tabs open
 set laststatus=2                " Always show a status line
 set modeline modelines=10       " Use modelines within first 10 lines
 set autowrite                   " Write file before some commands
@@ -195,8 +193,6 @@ nnoremap <F1> <nop>
 " http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
 cabbrev h <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'h')<cr>
 cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>
-" Try using space to toggle folds
-nnoremap <space> za
 
 augroup command_window
     autocmd!
@@ -529,10 +525,6 @@ nnoremap <leader>cp :cprev<CR>
 
 " }}}
 " Buffers ----------------------------------------------------------------- {{{
-nnoremap <D-Right> :bnext<CR>
-nnoremap <D-Left> :bprev<CR>
-inoremap <D-Right> <ESC>:bnext<CR>
-inoremap <D-Left> <ESC>:bprev<CR>
 nnoremap <C-c> <ESC>:bw<CR>
 nnoremap <C-c><C-c> <ESC>:bw!<CR>
 inoremap <C-c> <ESC>:bw<CR>
@@ -643,12 +635,6 @@ call SetArrowKeysAsTextShifters()
 
 " }}}
 " Text formatting --------------------------------------------------------- {{{
-" Change case
-nnoremap <leader>U gUiw
-nnoremap <leader>L guiw
-inoremap <C-u> <esc>gUiwea
-inoremap <C-l> <esc>guiwea
-
 " Use Q for formatting the current paragraph (or visual selection)
 vnoremap Q gq
 nnoremap Q gqap
