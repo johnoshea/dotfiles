@@ -68,7 +68,6 @@ Bundle 'christoomey/vim-tmux-navigator'
 
 " Filetypes/file formats
 Bundle 'tpope/vim-abolish'
-Bundle 'TWiki-Syntax'
 Bundle 'django.vim'
        " Javascript
 Bundle 'marijnh/tern_for_vim'
