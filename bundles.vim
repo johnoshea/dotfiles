@@ -17,6 +17,8 @@ Bundle 'gmarik/vundle'
 
 " Completion
 Bundle 'SirVer/ultisnips'
+" Ultisnips snippets are now stored in honza/vim-snippets
+Bundle 'honza/vim-snippets'
 Bundle 'kana/vim-smartinput'
 
 " Coding
