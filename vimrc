@@ -542,8 +542,6 @@ noremap <C-W><C-W> <C-W>w
 inoremap <C-k> <Esc>O
 " Keep the cursor in place while joining lines using 'J'
 nnoremap J mzJ`z
-" <ctrl>j         Join lines in insert mode
-inoremap <C-j> <C-o>J
 
 " }}}
 " }}}
