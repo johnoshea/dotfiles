@@ -108,7 +108,8 @@ set completeopt=longest,menu,menuone,preview
 let os=substitute(system('uname'), '\n', '', '')
 
 if has('gui_running')
-  colorscheme railscasts
+  let g:tomorrow_termcolors=256
+  colorscheme tomorrow
 
   set guioptions=egmt
 
@@ -134,7 +135,8 @@ if has('gui_running')
 
 else
   if &t_Co >= 256
-    colorscheme railscasts
+    let g:tomorrow_termcolors=256
+    colorscheme tomorrow
   else
     colorscheme darkblue
   endif

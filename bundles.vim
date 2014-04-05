@@ -77,6 +77,7 @@ Bundle 'jelera/vim-javascript-syntax'
 
 " Colorschemes
 Bundle 'dhruvasagar/vim-railscasts-theme'
+Bundle 'Slava/vim-colors-tomorrow'
 if has('gui')
     " Needed for pre 7.3 vims
     Bundle 'CSApprox'
