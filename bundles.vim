@@ -108,11 +108,6 @@ Bundle 'justinmk/vim-sneak'
 " ----------------------------------------------------------------------------
 Bundle 'ReplaceWithRegister'
 
-" ColorV is a color view/pick/edit/design/scheme tool
-Bundle 'Rykka/colorv.vim'
-" needed for fetching schemes online.
-Bundle 'mattn/webapi-vim'
-
 " gitv is a 'gitk clone' plugin
 " Usage:
 "   :Gitv
