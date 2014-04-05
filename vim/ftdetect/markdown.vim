@@ -1,4 +1,4 @@
-autocmd BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
+autocmd BufNewFile,BufRead,BufWrite *.markdown,*.md,*.mdown,*.mkd,*.mkdn
     \ if &ft =~# '^\%(conf\|modula2\)$' |
     \   set ft=markdown |
     \ else |
