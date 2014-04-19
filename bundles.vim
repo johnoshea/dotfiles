@@ -128,5 +128,11 @@ Bundle "terryma/vim-expand-region"
 " Semi-automatic sessions
 Bundle "tpope/vim-obsession"
 
+" Jinja syntax
+Bundle "Glench/Vim-Jinja2-Syntax"
+
+" Salt syntax/ftplugin
+Bundle "saltstack/salt-vim"
+
 filetype plugin indent on       " Needed for Vundle
 
