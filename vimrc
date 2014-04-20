@@ -70,8 +70,8 @@ set mouse=a                     " Enable the mouse for all modes
 set mousehide                   " Hide mouse while typing
 set mousemodel=popup            " Use popup menu for right mouse button
 
-set formatoptions+=croqna
-"                  |||||+- Autoformat paragraphs as I type
+set formatoptions+=croqn
+"                  |||||
 "                  ||||+-- Recognize numbered lists
 "                  |||+--- Allow formatting of comments with 'gq'
 "                  ||+---- Insert comment leader after 'o' or 'O'
