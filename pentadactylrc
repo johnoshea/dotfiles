@@ -24,8 +24,8 @@ map ',' <leader>
 
 colorscheme zenburn
 
-"set defsearch=ddg
-set defsearch=sam
+set defsearch=ddg
+"set defsearch=sam
 :command -nargs=* ddg open ddg <args>
 :command -nargs=* sam open sam <args>
 
