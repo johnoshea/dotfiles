@@ -134,5 +134,8 @@ Bundle "Glench/Vim-Jinja2-Syntax"
 " Salt syntax/ftplugin
 Bundle "saltstack/salt-vim"
 
+" Fencview - autodetect CJK and Unicode file encodings
+Bundle "fencview.vim"
+
 filetype plugin indent on       " Needed for Vundle
 
