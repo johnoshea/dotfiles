@@ -47,7 +47,7 @@ set laststatus=2                " Always show a status line
 set modeline modelines=10       " Use modelines within first 10 lines
 set autowrite                   " Write file before some commands
 set wildmenu                    " Enable wildmenu for completion
-set wildmode=full               " Complete the next full match
+set wildmode=longest:full,full  " Complete the next full match
 set synmaxcol=2048              " Don't syntax-colour long lines (too slow otherwise)
 set virtualedit=all             " Allow the cursor to move to 'invalid' places
 set complete=.,w,b,t            " Complete current buffer, other windows, other buffers and tags
