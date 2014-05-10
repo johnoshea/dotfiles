@@ -108,6 +108,7 @@ set completeopt=longest,menu,menuone,preview
 let os=substitute(system('uname'), '\n', '', '')
 
 if has('gui_running')
+  set background=dark
   let g:tomorrow_termcolors=256
   colorscheme tomorrow
 
