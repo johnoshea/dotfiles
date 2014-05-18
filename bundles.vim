@@ -4,138 +4,140 @@ set nocompatible            " Use Vim settings, rather then Vi settings.
                             " Must be first, because it changes other options
 filetype off                " Needed for Vundle
 
-set rtp+=~/.vim/bundle/vundle/
-filetype off
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle mange Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " }}}
 " Bundles ----------------------------------------------------------------- {{{
 
+" Utilities/dependencies
+Plugin 'xolox/vim-misc'
+Plugin 'tpope/vim-sleuth'
+
 " Completion
-Bundle 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 " Ultisnips snippets are now stored in honza/vim-snippets
-Bundle 'honza/vim-snippets'
-Bundle 'kana/vim-smartinput'
+Plugin 'honza/vim-snippets'
+Plugin 'kana/vim-smartinput'
 
 " Coding
-Bundle 'klen/python-mode'
-Bundle 'scrooloose/syntastic'
+Plugin 'klen/python-mode'
+Plugin 'scrooloose/syntastic'
 
 " Navigation
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 
 " Tags
-Bundle 'majutsushi/tagbar'
-Bundle 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-easytags'
 
 " Editing
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'tpope/vim-surround'
-Bundle 'godlygeek/tabular'
-Bundle 'dhruvasagar/vim-table-mode'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'tpope/vim-surround'
+Plugin 'godlygeek/tabular'
+Plugin 'dhruvasagar/vim-table-mode'
 " if v:version > 703 || v:version == 703 && has("patch584")
-"     Bundle "Valloric/YouCompleteMe"
+"     Plugin "Valloric/YouCompleteMe"
 " endif
-Bundle 'tomtom/tcomment_vim'
+Plugin 'tomtom/tcomment_vim'
 
 " Git
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
 
 " Display
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'ZoomWin'
-Bundle 'kshenoy/vim-signature'
-Bundle 'bling/vim-airline'
-Bundle 'mhinz/vim-signify'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'ZoomWin'
+Plugin 'kshenoy/vim-signature'
+Plugin 'bling/vim-airline'
+Plugin 'mhinz/vim-signify'
 
 " System / program integration
-Bundle 'sjl/clam.vim'
-Bundle 'sjl/vitality.vim'
-Bundle 'sjl/tslime.vim'
-Bundle 'LargeFile'
-Bundle 'tpope/vim-dispatch'
-Bundle 'szw/vim-tags'
-Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'sjl/clam.vim'
+Plugin 'sjl/vitality.vim'
+Plugin 'sjl/tslime.vim'
+Plugin 'LargeFile'
+Plugin 'tpope/vim-dispatch'
+Plugin 'szw/vim-tags'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Filetypes/file formats
-Bundle 'tpope/vim-abolish'
-Bundle 'django.vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'django.vim'
        " Javascript
-Bundle 'marijnh/tern_for_vim'
-Bundle 'jelera/vim-javascript-syntax'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'jelera/vim-javascript-syntax'
 
 " Colorschemes
-Bundle 'dhruvasagar/vim-railscasts-theme'
-Bundle 'Slava/vim-colors-tomorrow'
+Plugin 'dhruvasagar/vim-railscasts-theme'
+Plugin 'Slava/vim-colors-tomorrow'
 if has('gui')
     " Needed for pre 7.3 vims
-    Bundle 'CSApprox'
+    Plugin 'CSApprox'
 end
 
-" Utilities/dependencies
-Bundle 'xolox/vim-misc'
-Bundle 'tpope/vim-sleuth'
-
 " Experimental
-Bundle 'tpope/vim-eunuch'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'sheerun/vim-polyglot'
-Bundle 'mattn/emmet-vim'
-Bundle 'jmcantrell/vim-virtualenv'
-Bundle 'osyo-manga/vim-over'
-Bundle 'tpope/vim-vinegar'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-markdown'
+Plugin 'tpope/vim-eunuch'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'mattn/emmet-vim'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'osyo-manga/vim-over'
+Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-markdown'
 
 " Swap out easymotion for vim-sneak
-Bundle 'justinmk/vim-sneak'
+Plugin 'justinmk/vim-sneak'
 
 " ----------------------------------------------------------------------------
 " Adds gr command to replace text (takes a motion) similar to v(motion)p but
 " also cuts text into black hole register so it is repeatable. So really it's
 " similar to v(motion)"_p
 " ----------------------------------------------------------------------------
-Bundle 'ReplaceWithRegister'
+Plugin 'ReplaceWithRegister'
 
 " gitv is a 'gitk clone' plugin
 " Usage:
 "   :Gitv
-Bundle 'gregsexton/gitv'
+Plugin 'gregsexton/gitv'
 
 " vim-pentadactyl syntax
-Bundle 'joedicastro/vim-pentadactyl'
+Plugin 'joedicastro/vim-pentadactyl'
 
 " Add new text objects
-Bundle 'wellle/targets.vim'
+Plugin 'wellle/targets.vim'
 
 " Swap text using cx...
-Bundle 'tommcdo/vim-exchange'
+Plugin 'tommcdo/vim-exchange'
 
 " Expand text regions
-Bundle "terryma/vim-expand-region"
+Plugin 'terryma/vim-expand-region'
 
 " Semi-automatic sessions
-Bundle "tpope/vim-obsession"
+Plugin 'tpope/vim-obsession'
 
 " Jinja syntax
-Bundle "Glench/Vim-Jinja2-Syntax"
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Salt syntax/ftplugin
-Bundle "saltstack/salt-vim"
+Plugin 'saltstack/salt-vim'
 
 " Fencview - autodetect CJK and Unicode file encodings
-Bundle "fencview.vim"
+Plugin 'fencview.vim'
 
+" 'Dash' plugin
+Bundle 'rizzatti/dash.vim'
+
+call vundle#end()
 filetype plugin indent on       " Needed for Vundle
-
