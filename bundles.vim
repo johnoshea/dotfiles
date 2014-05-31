@@ -139,6 +139,8 @@ Plugin 'fencview.vim'
 " 'Dash' plugin
 Plugin 'rizzatti/dash.vim'
 
+" 'splitjoin' plugin
+Plugin 'AndrewRadev/splitjoin.vim'
 
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle

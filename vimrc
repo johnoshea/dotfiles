@@ -850,6 +850,13 @@ let g:pymode_folding = 0
 " Stop easytags complaining
 let g:easytags_updatetime_warn = 0
 " }}}
+" splitjoin --------------------------------------------------------------- {{{
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+
+nnoremap sj :SplitjoinSplit<cr>
+nnoremap sk :SplitjoinJoin<cr>
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/Code/dotfiles/vimrc<cr>:lcd ~/Code/dotfiles<cr>
