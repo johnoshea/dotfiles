@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 " }}}
-" Bundles ----------------------------------------------------------------- {{{
+" Plugins ----------------------------------------------------------------- {{{
 
 " Utilities/dependencies
 Plugin 'xolox/vim-misc'
@@ -137,7 +137,8 @@ Plugin 'saltstack/salt-vim'
 Plugin 'fencview.vim'
 
 " 'Dash' plugin
-Bundle 'rizzatti/dash.vim'
+Plugin 'rizzatti/dash.vim'
+
 
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
