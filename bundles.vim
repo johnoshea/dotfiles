@@ -142,5 +142,8 @@ Plugin 'rizzatti/dash.vim'
 " 'splitjoin' plugin
 Plugin 'AndrewRadev/splitjoin.vim'
 
+" Provides easy code formatting in Vim by integrating existing code formatters.
+Plugin 'Chiel92/vim-autoformat'
+
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
