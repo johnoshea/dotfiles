@@ -145,5 +145,8 @@ Plugin 'AndrewRadev/splitjoin.vim'
 " Provides easy code formatting in Vim by integrating existing code formatters.
 Plugin 'Chiel92/vim-autoformat'
 
+" 'Pulse' search results
+Plugin 'inside/vim-search-pulse'
+
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle

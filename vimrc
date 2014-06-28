@@ -857,6 +857,9 @@ let g:splitjoin_join_mapping = ''
 nnoremap sj :SplitjoinSplit<cr>
 nnoremap sk :SplitjoinJoin<cr>
 " }}}
+" vim-search-pulse -------------------------------------------------------- {{{
+let g:vim_search_pulse_mode = 'pattern'
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/Code/dotfiles/vimrc<cr>:lcd ~/Code/dotfiles<cr>
