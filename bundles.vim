@@ -45,9 +45,9 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
-" if v:version > 703 || v:version == 703 && has("patch584")
-"     Plugin "Valloric/YouCompleteMe"
-" endif
+if v:version > 703 || v:version == 703 && has("patch584")
+    Plugin 'Valloric/YouCompleteMe'
+endif
 Plugin 'tomtom/tcomment_vim'
 
 " Git
