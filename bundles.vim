@@ -148,6 +148,9 @@ Plugin 'Chiel92/vim-autoformat'
 " 'Pulse' search results
 Plugin 'inside/vim-search-pulse'
 
+" Add CSS3 syntax highlighting
+Plugin 'hail2u/vim-css3-syntax'
+
 " Rainbow parentheses/braces/brackets
 Plugin 'kien/rainbow_parentheses.vim'
 
