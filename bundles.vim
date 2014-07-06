@@ -154,5 +154,8 @@ Plugin 'hail2u/vim-css3-syntax'
 " Rainbow parentheses/braces/brackets
 Plugin 'kien/rainbow_parentheses.vim'
 
+" Better JSON
+Plugin 'elzr/vim-json'
+
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
