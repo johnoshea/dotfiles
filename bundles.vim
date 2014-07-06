@@ -148,5 +148,8 @@ Plugin 'Chiel92/vim-autoformat'
 " 'Pulse' search results
 Plugin 'inside/vim-search-pulse'
 
+" Rainbow parentheses/braces/brackets
+Plugin 'kien/rainbow_parentheses.vim'
+
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle

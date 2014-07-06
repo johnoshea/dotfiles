@@ -861,6 +861,13 @@ nnoremap sk :SplitjoinJoin<cr>
 let g:vim_search_pulse_mode = 'pattern'
 " }}}
 " }}}
+" rainbow parentheses ----------------------------------------------------- {{{
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+" }}}
+" }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/Code/dotfiles/vimrc<cr>:lcd ~/Code/dotfiles<cr>
 
