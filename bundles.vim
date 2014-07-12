@@ -157,5 +157,8 @@ Plugin 'kien/rainbow_parentheses.vim'
 " Better JSON
 Plugin 'elzr/vim-json'
 
+" More better JSON
+Plugin 'tpope/vim-jdaddy'
+
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
