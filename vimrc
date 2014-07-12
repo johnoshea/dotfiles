@@ -628,12 +628,6 @@ endfunction
 call SetArrowKeysAsTextShifters()
 
 " }}}
-" Text formatting --------------------------------------------------------- {{{
-" Use Q for formatting the current paragraph (or visual selection)
-vnoremap Q gq
-nnoremap Q gqap
-
-" }}}
 " Plugin settings --------------------------------------------------------- {{{
 " Airline ----------------------------------------------------------------- {{{
 let g:airline_enable_branch = 1
