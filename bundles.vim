@@ -160,5 +160,8 @@ Plugin 'elzr/vim-json'
 " More better JSON
 Plugin 'tpope/vim-jdaddy'
 
+" Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
+Plugin 'ConradIrwin/vim-bracketed-paste'
+
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
