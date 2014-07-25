@@ -22,7 +22,7 @@ set strictfocus=*:laissez-faire
 
 map ',' <leader>
 
-colorscheme zenburn
+colorscheme vimium
 
 set defsearch=ddg
 "set defsearch=sam
