@@ -525,7 +525,7 @@ nnoremap <C-c> <ESC>:bw<CR>
 nnoremap <C-c><C-c> <ESC>:bw!<CR>
 inoremap <C-c> <ESC>:bw<CR>
 inoremap <C-c><C-c> <ESC>:bw!<CR>
-inoremap <D-s> <ESC>:w<CR>i
+inoremap <D-s> <c-o>:w<CR>
 nnoremap <D-s> :w<CR>
 
 nnoremap gb :ls<CR>:b<Space>
