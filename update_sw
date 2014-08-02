@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+echo "*** System software"
+echo
+sudo softwareupdate -i -a
+echo "*** Homebrew"
+echo
+brew doctor
+brew update
+brew upgrade
+brew cleanup
+echo "*** npm"
+echo
+npm update npm -g
+npm update -g
+echo "*** Ruby gems"
+echo
+sudo gem update --system
+echo "*** Vim bundles"
+echo
+TERM=xterm-256color vim -u ~/Code/dotfiles/bundles.vim +BundleInstall! +qa
+echo "*** zprezto submodules"
+echo
+cd ~/Code/zprezto
+git submodule update
+git submodule foreach git pull origin master --recurse-submodules
