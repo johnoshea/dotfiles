@@ -106,7 +106,7 @@ set completeopt=longest,menu,menuone,preview
 
 " }}}
 " Colors/GUI -------------------------------------------------------------- {{{
-let os=substitute(system('uname'), '\n', '', '')
+let s:os=substitute(system('uname'), '\n', '', '')
 
 if has('gui_running')
   set background=dark
@@ -118,17 +118,17 @@ if has('gui_running')
     set lines=60
     set columns=180
 
-  if os == 'Darwin'
+  if s:os == 'Darwin'
     set guifont=Menlo:h14
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
 
-  elseif os == 'Linux'
+  elseif s:os == 'Linux'
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
     set guioptions-=m
     set clipboard^=unnamedplus
 
-  elseif os = 'Windows'
+  elseif s:os = 'Windows'
     set guifont=Consolas:h12
     set guioptions-=m
     set clipboard^=unnamedplus
@@ -143,11 +143,11 @@ else
     colorscheme darkblue
   endif
 
-  if os == 'Darwin'
+  if s:os == 'Darwin'
     set clipboard^=unnamed
-  elseif os == 'Linux'
+  elseif s:os == 'Linux'
     set clipboard^=unnamedplus
-  elseif os == 'Windows'
+  elseif s:os == 'Windows'
     set clipboard^=unnamed
   endif
 
