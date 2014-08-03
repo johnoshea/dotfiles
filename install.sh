@@ -53,6 +53,7 @@ checkout_repos () {
 make_symlinks () {
     echo "Creating dotfile symlinks"
     ln -sf ~/${DOTFILES}/ackrc ~/.ackrc
+    ln -sf ~/${DOTFILES}/agignore ~/.agignore
     ln -sf ~/${DOTFILES}/dotcss ~/.css
     ln -sf ~/${DOTFILES}/dotjs ~/.js
     ln -sf ~/${DOTFILES}/gvimrc ~/.gvimrc
