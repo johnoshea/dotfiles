@@ -898,6 +898,34 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+let g:rbpt_colorpairs = [
+    \ ['blue', 'RoyalBlue3'],
+    \ ['darkred', 'firebrick3'],
+    \ ['darkgreen', 'Seagreen3'],
+    \ ['brown', 'DarkOrchid3'],
+    \ ['darkcyan', 'Seagreen3'],
+    \ ['darkmagenta', 'RoyalBlue3'],
+    \ ['blue', 'RoyalBlue3'],
+    \ ['darkred', 'firebrick3'],
+    \ ['darkgreen', 'Seagreen3'],
+    \ ['brown', 'DarkOrchid3'],
+    \ ['darkcyan', 'Seagreen3'],
+    \ ['darkmagenta', 'RoyalBlue3'],
+    \ ['blue', 'RoyalBlue3'],
+    \ ['darkred', 'firebrick3'],
+    \ ['darkgreen', 'Seagreen3'],
+    \ ['brown', 'DarkOrchid3'],
+    \ ['darkcyan', 'Seagreen3'],
+    \ ['darkmagenta', 'RoyalBlue3'],
+    \ ['blue', 'RoyalBlue3'],
+    \ ['darkred', 'firebrick3'],
+    \ ['darkgreen', 'Seagreen3'],
+    \ ['brown', 'DarkOrchid3'],
+    \ ['darkcyan', 'Seagreen3'],
+    \ ['darkmagenta', 'RoyalBlue3'],
+\ ]
+let g:rbpt_max = 24
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
