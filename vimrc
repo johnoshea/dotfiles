@@ -103,10 +103,10 @@ set completeopt=longest,menu,menuone,preview
 "               |       +------- Use popup menu with completions
 "               +--------------- Insert longest completion match
 
+let s:os=substitute(system('uname'), '\n', '', '')
 
 " }}}
 " Colors/GUI -------------------------------------------------------------- {{{
-let s:os=substitute(system('uname'), '\n', '', '')
 
 if has('gui_running')
   set background=dark
