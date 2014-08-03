@@ -54,6 +54,7 @@ set complete=.,w,b,t            " Complete current buffer, other windows, other 
 set cmdheight=2                 " Avoid 'Press Enter' messages
 set fillchars=diff:⣿,vert:│     " Have different vertical splits for diffs
 set switchbuf=useopen           " Jump to first open window containing buffer (if possible)
+set diffopt=filler,iwhite       " show filler lines and ignore whitespace
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
@@ -102,10 +103,10 @@ set completeopt=longest,menu,menuone,preview
 "               |       +------- Use popup menu with completions
 "               +--------------- Insert longest completion match
 
+let s:os=substitute(system('uname'), '\n', '', '')
 
 " }}}
 " Colors/GUI -------------------------------------------------------------- {{{
-let os=substitute(system('uname'), '\n', '', '')
 
 if has('gui_running')
   set background=dark
@@ -117,17 +118,17 @@ if has('gui_running')
     set lines=60
     set columns=180
 
-  if os == 'Darwin'
+  if s:os == 'Darwin'
     set guifont=Menlo:h14
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
 
-  elseif os == 'Linux'
+  elseif s:os == 'Linux'
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
     set guioptions-=m
     set clipboard^=unnamedplus
 
-  elseif os = 'Windows'
+  elseif s:os = 'Windows'
     set guifont=Consolas:h12
     set guioptions-=m
     set clipboard^=unnamedplus
@@ -142,14 +143,25 @@ else
     colorscheme darkblue
   endif
 
-  if os == 'Darwin'
+  if s:os == 'Darwin'
     set clipboard^=unnamed
-  elseif os == 'Linux'
+  elseif s:os == 'Linux'
     set clipboard^=unnamedplus
-  elseif os == 'Windows'
+  elseif s:os == 'Windows'
     set clipboard^=unnamed
   endif
 
+  " restore screen after quitting
+  if has("terminfo")
+    let &t_Sf="\ESC[3%p1%dm"
+    let &t_Sb="\ESC[4%p1%dm"
+  else
+    let &t_Sf="\ESC[3%dm"
+    let &t_Sb="\ESC[4%dm"
+  endif
+
+  " don't clear background color
+  set t_ut=
 endif
 
 " }}}
@@ -357,14 +369,19 @@ elseif has("mac")
     set fileformats=mac,unix,dos
 endif
 
-set wildignore+=.hg,.git,.svn                    " Version control
+if s:os == "Windows"
+    set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*,*\\bin\\*,*\\pkg\\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/bin/*,*/pkg/*
+endif
+set wildignore+=*.pdf,*.zip,*.so                 " binaries
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store                       " OSX nonsense
 set wildignore+=migrations                       " Django migrations
-set wildignore+=*.pyc                            " Python byte code
+set wildignore+=*.pyc,*.pyo                      " Python byte code
 
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
@@ -376,12 +393,23 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " backup/undo files with the same names in multiple directories and keep
 " them distinct
 if exists('+undofile')
-    if !isdirectory(expand("~/.vim/tmp/undo"))
-        !mkdir -p ~/.vim/tmp/undo
+    if s:os == "Windows"
+        if !isdirectory(expand("~/vimfiles/tmp/undo"))
+            !mkdir ~/vimfiles/tmp
+            !mkdir ~/vimfiles/tmp/undo
+        endif
+        set backupdir=~/vimfiles/tmp// " where to put backup files
+        set directory=~/vimfiles/tmp// " directory to place swap files in
+        set undodir=~/vimfiles/undo// " where to put undo files
+    else
+        if !isdirectory(expand("~/.vim/tmp/undo"))
+            !mkdir -p ~/.vim/tmp/undo
+        endif
+        set backupdir^=~/.vim/tmp// " Backups are written to ~/.vim/tmp/ if possible
+        set directory^=~/.vim/tmp// " Swapfiles are also written to ~/.vim/tmp too
+        set undodir^=~/.vim/tmp/undo//,/tmp//
     endif
-    set backupdir^=~/.vim/tmp// " Backups are written to ~/.vim/tmp/ if possible
-    set directory^=~/.vim/tmp// " Swapfiles are also written to ~/.vim/tmp too
-    set undodir^=~/.vim/tmp/undo//,/tmp//
+
     set backup
     set undofile
     " Make Vim able to edit crontab files again.
@@ -656,11 +684,19 @@ let g:path_to_matcher = "/usr/local/bin/matcher"
 let g:ctrlp_map = '<c-t>'
 let g:ctrlp_switch_buffer = 2
 let g:ctrlp_use_caching = 1
-let g:ctrlp_max_height = 20
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_cache_dir = expand("~/.vim/tmp")
-let g:ctrlp_max_files = 10000
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
+let g:ctrlp_max_depth = 100
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_max_depth = 100
+if s:os == "Windows"
+    let g:ctrlp_cache_dir = $HOME.'/vimfiles/tmp'
+else
+    let g:ctrlp_cache_dir = $HOME.'/.vim/tmp'
+endif
+let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_open_multiple_files = 'ij'
 
 if filereadable(g:path_to_matcher)
     let g:ctrlp_match_func = { 'match': 'GoodMatch' }
@@ -681,6 +717,8 @@ if has("unix")
         \   },
         \   'fallback': g:ctrlp_user_cmd_fallback
         \ }
+elseif s:os == "Windows"
+    let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d | findstr /v \.git | findstr /v \.hg' " Windows
 endif
 
 let g:ctrlp_prompt_mappings = {
@@ -860,6 +898,34 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+let g:rbpt_colorpairs = [
+    \ ['blue', 'RoyalBlue3'],
+    \ ['darkred', 'firebrick3'],
+    \ ['darkgreen', 'Seagreen3'],
+    \ ['brown', 'DarkOrchid3'],
+    \ ['darkcyan', 'Seagreen3'],
+    \ ['darkmagenta', 'RoyalBlue3'],
+    \ ['blue', 'RoyalBlue3'],
+    \ ['darkred', 'firebrick3'],
+    \ ['darkgreen', 'Seagreen3'],
+    \ ['brown', 'DarkOrchid3'],
+    \ ['darkcyan', 'Seagreen3'],
+    \ ['darkmagenta', 'RoyalBlue3'],
+    \ ['blue', 'RoyalBlue3'],
+    \ ['darkred', 'firebrick3'],
+    \ ['darkgreen', 'Seagreen3'],
+    \ ['brown', 'DarkOrchid3'],
+    \ ['darkcyan', 'Seagreen3'],
+    \ ['darkmagenta', 'RoyalBlue3'],
+    \ ['blue', 'RoyalBlue3'],
+    \ ['darkred', 'firebrick3'],
+    \ ['darkgreen', 'Seagreen3'],
+    \ ['brown', 'DarkOrchid3'],
+    \ ['darkcyan', 'Seagreen3'],
+    \ ['darkmagenta', 'RoyalBlue3'],
+\ ]
+let g:rbpt_max = 24
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
