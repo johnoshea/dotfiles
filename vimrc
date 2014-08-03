@@ -54,6 +54,7 @@ set complete=.,w,b,t            " Complete current buffer, other windows, other 
 set cmdheight=2                 " Avoid 'Press Enter' messages
 set fillchars=diff:⣿,vert:│     " Have different vertical splits for diffs
 set switchbuf=useopen           " Jump to first open window containing buffer (if possible)
+set diffopt=filler,iwhite       " show filler lines and ignore whitespace
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
