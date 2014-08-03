@@ -358,14 +358,19 @@ elseif has("mac")
     set fileformats=mac,unix,dos
 endif
 
-set wildignore+=.hg,.git,.svn                    " Version control
+if s:os == "Windows"
+    set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*,*\\bin\\*,*\\pkg\\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/bin/*,*/pkg/*
+endif
+set wildignore+=*.pdf,*.zip,*.so                 " binaries
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store                       " OSX nonsense
 set wildignore+=migrations                       " Django migrations
-set wildignore+=*.pyc                            " Python byte code
+set wildignore+=*.pyc,*.pyo                      " Python byte code
 
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
