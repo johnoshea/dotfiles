@@ -151,6 +151,17 @@ else
     set clipboard^=unnamed
   endif
 
+  " restore screen after quitting
+  if has("terminfo")
+    let &t_Sf="\ESC[3%p1%dm"
+    let &t_Sb="\ESC[4%p1%dm"
+  else
+    let &t_Sf="\ESC[3%dm"
+    let &t_Sb="\ESC[4%dm"
+  endif
+
+  " don't clear background color
+  set t_ut=
 endif
 
 " }}}
