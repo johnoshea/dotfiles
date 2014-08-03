@@ -684,11 +684,19 @@ let g:path_to_matcher = "/usr/local/bin/matcher"
 let g:ctrlp_map = '<c-t>'
 let g:ctrlp_switch_buffer = 2
 let g:ctrlp_use_caching = 1
-let g:ctrlp_max_height = 20
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_cache_dir = expand("~/.vim/tmp")
-let g:ctrlp_max_files = 10000
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
+let g:ctrlp_max_depth = 100
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_max_depth = 100
+if s:os == "Windows"
+    let g:ctrlp_cache_dir = $HOME.'/vimfiles/tmp'
+else
+    let g:ctrlp_cache_dir = $HOME.'/.vim/tmp'
+endif
+let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_open_multiple_files = 'ij'
 
 if filereadable(g:path_to_matcher)
     let g:ctrlp_match_func = { 'match': 'GoodMatch' }
@@ -709,6 +717,8 @@ if has("unix")
         \   },
         \   'fallback': g:ctrlp_user_cmd_fallback
         \ }
+elseif s:os == "Windows"
+    let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d | findstr /v \.git | findstr /v \.hg' " Windows
 endif
 
 let g:ctrlp_prompt_mappings = {
