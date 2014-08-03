@@ -377,12 +377,23 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " backup/undo files with the same names in multiple directories and keep
 " them distinct
 if exists('+undofile')
-    if !isdirectory(expand("~/.vim/tmp/undo"))
-        !mkdir -p ~/.vim/tmp/undo
+    if s:os == "Windows"
+        if !isdirectory(expand("~/vimfiles/tmp/undo"))
+            !mkdir ~/vimfiles/tmp
+            !mkdir ~/vimfiles/tmp/undo
+        endif
+        set backupdir=~/vimfiles/tmp// " where to put backup files
+        set directory=~/vimfiles/tmp// " directory to place swap files in
+        set undodir=~/vimfiles/undo// " where to put undo files
+    else
+        if !isdirectory(expand("~/.vim/tmp/undo"))
+            !mkdir -p ~/.vim/tmp/undo
+        endif
+        set backupdir^=~/.vim/tmp// " Backups are written to ~/.vim/tmp/ if possible
+        set directory^=~/.vim/tmp// " Swapfiles are also written to ~/.vim/tmp too
+        set undodir^=~/.vim/tmp/undo//,/tmp//
     endif
-    set backupdir^=~/.vim/tmp// " Backups are written to ~/.vim/tmp/ if possible
-    set directory^=~/.vim/tmp// " Swapfiles are also written to ~/.vim/tmp too
-    set undodir^=~/.vim/tmp/undo//,/tmp//
+
     set backup
     set undofile
     " Make Vim able to edit crontab files again.
