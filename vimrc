@@ -196,7 +196,7 @@ nnoremap <leader>cd :lcd %:h<CR>
 " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
 nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:CtrlP<cr>
 " Calling applications
-nnoremap <leader>ma :silent !open -a Marked.app '%:p'<cr>
+nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
 " Disable "F1 for help"
 nnoremap <F1> <nop>
 " Open help in a vertical split instead of the default horizontal split
