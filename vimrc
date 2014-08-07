@@ -892,7 +892,6 @@ nnoremap sk :SplitjoinJoin<cr>
 " vim-search-pulse -------------------------------------------------------- {{{
 let g:vim_search_pulse_mode = 'pattern'
 " }}}
-" }}}
 " rainbow parentheses ----------------------------------------------------- {{{
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
