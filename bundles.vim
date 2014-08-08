@@ -164,7 +164,7 @@ Plugin 'tpope/vim-jdaddy'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " color hex codes and color names
-Plugin "chrisbra/Colorizer"
+Plugin 'chrisbra/Colorizer'
 
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
