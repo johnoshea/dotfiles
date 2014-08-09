@@ -1,0 +1,17 @@
+*.a
+*.bak
+*.dll
+*.DS_Store
+*.exe
+*.gif
+*.jpg
+*.o
+*.obj
+*.pdf
+*.png
+*.pyc
+*.pyo
+*.so
+*.swp
+*.zip
+

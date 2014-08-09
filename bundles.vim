@@ -163,5 +163,11 @@ Plugin 'tpope/vim-jdaddy'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plugin 'ConradIrwin/vim-bracketed-paste'
 
+" color hex codes and color names
+Plugin 'chrisbra/Colorizer'
+
+" 'Brolink is a live browser editing plugin'
+Plugin 'jaxbot/brolink.vim.git'
+
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
