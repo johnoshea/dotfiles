@@ -166,8 +166,5 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 " color hex codes and color names
 Plugin 'chrisbra/Colorizer'
 
-" 'Brolink is a live browser editing plugin'
-Plugin 'jaxbot/brolink.vim.git'
-
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
