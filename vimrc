@@ -851,7 +851,7 @@ xmap <bs> <Plug>VSneakPrevious
 let g:pymode_rope = 1
 
 " Documentation
-let g:pymode_doc = 1
+let g:pymode_doc = 0
 let g:pymode_doc_key = 'K'
 
 "Linting - Syntastic handles this
