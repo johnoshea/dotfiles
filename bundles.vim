@@ -9,7 +9,7 @@ call vundle#begin()
 
 " let Vundle mange Vundle
 " required!
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " }}}
 " Plugins ----------------------------------------------------------------- {{{
