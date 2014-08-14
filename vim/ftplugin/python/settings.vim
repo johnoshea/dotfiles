@@ -37,3 +37,6 @@ let python_slow_sync=1
 "    For "print" builtin as function:
 let python_print_as_function=1
 
+" Fold on indent level ------{{{
+set foldmethod=indent
+" }}}
