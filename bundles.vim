@@ -166,5 +166,8 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 " color hex codes and color names
 Plugin 'chrisbra/Colorizer'
 
+" Always have a nice view for vim split windows
+Plugin 'zhaocai/GoldenView.Vim'
+
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
