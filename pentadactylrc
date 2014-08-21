@@ -110,3 +110,20 @@ map -g user <leader>i -js iprl5()
 " }}}
 
 command! jstoggle :js (function() { var p = "javascript.enabled"; prefs.set(p, !prefs.get(p)); dactyl.echo(p+" is now set to "+prefs.get(p)+"\n") })()
+
+" Use <BS> to return to previous tab
+nnoremap <BS> <C-^>
+
+" Use h,l to move left,right between tabs
+nnoremap h :tabprevious<Return>
+nnoremap l :tabnext<Return>
+
+" Use <C-h>,<C-l> to move a tab one position left,right
+nnoremap <C-h> :tabmove!<Space>-1<Return>
+nnoremap <C-l> :tabmove!<Space>+1<Return>
+
+" Use arrows to navigate tabs, <Del> to close a tab
+nnoremap <Left> :tabprevious<Return>
+nnoremap <Right> :tabnext<Return>
+nnoremap <Del> :tabclose<Return>
+
