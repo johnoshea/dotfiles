@@ -107,16 +107,6 @@ EOIP5JS
 map -g user <leader>i -js iprl5()
 
 " }}}
-" Delibar ----------------------------------------------------------------- {{{
-:js <<EODBJS
-    delibar = function() {
-        var d = buffer.doc;
-        d.location='Delibar://bpost'+'&!p!&'+d.location.href+'&!p!&'+encodeURIComponent(buffer.title)+'&!p!&'+encodeURIComponent(d.getSelection());
-    }
-EODBJS
-map -g user <leader>d -js delibar()
-
-" }}}
 " }}}
 
 command! jstoggle :js (function() { var p = "javascript.enabled"; prefs.set(p, !prefs.get(p)); dactyl.echo(p+" is now set to "+prefs.get(p)+"\n") })()
