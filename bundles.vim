@@ -25,7 +25,6 @@ Plugin 'honza/vim-snippets'
 Plugin 'kana/vim-smartinput'
 
 " Coding
-Plugin 'klen/python-mode'
 Plugin 'scrooloose/syntastic'
 
 " Navigation
