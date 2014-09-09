@@ -44,9 +44,6 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
-if v:version > 703 || v:version == 703 && has("patch584")
-    Plugin 'Valloric/YouCompleteMe'
-endif
 Plugin 'tomtom/tcomment_vim'
 
 " Git
@@ -167,6 +164,9 @@ Plugin 'chrisbra/Colorizer'
 
 " Always have a nice view for vim split windows
 Plugin 'zhaocai/GoldenView.Vim'
+
+" Try jedi direct, rather than YouCompleteMe
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
