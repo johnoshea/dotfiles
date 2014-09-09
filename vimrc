@@ -798,10 +798,10 @@ let g:syntastic_python_checkers = ['pyflakes','flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
 let g:syntastic_html_validator_parser='html5'
 
-if !&diff
-    let g:syntastic_auto_loc_list = 2
-    let g:syntastic_auto_jump = 0
-endif
+ if &diff
+     let g:syntastic_auto_loc_list = 2
+     let g:syntastic_auto_jump = 0
+ endif
 
 " }}}
 " tslime ------------------------------------------------------------------ {{{
