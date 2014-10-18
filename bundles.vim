@@ -28,7 +28,7 @@ Plugin 'kana/vim-smartinput'
 Plugin 'scrooloose/syntastic'
 
 " Navigation
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 
