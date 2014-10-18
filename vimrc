@@ -111,7 +111,7 @@ let s:os=substitute(system('uname'), '\n', '', '')
 if has('gui_running')
   set background=dark
   let g:tomorrow_termcolors=256
-  colorscheme tomorrow
+  colorscheme apprentice
 
   set guioptions=egmt
 
@@ -138,7 +138,7 @@ if has('gui_running')
 else
   if &t_Co >= 256
     let g:tomorrow_termcolors=256
-    colorscheme tomorrow
+    colorscheme apprentice
   else
     colorscheme darkblue
   endif

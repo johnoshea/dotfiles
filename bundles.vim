@@ -77,6 +77,7 @@ Plugin 'jelera/vim-javascript-syntax'
 " Colorschemes
 Plugin 'dhruvasagar/vim-railscasts-theme'
 Plugin 'Slava/vim-colors-tomorrow'
+Plugin 'romainl/Apprentice'
 if has('gui')
     " Needed for pre 7.3 vims
     Plugin 'CSApprox'
