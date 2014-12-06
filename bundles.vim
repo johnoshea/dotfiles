@@ -159,7 +159,7 @@ Plugin 'tpope/vim-jdaddy'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " color hex codes and color names
-Plugin 'chrisbra/Colorizer'
+Plugin 'ap/vim-css-color'
 
 " Always have a nice view for vim split windows
 Plugin 'zhaocai/GoldenView.Vim'
