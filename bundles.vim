@@ -25,11 +25,10 @@ Plugin 'honza/vim-snippets'
 Plugin 'kana/vim-smartinput'
 
 " Coding
-Plugin 'klen/python-mode'
 Plugin 'scrooloose/syntastic'
 
 " Navigation
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 
@@ -45,9 +44,6 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
-if v:version > 703 || v:version == 703 && has("patch584")
-    Plugin 'Valloric/YouCompleteMe'
-endif
 Plugin 'tomtom/tcomment_vim'
 
 " Git
@@ -79,8 +75,7 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'jelera/vim-javascript-syntax'
 
 " Colorschemes
-Plugin 'dhruvasagar/vim-railscasts-theme'
-Plugin 'Slava/vim-colors-tomorrow'
+Plugin 'romainl/Apprentice'
 if has('gui')
     " Needed for pre 7.3 vims
     Plugin 'CSApprox'
@@ -164,10 +159,13 @@ Plugin 'tpope/vim-jdaddy'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " color hex codes and color names
-Plugin 'chrisbra/Colorizer'
+Plugin 'ap/vim-css-color'
 
 " Always have a nice view for vim split windows
 Plugin 'zhaocai/GoldenView.Vim'
+
+" Try jedi direct, rather than YouCompleteMe
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle

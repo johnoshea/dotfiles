@@ -111,7 +111,7 @@ let s:os=substitute(system('uname'), '\n', '', '')
 if has('gui_running')
   set background=dark
   let g:tomorrow_termcolors=256
-  colorscheme tomorrow
+  colorscheme apprentice
 
   set guioptions=egmt
 
@@ -138,7 +138,7 @@ if has('gui_running')
 else
   if &t_Co >= 256
     let g:tomorrow_termcolors=256
-    colorscheme tomorrow
+    colorscheme apprentice
   else
     colorscheme darkblue
   endif
@@ -663,9 +663,6 @@ let g:airline_linecolumn_prefix = '␊ '
 let g:airline_branch_prefix = '⎇ '
 let g:airline_paste_symbol = 'ρ'
 let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
 
 " }}}
 " Yankstack --------------------------------------------------------------- {{{
@@ -786,7 +783,7 @@ let g:tagbar_usearrows = 1
 " Syntastic --------------------------------------------------------------- {{{
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 2
-let g:syntastic_auto_loc_list = 2
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -798,10 +795,10 @@ let g:syntastic_python_checkers = ['pyflakes','flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
 let g:syntastic_html_validator_parser='html5'
 
-if !&diff
-    let g:syntastic_auto_loc_list = 2
-    let g:syntastic_auto_jump = 0
-endif
+ if &diff
+     let g:syntastic_auto_loc_list = 2
+     let g:syntastic_auto_jump = 0
+ endif
 
 " }}}
 " tslime ------------------------------------------------------------------ {{{
@@ -818,12 +815,6 @@ vnoremap ! :ClamVisual<space>
 " Indent Guides ----------------------------------------------------------- {{{
 let g:indent_guides_guide_size = 1
 " }}}
-" YouCompleteMe ----------------------------------------------------------- {{{
-let g:ycm_register_as_syntastic_checker = 1
-let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
-let g:ycm_collect_identifiers_from_tags_files = 1
-" }}}
 " vim-sneak --------------------------------------------------------------- {{{
 nmap f <Plug>SneakForward
 xmap f <Plug>VSneakForward
@@ -835,49 +826,6 @@ nmap <enter> <Plug>SneakNext
 xmap <enter> <Plug>VSneakNext
 nmap <bs> <Plug>SneakPrevious
 xmap <bs> <Plug>VSneakPrevious
-" }}}
-" Python mode ------------------------------------------------------------- {{{
-" Keys:
-" K             Show python docs
-" <Ctrl-Space>  Rope autocomplete
-" <Ctrl-c>g     Rope goto definition
-" <Ctrl-c>d     Rope show documentation
-" <Ctrl-c>f     Rope find occurrences
-" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
-" [[            Jump on previous class or function (normal, visual, operator modes)
-" ]]            Jump on next class or function (normal, visual, operator modes)
-" [M            Jump on previous class or method (normal, visual, operator modes)
-" ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
-
-" Documentation
-let g:pymode_doc = 0
-let g:pymode_doc_key = 'K'
-
-"Linting - Syntastic handles this
-let g:pymode_lint = 0
-let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
-" Auto check on save
-let g:pymode_lint_write = 0
-
-" Support virtualenv
-let g:pymode_virtualenv = 1
-
-" Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_key = '<leader>b'
-
-" syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-
-" Don't autofold code
-let g:pymode_folding = 0
-
-" Stop easytags complaining
-let g:easytags_updatetime_warn = 0
 " }}}
 " splitjoin --------------------------------------------------------------- {{{
 let g:splitjoin_split_mapping = ''
@@ -925,9 +873,6 @@ let g:rbpt_max = 24
 " }}}
 " GoldenView -------------------------------------------------------------- {{{
 let g:goldenview__enable_default_mapping = 0
-
-" 1. split to tiled windows
-nmap <silent> <C-L>  <Plug>GoldenViewSplit
 
 " 2. quickly switch current window with the main pane
 " and toggle back
