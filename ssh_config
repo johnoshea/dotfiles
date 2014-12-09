@@ -1,14 +1,14 @@
-IdentityFile ~/.ssh/id_dsa
+# IdentityFile ~/.ssh/id_dsa
 
-# Proxy everything through remote gateway
-Host *.wordbank.com
-ProxyCommand ssh ${WORK_GATEWAY} nc %h 22
-ForwardAgent yes
-User johno
+# # Proxy everything through remote gateway
+# Host *.wordbank.com
+# ProxyCommand ssh ${WORK_GATEWAY} nc %h 22
+# ForwardAgent yes
+# User johno
 
-# Multiplex multiple connections
-ControlMaster auto
-ControlPath ~/.ssh/master-%r@%h:%p
+# # Multiplex multiple connections
+# ControlMaster auto
+# ControlPath ~/.ssh/master-%r@%h:%p
 # TODO figure out how to have the following either work on Linux-based systems
 #      or just not take effect
 # ControlPersist yes
