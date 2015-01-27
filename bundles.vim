@@ -167,5 +167,14 @@ Plugin 'zhaocai/GoldenView.Vim'
 " Try jedi direct, rather than YouCompleteMe
 Plugin 'davidhalter/jedi-vim'
 
+" Speeddating
+Plugin 'tpope/vim-speeddating'
+
+" Try out spacegray colorscheme
+Plugin 'ajh17/Spacegray.vim'
+
+" Nim(rod) support
+Plugin 'rhysd/nimrod.vim'
+
 call vundle#end()
 filetype plugin indent on       " Needed for Vundle
