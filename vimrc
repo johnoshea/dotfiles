@@ -20,7 +20,7 @@ set ruler                       " Show the cursor position all the time
 set showcmd                     " Display incomplete commands
 set display=lastline,uhex       " Show unprintables as hex and show as much of last line as possible
 set lazyredraw                  " Set lazy redraw, to speed up macros and the like
-set sessionoptions+=winpos      " Save window positions as well
+set sessionoptions+=winpos,resize      " Save window positions and sizes as well
 set hidden                      " Allow movement to another buffer w/o saving the current one
 set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 set showmatch                   " Show matching bracket
