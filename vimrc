@@ -875,11 +875,6 @@ let g:goldenview__enable_default_mapping = 0
 " and toggle back
 nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
 nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
-
-" 3. jump to next and previous window
-nmap <silent> <C-N>  <Plug>GoldenViewNext
-nmap <silent> <C-P>  <Plug>GoldenViewPrevious
-
 " }}}
 " Startify ---------------------------------------------------------------- {{{
 let g:startify_session_dir = '~/.vim/session'
