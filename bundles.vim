@@ -131,9 +131,26 @@ Plug 'rhysd/nimrod.vim', {'for': ['nim', 'nimrod']}
 " Peekaboo - show registers while in insert mode
 Plug 'junegunn/vim-peekaboo'
 
+" DidYouMean - avoid opening up new empty files if multiple completions
+Plug 'EinfachToll/DidYouMean'
+
+" Better display of whitespace
+Plug 'ntpeters/vim-better-whitespace'
+
+" Create directories and files at the same time
+Plug 'vim-scripts/easydir.vim'
+
+" Better QuickFix window handling
+Plug 'yssl/QFEnter'
+
+" EasyGrep
+Plug 'vim-scripts/EasyGrep'
+
 " Startup screen/session handling
 Plug 'mhinz/vim-startify'
 
+" Better fold management
+Plug 'kshenoy/vim-origami'
 
 " Better buffer handling
 Plug 'moll/vim-bbye'
