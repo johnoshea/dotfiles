@@ -3,7 +3,7 @@
 " Source: <https://github.com/johnoshea/dotfiles>
 
 " For use as:
-"    $ vim -u bundles.vim +BundleInstall +q
+"    $ vim -u bundles.vim +PlugInstall +q
 source ~/Code/dotfiles/bundles.vim
 
 " }}}
