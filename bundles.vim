@@ -142,4 +142,7 @@ Plug 'tpope/vim-haml', {'for': ['html', 'css', 'scss']}
 " HTML5
 Plug 'othree/html5.vim', {'for': ['html', 'css', 'scss']}
 
+" Peekaboo - show registers while in insert mode
+Plug 'junegunn/vim-peekaboo'
+
 call plug#end()
