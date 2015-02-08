@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 echo "*** System software"
 echo
@@ -12,8 +11,11 @@ brew upgrade
 brew cleanup
 echo "*** npm"
 echo
-npm update npm -g
-npm update -g
+npm install -g npm@latest
+for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
+do
+    npm -g install "$package"
+done
 echo "*** Ruby gems"
 echo
 sudo gem update --system

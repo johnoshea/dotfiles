@@ -3,7 +3,7 @@
 " Source: <https://github.com/johnoshea/dotfiles>
 
 " For use as:
-"    $ vim -u bundles.vim +BundleInstall +q
+"    $ vim -u bundles.vim +PlugInstall +q
 source ~/Code/dotfiles/bundles.vim
 
 " }}}
@@ -534,9 +534,6 @@ nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap ; :CtrlPBuffer<cr>
-vnoremap <silent> <Enter> :EasyAlign<Enter>
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 
 " }}}
 " Compiling --------------------------------------------------------------- {{{

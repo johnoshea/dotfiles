@@ -2,170 +2,147 @@
 
 set nocompatible            " Use Vim settings, rather then Vi settings.
                             " Must be first, because it changes other options
-filetype off                " Needed for Vundle
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle mange Vundle
-" required!
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 
 " }}}
 " Plugins ----------------------------------------------------------------- {{{
 
 " Utilities/dependencies
-Plugin 'xolox/vim-misc'
-Plugin 'tpope/vim-sleuth'
+Plug 'xolox/vim-misc'
+Plug 'tpope/vim-sleuth'
 
 " Completion
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 " Ultisnips snippets are now stored in honza/vim-snippets
-Plugin 'honza/vim-snippets'
-Plugin 'kana/vim-smartinput'
+Plug 'honza/vim-snippets'
+Plug 'kana/vim-smartinput'
 
 " Coding
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " Navigation
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
 
 " Tags
-Plugin 'majutsushi/tagbar'
-Plugin 'xolox/vim-easytags'
+Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-easytags'
 
 " Editing
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'tpope/vim-surround'
-Plugin 'godlygeek/tabular'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'tomtom/tcomment_vim'
+Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'tomtom/tcomment_vim'
 
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
 
 " Display
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'ZoomWin'
-Plugin 'kshenoy/vim-signature'
-Plugin 'bling/vim-airline'
-Plugin 'mhinz/vim-signify'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ZoomWin'
+Plug 'kshenoy/vim-signature'
+Plug 'bling/vim-airline'
+" Show VCS diffs
+Plug 'mhinz/vim-signify'
 
 " System / program integration
-Plugin 'sjl/clam.vim'
-Plugin 'sjl/vitality.vim'
-Plugin 'sjl/tslime.vim'
-Plugin 'LargeFile'
-Plugin 'tpope/vim-dispatch'
-Plugin 'szw/vim-tags'
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'sjl/clam.vim'
+Plug 'sjl/tslime.vim'
+Plug 'LargeFile'
+Plug 'szw/vim-tags'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Filetypes/file formats
-Plugin 'tpope/vim-abolish'
-Plugin 'django.vim'
+Plug 'tpope/vim-abolish'
+Plug 'django.vim', {'for': 'django'}
        " Javascript
-Plugin 'marijnh/tern_for_vim'
-Plugin 'jelera/vim-javascript-syntax'
+Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
+Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
 
 " Colorschemes
-Plugin 'romainl/Apprentice'
-if has('gui')
-    " Needed for pre 7.3 vims
-    Plugin 'CSApprox'
-end
+Plug 'romainl/Apprentice'
 
 " Experimental
-Plugin 'tpope/vim-eunuch'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'mattn/emmet-vim'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'osyo-manga/vim-over'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-markdown'
+Plug 'tpope/vim-eunuch'
+Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'jmcantrell/vim-virtualenv', {'for': ['python', 'django']}
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
 " Swap out easymotion for vim-sneak
-Plugin 'justinmk/vim-sneak'
-
-" ----------------------------------------------------------------------------
-" Adds gr command to replace text (takes a motion) similar to v(motion)p but
-" also cuts text into black hole register so it is repeatable. So really it's
-" similar to v(motion)"_p
-" ----------------------------------------------------------------------------
-Plugin 'ReplaceWithRegister'
-
-" gitv is a 'gitk clone' plugin
-" Usage:
-"   :Gitv
-Plugin 'gregsexton/gitv'
-
-" vim-pentadactyl syntax
-Plugin 'joedicastro/vim-pentadactyl'
+Plug 'justinmk/vim-sneak'
 
 " Add new text objects
-Plugin 'wellle/targets.vim'
-
-" Swap text using cx...
-Plugin 'tommcdo/vim-exchange'
-
-" Expand text regions
-Plugin 'terryma/vim-expand-region'
+Plug 'wellle/targets.vim'
 
 " Semi-automatic sessions
-Plugin 'tpope/vim-obsession'
+Plug 'tpope/vim-obsession'
 
 " Jinja syntax
-Plugin 'Glench/Vim-Jinja2-Syntax'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Salt syntax/ftplugin
-Plugin 'saltstack/salt-vim'
+Plug 'saltstack/salt-vim'
 
 " Fencview - autodetect CJK and Unicode file encodings
-Plugin 'fencview.vim'
-
-" 'Dash' plugin
-Plugin 'rizzatti/dash.vim'
+Plug 'fencview.vim'
 
 " 'splitjoin' plugin
-Plugin 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " Provides easy code formatting in Vim by integrating existing code formatters.
-Plugin 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 
 " 'Pulse' search results
-Plugin 'inside/vim-search-pulse'
+Plug 'inside/vim-search-pulse'
 
 " Add CSS3 syntax highlighting
-Plugin 'hail2u/vim-css3-syntax'
+Plug 'hail2u/vim-css3-syntax', {'for': ['html', 'css', 'scss']}
 
 " Rainbow parentheses/braces/brackets
-Plugin 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
 " Better JSON
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json', {'for': ['javascript', 'json']}
 
 " More better JSON
-Plugin 'tpope/vim-jdaddy'
+Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
-Plugin 'ConradIrwin/vim-bracketed-paste'
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " color hex codes and color names
-Plugin 'ap/vim-css-color'
+Plug 'ap/vim-css-color', {'for': ['html', 'css', 'scss']}
 
 " Always have a nice view for vim split windows
-Plugin 'zhaocai/GoldenView.Vim'
+Plug 'zhaocai/GoldenView.Vim'
 
 " Try jedi direct, rather than YouCompleteMe
-Plugin 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
-call vundle#end()
-filetype plugin indent on       " Needed for Vundle
+" Speeddating
+Plug 'tpope/vim-speeddating'
+
+" Nim(rod) support
+Plug 'rhysd/nimrod.vim', {'for': ['nim', 'nimrod']}
+
+" SCSS support
+Plug 'tpope/vim-haml', {'for': ['html', 'css', 'scss']}
+
+" HTML5
+Plug 'othree/html5.vim', {'for': ['html', 'css', 'scss']}
+
+" Peekaboo - show registers while in insert mode
+Plug 'junegunn/vim-peekaboo'
+
+call plug#end()
