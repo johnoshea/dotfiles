@@ -54,7 +54,6 @@ Plug 'bling/vim-airline'
 Plug 'mhinz/vim-signify'
 
 " System / program integration
-Plugin 'sjl/vitality.vim'
 Plug 'sjl/clam.vim'
 Plug 'sjl/tslime.vim'
 Plug 'LargeFile'
@@ -69,15 +68,9 @@ Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
 Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
 
 " Colorschemes
-if has('gui')
-    " Needed for pre 7.3 vims
-    Plugin 'CSApprox'
-end
 Plug 'romainl/Apprentice'
 
 " Experimental
-Plugin 'junegunn/vim-easy-align'
-Plugin 'osyo-manga/vim-over'
 Plug 'tpope/vim-eunuch'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim', {'for': 'html'}
@@ -87,30 +80,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
 " Swap out easymotion for vim-sneak
-
-" ----------------------------------------------------------------------------
-" Adds gr command to replace text (takes a motion) similar to v(motion)p but
-" also cuts text into black hole register so it is repeatable. So really it's
-" similar to v(motion)"_p
-" ----------------------------------------------------------------------------
-Plugin 'ReplaceWithRegister'
-
-" gitv is a 'gitk clone' plugin
-" Usage:
-"   :Gitv
-Plugin 'gregsexton/gitv'
-
-" vim-pentadactyl syntax
-Plugin 'joedicastro/vim-pentadactyl'
 Plug 'justinmk/vim-sneak'
 
 " Add new text objects
-
-" Swap text using cx...
-Plugin 'tommcdo/vim-exchange'
-
-" Expand text regions
-Plugin 'terryma/vim-expand-region'
 Plug 'wellle/targets.vim'
 
 " Semi-automatic sessions
@@ -123,9 +95,6 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'saltstack/salt-vim'
 
 " Fencview - autodetect CJK and Unicode file encodings
-
-" 'Dash' plugin
-Plugin 'rizzatti/dash.vim'
 Plug 'fencview.vim'
 
 " 'splitjoin' plugin
@@ -162,9 +131,6 @@ Plug 'zhaocai/GoldenView.Vim'
 Plug 'davidhalter/jedi-vim'
 
 " Speeddating
-
-" Try out spacegray colorscheme
-Plugin 'ajh17/Spacegray.vim'
 Plug 'tpope/vim-speeddating'
 
 " Nim(rod) support
