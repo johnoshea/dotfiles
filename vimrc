@@ -881,6 +881,9 @@ nmap <silent> <C-N>  <Plug>GoldenViewNext
 nmap <silent> <C-P>  <Plug>GoldenViewPrevious
 
 " }}}
+" Startify ---------------------------------------------------------------- {{{
+let g:startify_session_dir = '~/.vim/session'
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/Code/dotfiles/vimrc<cr>:lcd ~/Code/dotfiles<cr>

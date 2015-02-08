@@ -85,9 +85,6 @@ Plug 'justinmk/vim-sneak'
 " Add new text objects
 Plug 'wellle/targets.vim'
 
-" Semi-automatic sessions
-Plug 'tpope/vim-obsession'
-
 " Jinja syntax
 Plug 'Glench/Vim-Jinja2-Syntax'
 
@@ -144,6 +141,9 @@ Plug 'othree/html5.vim', {'for': ['html', 'css', 'scss']}
 
 " Peekaboo - show registers while in insert mode
 Plug 'junegunn/vim-peekaboo'
+
+" Startup screen/session handling
+Plug 'mhinz/vim-startify'
 
 
 " Better buffer handling
