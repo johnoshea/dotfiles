@@ -145,4 +145,8 @@ Plug 'othree/html5.vim', {'for': ['html', 'css', 'scss']}
 " Peekaboo - show registers while in insert mode
 Plug 'junegunn/vim-peekaboo'
 
+
+" Better buffer handling
+Plug 'moll/vim-bbye'
+
 call plug#end()
