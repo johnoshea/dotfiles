@@ -43,8 +43,8 @@ update_repos () {
 checkout_repos () {
     echo "Checking out repos"
     rm -rf ~/${DOTFILES} && git clone https://github.com/johnoshea/dotfiles.git ~/${DOTFILES}
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim -u ~/${DOTFILES}/bundles.vim +PluginInstall +qa
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim -u ~/${DOTFILES}/bundles.vim +PlugInstall +qa
     rm -rf ~/${ZPREZTO} && git clone https://github.com/johnoshea/prezto.git ~/${ZPREZTO}
     update_zprezto_submodules
 }
@@ -84,7 +84,7 @@ make_symlinks () {
 update_vim_submodules () {
     echo "Updating vim submodules"
     cd ~/${DOTFILES}
-    TERM=xterm-256color vim -u bundles.vim +PluginInstall! +qa
+    TERM=xterm-256color vim -u bundles.vim +PlugInstall! +qa
 }
 
 update_zprezto_submodules () {
