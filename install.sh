@@ -71,6 +71,8 @@ make_symlinks () {
     ln -sf ~/${DOTFILES}/vim ~/.vim
     ln -sf ~/${DOTFILES}/vim_colors ~/.vim_colors
     ln -sf ~/${DOTFILES}/vimrc ~/.vimrc
+    ln -sf ~/${DOTFILES}/vimperator ~/.vimperator
+    ln -sf ~/${DOTFILES}/vimperatorrc ~/.vimperatorrc
 
     ln -sf ~/${ZPREZTO}/runcoms/zlogin ~/.zlogin
     ln -sf ~/${ZPREZTO}/runcoms/zlogout ~/.zlogout
