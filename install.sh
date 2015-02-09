@@ -28,7 +28,7 @@ main () {
         update_zprezto_submodules
     fi
 
-    if [ "`uname -s`" == "Darwin" ]; then
+    if [ "$(uname -s)" == "Darwin" ]; then
         echo "Applying OSX-specific settings"
         source ~/${DOTFILES}/osx
     fi
