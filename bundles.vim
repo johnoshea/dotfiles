@@ -42,7 +42,6 @@ Plug 'tomtom/tcomment_vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
 
 " Display
 Plug 'michaeljsmith/vim-indent-object'
@@ -77,16 +76,12 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'jmcantrell/vim-virtualenv', {'for': ['python', 'django']}
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
 " Swap out easymotion for vim-sneak
 Plug 'justinmk/vim-sneak'
 
 " Add new text objects
 Plug 'wellle/targets.vim'
-
-" Semi-automatic sessions
-Plug 'tpope/vim-obsession'
 
 " Jinja syntax
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -121,9 +116,6 @@ Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'ConradIrwin/vim-bracketed-paste'
 
-" color hex codes and color names
-Plug 'ap/vim-css-color', {'for': ['html', 'css', 'scss']}
-
 " Always have a nice view for vim split windows
 Plug 'zhaocai/GoldenView.Vim'
 
@@ -136,13 +128,28 @@ Plug 'tpope/vim-speeddating'
 " Nim(rod) support
 Plug 'rhysd/nimrod.vim', {'for': ['nim', 'nimrod']}
 
-" SCSS support
-Plug 'tpope/vim-haml', {'for': ['html', 'css', 'scss']}
-
-" HTML5
-Plug 'othree/html5.vim', {'for': ['html', 'css', 'scss']}
-
 " Peekaboo - show registers while in insert mode
 Plug 'junegunn/vim-peekaboo'
+
+" DidYouMean - avoid opening up new empty files if multiple completions
+Plug 'EinfachToll/DidYouMean'
+
+" Better display of whitespace
+Plug 'ntpeters/vim-better-whitespace'
+
+" Create directories and files at the same time
+Plug 'vim-scripts/easydir.vim'
+
+" Better QuickFix window handling
+Plug 'yssl/QFEnter'
+
+" EasyGrep
+Plug 'vim-scripts/EasyGrep'
+
+" Startup screen/session handling
+Plug 'mhinz/vim-startify'
+
+" Better buffer handling
+Plug 'moll/vim-bbye'
 
 call plug#end()

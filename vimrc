@@ -20,7 +20,7 @@ set ruler                       " Show the cursor position all the time
 set showcmd                     " Display incomplete commands
 set display=lastline,uhex       " Show unprintables as hex and show as much of last line as possible
 set lazyredraw                  " Set lazy redraw, to speed up macros and the like
-set sessionoptions+=winpos      " Save window positions as well
+set sessionoptions+=winpos,resize      " Save window positions and sizes as well
 set hidden                      " Allow movement to another buffer w/o saving the current one
 set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 set showmatch                   " Show matching bracket
@@ -546,7 +546,7 @@ nnoremap <leader>cp :cprev<CR>
 
 " }}}
 " Buffers ----------------------------------------------------------------- {{{
-nnoremap <C-c><C-c> <ESC>:bw!<CR>
+nnoremap <C-c><C-c> <ESC>:BDelete<CR>
 inoremap <D-s> <c-o>:w<CR>
 nnoremap <D-s> :w<CR>
 
@@ -875,11 +875,9 @@ let g:goldenview__enable_default_mapping = 0
 " and toggle back
 nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
 nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
-
-" 3. jump to next and previous window
-nmap <silent> <C-N>  <Plug>GoldenViewNext
-nmap <silent> <C-P>  <Plug>GoldenViewPrevious
-
+" }}}
+" Startify ---------------------------------------------------------------- {{{
+let g:startify_session_dir = '~/.vim/session'
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
