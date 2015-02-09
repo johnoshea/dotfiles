@@ -149,9 +149,6 @@ Plug 'vim-scripts/EasyGrep'
 " Startup screen/session handling
 Plug 'mhinz/vim-startify'
 
-" Better fold management
-Plug 'kshenoy/vim-origami'
-
 " Better buffer handling
 Plug 'moll/vim-bbye'
 
