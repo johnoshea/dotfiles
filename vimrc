@@ -546,7 +546,8 @@ nnoremap <leader>cp :cprev<CR>
 
 " }}}
 " Buffers ----------------------------------------------------------------- {{{
-nnoremap <C-c><C-c> <ESC>:BDelete<CR>
+nnoremap <C-c><C-c> <ESC>:bwipe!<CR>
+nnoremap <C-c><C-d> <ESC>:Bdelete!<CR>
 inoremap <D-s> <c-o>:w<CR>
 nnoremap <D-s> :w<CR>
 
