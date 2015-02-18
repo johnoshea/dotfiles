@@ -15,3 +15,4 @@ history-command
 history-search
 vimperator/info/default/local-marks
 ignored-keys
+plug.vim.old

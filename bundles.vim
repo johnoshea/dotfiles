@@ -152,4 +152,7 @@ Plug 'mhinz/vim-startify'
 " Better buffer handling
 Plug 'moll/vim-bbye'
 
+" Try out Cmd2 command-mode enhancer
+Plug 'gelguy/Cmd2.vim'
+
 call plug#end()
