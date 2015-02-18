@@ -553,8 +553,8 @@ nnoremap <D-s> :w<CR>
 
 nnoremap gb :ls<CR>:b<Space>
 
-set wildcharm=<C-z>
-nnoremap <leader>f :b <C-z>
+set wildcharm=<tab>
+nnoremap <leader>f :b <tab>
 
 " }}}
 " Windows ----------------------------------------------------------------- {{{
