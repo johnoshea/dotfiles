@@ -155,4 +155,7 @@ Plug 'moll/vim-bbye'
 " Try out Cmd2 command-mode enhancer
 Plug 'gelguy/Cmd2.vim'
 
+" Add dispatch back in, so that Fugitive can use it
+Plug 'tpope/vim-dispatch'
+
 call plug#end()
