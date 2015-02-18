@@ -4,7 +4,7 @@ set defsearch=ddg
 set hintchars=asdfjkl;gh
 command -nargs=* ddg open ddg <args>
 
-ignorekeys add -except=:,f,F https?://.*google.com/
+ignorekeys add -except=:,f,F,;,c https?://.*google.com/
 
 "TODO: Get this working properly ----------------------------------------------
 "source ~/.vimperator/plugins/_libly.js
