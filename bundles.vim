@@ -158,4 +158,7 @@ Plug 'gelguy/Cmd2.vim'
 " Add dispatch back in, so that Fugitive can use it
 Plug 'tpope/vim-dispatch'
 
+" Add csv plugin back in, now that it's been removed from vim-ployglot
+Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
+
 call plug#end()
