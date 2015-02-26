@@ -161,4 +161,7 @@ Plug 'tpope/vim-dispatch'
 " Add csv plugin back in, now that it's been removed from vim-ployglot
 Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 
+" Docker syntax
+Plug 'ekalinin/Dockerfile.vim'
+
 call plug#end()
