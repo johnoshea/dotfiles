@@ -10,6 +10,7 @@ source ~/Code/dotfiles/bundles.vim
 " Basic settings ---------------------------------------------------------- {{{
 
 " Miscellaneous settings
+scriptencoding utf-8            " Allow us to use non-ASCII characters
 set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
 set ttyfast                     " Tell Vim we're using a fast connection - smoother redraws
 set backspace=indent,eol,start  " Backspace over everything in insert mode
