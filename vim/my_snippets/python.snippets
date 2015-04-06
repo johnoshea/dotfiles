@@ -1,0 +1,12 @@
+snippet print
+print(${0:module})
+endsnippet
+
+snippet fmt "format string" i
+"${1}{${2:0}}${3}".format(${4:variable})${0}
+endsnippet
+
+snippet ifmain
+if __name__ == "__main__":
+	sys.exit(main(sys.argv))
+endsnippet
