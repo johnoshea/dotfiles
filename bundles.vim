@@ -73,7 +73,6 @@ Plug 'romainl/Apprentice'
 Plug 'tpope/vim-eunuch'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim', {'for': 'html'}
-Plug 'jmcantrell/vim-virtualenv', {'for': ['python', 'django']}
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-endwise'
 

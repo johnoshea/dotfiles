@@ -890,6 +890,9 @@ nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
 " Startify ---------------------------------------------------------------- {{{
 let g:startify_session_dir = '~/.vim/session'
 " }}}
+" UltiSnips --------------------------------------------------------------- {{{
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/Code/dotfiles/vimrc<cr>:lcd ~/Code/dotfiles<cr>
