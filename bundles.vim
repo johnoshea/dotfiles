@@ -160,4 +160,7 @@ Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Docker syntax
 Plug 'ekalinin/Dockerfile.vim'
 
+" Python syntax
+Plug 'hdima/python-syntax'
+
 call plug#end()
