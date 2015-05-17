@@ -39,6 +39,7 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'tomtom/tcomment_vim'
+Plug 'osyo-manga/vim-over'
 
 " Git
 Plug 'tpope/vim-fugitive'
