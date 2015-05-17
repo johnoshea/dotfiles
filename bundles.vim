@@ -62,9 +62,29 @@ Plug 'christoomey/vim-tmux-navigator'
 " Filetypes/file formats
 Plug 'tpope/vim-abolish'
 Plug 'django.vim', {'for': 'django'}
-       " Javascript
+" Javascript
 Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
 Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
+" Jade filetype support
+Plug 'digitaltoad/vim-jade', {'for': ['jade']}
+" Jinja syntax
+Plug 'Glench/Vim-Jinja2-Syntax'
+" Salt syntax/ftplugin
+Plug 'saltstack/salt-vim'
+" Add CSS3 syntax highlighting
+Plug 'hail2u/vim-css3-syntax', {'for': ['html', 'css', 'scss']}
+" Better JSON
+Plug 'elzr/vim-json', {'for': ['javascript', 'json']}
+" More better JSON
+Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
+" Nim(rod) support
+Plug 'rhysd/nimrod.vim', {'for': ['nim', 'nimrod']}
+" Add csv plugin back in, now that it's been removed from vim-ployglot
+Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
+" Python syntax
+Plug 'hdima/python-syntax', {'for': ['python']}
+" Docker syntax
+Plug 'ekalinin/Dockerfile.vim', {'for': ['docker']}
 
 " Colorschemes
 Plug 'romainl/Apprentice'
@@ -82,12 +102,6 @@ Plug 'justinmk/vim-sneak'
 " Add new text objects
 Plug 'wellle/targets.vim'
 
-" Jinja syntax
-Plug 'Glench/Vim-Jinja2-Syntax'
-
-" Salt syntax/ftplugin
-Plug 'saltstack/salt-vim'
-
 " Fencview - autodetect CJK and Unicode file encodings
 Plug 'fencview.vim'
 
@@ -100,17 +114,8 @@ Plug 'Chiel92/vim-autoformat'
 " 'Pulse' search results
 Plug 'inside/vim-search-pulse'
 
-" Add CSS3 syntax highlighting
-Plug 'hail2u/vim-css3-syntax', {'for': ['html', 'css', 'scss']}
-
 " Rainbow parentheses/braces/brackets
 Plug 'kien/rainbow_parentheses.vim'
-
-" Better JSON
-Plug 'elzr/vim-json', {'for': ['javascript', 'json']}
-
-" More better JSON
-Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -123,9 +128,6 @@ Plug 'davidhalter/jedi-vim'
 
 " Speeddating
 Plug 'tpope/vim-speeddating'
-
-" Nim(rod) support
-Plug 'rhysd/nimrod.vim', {'for': ['nim', 'nimrod']}
 
 " Peekaboo - show registers while in insert mode
 Plug 'junegunn/vim-peekaboo'
@@ -154,13 +156,6 @@ Plug 'moll/vim-bbye'
 " Add dispatch back in, so that Fugitive can use it
 Plug 'tpope/vim-dispatch'
 
-" Add csv plugin back in, now that it's been removed from vim-ployglot
-Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 
-" Docker syntax
-Plug 'ekalinin/Dockerfile.vim'
-
-" Python syntax
-Plug 'hdima/python-syntax'
 
 call plug#end()
