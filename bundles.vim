@@ -156,6 +156,8 @@ Plug 'moll/vim-bbye'
 " Add dispatch back in, so that Fugitive can use it
 Plug 'tpope/vim-dispatch'
 
+" Supertab
+Plug 'ervandew/supertab'
 
 " Sayonara buffer/window management
 Plug 'mhinz/vim-sayonara'
