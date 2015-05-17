@@ -157,5 +157,7 @@ Plug 'moll/vim-bbye'
 Plug 'tpope/vim-dispatch'
 
 
+" Sayonara buffer/window management
+Plug 'mhinz/vim-sayonara'
 
 call plug#end()
