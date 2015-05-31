@@ -64,7 +64,7 @@ Plug 'tpope/vim-abolish'
 Plug 'django.vim', {'for': 'django'}
 " Javascript
 Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
-Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
+Plug 'othree/yajs.vim', {'for': 'javascript'}
 " Jade filetype support
 Plug 'digitaltoad/vim-jade', {'for': ['jade']}
 " Jinja syntax
