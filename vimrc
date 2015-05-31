@@ -11,7 +11,10 @@ source ~/Code/dotfiles/bundles.vim
 
 " Miscellaneous settings
 scriptencoding utf-8            " Allow us to use non-ASCII characters
-set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
+if !has('nvim')
+  set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
+  set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
+endif
 set ttyfast                     " Tell Vim we're using a fast connection - smoother redraws
 set backspace=indent,eol,start  " Backspace over everything in insert mode
 set writebackup                 " Use a backup file just for the purposes of saving
@@ -23,7 +26,6 @@ set display=lastline,uhex       " Show unprintables as hex and show as much of l
 set lazyredraw                  " Set lazy redraw, to speed up macros and the like
 set sessionoptions+=winpos,resize      " Save window positions and sizes as well
 set hidden                      " Allow movement to another buffer w/o saving the current one
-set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 set showmatch                   " Show matching bracket
 set matchtime=3                 " (for only 0.3s)
 set confirm                     " Get confirmation before we do anything stupid
@@ -438,6 +440,8 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 " But don't move on *
 nnoremap * *<c-o>
+" Try 'very magic by default' again
+nnoremap / /\v
 
 " Find other occurrences of a word under the cursor
 function! ChooseOccurrences()
@@ -516,6 +520,11 @@ augroup END
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
+if &diff
+    "I'm only interested in diff colours
+    syntax off
+endif
+
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
 " Toggles ----------------------------------------------------------------- {{{
@@ -547,8 +556,8 @@ nnoremap <leader>cp :cprev<CR>
 
 " }}}
 " Buffers ----------------------------------------------------------------- {{{
-nnoremap <C-c><C-c> <ESC>:bwipe!<CR>
-nnoremap <C-c><C-d> <ESC>:Bdelete!<CR>
+nnoremap <C-c><C-c> <ESC>:Sayonara<CR>
+nnoremap <C-c><C-d> <ESC>:Sayonara<CR>
 inoremap <D-s> <c-o>:w<CR>
 nnoremap <D-s> :w<CR>
 
@@ -670,7 +679,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_theme='solarized'
+let g:airline_theme='badwolf'
 
 " }}}
 " Yankstack --------------------------------------------------------------- {{{
@@ -801,7 +810,7 @@ let g:syntastic_enable_balloons = 1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['pyflakes','flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
-let g:syntastic_html_validator_parser='html5'
+let g:syntastic_html_tidy_exec = 'tidy5'
 
  if &diff
      let g:syntastic_auto_loc_list = 2

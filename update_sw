@@ -28,3 +28,6 @@ echo
 cd ~/Code/zprezto
 git submodule update
 git submodule foreach git pull origin master --recurse-submodules
+echo
+echo "*** Docker ***"
+boot2docker upgrade

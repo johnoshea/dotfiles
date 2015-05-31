@@ -5,5 +5,5 @@ endif
 " }}}
 
 " Syntastic config ------ {{{
-let g:syntastic_html_tidy_ignore_errors = [ '<html> proprietary attribute "class"' ]
+let g:syntastic_html_tidy_ignore_errors = [ '<html> proprietary attribute "class"', '<a> proprietary attribute "controls"' ]
 " }}}
