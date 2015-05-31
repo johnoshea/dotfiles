@@ -520,6 +520,11 @@ augroup END
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
+if &diff
+    "I'm only interested in diff colours
+    syntax off
+endif
+
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
 " Toggles ----------------------------------------------------------------- {{{
