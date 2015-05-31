@@ -88,6 +88,7 @@ Plug 'ekalinin/Dockerfile.vim', {'for': ['docker']}
 
 " Colorschemes
 Plug 'romainl/Apprentice'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
 Plug 'tpope/vim-eunuch'
