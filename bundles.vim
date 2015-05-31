@@ -86,6 +86,15 @@ Plug 'hdima/python-syntax', {'for': ['python']}
 " Docker syntax
 Plug 'ekalinin/Dockerfile.vim', {'for': ['docker']}
 
+" 'Writing' plugins
+Plug 'kana/vim-textobj-user', {'for': ['text', 'markdown']}
+Plug 'reedes/vim-pencil', {'for': ['text', 'markdown']}
+Plug 'reedes/vim-lexical', {'for': ['text', 'markdown']}
+Plug 'reedes/vim-litecorrect', {'for': ['text', 'markdown']}
+Plug 'reedes/vim-wordy', {'for': ['text', 'markdown']}
+Plug 'reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
+Plug 'reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
+
 " Colorschemes
 Plug 'romainl/Apprentice'
 Plug 'NLKNguyen/papercolor-theme'
