@@ -11,7 +11,10 @@ source ~/Code/dotfiles/bundles.vim
 
 " Miscellaneous settings
 scriptencoding utf-8            " Allow us to use non-ASCII characters
-set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
+if !has('nvim')
+  set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
+  set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
+endif
 set ttyfast                     " Tell Vim we're using a fast connection - smoother redraws
 set backspace=indent,eol,start  " Backspace over everything in insert mode
 set writebackup                 " Use a backup file just for the purposes of saving
@@ -23,7 +26,6 @@ set display=lastline,uhex       " Show unprintables as hex and show as much of l
 set lazyredraw                  " Set lazy redraw, to speed up macros and the like
 set sessionoptions+=winpos,resize      " Save window positions and sizes as well
 set hidden                      " Allow movement to another buffer w/o saving the current one
-set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 set showmatch                   " Show matching bracket
 set matchtime=3                 " (for only 0.3s)
 set confirm                     " Get confirmation before we do anything stupid
