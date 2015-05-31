@@ -163,4 +163,13 @@ Plug 'ervandew/supertab'
 " Sayonara buffer/window management
 Plug 'mhinz/vim-sayonara'
 
+" vim-bookmarks
+Plug 'MattesGroeger/vim-bookmarks'
+
+" TaskList
+Plug 'vim-scripts/TaskList.vim'
+
+" Unicode
+Plug 'chrisbra/unicode.vim'
+
 call plug#end()
