@@ -440,6 +440,8 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 " But don't move on *
 nnoremap * *<c-o>
+" Try 'very magic by default' again
+nnoremap / /\v
 
 " Find other occurrences of a word under the cursor
 function! ChooseOccurrences()
