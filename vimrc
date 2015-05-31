@@ -674,7 +674,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_theme='solarized'
+let g:airline_theme='badwolf'
 
 " }}}
 " Yankstack --------------------------------------------------------------- {{{
