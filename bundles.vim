@@ -37,7 +37,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'tomtom/tcomment_vim'
 Plug 'osyo-manga/vim-over'
 
