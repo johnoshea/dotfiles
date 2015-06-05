@@ -808,7 +808,7 @@ let g:syntastic_enable_balloons = 1
 "TODO uncomment this next line if the check_on_open setting is unbearable
 " let g:syntastic_disabled_filetypes = ['html', 'md']
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_python_checkers = ['pylint', 'pyflakes','flake8']
+let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
 let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_javascript_checkers = ['jshint']
