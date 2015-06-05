@@ -235,6 +235,20 @@ augroup END
 " This should preserve your last yank/delete as well.
 nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
 
+" Copy & paste to system clipboard with <Space>p and <Space>y:
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Quickly select text you just pasted
+noremap gV `[v`]
+
+" Enter visual line mode with <Space><Space>
+nmap <Leader><Leader> V
+
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
 " For an explanation of the 'tabs vs spaces' used below, see
@@ -808,9 +822,10 @@ let g:syntastic_enable_balloons = 1
 "TODO uncomment this next line if the check_on_open setting is unbearable
 " let g:syntastic_disabled_filetypes = ['html', 'md']
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_python_checkers = ['pyflakes','flake8']
+let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
 let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_javascript_checkers = ['jshint']
 
  if &diff
      let g:syntastic_auto_loc_list = 2
