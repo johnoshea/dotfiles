@@ -235,6 +235,20 @@ augroup END
 " This should preserve your last yank/delete as well.
 nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
 
+" Copy & paste to system clipboard with <Space>p and <Space>y:
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Quickly select text you just pasted
+noremap gV `[v`]
+
+" Enter visual line mode with <Space><Space>
+nmap <Leader><Leader> V
+
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
 " For an explanation of the 'tabs vs spaces' used below, see
