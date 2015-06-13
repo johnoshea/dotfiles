@@ -11,10 +11,16 @@ source ~/Code/dotfiles/bundles.vim
 
 " Miscellaneous settings
 scriptencoding utf-8            " Allow us to use non-ASCII characters
-if !has('nvim')
-  set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
-  set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
-endif
+set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
+set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
+" NEOVIM: uncomment this block whenever neovim is finally usable and remove
+"         the two lines above this
+" if !has('nvim')
+"   set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
+"   set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
+" else
+"   let g:python_host_prog='/usr/local/bin/python' " make virtualenvs work
+" endif
 set ttyfast                     " Tell Vim we're using a fast connection - smoother redraws
 set backspace=indent,eol,start  " Backspace over everything in insert mode
 set writebackup                 " Use a backup file just for the purposes of saving
@@ -694,6 +700,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme='badwolf'
+let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " }}}
 " Yankstack --------------------------------------------------------------- {{{
