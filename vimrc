@@ -694,6 +694,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme='badwolf'
+let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " }}}
 " Yankstack --------------------------------------------------------------- {{{

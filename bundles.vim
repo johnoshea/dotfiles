@@ -49,6 +49,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ZoomWin'
 Plug 'kshenoy/vim-signature'
 Plug 'bling/vim-airline'
+Plug 'renyard/vim-git-flow-format'
 " Show VCS diffs
 Plug 'mhinz/vim-signify'
 
