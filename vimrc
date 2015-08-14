@@ -278,24 +278,6 @@ set hlsearch                    " Highlight search results
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
-" Ack integration
-if executable('ag')
-    let g:agprg = 'ag --nogroup --nocolor --column --smart-case'
-    nnoremap <leader>a :Ag!<space>
-    nnoremap <leader>A :Ag! <C-R><C-W><CR>
-
-    " Ag for the last search.
-    nnoremap <silent> <leader>/ :execute "Ag! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
-else
-    if executable('ack')
-        let g:ackprg="ack -H --nocolor --nogroup --column"
-        nnoremap <leader>a :Ack<space>
-
-        " Ack for the last search.
-        nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
-    endif
-endif
-
 " Multi-line searching
 " *	Multiline search (for whole words) forward
 vnoremap <silent> * :<C-U>

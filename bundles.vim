@@ -23,8 +23,7 @@ Plug 'scrooloose/syntastic'
 
 " Navigation
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mileszs/ack.vim'
-Plug 'rking/ag.vim'
+Plug 'wincent/ferret'
 
 " Tags
 Plug 'majutsushi/tagbar'
