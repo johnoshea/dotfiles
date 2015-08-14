@@ -2,6 +2,7 @@
 
 set defsearch=ddg
 set hintchars=asdfjkl;gh
+set editor=/Users/johno/bin/mvim\ -f
 command -nargs=* ddg open ddg <args>
 
 ignorekeys add -except=:,f,F,;,c https?://.*google.com/
@@ -23,7 +24,4 @@ highlight CmdOutput  font: normal 14px 'Menlo' !important;
 highlight CompItem   font: normal 14px 'Menlo' !important;
 
 "highlight Find   background: #d6c149; color: #000;
-map gm -builtin :buffer<Space>mail.google.com<Return>
-map ^ -builtin <C-^>
-
 " vim: set ft=vimperator:

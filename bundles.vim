@@ -23,8 +23,7 @@ Plug 'scrooloose/syntastic'
 
 " Navigation
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mileszs/ack.vim'
-Plug 'rking/ag.vim'
+Plug 'wincent/ferret'
 
 " Tags
 Plug 'majutsushi/tagbar'
@@ -106,6 +105,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-endwise'
+Plug 'wincent/terminus'
 
 " Swap out easymotion for vim-sneak
 Plug 'justinmk/vim-sneak'
@@ -125,8 +125,11 @@ Plug 'Chiel92/vim-autoformat'
 " 'Pulse' search results
 Plug 'inside/vim-search-pulse'
 
+" Show incremental search results
+Plug 'haya14busa/incsearch.vim'
+
 " Rainbow parentheses/braces/brackets
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -135,7 +138,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'zhaocai/GoldenView.Vim'
 
 " Try jedi direct, rather than YouCompleteMe
-Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim', {'for': ['python']}
 
 " Speeddating
 Plug 'tpope/vim-speeddating'

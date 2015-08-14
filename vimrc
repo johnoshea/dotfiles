@@ -278,24 +278,6 @@ set hlsearch                    " Highlight search results
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
-" Ack integration
-if executable('ag')
-    let g:agprg = 'ag --nogroup --nocolor --column --smart-case'
-    nnoremap <leader>a :Ag!<space>
-    nnoremap <leader>A :Ag! <C-R><C-W><CR>
-
-    " Ag for the last search.
-    nnoremap <silent> <leader>/ :execute "Ag! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
-else
-    if executable('ack')
-        let g:ackprg="ack -H --nocolor --nogroup --column"
-        nnoremap <leader>a :Ack<space>
-
-        " Ack for the last search.
-        nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
-    endif
-endif
-
 " Multi-line searching
 " *	Multiline search (for whole words) forward
 vnoremap <silent> * :<C-U>
@@ -452,6 +434,11 @@ autocmd VimEnter * nohls
 " just pressing n or N will turn the highlight back again
 nnoremap <localleader>n :nohls<cr>
 
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#auto_nohlsearch = 1
+
 " Centre screen around searches
 nnoremap n nzz
 nnoremap n nzz
@@ -460,8 +447,6 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 " But don't move on *
 nnoremap * *<c-o>
-" Try 'very magic by default' again
-nnoremap / /\v
 
 " Find other occurrences of a word under the cursor
 function! ChooseOccurrences()
@@ -877,37 +862,8 @@ nnoremap sk :SplitjoinJoin<cr>
 let g:vim_search_pulse_mode = 'pattern'
 " }}}
 " rainbow parentheses ----------------------------------------------------- {{{
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-let g:rbpt_colorpairs = [
-    \ ['blue', 'RoyalBlue3'],
-    \ ['darkred', 'firebrick3'],
-    \ ['darkgreen', 'Seagreen3'],
-    \ ['brown', 'DarkOrchid3'],
-    \ ['darkcyan', 'Seagreen3'],
-    \ ['darkmagenta', 'RoyalBlue3'],
-    \ ['blue', 'RoyalBlue3'],
-    \ ['darkred', 'firebrick3'],
-    \ ['darkgreen', 'Seagreen3'],
-    \ ['brown', 'DarkOrchid3'],
-    \ ['darkcyan', 'Seagreen3'],
-    \ ['darkmagenta', 'RoyalBlue3'],
-    \ ['blue', 'RoyalBlue3'],
-    \ ['darkred', 'firebrick3'],
-    \ ['darkgreen', 'Seagreen3'],
-    \ ['brown', 'DarkOrchid3'],
-    \ ['darkcyan', 'Seagreen3'],
-    \ ['darkmagenta', 'RoyalBlue3'],
-    \ ['blue', 'RoyalBlue3'],
-    \ ['darkred', 'firebrick3'],
-    \ ['darkgreen', 'Seagreen3'],
-    \ ['brown', 'DarkOrchid3'],
-    \ ['darkcyan', 'Seagreen3'],
-    \ ['darkmagenta', 'RoyalBlue3'],
-\ ]
+au VimEnter * RainbowParentheses
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:rbpt_max = 24
 " }}}
 " GoldenView -------------------------------------------------------------- {{{
