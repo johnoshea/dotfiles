@@ -105,6 +105,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-endwise'
+Plug 'wincent/terminus'
 
 " Swap out easymotion for vim-sneak
 Plug 'justinmk/vim-sneak'
