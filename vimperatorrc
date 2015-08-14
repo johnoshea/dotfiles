@@ -2,6 +2,7 @@
 
 set defsearch=ddg
 set hintchars=asdfjkl;gh
+set editor=/Users/johno/bin/mvim\ -f
 command -nargs=* ddg open ddg <args>
 
 ignorekeys add -except=:,f,F,;,c https?://.*google.com/
