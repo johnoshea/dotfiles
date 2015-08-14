@@ -877,37 +877,8 @@ nnoremap sk :SplitjoinJoin<cr>
 let g:vim_search_pulse_mode = 'pattern'
 " }}}
 " rainbow parentheses ----------------------------------------------------- {{{
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-let g:rbpt_colorpairs = [
-    \ ['blue', 'RoyalBlue3'],
-    \ ['darkred', 'firebrick3'],
-    \ ['darkgreen', 'Seagreen3'],
-    \ ['brown', 'DarkOrchid3'],
-    \ ['darkcyan', 'Seagreen3'],
-    \ ['darkmagenta', 'RoyalBlue3'],
-    \ ['blue', 'RoyalBlue3'],
-    \ ['darkred', 'firebrick3'],
-    \ ['darkgreen', 'Seagreen3'],
-    \ ['brown', 'DarkOrchid3'],
-    \ ['darkcyan', 'Seagreen3'],
-    \ ['darkmagenta', 'RoyalBlue3'],
-    \ ['blue', 'RoyalBlue3'],
-    \ ['darkred', 'firebrick3'],
-    \ ['darkgreen', 'Seagreen3'],
-    \ ['brown', 'DarkOrchid3'],
-    \ ['darkcyan', 'Seagreen3'],
-    \ ['darkmagenta', 'RoyalBlue3'],
-    \ ['blue', 'RoyalBlue3'],
-    \ ['darkred', 'firebrick3'],
-    \ ['darkgreen', 'Seagreen3'],
-    \ ['brown', 'DarkOrchid3'],
-    \ ['darkcyan', 'Seagreen3'],
-    \ ['darkmagenta', 'RoyalBlue3'],
-\ ]
+au VimEnter * RainbowParentheses
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:rbpt_max = 24
 " }}}
 " GoldenView -------------------------------------------------------------- {{{

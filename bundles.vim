@@ -126,7 +126,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'inside/vim-search-pulse'
 
 " Rainbow parentheses/braces/brackets
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'ConradIrwin/vim-bracketed-paste'
