@@ -138,7 +138,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'zhaocai/GoldenView.Vim'
 
 " Try jedi direct, rather than YouCompleteMe
-Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim', {'for': ['python']}
 
 " Speeddating
 Plug 'tpope/vim-speeddating'
