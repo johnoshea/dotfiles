@@ -434,6 +434,11 @@ autocmd VimEnter * nohls
 " just pressing n or N will turn the highlight back again
 nnoremap <localleader>n :nohls<cr>
 
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#auto_nohlsearch = 1
+
 " Centre screen around searches
 nnoremap n nzz
 nnoremap n nzz
@@ -442,8 +447,6 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 " But don't move on *
 nnoremap * *<c-o>
-" Try 'very magic by default' again
-nnoremap / /\v
 
 " Find other occurrences of a word under the cursor
 function! ChooseOccurrences()

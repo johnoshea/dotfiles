@@ -124,6 +124,9 @@ Plug 'Chiel92/vim-autoformat'
 " 'Pulse' search results
 Plug 'inside/vim-search-pulse'
 
+" Show incremental search results
+Plug 'haya14busa/incsearch.vim'
+
 " Rainbow parentheses/braces/brackets
 Plug 'junegunn/rainbow_parentheses.vim'
 
