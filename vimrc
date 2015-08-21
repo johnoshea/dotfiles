@@ -232,6 +232,12 @@ vmap <Leader>P "+P
 " Quickly select text you just pasted
 noremap gV `[v`]
 
+" Use <bs> to switch back to previous buffer
+nnoremap <bs> <c-^>
+
+" Use <cr> instead of :
+nnoremap <cr> :
+
 " Enter visual line mode with <Space><Space>
 nmap <Leader><Leader> V
 
@@ -770,11 +776,6 @@ xmap f <Plug>VSneakForward
 nmap F <Plug>SneakBackward
 xmap F <Plug>VSneakBackward
 let g:sneak#streak = 1
-
-nmap <enter> <Plug>SneakNext
-xmap <enter> <Plug>VSneakNext
-nmap <bs> <Plug>SneakPrevious
-xmap <bs> <Plug>VSneakPrevious
 " }}}
 " splitjoin --------------------------------------------------------------- {{{
 let g:splitjoin_split_mapping = ''
