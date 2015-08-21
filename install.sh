@@ -76,6 +76,7 @@ make_symlinks () {
     ln -sf ~/${DOTFILES}/pylintrc ~/.pylintrc
     ln -sf ~/${DOTFILES}/gitconfig ~/.gitconfig
     ln -sf ~/${DOTFILES}/gitignore_global ~/.gitignore_global
+    ln -sf ~/${DOTFILES}/hgignore_global ~/.hgignore_global
     ln -sf ~/${DOTFILES}/tigrc ~/.tigrc
 
     ln -sf ~/${ZPREZTO}/runcoms/zlogin ~/.zlogin
