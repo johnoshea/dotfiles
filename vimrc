@@ -395,15 +395,6 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 let g:incsearch#auto_nohlsearch = 1
 
-" Centre screen around searches
-nnoremap n nzz
-nnoremap n nzz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
-" But don't move on *
-nnoremap * *<c-o>
-
 " Find other occurrences of a word under the cursor
 function! ChooseOccurrences()
     if len(expand('<cword>')) == 0
@@ -785,7 +776,18 @@ nnoremap sj :SplitjoinSplit<cr>
 nnoremap sk :SplitjoinJoin<cr>
 " }}}
 " vim-search-pulse -------------------------------------------------------- {{{
+let g:vim_search_pulse_disable_auto_mappings = 1
 let g:vim_search_pulse_mode = 'pattern'
+" Pulse and center line for all but '*'
+nmap n nzz<Plug>Pulse
+nmap N Nzz<Plug>Pulse
+nmap # #zz<Plug>Pulse
+nmap g* g*zz<Plug>Pulse
+nmap g# g#zz<Plug>Pulse
+nmap * *<Plug>Pulse
+" Pulses cursor line on first match
+" when doing search with / or ?
+cmap <enter> <Plug>PulseFirst
 " }}}
 " rainbow parentheses ----------------------------------------------------- {{{
 au VimEnter * RainbowParentheses
