@@ -218,21 +218,7 @@ augroup command_window
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 augroup END
 
-" Zip Right
-"
-" Moves the character under the cursor to the end of the line.  Handy when you
-" have something like:
-"
-"     foo
-"
-" And you want to wrap it in a method call, so you type:
-"
-"     println()foo
-"
-" Once you hit escape your cursor is on the closing paren, so you can 'zip' it
-" over to the right with this mapping.
-"
-" This should preserve your last yank/delete as well.
+" Moves the character under the cursor to the end of the line.
 nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
 
 " Copy & paste to system clipboard with <Space>p and <Space>y:
@@ -757,7 +743,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_enable_balloons = 1
-"TODO uncomment this next line if the check_on_open setting is unbearable
+" uncomment this next line if the check_on_open setting is unbearable
 " let g:syntastic_disabled_filetypes = ['html', 'md']
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['pylint', 'flake8']
