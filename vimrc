@@ -470,8 +470,8 @@ augroup linenumbers
 augroup END
 
 " Resize splits when the window is resized
-au VimResized * exe "normal! \<c-w>="
 
+au VimResized * exe "normal! \<c-w>="
 if &diff
     "I'm only interested in diff colours
     syntax off
@@ -622,7 +622,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_theme='badwolf'
+let g:airline_theme='powerlineish'
 let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " }}}
@@ -747,7 +747,7 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
 let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jshint','jscs']
 
  if &diff
      let g:syntastic_auto_loc_list = 2
