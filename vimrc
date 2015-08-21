@@ -119,34 +119,28 @@ let s:os=substitute(system('uname'), '\n', '', '')
 
 if has('gui_running')
   set background=dark
-  let g:tomorrow_termcolors=256
   colorscheme apprentice
 
   set guioptions=egmt
-
-    set lines=60
-    set columns=180
+  set lines=60
+  set columns=180
 
   if s:os == 'Darwin'
     set guifont=Menlo:h14
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
-
   elseif s:os == 'Linux'
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
     set guioptions-=m
     set clipboard^=unnamedplus
-
   elseif s:os = 'Windows'
     set guifont=Consolas:h12
     set guioptions-=m
     set clipboard^=unnamedplus
-
   endif
 
 else
   if &t_Co >= 256
-    let g:tomorrow_termcolors=256
     colorscheme apprentice
   else
     colorscheme darkblue
@@ -277,36 +271,6 @@ set hlsearch                    " Highlight search results
 
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
-
-" Multi-line searching
-" *	Multiline search (for whole words) forward
-vnoremap <silent> * :<C-U>
-                        \let old_reg=getreg('"')<bar>
-                        \let old_regmode=getregtype('"')<cr>
-                        \gvy/<C-R><C-R>=substitute(
-                        \escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<cr><cr>
-                        \:call setreg('"', old_reg, old_regmode)<cr>
-" #     Multiline search (for whole words) backward
-vnoremap <silent> # :<C-U>
-                        \let old_reg=getreg('"')<bar>
-                        \let old_regmode=getregtype('"')<cr>
-                        \gvy?<C-R><C-R>=substitute(
-                        \escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<cr><cr>
-                        \:call setreg('"', old_reg, old_regmode)<cr>
-" *     Multiline search forward
-vnoremap <silent> g* :<C-U>
-                        \let old_reg=getreg('"')<bar>
-                        \let old_regmode=getregtype('"')<cr>
-                        \gvy/<C-R><C-R>=substitute(
-                        \escape(@", '\\/.*$^~[]'), '\_s\+', '\\_s\\+', 'g')<cr><cr>
-                        \:call setreg('"', old_reg, old_regmode)<cr>
-" #     Multiline search backward
-vnoremap <silent> # :<C-U>
-                        \let old_reg=getreg('"')<bar>
-                        \let old_regmode=getregtype('"')<cr>
-                        \gvy?<C-R><C-R>=substitute(
-                        \escape(@", '\\/.*$^~[]'), '\_s\+', '\\_s\\+', 'g')<cr><cr>
-                        \:call setreg('"', old_reg, old_regmode)<cr>
 
 " }}}
 " Folding ----------------------------------------------------------------- {{{
@@ -555,9 +519,6 @@ nnoremap ; :CtrlPBuffer<cr>
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
 nnoremap <leader>co :copen 6<CR>
 nnoremap <leader>cl :cclose<CR>
-nnoremap <leader>cf :cfirst<CR>
-nnoremap <leader>cn :cnext<CR>
-nnoremap <leader>cp :cprev<CR>
 
 " }}}
 " Buffers ----------------------------------------------------------------- {{{
@@ -566,24 +527,17 @@ nnoremap <C-c><C-d> <ESC>:Sayonara<CR>
 inoremap <D-s> <c-o>:w<CR>
 nnoremap <D-s> :w<CR>
 
-nnoremap gb :ls<CR>:b<Space>
-
 set wildcharm=<tab>
-nnoremap <leader>f :b <tab>
-
 " }}}
 " Windows ----------------------------------------------------------------- {{{
 " Tmux-like split panes navigation
 noremap <C-W>\| :vsplit<CR><C-W>l
 noremap <C-W>- :split<CR><C-W>j
 noremap <C-W><C-W> <C-W>w
-
 " }}}
 " Lines ------------------------------------------------------------------- {{{
-inoremap <C-k> <Esc>O
 " Keep the cursor in place while joining lines using 'J'
 nnoremap J mzJ`z
-
 " }}}
 " }}}
 " Filetypes --------------------------------------------------------------- {{{
@@ -786,14 +740,6 @@ nnoremap <leader>gps :Git push origin master<CR>
 
 " }}}
 " Tagbar ------------------------------------------------------------------ {{{
-if(executable('/usr/local/bin/ctags'))  " Homebrew-installed ctags
-    let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-elseif (executable('/usr/local/bin/exctags'))   " FreeBSD-port-installed ctags
-    let g:tagbar_ctags_bin= '/usr/local/bin/exctags'
-else
-    let g:tagbar_ctags_bin= '/usr/bin/ctags'
-endif
-
 let g:tagbar_width = 40
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0
@@ -823,13 +769,6 @@ let g:syntastic_javascript_checkers = ['jshint']
      let g:syntastic_auto_loc_list = 2
      let g:syntastic_auto_jump = 0
  endif
-
-" }}}
-" tslime ------------------------------------------------------------------ {{{
-let g:tslime_ensure_trailing_newlines = 1
-let g:tslime_normal_mapping = '<localleader>t'
-let g:tslime_visual_mapping = '<localleader>t'
-let g:tslime_vars_mapping = '<localleader>T'
 
 " }}}
 " Clam -------------------------------------------------------------------- {{{
@@ -1004,4 +943,3 @@ end
 if filereadable('~/.vimrc.local')
     source ~/.vimrc.local
 end
-
