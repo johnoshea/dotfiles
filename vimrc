@@ -4,7 +4,7 @@
 
 " For use as:
 "    $ vim -u bundles.vim +PlugInstall +q
-source ~/Code/dotfiles/bundles.vim
+source ~/src/dotfiles/bundles.vim
 
 " }}}
 " Basic settings ---------------------------------------------------------- {{{
@@ -882,7 +882,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
-nnoremap <leader>v :e ~/Code/dotfiles/vimrc<cr>:lcd ~/Code/dotfiles<cr>
+nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
 
 " automatically source the .vimrc file if I change it
 " the bang (!) forces it to overwrite this command rather than stack it
