@@ -74,6 +74,8 @@ make_symlinks () {
     ln -sf ~/${DOTFILES}/vimperator ~/.vimperator
     ln -sf ~/${DOTFILES}/vimperatorrc ~/.vimperatorrc
     ln -sf ~/${DOTFILES}/pylintrc ~/.pylintrc
+    ln -sf ~/${DOTFILES}/gitconfig ~/.gitconfig
+    ln -sf ~/${DOTFILES}/gitignore_global ~/.gitignore_global
     ln -sf ~/${DOTFILES}/tigrc ~/.tigrc
 
     ln -sf ~/${ZPREZTO}/runcoms/zlogin ~/.zlogin
