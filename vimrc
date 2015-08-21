@@ -4,7 +4,7 @@
 
 " For use as:
 "    $ vim -u bundles.vim +PlugInstall +q
-source ~/Code/dotfiles/bundles.vim
+source ~/src/dotfiles/bundles.vim
 
 " }}}
 " Basic settings ---------------------------------------------------------- {{{
@@ -119,34 +119,28 @@ let s:os=substitute(system('uname'), '\n', '', '')
 
 if has('gui_running')
   set background=dark
-  let g:tomorrow_termcolors=256
   colorscheme apprentice
 
   set guioptions=egmt
-
-    set lines=60
-    set columns=180
+  set lines=60
+  set columns=180
 
   if s:os == 'Darwin'
     set guifont=Menlo:h14
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
-
   elseif s:os == 'Linux'
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
     set guioptions-=m
     set clipboard^=unnamedplus
-
   elseif s:os = 'Windows'
     set guifont=Consolas:h12
     set guioptions-=m
     set clipboard^=unnamedplus
-
   endif
 
 else
   if &t_Co >= 256
-    let g:tomorrow_termcolors=256
     colorscheme apprentice
   else
     colorscheme darkblue
@@ -224,21 +218,7 @@ augroup command_window
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 augroup END
 
-" Zip Right
-"
-" Moves the character under the cursor to the end of the line.  Handy when you
-" have something like:
-"
-"     foo
-"
-" And you want to wrap it in a method call, so you type:
-"
-"     println()foo
-"
-" Once you hit escape your cursor is on the closing paren, so you can 'zip' it
-" over to the right with this mapping.
-"
-" This should preserve your last yank/delete as well.
+" Moves the character under the cursor to the end of the line.
 nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
 
 " Copy & paste to system clipboard with <Space>p and <Space>y:
@@ -251,6 +231,12 @@ vmap <Leader>P "+P
 
 " Quickly select text you just pasted
 noremap gV `[v`]
+
+" Use <bs> to switch back to previous buffer
+nnoremap <bs> <c-^>
+
+" Use <cr> instead of :
+nnoremap <cr> :
 
 " Enter visual line mode with <Space><Space>
 nmap <Leader><Leader> V
@@ -277,36 +263,6 @@ set hlsearch                    " Highlight search results
 
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
-
-" Multi-line searching
-" *	Multiline search (for whole words) forward
-vnoremap <silent> * :<C-U>
-                        \let old_reg=getreg('"')<bar>
-                        \let old_regmode=getregtype('"')<cr>
-                        \gvy/<C-R><C-R>=substitute(
-                        \escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<cr><cr>
-                        \:call setreg('"', old_reg, old_regmode)<cr>
-" #     Multiline search (for whole words) backward
-vnoremap <silent> # :<C-U>
-                        \let old_reg=getreg('"')<bar>
-                        \let old_regmode=getregtype('"')<cr>
-                        \gvy?<C-R><C-R>=substitute(
-                        \escape(@", '\\/.*$^~[]'), '\n', '\\n', 'g')<cr><cr>
-                        \:call setreg('"', old_reg, old_regmode)<cr>
-" *     Multiline search forward
-vnoremap <silent> g* :<C-U>
-                        \let old_reg=getreg('"')<bar>
-                        \let old_regmode=getregtype('"')<cr>
-                        \gvy/<C-R><C-R>=substitute(
-                        \escape(@", '\\/.*$^~[]'), '\_s\+', '\\_s\\+', 'g')<cr><cr>
-                        \:call setreg('"', old_reg, old_regmode)<cr>
-" #     Multiline search backward
-vnoremap <silent> # :<C-U>
-                        \let old_reg=getreg('"')<bar>
-                        \let old_regmode=getregtype('"')<cr>
-                        \gvy?<C-R><C-R>=substitute(
-                        \escape(@", '\\/.*$^~[]'), '\_s\+', '\\_s\\+', 'g')<cr><cr>
-                        \:call setreg('"', old_reg, old_regmode)<cr>
 
 " }}}
 " Folding ----------------------------------------------------------------- {{{
@@ -439,15 +395,6 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 let g:incsearch#auto_nohlsearch = 1
 
-" Centre screen around searches
-nnoremap n nzz
-nnoremap n nzz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
-" But don't move on *
-nnoremap * *<c-o>
-
 " Find other occurrences of a word under the cursor
 function! ChooseOccurrences()
     if len(expand('<cword>')) == 0
@@ -523,8 +470,8 @@ augroup linenumbers
 augroup END
 
 " Resize splits when the window is resized
-au VimResized * exe "normal! \<c-w>="
 
+au VimResized * exe "normal! \<c-w>="
 if &diff
     "I'm only interested in diff colours
     syntax off
@@ -533,7 +480,7 @@ endif
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
 " Toggles ----------------------------------------------------------------- {{{
-nnoremap <leader>sp :setlocal spell!<CR>
+nnoremap <localleader>s :setlocal spell!<CR>
 nnoremap <leader>w :setlocal wrap!<CR>
 nnoremap <leader>l :setlocal list!<CR>
 nnoremap <leader>e :set expandtab! expandtab?<CR>
@@ -548,6 +495,7 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>t :CtrlPTag<CR>
+nnoremap <localleader>t <Plug>TaskList
 nnoremap ; :CtrlPBuffer<cr>
 
 " }}}
@@ -555,9 +503,6 @@ nnoremap ; :CtrlPBuffer<cr>
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
 nnoremap <leader>co :copen 6<CR>
 nnoremap <leader>cl :cclose<CR>
-nnoremap <leader>cf :cfirst<CR>
-nnoremap <leader>cn :cnext<CR>
-nnoremap <leader>cp :cprev<CR>
 
 " }}}
 " Buffers ----------------------------------------------------------------- {{{
@@ -566,24 +511,17 @@ nnoremap <C-c><C-d> <ESC>:Sayonara<CR>
 inoremap <D-s> <c-o>:w<CR>
 nnoremap <D-s> :w<CR>
 
-nnoremap gb :ls<CR>:b<Space>
-
 set wildcharm=<tab>
-nnoremap <leader>f :b <tab>
-
 " }}}
 " Windows ----------------------------------------------------------------- {{{
 " Tmux-like split panes navigation
 noremap <C-W>\| :vsplit<CR><C-W>l
 noremap <C-W>- :split<CR><C-W>j
 noremap <C-W><C-W> <C-W>w
-
 " }}}
 " Lines ------------------------------------------------------------------- {{{
-inoremap <C-k> <Esc>O
 " Keep the cursor in place while joining lines using 'J'
 nnoremap J mzJ`z
-
 " }}}
 " }}}
 " Filetypes --------------------------------------------------------------- {{{
@@ -684,7 +622,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_theme='badwolf'
+let g:airline_theme='powerlineish'
 let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " }}}
@@ -786,14 +724,6 @@ nnoremap <leader>gps :Git push origin master<CR>
 
 " }}}
 " Tagbar ------------------------------------------------------------------ {{{
-if(executable('/usr/local/bin/ctags'))  " Homebrew-installed ctags
-    let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-elseif (executable('/usr/local/bin/exctags'))   " FreeBSD-port-installed ctags
-    let g:tagbar_ctags_bin= '/usr/local/bin/exctags'
-else
-    let g:tagbar_ctags_bin= '/usr/bin/ctags'
-endif
-
 let g:tagbar_width = 40
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0
@@ -811,13 +741,13 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_enable_balloons = 1
-"TODO uncomment this next line if the check_on_open setting is unbearable
+" uncomment this next line if the check_on_open setting is unbearable
 " let g:syntastic_disabled_filetypes = ['html', 'md']
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
 let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jshint','jscs']
 
  if &diff
      let g:syntastic_auto_loc_list = 2
@@ -825,16 +755,14 @@ let g:syntastic_javascript_checkers = ['jshint']
  endif
 
 " }}}
-" tslime ------------------------------------------------------------------ {{{
-let g:tslime_ensure_trailing_newlines = 1
-let g:tslime_normal_mapping = '<localleader>t'
-let g:tslime_visual_mapping = '<localleader>t'
-let g:tslime_vars_mapping = '<localleader>T'
-
-" }}}
 " Clam -------------------------------------------------------------------- {{{
 nnoremap ! :Clam<space>
 vnoremap ! :ClamVisual<space>
+" }}}
+" QFEnter ----------------------------------------------------------------- {{{
+let g:qfenter_vopen_map = ['<C-v>']
+let g:qfenter_hopen_map = ['<C-CR>', '<C-s>', '<C-x>']
+let g:qfenter_topen_map = ['<C-t>']
 " }}}
 " Indent Guides ----------------------------------------------------------- {{{
 let g:indent_guides_guide_size = 1
@@ -845,11 +773,6 @@ xmap f <Plug>VSneakForward
 nmap F <Plug>SneakBackward
 xmap F <Plug>VSneakBackward
 let g:sneak#streak = 1
-
-nmap <enter> <Plug>SneakNext
-xmap <enter> <Plug>VSneakNext
-nmap <bs> <Plug>SneakPrevious
-xmap <bs> <Plug>VSneakPrevious
 " }}}
 " splitjoin --------------------------------------------------------------- {{{
 let g:splitjoin_split_mapping = ''
@@ -859,7 +782,18 @@ nnoremap sj :SplitjoinSplit<cr>
 nnoremap sk :SplitjoinJoin<cr>
 " }}}
 " vim-search-pulse -------------------------------------------------------- {{{
+let g:vim_search_pulse_disable_auto_mappings = 1
 let g:vim_search_pulse_mode = 'pattern'
+" Pulse and center line for all but '*'
+nmap n nzz<Plug>Pulse
+nmap N Nzz<Plug>Pulse
+nmap # #zz<Plug>Pulse
+nmap g* g*zz<Plug>Pulse
+nmap g# g#zz<Plug>Pulse
+nmap * *<Plug>Pulse
+" Pulses cursor line on first match
+" when doing search with / or ?
+cmap <enter> <Plug>PulseFirst
 " }}}
 " rainbow parentheses ----------------------------------------------------- {{{
 au VimEnter * RainbowParentheses
@@ -882,7 +816,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
-nnoremap <leader>v :e ~/Code/dotfiles/vimrc<cr>:lcd ~/Code/dotfiles<cr>
+nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
 
 " automatically source the .vimrc file if I change it
 " the bang (!) forces it to overwrite this command rather than stack it
@@ -1004,4 +938,3 @@ end
 if filereadable('~/.vimrc.local')
     source ~/.vimrc.local
 end
-
