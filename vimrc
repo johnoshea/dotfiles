@@ -480,7 +480,7 @@ endif
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
 " Toggles ----------------------------------------------------------------- {{{
-nnoremap <leader>sp :setlocal spell!<CR>
+nnoremap <localleader>s :setlocal spell!<CR>
 nnoremap <leader>w :setlocal wrap!<CR>
 nnoremap <leader>l :setlocal list!<CR>
 nnoremap <leader>e :set expandtab! expandtab?<CR>
@@ -495,6 +495,7 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>t :CtrlPTag<CR>
+nnoremap <localleader>t <Plug>TaskList
 nnoremap ; :CtrlPBuffer<cr>
 
 " }}}
@@ -757,6 +758,11 @@ let g:syntastic_javascript_checkers = ['jshint']
 " Clam -------------------------------------------------------------------- {{{
 nnoremap ! :Clam<space>
 vnoremap ! :ClamVisual<space>
+" }}}
+" QFEnter ----------------------------------------------------------------- {{{
+let g:qfenter_vopen_map = ['<C-v>']
+let g:qfenter_hopen_map = ['<C-CR>', '<C-s>', '<C-x>']
+let g:qfenter_topen_map = ['<C-t>']
 " }}}
 " Indent Guides ----------------------------------------------------------- {{{
 let g:indent_guides_guide_size = 1
