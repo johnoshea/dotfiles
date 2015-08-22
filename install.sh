@@ -10,12 +10,12 @@ main () {
 
     # Basic directory structure
     cd ~
-    if [ -d Code ]; then
+    if [ -d src ]; then
         # If it's already there, 'new' will have to be passed in explicitly for
         # a 'start from scratch' operation, otherwise we assume it's just an update
         UPDATE=1
     else
-        mkdir Code
+        mkdir src
         UPDATE=0
     fi
 

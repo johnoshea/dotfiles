@@ -22,10 +22,10 @@ sudo gem update --system
 sudo gem update
 echo "*** Vim bundles"
 echo
-TERM=xterm-256color vim -u ~/Code/dotfiles/bundles.vim +PlugUpdate! +qa
+TERM=xterm-256color vim -u ~/src/dotfiles/bundles.vim +PlugUpdate! +qa
 echo "*** zprezto submodules"
 echo
-cd ~/Code/zprezto
+cd ~/src/zprezto
 git submodule update
 git submodule foreach git pull origin master --recurse-submodules
 echo
