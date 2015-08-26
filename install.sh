@@ -43,7 +43,7 @@ update_repos () {
 checkout_repos () {
     echo "Checking out repos"
     rm -rf ~/${DOTFILES} && git clone https://github.com/johnoshea/dotfiles.git ~/${DOTFILES}
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim -u ~/${DOTFILES}/bundles.vim +PlugInstall +qa
     rm -rf ~/${ZPREZTO} && git clone https://github.com/johnoshea/prezto.git ~/${ZPREZTO}
     update_zprezto_submodules
