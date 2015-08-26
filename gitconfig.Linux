@@ -1,0 +1,16 @@
+[user]
+	name = John O'Shea
+	email = john.m.oshea@gmail.com
+[color]
+    ui = auto
+[alias]
+    st = status
+    ci = commit --verbose
+    co = checkout
+    di = diff
+    dc = diff --cached
+    p = push
+    pom = push origin master
+    b = branch
+[merge]
+    tool = vimdiff
