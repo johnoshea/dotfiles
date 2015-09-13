@@ -59,7 +59,6 @@ Plug 'benmills/vimux'
 Plug 'LargeFile'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-eunuch'
-Plug 'wincent/terminus'
 
 " Filetypes/file formats
 Plug 'tpope/vim-abolish'
