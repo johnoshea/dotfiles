@@ -814,9 +814,6 @@ let g:startify_session_dir = '~/.vim/session'
 " UltiSnips --------------------------------------------------------------- {{{
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 " }}}
-" Terminus ---------------------------------------------------------------- {{{
-let g:TerminusAssumeITerm = 1
-" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
