@@ -8,6 +8,11 @@ main () {
     set -e
     set -u
 
+    if [[ -x "$(which curl)" ]]; then
+        echo "curl not found - please install first"
+        exit 1
+    fi
+
     # Basic directory structure
     cd ~
     if [ -d src ]; then
