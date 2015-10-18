@@ -17,3 +17,4 @@ vimperator/info/default/local-marks
 ignored-keys
 plug.vim.old
 *.spl
+tags

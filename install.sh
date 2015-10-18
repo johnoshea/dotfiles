@@ -8,8 +8,13 @@ main () {
     set -e
     set -u
 
+    if [[ -x "$(which curl)" ]]; then
+        echo "curl not found - please install first"
+        exit 1
+    fi
+
     # Basic directory structure
-    cd ~
+    cd "$HOME"
     if [ -d src ]; then
         # If it's already there, 'new' will have to be passed in explicitly for
         # a 'start from scratch' operation, otherwise we assume it's just an update
@@ -30,74 +35,74 @@ main () {
 
     if [ "$(uname -s)" == "Darwin" ]; then
         echo "Applying OSX-specific settings"
-        source ~/${DOTFILES}/osx
+        source "$HOME/${DOTFILES}/osx"
     fi
 }
 
 update_repos () {
     echo "Updating repos"
-    cd ~/${ZPREZTO} && git pull
-    cd ~/${DOTFILES} && git pull
+    cd "$HOME/${ZPREZTO}" && git pull
+    cd "$HOME/${DOTFILES}" && git pull
 }
 
 checkout_repos () {
     echo "Checking out repos"
-    rm -rf ~/${DOTFILES} && git clone https://github.com/johnoshea/dotfiles.git ~/${DOTFILES}
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    vim -u ~/${DOTFILES}/bundles.vim +PlugInstall +qa
-    rm -rf ~/${ZPREZTO} && git clone https://github.com/johnoshea/prezto.git ~/${ZPREZTO}
+    rm -rf "$HOME/${DOTFILES:?}" && git clone https://github.com/johnoshea/dotfiles.git "$HOME/${DOTFILES}"
+    curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim -u "$HOME/${DOTFILES:?}/bundles.vim" +PlugInstall +qa
+    rm -rf "$HOME/${ZPREZTO:?}" && git clone https://github.com/johnoshea/prezto.git "$HOME/${ZPREZTO}"
     update_zprezto_submodules
 }
 
 
 make_symlinks () {
     echo "Creating dotfile symlinks"
-    ln -sf ~/${DOTFILES}/ackrc ~/.ackrc
-    ln -sf ~/${DOTFILES}/agignore ~/.agignore
-    ln -sf ~/${DOTFILES}/dotcss ~/.css
-    ln -sf ~/${DOTFILES}/dotjs ~/.js
-    ln -sf ~/${DOTFILES}/gvimrc ~/.gvimrc
-    ln -sf ~/${DOTFILES}/inputrc ~/.inputrc
-    ln -sf ~/${DOTFILES}/noserc ~/.noserc
-    ln -sf ~/${DOTFILES}/psqlrc ~/.psqlrc
-    ln -sf ~/${DOTFILES}/curlrc ~/.curlrc
-    ln -sf ~/${DOTFILES}/wgetrc ~/.wgetrc
-    if [ ! -d ~/.ssh ]; then
-        mkdir ~/.ssh
+    ln -sf "$HOME/${DOTFILES}/ackrc" "$HOME/.ackrc"
+    ln -sf "$HOME/${DOTFILES}/agignore" "$HOME/.agignore"
+    ln -sf "$HOME/${DOTFILES}/dotcss" "$HOME/.css"
+    ln -sf "$HOME/${DOTFILES}/dotjs" "$HOME/.js"
+    ln -sf "$HOME/${DOTFILES}/gvimrc" "$HOME/.gvimrc"
+    ln -sf "$HOME/${DOTFILES}/inputrc" "$HOME/.inputrc"
+    ln -sf "$HOME/${DOTFILES}/noserc" "$HOME/.noserc"
+    ln -sf "$HOME/${DOTFILES}/psqlrc" "$HOME/.psqlrc"
+    ln -sf "$HOME/${DOTFILES}/curlrc" "$HOME/.curlrc"
+    ln -sf "$HOME/${DOTFILES}/wgetrc" "$HOME/.wgetrc"
+    if [ ! -d "$HOME/.ssh" ]; then
+        mkdir "$HOME/.ssh"
     fi
-    ln -sf ~/${DOTFILES}/ssh_config ~/.ssh/config
-    ln -sf ~/${DOTFILES}/tmux.conf ~/.tmux.conf
-    ln -sf ~/${DOTFILES}/terminfo ~/.terminfo
-    ln -sf ~/${DOTFILES}/vim ~/.vim
-    ln -sf ~/${DOTFILES}/vim_colors ~/.vim_colors
-    ln -sf ~/${DOTFILES}/vimrc ~/.vimrc
-    ln -sf ~/${DOTFILES}/vimperator ~/.vimperator
-    ln -sf ~/${DOTFILES}/vimperatorrc ~/.vimperatorrc
-    ln -sf ~/${DOTFILES}/pylintrc ~/.pylintrc
-    ln -sf ~/${DOTFILES}/jscrc ~/.jscrc
-    ln -sf ~/${DOTFILES}/gitconfig.$(uname) ~/.gitconfig
-    ln -sf ~/${DOTFILES}/gitignore_global ~/.gitignore_global
-    ln -sf ~/${DOTFILES}/hgignore_global ~/.hgignore_global
-    ln -sf ~/${DOTFILES}/tigrc ~/.tigrc
+    ln -sf "$HOME/${DOTFILES}/ssh_config" "$HOME/.ssh/config"
+    ln -sf "$HOME/${DOTFILES}/tmux.conf" "$HOME/.tmux.conf"
+    ln -sf "$HOME/${DOTFILES}/terminfo" "$HOME/.terminfo"
+    ln -sf "$HOME/${DOTFILES}/vim" "$HOME/.vim"
+    ln -sf "$HOME/${DOTFILES}/vim_colors" "$HOME/.vim_colors"
+    ln -sf "$HOME/${DOTFILES}/vimrc" "$HOME/.vimrc"
+    ln -sf "$HOME/${DOTFILES}/vimperator" "$HOME/.vimperator"
+    ln -sf "$HOME/${DOTFILES}/vimperatorrc" "$HOME/.vimperatorrc"
+    ln -sf "$HOME/${DOTFILES}/pylintrc" "$HOME/.pylintrc"
+    ln -sf "$HOME/${DOTFILES}/jscrc" "$HOME/.jscrc"
+    ln -sf "$HOME/${DOTFILES}/gitconfig.$(uname)" "$HOME/.gitconfig"
+    ln -sf "$HOME/${DOTFILES}/gitignore_global" "$HOME/.gitignore_global"
+    ln -sf "$HOME/${DOTFILES}/hgignore_global" "$HOME/.hgignore_global"
+    ln -sf "$HOME/${DOTFILES}/tigrc" "$HOME/.tigrc"
 
-    ln -sf ~/${ZPREZTO}/runcoms/zlogin ~/.zlogin
-    ln -sf ~/${ZPREZTO}/runcoms/zlogout ~/.zlogout
-    ln -sf ~/${ZPREZTO}/runcoms/zpreztorc ~/.zpreztorc
-    ln -sf ~/${ZPREZTO}/runcoms/zprofile ~/.zprofile
-    ln -sf ~/${ZPREZTO}/runcoms/zshenv ~/.zshenv
-    ln -sf ~/${ZPREZTO}/runcoms/zshrc ~/.zshrc
-    ln -sf ~/${ZPREZTO} ~/.zprezto
+    ln -sf "$HOME/${ZPREZTO}/runcoms/zlogin" "$HOME/.zlogin"
+    ln -sf "$HOME/${ZPREZTO}/runcoms/zlogout" "$HOME/.zlogout"
+    ln -sf "$HOME/${ZPREZTO}/runcoms/zpreztorc" "$HOME/.zpreztorc"
+    ln -sf "$HOME/${ZPREZTO}/runcoms/zprofile" "$HOME/.zprofile"
+    ln -sf "$HOME/${ZPREZTO}/runcoms/zshenv" "$HOME/.zshenv"
+    ln -sf "$HOME/${ZPREZTO}/runcoms/zshrc" "$HOME/.zshrc"
+    ln -sf "$HOME/${ZPREZTO}" "$HOME/.zprezto"
 }
 
 update_vim_submodules () {
     echo "Updating vim submodules"
-    cd ~/${DOTFILES}
+    cd "$HOME/${DOTFILES}"
     TERM=xterm-256color vim -u bundles.vim +PlugInstall! +qa
 }
 
 update_zprezto_submodules () {
     echo "Updating zprezto submodules"
-    cd ~/${ZPREZTO}
+    cd "$HOME/${ZPREZTO}"
     git submodule init
     git submodule update
     git submodule foreach git pull origin master --recurse-submodules
