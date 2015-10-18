@@ -27,7 +27,7 @@ Plug 'justinmk/vim-sneak'
 
 " Tags
 Plug 'majutsushi/tagbar'
-Plug 'szw/vim-tags'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Editing
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
