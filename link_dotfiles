@@ -5,11 +5,11 @@ set -u
 # Bail on errors
 set -e
 
-mkdir ~/Code
+mkdir ~/src
 for f in gvimrc inputrc rvmrc tmux.conf vim_colors vimrc pentadactylrc ackrc
 do
     # echo line for debugging only
-    echo ln -s "~/Code/dotfiles/${f}" "~/.${f}"
-    ln -s "~/Code/dotfiles/${f}" "~/.${f}"
+    echo ln -s "$HOME/src/dotfiles/${f}" "$HOME/.${f}"
+    ln -s "$HOME/src/dotfiles/${f}" "$HOME/.${f}"
 done
 
