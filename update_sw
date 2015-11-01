@@ -1,4 +1,10 @@
 #!/bin/sh
+# Switch back to system Ruby/Python before updating
+CURRENT_RUBY=$(rbenv version | cut -f1 -d' ')
+CURRENT_PYTHON=$(pyenv version | cut -f1 -d' ')
+echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY}] ***"
+pyenv global system
+rbenv global system
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 echo "*** System software"
 echo
@@ -25,9 +31,10 @@ echo
 TERM=xterm-256color vim -u ~/src/dotfiles/bundles.vim +PlugUpdate! +qa
 echo "*** zprezto submodules"
 echo
-cd ~/src/zprezto
+cd ~/src/zprezto || exit
 git submodule update
 git submodule foreach git pull origin master --recurse-submodules
 echo
-echo "*** Docker ***"
-echo "NOT running 'boot2docker upgrade'"
+echo "Restoring previous Python/Ruby versions"
+pyenv global "${CURRENT_PYTHON}"
+rbenv global "${CURRENT_RUBY}"

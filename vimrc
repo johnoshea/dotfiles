@@ -377,7 +377,7 @@ if exists('+undofile')
     set backupskip=/tmp/*,/private/tmp/*"
     set noswapfile
     set backupskip= " There are no files that shouldn't be backed up.
-    set updatetime=5000 " Write swap files after 5 seconds of inactivity.
+    set updatetime=750 " Write swap files after 0.75 seconds of inactivity.
     " Drop an undo breakpoint so I can recover from insert-mode ctrl-w's
     inoremap <c-w> <c-g>u<c-w>
 endif
