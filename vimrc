@@ -791,9 +791,6 @@ nmap # #zz<Plug>Pulse
 nmap g* g*zz<Plug>Pulse
 nmap g# g#zz<Plug>Pulse
 nmap * *<Plug>Pulse
-" Pulses cursor line on first match
-" when doing search with / or ?
-cmap <enter> <Plug>PulseFirst
 " }}}
 " rainbow parentheses ----------------------------------------------------- {{{
 au VimEnter * RainbowParentheses
