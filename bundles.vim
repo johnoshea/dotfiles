@@ -39,6 +39,8 @@ Plug 'godlygeek/tabular'
 Plug 'tomtom/tcomment_vim'
 Plug 'osyo-manga/vim-over'
 Plug 'tommcdo/vim-exchange'
+Plug 'triglav/vim-visual-increment'
+Plug 'Konfekt/FastFold'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -73,8 +75,6 @@ Plug 'gavocanov/vim-js-indent', {'for': 'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 " Jade filetype support
 Plug 'digitaltoad/vim-jade', {'for': ['jade']}
-" Jinja syntax
-Plug 'Glench/Vim-Jinja2-Syntax'
 " Salt syntax/ftplugin
 Plug 'saltstack/salt-vim'
 " Add CSS3 syntax highlighting
@@ -85,14 +85,16 @@ Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 " Add csv plugin back in, now that it's been removed from vim-ployglot
 Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Python
-Plug 'davidhalter/jedi-vim', {'for': ['python']}
-Plug 'hdima/python-syntax', {'for': ['python']}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'hdima/python-syntax', {'for': 'python'}
 " Docker syntax
-Plug 'ekalinin/Dockerfile.vim', {'for': ['docker']}
+Plug 'ekalinin/Dockerfile.vim', {'for': 'docker'}
 " Sass
 Plug 'cakebaker/scss-syntax.vim'
 " HTML
 Plug 'mattn/emmet-vim', {'for': 'html'}
+" Twig
+Plug 'johnoshea/vim-twig', {'for': ['html', 'twig']}
 
 " 'Writing' plugins
 Plug 'kana/vim-textobj-user', {'for': ['text', 'markdown']}
