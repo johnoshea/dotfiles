@@ -15,6 +15,7 @@ brew doctor
 brew update
 brew upgrade --all
 brew cleanup
+brew prune
 echo "*** npm"
 echo
 npm install -g npm@latest
