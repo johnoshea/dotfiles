@@ -67,8 +67,10 @@ Plug 'sheerun/vim-polyglot'
 " Django
 Plug 'django.vim', {'for': 'django'}
 " Javascript
-Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
+Plug 'marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 Plug 'othree/yajs.vim', {'for': 'javascript'}
+Plug 'gavocanov/vim-js-indent', {'for': 'javascript'}
+Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 " Jade filetype support
 Plug 'digitaltoad/vim-jade', {'for': ['jade']}
 " Jinja syntax
