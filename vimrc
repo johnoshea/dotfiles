@@ -24,7 +24,7 @@ set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system
 set ttyfast                     " Tell Vim we're using a fast connection - smoother redraws
 set backspace=indent,eol,start  " Backspace over everything in insert mode
 set writebackup                 " Use a backup file just for the purposes of saving
-set history=5000                " Keep 5000 lines of command line history
+set history=10000               " Keep 10000 lines of command line history
 set undolevels=10000            " Keep lots of undo
 set ruler                       " Show the cursor position all the time
 set showcmd                     " Display incomplete commands
