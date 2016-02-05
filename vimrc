@@ -825,6 +825,9 @@ map <Leader>vl :VimuxRunLastCommand<CR>
 " Close vim tmux runner opened by VimuxRunCommand
 map <Leader>vq :VimuxCloseRunner<CR>
 " }}}
+" vim-autoformat ---------------------------------------------------------- {{{
+nnoremap <leader>f :Autoformat<cr>
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
