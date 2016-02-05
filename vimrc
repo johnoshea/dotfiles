@@ -254,7 +254,6 @@ filetype plugin indent on
 set ignorecase                  " Ignore case when searching
 set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
-set hlsearch                    " Highlight search results
 
 " }}}
 " Folding ----------------------------------------------------------------- {{{
