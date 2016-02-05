@@ -21,49 +21,49 @@ set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system
 " else
 "   let g:python_host_prog='/usr/local/bin/python' " make virtualenvs work
 " endif
-set ttyfast                     " Tell Vim we're using a fast connection - smoother redraws
-set backspace=indent,eol,start  " Backspace over everything in insert mode
-set writebackup                 " Use a backup file just for the purposes of saving
-set history=10000               " Keep 10000 lines of command line history
-set undolevels=10000            " Keep lots of undo
-set ruler                       " Show the cursor position all the time
-set showcmd                     " Display incomplete commands
-set display=lastline,uhex       " Show unprintables as hex and show as much of last line as possible
-set lazyredraw                  " Set lazy redraw, to speed up macros and the like
-set sessionoptions+=winpos,resize      " Save window positions and sizes as well
-set hidden                      " Allow movement to another buffer w/o saving the current one
-set showmatch                   " Show matching bracket
-set matchtime=3                 " (for only 0.3s)
-set confirm                     " Get confirmation before we do anything stupid
-set whichwrap+=<,>,[,]          " <left> and <right> move over line endings
-set visualbell                  " Flash instead of beeping
-set browsedir=current           " Open up the file-browser in the current directory
-set encoding=utf-8              " UTF-8 please, this is the 21st century
-set termencoding=utf-8          " UTF-8 please, this is the 21st century
-set tenc=utf-8                  " And set UTF-8 for the terminal too
-set nobomb                      " Don't write a Byte Order Mark
-set matchpairs+=<:>             " Match angle-brackets as well by default
-set linebreak                   " Break lines at a sensible place
-set noerrorbells                " Error bells are annoying
-set title                       " Set descriptive window/terminal title
-set report=0                    " Report any lines changed
-set printoptions=paper:A4       " (even though almost all prints go to PDF anyway)
-set splitright                  " When splitting vertically, split to the right
-set splitbelow                  " When splitting horizontally, split below
-set scrolloff=3                 " Don't go right to the edge of the window when scrolling
-set sidescrolloff=5             " Lines visible to the left/right of cursor when scrolling
-set laststatus=2                " Always show a status line
-set modeline modelines=10       " Use modelines within first 10 lines
-set autowrite                   " Write file before some commands
-set wildmenu                    " Enable wildmenu for completion
-set wildmode=longest:full,full  " Complete the next full match
-set synmaxcol=2048              " Don't syntax-colour long lines (too slow otherwise)
-set virtualedit=all             " Allow the cursor to move to 'invalid' places
-set complete=.,w,b,t            " Complete current buffer, other windows, other buffers and tags
-set cmdheight=2                 " Avoid 'Press Enter' messages
-set fillchars=diff:⣿,vert:│     " Have different vertical splits for diffs
-set switchbuf=useopen           " Jump to first open window containing buffer (if possible)
-set diffopt=filler,iwhite       " show filler lines and ignore whitespace
+set ttyfast                       " Tell Vim we're using a fast connection - smoother redraws
+set backspace=indent,eol,start    " Backspace over everything in insert mode
+set writebackup                   " Use a backup file just for the purposes of saving
+set history=10000                 " Keep 10000 lines of command line history
+set undolevels=10000              " Keep lots of undo
+set ruler                         " Show the cursor position all the time
+set showcmd                       " Display incomplete commands
+set display=lastline,uhex         " Show unprintables as hex and show as much of last line as possible
+set lazyredraw                    " Set lazy redraw, to speed up macros and the like
+set sessionoptions+=winpos,resize " Save window positions and sizes as well
+set hidden                        " Allow movement to another buffer w/o saving the current one
+set showmatch                     " Show matching bracket
+set matchtime=3                   " (for only 0.3s)
+set confirm                       " Get confirmation before we do anything stupid
+set whichwrap+=<,>,[,]            " <left> and <right> move over line endings
+set visualbell                    " Flash instead of beeping
+set browsedir=current             " Open up the file-browser in the current directory
+set encoding=utf-8                " UTF-8 please, this is the 21st century
+set termencoding=utf-8            " UTF-8 please, this is the 21st century
+set tenc=utf-8                    " And set UTF-8 for the terminal too
+set nobomb                        " Don't write a Byte Order Mark
+set matchpairs+=<:>               " Match angle-brackets as well by default
+set linebreak                     " Break lines at a sensible place
+set noerrorbells                  " Error bells are annoying
+set title                         " Set descriptive window/terminal title
+set report=0                      " Report any lines changed
+set printoptions=paper:A4         " (even though almost all prints go to PDF anyway)
+set splitright                    " When splitting vertically, split to the right
+set splitbelow                    " When splitting horizontally, split below
+set scrolloff=3                   " Don't go right to the edge of the window when scrolling
+set sidescrolloff=5               " Lines visible to the left/right of cursor when scrolling
+set laststatus=2                  " Always show a status line
+set modeline modelines=10         " Use modelines within first 10 lines
+set autowrite                     " Write file before some commands
+set wildmenu                      " Enable wildmenu for completion
+set wildmode=longest:full,full    " Complete the next full match
+set synmaxcol=2048                " Don't syntax-colour long lines (too slow otherwise)
+set virtualedit=all               " Allow the cursor to move to 'invalid' places
+set complete=.,w,b,t              " Complete current buffer, other windows, other buffers and tags
+set cmdheight=2                   " Avoid 'Press Enter' messages
+set fillchars=diff:⣿,vert:│       " Have different vertical splits for diffs
+set switchbuf=useopen             " Jump to first open window containing buffer (if possible)
+set diffopt=filler,iwhite         " show filler lines and ignore whitespace
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
@@ -747,7 +747,7 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
 let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_javascript_checkers = ['jshint','jscs']
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 
  if &diff
      let g:syntastic_auto_loc_list = 2
