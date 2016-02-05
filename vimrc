@@ -759,6 +759,8 @@ let g:syntastic_javascript_checkers = ['jshint','jscs']
 nnoremap ! :Clam<space>
 vnoremap ! :ClamVisual<space>
 " }}}
+" Gundo ------------------------------------------------------------------- {{{
+let g:gundo_prefer_python3 = 1
 " }}}
 " Indent Guides ----------------------------------------------------------- {{{
 let g:indent_guides_guide_size = 1
