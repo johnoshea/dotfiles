@@ -811,6 +811,13 @@ let g:startify_session_dir = '~/.vim/session'
 " UltiSnips --------------------------------------------------------------- {{{
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 " }}}
+" vim-easy-align ---------------------------------------------------------- {{{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
