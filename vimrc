@@ -192,8 +192,6 @@ nnoremap gk k
 nnoremap gj j
 
 " Miscellaneous
-" w!!             Sudo-write a file
-cnoremap w!! %!sudo tee > /dev/null %
 " <leader>cd      cd to the directory of the current buffer
 nnoremap <leader>cd :lcd %:h<CR>
 " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
@@ -238,9 +236,6 @@ nnoremap <bs> <c-^>
 " Use <cr> instead of :
 nnoremap <cr> :
 
-" Enter visual line mode with <Space><Space>
-nmap <Leader><Leader> V
-
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
 " For an explanation of the 'tabs vs spaces' used below, see
@@ -260,9 +255,6 @@ set ignorecase                  " Ignore case when searching
 set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
 set hlsearch                    " Highlight search results
-
-" Open a Quickfix window for the last search.
-nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
 " }}}
 " Folding ----------------------------------------------------------------- {{{
@@ -832,33 +824,6 @@ au! BufWritePost .vimrc :source ~/.vimrc
 au! BufWritePost vimrc :source ~/.vimrc
 
 " }}}
-" Text objects ------------------------------------------------------------ {{{
-" Numbers - 'N' ----------------------------------------------------------- {{{
-onoremap N :<c-u>call <SID>NumberTextObject(0)<cr>
-xnoremap N :<c-u>call <SID>NumberTextObject(0)<cr>
-onoremap aN :<c-u>call <SID>NumberTextObject(1)<cr>
-xnoremap aN :<c-u>call <SID>NumberTextObject(1)<cr>
-onoremap iN :<c-u>call <SID>NumberTextObject(1)<cr>
-xnoremap iN :<c-u>call <SID>NumberTextObject(1)<cr>
-
-function! s:NumberTextObject(whole)
-    normal! v
-
-    while getline('.')[col('.')] =~# '\v[0-9]'
-        normal! l
-    endwhile
-
-    if a:whole
-        normal! o
-
-        while col('.') > 1 && getline('.')[col('.') - 2] =~# '\v[0-9]'
-            normal! h
-        endwhile
-    endif
-endfunction
-
-" }}}
-" }}}
 " Autocommands ------------------------------------------------------------ {{{
 " Autocomplete ------------------------------------------------------------ {{{
 autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
@@ -868,25 +833,6 @@ autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.
 " Bunch of stuff lifted from Tim Pope's vimrc
 augroup FTMisc
     autocmd!
-
-    autocmd BufNewFile  * let b:chmod_exe=1
-    autocmd BufWritePre * if exists("b:chmod_exe") |
-            \ unlet b:chmod_exe |
-            \ if getline(1) =~ '^#!' | let b:chmod_new="+x" | endif |
-            \ endif
-
-    function! EnsureDirExists ()
-      let required_dir = expand("%:h")
-      if !isdirectory(required_dir)
-        call mkdir(required_dir, 'p')
-      endif
-    endfunction
-    autocmd BufWritePre * :call EnsureDirExists()
-
-    autocmd BufWritePost,FileWritePost * if exists("b:chmod_new")|
-            \ silent! execute "!chmod ".b:chmod_new." <afile>"|
-            \ unlet b:chmod_new|
-            \ endif
 
     autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
         \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
@@ -899,6 +845,7 @@ augroup FTOptions
     autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
     autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
 augroup END
+" }}}
 
 " Makefile settings ------------------------------------------------------- {{{
 " Make the tab key do actual tab characters for makefiles.
