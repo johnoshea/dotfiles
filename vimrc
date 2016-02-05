@@ -873,6 +873,13 @@ endfunction
 
 autocmd QuickFixCmdPost make cwindow
 " }}}
+" 'Auto-mark' settings ------------------------------------------------------- {{{
+autocmd BufLeave *.css,*.less,*scss normal! mC
+autocmd BufLeave *.html,*.jade      normal! mH
+autocmd BufLeave *.js               normal! mJ
+autocmd BufLeave *.py               normal! mP
+autocmd BufLeave vimrc,*.vim        normal! mV
+autocmd BufLeave bundles.vim        normal! mB
 " }}}
 " }}}
 " Tmux integration -------------------------------------------------------- {{{
