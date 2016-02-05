@@ -36,7 +36,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
-Plug 'osyo-manga/vim-over'
 " - use 'ga' to start EasyAlign
 Plug 'junegunn/vim-easy-align'
 Plug 'tommcdo/vim-exchange'
@@ -126,7 +125,6 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'inside/vim-search-pulse'
 Plug 'haya14busa/incsearch.vim'
 Plug 'wincent/ferret'
-Plug 'vim-scripts/EasyGrep'
 
 " Rainbow parentheses/braces/brackets
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -152,9 +150,6 @@ Plug 'ntpeters/vim-better-whitespace'
 " Create directories and files at the same time
 Plug 'vim-scripts/easydir.vim'
 
-" Better QuickFix window handling
-Plug 'yssl/QFEnter'
-
 " Startup screen/session handling
 Plug 'mhinz/vim-startify'
 
@@ -171,7 +166,5 @@ Plug 'ervandew/supertab'
 " TaskList
 Plug 'vim-scripts/TaskList.vim'
 
-" Unicode
-Plug 'chrisbra/unicode.vim'
 
 call plug#end()
