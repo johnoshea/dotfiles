@@ -125,6 +125,7 @@ Plug 'Chiel92/vim-autoformat'
 " Search
 Plug 'inside/vim-search-pulse'
 Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/vim-asterisk'
 Plug 'wincent/ferret'
 
 " Rainbow parentheses/braces/brackets

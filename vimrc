@@ -390,26 +390,34 @@ autocmd VimEnter * nohls
 " just pressing n or N will turn the highlight back again
 nnoremap <localleader>n :nohls<cr>
 
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" incsearch and vim search pulse
+let g:vim_search_pulse_disable_auto_mappings = 1
 let g:incsearch#auto_nohlsearch = 1
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
-" Find other occurrences of a word under the cursor
-function! ChooseOccurrences()
-    if len(expand('<cword>')) == 0
-        return
-    endif
-    normal! [I
-    let nr=input("Which one: ")
-    if len(nr) == 0
-        return
-    endif
-    execute "normal! ".nr."[\t"
-endfunction
-command! -nargs=0 ChooseOccurrences call ChooseOccurrences()
+" Next or previous match is followed by a Pulse
+map n <Plug>(incsearch-nohl-n)<Plug>Pulse
+map N <Plug>(incsearch-nohl-N)<Plug>Pulse
+map * <Plug>(incsearch-nohl-*)<Plug>Pulse
+map # <Plug>(incsearch-nohl-#)<Plug>Pulse
+map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
+map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 
-nnoremap <leader>ch :ChooseOccurrences<cr>
+" Pulses the first match after hitting the enter key
+autocmd! User IncSearchExecute
+autocmd User IncSearchExecute :call search_pulse#Pulse()
+
+map *   <Plug>(asterisk-*)
+map #   <Plug>(asterisk-#)
+map g*  <Plug>(asterisk-g*)
+map g#  <Plug>(asterisk-g#)
+map z*  <Plug>(asterisk-z*)
+map gz* <Plug>(asterisk-gz*)
+map z#  <Plug>(asterisk-z#)
+map gz# <Plug>(asterisk-gz#)
+let g:asterisk#keeppos = 1
 
 " }}}
 " Display options --------------------------------------------------------- {{{
