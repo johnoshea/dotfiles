@@ -21,49 +21,49 @@ set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system
 " else
 "   let g:python_host_prog='/usr/local/bin/python' " make virtualenvs work
 " endif
-set ttyfast                     " Tell Vim we're using a fast connection - smoother redraws
-set backspace=indent,eol,start  " Backspace over everything in insert mode
-set writebackup                 " Use a backup file just for the purposes of saving
-set history=10000               " Keep 10000 lines of command line history
-set undolevels=10000            " Keep lots of undo
-set ruler                       " Show the cursor position all the time
-set showcmd                     " Display incomplete commands
-set display=lastline,uhex       " Show unprintables as hex and show as much of last line as possible
-set lazyredraw                  " Set lazy redraw, to speed up macros and the like
-set sessionoptions+=winpos,resize      " Save window positions and sizes as well
-set hidden                      " Allow movement to another buffer w/o saving the current one
-set showmatch                   " Show matching bracket
-set matchtime=3                 " (for only 0.3s)
-set confirm                     " Get confirmation before we do anything stupid
-set whichwrap+=<,>,[,]          " <left> and <right> move over line endings
-set visualbell                  " Flash instead of beeping
-set browsedir=current           " Open up the file-browser in the current directory
-set encoding=utf-8              " UTF-8 please, this is the 21st century
-set termencoding=utf-8          " UTF-8 please, this is the 21st century
-set tenc=utf-8                  " And set UTF-8 for the terminal too
-set nobomb                      " Don't write a Byte Order Mark
-set matchpairs+=<:>             " Match angle-brackets as well by default
-set linebreak                   " Break lines at a sensible place
-set noerrorbells                " Error bells are annoying
-set title                       " Set descriptive window/terminal title
-set report=0                    " Report any lines changed
-set printoptions=paper:A4       " (even though almost all prints go to PDF anyway)
-set splitright                  " When splitting vertically, split to the right
-set splitbelow                  " When splitting horizontally, split below
-set scrolloff=3                 " Don't go right to the edge of the window when scrolling
-set sidescrolloff=5             " Lines visible to the left/right of cursor when scrolling
-set laststatus=2                " Always show a status line
-set modeline modelines=10       " Use modelines within first 10 lines
-set autowrite                   " Write file before some commands
-set wildmenu                    " Enable wildmenu for completion
-set wildmode=longest:full,full  " Complete the next full match
-set synmaxcol=2048              " Don't syntax-colour long lines (too slow otherwise)
-set virtualedit=all             " Allow the cursor to move to 'invalid' places
-set complete=.,w,b,t            " Complete current buffer, other windows, other buffers and tags
-set cmdheight=2                 " Avoid 'Press Enter' messages
-set fillchars=diff:⣿,vert:│     " Have different vertical splits for diffs
-set switchbuf=useopen           " Jump to first open window containing buffer (if possible)
-set diffopt=filler,iwhite       " show filler lines and ignore whitespace
+set ttyfast                       " Tell Vim we're using a fast connection - smoother redraws
+set backspace=indent,eol,start    " Backspace over everything in insert mode
+set writebackup                   " Use a backup file just for the purposes of saving
+set history=10000                 " Keep 10000 lines of command line history
+set undolevels=10000              " Keep lots of undo
+set ruler                         " Show the cursor position all the time
+set showcmd                       " Display incomplete commands
+set display=lastline,uhex         " Show unprintables as hex and show as much of last line as possible
+set lazyredraw                    " Set lazy redraw, to speed up macros and the like
+set sessionoptions+=winpos,resize " Save window positions and sizes as well
+set hidden                        " Allow movement to another buffer w/o saving the current one
+set showmatch                     " Show matching bracket
+set matchtime=3                   " (for only 0.3s)
+set confirm                       " Get confirmation before we do anything stupid
+set whichwrap+=<,>,[,]            " <left> and <right> move over line endings
+set visualbell                    " Flash instead of beeping
+set browsedir=current             " Open up the file-browser in the current directory
+set encoding=utf-8                " UTF-8 please, this is the 21st century
+set termencoding=utf-8            " UTF-8 please, this is the 21st century
+set tenc=utf-8                    " And set UTF-8 for the terminal too
+set nobomb                        " Don't write a Byte Order Mark
+set matchpairs+=<:>               " Match angle-brackets as well by default
+set linebreak                     " Break lines at a sensible place
+set noerrorbells                  " Error bells are annoying
+set title                         " Set descriptive window/terminal title
+set report=0                      " Report any lines changed
+set printoptions=paper:A4         " (even though almost all prints go to PDF anyway)
+set splitright                    " When splitting vertically, split to the right
+set splitbelow                    " When splitting horizontally, split below
+set scrolloff=3                   " Don't go right to the edge of the window when scrolling
+set sidescrolloff=5               " Lines visible to the left/right of cursor when scrolling
+set laststatus=2                  " Always show a status line
+set modeline modelines=10         " Use modelines within first 10 lines
+set autowrite                     " Write file before some commands
+set wildmenu                      " Enable wildmenu for completion
+set wildmode=longest:full,full    " Complete the next full match
+set synmaxcol=2048                " Don't syntax-colour long lines (too slow otherwise)
+set virtualedit=all               " Allow the cursor to move to 'invalid' places
+set complete=.,w,b,t              " Complete current buffer, other windows, other buffers and tags
+set cmdheight=2                   " Avoid 'Press Enter' messages
+set fillchars=diff:⣿,vert:│       " Have different vertical splits for diffs
+set switchbuf=useopen             " Jump to first open window containing buffer (if possible)
+set diffopt=filler,iwhite         " show filler lines and ignore whitespace
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
@@ -192,8 +192,6 @@ nnoremap gk k
 nnoremap gj j
 
 " Miscellaneous
-" w!!             Sudo-write a file
-cnoremap w!! %!sudo tee > /dev/null %
 " <leader>cd      cd to the directory of the current buffer
 nnoremap <leader>cd :lcd %:h<CR>
 " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
@@ -238,9 +236,6 @@ nnoremap <bs> <c-^>
 " Use <cr> instead of :
 nnoremap <cr> :
 
-" Enter visual line mode with <Space><Space>
-nmap <Leader><Leader> V
-
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
 " For an explanation of the 'tabs vs spaces' used below, see
@@ -259,10 +254,6 @@ filetype plugin indent on
 set ignorecase                  " Ignore case when searching
 set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
-set hlsearch                    " Highlight search results
-
-" Open a Quickfix window for the last search.
-nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
 " }}}
 " Folding ----------------------------------------------------------------- {{{
@@ -390,26 +381,34 @@ autocmd VimEnter * nohls
 " just pressing n or N will turn the highlight back again
 nnoremap <localleader>n :nohls<cr>
 
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" incsearch and vim search pulse
+let g:vim_search_pulse_disable_auto_mappings = 1
 let g:incsearch#auto_nohlsearch = 1
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
-" Find other occurrences of a word under the cursor
-function! ChooseOccurrences()
-    if len(expand('<cword>')) == 0
-        return
-    endif
-    normal! [I
-    let nr=input("Which one: ")
-    if len(nr) == 0
-        return
-    endif
-    execute "normal! ".nr."[\t"
-endfunction
-command! -nargs=0 ChooseOccurrences call ChooseOccurrences()
+" Next or previous match is followed by a Pulse
+map n <Plug>(incsearch-nohl-n)<Plug>Pulse
+map N <Plug>(incsearch-nohl-N)<Plug>Pulse
+map * <Plug>(incsearch-nohl-*)<Plug>Pulse
+map # <Plug>(incsearch-nohl-#)<Plug>Pulse
+map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
+map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 
-nnoremap <leader>ch :ChooseOccurrences<cr>
+" Pulses the first match after hitting the enter key
+autocmd! User IncSearchExecute
+autocmd User IncSearchExecute :call search_pulse#Pulse()
+
+map *   <Plug>(asterisk-*)
+map #   <Plug>(asterisk-#)
+map g*  <Plug>(asterisk-g*)
+map g#  <Plug>(asterisk-g#)
+map z*  <Plug>(asterisk-z*)
+map gz* <Plug>(asterisk-gz*)
+map z#  <Plug>(asterisk-z#)
+map gz# <Plug>(asterisk-gz#)
+let g:asterisk#keeppos = 1
 
 " }}}
 " Display options --------------------------------------------------------- {{{
@@ -747,7 +746,7 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
 let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_javascript_checkers = ['jshint','jscs']
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 
  if &diff
      let g:syntastic_auto_loc_list = 2
@@ -759,10 +758,8 @@ let g:syntastic_javascript_checkers = ['jshint','jscs']
 nnoremap ! :Clam<space>
 vnoremap ! :ClamVisual<space>
 " }}}
-" QFEnter ----------------------------------------------------------------- {{{
-let g:qfenter_vopen_map = ['<C-v>']
-let g:qfenter_hopen_map = ['<C-CR>', '<C-s>', '<C-x>']
-let g:qfenter_topen_map = ['<C-t>']
+" Gundo ------------------------------------------------------------------- {{{
+let g:gundo_prefer_python3 = 1
 " }}}
 " Indent Guides ----------------------------------------------------------- {{{
 let g:indent_guides_guide_size = 1
@@ -811,6 +808,25 @@ let g:startify_session_dir = '~/.vim/session'
 " UltiSnips --------------------------------------------------------------- {{{
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 " }}}
+" vim-easy-align ---------------------------------------------------------- {{{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
+" vimux ------------------------------------------------------------------- {{{
+" Prompt for a command to run map
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vm :VimuxPromptCommand("make ")<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+" }}}
+" vim-autoformat ---------------------------------------------------------- {{{
+nnoremap <leader>f :Autoformat<cr>
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
@@ -821,33 +837,6 @@ au! BufWritePost .vimrc :source ~/.vimrc
 au! BufWritePost vimrc :source ~/.vimrc
 
 " }}}
-" Text objects ------------------------------------------------------------ {{{
-" Numbers - 'N' ----------------------------------------------------------- {{{
-onoremap N :<c-u>call <SID>NumberTextObject(0)<cr>
-xnoremap N :<c-u>call <SID>NumberTextObject(0)<cr>
-onoremap aN :<c-u>call <SID>NumberTextObject(1)<cr>
-xnoremap aN :<c-u>call <SID>NumberTextObject(1)<cr>
-onoremap iN :<c-u>call <SID>NumberTextObject(1)<cr>
-xnoremap iN :<c-u>call <SID>NumberTextObject(1)<cr>
-
-function! s:NumberTextObject(whole)
-    normal! v
-
-    while getline('.')[col('.')] =~# '\v[0-9]'
-        normal! l
-    endwhile
-
-    if a:whole
-        normal! o
-
-        while col('.') > 1 && getline('.')[col('.') - 2] =~# '\v[0-9]'
-            normal! h
-        endwhile
-    endif
-endfunction
-
-" }}}
-" }}}
 " Autocommands ------------------------------------------------------------ {{{
 " Autocomplete ------------------------------------------------------------ {{{
 autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
@@ -857,25 +846,6 @@ autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.
 " Bunch of stuff lifted from Tim Pope's vimrc
 augroup FTMisc
     autocmd!
-
-    autocmd BufNewFile  * let b:chmod_exe=1
-    autocmd BufWritePre * if exists("b:chmod_exe") |
-            \ unlet b:chmod_exe |
-            \ if getline(1) =~ '^#!' | let b:chmod_new="+x" | endif |
-            \ endif
-
-    function! EnsureDirExists ()
-      let required_dir = expand("%:h")
-      if !isdirectory(required_dir)
-        call mkdir(required_dir, 'p')
-      endif
-    endfunction
-    autocmd BufWritePre * :call EnsureDirExists()
-
-    autocmd BufWritePost,FileWritePost * if exists("b:chmod_new")|
-            \ silent! execute "!chmod ".b:chmod_new." <afile>"|
-            \ unlet b:chmod_new|
-            \ endif
 
     autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
         \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
@@ -888,6 +858,7 @@ augroup FTOptions
     autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
     autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
 augroup END
+" }}}
 
 " Makefile settings ------------------------------------------------------- {{{
 " Make the tab key do actual tab characters for makefiles.
@@ -901,6 +872,13 @@ endfunction
 
 autocmd QuickFixCmdPost make cwindow
 " }}}
+" 'Auto-mark' settings ------------------------------------------------------- {{{
+autocmd BufLeave *.css,*.less,*scss normal! mC
+autocmd BufLeave *.html,*.jade      normal! mH
+autocmd BufLeave *.js               normal! mJ
+autocmd BufLeave *.py               normal! mP
+autocmd BufLeave vimrc,*.vim        normal! mV
+autocmd BufLeave bundles.vim        normal! mB
 " }}}
 " }}}
 " Tmux integration -------------------------------------------------------- {{{
