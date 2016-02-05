@@ -18,6 +18,7 @@ brew cleanup
 brew prune
 echo "*** npm"
 echo
+npm set progress=false
 npm install -g npm@latest
 for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
 do
