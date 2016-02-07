@@ -827,6 +827,9 @@ map <Leader>vq :VimuxCloseRunner<CR>
 " vim-autoformat ---------------------------------------------------------- {{{
 nnoremap <leader>f :Autoformat<cr>
 " }}}
+" editorconfig ------------------------------------------------------------ {{{
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
