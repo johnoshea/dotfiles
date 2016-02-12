@@ -24,6 +24,7 @@ set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system
 set ttyfast                       " Tell Vim we're using a fast connection - smoother redraws
 set backspace=indent,eol,start    " Backspace over everything in insert mode
 set writebackup                   " Use a backup file just for the purposes of saving
+set backupcopy=yes                " using 'auto'/'no' may cause file-watching programs to not see changes
 set history=10000                 " Keep 10000 lines of command line history
 set undolevels=10000              " Keep lots of undo
 set ruler                         " Show the cursor position all the time
@@ -826,6 +827,9 @@ map <Leader>vq :VimuxCloseRunner<CR>
 " }}}
 " vim-autoformat ---------------------------------------------------------- {{{
 nnoremap <leader>f :Autoformat<cr>
+" }}}
+" editorconfig ------------------------------------------------------------ {{{
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{

@@ -199,4 +199,7 @@ Plug 'vim-scripts/TaskList.vim'
 " vim-tmux-focus-events
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
+" Editorconfig support
+Plug 'editorconfig/editorconfig-vim'
+
 call plug#end()
