@@ -73,7 +73,7 @@ Plug 'mhinz/vim-signify'
 Plug 'benmills/vimux'
 " - turn on large (>20MB) file optimizations - use :Large/:Unlarge/:Large!
 Plug 'LargeFile'
-" - allow arrow keys to work across non-vim tmux panes (needs tmux config too)
+" - allow window nav to work across non-vim tmux panes (needs tmux config too)
 Plug 'christoomey/vim-tmux-navigator'
 " - add :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'tpope/vim-eunuch'
