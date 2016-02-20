@@ -22,7 +22,7 @@ Plug 'kana/vim-smartinput'
 Plug 'scrooloose/syntastic'
 
 " Navigation
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " - netrw enhancement
 Plug 'tpope/vim-vinegar'
 " - use 'f{CHAR1}{CHAR2} to move to the first occurrence of CHAR1CHAR2'
