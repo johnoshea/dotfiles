@@ -40,7 +40,6 @@ Plug 'tpope/vim-repeat'
 "   [q/]q for cprev/cnext, [n/]n for prev/next diff block
 Plug 'tpope/vim-unimpaired'
 " - <c-P>/<c-p> for newer/older pastes
-Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 " - use 'ga' to start EasyAlign
@@ -69,8 +68,6 @@ Plug 'renyard/vim-git-flow-format'
 " Show VCS diffs
 Plug 'mhinz/vim-signify'
 
-" System / program integration
-Plug 'sjl/clam.vim'
 " - use <leader>vp to prompt for a command, <leader>vl to re-run,
 "   <leader>vq to close tmux window
 Plug 'benmills/vimux'

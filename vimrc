@@ -626,14 +626,6 @@ let g:airline_theme='powerlineish'
 let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " }}}
-" Yankstack --------------------------------------------------------------- {{{
-let g:yankstack_map_keys = 0
-nmap <c-p> <Plug>yankstack_substitute_older_paste
-nmap <c-P> <Plug>yankstack_substitute_newer_paste
-imap <c-p> <c-o><Plug>yankstack_substitute_older_paste
-imap <c-P> <c-o><Plug>yankstack_substitute_newer_paste
-
-" }}}
 " ctrlp ------------------------------------------------------------------- {{{
 let g:path_to_matcher = "/usr/local/bin/matcher"
 let g:ctrlp_map = '<c-t>'
@@ -753,11 +745,6 @@ let g:syntastic_javascript_checkers = ['jshint', 'jscs']
      let g:syntastic_auto_loc_list = 2
      let g:syntastic_auto_jump = 0
  endif
-
-" }}}
-" Clam -------------------------------------------------------------------- {{{
-nnoremap ! :Clam<space>
-vnoremap ! :ClamVisual<space>
 " }}}
 " Gundo ------------------------------------------------------------------- {{{
 let g:gundo_prefer_python3 = 1
