@@ -82,6 +82,7 @@ make_symlinks () {
     ln -sf "$HOME/${DOTFILES}/jscsrc" "$HOME/.jscsrc"
     ln -sf "$HOME/${DOTFILES}/jshintrc" "$HOME/.jshintrc"
     ln -sf "$HOME/${DOTFILES}/jshintignore" "$HOME/.jshintignore"
+    ln -sf "$HOME/${DOTFILES}/eslintrc.js" "$HOME/.eslintrc.js"
     ln -sf "$HOME/${DOTFILES}/gitconfig.$(uname)" "$HOME/.gitconfig"
     ln -sf "$HOME/${DOTFILES}/gitignore_global" "$HOME/.gitignore_global"
     ln -sf "$HOME/${DOTFILES}/hgignore_global" "$HOME/.hgignore_global"
