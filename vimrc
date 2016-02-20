@@ -120,7 +120,7 @@ let s:os=substitute(system('uname'), '\n', '', '')
 
 if has('gui_running')
   set background=dark
-  colorscheme apprentice
+  colorscheme janah
 
   set guioptions=egmt
   set lines=60
@@ -142,7 +142,7 @@ if has('gui_running')
 
 else
   if &t_Co >= 256
-    colorscheme apprentice
+    colorscheme janah
   else
     colorscheme darkblue
   endif

@@ -130,6 +130,7 @@ Plug 'reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
 " Colorschemes
 Plug 'romainl/Apprentice'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'mhinz/vim-janah'
 
 " Add new text objects
 " - use 'ia'/'aa' for arguments,
