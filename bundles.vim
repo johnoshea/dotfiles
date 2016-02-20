@@ -116,7 +116,6 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'johnoshea/vim-twig', {'for': ['html', 'twig']}
 
 " 'Writing' plugins
-Plug 'kana/vim-textobj-user', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-pencil', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-lexical', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-litecorrect', {'for': ['text', 'markdown']}
@@ -133,6 +132,10 @@ Plug 'mhinz/vim-janah'
 " - use 'ia'/'aa' for arguments,
 "   or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
 Plug 'wellle/targets.vim'
+" Needed for vim-textobj-underscore
+Plug 'kana/vim-textobj-user'
+" Add underscore text object - use a_ or i_
+Plug 'lucapette/vim-textobj-underscore'
 
 " Fencview - autodetect CJK and Unicode file encodings
 Plug 'fencview.vim'
