@@ -120,7 +120,7 @@ let s:os=substitute(system('uname'), '\n', '', '')
 
 if has('gui_running')
   set background=dark
-  colorscheme apprentice
+  colorscheme janah
 
   set guioptions=egmt
   set lines=60
@@ -142,7 +142,7 @@ if has('gui_running')
 
 else
   if &t_Co >= 256
-    colorscheme apprentice
+    colorscheme janah
   else
     colorscheme darkblue
   endif
@@ -196,7 +196,7 @@ nnoremap gj j
 " <leader>cd      cd to the directory of the current buffer
 nnoremap <leader>cd :lcd %:h<CR>
 " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
-nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:CtrlP<cr>
+nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:FZF -m<cr>
 " Calling applications
 nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
 " Disable "F1 for help"
@@ -493,10 +493,7 @@ set pastetoggle=<localleader>p
 nnoremap <leader>b :TagbarToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
-nnoremap <leader>T :CtrlPBufTag<CR>
-nnoremap <leader>t :CtrlPTag<CR>
-nnoremap <localleader>t <Plug>TaskList
-nnoremap ; :CtrlPBuffer<cr>
+nnoremap <leader>t <Plug>TaskList
 
 " }}}
 " Compiling --------------------------------------------------------------- {{{
@@ -626,85 +623,6 @@ let g:airline_theme='powerlineish'
 let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " }}}
-" Yankstack --------------------------------------------------------------- {{{
-let g:yankstack_map_keys = 0
-nmap <c-p> <Plug>yankstack_substitute_older_paste
-nmap <c-P> <Plug>yankstack_substitute_newer_paste
-imap <c-p> <c-o><Plug>yankstack_substitute_older_paste
-imap <c-P> <c-o><Plug>yankstack_substitute_newer_paste
-
-" }}}
-" ctrlp ------------------------------------------------------------------- {{{
-let g:path_to_matcher = "/usr/local/bin/matcher"
-let g:ctrlp_map = '<c-t>'
-let g:ctrlp_switch_buffer = 2
-let g:ctrlp_use_caching = 1
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
-let g:ctrlp_max_depth = 100
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_max_depth = 100
-if s:os == "Windows"
-    let g:ctrlp_cache_dir = $HOME.'/vimfiles/tmp'
-else
-    let g:ctrlp_cache_dir = $HOME.'/.vim/tmp'
-endif
-let g:ctrlp_max_files = 100000
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_open_multiple_files = 'ij'
-
-if filereadable(g:path_to_matcher)
-    let g:ctrlp_match_func = { 'match': 'GoodMatch' }
-endif
-
-if has("unix")
-
-    if executable('ag')
-        " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-        let g:ctrlp_user_cmd_fallback = 'ag %s -l --nocolor -g "" | head -' . g:ctrlp_max_files
-    else
-        let g:ctrlp_user_cmd_fallback = 'find %s -type f | head -' . g:ctrlp_max_files
-    endif
-
-    let g:ctrlp_user_command = {
-        \   'types': {
-        \       1: ['.git', 'cd %s && git ls-files']
-        \   },
-        \   'fallback': g:ctrlp_user_cmd_fallback
-        \ }
-elseif s:os == "Windows"
-    let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d | findstr /v \.git | findstr /v \.hg' " Windows
-endif
-
-let g:ctrlp_prompt_mappings = {
-    \ 'PrtClearCache()':      ['<c-r>'],
-\ }
-
-function! GoodMatch(items, str, limit, mmode, ispath, crfile, regex)
-  " Used by the 'matcher' program / ctrl-p add-on
-  " Create a cache file if not yet exists
-  let cachefile = ctrlp#utils#cachedir().'/matcher.cache'
-  if !( filereadable(cachefile) && a:items == readfile(cachefile) )
-    call writefile(a:items, cachefile)
-  endif
-  if !filereadable(cachefile)
-    return []
-  endif
-
-  " a:mmode is currently ignored. In the future, we should probably do
-  " something about that. the matcher behaves like "full-line".
-  let cmd = g:path_to_matcher.' --limit '.a:limit.' --manifest '.cachefile.' '
-  if !( exists('g:ctrlp_dotfiles') && g:ctrlp_dotfiles )
-    let cmd = cmd.'--no-dotfiles '
-  endif
-  let cmd = cmd.a:str
-
-  return split(system(cmd), "\n")
-
-endfunction
-
-
-" }}}
 " Fugitive ---------------------------------------------------------------- {{{
 " Map '..' to go up a directory in fugitive tree/blob buffers.
 autocmd User fugitive
@@ -733,6 +651,30 @@ let g:tagbar_singleclick = 1
 let g:tagbar_usearrows = 1
 
 " }}}
+" FZF --------------------------------------------------------------------- {{{
+nnoremap <silent> <Leader><Leader> :FZF -m<CR>
+
+nnoremap <silent> <c-t> :call fzf#run({ 'tmux_height': winheight('.') / 2, 'sink': 'botright split' })<CR>
+nnoremap <silent> <c-v> :call fzf#run({ 'tmux_width': '40%', 'sink': 'vertical botright split' })<CR>
+
+function! BufList()
+    redir => ls
+    silent ls
+    redir END
+    return split(ls, '\n')
+endfunction
+
+function! BufOpen(e)
+    execute 'buffer '. matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader><Enter> :call fzf#run({
+            \   'source':      reverse(BufList()),
+            \   'sink':        function('BufOpen'),
+            \   'options':     '+m',
+            \   'tmux_height': '40%'
+            \ })<CR>
+" }}}
 " Syntastic --------------------------------------------------------------- {{{
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 2
@@ -747,17 +689,12 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_python_flake8_args="--max-complexity 12"
 let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint', 'jscs']
 
  if &diff
      let g:syntastic_auto_loc_list = 2
      let g:syntastic_auto_jump = 0
  endif
-
-" }}}
-" Clam -------------------------------------------------------------------- {{{
-nnoremap ! :Clam<space>
-vnoremap ! :ClamVisual<space>
 " }}}
 " Gundo ------------------------------------------------------------------- {{{
 let g:gundo_prefer_python3 = 1

@@ -2,36 +2,64 @@
 
 set nocompatible            " Use Vim settings, rather then Vi settings.
                             " Must be first, because it changes other options
-
+let s:darwin = has('mac')
 call plug#begin('~/.vim/bundle')
 
 "
 " Plugins -----------------------------------------------------------------
 
-" Utilities/dependencies
-Plug 'tpope/vim-sleuth'
 
-" Completion
-Plug 'SirVer/ultisnips'
-" Ultisnips snippets are now stored in honza/vim-snippets
-Plug 'honza/vim-snippets'
+if v:version >= 703
+    " Completion
+    Plug 'SirVer/ultisnips'
+    " Ultisnips snippets are now stored in honza/vim-snippets
+    Plug 'honza/vim-snippets'
+
+    " Show VCS diffs
+    Plug 'mhinz/vim-signify'
+endif
+
+if v:version >= 704
+    " Tags
+    Plug 'majutsushi/tagbar'
+    " - auto-create 'tags' files - to disable per-directory, create a .notags file
+    Plug 'ludovicchabant/vim-gutentags'
+endif
+
+if s:darwin
+    " Navigation
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+    " - use <leader>vp to prompt for a command, <leader>vl to re-run,
+    "   <leader>vq to close tmux window
+    Plug 'benmills/vimux'
+    " - allow window nav to work across non-vim tmux panes (needs tmux config too)
+    Plug 'christoomey/vim-tmux-navigator'
+    " vim-tmux-focus-events
+    Plug 'tmux-plugins/vim-tmux-focus-events'
+
+    " 'Writing' plugins
+    Plug 'reedes/vim-pencil', {'for': ['text', 'markdown']}
+    Plug 'reedes/vim-lexical', {'for': ['text', 'markdown']}
+    Plug 'reedes/vim-litecorrect', {'for': ['text', 'markdown']}
+    Plug 'reedes/vim-wordy', {'for': ['text', 'markdown']}
+    Plug 'reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
+    Plug 'reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
+
+    Plug 'marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
+endif
+
+
 " Smart-insert closing parentheses/quotes, etc
 Plug 'kana/vim-smartinput'
-
-" Coding
+" Syntax-checking
 Plug 'scrooloose/syntastic'
-
-" Navigation
-Plug 'ctrlpvim/ctrlp.vim'
+" Utilities/dependencies
+Plug 'tpope/vim-sleuth'
 " - netrw enhancement
 Plug 'tpope/vim-vinegar'
 " - use 'f{CHAR1}{CHAR2} to move to the first occurrence of CHAR1CHAR2'
 Plug 'justinmk/vim-sneak'
-
-" Tags
-Plug 'majutsushi/tagbar'
-" - auto-create 'tags' files - to disable per-directory, create a .notags file
-Plug 'ludovicchabant/vim-gutentags'
 
 " Editing
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
@@ -39,8 +67,6 @@ Plug 'tpope/vim-repeat'
 " - use [space/]space to create empty lines above/below, [l/]l for lprev/lnext
 "   [q/]q for cprev/cnext, [n/]n for prev/next diff block
 Plug 'tpope/vim-unimpaired'
-" - <c-P>/<c-p> for newer/older pastes
-Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 " - use 'ga' to start EasyAlign
@@ -66,18 +92,9 @@ Plug 'kshenoy/vim-signature'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'renyard/vim-git-flow-format'
-" Show VCS diffs
-Plug 'mhinz/vim-signify'
 
-" System / program integration
-Plug 'sjl/clam.vim'
-" - use <leader>vp to prompt for a command, <leader>vl to re-run,
-"   <leader>vq to close tmux window
-Plug 'benmills/vimux'
 " - turn on large (>20MB) file optimizations - use :Large/:Unlarge/:Large!
 Plug 'LargeFile'
-" - allow arrow keys to work across non-vim tmux panes (needs tmux config too)
-Plug 'christoomey/vim-tmux-navigator'
 " - add :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'tpope/vim-eunuch'
 
@@ -91,7 +108,6 @@ Plug 'sheerun/vim-polyglot'
 " Django
 Plug 'django.vim', {'for': 'django'}
 " Javascript
-Plug 'marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 Plug 'othree/yajs.vim', {'for': 'javascript'}
 Plug 'gavocanov/vim-js-indent', {'for': 'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
@@ -118,23 +134,20 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 " Twig
 Plug 'johnoshea/vim-twig', {'for': ['html', 'twig']}
 
-" 'Writing' plugins
-Plug 'kana/vim-textobj-user', {'for': ['text', 'markdown']}
-Plug 'reedes/vim-pencil', {'for': ['text', 'markdown']}
-Plug 'reedes/vim-lexical', {'for': ['text', 'markdown']}
-Plug 'reedes/vim-litecorrect', {'for': ['text', 'markdown']}
-Plug 'reedes/vim-wordy', {'for': ['text', 'markdown']}
-Plug 'reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
-Plug 'reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
 
 " Colorschemes
 Plug 'romainl/Apprentice'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'mhinz/vim-janah'
 
 " Add new text objects
 " - use 'ia'/'aa' for arguments,
 "   or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
 Plug 'wellle/targets.vim'
+" Needed for vim-textobj-underscore
+Plug 'kana/vim-textobj-user'
+" Add underscore text object - use a_ or i_
+Plug 'lucapette/vim-textobj-underscore'
 
 " Fencview - autodetect CJK and Unicode file encodings
 Plug 'fencview.vim'
@@ -195,9 +208,6 @@ Plug 'ervandew/supertab'
 
 " TaskList - use <localleader>t to call it up
 Plug 'vim-scripts/TaskList.vim'
-
-" vim-tmux-focus-events
-Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Editorconfig support
 Plug 'editorconfig/editorconfig-vim'
