@@ -196,7 +196,7 @@ nnoremap gj j
 " <leader>cd      cd to the directory of the current buffer
 nnoremap <leader>cd :lcd %:h<CR>
 " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
-nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:CtrlP<cr>
+nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:FZF -m<cr>
 " Calling applications
 nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
 " Disable "F1 for help"
@@ -493,10 +493,7 @@ set pastetoggle=<localleader>p
 nnoremap <leader>b :TagbarToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
-nnoremap <leader>T :CtrlPBufTag<CR>
-nnoremap <leader>t :CtrlPTag<CR>
-nnoremap <localleader>t <Plug>TaskList
-nnoremap ; :CtrlPBuffer<cr>
+nnoremap <leader>t <Plug>TaskList
 
 " }}}
 " Compiling --------------------------------------------------------------- {{{
