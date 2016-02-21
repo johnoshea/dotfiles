@@ -10,16 +10,16 @@ call plug#begin('~/.vim/bundle')
 
 
 if v:version >= 703
-    " Completion
-    Plug 'SirVer/ultisnips'
-    " Ultisnips snippets are now stored in honza/vim-snippets
-    Plug 'honza/vim-snippets'
-
     " Show VCS diffs
     Plug 'mhinz/vim-signify'
 endif
 
 if v:version >= 704
+    " Completion
+    Plug 'SirVer/ultisnips'
+    " Ultisnips snippets are now stored in honza/vim-snippets
+    Plug 'honza/vim-snippets'
+
     " Tags
     Plug 'majutsushi/tagbar'
     " - auto-create 'tags' files - to disable per-directory, create a .notags file
