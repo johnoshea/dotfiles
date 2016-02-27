@@ -655,7 +655,6 @@ let g:tagbar_usearrows = 1
 nnoremap <silent> <Leader><Leader> :FZF -m<CR>
 
 nnoremap <silent> <c-t> :call fzf#run({ 'tmux_height': winheight('.') / 2, 'sink': 'botright split' })<CR>
-nnoremap <silent> <c-v> :call fzf#run({ 'tmux_width': '40%', 'sink': 'vertical botright split' })<CR>
 
 function! BufList()
     redir => ls
