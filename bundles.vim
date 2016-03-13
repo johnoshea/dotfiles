@@ -1,5 +1,6 @@
 " Preamble ----------------------------------------------------------------
 
+" vint: -ProhibitSetNoCompatible
 set nocompatible            " Use Vim settings, rather then Vi settings.
                             " Must be first, because it changes other options
 call plug#begin('~/.vim/bundle')
