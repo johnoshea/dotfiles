@@ -1,21 +1,32 @@
 " .vimrc
 " Author: John O'Shea <john.m.oshea@gmail.com>
 " Source: <https://github.com/johnoshea/dotfiles>
-
+"
+" Useful variables -------------------------------------------------------- {{{
+let g:isMac = has('macunix')
+let g:isOldMac = has('mac') && ! has('macunix')
+let g:isUnix = has('unix')
+let g:isWindows = has('win32')
+let g:isNvim = has('nvim')
+" Stock the Location of vim's folder in a global variable.
+let g:vimDir = g:isWindows ? substitute(expand('$HOME/vimfiles'), '\', '/', 'g') : expand('$HOME/.vim')
+" }}}
+" vim-plug ---------------------------------------------------------------- {{{
 " For use as:
 "    $ vim -u bundles.vim +PlugInstall +q
 source ~/src/dotfiles/bundles.vim
-
 " }}}
 " Basic settings ---------------------------------------------------------- {{{
 
 " Miscellaneous settings
-scriptencoding utf-8            " Allow us to use non-ASCII characters
+set encoding=utf-8              " UTF-8 everywhere
+set termencoding=utf-8          " UTF-8 everywhere
+scriptencoding utf-8            " UTF-8 everywhere
 set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
 set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 " NEOVIM: uncomment this block whenever neovim is finally usable and remove
 "         the two lines above this
-" if !has('nvim')
+" if !g:isNvim
 "   set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
 "   set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 " else
@@ -39,8 +50,6 @@ set confirm                       " Get confirmation before we do anything stupi
 set whichwrap+=<,>,[,]            " <left> and <right> move over line endings
 set visualbell                    " Flash instead of beeping
 set browsedir=current             " Open up the file-browser in the current directory
-set encoding=utf-8                " UTF-8 please, this is the 21st century
-set termencoding=utf-8            " UTF-8 please, this is the 21st century
 set tenc=utf-8                    " And set UTF-8 for the terminal too
 set nobomb                        " Don't write a Byte Order Mark
 set matchpairs+=<:>               " Match angle-brackets as well by default
@@ -89,7 +98,7 @@ set formatoptions+=croqn
 "                  |+----- Insert comment leader after <Enter>
 "                  +------ Auto-wrap comments
 " Delete comment character when joining commented lines
-if v:version > 703 || v:version == 703 && has("patch541")
+if v:version > 703 || v:version == 703 && has('patch541')
   set formatoptions+=j
 endif
 
@@ -113,7 +122,13 @@ set completeopt=longest,menu,menuone,preview
 "               |       +------- Use popup menu with completions
 "               +--------------- Insert longest completion match
 
-let s:os=substitute(system('uname'), '\n', '', '')
+" Open personal config files for editing ---------------------------------- {{{
+" *** :Ev		=> ~/.vimrc
+" *** :Eb		=> ~/src/dotfiles/bundles.vim
+" *** :Et		=> ~/.dotfiles/tmux.conf
+command! Ev :e! $MYVIMRC
+command! Eb :e! $HOME/src/dotfiles/bundles.vim
+command! Et :e! $HOME/src/dotfiles/tmux.conf
 
 " }}}
 " Colors/GUI -------------------------------------------------------------- {{{
@@ -126,15 +141,15 @@ if has('gui_running')
   set lines=60
   set columns=180
 
-  if s:os == 'Darwin'
+  if g:isMac
     set guifont=Menlo:h14
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
-  elseif s:os == 'Linux'
+  elseif g:isUnix
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
     set guioptions-=m
     set clipboard^=unnamedplus
-  elseif s:os = 'Windows'
+  elseif g:isWindows
     set guifont=Consolas:h12
     set guioptions-=m
     set clipboard^=unnamedplus
@@ -147,21 +162,21 @@ else
     colorscheme darkblue
   endif
 
-  if s:os == 'Darwin'
+  if g:isMac
     set clipboard^=unnamed
-  elseif s:os == 'Linux'
+  elseif g:isUnix
     set clipboard^=unnamedplus
-  elseif s:os == 'Windows'
+  elseif g:isWindows
     set clipboard^=unnamed
   endif
 
   " restore screen after quitting
-  if has("terminfo")
-    let &t_Sf="\ESC[3%p1%dm"
-    let &t_Sb="\ESC[4%p1%dm"
+  if has('terminfo')
+    let &t_Sf='\ESC[3%p1%dm'
+    let &t_Sb='\ESC[4%p1%dm'
   else
-    let &t_Sf="\ESC[3%dm"
-    let &t_Sb="\ESC[4%dm"
+    let &t_Sf='\ESC[3%dm'
+    let &t_Sb='\ESC[4%dm'
   endif
 
   " don't clear background color
@@ -171,7 +186,7 @@ endif
 " }}}
 " Keystrokes -------------------------------------------------------------- {{{
 let mapleader="\<Space>"
-let maplocalleader=","
+let maplocalleader=','
 
 " Typos
 command! -bang E e<bang>
@@ -282,7 +297,7 @@ function! MyFoldText() " {{{
 
     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
     let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+    return line . '…' . repeat(' ',fillcharcount) . foldedlinecount . '…' . ' '
 endfunction " }}}
 set foldtext=MyFoldText()
 
@@ -290,7 +305,7 @@ set foldtext=MyFoldText()
 " Colors ------------------------------------------------------------------ {{{
 
 " Switch syntax highlighting on, when the terminal has colors
-if &t_Co > 2 || has("gui_running")
+if &t_Co > 2 || has('gui_running')
     syntax on
     syntax sync fromstart
 endif
@@ -307,22 +322,24 @@ endif
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
-autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+augroup restoreposition
+    autocmd BufReadPost *
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
+augroup END
 
 " Fileformats
 " For any given OS, prefer its native fileformat for new files
-if has("unix")
+if g:isUnix || g:isMac
     set fileformats=unix,dos,mac
-elseif has("win16") || has("win32") || has("win64") || has("win95")
+elseif g:isWindows
     set fileformats=dos,unix,mac
-elseif has("mac")
+elseif g:isOldMac
     set fileformats=mac,unix,dos
 endif
 
-if s:os == "Windows"
+if g:isWindows
     set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*,*\\bin\\*,*\\pkg\\*
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/bin/*,*/pkg/*
@@ -346,8 +363,8 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " backup/undo files with the same names in multiple directories and keep
 " them distinct
 if exists('+undofile')
-    if s:os == "Windows"
-        if !isdirectory(expand("~/vimfiles/tmp/undo"))
+    if g:isWindows
+        if !isdirectory(expand('~/vimfiles/tmp/undo'))
             !mkdir ~/vimfiles/tmp
             !mkdir ~/vimfiles/tmp/undo
         endif
@@ -355,7 +372,7 @@ if exists('+undofile')
         set directory=~/vimfiles/tmp// " directory to place swap files in
         set undodir=~/vimfiles/undo// " where to put undo files
     else
-        if !isdirectory(expand("~/.vim/tmp/undo"))
+        if !isdirectory(expand('~/.vim/tmp/undo'))
             !mkdir -p ~/.vim/tmp/undo
         endif
         set backupdir^=~/.vim/tmp// " Backups are written to ~/.vim/tmp/ if possible
@@ -376,7 +393,9 @@ endif
 
 " }}}
 " Searching --------------------------------------------------------------- {{{
-autocmd VimEnter * nohls
+augroup nohighlight
+    autocmd VimEnter * nohls
+augroup END
 
 " turn off highlighted results (set nohlsearch)
 " just pressing n or N will turn the highlight back again
@@ -398,8 +417,10 @@ map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
 map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 
 " Pulses the first match after hitting the enter key
-autocmd! User IncSearchExecute
-autocmd User IncSearchExecute :call search_pulse#Pulse()
+augroup vimpulse
+    autocmd! User IncSearchExecute
+    autocmd User IncSearchExecute :call search_pulse#Pulse()
+augroup END
 
 map *   <Plug>(asterisk-*)
 map #   <Plug>(asterisk-#)
@@ -415,7 +436,7 @@ let g:asterisk#keeppos = 1
 " Display options --------------------------------------------------------- {{{
 " Listchars
 " Use better looking listchars if they are supported
-if has("multi_byte")
+if has('multi_byte')
     set listchars=tab:»\ ,extends:›,precedes:‹,trail:·,nbsp:‗,eol:$
     let &sbr = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
 else
@@ -471,7 +492,9 @@ augroup END
 
 " Resize splits when the window is resized
 
-au VimResized * exe "normal! \<c-w>="
+augroup resized
+    au VimResized * exe "normal! \<c-w>="
+augroup END
 if &diff
     "I'm only interested in diff colours
     syntax off
@@ -521,24 +544,19 @@ noremap <C-W><C-W> <C-W>w
 nnoremap J mzJ`z
 " }}}
 " }}}
-" Filetypes --------------------------------------------------------------- {{{
-" Fugitive ---------------------------------------------------------------- {{{
-" Auto-clean fugitive buffers.
-autocmd BufReadPost fugitive://* set bufhidden=delete
-
-" }}}
 " }}}
 " Arrow keys -------------------------------------------------------------- {{{
 " Repurpose arrow keys to move lines
 " Inspired by http://jeetworks.com/node/89
 function! s:MoveLineUp()
-    call <SID>MoveLineOrVisualUp(".", "")
+    call <SID>MoveLineOrVisualUp('.', '')
 endfunction
 
 function! s:MoveLineDown()
-    call <SID>MoveLineOrVisualDown(".", "")
+    call <SID>MoveLineOrVisualDown('.', '')
 endfunction
 
+" vint: -ProhibitCommandRelyOnUser
 function! s:MoveVisualUp()
     call <SID>MoveLineOrVisualUp("'<", "'<,'>")
     normal gv
@@ -548,31 +566,32 @@ function! s:MoveVisualDown()
     call <SID>MoveLineOrVisualDown("'>", "'<,'>")
     normal gv
 endfunction
+" vint: +ProhibitCommandRelyOnUser
 
 function! s:MoveLineOrVisualUp(line_getter, range)
     let l_num = line(a:line_getter)
     if l_num - v:count1 - 1 < 0
-        let move_arg = "0"
+        let move_arg = '0'
     else
-        let move_arg = a:line_getter." -".(v:count1 + 1)
+        let move_arg = a:line_getter.' -'.(v:count1 + 1)
     endif
-    call <SID>MoveLineOrVisualUpOrDown(a:range."move ".move_arg)
+    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.move_arg)
 endfunction
 
 function! s:MoveLineOrVisualDown(line_getter, range)
     let l_num = line(a:line_getter)
-    if l_num + v:count1 > line("$")
-        let move_arg = "$"
+    if l_num + v:count1 > line('$')
+        let move_arg = '$'
     else
-        let move_arg = a:line_getter." +".v:count1
+        let move_arg = a:line_getter.' +'.v:count1
     endif
-    call <SID>MoveLineOrVisualUpOrDown(a:range."move ".move_arg)
+    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.move_arg)
 endfunction
 
 function! s:MoveLineOrVisualUpOrDown(move_arg)
-    let col_num = virtcol(".")
-    execute "silent! ".a:move_arg
-    execute "normal! ".col_num."|"
+    let col_num = virtcol('.')
+    execute 'silent! '.a:move_arg
+    execute 'normal! '.col_num.'|'
 endfunction
 
 " Arrow key remapping:
@@ -624,21 +643,25 @@ let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " }}}
 " Fugitive ---------------------------------------------------------------- {{{
-" Map '..' to go up a directory in fugitive tree/blob buffers.
-autocmd User fugitive
-    \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-    \   nnoremap <buffer> .. :edit %:h<CR> |
-    \ endif
+augroup fugitive
+    " Auto-clean fugitive buffers.
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+    " Map '..' to go up a directory in fugitive tree/blob buffers.
+    autocmd User fugitive
+        \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+        \   nnoremap <buffer> .. :edit %:h<CR> |
+        \ endif
 
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>ga :Gwrite<CR>
-nnoremap <leader>gc :Gcommit %<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gl :Glog<CR>
-nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gr :Gremove<CR>
-nnoremap <leader>gpl :Git pull origin master<CR>
-nnoremap <leader>gps :Git push origin master<CR>
+    nnoremap <leader>gs :Gstatus<CR>
+    nnoremap <leader>ga :Gwrite<CR>
+    nnoremap <leader>gc :Gcommit %<CR>
+    nnoremap <leader>gd :Gdiff<CR>
+    nnoremap <leader>gl :Glog<CR>
+    nnoremap <leader>gb :Gblame<CR>
+    nnoremap <leader>gr :Gremove<CR>
+    nnoremap <leader>gpl :Git pull origin master<CR>
+    nnoremap <leader>gps :Git push origin master<CR>
+augroup END
 
 " }}}
 " Tagbar ------------------------------------------------------------------ {{{
@@ -686,9 +709,16 @@ let g:syntastic_enable_balloons = 1
 " let g:syntastic_disabled_filetypes = ['html', 'md']
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['pylint', 'flake8']
-let g:syntastic_python_flake8_args="--max-complexity 12"
-let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_python_flake8_args='--max-complexity 12'
 let g:syntastic_javascript_checkers = ['eslint', 'jscs']
+let g:syntastic_c_checkers = ['gcc']
+let g:syntastic_css_checkers = ['csslint']
+let g:syntastic_html_checkers = ['tidy']
+let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_scss_checkers = ['scss-lint', 'sass']
+let g:syntastic_vim_checkers = ['vint']
+let g:syntastic_sh_checkers = ['shellcheck', 'sh']
 
  if &diff
      let g:syntastic_auto_loc_list = 2
@@ -727,9 +757,11 @@ nmap g# g#zz<Plug>Pulse
 nmap * *<Plug>Pulse
 " }}}
 " rainbow parentheses ----------------------------------------------------- {{{
-au VimEnter * RainbowParentheses
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-let g:rbpt_max = 24
+augroup rainbowparentheses
+    au VimEnter * RainbowParentheses
+    let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+    let g:rbpt_max = 24
+augroup END
 " }}}
 " GoldenView -------------------------------------------------------------- {{{
 let g:goldenview__enable_default_mapping = 0
@@ -743,7 +775,7 @@ nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
 let g:startify_session_dir = '~/.vim/session'
 " }}}
 " UltiSnips --------------------------------------------------------------- {{{
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
 " }}}
 " vim-easy-align ---------------------------------------------------------- {{{
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -773,13 +805,17 @@ nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
 
 " automatically source the .vimrc file if I change it
 " the bang (!) forces it to overwrite this command rather than stack it
-au! BufWritePost .vimrc :source ~/.vimrc
-au! BufWritePost vimrc :source ~/.vimrc
+augroup autosourcevimrc
+    au! BufWritePost .vimrc :source ~/.vimrc
+    au! BufWritePost vimrc :source ~/.vimrc
+augroup END
 
 " }}}
 " Autocommands ------------------------------------------------------------ {{{
 " Autocomplete ------------------------------------------------------------ {{{
-autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
+augroup setdictionary
+    autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
+augroup END
 
 " }}}
 " Filetype-specific actions ----------------------------------------------- {{{
@@ -802,23 +838,27 @@ augroup END
 
 " Makefile settings ------------------------------------------------------- {{{
 " Make the tab key do actual tab characters for makefiles.
-autocmd BufNewFile,Bufread *akefile call <SID>MakefileSettings()
+augroup makefile
+    autocmd BufNewFile,Bufread *akefile call <SID>MakefileSettings()
 
-" Settings for Makefile-like things
-function! s:MakefileSettings()
-    set noexpandtab " don't use spaces to indent
-    set nosmarttab  " don't ever use spaces, not even at line beginnings
-endfunction
+    " Settings for Makefile-like things
+    function! s:MakefileSettings()
+        set noexpandtab " don't use spaces to indent
+        set nosmarttab  " don't ever use spaces, not even at line beginnings
+    endfunction
 
-autocmd QuickFixCmdPost make cwindow
+    autocmd QuickFixCmdPost make cwindow
+augroup END
 " }}}
 " 'Auto-mark' settings ------------------------------------------------------- {{{
-autocmd BufLeave *.css,*.less,*scss normal! mC
-autocmd BufLeave *.html,*.jade      normal! mH
-autocmd BufLeave *.js               normal! mJ
-autocmd BufLeave *.py               normal! mP
-autocmd BufLeave vimrc,*.vim        normal! mV
-autocmd BufLeave bundles.vim        normal! mB
+augroup automark
+    autocmd BufLeave *.css,*.less,*scss normal! mC
+    autocmd BufLeave *.html,*.jade      normal! mH
+    autocmd BufLeave *.js               normal! mJ
+    autocmd BufLeave *.py               normal! mP
+    autocmd BufLeave vimrc,*.vim        normal! mV
+    autocmd BufLeave bundles.vim        normal! mB
+augroup END
 " }}}
 " }}}
 " Tmux integration -------------------------------------------------------- {{{
