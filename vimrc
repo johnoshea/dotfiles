@@ -1,7 +1,16 @@
 " .vimrc
 " Author: John O'Shea <john.m.oshea@gmail.com>
 " Source: <https://github.com/johnoshea/dotfiles>
-
+"
+" Useful variables -------------------------------------------------------- {{{
+let g:isMac = has('macunix')
+let g:isOldMac = has('mac') && ! has('macunix')
+let g:isUnix = has('unix')
+let g:isWindows = has('win32')
+let g:isNvim = has('nvim')
+" Stock the Location of vim's folder in a global variable.
+let g:vimDir = g:isWindows ? substitute(expand('$HOME/vimfiles'), '\', '/', 'g') : expand('$HOME/.vim')
+" }}}
 " For use as:
 "    $ vim -u bundles.vim +PlugInstall +q
 source ~/src/dotfiles/bundles.vim
@@ -15,7 +24,7 @@ set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing v
 set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 " NEOVIM: uncomment this block whenever neovim is finally usable and remove
 "         the two lines above this
-" if !has('nvim')
+" if !g:isNvim
 "   set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
 "   set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 " else
@@ -113,7 +122,6 @@ set completeopt=longest,menu,menuone,preview
 "               |       +------- Use popup menu with completions
 "               +--------------- Insert longest completion match
 
-let s:os=substitute(system('uname'), '\n', '', '')
 
 " }}}
 " Colors/GUI -------------------------------------------------------------- {{{
@@ -126,15 +134,15 @@ if has('gui_running')
   set lines=60
   set columns=180
 
-  if s:os == 'Darwin'
+  if g:isMac
     set guifont=Menlo:h14
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
-  elseif s:os == 'Linux'
+  elseif g:isUnix
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
     set guioptions-=m
     set clipboard^=unnamedplus
-  elseif s:os = 'Windows'
+  elseif g:isWindows
     set guifont=Consolas:h12
     set guioptions-=m
     set clipboard^=unnamedplus
@@ -147,11 +155,11 @@ else
     colorscheme darkblue
   endif
 
-  if s:os == 'Darwin'
+  if g:isMac
     set clipboard^=unnamed
-  elseif s:os == 'Linux'
+  elseif g:isUnix
     set clipboard^=unnamedplus
-  elseif s:os == 'Windows'
+  elseif g:isWindows
     set clipboard^=unnamed
   endif
 
@@ -314,15 +322,15 @@ autocmd BufReadPost *
 
 " Fileformats
 " For any given OS, prefer its native fileformat for new files
-if has("unix")
+if g:isUnix || g:isMac
     set fileformats=unix,dos,mac
-elseif has("win16") || has("win32") || has("win64") || has("win95")
+elseif g:isWindows
     set fileformats=dos,unix,mac
-elseif has("mac")
+elseif g:isOldMac
     set fileformats=mac,unix,dos
 endif
 
-if s:os == "Windows"
+if g:isWindows
     set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*,*\\bin\\*,*\\pkg\\*
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/bin/*,*/pkg/*
@@ -346,8 +354,8 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " backup/undo files with the same names in multiple directories and keep
 " them distinct
 if exists('+undofile')
-    if s:os == "Windows"
         if !isdirectory(expand("~/vimfiles/tmp/undo"))
+    if g:isWindows
             !mkdir ~/vimfiles/tmp
             !mkdir ~/vimfiles/tmp/undo
         endif

@@ -2,7 +2,6 @@
 
 set nocompatible            " Use Vim settings, rather then Vi settings.
                             " Must be first, because it changes other options
-let s:darwin = has('mac')
 call plug#begin('~/.vim/bundle')
 
 "
@@ -26,7 +25,7 @@ if v:version >= 704
     Plug 'ludovicchabant/vim-gutentags'
 endif
 
-if s:darwin
+if g:isMac
     " Navigation
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
