@@ -122,6 +122,13 @@ set completeopt=longest,menu,menuone,preview
 "               |       +------- Use popup menu with completions
 "               +--------------- Insert longest completion match
 
+" Open personal config files for editing ---------------------------------- {{{
+" *** :Ev		=> ~/.vimrc
+" *** :Eb		=> ~/src/dotfiles/bundles.vim
+" *** :Et		=> ~/.dotfiles/tmux.conf
+command! Ev :e! $MYVIMRC
+command! Eb :e! $HOME/src/dotfiles/bundles.vim
+command! Et :e! $HOME/src/dotfiles/tmux.conf
 
 " }}}
 " Colors/GUI -------------------------------------------------------------- {{{
