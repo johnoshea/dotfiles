@@ -103,7 +103,7 @@ Plug 'tpope/vim-abolish'
 " - close 'if' statements in sh, etc
 Plug 'tpope/vim-endwise'
 " - add lots of language support on-demand
-Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot', { 'do': './build' }
 " Django
 Plug 'django.vim', {'for': 'django'}
 " Javascript
@@ -122,7 +122,7 @@ Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 " Add csv plugin back in, now that it's been removed from vim-ployglot
 Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Python
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'davidhalter/jedi-vim', {'do': 'git submodule update --init', 'for': 'python'}
 Plug 'hdima/python-syntax', {'for': 'python'}
 " Docker syntax
 Plug 'ekalinin/Dockerfile.vim', {'for': 'docker'}
