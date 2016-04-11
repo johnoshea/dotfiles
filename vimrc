@@ -473,6 +473,8 @@ augroup trailing
     au!
     au InsertEnter * :set listchars-=trail:⌴
     au InsertLeave * :set listchars+=trail:⌴
+    " Clear trailing whitespace in selected file types on save
+    autocmd BufWritePre *.py,*.js,*.sh,*.html,*.css,*.scss :%s/\s\+$//e
 augroup END
 
 " Cursorline/column
