@@ -26,7 +26,7 @@ if v:version >= 704
     Plug 'ludovicchabant/vim-gutentags'
 endif
 
-if g:isMac
+if has('macunix')
     " Navigation
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
