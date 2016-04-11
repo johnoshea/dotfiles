@@ -682,6 +682,11 @@ nnoremap <silent> <Leader><Leader> :FZF -m<CR>
 
 nnoremap <silent> <c-t> :call fzf#run({ 'tmux_height': winheight('.') / 2, 'sink': 'botright split' })<CR>
 
+let g:fzf_action = {
+  \ 'ctrl-m': 'e',
+  \ 'ctrl-s': 'botright split',
+  \ 'ctrl-v': 'vertical botright split' }
+
 function! BufList()
     redir => ls
     silent ls
