@@ -111,8 +111,6 @@ Plug 'django.vim', {'for': 'django'}
 Plug 'othree/yajs.vim', {'for': 'javascript'}
 Plug 'gavocanov/vim-js-indent', {'for': 'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
-" Jade filetype support
-Plug 'digitaltoad/vim-jade', {'for': ['jade']}
 " Salt syntax/ftplugin
 Plug 'saltstack/salt-vim'
 " Add CSS3 syntax highlighting
@@ -125,8 +123,6 @@ Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Python
 Plug 'davidhalter/jedi-vim', {'do': 'git submodule update --init', 'for': 'python'}
 Plug 'hdima/python-syntax', {'for': 'python'}
-" Docker syntax
-Plug 'ekalinin/Dockerfile.vim', {'for': 'docker'}
 " Sass
 Plug 'cakebaker/scss-syntax.vim'
 " HTML
