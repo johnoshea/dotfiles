@@ -781,6 +781,9 @@ nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
 " }}}
 " Startify ---------------------------------------------------------------- {{{
 let g:startify_session_dir = '~/.vim/session'
+let g:startify_bookmarks = ['~/src/dotfiles/', '~/src/zprezto/']
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
 " }}}
 " UltiSnips --------------------------------------------------------------- {{{
 let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
