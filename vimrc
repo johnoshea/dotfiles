@@ -272,6 +272,9 @@ set ignorecase                  " Ignore case when searching
 set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
 
+" Search current word without moving cursor
+nnoremap<silent> <leader>k :let stay_star_view = winsaveview()<cr>:set hls!<cr>*:call winrestview(stay_star_view)<cr>
+
 " }}}
 " Folding ----------------------------------------------------------------- {{{
 set foldenable                  " Enable folds
