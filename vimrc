@@ -61,6 +61,7 @@ set printoptions=paper:A4         " (even though almost all prints go to PDF any
 set splitright                    " When splitting vertically, split to the right
 set splitbelow                    " When splitting horizontally, split below
 set scrolloff=3                   " Don't go right to the edge of the window when scrolling
+set sidescroll=1                  " scroll one character at a time to reveal more text as needed
 set sidescrolloff=5               " Lines visible to the left/right of cursor when scrolling
 set laststatus=2                  " Always show a status line
 set modeline modelines=10         " Use modelines within first 10 lines
@@ -142,7 +143,7 @@ if has('gui_running')
   set columns=180
 
   if g:isMac
-    set guifont=Menlo:h14
+    set guifont=Fira\ Mono:h12
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
   elseif g:isUnix
@@ -438,7 +439,7 @@ let g:asterisk#keeppos = 1
 " Use better looking listchars if they are supported
 if has('multi_byte')
     set listchars=tab:»\ ,extends:›,precedes:‹,trail:·,nbsp:‗,eol:$
-    let &sbr = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
+    let &showbreak = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
 else
     set listchars=tab:>\ ,extends:>,precedes:<,trail:-,nbsp:%,eol:$
 endif
