@@ -61,6 +61,7 @@ set printoptions=paper:A4         " (even though almost all prints go to PDF any
 set splitright                    " When splitting vertically, split to the right
 set splitbelow                    " When splitting horizontally, split below
 set scrolloff=3                   " Don't go right to the edge of the window when scrolling
+set sidescroll=1                  " scroll one character at a time to reveal more text as needed
 set sidescrolloff=5               " Lines visible to the left/right of cursor when scrolling
 set laststatus=2                  " Always show a status line
 set modeline modelines=10         " Use modelines within first 10 lines
@@ -142,7 +143,7 @@ if has('gui_running')
   set columns=180
 
   if g:isMac
-    set guifont=Menlo:h14
+    set guifont=Fira\ Mono:h12
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
   elseif g:isUnix
@@ -270,6 +271,9 @@ filetype plugin indent on
 set ignorecase                  " Ignore case when searching
 set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
+
+" Search current word without moving cursor
+nnoremap<silent> <leader>k :let stay_star_view = winsaveview()<cr>:set hls!<cr>*:call winrestview(stay_star_view)<cr>
 
 " }}}
 " Folding ----------------------------------------------------------------- {{{
@@ -438,7 +442,7 @@ let g:asterisk#keeppos = 1
 " Use better looking listchars if they are supported
 if has('multi_byte')
     set listchars=tab:»\ ,extends:›,precedes:‹,trail:·,nbsp:‗,eol:$
-    let &sbr = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
+    let &showbreak = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
 else
     set listchars=tab:>\ ,extends:>,precedes:<,trail:-,nbsp:%,eol:$
 endif
@@ -473,6 +477,8 @@ augroup trailing
     au!
     au InsertEnter * :set listchars-=trail:⌴
     au InsertLeave * :set listchars+=trail:⌴
+    " Clear trailing whitespace in selected file types on save
+    autocmd BufWritePre *.py,*.js,*.sh,*.html,*.css,*.scss :%s/\s\+$//e
 augroup END
 
 " Cursorline/column
@@ -515,8 +521,9 @@ set pastetoggle=<localleader>p
 " Plugins ----------------------------------------------------------------- {{{
 nnoremap <leader>b :TagbarToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
-nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>t <Plug>TaskList
+nnoremap <leader>z :ZoomWin<CR>
+nnoremap <leader>Z :call system("tmux resize-pane -Z")<CR>
 
 " }}}
 " Compiling --------------------------------------------------------------- {{{
@@ -679,6 +686,11 @@ nnoremap <silent> <Leader><Leader> :FZF -m<CR>
 
 nnoremap <silent> <c-t> :call fzf#run({ 'tmux_height': winheight('.') / 2, 'sink': 'botright split' })<CR>
 
+let g:fzf_action = {
+  \ 'ctrl-m': 'e',
+  \ 'ctrl-s': 'botright split',
+  \ 'ctrl-v': 'vertical botright split' }
+
 function! BufList()
     redir => ls
     silent ls
@@ -710,7 +722,7 @@ let g:syntastic_enable_balloons = 1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_python_flake8_args='--max-complexity 12'
-let g:syntastic_javascript_checkers = ['eslint', 'jscs']
+let g:syntastic_javascript_checkers = ['jscs', 'eslint']
 let g:syntastic_c_checkers = ['gcc']
 let g:syntastic_css_checkers = ['csslint']
 let g:syntastic_html_checkers = ['tidy']
@@ -773,6 +785,9 @@ nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
 " }}}
 " Startify ---------------------------------------------------------------- {{{
 let g:startify_session_dir = '~/.vim/session'
+let g:startify_bookmarks = ['~/src/dotfiles/', '~/src/zprezto/']
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
 " }}}
 " UltiSnips --------------------------------------------------------------- {{{
 let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
