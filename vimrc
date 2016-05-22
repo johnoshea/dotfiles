@@ -740,9 +740,6 @@ let g:syntastic_sh_checkers = ['shellcheck', 'sh']
 " Gundo ------------------------------------------------------------------- {{{
 let g:gundo_prefer_python3 = 1
 " }}}
-" Indent Guides ----------------------------------------------------------- {{{
-let g:indent_guides_guide_size = 1
-" }}}
 " vim-sneak --------------------------------------------------------------- {{{
 nmap f <Plug>SneakForward
 xmap f <Plug>VSneakForward

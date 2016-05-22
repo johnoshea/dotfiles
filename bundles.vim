@@ -84,8 +84,6 @@ Plug 'tpope/vim-fugitive'
 " Display
 " - provides 'i' indent object (e.g. 'vai')
 Plug 'michaeljsmith/vim-indent-object'
-" - use <leader>ig to show/hide indent guides
-Plug 'nathanaelkane/vim-indent-guides'
 " - use <leader>z to zoom to single window and back
 Plug 'ZoomWin'
 Plug 'kshenoy/vim-signature'
