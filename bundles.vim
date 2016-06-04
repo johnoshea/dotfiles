@@ -80,6 +80,7 @@ Plug 'Konfekt/FastFold'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 
 " Display
 " - provides 'i' indent object (e.g. 'vai')
@@ -202,6 +203,9 @@ Plug 'ervandew/supertab'
 
 " Editorconfig support
 Plug 'editorconfig/editorconfig-vim'
+
+" Unicode
+Plug 'chrisbra/unicode.vim'
 
 " Vim-test
 Plug 'janko-m/vim-test'
