@@ -879,6 +879,11 @@ augroup automark
     autocmd BufLeave bundles.vim        normal! mB
 augroup END
 " }}}
+" Try to figure out filetypes automatically --------------------------------{{{
+augroup autofiletypedetect
+  au! CursorHold * filetype detect
+augroup END
+" }}}
 " }}}
 " Tmux integration -------------------------------------------------------- {{{
 
