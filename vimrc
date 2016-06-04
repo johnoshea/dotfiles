@@ -810,6 +810,14 @@ nnoremap <leader>f :Autoformat<cr>
 " editorconfig ------------------------------------------------------------ {{{
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " }}}
+" vim-test ---------------------------------------------------------------- {{{
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>A :TestSuite<CR>
+nmap <silent> <leader>, :TestLast<CR>
+nmap <silent> <leader>. :TestVisit<CR>
+let test#strategy = 'vimux'
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>

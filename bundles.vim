@@ -203,4 +203,7 @@ Plug 'ervandew/supertab'
 " Editorconfig support
 Plug 'editorconfig/editorconfig-vim'
 
+" Vim-test
+Plug 'janko-m/vim-test'
+
 call plug#end()
