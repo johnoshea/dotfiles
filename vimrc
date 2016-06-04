@@ -521,7 +521,6 @@ set pastetoggle=<localleader>p
 " Plugins ----------------------------------------------------------------- {{{
 nnoremap <leader>b :TagbarToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
-nnoremap <leader>t <Plug>TaskList
 nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>Z :call system("tmux resize-pane -Z")<CR>
 
@@ -666,8 +665,8 @@ augroup fugitive
     nnoremap <leader>gl :Glog<CR>
     nnoremap <leader>gb :Gblame<CR>
     nnoremap <leader>gr :Gremove<CR>
-    nnoremap <leader>gpl :Git pull origin master<CR>
-    nnoremap <leader>gps :Git push origin master<CR>
+    nnoremap <leader>gpl :Git pull<CR>
+    nnoremap <leader>gps :Git push<CR>
 augroup END
 
 " }}}
@@ -740,9 +739,6 @@ let g:syntastic_sh_checkers = ['shellcheck', 'sh']
 " Gundo ------------------------------------------------------------------- {{{
 let g:gundo_prefer_python3 = 1
 " }}}
-" Indent Guides ----------------------------------------------------------- {{{
-let g:indent_guides_guide_size = 1
-" }}}
 " vim-sneak --------------------------------------------------------------- {{{
 nmap f <Plug>SneakForward
 xmap f <Plug>VSneakForward
@@ -814,6 +810,14 @@ nnoremap <leader>f :Autoformat<cr>
 " editorconfig ------------------------------------------------------------ {{{
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " }}}
+" vim-test ---------------------------------------------------------------- {{{
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>A :TestSuite<CR>
+nmap <silent> <leader>, :TestLast<CR>
+nmap <silent> <leader>. :TestVisit<CR>
+let test#strategy = 'vimux'
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
@@ -873,6 +877,11 @@ augroup automark
     autocmd BufLeave *.py               normal! mP
     autocmd BufLeave vimrc,*.vim        normal! mV
     autocmd BufLeave bundles.vim        normal! mB
+augroup END
+" }}}
+" Try to figure out filetypes automatically --------------------------------{{{
+augroup autofiletypedetect
+  au! CursorHold * filetype detect
 augroup END
 " }}}
 " }}}

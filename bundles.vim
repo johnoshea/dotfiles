@@ -80,12 +80,11 @@ Plug 'Konfekt/FastFold'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 
 " Display
 " - provides 'i' indent object (e.g. 'vai')
 Plug 'michaeljsmith/vim-indent-object'
-" - use <leader>ig to show/hide indent guides
-Plug 'nathanaelkane/vim-indent-guides'
 " - use <leader>z to zoom to single window and back
 Plug 'ZoomWin'
 Plug 'kshenoy/vim-signature'
@@ -202,10 +201,13 @@ Plug 'tpope/vim-dispatch'
 " Supertab
 Plug 'ervandew/supertab'
 
-" TaskList - use <localleader>t to call it up
-Plug 'vim-scripts/TaskList.vim'
-
 " Editorconfig support
 Plug 'editorconfig/editorconfig-vim'
+
+" Unicode
+Plug 'chrisbra/unicode.vim'
+
+" Vim-test
+Plug 'janko-m/vim-test'
 
 call plug#end()

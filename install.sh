@@ -35,6 +35,7 @@ main () {
 
     if [ "$(uname -s)" == "Darwin" ]; then
         echo "Applying OSX-specific settings"
+        # shellcheck disable=SC1090
         source "$HOME/${DOTFILES}/osx"
     fi
 }
