@@ -521,7 +521,6 @@ set pastetoggle=<localleader>p
 " Plugins ----------------------------------------------------------------- {{{
 nnoremap <leader>b :TagbarToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
-nnoremap <leader>t <Plug>TaskList
 nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>Z :call system("tmux resize-pane -Z")<CR>
 

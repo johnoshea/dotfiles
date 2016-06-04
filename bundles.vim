@@ -200,9 +200,6 @@ Plug 'tpope/vim-dispatch'
 " Supertab
 Plug 'ervandew/supertab'
 
-" TaskList - use <localleader>t to call it up
-Plug 'vim-scripts/TaskList.vim'
-
 " Editorconfig support
 Plug 'editorconfig/editorconfig-vim'
 
