@@ -665,8 +665,8 @@ augroup fugitive
     nnoremap <leader>gl :Glog<CR>
     nnoremap <leader>gb :Gblame<CR>
     nnoremap <leader>gr :Gremove<CR>
-    nnoremap <leader>gpl :Git pull origin master<CR>
-    nnoremap <leader>gps :Git push origin master<CR>
+    nnoremap <leader>gpl :Git pull<CR>
+    nnoremap <leader>gps :Git push<CR>
 augroup END
 
 " }}}
