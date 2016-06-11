@@ -88,6 +88,7 @@ make_symlinks () {
     ln -sf "$HOME/${DOTFILES}/gitignore_global" "$HOME/.gitignore_global"
     ln -sf "$HOME/${DOTFILES}/hgignore_global" "$HOME/.hgignore_global"
     ln -sf "$HOME/${DOTFILES}/tigrc" "$HOME/.tigrc"
+    ln -sf "$HOME/${DOTFILES}/pdbrc.py" "$HOME/.pdbrc.py"
 
     ln -sf "$HOME/${ZPREZTO}/runcoms/zlogin" "$HOME/.zlogin"
     ln -sf "$HOME/${ZPREZTO}/runcoms/zlogout" "$HOME/.zlogout"
