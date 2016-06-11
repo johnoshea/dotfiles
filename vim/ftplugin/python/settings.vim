@@ -36,3 +36,14 @@ let python_slow_sync=1
 "
 "    For "print" builtin as function:
 let python_print_as_function=1
+
+setlocal omnifunc=jedi#completions
+setlocal autoindent expandtab smarttab shiftwidth=4 softtabstop=4
+set foldmethod=indent
+
+" Taken from romainl's dotfiles
+let g:pyindent_open_paren   = '&sw'
+let g:pyindent_nested_paren = '&sw'
+let g:pyindent_continue     = '&sw'
+
+nnoremap <localleader>p O# pylint: disable=no-member<CR><BS><BS>pytest.set_trace()<ESC>
