@@ -54,8 +54,6 @@ endif
 Plug 'kana/vim-smartinput'
 " Syntax-checking
 Plug 'scrooloose/syntastic'
-" Utilities/dependencies
-Plug 'tpope/vim-sleuth'
 " - netrw enhancement
 Plug 'tpope/vim-vinegar'
 " - use 'f{CHAR1}{CHAR2} to move to the first occurrence of CHAR1CHAR2'
