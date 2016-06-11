@@ -104,6 +104,7 @@ Plug 'tpope/vim-endwise'
 Plug 'sheerun/vim-polyglot', { 'do': './build' }
 " Django
 Plug 'django.vim', {'for': 'django'}
+Plug 'tweekmonster/django-plus.vim'
 " Javascript
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
@@ -124,9 +125,6 @@ Plug 'hdima/python-syntax', {'for': 'python'}
 Plug 'cakebaker/scss-syntax.vim'
 " HTML
 Plug 'mattn/emmet-vim', {'for': 'html'}
-" Twig
-Plug 'johnoshea/vim-twig', {'for': ['html', 'twig']}
-
 
 " Colorschemes
 Plug 'romainl/Apprentice'
