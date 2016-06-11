@@ -105,8 +105,8 @@ Plug 'sheerun/vim-polyglot', { 'do': './build' }
 " Django
 Plug 'django.vim', {'for': 'django'}
 " Javascript
-Plug 'othree/yajs.vim', {'for': 'javascript'}
-Plug 'gavocanov/vim-js-indent', {'for': 'javascript'}
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 " Salt syntax/ftplugin
 Plug 'saltstack/salt-vim'
