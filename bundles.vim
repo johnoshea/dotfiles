@@ -111,7 +111,7 @@ Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 " Salt syntax/ftplugin
 Plug 'saltstack/salt-vim'
 " Add CSS3 syntax highlighting
-Plug 'hail2u/vim-css3-syntax', {'for': ['html', 'css', 'scss']}
+Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
 " Better JSON
 Plug 'elzr/vim-json', {'for': ['javascript', 'json']}
 Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
