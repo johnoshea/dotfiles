@@ -54,8 +54,6 @@ endif
 Plug 'kana/vim-smartinput'
 " Syntax-checking
 Plug 'scrooloose/syntastic'
-" Utilities/dependencies
-Plug 'tpope/vim-sleuth'
 " - netrw enhancement
 Plug 'tpope/vim-vinegar'
 " - use 'f{CHAR1}{CHAR2} to move to the first occurrence of CHAR1CHAR2'
@@ -106,14 +104,15 @@ Plug 'tpope/vim-endwise'
 Plug 'sheerun/vim-polyglot', { 'do': './build' }
 " Django
 Plug 'django.vim', {'for': 'django'}
+Plug 'tweekmonster/django-plus.vim'
 " Javascript
-Plug 'othree/yajs.vim', {'for': 'javascript'}
-Plug 'gavocanov/vim-js-indent', {'for': 'javascript'}
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 " Salt syntax/ftplugin
 Plug 'saltstack/salt-vim'
 " Add CSS3 syntax highlighting
-Plug 'hail2u/vim-css3-syntax', {'for': ['html', 'css', 'scss']}
+Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
 " Better JSON
 Plug 'elzr/vim-json', {'for': ['javascript', 'json']}
 Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
@@ -126,9 +125,6 @@ Plug 'hdima/python-syntax', {'for': 'python'}
 Plug 'cakebaker/scss-syntax.vim'
 " HTML
 Plug 'mattn/emmet-vim', {'for': 'html'}
-" Twig
-Plug 'johnoshea/vim-twig', {'for': ['html', 'twig']}
-
 
 " Colorschemes
 Plug 'romainl/Apprentice'
