@@ -340,6 +340,7 @@ endif
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
 augroup restoreposition
+    autocmd!
     autocmd BufReadPost *
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
@@ -411,6 +412,7 @@ endif
 " }}}
 " Searching --------------------------------------------------------------- {{{
 augroup nohighlight
+    autocmd!
     autocmd VimEnter * nohls
 augroup END
 
@@ -432,7 +434,7 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 " Pulses the first match after hitting the enter key
 augroup vimpulse
     autocmd! User IncSearchExecute
-    autocmd User IncSearchExecute :call search_pulse#Pulse()
+    autocmd! User IncSearchExecute :call search_pulse#Pulse()
 augroup END
 
 map *   <Plug>(asterisk-*)
@@ -475,6 +477,7 @@ function! ToggleNumbers()
 endfunction
 
 augroup numbering
+    autocmd!
     autocmd FocusLost * :set nonumber
     autocmd FocusGained * :set relativenumber
     autocmd InsertEnter * :set number
@@ -483,9 +486,9 @@ augroup END
 
 " Trailing whitespace - only shown when not in insert mode
 augroup trailing
-    au!
-    au InsertEnter * :set listchars-=trail:⌴
-    au InsertLeave * :set listchars+=trail:⌴
+    autocmd!
+    autocmd InsertEnter * :set listchars-=trail:⌴
+    autocmd InsertLeave * :set listchars+=trail:⌴
     " Clear trailing whitespace in selected file types on save
     autocmd BufWritePre *.py,*.js,*.sh,*.html,*.css,*.scss :%s/\s\+$//e
 augroup END
@@ -494,13 +497,14 @@ augroup END
 " Only show cursorline in the current window and in normal mode.
 " Only show colorcolumn in the current window
 augroup clinecol
-    au!
+    autocmd!
     autocmd CursorHold * setlocal cursorline cursorcolumn
     autocmd CursorMoved,InsertEnter *
         \ if &l:cursorline | setlocal nocursorline nocursorcolumn | endif
 augroup END
 
 augroup linenumbers
+    autocmd!
     autocmd WinEnter * :setlocal number
     autocmd WinLeave * :setlocal nonumber
 augroup END
@@ -508,6 +512,7 @@ augroup END
 " Resize splits when the window is resized
 
 augroup resized
+    autocmd!
     au VimResized * exe "normal! \<c-w>="
 augroup END
 if &diff
@@ -658,6 +663,7 @@ let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 " }}}
 " Fugitive ---------------------------------------------------------------- {{{
 augroup fugitive
+    autocmd!
     " Auto-clean fugitive buffers.
     autocmd BufReadPost fugitive://* set bufhidden=delete
     " Map '..' to go up a directory in fugitive tree/blob buffers.
@@ -774,7 +780,8 @@ nmap * *<Plug>Pulse
 " }}}
 " rainbow parentheses ----------------------------------------------------- {{{
 augroup rainbowparentheses
-    au VimEnter * RainbowParentheses
+    autocmd!
+    autocmd VimEnter * RainbowParentheses
     let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     let g:rbpt_max = 24
 augroup END
@@ -834,14 +841,16 @@ nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
 " automatically source the .vimrc file if I change it
 " the bang (!) forces it to overwrite this command rather than stack it
 augroup autosourcevimrc
-    au! BufWritePost .vimrc :source ~/.vimrc
-    au! BufWritePost vimrc :source ~/.vimrc
+    autocmd!
+    autocmd BufWritePost .vimrc :source ~/.vimrc
+    autocmd BufWritePost vimrc :source ~/.vimrc
 augroup END
 
 " }}}
 " Autocommands ------------------------------------------------------------ {{{
 " Autocomplete ------------------------------------------------------------ {{{
 augroup setdictionary
+    autocmd!
     autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
 augroup END
 
@@ -866,6 +875,7 @@ augroup END
 " Makefile settings ------------------------------------------------------- {{{
 " Make the tab key do actual tab characters for makefiles.
 augroup makefile
+    autocmd!
     autocmd BufNewFile,Bufread *akefile call <SID>MakefileSettings()
 
     " Settings for Makefile-like things
