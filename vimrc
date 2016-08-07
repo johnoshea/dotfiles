@@ -122,7 +122,7 @@ set completeopt=longest,menu,menuone,preview
 "               |       |    +-- Show popup even with one match
 "               |       +------- Use popup menu with completions
 "               +--------------- Insert longest completion match
-
+" }}}
 " Open personal config files for editing ---------------------------------- {{{
 " *** :Ev		=> ~/.vimrc
 " *** :Eb		=> ~/src/dotfiles/bundles.vim
@@ -236,7 +236,6 @@ augroup command_window
     " start command line window in insert mode and no line numbers
     autocmd CmdwinEnter * startinsert
     autocmd CmdwinEnter * set nonumber
-    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 augroup END
 
 " Moves the character under the cursor to the end of the line.
@@ -407,10 +406,6 @@ augroup nohighlight
     autocmd VimEnter * nohls
 augroup END
 
-" turn off highlighted results (set nohlsearch)
-" just pressing n or N will turn the highlight back again
-nnoremap <localleader>n :nohls<cr>
-
 " incsearch and vim search pulse
 let g:vim_search_pulse_disable_auto_mappings = 1
 let g:incsearch#auto_nohlsearch = 1
@@ -554,7 +549,6 @@ noremap <C-W><C-W> <C-W>w
 " Lines ------------------------------------------------------------------- {{{
 " Keep the cursor in place while joining lines using 'J'
 nnoremap J mzJ`z
-" }}}
 " }}}
 " }}}
 " Arrow keys -------------------------------------------------------------- {{{
@@ -848,7 +842,6 @@ augroup END
 " Bunch of stuff lifted from Tim Pope's vimrc
 augroup FTMisc
     autocmd!
-
     autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
         \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
 augroup END
@@ -874,16 +867,6 @@ augroup makefile
     endfunction
 
     autocmd QuickFixCmdPost make cwindow
-augroup END
-" }}}
-" 'Auto-mark' settings ------------------------------------------------------- {{{
-augroup automark
-    autocmd BufLeave *.css,*.less,*scss normal! mC
-    autocmd BufLeave *.html,*.jade      normal! mH
-    autocmd BufLeave *.js               normal! mJ
-    autocmd BufLeave *.py               normal! mP
-    autocmd BufLeave vimrc,*.vim        normal! mV
-    autocmd BufLeave bundles.vim        normal! mB
 augroup END
 " }}}
 " }}}
