@@ -23,6 +23,9 @@ main () {
         mkdir src
         UPDATE=0
     fi
+    if [ ! -d .ptpython ]; then
+        mkdir .ptpython
+    fi
 
     make_symlinks
     if [ ${UPDATE} -eq 0 ]; then
@@ -89,6 +92,8 @@ make_symlinks () {
     ln -sf "$HOME/${DOTFILES}/hgignore_global" "$HOME/.hgignore_global"
     ln -sf "$HOME/${DOTFILES}/tigrc" "$HOME/.tigrc"
     ln -sf "$HOME/${DOTFILES}/pdbrc.py" "$HOME/.pdbrc.py"
+    ln -sf "$HOME/${DOTFILES}/gemrc" "$HOME/.gemrc"
+    ln -sf "$HOME/${DOTFILES}/ptpythonconfig.py" "$HOME/.ptpython/config.py"
 
     ln -sf "$HOME/${ZPREZTO}/runcoms/zlogin" "$HOME/.zlogin"
     ln -sf "$HOME/${ZPREZTO}/runcoms/zlogout" "$HOME/.zlogout"

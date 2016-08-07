@@ -122,7 +122,7 @@ set completeopt=longest,menu,menuone,preview
 "               |       |    +-- Show popup even with one match
 "               |       +------- Use popup menu with completions
 "               +--------------- Insert longest completion match
-
+" }}}
 " Open personal config files for editing ---------------------------------- {{{
 " *** :Ev		=> ~/.vimrc
 " *** :Eb		=> ~/src/dotfiles/bundles.vim
@@ -136,7 +136,7 @@ command! Et :e! $HOME/src/dotfiles/tmux.conf
 
 if has('gui_running')
   set background=dark
-  colorscheme janah
+  colorscheme gruvbox
 
   set guioptions=egmt
   set lines=60
@@ -158,7 +158,13 @@ if has('gui_running')
 
 else
   if &t_Co >= 256
-    colorscheme janah
+    if $ITERM_PROFILE ==# 'Light'
+      colorscheme PaperColor
+      set background=light
+    else
+      colorscheme gruvbox
+      set background=dark
+    endif
   else
     colorscheme darkblue
   endif
@@ -230,7 +236,6 @@ augroup command_window
     " start command line window in insert mode and no line numbers
     autocmd CmdwinEnter * startinsert
     autocmd CmdwinEnter * set nonumber
-    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 augroup END
 
 " Moves the character under the cursor to the end of the line.
@@ -250,9 +255,17 @@ noremap gV `[v`]
 " Use <bs> to switch back to previous buffer
 nnoremap <bs> <c-^>
 
-" Use <cr> instead of :
-nnoremap <cr> :
+" Try using <CR> to get `:` again
+nnoremap <Enter> :
+xnoremap <Enter> :
+augroup reset_CR_mapping
+    autocmd!
+    autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+    autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
+augroup END
 
+" make last typed word uppercase
+inoremap <c-u> <esc>viwUea
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
 " For an explanation of the 'tabs vs spaces' used below, see
@@ -327,6 +340,7 @@ endif
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
 augroup restoreposition
+    autocmd!
     autocmd BufReadPost *
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
@@ -398,12 +412,9 @@ endif
 " }}}
 " Searching --------------------------------------------------------------- {{{
 augroup nohighlight
+    autocmd!
     autocmd VimEnter * nohls
 augroup END
-
-" turn off highlighted results (set nohlsearch)
-" just pressing n or N will turn the highlight back again
-nnoremap <localleader>n :nohls<cr>
 
 " incsearch and vim search pulse
 let g:vim_search_pulse_disable_auto_mappings = 1
@@ -423,7 +434,7 @@ map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
 " Pulses the first match after hitting the enter key
 augroup vimpulse
     autocmd! User IncSearchExecute
-    autocmd User IncSearchExecute :call search_pulse#Pulse()
+    autocmd! User IncSearchExecute :call search_pulse#Pulse()
 augroup END
 
 map *   <Plug>(asterisk-*)
@@ -466,6 +477,7 @@ function! ToggleNumbers()
 endfunction
 
 augroup numbering
+    autocmd!
     autocmd FocusLost * :set nonumber
     autocmd FocusGained * :set relativenumber
     autocmd InsertEnter * :set number
@@ -474,9 +486,9 @@ augroup END
 
 " Trailing whitespace - only shown when not in insert mode
 augroup trailing
-    au!
-    au InsertEnter * :set listchars-=trail:⌴
-    au InsertLeave * :set listchars+=trail:⌴
+    autocmd!
+    autocmd InsertEnter * :set listchars-=trail:⌴
+    autocmd InsertLeave * :set listchars+=trail:⌴
     " Clear trailing whitespace in selected file types on save
     autocmd BufWritePre *.py,*.js,*.sh,*.html,*.css,*.scss :%s/\s\+$//e
 augroup END
@@ -485,13 +497,14 @@ augroup END
 " Only show cursorline in the current window and in normal mode.
 " Only show colorcolumn in the current window
 augroup clinecol
-    au!
+    autocmd!
     autocmd CursorHold * setlocal cursorline cursorcolumn
     autocmd CursorMoved,InsertEnter *
         \ if &l:cursorline | setlocal nocursorline nocursorcolumn | endif
 augroup END
 
 augroup linenumbers
+    autocmd!
     autocmd WinEnter * :setlocal number
     autocmd WinLeave * :setlocal nonumber
 augroup END
@@ -499,6 +512,7 @@ augroup END
 " Resize splits when the window is resized
 
 augroup resized
+    autocmd!
     au VimResized * exe "normal! \<c-w>="
 augroup END
 if &diff
@@ -548,7 +562,6 @@ noremap <C-W><C-W> <C-W>w
 " Lines ------------------------------------------------------------------- {{{
 " Keep the cursor in place while joining lines using 'J'
 nnoremap J mzJ`z
-" }}}
 " }}}
 " }}}
 " Arrow keys -------------------------------------------------------------- {{{
@@ -650,6 +663,7 @@ let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 " }}}
 " Fugitive ---------------------------------------------------------------- {{{
 augroup fugitive
+    autocmd!
     " Auto-clean fugitive buffers.
     autocmd BufReadPost fugitive://* set bufhidden=delete
     " Map '..' to go up a directory in fugitive tree/blob buffers.
@@ -712,7 +726,7 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 2
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_enable_balloons = 1
@@ -766,7 +780,8 @@ nmap * *<Plug>Pulse
 " }}}
 " rainbow parentheses ----------------------------------------------------- {{{
 augroup rainbowparentheses
-    au VimEnter * RainbowParentheses
+    autocmd!
+    autocmd VimEnter * RainbowParentheses
     let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     let g:rbpt_max = 24
 augroup END
@@ -826,14 +841,16 @@ nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
 " automatically source the .vimrc file if I change it
 " the bang (!) forces it to overwrite this command rather than stack it
 augroup autosourcevimrc
-    au! BufWritePost .vimrc :source ~/.vimrc
-    au! BufWritePost vimrc :source ~/.vimrc
+    autocmd!
+    autocmd BufWritePost .vimrc :source ~/.vimrc
+    autocmd BufWritePost vimrc :source ~/.vimrc
 augroup END
 
 " }}}
 " Autocommands ------------------------------------------------------------ {{{
 " Autocomplete ------------------------------------------------------------ {{{
 augroup setdictionary
+    autocmd!
     autocmd FileType * exe('setlocal dictionary+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
 augroup END
 
@@ -842,7 +859,6 @@ augroup END
 " Bunch of stuff lifted from Tim Pope's vimrc
 augroup FTMisc
     autocmd!
-
     autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
         \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
 augroup END
@@ -859,6 +875,7 @@ augroup END
 " Makefile settings ------------------------------------------------------- {{{
 " Make the tab key do actual tab characters for makefiles.
 augroup makefile
+    autocmd!
     autocmd BufNewFile,Bufread *akefile call <SID>MakefileSettings()
 
     " Settings for Makefile-like things
@@ -868,16 +885,6 @@ augroup makefile
     endfunction
 
     autocmd QuickFixCmdPost make cwindow
-augroup END
-" }}}
-" 'Auto-mark' settings ------------------------------------------------------- {{{
-augroup automark
-    autocmd BufLeave *.css,*.less,*scss normal! mC
-    autocmd BufLeave *.html,*.jade      normal! mH
-    autocmd BufLeave *.js               normal! mJ
-    autocmd BufLeave *.py               normal! mP
-    autocmd BufLeave vimrc,*.vim        normal! mV
-    autocmd BufLeave bundles.vim        normal! mB
 augroup END
 " }}}
 " }}}

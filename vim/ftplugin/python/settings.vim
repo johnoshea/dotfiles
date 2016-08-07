@@ -46,4 +46,14 @@ let g:pyindent_open_paren   = '&sw'
 let g:pyindent_nested_paren = '&sw'
 let g:pyindent_continue     = '&sw'
 
-nnoremap <localleader>p O# pylint: disable=no-member<CR><BS><BS>pytest.set_trace()<ESC>
+" Add/remove pdb breakpoints
+nnoremap <silent> <f7> Oimport pdb<CR>pdb.set_trace()<ESC>
+nnoremap <silent> <leader><f7> :g/\s*import pdb\s*/d<CR>:g/\s*pdb.set_trace()\s*/d<CR>
+
+" Add/remove pytest breakpoints
+nnoremap <silent> <f8> O# pylint: disable=no-member<CR><BS><BS>pytest.set_trace()<ESC>
+nnoremap <silent> <leader><f8> /\s*pytest.set_trace()\s*/<CR>k2dd<ESC>
+
+" Add/remove pep8-disabling for a single line
+nnoremap <localleader>q A  # noqa<ESC>
+nnoremap <localleader>Q :s/  # noqa//<CR><ESC>
