@@ -130,6 +130,7 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'romainl/Apprentice'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'mhinz/vim-janah'
+Plug 'morhetz/gruvbox'
 
 " Add new text objects
 " - use 'ia'/'aa' for arguments,

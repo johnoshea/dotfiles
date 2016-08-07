@@ -136,7 +136,7 @@ command! Et :e! $HOME/src/dotfiles/tmux.conf
 
 if has('gui_running')
   set background=dark
-  colorscheme janah
+  colorscheme gruvbox
 
   set guioptions=egmt
   set lines=60
@@ -158,7 +158,13 @@ if has('gui_running')
 
 else
   if &t_Co >= 256
-    colorscheme janah
+    if $ITERM_PROFILE ==# 'Light'
+      colorscheme PaperColor
+      set background=light
+    else
+      colorscheme gruvbox
+      set background=dark
+    endif
   else
     colorscheme darkblue
   endif
