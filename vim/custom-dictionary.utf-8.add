@@ -66,3 +66,5 @@ filename
 WebDAV
 username
 Demandware
+virtualenv
+url
