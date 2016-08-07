@@ -125,6 +125,8 @@ Plug 'hdima/python-syntax', {'for': 'python'}
 Plug 'cakebaker/scss-syntax.vim'
 " HTML
 Plug 'mattn/emmet-vim', {'for': 'html'}
+" Terraform
+" Plug 'hashivim/vim-terraform'
 
 " Colorschemes
 Plug 'romainl/Apprentice'
@@ -140,6 +142,8 @@ Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 " Add underscore text object - use a_ or i_
 Plug 'lucapette/vim-textobj-underscore'
+" Add af/if for functions, ac/ic for classes, [pf/[pc, ]pf/]pc
+Plug 'bps/vim-textobj-python'
 
 " Fencview - autodetect CJK and Unicode file encodings
 Plug 'fencview.vim'
@@ -206,5 +210,8 @@ Plug 'chrisbra/unicode.vim'
 
 " Vim-test
 Plug 'janko-m/vim-test'
+
+" Enable local vim settings files
+Plug 'embear/vim-localvimrc'
 
 call plug#end()
