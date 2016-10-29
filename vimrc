@@ -816,11 +816,11 @@ nnoremap <leader>f :Autoformat<cr>
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " }}}
 " vim-test ---------------------------------------------------------------- {{{
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>A :TestSuite<CR>
-nmap <silent> <leader>, :TestLast<CR>
-nmap <silent> <leader>. :TestVisit<CR>
+nmap <silent> <leader>t <esc>:w<CR>:TestNearest<CR>
+nmap <silent> <leader>T <esc>:w<CR>:TestFile<CR>
+nmap <silent> <leader>A <esc>:w<CR>:TestSuite<CR>
+nmap <silent> <leader>, <esc>:w<CR>:TestLast<CR>
+nmap <silent> <leader>. <esc>:w<CR>:TestVisit<CR>
 let test#strategy = 'vimux'
 " }}}
 " vim-swoop --------------------------------------------------------------- {{{
