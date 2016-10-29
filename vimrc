@@ -792,6 +792,7 @@ let g:startify_change_to_vcs_root = 1
 " UltiSnips --------------------------------------------------------------- {{{
 let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'my_snippets']
 let g:UltiSnipsListSnippets = '<C-l>'
+let g:ultisnips_python_quoting_style = 'sphinx'
 " }}}
 " vim-easy-align ---------------------------------------------------------- {{{
 " Start interactive EasyAlign in visual mode (e.g. vipga)
