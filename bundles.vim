@@ -51,6 +51,7 @@ endif
 
 
 " Smart-insert closing parentheses/quotes, etc
+Plug 'Raimondi/delimitMate'
 " Syntax-checking
 Plug 'scrooloose/syntastic'
 " - netrw enhancement
@@ -78,6 +79,7 @@ Plug 'Konfekt/FastFold'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'airblade/vim-gitgutter'
 
 " Display
 " - provides 'i' indent object (e.g. 'vai')
@@ -125,7 +127,7 @@ Plug 'cakebaker/scss-syntax.vim'
 " HTML
 Plug 'mattn/emmet-vim', {'for': 'html'}
 " Terraform
-" Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform'
 
 " Colorschemes
 Plug 'NLKNguyen/papercolor-theme'
