@@ -197,13 +197,13 @@ Plug 'ervandew/supertab'
 " Editorconfig support
 Plug 'editorconfig/editorconfig-vim'
 
-" Unicode
-Plug 'chrisbra/unicode.vim'
-
 " Vim-test
 Plug 'janko-m/vim-test'
 
 " Enable local vim settings files
 Plug 'embear/vim-localvimrc'
+
+" Vim-swoop
+Plug 'pelodelfuego/vim-swoop'
 
 call plug#end()
