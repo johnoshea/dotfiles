@@ -534,7 +534,7 @@ set pastetoggle=<localleader>p
 " }}}
 " Plugins ----------------------------------------------------------------- {{{
 nnoremap <leader>b :TagbarToggle<CR>
-nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>z :ZoomWin<CR>
 nnoremap <leader>Z :call system("tmux resize-pane -Z")<CR>
 
@@ -750,9 +750,6 @@ let g:syntastic_sh_checkers = ['shellcheck', 'sh']
      let g:syntastic_auto_jump = 0
  endif
 " }}}
-" Gundo ------------------------------------------------------------------- {{{
-let g:gundo_prefer_python3 = 1
-" }}}
 " vim-sneak --------------------------------------------------------------- {{{
 nmap f <Plug>SneakForward
 xmap f <Plug>VSneakForward
@@ -833,6 +830,9 @@ nmap <silent> <leader>A :TestSuite<CR>
 nmap <silent> <leader>, :TestLast<CR>
 nmap <silent> <leader>. :TestVisit<CR>
 let test#strategy = 'vimux'
+" }}}
+" undotree ---------------------------------------------------------------- {{{
+let g:undotree_SetFocusWhenToggle = 1
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{

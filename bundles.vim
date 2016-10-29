@@ -59,7 +59,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'justinmk/vim-sneak'
 
 " Editing
-Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'tpope/vim-repeat'
 " - use [space/]space to create empty lines above/below, [l/]l for lprev/lnext
 "   [q/]q for cprev/cnext, [n/]n for prev/next diff block
