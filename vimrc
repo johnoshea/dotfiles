@@ -24,14 +24,6 @@ set termencoding=utf-8          " UTF-8 everywhere
 scriptencoding utf-8            " UTF-8 everywhere
 set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
 set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
-" NEOVIM: uncomment this block whenever neovim is finally usable and remove
-"         the two lines above this
-" if !g:isNvim
-"   set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
-"   set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
-" else
-"   let g:python_host_prog='/usr/local/bin/python' " make virtualenvs work
-" endif
 set ttyfast                       " Tell Vim we're using a fast connection - smoother redraws
 set backspace=indent,eol,start    " Backspace over everything in insert mode
 set writebackup                   " Use a backup file just for the purposes of saving
@@ -887,33 +879,6 @@ augroup makefile
     autocmd QuickFixCmdPost make cwindow
 augroup END
 " }}}
-" }}}
-" Tmux integration -------------------------------------------------------- {{{
-
-" This fixes pasting from iterm (and some other terminals, but you'll need to
-" adjust the condition) by using "bracketed paste mode"
-" I modified it to wait for esc (by using f28/f29)
-"
-" See: https://github.com/aaronjensen/vimfiles/blob/master/vimrc and
-
-if exists('$ITERM_PROFILE') || exists('$TMUX')
-  let &t_ti = "\<Esc>[?2004h" . &t_ti
-  let &t_te = "\<Esc>[?2004l" . &t_te
-
-  function! XTermPasteBegin(ret)
-    set pastetoggle=<Esc>[201~
-    set paste
-    return a:ret
-  endfunction
-
-  execute "set <f28>=\<Esc>[200~"
-  execute "set <f29>=\<Esc>[201~"
-  map <expr> <f28> XTermPasteBegin("i")
-  imap <expr> <f28> XTermPasteBegin("")
-  vmap <expr> <f28> XTermPasteBegin("c")
-  cmap <f28> <nop>
-  cmap <f29> <nop>
-end
 " }}}
 
 " Server-local settings: mostly used to disable plugins
