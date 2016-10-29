@@ -13,7 +13,7 @@ echo "*** Homebrew"
 echo
 brew doctor
 brew update
-brew upgrade --all
+brew upgrade
 brew cleanup
 brew prune
 echo "*** npm"
