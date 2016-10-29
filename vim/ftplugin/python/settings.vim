@@ -57,3 +57,7 @@ nnoremap <silent> <leader><f8> /\s*pytest.set_trace()\s*/<CR>k2dd<ESC>
 " Add/remove pep8-disabling for a single line
 nnoremap <localleader>q A  # noqa<ESC>
 nnoremap <localleader>Q :s/  # noqa//<CR><ESC>
+
+if executable('yapf')
+    let g:formatters_python = ['yapf', 'autopep8']
+endif

@@ -51,7 +51,7 @@ endif
 
 
 " Smart-insert closing parentheses/quotes, etc
-Plug 'kana/vim-smartinput'
+Plug 'Raimondi/delimitMate'
 " Syntax-checking
 Plug 'scrooloose/syntastic'
 " - netrw enhancement
@@ -60,7 +60,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'justinmk/vim-sneak'
 
 " Editing
-Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'tpope/vim-repeat'
 " - use [space/]space to create empty lines above/below, [l/]l for lprev/lnext
 "   [q/]q for cprev/cnext, [n/]n for prev/next diff block
@@ -79,6 +79,7 @@ Plug 'Konfekt/FastFold'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'airblade/vim-gitgutter'
 
 " Display
 " - provides 'i' indent object (e.g. 'vai')
@@ -126,12 +127,10 @@ Plug 'cakebaker/scss-syntax.vim'
 " HTML
 Plug 'mattn/emmet-vim', {'for': 'html'}
 " Terraform
-" Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform'
 
 " Colorschemes
-Plug 'romainl/Apprentice'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'mhinz/vim-janah'
 Plug 'morhetz/gruvbox'
 
 " Add new text objects
@@ -140,8 +139,6 @@ Plug 'morhetz/gruvbox'
 Plug 'wellle/targets.vim'
 " Needed for vim-textobj-underscore
 Plug 'kana/vim-textobj-user'
-" Add underscore text object - use a_ or i_
-Plug 'lucapette/vim-textobj-underscore'
 " Add af/if for functions, ac/ic for classes, [pf/[pc, ]pf/]pc
 Plug 'bps/vim-textobj-python'
 
@@ -177,9 +174,6 @@ Plug 'zhaocai/GoldenView.Vim'
 " Speeddating - increment/decrement dates correctly
 Plug 'tpope/vim-speeddating'
 
-" Peekaboo - show registers while in insert mode
-Plug 'junegunn/vim-peekaboo'
-
 " DidYouMean - avoid opening up new empty files if multiple completions
 Plug 'EinfachToll/DidYouMean'
 
@@ -205,13 +199,13 @@ Plug 'ervandew/supertab'
 " Editorconfig support
 Plug 'editorconfig/editorconfig-vim'
 
-" Unicode
-Plug 'chrisbra/unicode.vim'
-
 " Vim-test
 Plug 'janko-m/vim-test'
 
 " Enable local vim settings files
 Plug 'embear/vim-localvimrc'
+
+" Vim-swoop
+Plug 'pelodelfuego/vim-swoop'
 
 call plug#end()
