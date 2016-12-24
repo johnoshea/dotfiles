@@ -208,4 +208,7 @@ Plug 'embear/vim-localvimrc'
 " Vim-swoop
 Plug 'pelodelfuego/vim-swoop'
 
+" Vimwiki
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
