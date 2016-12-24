@@ -21,6 +21,12 @@ brew update
 brew upgrade
 brew cleanup
 brew prune
+echo "*** pipsi"
+echo
+pipsi upgrade pipsi
+for pipsi_package in $(pipsi list | grep "Package " | awk "{print $2}" | tr -d '":'); do
+    pipsi upgrade "$pipsi_package"
+done
 echo "*** npm"
 echo
 npm set progress=false
