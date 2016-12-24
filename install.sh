@@ -102,6 +102,7 @@ make_symlinks () {
     ln -sf "$HOME/${ZPREZTO}/runcoms/zshenv" "$HOME/.zshenv"
     ln -sf "$HOME/${ZPREZTO}/runcoms/zshrc" "$HOME/.zshrc"
     ln -sf "$HOME/${ZPREZTO}" "$HOME/.zprezto"
+    ln -sf "$(which pipsi)" ~/bin/pipsi
 }
 
 update_vim_submodules () {
