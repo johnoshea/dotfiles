@@ -10,6 +10,10 @@ rbenv global system
 echo "*** System software"
 echo
 sudo softwareupdate -i -a
+echo "*** App Store programs"
+echo
+sudo mas outdated
+sudo mas upgrade
 echo "*** Homebrew"
 echo
 brew doctor
