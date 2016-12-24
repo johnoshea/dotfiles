@@ -1,9 +1,10 @@
 #!/bin/sh
 # Switch back to system Ruby/Python before updating
-CURRENT_RUBY=$(rbenv version | cut -f1 -d' ')
-CURRENT_PYTHON=$(pyenv version | cut -f1 -d' ')
-echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY}] ***"
-pyenv global system
+CURRENT_RUBY=$(rbenv version | head -n1 | cut -f1 -d' ')
+CURRENT_PYTHON=$(pyenv version | head -n1 | cut -f1 -d' ')
+CURRENT_NODE=$(nodenv version | head -n1 | cut -f1 -d' ')
+echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE}] ***"
+pyenv global 3.5.2
 rbenv global system
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 echo "*** System software"
@@ -37,6 +38,7 @@ cd ~/src/zprezto || exit
 git submodule update
 git submodule foreach git pull origin master --recurse-submodules
 echo
-echo "Restoring previous Python/Ruby versions"
+echo "Restoring previous Python/Ruby/Node versions"
 pyenv global "${CURRENT_PYTHON}"
 rbenv global "${CURRENT_RUBY}"
+nodenv global "${CURRENT_NODE}"
