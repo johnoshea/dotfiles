@@ -830,6 +830,12 @@ vmap <Leader>ms :call SwoopMultiSelection()<CR>
 " undotree ---------------------------------------------------------------- {{{
 let g:undotree_SetFocusWhenToggle = 1
 " }}}
+" vimwiki ----------------------------------------------------------------- {{{
+let wiki = {}
+let wiki.path = '~/Documents/vimwiki/'
+let wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
+let g:vimwiki_list = [wiki]
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
