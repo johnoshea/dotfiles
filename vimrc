@@ -515,9 +515,6 @@ endif
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
 " Toggles ----------------------------------------------------------------- {{{
-nnoremap <localleader>s :setlocal spell!<CR>
-nnoremap <leader>w :setlocal wrap!<CR>
-nnoremap <leader>l :setlocal list!<CR>
 nnoremap <leader>e :set expandtab! expandtab?<CR>
 let line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
 nnoremap <leader>1 :call ToggleNumbers()<CR>
@@ -832,6 +829,12 @@ vmap <Leader>ms :call SwoopMultiSelection()<CR>
 " }}}
 " undotree ---------------------------------------------------------------- {{{
 let g:undotree_SetFocusWhenToggle = 1
+" }}}
+" vimwiki ----------------------------------------------------------------- {{{
+let wiki = {}
+let wiki.path = '~/Documents/vimwiki/'
+let wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
+let g:vimwiki_list = [wiki]
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
