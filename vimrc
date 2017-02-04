@@ -184,8 +184,8 @@ endif
 
 " }}}
 " Keystrokes -------------------------------------------------------------- {{{
-let mapleader="\<Space>"
-let maplocalleader=','
+let g:mapleader="\<Space>"
+let g:maplocalleader=','
 
 " Typos
 command! -bang E e<bang>
@@ -294,19 +294,19 @@ set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 nnoremap zO zCzO
 
 function! MyFoldText() " {{{
-    let line = getline(v:foldstart)
+    let s:line = getline(v:foldstart)
 
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 3
-    let foldedlinecount = v:foldend - v:foldstart
+    let s:nucolwidth = &foldcolumn + &number * &numberwidth
+    let s:windowwidth = winwidth(0) - s:nucolwidth - 3
+    let s:foldedlinecount = v:foldend - v:foldstart
 
     " expand tabs into spaces
-    let onetab = strpart('          ', 0, &tabstop)
-    let line = substitute(line, '\t', onetab, 'g')
+    let s:onetab = strpart('          ', 0, &tabstop)
+    let s:line = substitute(s:line, '\t', s:onetab, 'g')
 
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(' ',fillcharcount) . foldedlinecount . '…' . ' '
+    let s:line = strpart(s:line, 0, s:windowwidth - 2 -len(s:foldedlinecount))
+    let s:fillcharcount = s:windowwidth - len(s:line) - len(s:foldedlinecount)
+    return s:line . '…' . repeat(' ',s:fillcharcount) . s:foldedlinecount . '…' . ' '
 endfunction " }}}
 set foldtext=MyFoldText()
 
@@ -516,7 +516,7 @@ endif
 " Mappings ---------------------------------------------------------------- {{{
 " Toggles ----------------------------------------------------------------- {{{
 nnoremap <leader>e :set expandtab! expandtab?<CR>
-let line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
+let g:line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
 nnoremap <leader>1 :call ToggleNumbers()<CR>
 set pastetoggle=<localleader>p
 
@@ -577,29 +577,29 @@ endfunction
 " vint: +ProhibitCommandRelyOnUser
 
 function! s:MoveLineOrVisualUp(line_getter, range)
-    let l_num = line(a:line_getter)
-    if l_num - v:count1 - 1 < 0
-        let move_arg = '0'
+    let s:l_num = line(a:line_getter)
+    if s:l_num - v:count1 - 1 < 0
+        let s:move_arg = '0'
     else
-        let move_arg = a:line_getter.' -'.(v:count1 + 1)
+        let s:move_arg = a:line_getter.' -'.(v:count1 + 1)
     endif
-    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.move_arg)
+    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.s:move_arg)
 endfunction
 
 function! s:MoveLineOrVisualDown(line_getter, range)
-    let l_num = line(a:line_getter)
-    if l_num + v:count1 > line('$')
-        let move_arg = '$'
+    let s:l_num = line(a:line_getter)
+    if s:l_num + v:count1 > line('$')
+        let s:move_arg = '$'
     else
-        let move_arg = a:line_getter.' +'.v:count1
+        let s:move_arg = a:line_getter.' +'.v:count1
     endif
-    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.move_arg)
+    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.s:move_arg)
 endfunction
 
 function! s:MoveLineOrVisualUpOrDown(move_arg)
-    let col_num = virtcol('.')
+    let s:col_num = virtcol('.')
     execute 'silent! '.a:move_arg
-    execute 'normal! '.col_num.'|'
+    execute 'normal! '.s:col_num.'|'
 endfunction
 
 " Arrow key remapping:
@@ -648,6 +648,7 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme='powerlineish'
 let g:airline#extensions#branch#format = 'Git_flow_branch_format'
+let g:airline#extensions#whitespace#enabled = 0
 
 " }}}
 " Fugitive ---------------------------------------------------------------- {{{
@@ -694,10 +695,10 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vertical botright split' }
 
 function! BufList()
-    redir => ls
+    redir => s:ls
     silent ls
     redir END
-    return split(ls, '\n')
+    return split(s:ls, '\n')
 endfunction
 
 function! BufOpen(e)
@@ -710,34 +711,6 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
             \   'options':     '+m',
             \   'tmux_height': '40%'
             \ })<CR>
-" }}}
-" Syntastic --------------------------------------------------------------- {{{
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_jump = 2
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_enable_balloons = 1
-" uncomment this next line if the check_on_open setting is unbearable
-" let g:syntastic_disabled_filetypes = ['html', 'md']
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_python_checkers = ['pylint', 'flake8']
-let g:syntastic_python_flake8_args='--max-complexity 12'
-let g:syntastic_javascript_checkers = ['jscs', 'eslint']
-let g:syntastic_c_checkers = ['gcc']
-let g:syntastic_css_checkers = ['csslint']
-let g:syntastic_html_checkers = ['tidy']
-let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_json_checkers = ['jsonlint']
-let g:syntastic_scss_checkers = ['scss-lint', 'sass']
-let g:syntastic_vim_checkers = ['vint']
-let g:syntastic_sh_checkers = ['shellcheck', 'sh']
-
- if &diff
-     let g:syntastic_auto_loc_list = 2
-     let g:syntastic_auto_jump = 0
- endif
 " }}}
 " vim-sneak --------------------------------------------------------------- {{{
 nmap f <Plug>SneakForward
@@ -819,7 +792,7 @@ nmap <silent> <leader>T <esc>:w<CR>:TestFile<CR>
 nmap <silent> <leader>A <esc>:w<CR>:TestSuite<CR>
 nmap <silent> <leader>, <esc>:w<CR>:TestLast<CR>
 nmap <silent> <leader>. <esc>:w<CR>:TestVisit<CR>
-let test#strategy = 'vimux'
+let g:test#strategy = 'vimux'
 " }}}
 " vim-swoop --------------------------------------------------------------- {{{
 nmap <Leader>s :call Swoop()<CR>
@@ -831,10 +804,10 @@ vmap <Leader>ms :call SwoopMultiSelection()<CR>
 let g:undotree_SetFocusWhenToggle = 1
 " }}}
 " vimwiki ----------------------------------------------------------------- {{{
-let wiki = {}
-let wiki.path = '~/Documents/vimwiki/'
-let wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
-let g:vimwiki_list = [wiki]
+let s:wiki = {}
+let s:wiki.path = '~/Documents/vimwiki/'
+let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
+let g:vimwiki_list = [s:wiki]
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
