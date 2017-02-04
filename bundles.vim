@@ -53,7 +53,7 @@ endif
 " Smart-insert closing parentheses/quotes, etc
 Plug 'Raimondi/delimitMate'
 " Syntax-checking
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 " - netrw enhancement
 Plug 'tpope/vim-vinegar'
 " - use 'f{CHAR1}{CHAR2} to move to the first occurrence of CHAR1CHAR2'
