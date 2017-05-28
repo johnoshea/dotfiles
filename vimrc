@@ -736,6 +736,13 @@ let s:wiki.path = '~/Documents/vimwiki/'
 let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
 let g:vimwiki_list = [s:wiki]
 " }}}
+" easy-align -------------------------------------------------------------- {{{
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g.  gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
 " ale --------------------------------------------------------------------- {{{
 " Specific to file types and are here for reference
 let g:ale_linters = {
