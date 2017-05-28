@@ -209,7 +209,7 @@ nnoremap gj j
 " <leader>cd      cd to the directory of the current buffer
 nnoremap <leader>cd :lcd %:h<CR>
 " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
-nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:FZF -m<cr>
+nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:Files<cr>
 " Calling applications
 nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
 " Disable "F1 for help"
@@ -682,32 +682,18 @@ let g:tagbar_usearrows = 1
 
 " }}}
 " FZF --------------------------------------------------------------------- {{{
-nnoremap <silent> <Leader><Leader> :FZF -m<CR>
+nnoremap <silent> <Leader><Leader> :Files<CR>
+nnoremap <silent> <Leader><Enter> :Buffers<CR>
+nnoremap <silent> <Leader>` :Marks<CR>
+nnoremap <silent> <Leader>hi :History<CR>
+nnoremap <silent> <Leader>mp :Maps<CR>
+nnoremap <silent> <Leader>sn :Snippets<CR>
 
-nnoremap <silent> <c-t> :call fzf#run({ 'tmux_height': winheight('.') / 2, 'sink': 'botright split' })<CR>
-
-let g:fzf_action = {
-  \ 'ctrl-m': 'e',
-  \ 'ctrl-s': 'botright split',
-  \ 'ctrl-v': 'vertical botright split' }
-
-function! BufList()
-    redir => s:ls
-    silent ls
-    redir END
-    return split(s:ls, '\n')
-endfunction
-
-function! BufOpen(e)
-    execute 'buffer '. matchstr(a:e, '^[ 0-9]*')
-endfunction
-
-nnoremap <silent> <Leader><Enter> :call fzf#run({
-            \   'source':      reverse(BufList()),
-            \   'sink':        function('BufOpen'),
-            \   'options':     '+m',
-            \   'tmux_height': '40%'
-            \ })<CR>
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 " }}}
 " vim-sneak --------------------------------------------------------------- {{{
 nmap f <Plug>SneakForward

@@ -19,10 +19,12 @@ if v:version >= 704
     " - auto-create 'tags' files - to disable per-directory, create a .notags file
     Plug 'ludovicchabant/vim-gutentags'
 endif
+" }}}
 
+" Mac-specific plugins ---------------------------------------------------- {{{
 if has('macunix')
     " Navigation
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
     " - use <leader>vp to prompt for a command, <leader>vl to re-run,
     "   <leader>vq to close tmux window
