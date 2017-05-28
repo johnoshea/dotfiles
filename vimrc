@@ -4,8 +4,7 @@
 "
 " Useful variables -------------------------------------------------------- {{{
 let g:isMac = has('macunix')
-let g:isOldMac = has('mac') && ! has('macunix')
-let g:isUnix = has('unix')
+let g:isUnix = has('unix') && ! has('macunix')
 let g:isWindows = has('win32')
 let g:isNvim = has('nvim')
 " Stock the Location of vim's folder in a global variable.
@@ -343,10 +342,8 @@ augroup END
 " For any given OS, prefer its native fileformat for new files
 if g:isUnix || g:isMac
     set fileformats=unix,dos,mac
-elseif g:isWindows
-    set fileformats=dos,unix,mac
-elseif g:isOldMac
-    set fileformats=mac,unix,dos
+else
+   set fileformats=dos,unix,mac
 endif
 
 if g:isWindows
