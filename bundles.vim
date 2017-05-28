@@ -48,8 +48,6 @@ endif
 
 " Smart-insert closing parentheses/quotes, etc
 Plug 'Raimondi/delimitMate'
-" Syntax-checking
-Plug 'w0rp/ale'
 " - netrw enhancement
 Plug 'tpope/vim-vinegar'
 " - use 'f{CHAR1}{CHAR2} to move to the first occurrence of CHAR1CHAR2'
@@ -73,6 +71,8 @@ Plug 'triglav/vim-visual-increment'
 Plug 'Konfekt/FastFold'
 
 " Git
+" Syntax-checking
+Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'

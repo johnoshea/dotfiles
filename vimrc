@@ -736,6 +736,23 @@ let s:wiki.path = '~/Documents/vimwiki/'
 let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
 let g:vimwiki_list = [s:wiki]
 " }}}
+" ale --------------------------------------------------------------------- {{{
+" Specific to file types and are here for reference
+let g:ale_linters = {
+			\	'c'              : ['gcc'],
+			\	'css'            : ['csslint'],
+			\	'html'           : ['htmlhint', 'tidy'],
+			\	'javascript'     : ['eslint'],
+			\	'json'           : ['jsonlint'],
+			\	'markdown'       : ['mdl'],
+			\	'php'            : ['php'],
+			\	'python'         : ['pylint', 'flake8'],
+			\	'scss'           : ['sasslint'],
+			\	'sh'             : ['shellcheck', 'shell'],
+			\	'vim'            : ['vint'],
+			\	'yaml'           : ['yamllint'],
+			\ }
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
