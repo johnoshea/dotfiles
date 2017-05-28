@@ -760,6 +760,9 @@ let g:ale_linters = {
 			\	'yaml'           : ['yamllint'],
 			\ }
 " }}}
+" vim-polyglot ------------------------------------------------------------ {{{
+let g:polyglot_disabled = ['python']
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
