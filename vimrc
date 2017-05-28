@@ -772,6 +772,9 @@ let g:github_dashboard = {
             \ 'password': $VIM_GITHUB_DASHBOARD_API_TOKEN
             \ }
 " }}}
+" vim-gitgutter ----------------------------------------------------------- {{{
+nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
