@@ -777,12 +777,6 @@ nmap <silent> <leader>, <esc>:w<CR>:TestLast<CR>
 nmap <silent> <leader>. <esc>:w<CR>:TestVisit<CR>
 let g:test#strategy = 'vimux'
 " }}}
-" vim-swoop --------------------------------------------------------------- {{{
-nmap <Leader>s :call Swoop()<CR>
-vmap <Leader>s :call SwoopSelection()<CR>
-nmap <Leader>ms :call SwoopMulti()<CR>
-vmap <Leader>ms :call SwoopMultiSelection()<CR>
-" }}}
 " undotree ---------------------------------------------------------------- {{{
 let g:undotree_SetFocusWhenToggle = 1
 " }}}

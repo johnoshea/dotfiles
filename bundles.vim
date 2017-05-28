@@ -106,8 +106,6 @@ Plug 'tweekmonster/django-plus.vim'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
-" Salt syntax/ftplugin
-Plug 'saltstack/salt-vim'
 " Add CSS3 syntax highlighting
 Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
 " Better JSON
@@ -200,9 +198,6 @@ Plug 'janko-m/vim-test'
 
 " Enable local vim settings files
 Plug 'embear/vim-localvimrc'
-
-" Vim-swoop
-Plug 'pelodelfuego/vim-swoop'
 
 " Vimwiki
 Plug 'vimwiki/vimwiki'
