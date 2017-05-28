@@ -87,7 +87,7 @@ BEGIN {FS="\|"; prj=0; str=""}
   else {{print "- *Project completed* @done(" $4 ")"  >> "tmp_pretty.txt" }}
 }'
 # cat tmp_pretty.txt
-cat tmp_pretty.txt | /usr/local/bin/dayone new
+cat tmp_pretty.txt | /usr/local/bin/dayone2 new
 rm tmp_pretty.txt
 cat $LOG_NOW_FILE >> $LOGGED_TODAY_FILE  # Append the list of logged tasks to avoid duplication
 
