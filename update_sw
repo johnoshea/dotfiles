@@ -44,7 +44,7 @@ echo
 TERM=xterm-256color vim -u ~/src/dotfiles/bundles.vim +PlugUpdate! +qa
 echo "*** zprezto submodules"
 echo
-cd ~/src/zprezto || exit
+cd ~/src/prezto || exit
 git submodule update
 git submodule foreach git pull origin master --recurse-submodules
 echo

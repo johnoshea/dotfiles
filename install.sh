@@ -2,7 +2,7 @@
 
 main () {
     DOTFILES="src/dotfiles"
-    ZPREZTO="src/zprezto"
+    PREZTO="src/prezto"
 
     # Bail if anything's unset
     set -e
@@ -33,7 +33,7 @@ main () {
     else
         update_repos
         update_vim_submodules
-        update_zprezto_submodules
+        update_prezto_submodules
     fi
 
     if [ "$(uname -s)" == "Darwin" ]; then
@@ -45,7 +45,7 @@ main () {
 
 update_repos () {
     echo "Updating repos"
-    cd "$HOME/${ZPREZTO}" && git pull
+    cd "$HOME/${PREZTO}" && git pull
     cd "$HOME/${DOTFILES}" && git pull
 }
 
@@ -54,8 +54,8 @@ checkout_repos () {
     rm -rf "$HOME/${DOTFILES:?}" && git clone https://github.com/johnoshea/dotfiles.git "$HOME/${DOTFILES}"
     curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim -u "$HOME/${DOTFILES:?}/bundles.vim" +PlugInstall +qa
-    rm -rf "$HOME/${ZPREZTO:?}" && git clone https://github.com/johnoshea/prezto.git "$HOME/${ZPREZTO}"
-    update_zprezto_submodules
+    rm -rf "$HOME/${PREZTO:?}" && git clone https://github.com/johnoshea/prezto.git "$HOME/${PREZTO}"
+    update_prezto_submodules
 }
 
 
@@ -95,13 +95,13 @@ make_symlinks () {
     ln -sf "$HOME/${DOTFILES}/gemrc" "$HOME/.gemrc"
     ln -sf "$HOME/${DOTFILES}/ptpythonconfig.py" "$HOME/.ptpython/config.py"
 
-    ln -sf "$HOME/${ZPREZTO}/runcoms/zlogin" "$HOME/.zlogin"
-    ln -sf "$HOME/${ZPREZTO}/runcoms/zlogout" "$HOME/.zlogout"
-    ln -sf "$HOME/${ZPREZTO}/runcoms/zpreztorc" "$HOME/.zpreztorc"
-    ln -sf "$HOME/${ZPREZTO}/runcoms/zprofile" "$HOME/.zprofile"
-    ln -sf "$HOME/${ZPREZTO}/runcoms/zshenv" "$HOME/.zshenv"
-    ln -sf "$HOME/${ZPREZTO}/runcoms/zshrc" "$HOME/.zshrc"
-    ln -sf "$HOME/${ZPREZTO}" "$HOME/.zprezto"
+    ln -sf "$HOME/${PREZTO}/runcoms/zlogin" "$HOME/.zlogin"
+    ln -sf "$HOME/${PREZTO}/runcoms/zlogout" "$HOME/.zlogout"
+    ln -sf "$HOME/${PREZTO}/runcoms/zpreztorc" "$HOME/.zpreztorc"
+    ln -sf "$HOME/${PREZTO}/runcoms/zprofile" "$HOME/.zprofile"
+    ln -sf "$HOME/${PREZTO}/runcoms/zshenv" "$HOME/.zshenv"
+    ln -sf "$HOME/${PREZTO}/runcoms/zshrc" "$HOME/.zshrc"
+    ln -sf "$HOME/${PREZTO}" "$HOME/.zprezto"
     ln -sf "$(which pipsi)" ~/bin/pipsi
 }
 
@@ -111,9 +111,9 @@ update_vim_submodules () {
     TERM=xterm-256color vim -u bundles.vim +PlugInstall! +qa
 }
 
-update_zprezto_submodules () {
-    echo "Updating zprezto submodules"
-    cd "$HOME/${ZPREZTO}"
+update_prezto_submodules () {
+    echo "Updating prezto submodules"
+    cd "$HOME/${PREZTO}"
     git submodule init
     git submodule update
     git submodule foreach git pull origin master --recurse-submodules
