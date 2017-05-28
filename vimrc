@@ -554,78 +554,26 @@ nnoremap J mzJ`z
 " }}}
 " Arrow keys -------------------------------------------------------------- {{{
 " Repurpose arrow keys to move lines
-" Inspired by http://jeetworks.com/node/89
-function! s:MoveLineUp()
-    call <SID>MoveLineOrVisualUp('.', '')
-endfunction
-
-function! s:MoveLineDown()
-    call <SID>MoveLineOrVisualDown('.', '')
-endfunction
-
-" vint: -ProhibitCommandRelyOnUser
-function! s:MoveVisualUp()
-    call <SID>MoveLineOrVisualUp("'<", "'<,'>")
-    normal gv
-endfunction
-
-function! s:MoveVisualDown()
-    call <SID>MoveLineOrVisualDown("'>", "'<,'>")
-    normal gv
-endfunction
-" vint: +ProhibitCommandRelyOnUser
-
-function! s:MoveLineOrVisualUp(line_getter, range)
-    let s:l_num = line(a:line_getter)
-    if s:l_num - v:count1 - 1 < 0
-        let s:move_arg = '0'
-    else
-        let s:move_arg = a:line_getter.' -'.(v:count1 + 1)
-    endif
-    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.s:move_arg)
-endfunction
-
-function! s:MoveLineOrVisualDown(line_getter, range)
-    let s:l_num = line(a:line_getter)
-    if s:l_num + v:count1 > line('$')
-        let s:move_arg = '$'
-    else
-        let s:move_arg = a:line_getter.' +'.v:count1
-    endif
-    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.s:move_arg)
-endfunction
-
-function! s:MoveLineOrVisualUpOrDown(move_arg)
-    let s:col_num = virtcol('.')
-    execute 'silent! '.a:move_arg
-    execute 'normal! '.s:col_num.'|'
-endfunction
-
 " Arrow key remapping:
 " Up/Dn = move line up/dn
 " Left/Right = indent/unindent
-function! SetArrowKeysAsTextShifters()
-    " Normal mode
-    nnoremap <silent> <Left> <<
-    nnoremap <silent> <Right> >>
-    nnoremap <silent> <Up> <Esc>:call <SID>MoveLineUp()<CR>
-    nnoremap <silent> <Down> <Esc>:call <SID>MoveLineDown()<CR>
+" Normal mode
+nnoremap <silent> <Left> <<
+nnoremap <silent> <Right> >>
+nnoremap <silent> <Up>   :<C-u>move-2<CR>==
+nnoremap <silent> <Down> :<C-u>move+<CR>==
 
-    " Visual mode
-    vnoremap <silent> <Left> <gv
-    vnoremap <silent> <Right> >gv
-    vnoremap <silent> <Up> <Esc>:call <SID>MoveVisualUp()<CR>
-    vnoremap <silent> <Down> <Esc>:call <SID>MoveVisualDown()<CR>
+" Visual mode
+vnoremap <silent> <Left> <gv
+vnoremap <silent> <Right> >gv
+vnoremap <silent> <Up>   :move-2<CR>gv=gv
+vnoremap <silent> <Down> :move'>+<CR>gv=gv
 
-    " Insert mode
-    inoremap <silent> <Left> <C-D>
-    inoremap <silent> <Right> <C-T>
-    inoremap <silent> <Up> <C-O>:call <SID>MoveLineUp()<CR>
-    inoremap <silent> <Down> <C-O>:call <SID>MoveLineDown()<CR>
-endfunction
-
-call SetArrowKeysAsTextShifters()
-
+" Insert mode
+inoremap <silent> <Left> <C-D>
+inoremap <silent> <Right> <C-T>
+inoremap <silent> <Up>   :move-2<CR>gv=gv
+inoremap <silent> <Down> :move'>+<CR>gv=gv
 " }}}
 " Plugin settings --------------------------------------------------------- {{{
 " Airline ----------------------------------------------------------------- {{{
