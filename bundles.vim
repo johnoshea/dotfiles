@@ -8,12 +8,6 @@ call plug#begin('~/.vim/bundle')
 "
 " Plugins -----------------------------------------------------------------
 
-
-if v:version >= 703
-    " Show VCS diffs
-    Plug 'mhinz/vim-signify'
-endif
-
 if v:version >= 704
     " Completion
     Plug 'SirVer/ultisnips'
