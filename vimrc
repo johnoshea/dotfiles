@@ -4,8 +4,7 @@
 "
 " Useful variables -------------------------------------------------------- {{{
 let g:isMac = has('macunix')
-let g:isOldMac = has('mac') && ! has('macunix')
-let g:isUnix = has('unix')
+let g:isUnix = has('unix') && ! has('macunix')
 let g:isWindows = has('win32')
 let g:isNvim = has('nvim')
 " Stock the Location of vim's folder in a global variable.
@@ -19,10 +18,10 @@ source ~/src/dotfiles/bundles.vim
 " Basic settings ---------------------------------------------------------- {{{
 
 " Miscellaneous settings
-set encoding=utf-8              " UTF-8 everywhere
-set termencoding=utf-8          " UTF-8 everywhere
-scriptencoding utf-8            " UTF-8 everywhere
-set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
+set encoding=utf-8                " UTF-8 everywhere
+set termencoding=utf-8            " UTF-8 everywhere
+scriptencoding utf-8              " UTF-8 everywhere
+set t_RV= ttymouse=xterm2         " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
 set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 set ttyfast                       " Tell Vim we're using a fast connection - smoother redraws
 set backspace=indent,eol,start    " Backspace over everything in insert mode
@@ -39,10 +38,10 @@ set hidden                        " Allow movement to another buffer w/o saving 
 set showmatch                     " Show matching bracket
 set matchtime=3                   " (for only 0.3s)
 set confirm                       " Get confirmation before we do anything stupid
-set whichwrap+=<,>,[,]            " <left> and <right> move over line endings
+set whichwrap+=<,>,[,],h,l        " <left> and <right> move over line endings
 set visualbell                    " Flash instead of beeping
 set browsedir=current             " Open up the file-browser in the current directory
-set tenc=utf-8                    " And set UTF-8 for the terminal too
+set termencoding=utf-8            " And set UTF-8 for the terminal too
 set nobomb                        " Don't write a Byte Order Mark
 set matchpairs+=<:>               " Match angle-brackets as well by default
 set linebreak                     " Break lines at a sensible place
@@ -135,7 +134,7 @@ if has('gui_running')
   set columns=180
 
   if g:isMac
-    set guifont=Fira\ Mono:h12
+    set guifont=Input:h11
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
   elseif g:isUnix
@@ -184,8 +183,8 @@ endif
 
 " }}}
 " Keystrokes -------------------------------------------------------------- {{{
-let mapleader="\<Space>"
-let maplocalleader=','
+let g:mapleader="\<Space>"
+let g:maplocalleader=','
 
 " Typos
 command! -bang E e<bang>
@@ -197,6 +196,8 @@ command! -bang Wa wa<bang>
 command! -bang WA wa<bang>
 command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
+command! -bang Xa xa<bang>
+command! -bang XA xa<bang>
 
 runtime macros/matchit.vim
 
@@ -210,7 +211,7 @@ nnoremap gj j
 " <leader>cd      cd to the directory of the current buffer
 nnoremap <leader>cd :lcd %:h<CR>
 " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
-nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:FZF -m<cr>
+nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:Files<cr>
 " Calling applications
 nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
 " Disable "F1 for help"
@@ -294,19 +295,19 @@ set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 nnoremap zO zCzO
 
 function! MyFoldText() " {{{
-    let line = getline(v:foldstart)
+    let s:line = getline(v:foldstart)
 
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 3
-    let foldedlinecount = v:foldend - v:foldstart
+    let s:nucolwidth = &foldcolumn + &number * &numberwidth
+    let s:windowwidth = winwidth(0) - s:nucolwidth - 3
+    let s:foldedlinecount = v:foldend - v:foldstart
 
     " expand tabs into spaces
-    let onetab = strpart('          ', 0, &tabstop)
-    let line = substitute(line, '\t', onetab, 'g')
+    let s:onetab = strpart('          ', 0, &tabstop)
+    let s:line = substitute(s:line, '\t', s:onetab, 'g')
 
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(' ',fillcharcount) . foldedlinecount . '…' . ' '
+    let s:line = strpart(s:line, 0, s:windowwidth - 2 -len(s:foldedlinecount))
+    let s:fillcharcount = s:windowwidth - len(s:line) - len(s:foldedlinecount)
+    return s:line . '…' . repeat(' ',s:fillcharcount) . s:foldedlinecount . '…' . ' '
 endfunction " }}}
 set foldtext=MyFoldText()
 
@@ -343,10 +344,8 @@ augroup END
 " For any given OS, prefer its native fileformat for new files
 if g:isUnix || g:isMac
     set fileformats=unix,dos,mac
-elseif g:isWindows
-    set fileformats=dos,unix,mac
-elseif g:isOldMac
-    set fileformats=mac,unix,dos
+else
+   set fileformats=dos,unix,mac
 endif
 
 if g:isWindows
@@ -516,7 +515,7 @@ endif
 " Mappings ---------------------------------------------------------------- {{{
 " Toggles ----------------------------------------------------------------- {{{
 nnoremap <leader>e :set expandtab! expandtab?<CR>
-let line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
+let g:line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
 nnoremap <leader>1 :call ToggleNumbers()<CR>
 set pastetoggle=<localleader>p
 
@@ -555,78 +554,26 @@ nnoremap J mzJ`z
 " }}}
 " Arrow keys -------------------------------------------------------------- {{{
 " Repurpose arrow keys to move lines
-" Inspired by http://jeetworks.com/node/89
-function! s:MoveLineUp()
-    call <SID>MoveLineOrVisualUp('.', '')
-endfunction
-
-function! s:MoveLineDown()
-    call <SID>MoveLineOrVisualDown('.', '')
-endfunction
-
-" vint: -ProhibitCommandRelyOnUser
-function! s:MoveVisualUp()
-    call <SID>MoveLineOrVisualUp("'<", "'<,'>")
-    normal gv
-endfunction
-
-function! s:MoveVisualDown()
-    call <SID>MoveLineOrVisualDown("'>", "'<,'>")
-    normal gv
-endfunction
-" vint: +ProhibitCommandRelyOnUser
-
-function! s:MoveLineOrVisualUp(line_getter, range)
-    let l_num = line(a:line_getter)
-    if l_num - v:count1 - 1 < 0
-        let move_arg = '0'
-    else
-        let move_arg = a:line_getter.' -'.(v:count1 + 1)
-    endif
-    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.move_arg)
-endfunction
-
-function! s:MoveLineOrVisualDown(line_getter, range)
-    let l_num = line(a:line_getter)
-    if l_num + v:count1 > line('$')
-        let move_arg = '$'
-    else
-        let move_arg = a:line_getter.' +'.v:count1
-    endif
-    call <SID>MoveLineOrVisualUpOrDown(a:range.'move '.move_arg)
-endfunction
-
-function! s:MoveLineOrVisualUpOrDown(move_arg)
-    let col_num = virtcol('.')
-    execute 'silent! '.a:move_arg
-    execute 'normal! '.col_num.'|'
-endfunction
-
 " Arrow key remapping:
 " Up/Dn = move line up/dn
 " Left/Right = indent/unindent
-function! SetArrowKeysAsTextShifters()
-    " Normal mode
-    nnoremap <silent> <Left> <<
-    nnoremap <silent> <Right> >>
-    nnoremap <silent> <Up> <Esc>:call <SID>MoveLineUp()<CR>
-    nnoremap <silent> <Down> <Esc>:call <SID>MoveLineDown()<CR>
+" Normal mode
+nnoremap <silent> <Left> <<
+nnoremap <silent> <Right> >>
+nnoremap <silent> <Up>   :<C-u>move-2<CR>==
+nnoremap <silent> <Down> :<C-u>move+<CR>==
 
-    " Visual mode
-    vnoremap <silent> <Left> <gv
-    vnoremap <silent> <Right> >gv
-    vnoremap <silent> <Up> <Esc>:call <SID>MoveVisualUp()<CR>
-    vnoremap <silent> <Down> <Esc>:call <SID>MoveVisualDown()<CR>
+" Visual mode
+vnoremap <silent> <Left> <gv
+vnoremap <silent> <Right> >gv
+vnoremap <silent> <Up>   :move-2<CR>gv=gv
+vnoremap <silent> <Down> :move'>+<CR>gv=gv
 
-    " Insert mode
-    inoremap <silent> <Left> <C-D>
-    inoremap <silent> <Right> <C-T>
-    inoremap <silent> <Up> <C-O>:call <SID>MoveLineUp()<CR>
-    inoremap <silent> <Down> <C-O>:call <SID>MoveLineDown()<CR>
-endfunction
-
-call SetArrowKeysAsTextShifters()
-
+" Insert mode
+inoremap <silent> <Left> <C-D>
+inoremap <silent> <Right> <C-T>
+inoremap <silent> <Up>   :move-2<CR>gv=gv
+inoremap <silent> <Down> :move'>+<CR>gv=gv
 " }}}
 " Plugin settings --------------------------------------------------------- {{{
 " Airline ----------------------------------------------------------------- {{{
@@ -648,6 +595,7 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme='powerlineish'
 let g:airline#extensions#branch#format = 'Git_flow_branch_format'
+let g:airline#extensions#whitespace#enabled = 0
 
 " }}}
 " Fugitive ---------------------------------------------------------------- {{{
@@ -684,60 +632,18 @@ let g:tagbar_usearrows = 1
 
 " }}}
 " FZF --------------------------------------------------------------------- {{{
-nnoremap <silent> <Leader><Leader> :FZF -m<CR>
+nnoremap <silent> <Leader><Leader> :Files<CR>
+nnoremap <silent> <Leader><Enter> :Buffers<CR>
+nnoremap <silent> <Leader>` :Marks<CR>
+nnoremap <silent> <Leader>hi :History<CR>
+nnoremap <silent> <Leader>mp :Maps<CR>
+nnoremap <silent> <Leader>sn :Snippets<CR>
 
-nnoremap <silent> <c-t> :call fzf#run({ 'tmux_height': winheight('.') / 2, 'sink': 'botright split' })<CR>
-
-let g:fzf_action = {
-  \ 'ctrl-m': 'e',
-  \ 'ctrl-s': 'botright split',
-  \ 'ctrl-v': 'vertical botright split' }
-
-function! BufList()
-    redir => ls
-    silent ls
-    redir END
-    return split(ls, '\n')
-endfunction
-
-function! BufOpen(e)
-    execute 'buffer '. matchstr(a:e, '^[ 0-9]*')
-endfunction
-
-nnoremap <silent> <Leader><Enter> :call fzf#run({
-            \   'source':      reverse(BufList()),
-            \   'sink':        function('BufOpen'),
-            \   'options':     '+m',
-            \   'tmux_height': '40%'
-            \ })<CR>
-" }}}
-" Syntastic --------------------------------------------------------------- {{{
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_jump = 2
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_enable_balloons = 1
-" uncomment this next line if the check_on_open setting is unbearable
-" let g:syntastic_disabled_filetypes = ['html', 'md']
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_python_checkers = ['pylint', 'flake8']
-let g:syntastic_python_flake8_args='--max-complexity 12'
-let g:syntastic_javascript_checkers = ['jscs', 'eslint']
-let g:syntastic_c_checkers = ['gcc']
-let g:syntastic_css_checkers = ['csslint']
-let g:syntastic_html_checkers = ['tidy']
-let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_json_checkers = ['jsonlint']
-let g:syntastic_scss_checkers = ['scss-lint', 'sass']
-let g:syntastic_vim_checkers = ['vint']
-let g:syntastic_sh_checkers = ['shellcheck', 'sh']
-
- if &diff
-     let g:syntastic_auto_loc_list = 2
-     let g:syntastic_auto_jump = 0
- endif
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 " }}}
 " vim-sneak --------------------------------------------------------------- {{{
 nmap f <Plug>SneakForward
@@ -782,7 +688,7 @@ nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
 " }}}
 " Startify ---------------------------------------------------------------- {{{
 let g:startify_session_dir = '~/.vim/session'
-let g:startify_bookmarks = ['~/src/dotfiles/', '~/src/zprezto/']
+let g:startify_bookmarks = ['~/src/dotfiles/', '~/src/prezto/']
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 " }}}
@@ -819,22 +725,55 @@ nmap <silent> <leader>T <esc>:w<CR>:TestFile<CR>
 nmap <silent> <leader>A <esc>:w<CR>:TestSuite<CR>
 nmap <silent> <leader>, <esc>:w<CR>:TestLast<CR>
 nmap <silent> <leader>. <esc>:w<CR>:TestVisit<CR>
-let test#strategy = 'vimux'
-" }}}
-" vim-swoop --------------------------------------------------------------- {{{
-nmap <Leader>s :call Swoop()<CR>
-vmap <Leader>s :call SwoopSelection()<CR>
-nmap <Leader>ms :call SwoopMulti()<CR>
-vmap <Leader>ms :call SwoopMultiSelection()<CR>
+let g:test#strategy = 'vimux'
 " }}}
 " undotree ---------------------------------------------------------------- {{{
 let g:undotree_SetFocusWhenToggle = 1
 " }}}
 " vimwiki ----------------------------------------------------------------- {{{
-let wiki = {}
-let wiki.path = '~/Documents/vimwiki/'
-let wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
-let g:vimwiki_list = [wiki]
+let s:wiki = {}
+let s:wiki.path = '~/Documents/vimwiki/'
+let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
+let g:vimwiki_list = [s:wiki]
+" }}}
+" vim-dash ---------------------------------------------------------------- {{{
+nmap <silent> K <Plug>DashSearch
+" }}}
+" easy-align -------------------------------------------------------------- {{{
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g.  gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
+" ale --------------------------------------------------------------------- {{{
+" Specific to file types and are here for reference
+let g:ale_linters = {
+			\	'c'              : ['gcc'],
+			\	'css'            : ['csslint'],
+			\	'html'           : ['htmlhint', 'tidy'],
+			\	'javascript'     : ['eslint'],
+			\	'json'           : ['jsonlint'],
+			\	'markdown'       : ['mdl'],
+			\	'php'            : ['php'],
+			\	'python'         : ['pylint', 'flake8'],
+			\	'scss'           : ['sasslint'],
+			\	'sh'             : ['shellcheck', 'shell'],
+			\	'vim'            : ['vint'],
+			\	'yaml'           : ['yamllint'],
+			\ }
+" }}}
+" vim-polyglot ------------------------------------------------------------ {{{
+let g:polyglot_disabled = ['python']
+" }}}
+" vim-github-dashboard ---------------------------------------------------- {{{
+let g:github_dashboard = {
+            \ 'username': 'you',
+            \ 'password': $VIM_GITHUB_DASHBOARD_API_TOKEN
+            \ }
+" }}}
+" vim-gitgutter ----------------------------------------------------------- {{{
+nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
