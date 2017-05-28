@@ -18,3 +18,4 @@ ignored-keys
 plug.vim.old
 *.spl
 tags
+ssh_config
