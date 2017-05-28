@@ -38,7 +38,7 @@ set hidden                        " Allow movement to another buffer w/o saving 
 set showmatch                     " Show matching bracket
 set matchtime=3                   " (for only 0.3s)
 set confirm                       " Get confirmation before we do anything stupid
-set whichwrap+=<,>,[,]            " <left> and <right> move over line endings
+set whichwrap+=<,>,[,],h,l        " <left> and <right> move over line endings
 set visualbell                    " Flash instead of beeping
 set browsedir=current             " Open up the file-browser in the current directory
 set tenc=utf-8                    " And set UTF-8 for the terminal too
