@@ -18,10 +18,10 @@ source ~/src/dotfiles/bundles.vim
 " Basic settings ---------------------------------------------------------- {{{
 
 " Miscellaneous settings
-set encoding=utf-8              " UTF-8 everywhere
-set termencoding=utf-8          " UTF-8 everywhere
-scriptencoding utf-8            " UTF-8 everywhere
-set t_RV= ttymouse=xterm2       " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
+set encoding=utf-8                " UTF-8 everywhere
+set termencoding=utf-8            " UTF-8 everywhere
+scriptencoding utf-8              " UTF-8 everywhere
+set t_RV= ttymouse=xterm2         " Fix a 'Vim inserts spurious 'c' when editing via ssh' problem
 set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
 set ttyfast                       " Tell Vim we're using a fast connection - smoother redraws
 set backspace=indent,eol,start    " Backspace over everything in insert mode
