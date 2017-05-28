@@ -196,6 +196,8 @@ command! -bang Wa wa<bang>
 command! -bang WA wa<bang>
 command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
+command! -bang Xa xa<bang>
+command! -bang XA xa<bang>
 
 runtime macros/matchit.vim
 
