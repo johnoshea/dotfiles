@@ -43,6 +43,7 @@ if has('macunix')
 
     Plug 'marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
+    Plug 'rizzatti/dash.vim'
 endif
 " }}}
 
@@ -112,6 +113,9 @@ Plug 'janko-m/vim-test'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/vim-github-dashboard'
+Plug 'tpope/vim-rhubarb'
+" }}}
 
 " Display ----------------------------------------------------------------- {{{
 " - use <leader>z to zoom to single window and back

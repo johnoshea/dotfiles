@@ -736,6 +736,9 @@ let s:wiki.path = '~/Documents/vimwiki/'
 let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
 let g:vimwiki_list = [s:wiki]
 " }}}
+" vim-dash ---------------------------------------------------------------- {{{
+nmap <silent> K <Plug>DashSearch
+" }}}
 " easy-align -------------------------------------------------------------- {{{
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
@@ -762,6 +765,12 @@ let g:ale_linters = {
 " }}}
 " vim-polyglot ------------------------------------------------------------ {{{
 let g:polyglot_disabled = ['python']
+" }}}
+" vim-github-dashboard ---------------------------------------------------- {{{
+let g:github_dashboard = {
+            \ 'username': 'you',
+            \ 'password': $VIM_GITHUB_DASHBOARD_API_TOKEN
+            \ }
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
