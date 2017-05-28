@@ -134,7 +134,7 @@ if has('gui_running')
   set columns=180
 
   if g:isMac
-    set guifont=Fira\ Mono:h12
+    set guifont=Input:h11
     set fuoptions=maxvert,maxhorz
     set clipboard^=unnamed
   elseif g:isUnix
