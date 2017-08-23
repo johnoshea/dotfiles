@@ -4,7 +4,8 @@ UPDATE_SW_DIR="$HOME/src/update_sw"
 CURRENT_DIR=$(pwd)
 CURRENT_PYTHON=$(pyenv version | head -n1 | cut -f1 -d' ')
 CURRENT_NODE=$(nodenv version | head -n1 | cut -f1 -d' ')
-echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE}] ***"
+CURRENT_GO=$(go version | awk '{ print $3 }')
+echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE} / Go: ${CURRENT_GO}] ***"
 cd "$UPDATE_SW_DIR" || exit
 pyenv local 3.5.2
 rbenv local system
@@ -51,8 +52,9 @@ cd ~/src/prezto || exit
 git submodule update
 git submodule foreach git pull origin master --recurse-submodules
 echo
-echo "Restoring previous Python/Ruby/Node versions"
+echo "Restoring previous Python/Ruby/Node/Go versions"
 cd "${CURRENT_DIR}" || exit
 pyenv local "${CURRENT_PYTHON}"
 rbenv local "${CURRENT_RUBY}"
 nodenv local "${CURRENT_NODE}"
+gvm use "${CURRENT_GO}" --defuault
