@@ -594,6 +594,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme='powerlineish'
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 let g:airline#extensions#whitespace#enabled = 0
 
