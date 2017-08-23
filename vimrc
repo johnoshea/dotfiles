@@ -790,6 +790,13 @@ augroup END
 
 " }}}
 " Autocommands ------------------------------------------------------------ {{{
+" make Vim respect relative paths for file completion
+augroup InsertBehavior
+    autocmd!
+    autocmd InsertEnter * let b:save_cwd = getcwd() | lcd %:p:h
+    autocmd InsertLeave * execute 'cd' fnameescape(b:save_cwd)
+augroup END
+
 " Autocomplete ------------------------------------------------------------ {{{
 augroup setdictionary
     autocmd!
