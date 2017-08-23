@@ -31,7 +31,7 @@ brew cleanup
 brew prune
 echo "*** pipsi"
 echo
-pipsi upgrade pipsi
+pip install --upgrade pipsi
 for pipsi_package in $(pipsi list | grep "Package " | awk "{print $2}" | tr -d '":'); do
     pipsi upgrade "$pipsi_package"
 done
