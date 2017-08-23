@@ -275,6 +275,7 @@ filetype plugin indent on
 " }}}
 " Searching --------------------------------------------------------------- {{{
 set ignorecase                  " Ignore case when searching
+set infercase                   " Make completions smarter about cases
 set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
 
