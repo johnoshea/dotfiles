@@ -29,6 +29,9 @@ brew update
 brew upgrade
 brew cleanup
 brew prune
+echo "*** terraform"
+echo
+tfenv install $(tfenv list-remote | grep -v 'beta' | grep -v '\-rc' | head -n1)
 echo "*** pipsi"
 echo
 pip install --upgrade pipsi
