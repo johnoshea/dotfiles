@@ -4,7 +4,8 @@ UPDATE_SW_DIR="$HOME/src/update_sw"
 CURRENT_DIR=$(pwd)
 CURRENT_PYTHON=$(pyenv version | head -n1 | cut -f1 -d' ')
 CURRENT_NODE=$(nodenv version | head -n1 | cut -f1 -d' ')
-echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE}] ***"
+CURRENT_GO=$(go version | awk '{ print $3 }')
+echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE} / Go: ${CURRENT_GO}] ***"
 cd "$UPDATE_SW_DIR" || exit
 pyenv local 3.5.2
 rbenv local system
@@ -17,6 +18,10 @@ echo "*** App Store programs"
 echo
 sudo mas outdated
 sudo mas upgrade
+echo "*** Ruby gems"
+echo
+sudo gem update --system
+sudo gem update
 echo "*** Homebrew"
 echo
 brew doctor
@@ -24,9 +29,12 @@ brew update
 brew upgrade
 brew cleanup
 brew prune
+echo "*** terraform"
+echo
+tfenv install $(tfenv list-remote | grep -v 'beta' | grep -v '\-rc' | head -n1)
 echo "*** pipsi"
 echo
-pipsi upgrade pipsi
+pip install --upgrade pipsi
 for pipsi_package in $(pipsi list | grep "Package " | awk "{print $2}" | tr -d '":'); do
     pipsi upgrade "$pipsi_package"
 done
@@ -38,10 +46,6 @@ for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
 do
     npm -g install "$package"
 done
-echo "*** Ruby gems"
-echo
-sudo gem update --system
-sudo gem update
 echo "*** Vim bundles"
 echo
 TERM=xterm-256color vim -u ~/src/dotfiles/bundles.vim +PlugUpdate! +qa
@@ -51,8 +55,9 @@ cd ~/src/prezto || exit
 git submodule update
 git submodule foreach git pull origin master --recurse-submodules
 echo
-echo "Restoring previous Python/Ruby/Node versions"
+echo "Restoring previous Python/Ruby/Node/Go versions"
 cd "${CURRENT_DIR}" || exit
 pyenv local "${CURRENT_PYTHON}"
 rbenv local "${CURRENT_RUBY}"
 nodenv local "${CURRENT_NODE}"
+gvm use "${CURRENT_GO}" --defuault

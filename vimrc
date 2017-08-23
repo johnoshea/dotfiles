@@ -59,7 +59,7 @@ set modeline modelines=10         " Use modelines within first 10 lines
 set autowrite                     " Write file before some commands
 set wildmenu                      " Enable wildmenu for completion
 set wildmode=longest:full,full    " Complete the next full match
-set synmaxcol=2048                " Don't syntax-colour long lines (too slow otherwise)
+set synmaxcol=200                 " Don't syntax-colour long lines (too slow otherwise)
 set virtualedit=all               " Allow the cursor to move to 'invalid' places
 set complete=.,w,b,t              " Complete current buffer, other windows, other buffers and tags
 set cmdheight=2                   " Avoid 'Press Enter' messages
@@ -275,6 +275,7 @@ filetype plugin indent on
 " }}}
 " Searching --------------------------------------------------------------- {{{
 set ignorecase                  " Ignore case when searching
+set infercase                   " Make completions smarter about cases
 set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
 
@@ -594,6 +595,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme='powerlineish'
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 let g:airline#extensions#whitespace#enabled = 0
 
@@ -789,6 +791,13 @@ augroup END
 
 " }}}
 " Autocommands ------------------------------------------------------------ {{{
+" make Vim respect relative paths for file completion
+augroup InsertBehavior
+    autocmd!
+    autocmd InsertEnter * let b:save_cwd = getcwd() | lcd %:p:h
+    autocmd InsertLeave * execute 'cd' fnameescape(b:save_cwd)
+augroup END
+
 " Autocomplete ------------------------------------------------------------ {{{
 augroup setdictionary
     autocmd!
