@@ -626,9 +626,9 @@ nnoremap <silent> <Leader>` :Marks<CR>
 nnoremap <silent> <Leader>hi :History<CR>
 nnoremap <silent> <Leader>mp :Maps<CR>
 nnoremap <silent> <Leader>sn :Snippets<CR>
+nnoremap <silent> <Leader>co :Commands<CR>
 
 " Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
