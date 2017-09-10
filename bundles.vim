@@ -35,10 +35,17 @@ if has('macunix')
 
     " 'Writing' plugins
     Plug 'reedes/vim-pencil', {'for': ['text', 'markdown']}
+    " <c-x><c-k> insert-mode spell-check
+    " <c-x><c-t> insert-mode thesaurus suggestions
     Plug 'reedes/vim-lexical', {'for': ['text', 'markdown']}
+    " Adds insert-mode common typo fixes
     Plug 'reedes/vim-litecorrect', {'for': ['text', 'markdown']}
+    " Use :Wordy <category> to find bad terms, clichés, etc
     Plug 'reedes/vim-wordy', {'for': ['text', 'markdown']}
+    " Adds iq/iQ/aq/aQ double/single text objects, plus '(', ')' to navigate
+    " by sentences
     Plug 'reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
+    " Adds is/as 'sentence' text objects
     Plug 'reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
 
     Plug 'marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
@@ -71,7 +78,8 @@ Plug 'tpope/vim-repeat'
 "   [q/]q for cprev/cnext, [n/]n for prev/next diff block
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
-" - use 'ga' to start EasyAlign
+" - 'ga<text-object>' to start in normal mode, or <cr> in visual mode
+"   <number> or '*' for count, followed by character to align on
 Plug 'junegunn/vim-easy-align'
 " - use 'cx' to start/finish changes (e.g. 'cxiw')
 Plug 'tommcdo/vim-exchange'
