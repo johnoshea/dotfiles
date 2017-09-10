@@ -245,20 +245,6 @@ vmap <Leader>P "+P
 " Quickly select text you just pasted
 noremap gV `[v`]
 
-" Use <bs> to switch back to previous buffer
-nnoremap <bs> <c-^>
-
-" Try using <CR> to get `:` again
-nnoremap <Enter> :
-xnoremap <Enter> :
-augroup reset_CR_mapping
-    autocmd!
-    autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
-    autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
-augroup END
-
-" make last typed word uppercase
-inoremap <c-u> <esc>viwUea
 " }}}
 " Tabs -------------------------------------------------------------------- {{{
 " For an explanation of the 'tabs vs spaces' used below, see
