@@ -90,13 +90,18 @@ Plug 'Konfekt/FastFold'
 " Show registers temporarily
 Plug 'junegunn/vim-peekaboo'
 " Smart-insert closing parentheses/quotes, etc
-Plug 'Raimondi/delimitMate'
-" Speeddating - increment/decrement dates correctly
-Plug 'tpope/vim-speeddating'
+" Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'ConradIrwin/vim-bracketed-paste'
-" - snake_case (crs). MixedCase (crm), camelCase (crc), UPPER_CASE (cru)
-Plug 'tpope/vim-abolish'
+" convert to snake_case (crs). MixedCase (crm), camelCase (crc), UPPER_CASE (cru)
+ Plug 'tpope/vim-abolish'
+ " Word motions now work on CamelCase words
+ Plug 'chaoren/vim-wordmotion'
+ " Wrap and unwrap function arguments, lists, and dictionaries
+ Plug 'FooSoft/vim-argwrap'
+ " Sort lines and argument lists
+ Plug 'christoomey/vim-sort-motion'
 " }}}
 
 " Code editing ------------------------------------------------------------ {{{
@@ -162,6 +167,9 @@ Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Python
 Plug 'davidhalter/jedi-vim', {'do': 'git submodule update --init', 'for': 'python'}
 Plug 'vim-python/python-syntax', {'for': 'python'}
+Plug 'apalmer1377/factorus', {'for': 'python'}
+Plug 'tmhedberg/simpylfold', {'for': 'python'}
+Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
 " Sass
 Plug 'cakebaker/scss-syntax.vim'
 " HTML
