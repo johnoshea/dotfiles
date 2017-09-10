@@ -1,3 +1,3 @@
 setlocal omnifunc=xmlcomplete#CompleteTags
-setlocal ai et sta sw=2 sts=2 ts=2
-
+setlocal autoindent expandtab smarttab shiftwidth=2 softtabstop=2 tabstop=2
+let &l:equalprg='xmllint --format --recover -'
