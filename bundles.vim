@@ -25,9 +25,8 @@ if has('macunix')
     " Navigation
     Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
-    " - use <leader>vp to prompt for a command, <leader>vl to re-run,
-    "   <leader>vq to close tmux window
-    Plug 'benmills/vimux'
+    Plug 'epeli/slimux'
+
     " - allow window nav to work across non-vim tmux panes (needs tmux config too)
     Plug 'christoomey/vim-tmux-navigator'
     " vim-tmux-focus-events
@@ -212,8 +211,6 @@ Plug 'inside/vim-search-pulse'
 " - improved incremental searching
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
-" - use <leader>a to call rg/ag/ack/etc
-Plug 'wincent/ferret'
 " }}}
 
 " Buffers ----------------------------------------------------------------- {{{
@@ -224,8 +221,6 @@ Plug 'mhinz/vim-sayonara'
 " Async ------------------------------------------------------------------- {{{
 " Add dispatch back in, so that Fugitive can use it
 Plug 'tpope/vim-dispatch'
-" AsyncRun
-Plug 'skywind3000/asyncrun.vim'
 " }}}
 
 " Miscellaneous ----------------------------------------------------------- {{{

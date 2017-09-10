@@ -789,6 +789,14 @@ let g:mucomplete#chains.markdown = ['ulti', 'spel']
 let g:mucomplete#chains.vim = ['omni', 'cmd', 'c-p']
 let g:mucomplete#chains.py = ['omni', 'tags', 'ulti', 'c-p']
 " }}}
+" slimux ------------------------------------------------------------------ {{{
+nnoremap <Leader>se :SlimuxREPLSendLine<CR>
+vnoremap <Leader>se :SlimuxREPLSendSelection<CR>
+nnoremap <Leader>sp :SlimuxShellPrompt<CR>
+nnoremap <Leader>sa :SlimuxShellLast<CR>
+nnoremap <Leader>sk :SlimuxSendKeysPrompt<CR>
+nnoremap <Leader>sl :SlimuxSendKeysLast<CR>
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
