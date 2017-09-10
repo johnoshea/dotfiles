@@ -95,12 +95,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-speeddating'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'ConradIrwin/vim-bracketed-paste'
-" Supertab
-Plug 'ervandew/supertab'
 " - snake_case (crs). MixedCase (crm), camelCase (crc), UPPER_CASE (cru)
 Plug 'tpope/vim-abolish'
-" - close 'if' statements in sh, etc
-Plug 'tpope/vim-endwise'
 " }}}
 
 " Code editing ------------------------------------------------------------ {{{
@@ -230,6 +226,9 @@ Plug 'embear/vim-localvimrc'
 
 " Vimwiki
 Plug 'vimwiki/vimwiki'
+
+" Mucomplete
+Plug 'lifepillar/vim-mucomplete'
 " }}}
 
 call plug#end()

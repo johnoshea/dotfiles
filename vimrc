@@ -684,6 +684,9 @@ let g:startify_change_to_vcs_root = 1
 let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'my_snippets']
 let g:UltiSnipsListSnippets = '<C-l>'
 let g:ultisnips_python_quoting_style = 'sphinx'
+let g:UltiSnipsExpandTrigger='<C-J>'
+let g:UltiSnipsJumpForwardTrigger='<C-J>'
+let g:UltiSnipsJumpBackwardTrigger='<C-K>'
 " }}}
 " vim-easy-align ---------------------------------------------------------- {{{
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -762,6 +765,29 @@ let g:github_dashboard = {
 " }}}
 " vim-gitgutter ----------------------------------------------------------- {{{
 nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
+" }}}
+" mucomplete -------------------------------------------------------------- {{{
+set completeopt+=menuone
+inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
+inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
+inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
+
+inoremap <silent> <plug>(MUcompleteFwdKey) <right>
+imap <right> <plug>(MUcompleteCycFwd)
+inoremap <silent> <plug>(MUcompleteBwdKey) <left>
+imap <left> <plug>(MUcompleteCycBwd)
+
+set completeopt+=noselect
+set completeopt+=noinsert
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#chains = {}
+let g:mucomplete#chains.default = ['omni', 'keyn', 'ulti']
+" let g:mucomplete#chains.markdown = ['spel', 'dict']
+let g:mucomplete#chains.markdown = ['ulti', 'spel']
+let g:mucomplete#chains.vim = ['omni', 'cmd', 'c-p']
+let g:mucomplete#chains.py = ['omni', 'tags', 'ulti', 'c-p']
 " }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
