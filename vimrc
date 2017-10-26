@@ -1002,8 +1002,8 @@ set belloff+=ctrlg " If Vim beeps during completion
 let g:mucomplete#enable_auto_at_startup = 1
 let g:mucomplete#chains = {}
 let g:mucomplete#chains.default = ['omni', 'keyn', 'ulti']
-" let g:mucomplete#chains.markdown = ['spel', 'dict']
-let g:mucomplete#chains.markdown = ['ulti', 'spel']
+let g:mucomplete#chains.markdown = ['omni', 'keyn', 'uspl', 'dict']
+let g:mucomplete#chains.gitcommit= ['keyn', 'dict']
 let g:mucomplete#chains.vim = ['omni', 'cmd', 'c-p']
 let g:mucomplete#chains.py = ['omni', 'tags', 'ulti', 'c-p']
 " }}}
