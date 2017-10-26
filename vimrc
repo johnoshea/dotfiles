@@ -1015,6 +1015,9 @@ nnoremap <Leader>sa :SlimuxShellLast<CR>
 nnoremap <Leader>sk :SlimuxSendKeysPrompt<CR>
 nnoremap <Leader>sl :SlimuxSendKeysLast<CR>
 " }}}
+" vim-argwrap ------------------------------------------------------------- {{{
+nnoremap <silent> <leader>a :ArgWrap<CR>
+" }}}
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
