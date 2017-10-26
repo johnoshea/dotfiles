@@ -9,7 +9,6 @@ call pencil#init()
 call textobj#sentence#init()
 call textobj#quote#init()
 call litecorrect#init()
-call lexical#init()
 call textobj#quote#init()
 " Enable the following/remove the previous setting if curly quotes by default
 " in Markdown files gets too annoying
