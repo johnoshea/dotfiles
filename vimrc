@@ -24,7 +24,7 @@ if has('macunix')
         let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'my_snippets']
         let g:UltiSnipsListSnippets = '<C-l>'
         let g:ultisnips_python_quoting_style = 'sphinx'
-        let g:UltiSnipsExpandTrigger='<C-J>'
+        let g:UltiSnipsExpandTrigger='<tab>'
         let g:UltiSnipsJumpForwardTrigger='<C-J>'
         let g:UltiSnipsJumpBackwardTrigger='<C-K>'
         " }}}
