@@ -444,30 +444,6 @@ let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
 let g:vimwiki_list = [s:wiki]
 " }}}
 
-" Plugin: mucomplete ------------------------------------------------------ {{{
-Plug 'lifepillar/vim-mucomplete'
-set completeopt+=menuone
-inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
-inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
-inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
-
-inoremap <silent> <plug>(MUcompleteFwdKey) <right>
-imap <right> <plug>(MUcompleteCycFwd)
-inoremap <silent> <plug>(MUcompleteBwdKey) <left>
-imap <left> <plug>(MUcompleteCycBwd)
-
-set completeopt+=noselect
-set completeopt+=noinsert
-set shortmess+=c   " Shut off completion messages
-set belloff+=ctrlg " If Vim beeps during completion
-let g:mucomplete#enable_auto_at_startup = 1
-let g:mucomplete#chains = {}
-let g:mucomplete#chains.default = ['omni', 'keyn', 'ulti']
-let g:mucomplete#chains.markdown = ['omni', 'keyn', 'uspl', 'dict']
-let g:mucomplete#chains.gitcommit= ['keyn', 'dict']
-let g:mucomplete#chains.vim = ['omni', 'cmd', 'c-p']
-let g:mucomplete#chains.py = ['omni', 'tags', 'ulti', 'c-p']
-" }}}
 " }}}
 
 call plug#end()
