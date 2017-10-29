@@ -16,11 +16,12 @@ if has('macunix')
     " Plugin: mucomplete -------------------------------------------------- {{{
     Plug 'lifepillar/vim-mucomplete'
     let g:mucomplete#enable_auto_at_startup = 1
-    let g:mucomplete#chains = {
-                \ 'default' : ['path', 'ulti', 'omni', 'keyn', 'dict', 'uspl'],
-                \ 'python': ['omni', 'ulti'],
-                \ 'vim' : ['path', 'ulti', 'cmd', 'keyn'],
-                \ }
+    let g:mucomplete#chains = {}
+    let g:mucomplete#chains.default = ['omni', 'c-p', 'ulti', 'uspl']
+    let g:mucomplete#chains.markdown = ['omni', 'c-p', 'dict', 'uspl']
+    let g:mucomplete#chains.gitcommit= ['c-p', 'dict', 'uspl']
+    let g:mucomplete#chains.vim = ['omni', 'cmd', 'c-p']
+    let g:mucomplete#chains.py = ['omni', 'tags', 'ulti', 'c-p']
 
     inoremap <expr> <C-E> mucomplete#popup_exit('<C-E>')
     inoremap <expr> <C-Y> mucomplete#popup_exit('<C-Y>')
