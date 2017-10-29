@@ -694,7 +694,6 @@ nnoremap <F1> <nop>
 " }}}
 " Folding ----------------------------------------------------------------- {{{
 set foldenable                  " Enable folds
-set foldmethod=indent           " Try using indent-based folds for a while
 set foldnestmax=4               " Only go 4 levels deep
 set foldlevel=99                " By default, show them all though
                                 " The following open closed folds
@@ -938,6 +937,11 @@ inoremap <silent> <Down> :move'>+<CR>gv=gv
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
+
+augroup VimFiles
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup end
 
 " automatically source the .vimrc file if I change it
 " the bang (!) forces it to overwrite this command rather than stack it
