@@ -93,6 +93,8 @@ make_symlinks () {
     ln -sf "$HOME/${DOTFILES}/tigrc" "$HOME/.tigrc"
     ln -sf "$HOME/${DOTFILES}/pdbrc.py" "$HOME/.pdbrc.py"
     ln -sf "$HOME/${DOTFILES}/gemrc" "$HOME/.gemrc"
+    ln -sf "$HOME/${DOTFILES}/mdlrc" "$HOME/.mdlrc"
+    ln -sf "$HOME/${DOTFILES}/editorconfig" "$HOME/.editorconfig"
     ln -sf "$HOME/${DOTFILES}/ptpythonconfig.py" "$HOME/.ptpython/config.py"
 
     ln -sf "$HOME/${PREZTO}/runcoms/zlogin" "$HOME/.zlogin"

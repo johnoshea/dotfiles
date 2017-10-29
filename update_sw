@@ -8,7 +8,7 @@ CURRENT_GO=$(go version | awk '{ print $3 }')
 echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE} / Go: ${CURRENT_GO}] ***"
 cd "$UPDATE_SW_DIR" || exit
 pyenv local 3.5.2
-rbenv local system
+rbenv local 2.4.1
 nodenv local 6.9.1
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 echo "*** System software"
@@ -48,7 +48,7 @@ do
 done
 echo "*** Vim bundles"
 echo
-TERM=xterm-256color vim -u ~/src/dotfiles/bundles.vim +PlugUpdate! +qa
+TERM=xterm-256color vim +PlugUpdate! +qa
 echo "*** zprezto submodules"
 echo
 cd ~/src/prezto || exit

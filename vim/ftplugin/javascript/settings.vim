@@ -1,3 +1,9 @@
 setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal ai et sta sw=2 sts=2 ts=2 cin isk+=$
-
+setlocal autoindent
+setlocal expandtab
+setlocal smarttab
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal tabstop=2
+setlocal cindent
+setlocal iskeyword+=$
