@@ -2,16 +2,12 @@
 " Author: John O'Shea <john.m.oshea@gmail.com>
 " Source: <https://github.com/johnoshea/dotfiles>
 
-" Useful variables -------------------------------------------------------- {{{
-let g:isMac = has('macunix')
-let g:isUnix = has('unix') && ! has('macunix')
-let g:isWindows = has('win32')
-let g:isNvim = has('nvim')
-" Stock the Location of vim's folder in a global variable.
-let g:vimDir = g:isWindows ? substitute(expand('$HOME/vimfiles'), '\', '/', 'g') : expand('$HOME/.vim')
-" }}}
+" Leader keys ------------------------------------------------------------- {{{
+let g:mapleader="\<Space>"
+let g:maplocalleader=','
 
-" vim-plug ---------------------------------------------------------------- {{{
+" }}}
+" Plugins ---------------------------------------------------------------- {{{
 call plug#begin('~/.vim/bundle')
 
 " Mac-specific things ----------------------------------------------------- {{{
@@ -448,6 +444,12 @@ let g:vimwiki_list = [s:wiki]
 
 call plug#end()
 " }}}
+" Useful variables -------------------------------------------------------- {{{
+let g:isMac = has('macunix')
+let g:isUnix = has('unix') && ! has('macunix')
+let g:isWindows = has('win32')
+
+" }}}
 " Basic settings ---------------------------------------------------------- {{{
 
 " Miscellaneous settings
@@ -615,66 +617,6 @@ else
     match OverLength /\%81v.\+/
 endif
 " }}}
-" Keystrokes -------------------------------------------------------------- {{{
-let g:mapleader="\<Space>"
-let g:maplocalleader=','
-
-" Typos
-command! -bang E e<bang>
-command! -bang Q q<bang>
-command! -bang W w<bang>
-command! -bang QA qa<bang>
-command! -bang Qa qa<bang>
-command! -bang Wa wa<bang>
-command! -bang WA wa<bang>
-command! -bang Wq wq<bang>
-command! -bang WQ wq<bang>
-command! -bang Xa xa<bang>
-command! -bang XA xa<bang>
-
-runtime macros/matchit.vim
-
-" Swap the behaviour of j/k with gj/gk - i.e. j/k always move by screenlines
-nnoremap k gk
-nnoremap j gj
-nnoremap gk k
-nnoremap gj j
-
-" Miscellaneous
-" <leader>cd      cd to the directory of the current buffer
-nnoremap <leader>cd :lcd %:h<CR>
-" Disable "F1 for help"
-nnoremap <F1> <nop>
-" Open help in a vertical split instead of the default horizontal split
-" http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
-cabbrev h <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'h')<cr>
-cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>
-
-augroup command_window
-    autocmd!
-    " have <Ctrl-C> leave cmdline-window
-    autocmd CmdwinEnter * nnoremap <buffer> <C-c> :q\|echo ""<cr>
-    autocmd CmdwinEnter * inoremap <buffer> <C-c> <esc>:q\|echo ""<cr>
-    " start command line window in insert mode and no line numbers
-    autocmd CmdwinEnter * startinsert
-    autocmd CmdwinEnter * set nonumber
-augroup END
-
-" Moves the character under the cursor to the end of the line.
-nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
-
-" Copy & paste to system clipboard with <Space>p and <Space>y:
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
-
-" Quickly select text you just pasted
-noremap gV `[v`]
-
-" }}}
 " Tabs -------------------------------------------------------------------- {{{
 " For an explanation of the 'tabs vs spaces' used below, see
 " <http://www.jwz.org/doc/tabs-vs-spaces.html>
@@ -694,9 +636,57 @@ set infercase                   " Make completions smarter about cases
 set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
 
+runtime macros/matchit.vim
+
 " Search current word without moving cursor
 nnoremap<silent> <leader>k :let stay_star_view = winsaveview()<cr>:set hls!<cr>*:call winrestview(stay_star_view)<cr>
 
+augroup nohighlight
+    autocmd!
+    autocmd VimEnter * nohls
+augroup END
+
+" }}}
+" Command window ---------------------------------------------------------- {{{
+" Typos
+command! -bang E e<bang>
+command! -bang Q q<bang>
+command! -bang W w<bang>
+command! -bang QA qa<bang>
+command! -bang Qa qa<bang>
+command! -bang Wa wa<bang>
+command! -bang WA wa<bang>
+command! -bang Wq wq<bang>
+command! -bang WQ wq<bang>
+command! -bang Xa xa<bang>
+command! -bang XA xa<bang>
+
+augroup command_window
+    autocmd!
+    " have <Ctrl-C> leave cmdline-window
+    autocmd CmdwinEnter * nnoremap <buffer> <C-c> :q\|echo ""<cr>
+    autocmd CmdwinEnter * inoremap <buffer> <C-c> <esc>:q\|echo ""<cr>
+    " start command line window in insert mode and no line numbers
+    autocmd CmdwinEnter * startinsert
+    autocmd CmdwinEnter * set nonumber
+augroup END
+
+" Copy & paste to system clipboard with <Space>p and <Space>y:
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+" }}}
+" Help -------------------------------------------------------------------- {{{
+" Open help in a vertical split instead of the default horizontal split
+" http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
+cabbrev h <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'h')<cr>
+cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>
+
+" Disable "F1 for help"
+nnoremap <F1> <nop>
 " }}}
 " Folding ----------------------------------------------------------------- {{{
 set foldenable                  " Enable folds
@@ -800,12 +790,6 @@ if exists('+undofile')
 endif
 
 " }}}
-" Searching --------------------------------------------------------------- {{{
-augroup nohighlight
-    autocmd!
-    autocmd VimEnter * nohls
-augroup END
-" }}}
 " Display options --------------------------------------------------------- {{{
 " Use better looking listchars if they are supported
 if has('multi_byte')
@@ -879,6 +863,22 @@ endif
 
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
+" Swap the behaviour of j/k with gj/gk - i.e. j/k always move by screenlines
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
+
+" Miscellaneous
+" <leader>cd      cd to the directory of the current buffer
+nnoremap <leader>cd :lcd %:h<CR>
+
+" Moves the character under the cursor to the end of the line.
+nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
+
+" Quickly select text you just pasted
+noremap gV `[v`]
+
 " Toggles ----------------------------------------------------------------- {{{
 nnoremap <leader>e :set expandtab! expandtab?<CR>
 let g:line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
@@ -992,8 +992,8 @@ augroup makefile
 augroup END
 " }}}
 " }}}
-
-" Server-local settings: mostly used to disable plugins
+" Server-local settings: mostly used to disable plugins ------------------- {{{
 if filereadable('~/.vimrc.local')
     source ~/.vimrc.local
 end
+" }}}
