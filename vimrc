@@ -682,14 +682,6 @@ augroup command_window
     autocmd CmdwinEnter * startinsert
     autocmd CmdwinEnter * set nonumber
 augroup END
-
-" Copy & paste to system clipboard with <Space>p and <Space>y:
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
 " }}}
 " Help -------------------------------------------------------------------- {{{
 " Open help in a vertical split instead of the default horizontal split
