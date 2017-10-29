@@ -13,6 +13,19 @@ call plug#begin('~/.vim/bundle')
 " Mac-specific things ----------------------------------------------------- {{{
 if has('macunix')
 
+    " Plugin: mucomplete -------------------------------------------------- {{{
+    Plug 'lifepillar/vim-mucomplete'
+    let g:mucomplete#enable_auto_at_startup = 1
+    let g:mucomplete#chains = {
+                \ 'default' : ['path', 'ulti', 'omni', 'keyn', 'dict', 'uspl'],
+                \ 'python': ['omni', 'ulti'],
+                \ 'vim' : ['path', 'ulti', 'cmd', 'keyn'],
+                \ }
+
+    inoremap <expr> <C-E> mucomplete#popup_exit('<C-E>')
+    inoremap <expr> <C-Y> mucomplete#popup_exit('<C-Y>')
+    inoremap <expr> <CR> mucomplete#popup_exit('<CR>') . (pumvisible() && len(UltiSnips#SnippetsInCurrentScope()) ? '<C-R>=UltiSnips#ExpandSnippet()<CR>' : '')
+    " }}}
     " Version-dependent plugins ------------------------------------------- {{{
     if v:version >= 704
         " Plugin: ultisnips ----------------------------------------------- {{{
@@ -21,8 +34,8 @@ if has('macunix')
         let g:UltiSnipsListSnippets = '<C-l>'
         let g:ultisnips_python_quoting_style = 'sphinx'
         let g:UltiSnipsExpandTrigger='<tab>'
-        let g:UltiSnipsJumpForwardTrigger='<C-J>'
-        let g:UltiSnipsJumpBackwardTrigger='<C-K>'
+        let g:UltiSnipsJumpForwardTrigger='<c-j>'
+        let g:UltiSnipsJumpBackwardTrigger='<c-k>'
         " }}}
         " Ultisnips snippets are now stored in honza/vim-snippets
         Plug 'honza/vim-snippets'
@@ -543,11 +556,10 @@ set viminfo='1000,<1000,h
 "           |     +-------- Keep N lines for each register
 "           +-------------- Keep marks for N files
 
-set completeopt=longest,menu,menuone,preview
-"               |       |    |       + show extra information
-"               |       |    +-- Show popup even with one match
-"               |       +------- Use popup menu with completions
-"               +--------------- Insert longest completion match
+set completeopt+=menuone   " use popup menu even if only one completion match
+set completeopt+=noinsert  " don't insert until I make a selection
+set completeopt-=preview   " don't show the preview window
+
 " }}}
 " Clipboard --------------------------------------------------------------- {{{
 if g:isMac
