@@ -66,7 +66,7 @@ if has('macunix')
     nnoremap <silent> <Leader>hi :History<CR>
     nnoremap <silent> <Leader>mp :Maps<CR>
     nnoremap <silent> <Leader>sn :Snippets<CR>
-    nnoremap <silent> <Leader>co :Commands<CR>
+    nnoremap <silent> <Leader>cm :Commands<CR>
     " Insert mode completion
     imap <c-x><c-f> <plug>(fzf-complete-path)
     imap <c-x><c-j> <plug>(fzf-complete-file-ag)
@@ -361,7 +361,6 @@ Plug 'chikamichi/mediawiki.vim'
 " Colorschemes ------------------------------------------------------------ {{{
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
-Plug 'ayu-theme/ayu-vim'
 " }}}
 
 " Text objects ------------------------------------------------------------ {{{
@@ -382,50 +381,15 @@ Plug 'michaeljsmith/vim-indent-object'
 
 " Search ------------------------------------------------------------------ {{{
 " Plugin: incsearch ------------------------------------------------------- {{{
-Plug 'haya14busa/incsearch.vim'
-let g:vim_search_pulse_disable_auto_mappings = 1
-let g:incsearch#auto_nohlsearch = 1
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-" Next or previous match is followed by a Pulse
-map n <Plug>(incsearch-nohl-n)<Plug>Pulse
-map N <Plug>(incsearch-nohl-N)<Plug>Pulse
-map * <Plug>(incsearch-nohl-*)<Plug>Pulse
-map # <Plug>(incsearch-nohl-#)<Plug>Pulse
-map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
-map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
+Plug 'haya14busa/is.vim'
 " }}}
-" Plugin: vim-search-pulse ------------------------------------------------ {{{
-Plug 'inside/vim-search-pulse'
-let g:vim_search_pulse_disable_auto_mappings = 1
-let g:vim_search_pulse_mode = 'pattern'
-" Pulse and center line for all but '*'
-nmap n nzz<Plug>Pulse
-nmap N Nzz<Plug>Pulse
-nmap # #zz<Plug>Pulse
-nmap g* g*zz<Plug>Pulse
-nmap g# g#zz<Plug>Pulse
-nmap * *<Plug>Pulse
 
-" Pulses the first match after hitting the enter key
-augroup vimpulse
-    autocmd! User IncSearchExecute
-    autocmd! User IncSearchExecute :call search_pulse#Pulse()
-augroup END
-
-map *   <Plug>(asterisk-*)
-map #   <Plug>(asterisk-#)
-map g*  <Plug>(asterisk-g*)
-map g#  <Plug>(asterisk-g#)
-map z*  <Plug>(asterisk-z*)
-map gz* <Plug>(asterisk-gz*)
-map z#  <Plug>(asterisk-z#)
-map gz# <Plug>(asterisk-gz#)
-let g:asterisk#keeppos = 1
-" }}}
 Plug 'haya14busa/vim-asterisk'
+map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
+map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
+map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
+map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
+let g:asterisk#keeppos = 1
 " }}}
 
 " Buffers ----------------------------------------------------------------- {{{
