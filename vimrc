@@ -361,7 +361,6 @@ Plug 'chikamichi/mediawiki.vim'
 " Colorschemes ------------------------------------------------------------ {{{
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
-Plug 'ayu-theme/ayu-vim'
 " }}}
 
 " Text objects ------------------------------------------------------------ {{{
