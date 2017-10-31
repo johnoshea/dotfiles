@@ -66,7 +66,7 @@ if has('macunix')
     nnoremap <silent> <Leader>hi :History<CR>
     nnoremap <silent> <Leader>mp :Maps<CR>
     nnoremap <silent> <Leader>sn :Snippets<CR>
-    nnoremap <silent> <Leader>co :Commands<CR>
+    nnoremap <silent> <Leader>cm :Commands<CR>
     " Insert mode completion
     imap <c-x><c-f> <plug>(fzf-complete-path)
     imap <c-x><c-j> <plug>(fzf-complete-file-ag)
