@@ -624,6 +624,10 @@ augroup nohighlight
     autocmd VimEnter * nohls
 augroup END
 
+" Use tab and shift-tab to move between matches while in search ('/') mode
+cnoremap <expr>  <tab>    getcmdtype() =~ '[?/]' ? '<c-g>' : feedkeys('<tab>', 'int')[1]
+cnoremap <expr>  <s-tab>  getcmdtype() =~ '[?/]' ? '<c-t>' : feedkeys('<s-tab>', 'int')[1]
+
 " }}}
 " Command window ---------------------------------------------------------- {{{
 " Typos
