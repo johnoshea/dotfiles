@@ -257,6 +257,7 @@ Plug 'tpope/vim-rhubarb'
 " }}}
 
 " Display ----------------------------------------------------------------- {{{
+
 " Plugin: ZoomWin --------------------------------------------------------- {{{
 Plug 'vim-scripts/ZoomWin'
 nnoremap <leader>z :ZoomWin<CR>
