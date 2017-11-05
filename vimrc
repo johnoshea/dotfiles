@@ -199,6 +199,8 @@ let g:ale_linters = {
 			\	'vim'            : ['vint'],
 			\	'yaml'           : ['yamllint'],
 			\ }
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 " }}}
 " Plugin: splitjoin ------------------------------------------------------- {{{
 " use 'sj'/'sk' to split/join to/from multiple lines
@@ -257,6 +259,7 @@ Plug 'tpope/vim-rhubarb'
 " }}}
 
 " Display ----------------------------------------------------------------- {{{
+
 " Plugin: ZoomWin --------------------------------------------------------- {{{
 Plug 'vim-scripts/ZoomWin'
 nnoremap <leader>z :ZoomWin<CR>
@@ -322,7 +325,6 @@ let g:polyglot_disabled = ['python']
 Plug 'vim-scripts/django.vim', {'for': 'django'}
 Plug 'tweekmonster/django-plus.vim'
 " Javascript
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 " Add CSS3 syntax highlighting
@@ -330,7 +332,6 @@ Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
 " CSS OmniComplete
 Plug 'othree/csscomplete.vim', {'for': ['css', 'scss']}
 " Better JSON
-Plug 'elzr/vim-json', {'for': ['javascript', 'json']}
 Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 " Add csv plugin back in, now that it's been removed from vim-ployglot
 Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
@@ -340,12 +341,9 @@ Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'apalmer1377/factorus', {'for': 'python'}
 Plug 'tmhedberg/simpylfold', {'for': 'python'}
 Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
-" Sass
-Plug 'cakebaker/scss-syntax.vim'
 " HTML
 Plug 'mattn/emmet-vim', {'for': 'html'}
 " Terraform
-Plug 'hashivim/vim-terraform'
 Plug 'juliosueiras/vim-terraform-completion'
 " TaskPaper
 Plug 'mutewinter/taskpaper.vim'
