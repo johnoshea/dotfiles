@@ -21,3 +21,9 @@ let g:pencil#autoformat = 1
 
 map <silent> <leader>qc <Plug>ReplaceWithCurly
 map <silent> <leader>qs <Plug>ReplaceWithStraight
+
+" Set undo markers on punctuation
+inoremap . .<c-g>u
+inoremap ? ?<c-g>u
+inoremap ! !<c-g>u
+inoremap , ,<c-g>u
