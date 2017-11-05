@@ -199,6 +199,8 @@ let g:ale_linters = {
 			\	'vim'            : ['vint'],
 			\	'yaml'           : ['yamllint'],
 			\ }
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 " }}}
 " Plugin: splitjoin ------------------------------------------------------- {{{
 " use 'sj'/'sk' to split/join to/from multiple lines
