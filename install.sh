@@ -53,7 +53,7 @@ checkout_repos () {
     echo "Checking out repos"
     rm -rf "$HOME/${DOTFILES:?}" && git clone https://github.com/johnoshea/dotfiles.git "$HOME/${DOTFILES}"
     curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    vim -u "$HOME/${DOTFILES:?}/bundles.vim" +PlugInstall +qa
+    vim +PlugInstall +qa
     rm -rf "$HOME/${PREZTO:?}" && git clone https://github.com/johnoshea/prezto.git "$HOME/${PREZTO}"
     update_prezto_submodules
 }
@@ -110,7 +110,7 @@ make_symlinks () {
 update_vim_submodules () {
     echo "Updating vim submodules"
     cd "$HOME/${DOTFILES}"
-    TERM=xterm-256color vim -u bundles.vim +PlugInstall! +qa
+    TERM=xterm-256color vim +PlugInstall! +qa
 }
 
 update_prezto_submodules () {
