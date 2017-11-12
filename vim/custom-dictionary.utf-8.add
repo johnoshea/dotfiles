@@ -68,3 +68,8 @@ username
 Demandware
 virtualenv
 url
+s3cmd
+s3
+MySQL
+lockfile
+cronjob
