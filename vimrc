@@ -380,6 +380,9 @@ Plug 'michaeljsmith/vim-indent-object'
 " Search ------------------------------------------------------------------ {{{
 " Plugin: incsearch ------------------------------------------------------- {{{
 Plug 'haya14busa/is.vim'
+" }}
+" Plugin: vim-ferret ------------------------------------------------------ {{{
+Plug 'wincent/ferret'
 " }}}
 
 Plug 'haya14busa/vim-asterisk'
