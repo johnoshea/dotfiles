@@ -16,7 +16,7 @@ setlocal comments=n:#,n:*,n:\:,s:{\|,m:\|,ex:\|}
 setlocal formatoptions+=roq
 
 " match HTML tags (taken directly from $VIM/ftplugin/html.vim)
-if exists("loaded_matchit")
+if exists('loaded_matchit')
     let b:match_ignorecase=0
     let b:match_skip = 's:Comment'
     let b:match_words = '<:>,' .
