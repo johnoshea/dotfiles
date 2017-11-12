@@ -548,7 +548,7 @@ if has('gui_running')
   set columns=180
 
   if g:isMac
-    set guifont=Input\ Mono:h12
+    set guifont=Input\ Mono:h11
     set fuoptions=maxvert,maxhorz
   elseif g:isUnix
     set guifont=Bitstream\ Vera\ Sans\ Mono:h10
