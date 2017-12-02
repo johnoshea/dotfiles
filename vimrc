@@ -7,7 +7,7 @@ let g:mapleader="\<Space>"
 let g:maplocalleader=','
 
 " }}}
-" Plugins ---------------------------------------------------------------- {{{
+" Plugins ----------------------------------------------------------------- {{{
 call plug#begin('~/.vim/bundle')
 
 " Mac-specific things ----------------------------------------------------- {{{
@@ -427,6 +427,8 @@ let g:vimwiki_list = [s:wiki]
 " }}}
 
 call plug#end()
+" }}}
+" }}}
 " }}}
 " Useful variables -------------------------------------------------------- {{{
 let g:isMac = has('macunix')
