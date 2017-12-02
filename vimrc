@@ -359,6 +359,8 @@ Plug 'chikamichi/mediawiki.vim'
 " Colorschemes ------------------------------------------------------------ {{{
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
+Plug 'drewtempelmeyer/palenight.vim'
+let g:palenight_terminal_italics=1
 " }}}
 
 " Text objects ------------------------------------------------------------ {{{
@@ -541,7 +543,7 @@ endif
 
 if has('gui_running')
   set background=dark
-  colorscheme gruvbox
+  colorscheme palenight
 
   set guioptions=egmt
   set lines=60
