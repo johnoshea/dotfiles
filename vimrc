@@ -7,7 +7,7 @@ let g:mapleader="\<Space>"
 let g:maplocalleader=','
 
 " }}}
-" Plugins ---------------------------------------------------------------- {{{
+" Plugins ----------------------------------------------------------------- {{{
 call plug#begin('~/.vim/bundle')
 
 " Mac-specific things ----------------------------------------------------- {{{
@@ -265,31 +265,34 @@ Plug 'vim-scripts/ZoomWin'
 nnoremap <leader>z :ZoomWin<CR>
 " }}}
 Plug 'kshenoy/vim-signature'
-" Plugin: Airline --------------------------------------------------------- {{{
-Plug 'vim-airline/vim-airline'
-if !exists('g:airline_symbols')
-let g:airline_symbols = {}
-endif
+" Plugin: lightline ------------------------------------------------------- {{{
+Plug 'itchyny/lightline.vim'
+let g:lightline = {
+    \ 'colorscheme': 'OldHope',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'readonly', 'filename', 'modified', 'gitbranch' ] ],
+    \   'right': [ [ 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'charvaluehex', 'fileformat', 'fileencoding', 'filetype' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head',
+    \   'fileformat': 'LightlineFileformat',
+    \   'filetype': 'LightlineFiletype',
+    \ },
+    \ 'component': {
+    \   'charvaluehex': '0x%B'
+    \ },
+    \ }
 
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_theme='powerlineish'
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#branch#format = 'Git_flow_branch_format'
-let g:airline#extensions#whitespace#enabled = 0
-" }}}
-Plug 'vim-airline/vim-airline-themes'
-Plug 'renyard/vim-git-flow-format'
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
 " Plugin: rainbow_parentheses --------------------------------------------- {{{
 Plug 'junegunn/rainbow_parentheses.vim'
 augroup rainbowparentheses
@@ -425,6 +428,8 @@ let g:vimwiki_list = [s:wiki]
 
 call plug#end()
 " }}}
+" }}}
+" }}}
 " Useful variables -------------------------------------------------------- {{{
 let g:isMac = has('macunix')
 let g:isUnix = has('unix') && ! has('macunix')
@@ -483,6 +488,7 @@ set fillchars=diff:⣿,vert:│       " Have different vertical splits for diffs
 set switchbuf=useopen             " Jump to first open window containing buffer (if possible)
 set diffopt=filler,iwhite         " show filler lines and ignore whitespace
 set breakindent                   " indent wrapped lines
+set noshowmode                    " lightline shows this for us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
