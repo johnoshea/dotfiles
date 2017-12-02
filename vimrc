@@ -133,7 +133,7 @@ Plug 'vim-scripts/easydir.vim'
 " Plugin: vim-startify ---------------------------------------------------- {{{
 Plug 'mhinz/vim-startify'
 let g:startify_session_dir = '~/.vim/session'
-let g:startify_bookmarks = ['~/src/dotfiles/', '~/src/prezto/']
+let g:startify_bookmarks = ['~/src/dotfiles/vimrc', '~/src/prezto/', '~/.vimrc.local']
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 " }}}
