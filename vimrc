@@ -364,6 +364,8 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
 let g:palenight_terminal_italics=1
+
+Plug 'lifepillar/vim-colortemplate'
 " }}}
 
 " Text objects ------------------------------------------------------------ {{{
