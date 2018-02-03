@@ -248,9 +248,8 @@ augroup fugitive
 augroup END
 " }}}
 Plug 'junegunn/gv.vim'
-" Plugin: vim-gitgutter --------------------------------------------------- {{{
-Plug 'airblade/vim-gitgutter'
-nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
+" Plugin: vim-signify ----------------------------------------------------- {{{
+Plug 'mhinz/vim-signify'
 " }}}
 Plug 'tpope/vim-rhubarb'
 " }}}
