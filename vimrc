@@ -23,9 +23,6 @@ if has('macunix')
     let g:mucomplete#chains.vim = ['omni', 'cmd', 'c-p']
     let g:mucomplete#chains.py = ['omni', 'tags', 'ulti', 'c-p']
 
-    inoremap <expr> <C-E> mucomplete#popup_exit('<C-E>')
-    inoremap <expr> <C-Y> mucomplete#popup_exit('<C-Y>')
-    inoremap <expr> <CR> mucomplete#popup_exit('<CR>') . (pumvisible() && len(UltiSnips#SnippetsInCurrentScope()) ? '<C-R>=UltiSnips#ExpandSnippet()<CR>' : '')
     " }}}
     " Version-dependent plugins ------------------------------------------- {{{
     if v:version >= 704
