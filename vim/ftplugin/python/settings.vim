@@ -61,3 +61,13 @@ nnoremap <localleader>Q :s/  # noqa//<CR><ESC>
 if executable('yapf')
     let g:formatters_python = ['yapf', 'autopep8']
 endif
+
+if executable('pyls')
+    augroup pyls
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'pyls',
+            \ 'cmd': {server_info->['pyls']},
+            \ 'whitelist': ['python'],
+            \ })
+    augroup END
+endif
