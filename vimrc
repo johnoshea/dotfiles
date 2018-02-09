@@ -394,6 +394,12 @@ let s:wiki.path = '~/vimwiki/'
 let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
 let g:vimwiki_list = [s:wiki]
 " }}}
+" Plugin: Notational FZF -------------------------------------------------- {{{
+Plug 'https://github.com/Alok/notational-fzf-vim'
+let g:nv_search_paths = ['~/Dropbox/Notes', '~/vimwiki']
+let g:nv_use_short_pathnames = 1
+nnoremap <c-n> <ESC>:NV<space>
+" }}}
 
 " }}}
 
