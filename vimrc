@@ -13,19 +13,11 @@ call plug#begin('~/.vim/bundle')
 " Mac-specific things ----------------------------------------------------- {{{
 if has('macunix')
 
-    " Plugin: mucomplete -------------------------------------------------- {{{
-    Plug 'lifepillar/vim-mucomplete'
-    let g:mucomplete#enable_auto_at_startup = 1
-    let g:mucomplete#chains = {}
-    let g:mucomplete#chains.default = ['omni', 'c-p', 'ulti', 'uspl']
-    let g:mucomplete#chains.markdown = ['omni', 'c-p', 'dict', 'uspl']
-    let g:mucomplete#chains.gitcommit= ['c-p', 'dict', 'uspl']
-    let g:mucomplete#chains.vim = ['omni', 'cmd', 'c-p']
-    let g:mucomplete#chains.py = ['omni', 'tags', 'ulti', 'c-p']
-
-    inoremap <expr> <C-E> mucomplete#popup_exit('<C-E>')
-    inoremap <expr> <C-Y> mucomplete#popup_exit('<C-Y>')
-    inoremap <expr> <CR> mucomplete#popup_exit('<CR>') . (pumvisible() && len(UltiSnips#SnippetsInCurrentScope()) ? '<C-R>=UltiSnips#ExpandSnippet()<CR>' : '')
+    " Plugin: vim-lsp ----------------------------------------------------- {{{
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
     " }}}
     " Version-dependent plugins ------------------------------------------- {{{
     if v:version >= 704
@@ -139,8 +131,6 @@ let g:startify_change_to_vcs_root = 1
 " }}}
 " vim-enuch - :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'tpope/vim-eunuch'
-" Fencview - autodetect CJK and Unicode file encodings
-Plug 'vim-scripts/fencview.vim'
 " }}}
 
 " Editing ----------------------------------------------------------------- {{{
@@ -166,8 +156,6 @@ Plug 'tommcdo/vim-exchange'
 Plug 'triglav/vim-visual-increment'
 " Auto-update folds only as needed
 Plug 'Konfekt/FastFold'
-" Show registers temporarily
-Plug 'junegunn/vim-peekaboo'
 " Smart-insert closing parentheses/quotes, etc
 Plug 'Raimondi/delimitMate'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
@@ -201,14 +189,6 @@ let g:ale_linters = {
 			\ }
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-" }}}
-" Plugin: splitjoin ------------------------------------------------------- {{{
-" use 'sj'/'sk' to split/join to/from multiple lines
-Plug 'AndrewRadev/splitjoin.vim'
-let g:splitjoin_split_mapping = ''
-let g:splitjoin_join_mapping = ''
-nnoremap sj :SplitjoinSplit<cr>
-nnoremap sk :SplitjoinJoin<cr>
 " }}}
 " Plugin: vim-autoformat -------------------------------------------------- {{{
 " use <leader>f to autoformat code
@@ -250,20 +230,13 @@ augroup fugitive
     nnoremap <leader>gps :Git push<CR>
 augroup END
 " }}}
-Plug 'junegunn/gv.vim'
 " Plugin: vim-gitgutter --------------------------------------------------- {{{
 Plug 'airblade/vim-gitgutter'
 nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
 " }}}
-Plug 'tpope/vim-rhubarb'
-" }}}
 
 " Display ----------------------------------------------------------------- {{{
 
-" Plugin: ZoomWin --------------------------------------------------------- {{{
-Plug 'vim-scripts/ZoomWin'
-nnoremap <leader>z :ZoomWin<CR>
-" }}}
 Plug 'kshenoy/vim-signature'
 " Plugin: lightline ------------------------------------------------------- {{{
 Plug 'itchyny/lightline.vim'
@@ -305,9 +278,6 @@ augroup END
 " Plugin: GoldenView ------------------------------------------------------ {{{
 Plug 'zhaocai/GoldenView.Vim'
 let g:goldenview__enable_default_mapping = 0
-" quickly switch current window with the main pane and toggle back
-nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
-nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
 " }}}
 " Better display of whitespace - adds :StripWhitespace too
 Plug 'ntpeters/vim-better-whitespace'
@@ -339,7 +309,6 @@ Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 " Add csv plugin back in, now that it's been removed from vim-ployglot
 Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Python
-Plug 'davidhalter/jedi-vim', {'do': 'git submodule update --init', 'for': 'python'}
 Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'apalmer1377/factorus', {'for': 'python'}
 Plug 'tmhedberg/simpylfold', {'for': 'python'}
@@ -421,9 +390,15 @@ Plug 'embear/vim-localvimrc'
 " Plugin: vimwiki --------------------------------------------------------- {{{
 Plug 'vimwiki/vimwiki'
 let s:wiki = {}
-let s:wiki.path = '~/Documents/vimwiki/'
+let s:wiki.path = '~/vimwiki/'
 let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
 let g:vimwiki_list = [s:wiki]
+" }}}
+" Plugin: Notational FZF -------------------------------------------------- {{{
+Plug 'https://github.com/Alok/notational-fzf-vim'
+let g:nv_search_paths = ['~/Dropbox/Notes', '~/vimwiki']
+let g:nv_use_short_pathnames = 1
+nnoremap <c-n> <ESC>:NV<space>
 " }}}
 
 " }}}
