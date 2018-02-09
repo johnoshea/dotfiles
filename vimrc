@@ -390,7 +390,7 @@ Plug 'embear/vim-localvimrc'
 " Plugin: vimwiki --------------------------------------------------------- {{{
 Plug 'vimwiki/vimwiki'
 let s:wiki = {}
-let s:wiki.path = '~/Documents/vimwiki/'
+let s:wiki.path = '~/vimwiki/'
 let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
 let g:vimwiki_list = [s:wiki]
 " }}}
