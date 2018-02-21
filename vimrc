@@ -391,6 +391,9 @@ Plug 'embear/vim-localvimrc'
 Plug 'vimwiki/vimwiki'
 let s:wiki = {}
 let s:wiki.path = '~/vimwiki/'
+let s:wiki.auto_tags = 1
+let s:wiki.syntax = 'markdown'
+let s:wiki.ext = '.mdw'
 let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
 let g:vimwiki_list = [s:wiki]
 " }}}
