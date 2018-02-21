@@ -891,8 +891,8 @@ vnoremap <silent> <Down> :move'>+<CR>gv=gv
 " Insert mode
 inoremap <silent> <Left> <C-D>
 inoremap <silent> <Right> <C-T>
-inoremap <silent> <Up>   :move-2<CR>gv=gv
-inoremap <silent> <Down> :move'>+<CR>gv=gv
+inoremap <silent> <Up>   <C-o>:move-2<CR>gv=gv
+inoremap <silent> <Down> <C-o>:move'>+<CR>gv=gv
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
