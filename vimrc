@@ -187,8 +187,6 @@ let g:ale_linters = {
 			\	'vim'            : ['vint'],
 			\	'yaml'           : ['yamllint'],
 			\ }
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
 " }}}
 " Plugin: vim-autoformat -------------------------------------------------- {{{
 " use <leader>f to autoformat code
@@ -230,9 +228,9 @@ augroup fugitive
     nnoremap <leader>gps :Git push<CR>
 augroup END
 " }}}
-" Plugin: vim-gitgutter --------------------------------------------------- {{{
-Plug 'airblade/vim-gitgutter'
-nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
+Plug 'junegunn/gv.vim'
+" Plugin: vim-signify ----------------------------------------------------- {{{
+Plug 'mhinz/vim-signify'
 " }}}
 
 " Display ----------------------------------------------------------------- {{{
