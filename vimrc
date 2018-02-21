@@ -839,6 +839,10 @@ nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
 " Quickly select text you just pasted
 noremap gV `[v`]
 
+" Move to paragraph lines, not the spaces between them
+nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
+nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
+
 " Toggles ----------------------------------------------------------------- {{{
 nnoremap <leader>e :set expandtab! expandtab?<CR>
 let g:line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
