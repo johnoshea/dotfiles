@@ -485,13 +485,12 @@ set mouse=a                     " Enable the mouse for all modes
 set mousehide                   " Hide mouse while typing
 set mousemodel=popup            " Use popup menu for right mouse button
 
-set formatoptions+=croqn
-"                  |||||
-"                  ||||+-- Recognize numbered lists
-"                  |||+--- Allow formatting of comments with 'gq'
-"                  ||+---- Insert comment leader after 'o' or 'O'
-"                  |+----- Insert comment leader after <Enter>
-"                  +------ Auto-wrap comments
+set formatoptions+=c   " Auto-wrap comments
+set formatoptions+=n   " Recognize numbered lists
+set formatoptions+=o   " Insert comment leader after 'o' or 'O'
+set formatoptions+=q   " Allow formatting of comments with 'gq'
+set formatoptions+=r   " Insert comment leader after <Enter>
+set formatoptions-=t   " break comment-lines at &textwidth, but not code
 " Delete comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has('patch541')
   set formatoptions+=j
