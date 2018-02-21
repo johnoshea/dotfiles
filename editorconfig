@@ -21,7 +21,6 @@ insert_final_newline = ignore
 [*.sql]
 indent_size = 4
 
-# Use 2 spaces for the HTML files
 [*.html]
 indent_size = 2
 
