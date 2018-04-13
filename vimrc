@@ -470,7 +470,7 @@ set modeline modelines=10         " Use modelines within first 10 lines
 set autowrite                     " Write file before some commands
 set wildmenu                      " Enable wildmenu for completion
 set wildmode=longest:full,full    " Complete the next full match
-set synmaxcol=200                 " Don't syntax-colour long lines (too slow otherwise)
+set synmaxcol=250                 " Don't syntax-colour long lines (too slow otherwise)
 set virtualedit=all               " Allow the cursor to move to 'invalid' places
 set complete=.,w,b,t              " Complete current buffer, other windows, other buffers and tags
 set cmdheight=2                   " Avoid 'Press Enter' messages
