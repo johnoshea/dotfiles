@@ -365,6 +365,7 @@ Plug 'michaeljsmith/vim-indent-object'
 " Search ------------------------------------------------------------------ {{{
 " Plugin: incsearch ------------------------------------------------------- {{{
 Plug 'haya14busa/is.vim'
+let g:incsearch#magic = '\v'
 " }}
 " Plugin: vim-ferret ------------------------------------------------------ {{{
 Plug 'wincent/ferret'
