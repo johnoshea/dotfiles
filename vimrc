@@ -419,6 +419,7 @@ call plug#end()
 " }}}
 " }}}
 " }}}
+" }}}
 " Useful variables -------------------------------------------------------- {{{
 let g:isMac = has('macunix')
 let g:isUnix = has('unix') && ! has('macunix')
