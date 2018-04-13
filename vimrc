@@ -202,6 +202,9 @@ nmap <silent> <leader>, <esc>:w<CR>:TestLast<CR>
 nmap <silent> <leader>. <esc>:w<CR>:TestVisit<CR>
 let g:test#strategy = 'vimux'
 " }}}
+" Plugin: vim-dotenv ------------------------------------------------------ {{{
+Plug 'tpope/vim-dotenv'
+" }}}
 " }}}
 
 " Git --------------------------------------------------------------------- {{{
