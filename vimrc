@@ -308,7 +308,6 @@ Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Python
 Plug 'vim-python/python-syntax', {'for': 'python'}
-Plug 'apalmer1377/factorus', {'for': 'python'}
 Plug 'tmhedberg/simpylfold', {'for': 'python'}
 Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
 " HTML
@@ -330,9 +329,6 @@ Plug 'chikamichi/mediawiki.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
-let g:palenight_terminal_italics=1
-
-Plug 'lifepillar/vim-colortemplate'
 " }}}
 
 " Text objects ------------------------------------------------------------ {{{
