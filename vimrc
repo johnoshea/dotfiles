@@ -280,10 +280,6 @@ let g:goldenview__enable_default_mapping = 0
 " }}}
 " Better display of whitespace - adds :StripWhitespace too
 Plug 'ntpeters/vim-better-whitespace'
-" Plugin: editorconfig-vim ------------------------------------------------ {{{
-Plug 'editorconfig/editorconfig-vim'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-" }}}
 " Turn on large (>20MB) file optimizations - use :Large/:Unlarge/:Large!
 Plug 'vim-scripts/LargeFile'
 " }}}
