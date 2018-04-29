@@ -129,7 +129,8 @@ let g:startify_bookmarks = ['~/src/dotfiles/vimrc', '~/src/prezto/', '~/.vimrc.l
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 " }}}
-" vim-enuch - :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
+" vim-enuch
+" :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'tpope/vim-eunuch'
 " }}}
 
@@ -229,7 +230,6 @@ augroup fugitive
 augroup END
 " }}}
 Plug 'junegunn/gv.vim'
-" Plugin: vim-signify ----------------------------------------------------- {{{
 Plug 'mhinz/vim-signify'
 " }}}
 
