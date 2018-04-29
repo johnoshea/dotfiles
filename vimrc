@@ -132,6 +132,7 @@ let g:startify_change_to_vcs_root = 1
 " vim-enuch
 " :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'tpope/vim-eunuch'
+Plug 'andymass/vim-matchup'
 " }}}
 
 " Editing ----------------------------------------------------------------- {{{
@@ -599,8 +600,6 @@ set ignorecase                  " Ignore case when searching
 set infercase                   " Make completions smarter about cases
 set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
-
-runtime macros/matchit.vim
 
 " Search current word without moving cursor
 nnoremap<silent> <leader>k :let stay_star_view = winsaveview()<cr>:set hls!<cr>*:call winrestview(stay_star_view)<cr>
