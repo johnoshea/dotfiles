@@ -199,6 +199,14 @@ let g:ale_linters = {
 			\	'vim'            : ['vint'],
 			\	'yaml'           : ['yamllint'],
 			\ }
+" lint on save only, partly for speed and partly because pylint only works
+" with files saved to disk
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_delay = 0
+let g:ale_max_signs = 30
+" " if you don't want linters to run on opening a file
+" let g:ale_lint_on_enter = 0
 " }}}
 " Plugin: vim-autoformat -------------------------------------------------- {{{
 " use <leader>f to autoformat code
