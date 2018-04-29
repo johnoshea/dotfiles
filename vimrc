@@ -254,11 +254,10 @@ augroup END
 Plug 'junegunn/gv.vim'
 " Plugin: vim-signify ----------------------------------------------------- {{{
 Plug 'mhinz/vim-signify'
+let g:signify_vcs_list = [ 'git' ]
 " }}}
 
 " Display ----------------------------------------------------------------- {{{
-
-Plug 'kshenoy/vim-signature'
 " Plugin: lightline ------------------------------------------------------- {{{
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
