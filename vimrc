@@ -13,12 +13,6 @@ call plug#begin('~/.vim/bundle')
 " Mac-specific things ----------------------------------------------------- {{{
 if has('macunix')
 
-    " Plugin: vim-lsp ----------------------------------------------------- {{{
-    Plug 'prabirshrestha/asyncomplete.vim'
-    Plug 'prabirshrestha/async.vim'
-    Plug 'prabirshrestha/vim-lsp'
-    Plug 'prabirshrestha/asyncomplete-lsp.vim'
-    " }}}
     " Version-dependent plugins ------------------------------------------- {{{
     if v:version >= 704
         " Plugin: ultisnips ----------------------------------------------- {{{
@@ -97,11 +91,6 @@ if has('macunix')
 
     Plug 'marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
-    " Plugin: vim-dash ---------------------------------------------------- {{{
-    Plug 'rizzatti/dash.vim'
-    nmap <silent> K <Plug>DashSearch
-    " }}}
-
     " Use 'Marked.app' for Markdown previews
     nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
 endif
@@ -176,13 +165,11 @@ Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 " Specific to file types and are here for reference
 let g:ale_linters = {
-			\	'c'              : ['gcc'],
 			\	'css'            : ['csslint'],
 			\	'html'           : ['htmlhint', 'tidy'],
 			\	'javascript'     : ['eslint'],
 			\	'json'           : ['jsonlint'],
 			\	'markdown'       : ['mdl'],
-			\	'php'            : ['php'],
 			\	'python'         : ['pylint', 'flake8'],
 			\	'scss'           : ['sasslint'],
 			\	'sh'             : ['shellcheck', 'shell'],
@@ -235,8 +222,6 @@ Plug 'mhinz/vim-signify'
 " }}}
 
 " Display ----------------------------------------------------------------- {{{
-
-Plug 'kshenoy/vim-signature'
 " Plugin: lightline ------------------------------------------------------- {{{
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
@@ -285,10 +270,6 @@ Plug 'vim-scripts/LargeFile'
 " }}}
 
 " Filetypes/file formats -------------------------------------------------- {{{
-" Plugin: vim-polyglot ---------------------------------------------------- {{{
-Plug 'sheerun/vim-polyglot', { 'do': './build' }
-let g:polyglot_disabled = ['python']
-" }}}
 " Django
 Plug 'vim-scripts/django.vim', {'for': 'django'}
 Plug 'tweekmonster/django-plus.vim'
@@ -327,9 +308,6 @@ Plug 'chikamichi/mediawiki.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
-let g:palenight_terminal_italics=1
-
-Plug 'lifepillar/vim-colortemplate'
 " }}}
 
 " Text objects ------------------------------------------------------------ {{{
