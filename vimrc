@@ -163,8 +163,6 @@ Plug 'Konfekt/FastFold'
 Plug 'Raimondi/delimitMate'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'ConradIrwin/vim-bracketed-paste'
-" Convert to snake_case (crs). MixedCase (crm), camelCase (crc), UPPER_CASE (cru)
-Plug 'tpope/vim-abolish'
 " Word motions now work on CamelCase words
 Plug 'chaoren/vim-wordmotion'
 " Use 'gs{MOTION}' to sort lines and argument lists
@@ -323,7 +321,6 @@ Plug 'fatih/vim-hclfmt'
 " Tmux
 Plug 'tmux-plugins/vim-tmux'
 " MediaWiki
-Plug 'aquach/vim-mediawiki-editor'
 Plug 'chikamichi/mediawiki.vim'
 " }}}
 
