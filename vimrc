@@ -180,7 +180,7 @@ let g:ale_linters = {
 			\	'javascript'     : ['eslint'],
 			\	'json'           : ['jsonlint'],
 			\	'markdown'       : ['mdl'],
-			\	'python'         : ['pylint', 'flake8'],
+			\	'python'         : ['flake8', 'pylint'],
 			\	'scss'           : ['sasslint'],
 			\	'sh'             : ['shellcheck', 'shell'],
 			\	'vim'            : ['vint'],
