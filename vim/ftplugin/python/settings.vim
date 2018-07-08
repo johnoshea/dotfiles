@@ -29,13 +29,13 @@
 "let python_highlight_doctests=1
 
 "    If you want all Python highlightings above:
-let python_highlight_all=1
+let g:python_highlight_all=1
 "
 "    For fast machines:
-let python_slow_sync=1
+let g:python_slow_sync=1
 "
 "    For "print" builtin as function:
-let python_print_as_function=1
+let g:python_print_as_function=1
 
 setlocal omnifunc=jedi#completions
 setlocal autoindent expandtab smarttab shiftwidth=4 softtabstop=4
