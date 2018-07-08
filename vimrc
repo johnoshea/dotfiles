@@ -140,9 +140,8 @@ Plug 'https://github.com/andymass/vim-matchup'
 
 " Editing ----------------------------------------------------------------- {{{
 " Plugin: undotree -------------------------------------------------------- {{{
-Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
-let g:undotree_SetFocusWhenToggle = 1
-nnoremap <leader>u :UndotreeToggle<CR>
+Plug 'https://github.com/simnalamburt/vim-mundo', {'on': 'MundoToggle'}
+nnoremap <leader>u :MundoToggle<CR>
 " }}}
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-unimpaired'
