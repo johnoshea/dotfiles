@@ -30,7 +30,7 @@ if has('macunix')
     " Version-dependent plugins ------------------------------------------- {{{
     if v:version >= 704
         " Plugin: ultisnips ----------------------------------------------- {{{
-        Plug 'SirVer/ultisnips'
+        Plug 'https://github.com/SirVer/ultisnips'
         let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'my_snippets']
         let g:UltiSnipsListSnippets = '<C-l>'
         let g:ultisnips_python_quoting_style = 'sphinx'
@@ -39,10 +39,10 @@ if has('macunix')
         let g:UltiSnipsJumpBackwardTrigger='<c-k>'
         " }}}
         " Ultisnips snippets are now stored in honza/vim-snippets
-        Plug 'honza/vim-snippets'
+        Plug 'https://github.com/honza/vim-snippets'
 
         " Plugin: Tagbar -------------------------------------------------- {{{
-        Plug 'majutsushi/tagbar'
+        Plug 'https://github.com/majutsushi/tagbar'
         let g:tagbar_width = 40
         let g:tagbar_autofocus = 1
         let g:tagbar_sort = 0
@@ -53,13 +53,13 @@ if has('macunix')
         nnoremap <leader>b :TagbarToggle<CR>
         " }}}
         " - auto-create 'tags' files - to disable per-directory, create a .notags file
-        Plug 'ludovicchabant/vim-gutentags'
+        Plug 'https://github.com/ludovicchabant/vim-gutentags'
     endif
     " }}}
 
     " Navigation
     " Plugin: FZF --------------------------------------------------------- {{{
-    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+    Plug '/usr/local/opt/fzf' | Plug 'https://github.com/junegunn/fzf.vim'
     nnoremap <silent> <Leader><Leader> :Files<CR>
     nnoremap <silent> <Leader><Enter> :Buffers<CR>
     nnoremap <silent> <Leader>` :Marks<CR>
@@ -76,7 +76,7 @@ if has('macunix')
     " }}}
 
     " Plugin: slimux ------------------------------------------------------ {{{
-    Plug 'epeli/slimux'
+    Plug 'https://github.com/epeli/slimux'
     nnoremap <Leader>se :SlimuxREPLSendLine<CR>
     vnoremap <Leader>se :SlimuxREPLSendSelection<CR>
     nnoremap <Leader>sp :SlimuxShellPrompt<CR>
@@ -86,24 +86,24 @@ if has('macunix')
     " }}}
 
     " - allow window nav to work across non-vim tmux panes (needs tmux config too)
-    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'https://github.com/christoomey/vim-tmux-navigator'
     " vim-tmux-focus-events
-    Plug 'tmux-plugins/vim-tmux-focus-events'
+    Plug 'https://github.com/tmux-plugins/vim-tmux-focus-events'
     nnoremap <leader>Z :call system("tmux resize-pane -Z")<CR>
 
     " 'Writing' plugins
-    Plug 'reedes/vim-pencil', {'for': ['text', 'markdown']}
+    Plug 'https://github.com/reedes/vim-pencil', {'for': ['text', 'markdown']}
     " Adds insert-mode common typo fixes
-    Plug 'reedes/vim-litecorrect', {'for': ['text', 'markdown']}
+    Plug 'https://github.com/reedes/vim-litecorrect', {'for': ['text', 'markdown']}
     " Use :Wordy <category> to find bad terms, clichés, etc
-    Plug 'reedes/vim-wordy', {'for': ['text', 'markdown']}
+    Plug 'https://github.com/reedes/vim-wordy', {'for': ['text', 'markdown']}
     " Adds iq/iQ/aq/aQ double/single text objects, plus '(', ')' to navigate
     " by sentences
-    Plug 'reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
+    Plug 'https://github.com/reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
     " Adds is/as 'sentence' text objects
-    Plug 'reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
+    Plug 'https://github.com/reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
 
-    Plug 'marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
+    Plug 'https://github.com/marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
     " Use 'Marked.app' for Markdown previews
     nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
@@ -112,9 +112,9 @@ endif
 
 " Navigation/filesystem --------------------------------------------------- {{{
 " - netrw enhancement
-Plug 'tpope/vim-vinegar'
+Plug 'https://github.com/tpope/vim-vinegar'
 " Plugin: vim-sneak ------------------------------------------------------- {{{
-Plug 'justinmk/vim-sneak'
+Plug 'https://github.com/justinmk/vim-sneak'
 nmap f <Plug>SneakForward
 xmap f <Plug>VSneakForward
 nmap F <Plug>SneakBackward
@@ -122,11 +122,11 @@ xmap F <Plug>VSneakBackward
 let g:sneak#streak = 1
 " }}}
 " DidYouMean - avoid opening up new empty files if multiple completions
-Plug 'EinfachToll/DidYouMean'
+Plug 'https://github.com/EinfachToll/DidYouMean'
 " Create directories and files at the same time
-Plug 'vim-scripts/easydir.vim'
+Plug 'https://github.com/vim-scripts/easydir.vim'
 " Plugin: vim-startify ---------------------------------------------------- {{{
-Plug 'mhinz/vim-startify'
+Plug 'https://github.com/mhinz/vim-startify'
 let g:startify_session_dir = '~/.vim/session'
 let g:startify_bookmarks = ['~/src/dotfiles/vimrc', '~/src/prezto/', '~/.vimrc.local']
 let g:startify_change_to_dir = 1
@@ -134,8 +134,8 @@ let g:startify_change_to_vcs_root = 1
 " }}}
 " vim-enuch
 " :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
-Plug 'tpope/vim-eunuch'
-Plug 'andymass/vim-matchup'
+Plug 'https://github.com/tpope/vim-eunuch'
+Plug 'https://github.com/andymass/vim-matchup'
 " }}}
 
 " Editing ----------------------------------------------------------------- {{{
@@ -144,37 +144,37 @@ Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 let g:undotree_SetFocusWhenToggle = 1
 nnoremap <leader>u :UndotreeToggle<CR>
 " }}}
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-surround'
+Plug 'https://github.com/tpope/vim-repeat'
+Plug 'https://github.com/tpope/vim-unimpaired'
+Plug 'https://github.com/tpope/vim-surround'
 " Plugin: vim-easy-align -------------------------------------------------- {{{
 " <number> or '*' for count, followed by character to align on
-Plug 'junegunn/vim-easy-align'
+Plug 'https://github.com/junegunn/vim-easy-align'
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " }}}
 " Use 'cx' to start/finish changes (e.g. 'cxiw')
-Plug 'tommcdo/vim-exchange'
+Plug 'https://github.com/tommcdo/vim-exchange'
 " Use <c-a>/<c-e> to increment/decrement visual ranges of numbers
-Plug 'triglav/vim-visual-increment'
+Plug 'https://github.com/triglav/vim-visual-increment'
 " Auto-update folds only as needed
-Plug 'Konfekt/FastFold'
+Plug 'https://github.com/Konfekt/FastFold'
 " Smart-insert closing parentheses/quotes, etc
-Plug 'Raimondi/delimitMate'
+Plug 'https://github.com/Raimondi/delimitMate'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
-Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
 " Word motions now work on CamelCase words
-Plug 'chaoren/vim-wordmotion'
+Plug 'https://github.com/chaoren/vim-wordmotion'
 " Use 'gs{MOTION}' to sort lines and argument lists
-Plug 'christoomey/vim-sort-motion'
+Plug 'https://github.com/christoomey/vim-sort-motion'
 " }}}
 
 " Code editing ------------------------------------------------------------ {{{
-Plug 'tomtom/tcomment_vim'
+Plug 'https://github.com/tomtom/tcomment_vim'
 " Plugin: ale ------------------------------------------------------------- {{{
-Plug 'w0rp/ale'
+Plug 'https://github.com/w0rp/ale'
 " Specific to file types and are here for reference
 let g:ale_linters = {
 			\	'css'            : ['csslint'],
@@ -199,11 +199,11 @@ let g:ale_max_signs = 30
 " }}}
 " Plugin: vim-autoformat -------------------------------------------------- {{{
 " use <leader>f to autoformat code
-Plug 'Chiel92/vim-autoformat'
+Plug 'https://github.com/Chiel92/vim-autoformat'
 nnoremap <leader>f :Autoformat<cr>
 " }}}
 " Plugin: vim-test -------------------------------------------------------- {{{
-Plug 'janko-m/vim-test'
+Plug 'https://github.com/janko-m/vim-test'
 nmap <silent> <leader>t <esc>:w<CR>:TestNearest<CR>
 nmap <silent> <leader>T <esc>:w<CR>:TestFile<CR>
 nmap <silent> <leader>A <esc>:w<CR>:TestSuite<CR>
@@ -212,13 +212,13 @@ nmap <silent> <leader>. <esc>:w<CR>:TestVisit<CR>
 let g:test#strategy = 'vimux'
 " }}}
 " Plugin: vim-dotenv ------------------------------------------------------ {{{
-Plug 'tpope/vim-dotenv'
+Plug 'https://github.com/tpope/vim-dotenv'
 " }}}
 " }}}
 
 " Git --------------------------------------------------------------------- {{{
 " Plugin: Fugitive -------------------------------------------------------- {{{
-Plug 'tpope/vim-fugitive'
+Plug 'https://github.com/tpope/vim-fugitive'
 augroup fugitive
     autocmd!
     " Auto-clean fugitive buffers.
@@ -240,14 +240,14 @@ augroup fugitive
     nnoremap <leader>gps :Git push<CR>
 augroup END
 " }}}
-Plug 'junegunn/gv.vim'
-Plug 'mhinz/vim-signify'
+Plug 'https://github.com/junegunn/gv.vim'
+Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
 " }}}
 
 " Display ----------------------------------------------------------------- {{{
 " Plugin: lightline ------------------------------------------------------- {{{
-Plug 'itchyny/lightline.vim'
+Plug 'https://github.com/itchyny/lightline.vim'
 let g:lightline = {
     \ 'colorscheme': 'OldHope',
     \ 'active': {
@@ -275,7 +275,7 @@ function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 " Plugin: rainbow_parentheses --------------------------------------------- {{{
-Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'https://github.com/junegunn/rainbow_parentheses.vim'
 augroup rainbowparentheses
     autocmd!
     autocmd VimEnter * RainbowParentheses
@@ -284,80 +284,80 @@ augroup rainbowparentheses
 augroup END
 " }}}
 " Plugin: GoldenView ------------------------------------------------------ {{{
-Plug 'zhaocai/GoldenView.Vim'
+Plug 'https://github.com/zhaocai/GoldenView.Vim'
 let g:goldenview__enable_default_mapping = 0
 " }}}
 " Better display of whitespace - adds :StripWhitespace too
-Plug 'ntpeters/vim-better-whitespace'
+Plug 'https://github.com/ntpeters/vim-better-whitespace'
 " Turn on large (>20MB) file optimizations - use :Large/:Unlarge/:Large!
-Plug 'vim-scripts/LargeFile'
+Plug 'https://github.com/vim-scripts/LargeFile'
 " }}}
 
 " Filetypes/file formats -------------------------------------------------- {{{
 " Django
-Plug 'vim-scripts/django.vim', {'for': 'django'}
-Plug 'tweekmonster/django-plus.vim'
+Plug 'https://github.com/vim-scripts/django.vim', {'for': 'django'}
+Plug 'https://github.com/tweekmonster/django-plus.vim'
 " Javascript
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
+Plug 'https://github.com/mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'https://github.com/othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 " Add CSS3 syntax highlighting
-Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
+Plug 'https://github.com/hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
 " CSS OmniComplete
-Plug 'othree/csscomplete.vim', {'for': ['css', 'scss']}
+Plug 'https://github.com/othree/csscomplete.vim', {'for': ['css', 'scss']}
 " Better JSON
-Plug 'tpope/vim-jdaddy', {'for': ['javascript', 'json']}
+Plug 'https://github.com/tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 " Add csv plugin back in, now that it's been removed from vim-ployglot
-Plug 'chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
+Plug 'https://github.com/chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Python
-Plug 'vim-python/python-syntax', {'for': 'python'}
-Plug 'tmhedberg/simpylfold', {'for': 'python'}
-Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
+Plug 'https://github.com/vim-python/python-syntax', {'for': 'python'}
+Plug 'https://github.com/tmhedberg/simpylfold', {'for': 'python'}
+Plug 'https://github.com/Vimjas/vim-python-pep8-indent', {'for': 'python'}
 " HTML
-Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'https://github.com/mattn/emmet-vim', {'for': 'html'}
 " Terraform
-Plug 'juliosueiras/vim-terraform-completion'
+Plug 'https://github.com/juliosueiras/vim-terraform-completion'
 " TaskPaper
-Plug 'mutewinter/taskpaper.vim'
+Plug 'https://github.com/mutewinter/taskpaper.vim'
 " HCL
-Plug 'fatih/vim-hclfmt'
+Plug 'https://github.com/fatih/vim-hclfmt'
 " Tmux
-Plug 'tmux-plugins/vim-tmux'
+Plug 'https://github.com/tmux-plugins/vim-tmux'
 " MediaWiki
-Plug 'chikamichi/mediawiki.vim'
+Plug 'https://github.com/chikamichi/mediawiki.vim'
 " }}}
 
 " Colorschemes ------------------------------------------------------------ {{{
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'morhetz/gruvbox'
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'https://github.com/NLKNguyen/papercolor-theme'
+Plug 'https://github.com/morhetz/gruvbox'
+Plug 'https://github.com/drewtempelmeyer/palenight.vim'
 " }}}
 
 " Text objects ------------------------------------------------------------ {{{
 " Use 'ia'/'aa' for arguments,
 " or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
-Plug 'wellle/targets.vim'
+Plug 'https://github.com/wellle/targets.vim'
 " Needed for vim-textobj-underscore
-Plug 'kana/vim-textobj-user'
+Plug 'https://github.com/kana/vim-textobj-user'
 " Add af/if for functions, ac/ic for classes, [pf/[pc, ]pf/]pc
-Plug 'bps/vim-textobj-python'
+Plug 'https://github.com/bps/vim-textobj-python'
 " Add al/il for lines
-Plug 'kana/vim-textobj-line'
+Plug 'https://github.com/kana/vim-textobj-line'
 " Add a_/i_ for underscores
-Plug 'lucapette/vim-textobj-underscore'
+Plug 'https://github.com/lucapette/vim-textobj-underscore'
 " - provides 'i' indent object (e.g. 'vai')
-Plug 'michaeljsmith/vim-indent-object'
+Plug 'https://github.com/michaeljsmith/vim-indent-object'
 " }}}
 
 " Search ------------------------------------------------------------------ {{{
 " Plugin: incsearch ------------------------------------------------------- {{{
-Plug 'haya14busa/is.vim'
+Plug 'https://github.com/haya14busa/is.vim'
 let g:incsearch#magic = '\v'
 " }}
 " Plugin: vim-ferret ------------------------------------------------------ {{{
 Plug 'wincent/ferret'
 " }}}
 
-Plug 'haya14busa/vim-asterisk'
+Plug 'https://github.com/haya14busa/vim-asterisk'
 map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
 map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
 map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
@@ -366,9 +366,9 @@ let g:asterisk#keeppos = 1
 " }}}
 
 " Buffers ----------------------------------------------------------------- {{{
-Plug 'moll/vim-bbye'
+Plug 'https://github.com/moll/vim-bbye'
 " Plugin: vim-sayonara ---------------------------------------------------- {{{
-Plug 'mhinz/vim-sayonara'
+Plug 'https://github.com/mhinz/vim-sayonara'
 nnoremap <C-c><C-c> <ESC>:Sayonara<CR>
 nnoremap <C-c><C-d> <ESC>:Sayonara<CR>
 " }}}
@@ -376,15 +376,15 @@ nnoremap <C-c><C-d> <ESC>:Sayonara<CR>
 
 " Async ------------------------------------------------------------------- {{{
 " Add dispatch back in, so that Fugitive can use it
-Plug 'tpope/vim-dispatch'
+Plug 'https://github.com/tpope/vim-dispatch'
 " }}}
 
 " Miscellaneous ----------------------------------------------------------- {{{
 " Enable local vim settings files
-Plug 'embear/vim-localvimrc'
+Plug 'https://github.com/embear/vim-localvimrc'
 
 " Plugin: vimwiki --------------------------------------------------------- {{{
-Plug 'vimwiki/vimwiki'
+Plug 'https://github.com/vimwiki/vimwiki'
 let s:wiki = {}
 let s:wiki.path = '~/vimwiki/'
 let s:wiki.auto_tags = 1
