@@ -760,28 +760,6 @@ endif
 highlight Pmenu guibg=yellow guifg=black
 highlight PmenuSel guibg=white guifg=black
 
-" Toggle line numbers on, to relative line numbers, then off
-function! ToggleNumbers()
-    if &number
-        set nonumber
-        set showbreak=
-    elseif &relativenumber
-        set number
-        set showbreak=\ \ \ \ \ \ \ \
-    else
-        set relativenumber
-        set showbreak=\ \ \ \ \ \ \ \
-    endif
-endfunction
-
-augroup numbering
-    autocmd!
-    autocmd FocusLost * :set nonumber
-    autocmd FocusGained * :set relativenumber
-    autocmd InsertEnter * :set number
-    autocmd InsertLeave * :set relativenumber
-augroup END
-
 " Trailing whitespace - only shown when not in insert mode
 augroup trailing
     autocmd!
@@ -801,14 +779,7 @@ augroup clinecol
         \ if &l:cursorline | setlocal nocursorline nocursorcolumn | endif
 augroup END
 
-augroup linenumbers
-    autocmd!
-    autocmd WinEnter * :setlocal number
-    autocmd WinLeave * :setlocal nonumber
-augroup END
-
 " Resize splits when the window is resized
-
 augroup resized
     autocmd!
     au VimResized * exe "normal! \<c-w>="
@@ -843,7 +814,6 @@ nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 " Toggles ----------------------------------------------------------------- {{{
 nnoremap <leader>e :set expandtab! expandtab?<CR>
 let g:line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
-nnoremap <leader>1 :call ToggleNumbers()<CR>
 set pastetoggle=<localleader>p
 
 " }}}
