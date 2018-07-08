@@ -203,6 +203,7 @@ let g:ale_echo_msg_format = '%linter%: %s'
 " use <leader>f to autoformat code
 Plug 'https://github.com/Chiel92/vim-autoformat'
 nnoremap <leader>f :Autoformat<cr>
+Plug 'https://github.com/ambv/black', {'for': 'python'}
 " }}}
 " Plugin: vim-test -------------------------------------------------------- {{{
 Plug 'https://github.com/janko-m/vim-test'
