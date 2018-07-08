@@ -716,7 +716,9 @@ set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc,*.pyo                      " Python byte code
 
 " Remove any trailing whitespace that is in the file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+augroup removewhitespace
+    autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+augroup END
 
 " }}}
 " Undo -------------------------------------------------------------------- {{{
