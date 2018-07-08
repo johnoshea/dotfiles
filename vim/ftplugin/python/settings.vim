@@ -71,3 +71,9 @@ if executable('pyls')
             \ })
     augroup END
 endif
+
+if executable('black')
+    augroup black
+        autocmd BufWritePre *.py execute ':Black'
+    augroup END
+endif

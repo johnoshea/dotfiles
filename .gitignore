@@ -21,3 +21,4 @@ tags
 .node-version
 .python-version
 ssh_config
+vim/black
