@@ -181,23 +181,18 @@ let g:ale_linters = {
 			\	'javascript'     : ['eslint'],
 			\	'json'           : ['jsonlint'],
 			\	'markdown'       : ['mdl'],
-			\	'python'         : ['flake8', 'pylint'],
+			\	'python'         : ['pylint', 'flake8'],
 			\	'scss'           : ['sasslint'],
 			\	'sh'             : ['shellcheck', 'shell'],
+            \   'tf'             : ['tflint'],
 			\	'vim'            : ['vint'],
 			\	'yaml'           : ['yamllint'],
 			\ }
-" lint on save only, partly for speed and partly because pylint only works
-" with files saved to disk
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_delay = 0
-let g:ale_max_signs = 30
-" " if you don't want linters to run on opening a file
-" let g:ale_lint_on_enter = 0
 Plug 'https://github.com/maximbaz/lightline-ale'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_echo_msg_format = '%linter%: %s'
+" TODO Get mypy working with pipenv-installed imports
+" let g:ale_python_mypy_options = '--follow-imports=silent'
 " }}}
 " Plugin: vim-autoformat -------------------------------------------------- {{{
 " use <leader>f to autoformat code
