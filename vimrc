@@ -195,6 +195,9 @@ let g:ale_lint_delay = 0
 let g:ale_max_signs = 30
 " " if you don't want linters to run on opening a file
 " let g:ale_lint_on_enter = 0
+Plug 'https://github.com/maximbaz/lightline-ale'
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_echo_msg_format = '%linter%: %s'
 " }}}
 " Plugin: vim-autoformat -------------------------------------------------- {{{
 " use <leader>f to autoformat code
@@ -254,7 +257,8 @@ let g:lightline = {
     \             [ 'readonly', 'filename', 'modified', 'gitbranch' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ],
-    \              [ 'charvaluehex', 'fileformat', 'fileencoding', 'filetype' ] ]
+    \              [ 'charvaluehex', 'fileformat', 'fileencoding', 'filetype' ],
+    \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
     \ },
     \ 'component_function': {
     \   'gitbranch': 'fugitive#head',
@@ -262,7 +266,13 @@ let g:lightline = {
     \   'filetype': 'LightlineFiletype',
     \ },
     \ 'component': {
-    \   'charvaluehex': '0x%B'
+    \   'charvaluehex': '0x%B',
+    \ },
+    \ 'component_expand': {
+    \   'linter_checking': 'lightline#ale#checking',
+    \   'linter_warnings': 'lightline#ale#warnings',
+    \   'linter_errors': 'lightline#ale#errors',
+    \   'linter_ok': 'lightline#ale#ok',
     \ },
     \ }
 
