@@ -75,20 +75,20 @@ else # Log the whole file, then copy done file to logged file
 fi
 # then if the log_now file contains entries, log them, and append the newly logged list to the existing logged list
 if [ -s $LOG_NOW_FILE ] ; then
-echo "" > "tmp_pretty.txt"
+echo "" > "/tmp/tmp_pretty.txt"
 cat $LOG_NOW_FILE | awk -v prj_prfx="$PROJECT_PREFIX" '
 BEGIN {FS="\|"; prj=0; str=""}
 {
     if (prj!=$5) {prj=$5;
-        if (prj!="") {print ("\n" prj_prfx prj "[:](omnifocus:///task/" $2 ")") >> "tmp_pretty.txt" }
-        else {print ("\nInbox[:](omnifocus:///task/" $1 ")") >> "tmp_pretty.txt"}
+        if (prj!="") {print ("\n" prj_prfx prj "[:](omnifocus:///task/" $2 ")") >> "/tmp/tmp_pretty.txt" }
+        else {print ("\nInbox[:](omnifocus:///task/" $1 ")") >> "/tmp/tmp_pretty.txt"}
   }
-  if ($6!=prj) {print ("- " $6 " @done(" $4 ")") >> "tmp_pretty.txt"  }
-  else {{print "- *Project completed* @done(" $4 ")"  >> "tmp_pretty.txt" }}
+  if ($6!=prj) {print ("- " $6 " @done(" $4 ")") >> "/tmp/tmp_pretty.txt"  }
+  else {{print "- *Project completed* @done(" $4 ")"  >> "/tmp/tmp_pretty.txt" }}
 }'
-# cat tmp_pretty.txt
-cat tmp_pretty.txt | /usr/local/bin/dayone2 new
-rm tmp_pretty.txt
+# cat /tmp/tmp_pretty.txt
+cat /tmp/tmp_pretty.txt | /usr/local/bin/dayone2 new
+rm /tmp/tmp_pretty.txt
 cat $LOG_NOW_FILE >> $LOGGED_TODAY_FILE  # Append the list of logged tasks to avoid duplication
 
 # Optional acoustic feedback on completion... Comment the next line out if it's distracting
