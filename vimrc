@@ -363,9 +363,6 @@ Plug 'https://github.com/michaeljsmith/vim-indent-object'
 Plug 'https://github.com/haya14busa/is.vim'
 let g:incsearch#magic = '\v'
 " }}
-" Plugin: vim-ferret ------------------------------------------------------ {{{
-Plug 'wincent/ferret'
-" }}}
 
 Plug 'https://github.com/haya14busa/vim-asterisk'
 map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
@@ -380,7 +377,6 @@ Plug 'https://github.com/moll/vim-bbye'
 " Plugin: vim-sayonara ---------------------------------------------------- {{{
 Plug 'https://github.com/mhinz/vim-sayonara'
 nnoremap <C-c><C-c> <ESC>:Sayonara<CR>
-nnoremap <C-c><C-d> <ESC>:Sayonara<CR>
 " }}}
 " }}}
 
