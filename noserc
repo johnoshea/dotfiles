@@ -1,2 +1,0 @@
-[nosetests]
-include = (?:^|[\b_\.%s-])[Ss]hould

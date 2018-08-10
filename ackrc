@@ -1,9 +1,0 @@
-# Ignore case if we only use lower case
---smart-case
-# Sort files lexically
---sort-files
-
---type-set=vim=.vim,vimrc,.gvimrc,gvimrc
-
-# Types ack doesn't know about
---type-set=MARKDOWN=md,mkd,markdown
