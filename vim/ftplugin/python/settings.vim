@@ -74,6 +74,6 @@ endif
 
 if executable('black')
     augroup black
-        autocmd BufWritePre *.py execute ':Black'
+        autocmd BufWritePre *.py silent execute ':Black'
     augroup END
 endif
