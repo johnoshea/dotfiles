@@ -394,19 +394,9 @@ Plug 'https://github.com/tpope/vim-dispatch'
 " Enable local vim settings files
 Plug 'https://github.com/embear/vim-localvimrc'
 
-" Plugin: vimwiki --------------------------------------------------------- {{{
-Plug 'https://github.com/vimwiki/vimwiki'
-let s:wiki = {}
-let s:wiki.path = '~/vimwiki/'
-let s:wiki.auto_tags = 1
-let s:wiki.syntax = 'markdown'
-let s:wiki.ext = '.mdw'
-let s:wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
-let g:vimwiki_list = [s:wiki]
-" }}}
 " Plugin: Notational FZF -------------------------------------------------- {{{
 Plug 'https://github.com/Alok/notational-fzf-vim'
-let g:nv_search_paths = ['~/Dropbox/Notes', '~/vimwiki']
+let g:nv_search_paths = ['~/Dropbox/Notes']
 let g:nv_use_short_pathnames = 1
 nnoremap <c-n> <ESC>:NV<space>
 " }}}
