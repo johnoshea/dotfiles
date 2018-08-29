@@ -102,6 +102,7 @@ if has('macunix')
     Plug 'https://github.com/reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
     " Adds is/as 'sentence' text objects
     Plug 'https://github.com/reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
+    Plug 'https://github.com/nelstrom/vim-markdown-folding', {'for': ['text', 'markdown']}
 
     Plug 'https://github.com/marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
