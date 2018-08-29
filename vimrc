@@ -171,8 +171,6 @@ Plug 'https://github.com/Raimondi/delimitMate'
 Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
 " Word motions now work on CamelCase words
 Plug 'https://github.com/chaoren/vim-wordmotion'
-" Use 'gs{MOTION}' to sort lines and argument lists
-Plug 'https://github.com/christoomey/vim-sort-motion'
 " }}}
 
 " Code editing ------------------------------------------------------------ {{{
@@ -214,9 +212,6 @@ nmap <silent> <leader>, <esc>:w<CR>:TestLast<CR>
 nmap <silent> <leader>. <esc>:w<CR>:TestVisit<CR>
 let g:test#strategy = 'vimux'
 " }}}
-" Plugin: vim-dotenv ------------------------------------------------------ {{{
-Plug 'https://github.com/tpope/vim-dotenv'
-" }}}
 " }}}
 
 " Git --------------------------------------------------------------------- {{{
@@ -238,7 +233,6 @@ augroup fugitive
     nnoremap <leader>gd :Gdiff<CR>
     nnoremap <leader>gl :Glog<CR>
     nnoremap <leader>gb :Gblame<CR>
-    nnoremap <leader>gr :Gremove<CR>
     nnoremap <leader>gpl :Git pull<CR>
     nnoremap <leader>gps :Git push<CR>
 augroup END
@@ -293,15 +287,8 @@ augroup rainbowparentheses
     let g:rbpt_max = 24
 augroup END
 " }}}
-" Plugin: GoldenView ------------------------------------------------------ {{{
-Plug 'https://github.com/zhaocai/GoldenView.Vim'
-let g:goldenview__enable_default_mapping = 0
-" }}}
 " Better display of whitespace - adds :StripWhitespace too
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
-" Turn on large (>20MB) file optimizations - use :Large/:Unlarge/:Large!
-Plug 'https://github.com/vim-scripts/LargeFile'
-" }}}
 
 " Filetypes/file formats -------------------------------------------------- {{{
 " Django
