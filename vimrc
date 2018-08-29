@@ -140,6 +140,7 @@ let g:startify_change_to_vcs_root = 1
 " vim-enuch
 " :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'https://github.com/tpope/vim-eunuch'
+" Matching
 Plug 'https://github.com/andymass/vim-matchup'
 " }}}
 
@@ -303,7 +304,7 @@ Plug 'https://github.com/hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
 Plug 'https://github.com/othree/csscomplete.vim', {'for': ['css', 'scss']}
 " Better JSON
 Plug 'https://github.com/tpope/vim-jdaddy', {'for': ['javascript', 'json']}
-" Add csv plugin back in, now that it's been removed from vim-ployglot
+" CSV support
 Plug 'https://github.com/chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Python
 Plug 'https://github.com/vim-python/python-syntax', {'for': 'python'}
@@ -317,7 +318,7 @@ Plug 'https://github.com/juliosueiras/vim-terraform-completion'
 Plug 'https://github.com/mutewinter/taskpaper.vim'
 " HCL
 Plug 'https://github.com/fatih/vim-hclfmt'
-" Tmux
+" Tmux.conf syntax
 Plug 'https://github.com/tmux-plugins/vim-tmux'
 " MediaWiki
 Plug 'https://github.com/chikamichi/mediawiki.vim'
@@ -329,8 +330,11 @@ let g:sql_type_default = 'pgsql'
 " }}}
 
 " Colorschemes ------------------------------------------------------------ {{{
-Plug 'https://github.com/NLKNguyen/papercolor-theme'
+" Default
 Plug 'https://github.com/morhetz/gruvbox'
+" Alternate
+Plug 'https://github.com/NLKNguyen/papercolor-theme'
+" MacVim
 Plug 'https://github.com/drewtempelmeyer/palenight.vim'
 " }}}
 
