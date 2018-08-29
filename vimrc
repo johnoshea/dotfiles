@@ -172,6 +172,10 @@ Plug 'https://github.com/Raimondi/delimitMate'
 Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
 " Word motions now work on CamelCase words
 Plug 'https://github.com/chaoren/vim-wordmotion'
+" Editorconfig ------------------------------------------------------------ {{{
+Plug 'https://github.com/editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" }}}
 " }}}
 
 " Code editing ------------------------------------------------------------ {{{
