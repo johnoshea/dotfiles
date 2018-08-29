@@ -319,8 +319,6 @@ Plug 'https://github.com/Vimjas/vim-python-pep8-indent', {'for': 'python'}
 Plug 'https://github.com/mattn/emmet-vim', {'for': 'html'}
 " Terraform
 Plug 'https://github.com/juliosueiras/vim-terraform-completion'
-" TaskPaper
-Plug 'https://github.com/mutewinter/taskpaper.vim'
 " HCL
 Plug 'https://github.com/fatih/vim-hclfmt'
 " Tmux.conf syntax
