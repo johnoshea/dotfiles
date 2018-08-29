@@ -296,7 +296,7 @@ Plug 'https://github.com/ntpeters/vim-better-whitespace'
 Plug 'https://github.com/vim-scripts/django.vim', {'for': 'django'}
 Plug 'https://github.com/tweekmonster/django-plus.vim'
 " Javascript
-Plug 'https://github.com/mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'https://github.com/pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'https://github.com/othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 " Add CSS3 syntax highlighting
 Plug 'https://github.com/hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
