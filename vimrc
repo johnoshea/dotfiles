@@ -284,6 +284,7 @@ endfunction
 function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
+" }}}
 " Plugin: rainbow_parentheses --------------------------------------------- {{{
 Plug 'https://github.com/junegunn/rainbow_parentheses.vim'
 augroup rainbowparentheses
