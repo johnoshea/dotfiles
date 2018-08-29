@@ -185,7 +185,7 @@ let g:ale_linters = {
 			\	'javascript'     : ['eslint'],
 			\	'json'           : ['jsonlint'],
 			\	'markdown'       : ['mdl'],
-			\	'python'         : ['pylint', 'flake8'],
+			\	'python'         : ['pylint', 'flake8', 'mypy'],
 			\	'scss'           : ['sasslint'],
 			\	'sh'             : ['shellcheck', 'shell'],
             \   'tf'             : ['tflint'],
@@ -194,9 +194,9 @@ let g:ale_linters = {
 			\ }
 Plug 'https://github.com/maximbaz/lightline-ale'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_echo_msg_format = '%linter%: %s'
-" TODO Get mypy working with pipenv-installed imports
-" let g:ale_python_mypy_options = '--follow-imports=silent'
+let g:ale_echo_msg_format = '%linter%> %code: %%s'
+let g:ale_python_flake8_options = '--max-line-length=88'  " match 'black' formatter
+let g:ale_python_mypy_options = '--follow-imports=silent'
 " }}}
 " Plugin: vim-autoformat -------------------------------------------------- {{{
 " use <leader>f to autoformat code
