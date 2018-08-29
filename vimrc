@@ -505,9 +505,11 @@ set viminfo='1000,<1000,h
 "           |     +-------- Keep N lines for each register
 "           +-------------- Keep marks for N files
 
+set completeopt+=menu      " TODO
 set completeopt+=menuone   " use popup menu even if only one completion match
+set completeopt+=preview   " show the preview window
+set completeopt+=noselect  " TODO
 set completeopt+=noinsert  " don't insert until I make a selection
-set completeopt-=preview   " don't show the preview window
 
 " }}}
 " Clipboard --------------------------------------------------------------- {{{
