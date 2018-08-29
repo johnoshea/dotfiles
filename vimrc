@@ -308,7 +308,7 @@ Plug 'https://github.com/tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 Plug 'https://github.com/chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " Python
 Plug 'https://github.com/vim-python/python-syntax', {'for': 'python'}
-Plug 'https://github.com/tmhedberg/simpylfold', {'for': 'python'}
+Plug 'https://github.com/kalekundert/vim-coiled-snake', {'for': 'python'}
 Plug 'https://github.com/Vimjas/vim-python-pep8-indent', {'for': 'python'}
 " HTML
 Plug 'https://github.com/mattn/emmet-vim', {'for': 'html'}
