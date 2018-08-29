@@ -322,6 +322,8 @@ Plug 'https://github.com/fatih/vim-hclfmt'
 Plug 'https://github.com/tmux-plugins/vim-tmux'
 " MediaWiki
 Plug 'https://github.com/chikamichi/mediawiki.vim'
+" Nginx
+Plug 'https://github.com/chr4/nginx.vim'
 " pgsql ------------------------------------------------------------------- {{{
 Plug 'https://github.com/lifepillar/pgsql.vim', {'for': 'sql'}
 let g:sql_type_default = 'pgsql'
