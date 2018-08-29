@@ -77,3 +77,7 @@ if executable('black')
         autocmd BufWritePre *.py silent execute ':Black'
     augroup END
 endif
+
+nnoremap <silent> <buffer> <leader>jd :call jedi#goto()<CR>
+nnoremap <silent> <buffer> <leader>jr :call jedi#rename()<CR>
+nnoremap <silent> <buffer> <leader>ju :call jedi#usages()<CR>

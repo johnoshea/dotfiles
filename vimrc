@@ -107,6 +107,11 @@ if has('macunix')
 
     " Use 'Marked.app' for Markdown previews
     nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
+
+    " Try vim-jedi again
+    Plug 'https://github.com/davidhalter/jedi-vim', {'for': 'python'}
+    Plug 'https://github.com/ervandew/supertab'
+    let g:SuperTabDefaultCompletionType = "<c-n>"
 endif
 " }}}
 
