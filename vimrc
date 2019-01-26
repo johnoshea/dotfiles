@@ -771,10 +771,9 @@ if exists('+undofile')
 
     set backup
     set undofile
+    set noswapfile
     " Make Vim able to edit crontab files again.
     set backupskip=/tmp/*,/private/tmp/*"
-    set noswapfile
-    set backupskip= " There are no files that shouldn't be backed up.
     set updatetime=750 " Write swap files after 0.75 seconds of inactivity.
     " Drop an undo breakpoint so I can recover from insert-mode ctrl-w's
     inoremap <c-w> <c-g>u<c-w>
