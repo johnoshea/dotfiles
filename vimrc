@@ -976,6 +976,11 @@ augroup quickfix
     autocmd FileType qf map <buffer> dd :call RemoveQuickfixItem()<cr>
 augroup END
 " }}}
+" Plugin window settings -------------------------------------------------- {{{
+augroup plugins
+    autocmd FileType Plugins map <buffer> q :q<cr>
+augroup END
+" }}}
 " }}}
 " Server-local settings: mostly used to disable plugins ------------------- {{{
 if filereadable('~/.vimrc.local')
