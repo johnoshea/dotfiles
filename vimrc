@@ -363,8 +363,8 @@ Plug 'https://github.com/drewtempelmeyer/palenight.vim'
 Plug 'https://github.com/wellle/targets.vim'
 " Needed for vim-textobj-underscore
 Plug 'https://github.com/kana/vim-textobj-user'
-" Add af/if for functions, ac/ic for classes, [pf/[pc, ]pf/]pc
-Plug 'https://github.com/bps/vim-textobj-python'
+" Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
+Plug 'https://github.com/jeetsukumaran/vim-pythonsense'
 " Add al/il for lines
 Plug 'https://github.com/kana/vim-textobj-line'
 " Add a_/i_ for underscores
