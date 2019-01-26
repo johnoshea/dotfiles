@@ -488,6 +488,10 @@ set cmdheight=2                   " Avoid 'Press Enter' messages
 set fillchars=diff:⣿,vert:│       " Have different vertical splits for diffs
 set switchbuf=useopen             " Jump to first open window containing buffer (if possible)
 set diffopt=filler,iwhite         " show filler lines and ignore whitespace
+if v:version > 810 || v:version == 810 && has('patch360')
+    set diffopt+=indent-heuristic    " add alternative diff options
+    " set diffopt+=algorithm:patience  " off by default as it's slower
+endif
 set breakindent                   " indent wrapped lines
 set noshowmode                    " lightline shows this for us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
