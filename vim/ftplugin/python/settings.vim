@@ -64,6 +64,6 @@ if executable('black')
     augroup END
 endif
 
-nnoremap <silent> <buffer> <leader>jd :call jedi#goto()<CR>
-nnoremap <silent> <buffer> <leader>jr :call jedi#rename()<CR>
-nnoremap <silent> <buffer> <leader>ju :call jedi#usages()<CR>
+nnoremap <silent> <buffer> <leader>yg :YcmCompleter GoTo<CR>
+nnoremap <silent> <buffer> <leader>yr :YcmCompleter GoToReferences<CR>
+nnoremap <silent> <buffer> <leader>yd :YcmCompleter GetDoc<CR>
