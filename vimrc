@@ -109,10 +109,17 @@ if has('macunix')
     " Use 'Marked.app' for Markdown previews
     nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
 
-    " Try vim-jedi again
-    Plug 'https://github.com/davidhalter/jedi-vim', {'for': 'python'}
-    Plug 'https://github.com/ervandew/supertab'
-    let g:SuperTabDefaultCompletionType = "<c-n>"
+    function! BuildYCM(info)
+    " info is a dictionary with 3 fields
+    " - name:   name of the plugin
+    " - status: 'installed', 'updated', or 'unchanged'
+    " - force:  set on PlugInstall! or PlugUpdate!
+    if a:info.status == 'installed' || a:info.force
+        !./install.py
+    endif
+    endfunction
+
+    Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 endif
 " }}}
 
