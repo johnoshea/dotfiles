@@ -393,6 +393,13 @@ map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
 map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
 let g:asterisk#keeppos = 1
 " }}}
+" Plugin: vim-agriculture ------------------------------------------------- {{{
+Plug 'https://github.com/jesseleite/vim-agriculture'
+nmap <Leader>/ <Plug>RgRawSearch
+vmap <Leader>/ <Plug>RgRawVisualSelection
+nmap <Leader>* <Plug>RgRawWordUnderCursor
+" }}}
+" }}}
 
 " Buffers ----------------------------------------------------------------- {{{
 Plug 'https://github.com/moll/vim-bbye'
