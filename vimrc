@@ -76,7 +76,7 @@ if has('macunix')
     " }}}
 
     " Plugin: slimux ------------------------------------------------------ {{{
-    Plug 'https://github.com/epeli/slimux'
+    Plug 'https://github.com/grusky/slimux'
     nnoremap <Leader>se :SlimuxREPLSendLine<CR>
     vnoremap <Leader>se :SlimuxREPLSendSelection<CR>
     nnoremap <Leader>sp :SlimuxShellPrompt<CR>
