@@ -37,13 +37,11 @@ echo
 pyenv rehash
 echo "*** terraform"
 echo
-tfenv install "$(tfenv list-remote | grep -v 'beta' | grep -v '\-rc' | head -n1)"
-echo "*** pipsi"
+tfenv install "$(tfenv list-remote | egrep -v '(alpha|beta|\-rc)' | head -n1)"
+echo "*** pipx"
 echo
-PIP_REQUIRE_VIRTUALENV=false pip install --upgrade pipsi
-for pipsi_package in $(pipsi list | grep "Package " | awk "{print $2}" | tr -d '":'); do
-    pipsi upgrade "$pipsi_package"
-done
+pipx upgrade pipx-app
+pipx upgrade-all
 echo "*** npm"
 echo
 npm set progress=false
