@@ -117,8 +117,6 @@ endif
 " }}}
 
 " Navigation/filesystem --------------------------------------------------- {{{
-" - netrw enhancement
-Plug 'https://github.com/tpope/vim-vinegar'
 " Plugin: vim-sneak ------------------------------------------------------- {{{
 Plug 'https://github.com/justinmk/vim-sneak'
 nmap f <Plug>SneakForward
@@ -127,10 +125,6 @@ nmap F <Plug>SneakBackward
 xmap F <Plug>VSneakBackward
 let g:sneak#streak = 1
 " }}}
-" DidYouMean - avoid opening up new empty files if multiple completions
-Plug 'https://github.com/EinfachToll/DidYouMean'
-" Create directories and files at the same time
-Plug 'https://github.com/vim-scripts/easydir.vim'
 " Plugin: vim-startify ---------------------------------------------------- {{{
 Plug 'https://github.com/mhinz/vim-startify'
 let g:startify_session_dir = '~/.vim/session'
@@ -138,11 +132,18 @@ let g:startify_bookmarks = ['~/src/dotfiles/vimrc', '~/src/prezto/', '~/.vimrc.l
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 " }}}
+
 " vim-enuch
 " :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'https://github.com/tpope/vim-eunuch'
 " Matching
 Plug 'https://github.com/andymass/vim-matchup'
+" - netrw enhancement
+Plug 'https://github.com/tpope/vim-vinegar'
+" DidYouMean - avoid opening up new empty files if multiple completions
+Plug 'https://github.com/EinfachToll/DidYouMean'
+" Create directories and files at the same time
+Plug 'https://github.com/vim-scripts/easydir.vim'
 " }}}
 
 " Editing ----------------------------------------------------------------- {{{
@@ -150,9 +151,6 @@ Plug 'https://github.com/andymass/vim-matchup'
 Plug 'https://github.com/simnalamburt/vim-mundo', {'on': 'MundoToggle'}
 nnoremap <leader>u :MundoToggle<CR>
 " }}}
-Plug 'https://github.com/tpope/vim-repeat'
-Plug 'https://github.com/tpope/vim-unimpaired'
-Plug 'https://github.com/tpope/vim-surround'
 " Plugin: vim-easy-align -------------------------------------------------- {{{
 " <number> or '*' for count, followed by character to align on
 Plug 'https://github.com/junegunn/vim-easy-align'
@@ -161,26 +159,27 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " }}}
+" Editorconfig ------------------------------------------------------------ {{{
+Plug 'https://github.com/editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" }}}
+
+Plug 'https://github.com/tpope/vim-repeat'
+Plug 'https://github.com/tpope/vim-unimpaired'
+Plug 'https://github.com/tpope/vim-surround'
 " Use 'cx' to start/finish changes (e.g. 'cxiw')
 Plug 'https://github.com/tommcdo/vim-exchange'
 " Use <c-a>/<c-e> to increment/decrement visual ranges of numbers
 Plug 'https://github.com/triglav/vim-visual-increment'
 " Auto-update folds only as needed
 Plug 'https://github.com/Konfekt/FastFold'
-" Smart-insert closing parentheses/quotes, etc
-Plug 'https://github.com/Raimondi/delimitMate'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
 " Word motions now work on CamelCase words
 Plug 'https://github.com/chaoren/vim-wordmotion'
-" Editorconfig ------------------------------------------------------------ {{{
-Plug 'https://github.com/editorconfig/editorconfig-vim'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-" }}}
 " }}}
 
 " Code editing ------------------------------------------------------------ {{{
-Plug 'https://github.com/tomtom/tcomment_vim'
 " Plugin: ale ------------------------------------------------------------- {{{
 Plug 'https://github.com/w0rp/ale'
 " Specific to file types and are here for reference
@@ -218,6 +217,8 @@ nmap <silent> <leader>, <esc>:w<CR>:TestLast<CR>
 nmap <silent> <leader>. <esc>:w<CR>:TestVisit<CR>
 let g:test#strategy = 'vimux'
 " }}}
+
+Plug 'https://github.com/tomtom/tcomment_vim'
 " }}}
 
 " Git --------------------------------------------------------------------- {{{
@@ -243,6 +244,7 @@ augroup fugitive
     nnoremap <leader>gps :Git push<CR>
 augroup END
 " }}}
+
 Plug 'https://github.com/junegunn/gv.vim'
 Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
@@ -298,12 +300,25 @@ augroup END
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
 
 " Filetypes/file formats -------------------------------------------------- {{{
-" Django
+" Plugin: pgsql ----------------------------------------------------------- {{{
+Plug 'https://github.com/lifepillar/pgsql.vim', {'for': 'sql'}
+let g:sql_type_default = 'pgsql'
+" }}}
+
+" Python ------------------------------------------------------------------ {{{
+Plug 'https://github.com/vim-python/python-syntax', {'for': 'python'}
+Plug 'https://github.com/kalekundert/vim-coiled-snake', {'for': 'python'}
+Plug 'https://github.com/Vimjas/vim-python-pep8-indent', {'for': 'python'}
+" }}}
+" Django ------------------------------------------------------------------ {{{
 Plug 'https://github.com/vim-scripts/django.vim', {'for': 'django'}
 Plug 'https://github.com/tweekmonster/django-plus.vim'
-" Javascript
+" }}}
+" Javascript -------------------------------------------------------------- {{{
 Plug 'https://github.com/pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'https://github.com/othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
+" }}}
+
 " Add CSS3 syntax highlighting
 Plug 'https://github.com/hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
 " CSS OmniComplete
@@ -312,10 +327,6 @@ Plug 'https://github.com/othree/csscomplete.vim', {'for': ['css', 'scss']}
 Plug 'https://github.com/tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 " CSV support
 Plug 'https://github.com/chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
-" Python
-Plug 'https://github.com/vim-python/python-syntax', {'for': 'python'}
-Plug 'https://github.com/kalekundert/vim-coiled-snake', {'for': 'python'}
-Plug 'https://github.com/Vimjas/vim-python-pep8-indent', {'for': 'python'}
 " HTML
 Plug 'https://github.com/mattn/emmet-vim', {'for': 'html'}
 " Terraform
@@ -328,11 +339,6 @@ Plug 'https://github.com/tmux-plugins/vim-tmux'
 Plug 'https://github.com/chikamichi/mediawiki.vim'
 " Nginx
 Plug 'https://github.com/chr4/nginx.vim'
-" pgsql ------------------------------------------------------------------- {{{
-Plug 'https://github.com/lifepillar/pgsql.vim', {'for': 'sql'}
-let g:sql_type_default = 'pgsql'
-" }}}
-
 " }}}
 
 " Colorschemes ------------------------------------------------------------ {{{
