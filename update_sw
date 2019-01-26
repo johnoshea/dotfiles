@@ -32,7 +32,6 @@ brew doctor
 brew update
 brew upgrade
 brew cleanup
-brew prune
 echo "*** Pyenv"
 echo
 pyenv rehash
