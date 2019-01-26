@@ -34,7 +34,7 @@ if has('macunix')
         let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'my_snippets']
         let g:UltiSnipsListSnippets = '<C-l>'
         let g:ultisnips_python_quoting_style = 'sphinx'
-        let g:UltiSnipsExpandTrigger='<tab>'
+        let g:UltiSnipsExpandTrigger='<c-e>'
         let g:UltiSnipsJumpForwardTrigger='<c-j>'
         let g:UltiSnipsJumpBackwardTrigger='<c-k>'
         " }}}
@@ -67,6 +67,7 @@ if has('macunix')
     nnoremap <silent> <Leader>mp :Maps<CR>
     nnoremap <silent> <Leader>sn :Snippets<CR>
     nnoremap <silent> <Leader>cm :Commands<CR>
+    nnoremap <silent> <Leader>r :Rg<CR>
     " Insert mode completion
     imap <c-x><c-f> <plug>(fzf-complete-path)
     imap <c-x><c-j> <plug>(fzf-complete-file-ag)
@@ -77,6 +78,7 @@ if has('macunix')
 
     " Plugin: slimux ------------------------------------------------------ {{{
     Plug 'https://github.com/grusky/slimux'
+    nnoremap <Leader>sc :SlimuxREPLConfigure<CR>
     nnoremap <Leader>se :SlimuxREPLSendLine<CR>
     vnoremap <Leader>se :SlimuxREPLSendSelection<CR>
     nnoremap <Leader>sp :SlimuxShellPrompt<CR>
@@ -89,7 +91,7 @@ if has('macunix')
     Plug 'https://github.com/christoomey/vim-tmux-navigator'
     " vim-tmux-focus-events
     Plug 'https://github.com/tmux-plugins/vim-tmux-focus-events'
-    nnoremap <leader>Z :call system("tmux resize-pane -Z")<CR>
+    nnoremap <leader>z :call system("tmux resize-pane -Z")<CR>
 
     " 'Writing' plugins
     Plug 'https://github.com/reedes/vim-pencil', {'for': ['text', 'markdown']}
@@ -655,6 +657,8 @@ command! -bang Wa wa<bang>
 command! -bang WA wa<bang>
 command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
+command! -bang Wn wn<bang>
+command! -bang WN wn<bang>
 command! -bang Xa xa<bang>
 command! -bang XA xa<bang>
 
@@ -844,8 +848,17 @@ noremap gV `[v`]
 nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
 nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 
+" Use <tab> to move between windows
+nnoremap <Tab> <C-w>w
+nnoremap <S-Tab> <C-w>W
+
+
+" Paste the first copy repeatedly using <localleader>p
+xnoremap <localleader>p "0p
+nnoremap <localleader>p "0p
+
 " Toggles ----------------------------------------------------------------- {{{
-nnoremap <leader>e :set expandtab! expandtab?<CR>
+nnoremap <leader>x :set expandtab! expandtab?<CR>
 let g:line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
 set pastetoggle=<localleader>p
 
@@ -871,6 +884,8 @@ noremap <C-W><C-W> <C-W>w
 " Lines ------------------------------------------------------------------- {{{
 " Keep the cursor in place while joining lines using 'J'
 nnoremap J mzJ`z
+" Join lines in insert mode
+inoremap <C-j> <C-o>J
 " }}}
 " }}}
 " Arrow keys -------------------------------------------------------------- {{{
