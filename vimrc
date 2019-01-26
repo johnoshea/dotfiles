@@ -303,8 +303,15 @@ augroup rainbowparentheses
     let g:rbpt_max = 24
 augroup END
 " }}}
+" Plugin: listtoggle ------------------------------------------------------ {{{
+Plug 'https://github.com/valloric/listtoggle'
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>q'
+" }}}
+
 " Better display of whitespace - adds :StripWhitespace too
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
+" }}}
 
 " Filetypes/file formats -------------------------------------------------- {{{
 " Plugin: pgsql ----------------------------------------------------------- {{{
