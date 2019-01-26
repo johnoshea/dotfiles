@@ -386,8 +386,8 @@ Plug 'https://github.com/michaeljsmith/vim-indent-object'
 " Plugin: incsearch ------------------------------------------------------- {{{
 Plug 'https://github.com/haya14busa/is.vim'
 let g:incsearch#magic = '\v'
-" }}
-
+" }}}
+" Plugin: vim-asterisk ---------------------------------------------------- {{{
 Plug 'https://github.com/haya14busa/vim-asterisk'
 map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
 map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
@@ -404,11 +404,12 @@ nmap <Leader>* <Plug>RgRawWordUnderCursor
 " }}}
 
 " Buffers ----------------------------------------------------------------- {{{
-Plug 'https://github.com/moll/vim-bbye'
 " Plugin: vim-sayonara ---------------------------------------------------- {{{
 Plug 'https://github.com/mhinz/vim-sayonara'
 nnoremap <C-c><C-c> <ESC>:Sayonara<CR>
 " }}}
+
+Plug 'https://github.com/moll/vim-bbye'
 " }}}
 
 " Async ------------------------------------------------------------------- {{{
@@ -417,9 +418,6 @@ Plug 'https://github.com/tpope/vim-dispatch'
 " }}}
 
 " Miscellaneous ----------------------------------------------------------- {{{
-" Enable local vim settings files
-Plug 'https://github.com/embear/vim-localvimrc'
-
 " Plugin: Notational FZF -------------------------------------------------- {{{
 Plug 'https://github.com/Alok/notational-fzf-vim'
 let g:nv_search_paths = ['~/Dropbox/Notes']
@@ -427,11 +425,11 @@ let g:nv_use_short_pathnames = 1
 nnoremap <c-n> <ESC>:NV<space>
 " }}}
 
+" Enable local vim settings files
+Plug 'https://github.com/embear/vim-localvimrc'
 " }}}
 
 call plug#end()
-" }}}
-" }}}
 " }}}
 " Useful variables -------------------------------------------------------- {{{
 let g:isMac = has('macunix')
@@ -959,7 +957,6 @@ augroup FTOptions
     autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
 augroup END
 " }}}
-
 " Makefile settings ------------------------------------------------------- {{{
 " Make the tab key do actual tab characters for makefiles.
 augroup makefile
