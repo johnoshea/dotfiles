@@ -58,20 +58,6 @@ nnoremap <silent> <leader><f8> /\s*pytest.set_trace()\s*/<CR>k2dd<ESC>
 nnoremap <localleader>q A  # noqa<ESC>
 nnoremap <localleader>Q :s/  # noqa//<CR><ESC>
 
-if executable('yapf')
-    let g:formatters_python = ['yapf', 'autopep8']
-endif
-
-if executable('pyls')
-    augroup pyls
-        autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'pyls',
-            \ 'cmd': {server_info->['pyls']},
-            \ 'whitelist': ['python'],
-            \ })
-    augroup END
-endif
-
 if executable('black')
     augroup black
         autocmd BufWritePre *.py silent execute ':Black'
