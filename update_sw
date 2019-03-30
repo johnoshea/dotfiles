@@ -40,7 +40,7 @@ echo
 tfenv install "$(tfenv list-remote | egrep -v '(alpha|beta|\-rc)' | head -n1)"
 echo "*** pipx"
 echo
-pipx upgrade pipx-app
+pipx upgrade pipx
 pipx upgrade-all
 echo "*** npm"
 echo
