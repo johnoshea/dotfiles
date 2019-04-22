@@ -351,10 +351,12 @@ Plug 'https://github.com/tpope/vim-jdaddy', {'for': ['javascript', 'json']}
 Plug 'https://github.com/chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
 " HTML
 Plug 'https://github.com/mattn/emmet-vim', {'for': 'html'}
-" Terraform
+" Terraform --------------------------------------------------------------- {{{
 Plug 'https://github.com/juliosueiras/vim-terraform-completion'
-" HCL
-Plug 'https://github.com/fatih/vim-hclfmt'
+Plug 'https://github.com/hashivim/vim-terraform'
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+" }}}
 " Tmux.conf syntax
 Plug 'https://github.com/tmux-plugins/vim-tmux'
 " MediaWiki
