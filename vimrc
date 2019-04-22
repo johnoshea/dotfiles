@@ -34,9 +34,9 @@ if has('macunix')
         let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'my_snippets']
         let g:UltiSnipsListSnippets = '<C-l>'
         let g:ultisnips_python_quoting_style = 'sphinx'
-        let g:UltiSnipsExpandTrigger='<c-e>'
-        let g:UltiSnipsJumpForwardTrigger='<c-j>'
-        let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+        let g:UltiSnipsExpandTrigger='<C-u>'
+        let g:UltiSnipsJumpForwardTrigger='<C-j>'
+        let g:UltiSnipsJumpBackwardTrigger='<C-k>'
         " }}}
         " Ultisnips snippets are now stored in honza/vim-snippets
         Plug 'https://github.com/honza/vim-snippets'
