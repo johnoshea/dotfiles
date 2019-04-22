@@ -116,7 +116,7 @@ if has('macunix')
     " - name:   name of the plugin
     " - status: 'installed', 'updated', or 'unchanged'
     " - force:  set on PlugInstall! or PlugUpdate!
-    if a:info.status == 'installed' || a:info.force
+    if a:info.status ==# 'installed' || a:info.force
         !./install.py
     endif
     endfunction
