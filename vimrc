@@ -254,9 +254,11 @@ augroup fugitive
 augroup END
 " }}}
 
+Plug 'https://github.com/tpope/vim-rhubarb'
 Plug 'https://github.com/junegunn/gv.vim'
 Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
+Plug 'https://github.com/christoomey/vim-conflicted'
 " }}}
 
 " Display ----------------------------------------------------------------- {{{
