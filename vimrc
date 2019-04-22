@@ -891,8 +891,8 @@ nnoremap <S-Tab> <C-w>W
 
 
 " Paste the first copy repeatedly using <localleader>p
-xnoremap <localleader>p "0p
-nnoremap <localleader>p "0p
+xnoremap <leader>p "0p
+nnoremap <leader>p "0p
 
 " Toggles ----------------------------------------------------------------- {{{
 nnoremap <leader>x :set expandtab! expandtab?<CR>
@@ -906,10 +906,14 @@ nnoremap <leader>co :copen 6<CR>
 nnoremap <leader>cl :cclose<CR>
 
 " }}}
-" Buffers ----------------------------------------------------------------- {{{
-inoremap <D-s> <c-o>:w<CR>
-nnoremap <D-s> :w<CR>
+" Saving ------------------------------------------------------------------ {{{
+inoremap <D-s> <c-o>:w<CR>``
+nnoremap <D-s> :w<CR>``
+" Save normal buffers on <CR> - use `:update` to only save when modified
+nnoremap <silent><expr> <CR> empty(&buftype) ? ":update\<CR>" : "\<CR>"
 
+" }}}
+" Buffers ----------------------------------------------------------------- {{{
 set wildcharm=<tab>
 " }}}
 " Windows ----------------------------------------------------------------- {{{
