@@ -486,7 +486,7 @@ set report=0                      " Report any lines changed
 set printoptions=paper:A4         " (even though almost all prints go to PDF anyway)
 set splitright                    " When splitting vertically, split to the right
 set splitbelow                    " When splitting horizontally, split below
-set scrolloff=3                   " Don't go right to the edge of the window when scrolling
+set scrolloff=5                   " Don't go right to the edge of the window when scrolling
 set sidescroll=1                  " scroll one character at a time to reveal more text as needed
 set sidescrolloff=5               " Lines visible to the left/right of cursor when scrolling
 set laststatus=2                  " Always show a status line
@@ -501,6 +501,7 @@ set cmdheight=2                   " Avoid 'Press Enter' messages
 set fillchars=diff:⣿,vert:│       " Have different vertical splits for diffs
 set switchbuf=useopen             " Jump to first open window containing buffer (if possible)
 set diffopt=filler,iwhite         " show filler lines and ignore whitespace
+set diffopt+=vertical             " show diffs vertically
 if v:version > 810 || v:version == 810 && has('patch360')
     set diffopt+=indent-heuristic    " add alternative diff options
     " set diffopt+=algorithm:patience  " off by default as it's slower
@@ -511,6 +512,7 @@ set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
+set autoread                      " Auto-reload files modified outside of vim
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
@@ -531,7 +533,8 @@ set formatoptions+=r   " Insert comment leader after <Enter>
 set formatoptions-=t   " break comment-lines at &textwidth, but not code
 " Delete comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has('patch541')
-  set formatoptions+=j
+  set formatoptions+=j " remove extra comment leaders when joining lines
+  set nojoinspaces     " only add a single space when joining lines
 endif
 
 set shortmess=aTItO
