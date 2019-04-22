@@ -210,16 +210,21 @@ let g:ale_linters = {
 			\	'yaml'           : ['yamllint'],
 			\ }
 Plug 'https://github.com/maximbaz/lightline-ale'
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_echo_msg_format = '%linter%> %code: %%s'
 let g:ale_python_flake8_options = '--max-line-length=88'  " match 'black' formatter
 let g:ale_python_mypy_options = '--follow-imports=silent'
 " }}}
 " Plugin: vim-autoformat -------------------------------------------------- {{{
-" use <leader>f to autoformat code
-Plug 'https://github.com/Chiel92/vim-autoformat'
-nnoremap <leader>f :Autoformat<cr>
 Plug 'https://github.com/ambv/black', {'for': 'python'}
+let g:black_virtualenv = '~/.local/black'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" use <leader>f to autoformat code
+nnoremap <leader>f :PrettierAsync<cr>
 " }}}
 " Plugin: vim-test -------------------------------------------------------- {{{
 Plug 'https://github.com/janko-m/vim-test'
