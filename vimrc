@@ -146,9 +146,9 @@ let g:startify_change_to_vcs_root = 1
 " :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'https://github.com/tpope/vim-eunuch'
 " Matching
-Plug 'https://github.com/andymass/vim-matchup'
 " - netrw enhancement
 Plug 'https://github.com/tpope/vim-vinegar'
+runtime macros/matchit.vim
 " DidYouMean - avoid opening up new empty files if multiple completions
 Plug 'https://github.com/EinfachToll/DidYouMean'
 " Create directories and files at the same time
