@@ -146,9 +146,13 @@ let g:startify_change_to_vcs_root = 1
 " :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'https://github.com/tpope/vim-eunuch'
 " Matching
-" - netrw enhancement
-Plug 'https://github.com/tpope/vim-vinegar'
 runtime macros/matchit.vim
+" vim-ranger
+Plug 'https://github.com/francoiscabrol/ranger.vim'
+let g:ranger_replace_netrw = 1
+" ranger.vim relies on the Bclose.vim plugin, but I use Bbye.vim, so this
+" command is here just for compatibilty
+command! -bang -complete=buffer -nargs=? Bclose Bdelete<bang> <args>
 " DidYouMean - avoid opening up new empty files if multiple completions
 Plug 'https://github.com/EinfachToll/DidYouMean'
 " Create directories and files at the same time
