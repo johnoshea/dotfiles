@@ -419,7 +419,7 @@ nmap <Leader>* <Plug>RgRawWordUnderCursor
 " Buffers ----------------------------------------------------------------- {{{
 " Plugin: vim-sayonara ---------------------------------------------------- {{{
 Plug 'https://github.com/mhinz/vim-sayonara'
-nnoremap <C-c><C-c> <ESC>:Sayonara<CR>
+nnoremap <C-q><C-q> <ESC>:Sayonara<CR>
 " }}}
 
 Plug 'https://github.com/moll/vim-bbye'
