@@ -685,6 +685,29 @@ augroup command_window
     autocmd CmdwinEnter * startinsert
     autocmd CmdwinEnter * set nonumber
 augroup END
+
+" Escape any non-backslashed path parts
+function! EscapeCommandWindowPaths() " {{{
+    let s:escaped_parts = []
+    let s:line_parts = split(getcmdline())
+    let s:count = 0
+    let s:words = len(s:line_parts) - 1
+    for s:line_part in s:line_parts
+        if s:count != 0 && s:count != s:words
+            let s:word_len = strlen(s:line_part) - 1
+            let s:last_char = strpart(s:line_part, s:word_len)
+            if s:last_char !=? '\'
+                let s:line_part = s:line_part . '\'
+            endif
+        endif
+        call add(s:escaped_parts, s:line_part)
+        let s:count += 1
+    endfor
+    let s:cmd = join(s:escaped_parts)
+    return s:cmd
+endfunction
+cmap <C-O> <C-\>eEscapeCommandWindowPaths()<CR>
+" }}}
 " }}}
 " Help -------------------------------------------------------------------- {{{
 " Open help in a vertical split instead of the default horizontal split
