@@ -36,6 +36,9 @@ brew cleanup
 echo "*** Pyenv"
 echo
 pyenv rehash
+echo "*** Goenv"
+echo
+goenv rehash
 echo "*** terraform"
 echo
 tfenv install "$(tfenv list-remote | egrep -v '(alpha|beta|\-rc)' | head -n1)"
@@ -45,6 +48,7 @@ pipx upgrade pipx
 pipx upgrade-all
 echo "*** npm"
 echo
+nodenv rehash
 npm set progress=false
 npm install -g npm@latest
 for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
