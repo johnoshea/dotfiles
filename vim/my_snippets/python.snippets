@@ -12,5 +12,16 @@ if __name__ == "__main__":
 endsnippet
 
 snippet " "triple quoted string (double quotes)" b
-"""${1:${VISUAL:doc}}""
+""" ${1:${VISUAL:doc}} """
 endsnippet
+
+snippet __repr "repr including class details" b
+def __repr__(self):
+	class_details = f"{self.__class__.__module__}.{self.__class__.__qualname__}"
+	return f"{class_details}({${0}})"
+endsnippet
+
+# snippet class "Python-3 class" b
+# class ${1:ClassName}:
+# 	""" ${2:docstring} """
+# 	def __init__(self${3:,}${4}):
