@@ -83,8 +83,7 @@ if has('macunix')
     Plug 'https://github.com/reedes/vim-pencil', {'for': ['text', 'markdown']}
     " Adds insert-mode common typo fixes
     Plug 'https://github.com/reedes/vim-litecorrect', {'for': ['text', 'markdown']}
-    " Adds iq/iQ/aq/aQ double/single text objects, plus '(', ')' to navigate
-    " by sentences
+    " Adds iq/iQ/aq/aQ double/single text objects, plus '(', ')' to navigate by sentences
     Plug 'https://github.com/reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
     " Adds is/as 'sentence' text objects
     Plug 'https://github.com/reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
@@ -135,7 +134,7 @@ runtime macros/matchit.vim
 Plug 'https://github.com/francoiscabrol/ranger.vim'
 let g:ranger_replace_netrw = 1
 " ranger.vim relies on the Bclose.vim plugin, but I use Bbye.vim, so this
-" command is here just for compatibilty
+" command is here to avoid error messages
 command! -bang -complete=buffer -nargs=? Bclose Bdelete<bang> <args>
 " DidYouMean - avoid opening up new empty files if multiple completions
 Plug 'https://github.com/EinfachToll/DidYouMean'
@@ -310,46 +309,46 @@ Plug 'https://github.com/ntpeters/vim-better-whitespace'
 
 " Filetypes/file formats -------------------------------------------------- {{{
 " Plugin: pgsql ----------------------------------------------------------- {{{
-Plug 'https://github.com/lifepillar/pgsql.vim', {'for': 'sql'}
+Plug 'https://github.com/lifepillar/pgsql.vim',                     {'for': 'sql'}
 let g:sql_type_default = 'pgsql'
 " }}}
 
 " Python ------------------------------------------------------------------ {{{
-Plug 'https://github.com/vim-python/python-syntax', {'for': 'python'}
-Plug 'https://github.com/kalekundert/vim-coiled-snake', {'for': 'python'}
-Plug 'https://github.com/Vimjas/vim-python-pep8-indent', {'for': 'python'}
+Plug 'https://github.com/vim-python/python-syntax',                 {'for': 'python'}
+Plug 'https://github.com/kalekundert/vim-coiled-snake',             {'for': 'python'}
+Plug 'https://github.com/Vimjas/vim-python-pep8-indent',            {'for': 'python'}
 " }}}
 " Django ------------------------------------------------------------------ {{{
-Plug 'https://github.com/vim-scripts/django.vim', {'for': 'django'}
-Plug 'https://github.com/tweekmonster/django-plus.vim'
+Plug 'https://github.com/vim-scripts/django.vim',                   {'for': 'django'}
+Plug 'https://github.com/tweekmonster/django-plus.vim',             {'for': 'django'}
 " }}}
 " Javascript -------------------------------------------------------------- {{{
-Plug 'https://github.com/pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'https://github.com/othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
+Plug 'https://github.com/pangloss/vim-javascript',                  {'for': 'javascript'}
+Plug 'https://github.com/othree/javascript-libraries-syntax.vim',   {'for': 'javascript'}
 " }}}
 
 " Add CSS3 syntax highlighting
-Plug 'https://github.com/hail2u/vim-css3-syntax', {'for': ['css', 'scss']}
+Plug 'https://github.com/hail2u/vim-css3-syntax',                   {'for': ['css', 'scss']}
 " CSS OmniComplete
-Plug 'https://github.com/othree/csscomplete.vim', {'for': ['css', 'scss']}
+Plug 'https://github.com/othree/csscomplete.vim',                   {'for': ['css', 'scss']}
 " Better JSON
-Plug 'https://github.com/tpope/vim-jdaddy', {'for': ['javascript', 'json']}
+Plug 'https://github.com/tpope/vim-jdaddy',                         {'for': ['javascript', 'json']}
 " CSV support
-Plug 'https://github.com/chrisbra/csv.vim', {'for': ['csv', 'tsv', 'psv']}
+Plug 'https://github.com/chrisbra/csv.vim',                         {'for': ['csv', 'tsv', 'psv']}
 " HTML
-Plug 'https://github.com/mattn/emmet-vim', {'for': 'html'}
+Plug 'https://github.com/mattn/emmet-vim',                          {'for': 'html'}
 " Terraform --------------------------------------------------------------- {{{
-Plug 'https://github.com/juliosueiras/vim-terraform-completion'
-Plug 'https://github.com/hashivim/vim-terraform'
+Plug 'https://github.com/juliosueiras/vim-terraform-completion',    {'for': 'terraform'}
+Plug 'https://github.com/hashivim/vim-terraform',                   {'for': 'terraform'}
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 " }}}
 " Tmux.conf syntax
-Plug 'https://github.com/tmux-plugins/vim-tmux'
+Plug 'https://github.com/tmux-plugins/vim-tmux',                    {'for': 'tmux'}
 " MediaWiki
-Plug 'https://github.com/chikamichi/mediawiki.vim'
+Plug 'https://github.com/chikamichi/mediawiki.vim',                 {'for': 'mediawiki'}
 " Nginx
-Plug 'https://github.com/chr4/nginx.vim'
+Plug 'https://github.com/chr4/nginx.vim',                           {'for': 'nginx'}
 " }}}
 
 " Colorschemes ------------------------------------------------------------ {{{
@@ -491,9 +490,6 @@ endif
 set breakindent                   " indent wrapped lines
 set noshowmode                    " lightline shows this for us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
-" Prevent Vim from clobbering the scrollback buffer. See
-" http://www.shallowsky.com/linux/noaltscreen.html
-set t_ti= t_te=
 set autoread                      " Auto-reload files modified outside of vim
 
 " Time out on key codes but not mappings.
@@ -503,40 +499,36 @@ set ttimeout
 set ttimeoutlen=10
 
 " Mouse
-set mouse=a                     " Enable the mouse for all modes
-set mousehide                   " Hide mouse while typing
-set mousemodel=popup            " Use popup menu for right mouse button
+set mouse=a                 " Enable the mouse for all modes
+set mousehide               " Hide mouse while typing
+set mousemodel=popup        " Use popup menu for right mouse button
 
-set formatoptions+=c   " Auto-wrap comments
-set formatoptions+=n   " Recognize numbered lists
-set formatoptions+=o   " Insert comment leader after 'o' or 'O'
-set formatoptions+=q   " Allow formatting of comments with 'gq'
-set formatoptions+=r   " Insert comment leader after <Enter>
-set formatoptions-=t   " break comment-lines at &textwidth, but not code
+set formatoptions+=c        " Auto-wrap comments
+set formatoptions+=n        " Recognize numbered lists
+set formatoptions+=o        " Insert comment leader after 'o' or 'O'
+set formatoptions+=q        " Allow formatting of comments with 'gq'
+set formatoptions+=r        " Insert comment leader after <Enter>
+set formatoptions-=t        " break comment-lines at &textwidth, but not code
 " Delete comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has('patch541')
-  set formatoptions+=j " remove extra comment leaders when joining lines
-  set nojoinspaces     " only add a single space when joining lines
+  set formatoptions+=j      " remove extra comment leaders when joining lines
+  set nojoinspaces          " only add a single space when joining lines
 endif
 
-set shortmess=aTItO
-"             |||||
-"             ||||+-- Message for reading file overwrites previous
-"             |||+--- Truncate file at start if too long
-"             ||+---- Disable intro message
-"             |+----- Truncate messages in the middle if too long
-"             +------ Shortcut for various status line options
+set shortmess=a             " Shortcut for various status line options
+set shortmess+=T            " Truncate messages in the middle if too long
+set shortmess+=I            " Disable intro message
+set shortmess+=t            " Truncate file at start if too long
+set shortmess+=O            " Message for reading file overwrites previous
 
-set viminfo='1000,<1000,h
-"           |     |     |
-"           |     |     +-- Don't restore hlsearch on startup
-"           |     +-------- Keep N lines for each register
-"           +-------------- Keep marks for N files
+set viminfo='1000           " Keep marks for N files
+set viminfo+=<1000          " Keep N lines for each register
+set viminfo+=h              " Don't restore hlsearch on startup
 
-set completeopt+=menu      " TODO
+set completeopt+=menu      " use popup menu to show completions
 set completeopt+=menuone   " use popup menu even if only one completion match
 set completeopt+=preview   " show the preview window
-set completeopt+=noselect  " TODO
+set completeopt+=noselect  " don't select any menu item by default
 set completeopt+=noinsert  " don't insert until I make a selection
 
 " }}}
@@ -591,6 +583,9 @@ else
     let &t_Sb='\ESC[4%dm'
   endif
 
+  " Prevent Vim from clobbering the scrollback buffer. See
+  " http://www.shallowsky.com/linux/noaltscreen.html
+  set t_ti= t_te=
   " don't clear background color
   set t_ut=
 endif
@@ -840,6 +835,7 @@ augroup resized
     autocmd!
     au VimResized * exe "normal! \<c-w>="
 augroup END
+
 if &diff
     "I'm only interested in diff colours
     syntax off
@@ -889,15 +885,18 @@ nnoremap <D-s> :w<CR>``
 nnoremap <silent><expr> <CR> empty(&buftype) ? ":update\<CR>" : "\<CR>"
 
 " }}}
+
 " Buffers ----------------------------------------------------------------- {{{
 set wildcharm=<tab>
 " }}}
+
 " Windows ----------------------------------------------------------------- {{{
 " Tmux-like split panes navigation
 noremap <C-W>\| :vsplit<CR><C-W>l
 noremap <C-W>- :split<CR><C-W>j
 noremap <C-W><C-W> <C-W>w
 " }}}
+
 " Lines ------------------------------------------------------------------- {{{
 " Keep the cursor in place while joining lines using 'J'
 nnoremap J mzJ`z
@@ -976,6 +975,7 @@ augroup FTOptions
     autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
 augroup END
 " }}}
+
 " Makefile settings ------------------------------------------------------- {{{
 " Make the tab key do actual tab characters for makefiles.
 augroup makefile
@@ -991,6 +991,7 @@ augroup makefile
     autocmd QuickFixCmdPost make cwindow
 augroup END
 " }}}
+
 " Quickfix window settings ------------------------------------------------- {{{
 augroup quickfix
     " When using `dd` in the quickfix list, remove the item from the quickfix list.
@@ -1007,6 +1008,7 @@ augroup quickfix
     autocmd FileType qf map <buffer> dd :call RemoveQuickfixItem()<cr>
 augroup END
 " }}}
+
 " Plugin window settings -------------------------------------------------- {{{
 augroup plugins
     autocmd FileType Plugins map <buffer> q :q<cr>
