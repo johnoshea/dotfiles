@@ -191,7 +191,6 @@ let g:ale_linters = {
 			\	'vim'            : ['vint'],
 			\	'yaml'           : ['yamllint'],
 			\ }
-Plug 'https://github.com/maximbaz/lightline-ale'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_echo_msg_format = '%linter%> %code: %%s'
@@ -262,41 +261,38 @@ Plug 'https://github.com/christoomey/vim-conflicted'
 " }}}
 
 " Display ----------------------------------------------------------------- {{{
-" Plugin: lightline ------------------------------------------------------- {{{
-Plug 'https://github.com/itchyny/lightline.vim'
-let g:lightline = {
-    \ 'colorscheme': 'OldHope',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'readonly', 'filename', 'modified', 'gitbranch' ] ],
-    \   'right': [ [ 'lineinfo' ],
-    \              [ 'percent' ],
-    \              [ 'charvaluehex', 'fileformat', 'fileencoding', 'filetype' ],
-    \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'fugitive#head',
-    \   'fileformat': 'LightlineFileformat',
-    \   'filetype': 'LightlineFiletype',
-    \ },
-    \ 'component': {
-    \   'charvaluehex': '0x%B',
-    \ },
-    \ 'component_expand': {
-    \   'linter_checking': 'lightline#ale#checking',
-    \   'linter_warnings': 'lightline#ale#warnings',
-    \   'linter_errors': 'lightline#ale#errors',
-    \   'linter_ok': 'lightline#ale#ok',
-    \ },
-    \ }
+" Plugin: vim-crystalline ------------------------------------------------- {{{
+Plug 'https://github.com/rbong/vim-crystalline'
+function! StatusLine(current, width)
+  let l:s = ''
 
-function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
+  if a:current
+    let l:s .= crystalline#mode() . crystalline#right_mode_sep('')
+  else
+    let l:s .= '%#CrystallineInactive#'
+  endif
+  let l:s .= ' %f%h%w%m%r '
+  if a:current
+    let l:s .= crystalline#right_sep('', 'Fill') . ' ⎇ %{fugitive#head()}'
+  endif
+
+  let l:s .= '%='
+  if a:current
+    let l:s .= crystalline#left_sep('', 'Fill') . ' %{&paste ?"PASTE ":""}%{&spell?"SPELL ":""}%{&ft} '
+    let l:s .= crystalline#left_mode_sep('')
+    if a:width > 80
+        let l:s .= ' 0x%B %c:%l/%L [%{&enc} %{&ff}] '
+    else
+        let l:s .= ' '
+    endif
+  endif
+
+  return l:s
 endfunction
 
-function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-endfunction
+let g:crystalline_enable_sep = 1
+let g:crystalline_statusline_fn = 'StatusLine'
+let g:crystalline_theme = 'default'
 " }}}
 " Plugin: rainbow_parentheses --------------------------------------------- {{{
 Plug 'https://github.com/junegunn/rainbow_parentheses.vim'
@@ -498,7 +494,7 @@ if v:version > 810 || v:version == 810 && has('patch360')
     " set diffopt+=algorithm:patience  " off by default as it's slower
 endif
 set breakindent                   " indent wrapped lines
-set noshowmode                    " lightline shows this for us
+set noshowmode                    " vim-crystalline shows this for us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 set autoread                      " Auto-reload files modified outside of vim
 
