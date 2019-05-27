@@ -580,6 +580,10 @@ if has('gui_running')
   endif
 else
   if &t_Co >= 256
+    " force true color on within tmux
+    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
     if $ITERM_PROFILE ==# 'Light'
       colorscheme PaperColor
       set background=light
