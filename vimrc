@@ -502,7 +502,8 @@ set complete=.,w,b,t              " Complete current buffer, other windows, othe
 set cmdheight=2                   " Avoid 'Press Enter' messages
 set fillchars=diff:⣿,vert:│       " Have different vertical splits for diffs
 set switchbuf=useopen             " Jump to first open window containing buffer (if possible)
-set diffopt=filler,iwhite         " show filler lines and ignore whitespace
+set diffopt=filler,iwhiteall      " show filler lines and ignore whitespace
+set diffopt+=hiddenoff            " don't use diff mode for a buffer when it becomes hidden
 set diffopt+=vertical             " show diffs vertically
 if v:version > 810 || v:version == 810 && has('patch360')
     set diffopt+=indent-heuristic    " add alternative diff options
@@ -512,6 +513,7 @@ set breakindent                   " indent wrapped lines
 set noshowmode                    " vim-crystalline shows this for us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 set autoread                      " Auto-reload files modified outside of vim
+set nrformats=hex                 " Ignore octal/binary for incrementing/decrementing numbers
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
@@ -554,13 +556,7 @@ set completeopt+=noinsert  " don't insert until I make a selection
 
 " }}}
 " Clipboard --------------------------------------------------------------- {{{
-if g:isMac
-  set clipboard^=unnamed
-elseif g:isUnix
-  set clipboard^=unnamedplus
-elseif g:isWindows
-  set clipboard^=unnamedplus
-endif
+set clipboard=unnamed
 " }}}
 " Colors/GUI -------------------------------------------------------------- {{{
 
@@ -568,7 +564,7 @@ if has('gui_running')
   set background=dark
   colorscheme palenight
 
-  set guioptions=egmt
+  set guioptions=egm
   set lines=60
   set columns=180
 
