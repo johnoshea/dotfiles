@@ -316,6 +316,15 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " Better display of whitespace - adds :StripWhitespace too
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
+
+
+" Plugin: vim-numbertoggle ------------------------------------------------ {{{
+Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle'
+set number relativenumber
+nnoremap <silent> <leader>1 :set relativenumber!<cr>
+nnoremap <silent> <leader>2 :set nonumber!<cr>:set norelativenumber!<cr>
+" }}}
+
 " }}}
 
 " Filetypes/file formats -------------------------------------------------- {{{
