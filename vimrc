@@ -48,7 +48,7 @@ if has('macunix')
     " Plugin: FZF --------------------------------------------------------- {{{
     Plug '/usr/local/opt/fzf' | Plug 'https://github.com/junegunn/fzf.vim'
     nnoremap <silent> <Leader><Leader> :Files<CR>
-    nnoremap <silent> <Leader><Enter> :Buffers<CR>
+    nnoremap <silent> <Leader><CR> :Buffers<CR>
     nnoremap <silent> <Leader>` :Marks<CR>
     nnoremap <silent> <Leader>hi :History<CR>
     nnoremap <silent> <Leader>mp :Maps<CR>
@@ -437,7 +437,7 @@ Plug 'https://github.com/tpope/vim-dispatch'
 Plug 'https://github.com/Alok/notational-fzf-vim'
 let g:nv_search_paths = ['~/Dropbox/Notes']
 let g:nv_use_short_pathnames = 1
-nnoremap <c-n> <ESC>:NV<space>
+nnoremap <c-n> <ESC>:NV<CR>
 " }}}
 
 " Enable local vim settings files
@@ -898,8 +898,9 @@ nnoremap <leader>cl :cclose<CR>
 " Saving ------------------------------------------------------------------ {{{
 inoremap <D-s> <c-o>:w<CR>``
 nnoremap <D-s> :w<CR>``
-" Save normal buffers on <CR> - use `:update` to only save when modified
-nnoremap <silent><expr> <CR> empty(&buftype) ? ":update\<CR>" : "\<CR>"
+" Save normal buffers on <CR> - use `:update` to only save when modified -
+" also turn off search highlighting
+nnoremap <silent><expr> <CR> empty(&buftype) ? ":nohls<CR> \| :update\<CR>" : ":nohls<CR>\<CR>"
 
 " }}}
 
