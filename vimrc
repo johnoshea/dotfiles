@@ -301,7 +301,7 @@ augroup rainbowparentheses
     autocmd!
     autocmd VimEnter * RainbowParentheses
     let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-    let g:rbpt_max = 24
+    let g:rbpt_max = 12
 augroup END
 " }}}
 " Plugin: vim-diminactive ------------------------------------------------- {{{
