@@ -13,20 +13,6 @@ call plug#begin('~/.vim/bundle')
 " Mac-specific things ----------------------------------------------------- {{{
 if has('macunix')
 
-    " Work around issue with homebrew-install Python ---------------------- {{{
-    if has('python3')
-        " Temporary workaround for Py3.7 DeprecationWarning
-        silent! python3 1
-        command! -nargs=1 Py py3 <args>
-        set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/3.7/Python
-        set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/3.7
-    else
-        command! -nargs=1 Py py <args>
-        set pythondll=/usr/local/Frameworks/Python.framework/Versions/2.7/Python
-        set pythonhome=/usr/local/Frameworks/Python.framework/Versions/2.7
-    endif
-    " }}}
-
     " Version-dependent plugins ------------------------------------------- {{{
     if v:version >= 704
         " Plugin: ultisnips ----------------------------------------------- {{{
@@ -97,8 +83,6 @@ if has('macunix')
     Plug 'https://github.com/reedes/vim-pencil', {'for': ['text', 'markdown']}
     " Adds insert-mode common typo fixes
     Plug 'https://github.com/reedes/vim-litecorrect', {'for': ['text', 'markdown']}
-    " Use :Wordy <category> to find bad terms, clichés, etc
-    Plug 'https://github.com/reedes/vim-wordy', {'for': ['text', 'markdown']}
     " Adds iq/iQ/aq/aQ double/single text objects, plus '(', ')' to navigate
     " by sentences
     Plug 'https://github.com/reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
@@ -188,8 +172,6 @@ Plug 'https://github.com/triglav/vim-visual-increment'
 Plug 'https://github.com/Konfekt/FastFold'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
-" Word motions now work on CamelCase words
-Plug 'https://github.com/chaoren/vim-wordmotion'
 " }}}
 
 " Code editing ------------------------------------------------------------ {{{
@@ -894,12 +876,6 @@ nnoremap <S-Tab> <C-w>W
 xnoremap <leader>p "0p
 nnoremap <leader>p "0p
 
-" Toggles ----------------------------------------------------------------- {{{
-nnoremap <leader>x :set expandtab! expandtab?<CR>
-let g:line_number_mode = 0 " when on also don't mix wrapped lines and linenumbers
-set pastetoggle=<localleader>p
-
-" }}}
 " Compiling --------------------------------------------------------------- {{{
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
 nnoremap <leader>co :copen 6<CR>
