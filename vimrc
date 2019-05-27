@@ -218,6 +218,15 @@ let g:test#strategy = 'vimux'
 " }}}
 
 Plug 'https://github.com/tomtom/tcomment_vim'
+" Pear-tree --------------------------------------------------------------- {{{
+Plug 'https://github.com/tmsvg/pear-tree'
+let g:pear_tree_smart_openers = 1
+let g:pear_tree_smart_closers = 1
+let g:pear_tree_smart_backspace = 1
+
+" If enabled, smart pair functions timeout after 60ms:
+let g:pear_tree_timeout = 60
+" }}}
 " }}}
 
 " Git --------------------------------------------------------------------- {{{
