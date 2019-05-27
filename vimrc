@@ -888,6 +888,9 @@ nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 nnoremap <Tab> <C-w>w
 nnoremap <S-Tab> <C-w>W
 
+" TODO FINISH THIS
+" Open today's diary page
+" nnoremap <Leader>w<Leader>w :e ~/ownCloud/wikis/vimwiki/diary/`date +\%Y-\%m-\%d`.md<CR>
 
 " Paste the first copy repeatedly using <localleader>p
 xnoremap <leader>p "0p
