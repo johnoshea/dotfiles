@@ -181,6 +181,7 @@ Plug 'https://github.com/w0rp/ale'
 " Specific to file types and are here for reference
 let g:ale_linters = {
 			\	'css'            : ['csslint'],
+            \   'dockerfile'     : ['hadolint'],
 			\	'html'           : ['htmlhint', 'tidy'],
 			\	'javascript'     : ['eslint'],
 			\	'json'           : ['jsonlint'],
