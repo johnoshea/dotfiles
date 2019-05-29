@@ -375,7 +375,7 @@ Plug 'https://github.com/chr4/nginx.vim',                           {'for': 'ngi
 
 " Colorschemes ------------------------------------------------------------ {{{
 " Default
-Plug 'https://github.com/morhetz/gruvbox'
+Plug 'https://github.com/gruvbox-community/gruvbox'
 " Alternate
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
 " MacVim
