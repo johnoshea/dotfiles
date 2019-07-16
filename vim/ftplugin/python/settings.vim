@@ -54,6 +54,11 @@ nnoremap <silent> <leader><f7> :g/\s*import pdb\s*/d<CR>:g/\s*pdb.set_trace()\s*
 nnoremap <silent> <f8> O# pylint: disable=no-member<CR><BS><BS>pytest.set_trace()<ESC>
 nnoremap <silent> <leader><f8> /\s*pytest.set_trace()\s*/<CR>k2dd<ESC>
 
+" Add pylint/mypy "disable warning" directives
+nnoremap <silent> <f9> <esc>A  # pylint: disable=
+nnoremap <silent> <leader><f9> <esc>O# pylint: disable=
+nnoremap <silent> <f10> <esc>A  # type: ignore<esc>
+
 " Add/remove pep8-disabling for a single line
 nnoremap <localleader>q A  # noqa<ESC>
 nnoremap <localleader>Q :s/  # noqa//<CR><ESC>
