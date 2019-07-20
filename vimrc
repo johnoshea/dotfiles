@@ -273,6 +273,17 @@ let g:pear_tree_smart_backspace = 1
 " If enabled, smart pair functions timeout after 60ms:
 let g:pear_tree_timeout = 60
 " }}}
+" Adds 'g<', 'g>' and 'gs' mappings to reorder delimited items (e.g. function
+" arguments)
+"
+" gs works more interactive. It starts "swap mode", as if there was the
+" sub-mode of vim editor. In the mode, use h/l to swap items, j/k to choose
+" item, numbers 1 ~ 9 to select nth item, u/<C-r> to undo/redo, g/G to
+" group/ungroup items, s/S to sort, r to reverse, and as you know <Esc> to
+" exit "swap mode". gs function can be used also in visual mode. In
+" linewise-visual and blockwise-visual mode, this plugin always swaps in each
+" line. For example, assume that the three lines were in a buffer:
+Plug 'https://github.com/machakann/vim-swap'
 " }}}
 
 " Git --------------------------------------------------------------------- {{{
