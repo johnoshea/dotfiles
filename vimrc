@@ -356,15 +356,6 @@ let g:crystalline_enable_sep = 1
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_theme = 'default'
 " }}}
-" Plugin: rainbow_parentheses --------------------------------------------- {{{
-Plug 'https://github.com/junegunn/rainbow_parentheses.vim'
-augroup rainbowparentheses
-    autocmd!
-    autocmd VimEnter * RainbowParentheses
-    let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-    let g:rbpt_max = 12
-augroup END
-" }}}
 " Plugin: vim-diminactive ------------------------------------------------- {{{
 Plug 'https://github.com/blueyed/vim-diminactive'
 let g:diminactive_use_syntax = 1
