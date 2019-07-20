@@ -429,8 +429,6 @@ Plug 'https://github.com/chr4/nginx.vim',                           {'for': 'ngi
 Plug 'https://github.com/gruvbox-community/gruvbox'
 " Alternate
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
-" MacVim
-Plug 'https://github.com/drewtempelmeyer/palenight.vim'
 " }}}
 
 " Text objects ------------------------------------------------------------ {{{
@@ -614,7 +612,7 @@ set clipboard=unnamed
 
 if has('gui_running')
   set background=dark
-  colorscheme palenight
+  colorscheme gruvbox
 
   set guioptions=egm
   set lines=60
