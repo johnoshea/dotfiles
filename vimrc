@@ -542,7 +542,7 @@ set scrolloff=5                   " Don't go right to the edge of the window whe
 set sidescroll=1                  " scroll one character at a time to reveal more text as needed
 set sidescrolloff=5               " Lines visible to the left/right of cursor when scrolling
 set laststatus=2                  " Always show a status line
-set modeline modelines=10         " Use modelines within first 10 lines
+set nomodeline                    " Disallow modelines (for security reasons)
 set autowrite                     " Write file before some commands
 set wildmenu                      " Enable wildmenu for completion
 set wildmode=longest:full,full    " Complete the next full match
