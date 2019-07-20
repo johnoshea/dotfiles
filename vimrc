@@ -951,6 +951,9 @@ nnoremap <S-Tab> <C-w>W
 xnoremap <leader>p "0p
 nnoremap <leader>p "0p
 
+" Move to the horizontal, as well as vertical, position for a mark
+nnoremap ' `
+
 " Compiling --------------------------------------------------------------- {{{
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
 nnoremap <leader>co :copen 6<CR>
