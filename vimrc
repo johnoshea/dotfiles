@@ -55,12 +55,48 @@ if has('macunix')
     nnoremap <silent> <Leader>sn :Snippets<CR>
     nnoremap <silent> <Leader>cm :Commands<CR>
     nnoremap <silent> <Leader>r :Rg<CR>
+    nnoremap <silent> <Leader>gg :GGrep<CR>
+    nnoremap <silent> <Leader>gf :GFiles<CR>
+    nnoremap <silent> <Leader>tg :Tags<CR>
     " Insert mode completion
     imap <c-x><c-f> <plug>(fzf-complete-path)
     imap <c-x><c-j> <plug>(fzf-complete-file-ag)
     imap <c-x><c-l> <plug>(fzf-complete-line)
+    inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
     " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
     nnoremap <leader>n :lcd ~/Dropbox/Notes<cr>:Files<cr>
+
+    " Command for git grep
+    " - fzf#vim#grep(command, with_column, [options], [fullscreen])
+    command! -bang -nargs=* GGrep
+    \ call fzf#vim#grep(
+    \   'git grep --line-number '.shellescape(<q-args>), 0,
+    \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+
+    " Augmenting Rg command using fzf#vim#with_preview function
+    "   * fzf#vim#with_preview([[options], [preview window], [toggle keys...]])
+    "     * For syntax-highlighting, Ruby and any of the following tools are required:
+    "       - Bat: https://github.com/sharkdp/bat
+    "       - Highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
+    "       - CodeRay: http://coderay.rubychan.de/
+    "       - Rouge: https://github.com/jneen/rouge
+    "
+    "   :Rg  - Start fzf with hidden preview window that can be enabled with "?" key
+    "   :Rg! - Start fzf in fullscreen and display the preview window above
+    command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+    \   <bang>0 ? fzf#vim#with_preview('up:60%')
+    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \   <bang>0)
+
+    " Files command with preview window
+    command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+    " Git files command with preview window
+    command! -bang -nargs=? -complete=dir GFiles
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
     " }}}
 
     " Plugin: slimux ------------------------------------------------------ {{{
