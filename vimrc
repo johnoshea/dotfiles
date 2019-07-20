@@ -143,6 +143,7 @@ if has('macunix')
 
     Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
     let g:ycm_autoclose_preview_window_after_completion = 1
+    map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 endif
 " }}}
 
