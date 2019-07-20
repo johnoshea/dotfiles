@@ -247,14 +247,13 @@ nnoremap <leader>f :PrettierAsync<cr>
 " }}}
 " Plugin: vim-test -------------------------------------------------------- {{{
 Plug 'https://github.com/janko-m/vim-test'
-nmap <silent> <leader>t <esc>:w<CR>:TestNearest<CR>
-nmap <silent> <leader>T <esc>:w<CR>:TestFile<CR>
-nmap <silent> <leader>A <esc>:w<CR>:TestSuite<CR>
-nmap <silent> <leader>, <esc>:w<CR>:TestLast<CR>
-nmap <silent> <leader>. <esc>:w<CR>:TestVisit<CR>
-let g:test#strategy = 'vimux'
+nmap <silent> <leader>tn <esc>:w<CR>:TestNearest<CR>
+nmap <silent> <leader>tf <esc>:w<CR>:TestFile<CR>
+nmap <silent> <leader>ts <esc>:w<CR>:TestSuite<CR>
+nmap <silent> <leader>tl <esc>:w<CR>:TestLast<CR>
+nmap <silent> <leader>tv <esc>:w<CR>:TestVisit<CR>
+let g:test#strategy = 'dispatch'
 " }}}
-
 Plug 'https://github.com/tomtom/tcomment_vim'
 " Pear-tree --------------------------------------------------------------- {{{
 Plug 'https://github.com/tmsvg/pear-tree'
