@@ -60,7 +60,7 @@ if has('macunix')
     imap <c-x><c-j> <plug>(fzf-complete-file-ag)
     imap <c-x><c-l> <plug>(fzf-complete-line)
     " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
-    nnoremap <leader>dn :lcd ~/Dropbox/Notes<cr>:Files<cr>
+    nnoremap <leader>n :lcd ~/Dropbox/Notes<cr>:Files<cr>
     " }}}
 
     " Plugin: slimux ------------------------------------------------------ {{{
