@@ -163,7 +163,7 @@ let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 " }}}
 
-" vim-enuch
+" vim-eunuch
 " :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'https://github.com/tpope/vim-eunuch'
 " Matching
