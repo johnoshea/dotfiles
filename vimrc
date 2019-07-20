@@ -809,7 +809,9 @@ if exists('+undofile')
         set undodir^=~/.vim/tmp/undo//,/tmp//
     endif
 
-    set backup
+    set writebackup     " protect against crash-during-write
+    set nobackup        " but do not persist backup after successful write
+    set backupcopy=auto " use rename-and-write-new method whenever safe
     set undofile
     set noswapfile
     " Make Vim able to edit crontab files again.
