@@ -968,6 +968,8 @@ nnoremap <silent><expr> <CR> empty(&buftype) ? ":nohls<CR> \| :update\<CR>" : ":
 
 " Buffers ----------------------------------------------------------------- {{{
 set wildcharm=<tab>
+" Try using <BS> to switch back to previous buffer
+nnoremap <BS> <C-^>
 " }}}
 
 " Windows ----------------------------------------------------------------- {{{
