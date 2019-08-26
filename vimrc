@@ -512,6 +512,7 @@ set undolevels=10000              " Keep lots of undo
 set ruler                         " Show the cursor position all the time
 set showcmd                       " Display incomplete commands
 set display=lastline,uhex         " Show unprintables as hex and show as much of last line as possible
+set redrawtime=3000               " Wait up to 3s to syntax-hightlight large files
 set lazyredraw                    " Set lazy redraw, to speed up macros and the like
 set sessionoptions+=winpos,resize " Save window positions and sizes as well
 set hidden                        " Allow movement to another buffer w/o saving the current one
