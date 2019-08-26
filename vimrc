@@ -214,7 +214,7 @@ Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
 
 " Code editing ------------------------------------------------------------ {{{
 " Plugin: ale ------------------------------------------------------------- {{{
-Plug 'https://github.com/w0rp/ale'
+Plug 'https://github.com/dense-analysis/ale'
 " Specific to file types and are here for reference
 let g:ale_linters = {
 			\	'css'            : ['csslint'],
