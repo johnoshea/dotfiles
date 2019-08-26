@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# XCode
+xcode-select --install > /dev/null 2>&1
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer > /dev/null 2>&1
+sudo xcodebuild -license accept > /dev/null 2>&1
+
+# Homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+brew upgrade
