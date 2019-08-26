@@ -261,9 +261,6 @@ Plug 'https://github.com/tomtom/tcomment_vim'
 let g:tcomment_mapleader2=''
 let g:tcomment_mapleader_comment_anyway=''
 let g:tcomment_textobject_inlinecomment=''
-
-" The default (g<) is a bit awkward to type.
-let g:tcomment_mapleader_uncomment_anyway='gu'
 " }}}
 " Pear-tree --------------------------------------------------------------- {{{
 Plug 'https://github.com/tmsvg/pear-tree'
