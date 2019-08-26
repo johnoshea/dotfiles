@@ -12,6 +12,9 @@
     p = push
     pom = push origin master
     b = branch
+	conflicted = !vim +Conflicted
+	amend = commit --amend -C HEAD
+	upstream = !git push \\\n    --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 [merge]
     tool = vimdiff
 [core]
@@ -19,12 +22,7 @@
 	autocrlf = input
 	safecrlf = true
 	pager = diff-so-fancy | less --tabs=4 -RFX
-[difftool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+	editor = vim
 [push]
 	default = simple
 [credential]
@@ -39,6 +37,23 @@
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	required = true
 	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 227
+	frag = magenta bold
+	commit = 227 bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[sequence]
+	editor = interactive-rebase-tool
+[commit]
+	verbose = true
