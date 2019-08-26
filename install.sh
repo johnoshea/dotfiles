@@ -27,6 +27,12 @@ main () {
         mkdir .ptpython
     fi
 
+    if [ "$(uname -s)" == "Darwin" ]; then
+        echo "Set up OSX-specific requirements"
+        # shellcheck disable=SC1090
+        source "$HOME/${DOTFILES}/osx-requirements"
+    fi
+
     make_symlinks
     if [ ${UPDATE} -eq 0 ]; then
         checkout_repos
@@ -38,6 +44,8 @@ main () {
 
     if [ "$(uname -s)" == "Darwin" ]; then
         echo "Applying OSX-specific settings"
+        # Change shell to zsh
+        sudo dscl . -change /Users/"$USER" UserShell "$SHELL" /usr/local/bin/zsh > /dev/null 2>&1
         # shellcheck disable=SC1090
         source "$HOME/${DOTFILES}/osx"
     fi
@@ -61,13 +69,8 @@ checkout_repos () {
 
 make_symlinks () {
     echo "Creating dotfile symlinks"
-    ln -sf "$HOME/${DOTFILES}/ackrc" "$HOME/.ackrc"
     ln -sf "$HOME/${DOTFILES}/agignore" "$HOME/.agignore"
-    ln -sf "$HOME/${DOTFILES}/dotcss" "$HOME/.css"
-    ln -sf "$HOME/${DOTFILES}/dotjs" "$HOME/.js"
-    ln -sf "$HOME/${DOTFILES}/gvimrc" "$HOME/.gvimrc"
     ln -sf "$HOME/${DOTFILES}/inputrc" "$HOME/.inputrc"
-    ln -sf "$HOME/${DOTFILES}/noserc" "$HOME/.noserc"
     ln -sf "$HOME/${DOTFILES}/psqlrc" "$HOME/.psqlrc"
     ln -sf "$HOME/${DOTFILES}/curlrc" "$HOME/.curlrc"
     ln -sf "$HOME/${DOTFILES}/wgetrc" "$HOME/.wgetrc"
@@ -78,14 +81,8 @@ make_symlinks () {
     ln -sf "$HOME/${DOTFILES}/tmux.conf" "$HOME/.tmux.conf"
     ln -sf "$HOME/${DOTFILES}/terminfo" "$HOME/.terminfo"
     ln -sf "$HOME/${DOTFILES}/vim" "$HOME/.vim"
-    ln -sf "$HOME/${DOTFILES}/vim_colors" "$HOME/.vim_colors"
     ln -sf "$HOME/${DOTFILES}/vimrc" "$HOME/.vimrc"
-    ln -sf "$HOME/${DOTFILES}/vimperator" "$HOME/.vimperator"
-    ln -sf "$HOME/${DOTFILES}/vimperatorrc" "$HOME/.vimperatorrc"
     ln -sf "$HOME/${DOTFILES}/pylintrc" "$HOME/.pylintrc"
-    ln -sf "$HOME/${DOTFILES}/jscsrc" "$HOME/.jscsrc"
-    ln -sf "$HOME/${DOTFILES}/jshintrc" "$HOME/.jshintrc"
-    ln -sf "$HOME/${DOTFILES}/jshintignore" "$HOME/.jshintignore"
     ln -sf "$HOME/${DOTFILES}/eslintrc.js" "$HOME/.eslintrc.js"
     ln -sf "$HOME/${DOTFILES}/gitconfig.$(uname)" "$HOME/.gitconfig"
     ln -sf "$HOME/${DOTFILES}/gitignore_global" "$HOME/.gitignore_global"
@@ -104,7 +101,6 @@ make_symlinks () {
     ln -sf "$HOME/${PREZTO}/runcoms/zshenv" "$HOME/.zshenv"
     ln -sf "$HOME/${PREZTO}/runcoms/zshrc" "$HOME/.zshrc"
     ln -sf "$HOME/${PREZTO}" "$HOME/.zprezto"
-    ln -sf "$(which pipsi)" ~/bin/pipsi
 }
 
 update_vim_submodules () {
@@ -127,4 +123,3 @@ else
     UPDATE=1
 fi
 main
-
