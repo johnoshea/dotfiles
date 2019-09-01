@@ -319,7 +319,7 @@ nnoremap <leader>` :Rooter<cr>
 " Display ----------------------------------------------------------------- {{{
 " Plugin: vim-crystalline ------------------------------------------------- {{{
 Plug 'https://github.com/rbong/vim-crystalline'
-function! StatusLine(current, width)
+function! StatusLine(current, width) abort
   let l:s = ''
 
   if a:current
@@ -730,7 +730,7 @@ augroup command_window
 augroup END
 
 " Escape any non-backslashed path parts
-function! EscapeCommandWindowPaths() " {{{
+function! EscapeCommandWindowPaths() abort " {{{
     let s:escaped_parts = []
     let s:line_parts = split(getcmdline())
     let s:count = 0
@@ -773,7 +773,7 @@ set foldcolumn=1                " Show the foldcolumn
 " cursor happens to be.
 nnoremap zO zCzO
 
-function! MyFoldText() " {{{
+function! MyFoldText() abort " {{{
     let s:line = getline(v:foldstart)
 
     let s:nucolwidth = &foldcolumn + &number * &numberwidth
@@ -1061,7 +1061,7 @@ augroup makefile
     autocmd BufNewFile,Bufread *akefile call <SID>MakefileSettings()
 
     " Settings for Makefile-like things
-    function! s:MakefileSettings()
+    function! s:MakefileSettings() abort
         set noexpandtab " don't use spaces to indent
         set nosmarttab  " don't ever use spaces, not even at line beginnings
     endfunction
@@ -1074,7 +1074,7 @@ augroup END
 augroup quickfix
     " When using `dd` in the quickfix list, remove the item from the quickfix list.
     " https://stackoverflow.com/questions/42905008/quickfix-list-how-to-add-and-remove-entries
-    function! RemoveQuickfixItem()
+    function! RemoveQuickfixItem() abort
         let curqfidx = line('.') - 1
         let qfall = getqflist()
         call remove(qfall, curqfidx)
