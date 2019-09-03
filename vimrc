@@ -420,6 +420,7 @@ Plug 'https://github.com/chr4/nginx.vim',                           {'for': 'ngi
 
 " Colorschemes ------------------------------------------------------------ {{{
 " Default
+let g:gruvbox_italic=1
 Plug 'https://github.com/gruvbox-community/gruvbox'
 " Alternate
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
