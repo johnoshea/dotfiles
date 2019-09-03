@@ -72,7 +72,7 @@ make_symlinks () {
     if [ ! -d "$HOME/.ssh" ]; then
         mkdir "$HOME/.ssh"
     fi
-    ln -sf "$HOME/${DOTFILES}/ssh_config" "$HOME/.ssh/config"
+    cd ~/.ssh && assh config build > ~/.ssh/config
 
     ln -sf "$HOME/${DOTFILES}/CFUserTextEncoding" "$HOME/.CFUserTextEncoding"
     ln -sf "$HOME/${DOTFILES}/agignore" "$HOME/.agignore"
