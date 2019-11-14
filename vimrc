@@ -867,7 +867,7 @@ if exists('+undofile')
     set backupcopy=auto " use rename-and-write-new method whenever safe
     set undofile
     set noswapfile
-    set updatetime=750 " Write swap files after 0.75 seconds of inactivity.
+    set updatetime=500 " Write swap files after 0.5 seconds of inactivity.
     " Drop an undo breakpoint so I can recover from insert-mode ctrl-w's
     inoremap <c-w> <c-g>u<c-w>
 endif
