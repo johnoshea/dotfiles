@@ -306,7 +306,11 @@ augroup END
 " }}}
 
 Plug 'https://github.com/tpope/vim-rhubarb'
-Plug 'https://github.com/junegunn/gv.vim'
+" Plugin: vim-flog -------------------------------------------------------- {{{
+Plug 'https://github.com/rbong/vim-flog'
+nnoremap <leader>GV :Flog<cr>
+nnoremap <leader>GS :vertical Flogsplit<cr>
+" }}}
 Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
 Plug 'https://github.com/christoomey/vim-conflicted'
