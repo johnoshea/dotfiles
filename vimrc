@@ -324,6 +324,11 @@ Plug 'https://github.com/rhysd/git-messenger.vim'
 let g:git_messenger_no_default_mappings = v:true
 nmap <Leader>M <Plug>(git-messenger)
 " }}}
+" Plugin: vim-twiggy ------------------------------------------------------ {{{
+Plug 'https://github.com/sodapopcan/vim-twiggy'
+nnoremap <leader>tw :Twiggy<cr>
+" }}}
+" }}}
 
 " Display ----------------------------------------------------------------- {{{
 " Plugin: vim-crystalline ------------------------------------------------- {{{
