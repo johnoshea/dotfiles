@@ -156,6 +156,7 @@ nmap F <Plug>SneakBackward
 xmap F <Plug>VSneakBackward
 let g:sneak#streak = 1
 " }}}
+Plug 'https://github.com/tpope/vim-obsession'
 " Plugin: vim-startify ---------------------------------------------------- {{{
 Plug 'https://github.com/mhinz/vim-startify'
 let g:startify_session_dir = '~/.vim/session'
