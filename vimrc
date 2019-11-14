@@ -454,6 +454,8 @@ Plug 'https://github.com/wellle/targets.vim'
 Plug 'https://github.com/kana/vim-textobj-user'
 " Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
 Plug 'https://github.com/jeetsukumaran/vim-pythonsense'
+" Add [-, [+, [=, ]-, ]+, ]= "move by indent" maps
+Plug 'https://github.com/jeetsukumaran/vim-indentwise'
 " Add al/il for lines
 Plug 'https://github.com/kana/vim-textobj-line'
 " Add a_/i_ for underscores
