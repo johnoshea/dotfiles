@@ -944,6 +944,7 @@ nnoremap gk k
 nnoremap gj j
 
 " Miscellaneous
+
 " <leader>cd      cd to the directory of the current buffer
 nnoremap <leader>cd :lcd %:h<CR>
 
