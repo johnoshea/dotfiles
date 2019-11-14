@@ -385,7 +385,7 @@ let g:sql_type_default = 'pgsql'
 " }}}
 
 " Python ------------------------------------------------------------------ {{{
-Plug 'https://github.com/vim-python/python-syntax',                 {'for': 'python'}
+Plug 'https://github.com/kh3phr3n/python-syntax',                   {'for': 'python'}
 Plug 'https://github.com/kalekundert/vim-coiled-snake',             {'for': 'python'}
 Plug 'https://github.com/Vimjas/vim-python-pep8-indent',            {'for': 'python'}
 " }}}
