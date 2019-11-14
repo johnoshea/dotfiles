@@ -319,6 +319,11 @@ Plug 'https://github.com/airblade/vim-rooter'
 let g:rooter_manual_only = 1
 nnoremap <leader>` :Rooter<cr>
 " }}}
+" Plugin: git-messenger --------------------------------------------------- {{{
+Plug 'https://github.com/rhysd/git-messenger.vim'
+let g:git_messenger_no_default_mappings = v:true
+nmap <Leader>M <Plug>(git-messenger)
+" }}}
 
 " Display ----------------------------------------------------------------- {{{
 " Plugin: vim-crystalline ------------------------------------------------- {{{
