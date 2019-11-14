@@ -453,10 +453,11 @@ let g:incsearch#magic = '\v'
 " }}}
 " Plugin: vim-asterisk ---------------------------------------------------- {{{
 Plug 'https://github.com/haya14busa/vim-asterisk'
-map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
-map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
-map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
-map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
+Plug 'https://github.com/qxxxb/vim-searchhi'
+map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)<Plug>(searchhi-update)
+map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)<Plug>(searchhi-update)
+map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)<Plug>(searchhi-update)
+map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)<Plug>(searchhi-update)
 let g:asterisk#keeppos = 1
 " }}}
 " Plugin: vim-agriculture ------------------------------------------------- {{{
