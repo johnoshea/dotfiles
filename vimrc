@@ -316,6 +316,7 @@ Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
 Plug 'https://github.com/christoomey/vim-conflicted'
 " Auto-cd to the repo root
+" Plugin: vim-rooter ------------------------------------------------------ {{{
 Plug 'https://github.com/airblade/vim-rooter'
 let g:rooter_manual_only = 1
 nnoremap <leader>` :Rooter<cr>
