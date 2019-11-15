@@ -156,7 +156,11 @@ nmap F <Plug>SneakBackward
 xmap F <Plug>VSneakBackward
 let g:sneak#streak = 1
 " }}}
+" Plugin: vim-obsession --------------------------------------------------- {{{
 Plug 'https://github.com/tpope/vim-obsession'
+nnoremap <leader>o :Obsession<cr>
+nnoremap <leader>O :Obsession!<cr>
+" }}}
 " Plugin: vim-startify ---------------------------------------------------- {{{
 Plug 'https://github.com/mhinz/vim-startify'
 let g:startify_session_dir = '~/.vim/session'
@@ -344,6 +348,7 @@ function! StatusLine(current, width) abort
     let l:s .= '%#CrystallineInactive#'
   endif
   let l:s .= ' %f%h%w%m%r '
+  let l:s .= ObsessionStatus() . ' '
   if a:current
     let l:s .= crystalline#right_sep('', 'Fill') . ' ⎇ %{fugitive#head()}'
   endif
