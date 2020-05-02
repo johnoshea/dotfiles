@@ -55,6 +55,9 @@ python3 -m pip install --upgrade pip setuptools
 python3 -m pip install -U pipx
 pipx list > ${INSTALLED_CONFIG}/pipx_packages
 pipx upgrade-all
+echo "*** poetry"
+echo
+poetry self update
 echo "*** npm"
 echo
 nodenv versions > ${INSTALLED_CONFIG}/nodenv_versions
