@@ -21,8 +21,10 @@
 	excludesfile = /Users/johno/.gitignore_global
 	autocrlf = input
 	safecrlf = true
-	pager = delta --dark
-	editor = vim
+    pager = delta --dark --plus-color="#012800" --minus-color="#340001" --theme=\"Monokai Extended Bright\"
+    editor = vim
+[interactive]
+    diffFilter = delta --color-only
 [push]
 	default = simple
 [credential]
