@@ -434,8 +434,8 @@ Plug 'https://github.com/mattn/emmet-vim',                          {'for': 'htm
 " Terraform --------------------------------------------------------------- {{{
 Plug 'https://github.com/juliosueiras/vim-terraform-completion',    {'for': 'terraform'}
 Plug 'https://github.com/hashivim/vim-terraform',                   {'for': 'terraform'}
-let g:terraform_align=1
-let g:terraform_fmt_on_save=1
+let g:terraform_align = 1
+let g:terraform_fmt_on_save = 1
 " }}}
 " Tmux.conf syntax
 Plug 'https://github.com/tmux-plugins/vim-tmux',                    {'for': 'tmux'}
