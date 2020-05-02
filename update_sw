@@ -36,6 +36,7 @@ brew list --versions > ${INSTALLED_CONFIG}/homebrew_packages
 brew doctor
 brew update
 brew upgrade
+brew cask upgrade
 brew cleanup
 echo "*** Pyenv"
 echo
