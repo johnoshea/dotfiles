@@ -59,3 +59,5 @@
 	editor = interactive-rebase-tool
 [commit]
 	verbose = true
+[hub]
+	host = wordbank.github.com
