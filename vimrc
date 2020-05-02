@@ -193,7 +193,10 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-unimpaired'
-Plug 'https://github.com/tpope/vim-surround'
+" Plugin: vim-sandwich ---------------------------------------------------- {{{
+Plug 'https://github.com/machakann/vim-sandwich'
+runtime macros/sandwich/keymap/surround.vim
+" }}}
 " Use 'cx' to start/finish changes (e.g. 'cxiw')
 Plug 'https://github.com/tommcdo/vim-exchange'
 " Use <c-a>/<c-e> to increment/decrement visual ranges of numbers
