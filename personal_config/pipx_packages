@@ -1,0 +1,22 @@
+venvs are in /Users/johno/.local/pipx/venvs
+apps are exposed on your $PATH at /Users/johno/.local/bin
+   package black 19.10b0, Python 3.7.4
+    - black
+    - blackd
+   package jmespath 0.9.5, Python 3.7.4
+    - jp.py
+   package jmespath-terminal 0.2.1, Python 3.7.4
+    - jpterm
+   package pep8 1.7.1, Python 3.7.4
+    - pep8
+   package pip-tools 5.0.0, Python 3.7.4
+    - pip-compile
+    - pip-sync
+   package pygments 2.6.1, Python 3.7.4
+    - pygmentize
+   package vim-vint 0.3.21, Python 3.7.4
+    - vint
+   package visidata 1.5.2, Python 3.7.4
+    - vd
+   package yamllint 1.23.0, Python 3.7.4
+    - yamllint
