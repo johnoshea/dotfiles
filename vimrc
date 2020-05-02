@@ -216,6 +216,7 @@ Plug 'https://github.com/dense-analysis/ale'
 let g:ale_linters = {
 			\	'css'            : ['csslint'],
             \   'dockerfile'     : ['hadolint'],
+            \   'go'             : ['gopls'],
 			\	'html'           : ['htmlhint', 'tidy'],
 			\	'javascript'     : ['eslint'],
 			\	'json'           : ['jsonlint'],
@@ -399,6 +400,17 @@ let g:sql_type_default = 'pgsql'
 Plug 'https://github.com/kh3phr3n/python-syntax',                   {'for': 'python'}
 Plug 'https://github.com/kalekundert/vim-coiled-snake',             {'for': 'python'}
 Plug 'https://github.com/Vimjas/vim-python-pep8-indent',            {'for': 'python'}
+" }}}
+" Go ---------------------------------------------------------------------- {{{
+Plug 'fatih/vim-go',                                                {'for': 'go', 'do': ':GoInstallBinaries'}
+let g:go_fmt_command = 'goimports'    " Run goimports along gofmt on each save
+let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_functions = 1
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 " }}}
 " Django ------------------------------------------------------------------ {{{
 Plug 'https://github.com/vim-scripts/django.vim',                   {'for': 'django'}
