@@ -47,6 +47,7 @@ if has('macunix')
     " Navigation
     " Plugin: FZF --------------------------------------------------------- {{{
     Plug '/usr/local/opt/fzf' | Plug 'https://github.com/junegunn/fzf.vim'
+    let $FZF_DEFAULT_COMMAND = 'fd --type f --color=always --exclude .git --ignore-file ~/.gitignore'
     nnoremap <silent> <Leader><Leader> :Files<CR>
     nnoremap <silent> <Leader><CR> :Buffers<CR>
     nnoremap <silent> <Leader>` :Marks<CR>
@@ -57,6 +58,7 @@ if has('macunix')
     nnoremap <silent> <Leader>r :Rg<CR>
     nnoremap <silent> <Leader>gg :GGrep<CR>
     nnoremap <silent> <Leader>gf :GFiles<CR>
+    nnoremap <silent> <Leader>C :Commits<CR>
     nnoremap <silent> <Leader>tg :Tags<CR>
     " Insert mode completion
     imap <c-x><c-f> <plug>(fzf-complete-path)
@@ -289,14 +291,15 @@ augroup fugitive
         \   nnoremap <buffer> .. :edit %:h<CR> |
         \ endif
 
-    nnoremap <leader>gs :Gstatus<CR>
+    nnoremap <leader>gs :Git<CR>
     nnoremap <leader>ga :Gwrite<CR>
     nnoremap <leader>gc :Gcommit %<CR>
-    nnoremap <leader>gd :Gdiff<CR>
-    nnoremap <leader>gl :Glog<CR>
-    nnoremap <leader>gb :Gblame<CR>
+    nnoremap <leader>gd :Gvdiffsplit<CR>
+    nnoremap <leader>gl :Gclog<CR>
+    nnoremap <leader>gb :Git-blame<CR>
+    nnoremap <leader>gf :Git-fetch<CR>
+    nnoremap <leader>gps :Git-push<CR>
     nnoremap <leader>gpl :Git pull<CR>
-    nnoremap <leader>gps :Git push<CR>
 augroup END
 " }}}
 
@@ -318,6 +321,7 @@ nmap <Leader>M <Plug>(git-messenger)
 " Plugin: vim-twiggy ------------------------------------------------------ {{{
 Plug 'https://github.com/sodapopcan/vim-twiggy'
 nnoremap <leader>tw :Twiggy<cr>
+nnoremap <leader>TW :Twiggy<space>
 " }}}
 " }}}
 
@@ -1109,6 +1113,13 @@ augroup END
 " Plugin window settings -------------------------------------------------- {{{
 augroup plugins
     autocmd FileType Plugins map <buffer> q :q<cr>
+augroup END
+" }}}
+
+" Git commit settings ----------------------------------------------------- {{{
+augroup vim_commit
+    autocmd!
+    autocmd BufNewFile,BufRead COMMIT_EDITMSG* :normal ggA
 augroup END
 " }}}
 " }}}
