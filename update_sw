@@ -6,6 +6,8 @@ CURRENT_PYTHON=$(pyenv version | head -n1 | cut -f1 -d' ')
 CURRENT_RUBY=$(rbenv version | head -n1 | cut -f1 -d' ')
 CURRENT_NODE=$(nodenv version | head -n1 | cut -f1 -d' ')
 CURRENT_GO=$(goenv version | head -n1 | cut -f1 -d' ')
+INSTALLED_CONFIG=${HOME}/.local/personal_config
+mkdir -p ${INSTALLED_CONFIG}
 echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE} / Go: ${CURRENT_GO}] ***"
 cd "$UPDATE_SW_DIR" || exit
 pyenv local 3.7.4
@@ -23,32 +25,40 @@ sudo mas upgrade
 echo "*** Ruby gems"
 echo
 rbenv rehash
+gem list --local > "${INSTALLED_CONFIG}/ruby_gems"
 sudo gem update --system
 for outdated_gem in $(gem outdated | cut -f1 -d' ' | grep -v 'rdoc'); do
     sudo gem update "${outdated_gem}"
 done
 echo "*** Homebrew"
 echo
+brew list --versions > ${INSTALLED_CONFIG}/homebrew_packages
 brew doctor
 brew update
 brew upgrade
 brew cleanup
 echo "*** Pyenv"
 echo
+pyenv versions > ${INSTALLED_CONFIG}/pyenv_versions
 pyenv rehash
 echo "*** Goenv"
 echo
+goenv versions > ${INSTALLED_CONFIG}/goenv_versions
 goenv rehash
 echo "*** terraform"
 echo
+tfenv list > ${INSTALLED_CONFIG}/tfenv_versions
 tfenv install "$(tfenv list-remote | egrep -v '(alpha|beta|\-rc)' | head -n1)"
 echo "*** pipx"
 echo
 pipx upgrade pipx
+pipx list > ${INSTALLED_CONFIG}/pipx_packages
 pipx upgrade-all
 echo "*** npm"
 echo
+nodenv versions > ${INSTALLED_CONFIG}/nodenv_versions
 nodenv rehash
+npm list > ${INSTALLED_CONFIG}/npm_packages
 npm set progress=false
 npm install -g npm@latest
 for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
