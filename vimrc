@@ -161,14 +161,6 @@ Plug 'https://github.com/tpope/vim-obsession'
 nnoremap <leader>o :Obsession<cr>
 nnoremap <leader>O :Obsession!<cr>
 " }}}
-" Plugin: vim-startify ---------------------------------------------------- {{{
-Plug 'https://github.com/mhinz/vim-startify'
-let g:startify_session_dir = '~/.vim/session'
-let g:startify_bookmarks = ['~/src/dotfiles/vimrc', '~/src/prezto/', '~/.vimrc.local']
-let g:startify_change_to_dir = 1
-let g:startify_change_to_vcs_root = 1
-" }}}
-
 " vim-eunuch
 " :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 Plug 'https://github.com/tpope/vim-eunuch'
@@ -311,11 +303,6 @@ augroup END
 " }}}
 
 Plug 'https://github.com/tpope/vim-rhubarb'
-" Plugin: vim-flog -------------------------------------------------------- {{{
-Plug 'https://github.com/rbong/vim-flog'
-nnoremap <leader>GV :Flog<cr>
-nnoremap <leader>GS :vertical Flogsplit<cr>
-" }}}
 Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
 Plug 'https://github.com/christoomey/vim-conflicted'
