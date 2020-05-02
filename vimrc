@@ -166,16 +166,11 @@ nnoremap <leader>O :Obsession!<cr>
 Plug 'https://github.com/tpope/vim-eunuch'
 " Matching
 Plug 'https://github.com/andymass/vim-matchup/'
-" vim-ranger
-Plug 'https://github.com/francoiscabrol/ranger.vim'
-let g:ranger_replace_netrw = 1
-" ranger.vim relies on the Bclose.vim plugin, but I use Bbye.vim, so this
-" command is here to avoid error messages
-command! -bang -complete=buffer -nargs=? Bclose Bdelete<bang> <args>
 " DidYouMean - avoid opening up new empty files if multiple completions
 Plug 'https://github.com/EinfachToll/DidYouMean'
 " Create directories and files at the same time
 Plug 'https://github.com/vim-scripts/easydir.vim'
+Plug 'https://github.com/tpope/vim-vinegar'
 " }}}
 
 " Editing ----------------------------------------------------------------- {{{
@@ -926,6 +921,9 @@ if &diff
     "I'm only interested in diff colours
     syntax off
 endif
+
+" default netrw to tree-style listing
+let g:netrw_liststyle=3
 
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
