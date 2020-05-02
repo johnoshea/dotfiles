@@ -22,3 +22,4 @@ tags
 .python-version
 ssh_config
 vim/black
+/.netrc
