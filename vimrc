@@ -689,7 +689,7 @@ endif
 
 " Switch syntax highlighting on, when the terminal has colors
 if &t_Co > 2 || has('gui_running')
-    syntax on
+    syntax enable
 	syntax sync maxlines=200
 	syntax sync minlines=50
 endif
