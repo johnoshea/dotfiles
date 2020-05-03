@@ -989,6 +989,10 @@ nnoremap <leader>p "0p
 " Move to the horizontal, as well as vertical, position for a mark
 nnoremap ' `
 
+" Don't select the end of line with '$' - I almost always cursor left when
+" doing this
+nmap $ g_
+
 " Compiling --------------------------------------------------------------- {{{
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
 nnoremap <leader>co :copen 6<CR>
