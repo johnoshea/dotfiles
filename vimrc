@@ -195,6 +195,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-unimpaired'
+Plug 'https://github.com/tpope/vim-abolish'
 " Plugin: vim-sandwich ---------------------------------------------------- {{{
 Plug 'https://github.com/machakann/vim-sandwich'
 runtime macros/sandwich/keymap/surround.vim
