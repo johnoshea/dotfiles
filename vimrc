@@ -895,6 +895,12 @@ if exists('+undofile')
     set updatetime=500 " Write swap files after 0.5 seconds of inactivity.
     " Drop an undo breakpoint so I can recover from insert-mode ctrl-w's
     inoremap <c-w> <c-g>u<c-w>
+
+    "Meaningful backup name, ex: filename@2015-04-05.14:59
+    augroup named_backups
+        autocmd!
+        autocmd BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
+    augroup END
 endif
 
 " }}}
