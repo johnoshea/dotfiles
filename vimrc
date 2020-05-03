@@ -993,6 +993,8 @@ nnoremap ' `
 " doing this
 nmap $ g_
 
+nnoremap Y y$
+
 " Compiling --------------------------------------------------------------- {{{
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
 nnoremap <leader>co :copen 6<CR>
