@@ -1142,8 +1142,4 @@ augroup vim_commit
 augroup END
 " }}}
 " }}}
-" Server-local settings: mostly used to disable plugins ------------------- {{{
-if filereadable('~/.vimrc.local')
-    source ~/.vimrc.local
-end
 " }}}

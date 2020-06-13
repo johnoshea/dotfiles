@@ -9,3 +9,9 @@ if executable('black')
     augroup END
 endif
 
+" Use indent level as fold markers
+setlocal foldmethod=indent
+" Only fold up to method level
+setlocal foldnestmax=2
+" Don't  fold docstrings
+setlocal foldignore=\"\"\"
