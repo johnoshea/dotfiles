@@ -434,6 +434,20 @@ Plug 'https://github.com/tmux-plugins/vim-tmux',                    {'for': 'tmu
 " Nginx
 Plug 'https://github.com/chr4/nginx.vim',                           {'for': 'nginx'}
 " }}}
+" Plugin: vimwiki --------------------------------------------------------- {{{
+Plug 'https://github.com/vimwiki/vimwiki'
+let WIKI_BASE_DIR = '~/vimwiki'
+let wiki_1 = {}
+let wiki_1.path = WIKI_BASE_DIR . '/vimwiki/'
+let wiki_1.path_html = WIKI_BASE_DIR . '/vimwiki_html/'
+let wiki_1.nested_syntaxes = {'python': 'python', 'sh': 'sh'}
+let wiki_1.ext = '.md'
+let wiki_1.folding = 'syntax'
+let wiki_1.syntax = 'markdown'
+let g:vimwiki_list = [wiki_1]
+let g:vimwiki_global_ext = 0
+" let g:vimwiki_list = [{'path': '~/iCloud/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+" }}}
 
 " Colorschemes ------------------------------------------------------------ {{{
 " Default
