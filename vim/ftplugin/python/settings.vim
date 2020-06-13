@@ -63,12 +63,6 @@ nnoremap <silent> <f10> <esc>A  # type: ignore<esc>
 nnoremap <localleader>q A  # noqa<ESC>
 nnoremap <localleader>Q :s/  # noqa//<CR><ESC>
 
-if executable('black')
-    augroup black
-        autocmd BufWritePre *.py silent execute ':Black'
-    augroup END
-endif
-
 nnoremap <silent> <buffer> <leader>yg :YcmCompleter GoTo<CR>
 nnoremap <silent> <buffer> <leader>yr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <buffer> <leader>yd :YcmCompleter GetDoc<CR>

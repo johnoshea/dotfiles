@@ -240,8 +240,6 @@ let g:ale_python_flake8_options = '--max-line-length=88'  " match 'black' format
 let g:ale_python_mypy_options = '--follow-imports=silent'
 " }}}
 " Plugin: vim-autoformat -------------------------------------------------- {{{
-Plug 'https://github.com/ambv/black', {'for': 'python'}
-let g:black_virtualenv = '~/.local/black'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
