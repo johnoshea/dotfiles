@@ -4,14 +4,17 @@
 [color]
     ui = auto
 [alias]
-    st = status
+    b = branch
+    ws = status
     ci = commit --verbose
     co = checkout
-    di = diff
-    dc = diff --cached
+    bc = checkout -b
+    wd = diff
+    id = diff --cached
+    fm = pull
     p = push
+    pc = push --set-upstream origin "$(git-branch-current 2> /dev/null)"
     pom = push origin master
-    b = branch
 	conflicted = !vim +Conflicted
 	amend = commit --amend -C HEAD
 	upstream = !git push \\\n    --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
