@@ -1167,11 +1167,5 @@ augroup plugins
 augroup END
 " }}}
 
-" Git commit settings ----------------------------------------------------- {{{
-augroup vim_commit
-    autocmd!
-    autocmd BufNewFile,BufRead COMMIT_EDITMSG* :normal ggA
-augroup END
-" }}}
 " }}}
 " }}}
