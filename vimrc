@@ -200,10 +200,6 @@ Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/machakann/vim-sandwich'
 runtime macros/sandwich/keymap/surround.vim
 " }}}
-" Use 'cx' to start/finish changes (e.g. 'cxiw')
-Plug 'https://github.com/tommcdo/vim-exchange'
-" Use <c-a>/<c-e> to increment/decrement visual ranges of numbers
-Plug 'https://github.com/triglav/vim-visual-increment'
 " Auto-update folds only as needed
 Plug 'https://github.com/Konfekt/FastFold'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
@@ -267,17 +263,6 @@ Plug 'https://github.com/tmsvg/pear-tree'
 " If enabled, smart pair functions timeout after 60ms:
 let g:pear_tree_timeout = 60
 " }}}
-" Adds 'g<', 'g>' and 'gs' mappings to reorder delimited items (e.g. function
-" arguments)
-"
-" gs works more interactive. It starts "swap mode", as if there was the
-" sub-mode of vim editor. In the mode, use h/l to swap items, j/k to choose
-" item, numbers 1 ~ 9 to select nth item, u/<C-r> to undo/redo, g/G to
-" group/ungroup items, s/S to sort, r to reverse, and as you know <Esc> to
-" exit "swap mode". gs function can be used also in visual mode. In
-" linewise-visual and blockwise-visual mode, this plugin always swaps in each
-" line. For example, assume that the three lines were in a buffer:
-Plug 'https://github.com/machakann/vim-swap'
 " }}}
 
 " Git --------------------------------------------------------------------- {{{
@@ -314,11 +299,6 @@ Plug 'https://github.com/christoomey/vim-conflicted'
 Plug 'https://github.com/airblade/vim-rooter'
 let g:rooter_manual_only = 1
 nnoremap <leader>` :Rooter<cr>
-" }}}
-" Plugin: git-messenger --------------------------------------------------- {{{
-Plug 'https://github.com/rhysd/git-messenger.vim'
-let g:git_messenger_no_default_mappings = v:true
-nmap <Leader>M <Plug>(git-messenger)
 " }}}
 " Plugin: vim-twiggy ------------------------------------------------------ {{{
 Plug 'https://github.com/sodapopcan/vim-twiggy'
@@ -440,8 +420,6 @@ let g:terraform_fmt_on_save = 1
 " }}}
 " Tmux.conf syntax
 Plug 'https://github.com/tmux-plugins/vim-tmux',                    {'for': 'tmux'}
-" MediaWiki
-Plug 'https://github.com/chikamichi/mediawiki.vim',                 {'for': 'mediawiki'}
 " Nginx
 Plug 'https://github.com/chr4/nginx.vim',                           {'for': 'nginx'}
 " }}}
