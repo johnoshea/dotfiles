@@ -458,10 +458,7 @@ Plug 'https://github.com/michaeljsmith/vim-indent-object'
 " }}}
 
 " Search ------------------------------------------------------------------ {{{
-" Plugin: incsearch ------------------------------------------------------- {{{
-Plug 'https://github.com/haya14busa/is.vim'
-let g:incsearch#magic = '\v'
-" }}}
+Plug 'https://github.com/markonm/traces.vim'
 " Plugin: vim-asterisk ---------------------------------------------------- {{{
 Plug 'https://github.com/haya14busa/vim-asterisk'
 Plug 'https://github.com/qxxxb/vim-searchhi'
