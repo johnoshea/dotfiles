@@ -255,7 +255,6 @@ nmap <silent> <leader>tn <esc>:w<CR>:TestNearest<CR>
 nmap <silent> <leader>tf <esc>:w<CR>:TestFile<CR>
 nmap <silent> <leader>ts <esc>:w<CR>:TestSuite<CR>
 nmap <silent> <leader>tl <esc>:w<CR>:TestLast<CR>
-nmap <silent> <leader>tv <esc>:w<CR>:TestVisit<CR>
 let g:test#strategy = 'dispatch'
 " }}}
 " tcomment ---------------------------------------------------------------- {{{
@@ -979,7 +978,21 @@ nnoremap ' `
 nmap $ g_
 
 nnoremap Y y$
+function! Twf()
+  let temp = tempname()
+  execute 'silent ! twf ' . @% . ' > ' . temp
+  redraw!
+  try
+    let out = filereadable(temp) ? readfile(temp) : []
+  finally
+    silent! call delete(temp)
+  endtry
+  if !empty(out)
+    execute 'edit! ' . out[0]
+  endif
+endfunction
 
+nnoremap <silent> <leader>tv :call Twf()<CR>
 " Compiling --------------------------------------------------------------- {{{
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
 nnoremap <leader>co :copen 6<CR>
