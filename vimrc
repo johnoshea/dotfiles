@@ -133,19 +133,21 @@ if has('macunix')
     " Use 'Marked.app' for Markdown previews
     nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
 
+    " Plugin: YouCompleteMe ----------------------------------------------- {{{
     function! BuildYCM(info)
-    " info is a dictionary with 3 fields
-    " - name:   name of the plugin
-    " - status: 'installed', 'updated', or 'unchanged'
-    " - force:  set on PlugInstall! or PlugUpdate!
-    if a:info.status ==# 'installed' || a:info.force
-        !./install.py
-    endif
+        " info is a dictionary with 3 fields
+        " - name:   name of the plugin
+        " - status: 'installed', 'updated', or 'unchanged'
+        " - force:  set on PlugInstall! or PlugUpdate!
+        if a:info.status ==# 'installed' || a:info.force
+            !./install.py
+        endif
     endfunction
 
     Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
     let g:ycm_autoclose_preview_window_after_completion = 1
     map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    " }}}
 endif
 " }}}
 
@@ -239,7 +241,7 @@ let g:ale_fixers = {'python': ['isort']}
 let g:ale_python_flake8_options = '--max-line-length=88'  " match 'black' formatter
 let g:ale_python_mypy_options = '--follow-imports=silent'
 " }}}
-" Plugin: vim-autoformat -------------------------------------------------- {{{
+" Plugin: vim-prettier ---------------------------------------------------- {{{
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -255,14 +257,14 @@ nmap <silent> <leader>ts <esc>:w<CR>:TestSuite<CR>
 nmap <silent> <leader>tl <esc>:w<CR>:TestLast<CR>
 let g:test#strategy = 'dispatch'
 " }}}
-" tcomment ---------------------------------------------------------------- {{{
+" Plugin: tcomment -------------------------------------------------------- {{{
 Plug 'https://github.com/tomtom/tcomment_vim'
 " Prevent tcomment from making a zillion mappings (we just want the operator).
 let g:tcomment_mapleader2=''
 let g:tcomment_mapleader_comment_anyway=''
 let g:tcomment_textobject_inlinecomment=''
 " }}}
-" Pear-tree --------------------------------------------------------------- {{{
+" Plugin: Pear-tree ------------------------------------------------------- {{{
 Plug 'https://github.com/tmsvg/pear-tree'
 " If enabled, smart pair functions timeout after 60ms:
 let g:pear_tree_timeout = 60
@@ -304,8 +306,8 @@ nnoremap <leader>e :Extradite!<CR>
 Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
 Plug 'https://github.com/christoomey/vim-conflicted'
-" Auto-cd to the repo root
 " Plugin: vim-rooter ------------------------------------------------------ {{{
+" Auto-cd to the repo root
 Plug 'https://github.com/airblade/vim-rooter'
 let g:rooter_manual_only = 1
 nnoremap <leader>` :Rooter<cr>
@@ -366,7 +368,6 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 " Better display of whitespace - adds :StripWhitespace too
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
 
-
 " Plugin: vim-numbertoggle ------------------------------------------------ {{{
 Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle'
 set number relativenumber
@@ -387,7 +388,6 @@ let g:indentLine_fileTypeExclude = ['help']
 Plug 'https://github.com/lifepillar/pgsql.vim',                     {'for': 'sql'}
 let g:sql_type_default = 'pgsql'
 " }}}
-
 " Python ------------------------------------------------------------------ {{{
 Plug 'https://github.com/kh3phr3n/python-syntax',                   {'for': 'python'}
 Plug 'https://github.com/kalekundert/vim-coiled-snake',             {'for': 'python'}
@@ -461,14 +461,14 @@ Plug 'https://github.com/NLKNguyen/papercolor-theme'
 " Use 'ia'/'aa' for arguments,
 " or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
 Plug 'https://github.com/wellle/targets.vim'
-" Needed for vim-textobj-underscore
-Plug 'https://github.com/kana/vim-textobj-user'
 " Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
 Plug 'https://github.com/jeetsukumaran/vim-pythonsense'
 " Add [-, [+, [=, ]-, ]+, ]= "move by indent" maps
 Plug 'https://github.com/jeetsukumaran/vim-indentwise'
 " Add al/il for lines
 Plug 'https://github.com/kana/vim-textobj-line'
+" Needed for vim-textobj-underscore
+Plug 'https://github.com/kana/vim-textobj-user'
 " Add a_/i_ for underscores
 Plug 'https://github.com/lucapette/vim-textobj-underscore'
 " - provides 'i' indent object (e.g. 'vai')
