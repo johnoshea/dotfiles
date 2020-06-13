@@ -373,6 +373,7 @@ nnoremap <silent> <leader>2 :set nonumber!<cr>:set norelativenumber!<cr>
 " Plugin: indentLine ------------------------------------------------------ {{{
 Plug 'https://github.com/Yggdroot/indentLine'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_fileTypeExclude = ['help']
 " }}}
 
 " }}}
