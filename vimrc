@@ -293,7 +293,13 @@ augroup fugitive
 augroup END
 " }}}
 
+" Enable GitHub features in fugitive
 Plug 'https://github.com/tpope/vim-rhubarb'
+" Plugin: vim-extradite --------------------------------------------------- {{{
+Plug 'https://github.com/int3/vim-extradite'
+let g:extradite_showhash = 1
+nnoremap <leader>e :Extradite!<CR>
+" }}}
 Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
 Plug 'https://github.com/christoomey/vim-conflicted'
