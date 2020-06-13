@@ -64,3 +64,5 @@
 	verbose = true
 [hub]
 	host = wordbank.github.com
+[pull]
+	rebase = false
