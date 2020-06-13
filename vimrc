@@ -172,7 +172,14 @@ Plug 'https://github.com/andymass/vim-matchup/'
 Plug 'https://github.com/EinfachToll/DidYouMean'
 " Create directories and files at the same time
 Plug 'https://github.com/vim-scripts/easydir.vim'
-Plug 'https://github.com/tpope/vim-vinegar'
+Plug 'https://github.com/justinmk/vim-dirvish'
+" Plugin: remote-viewer --------------------------------------------------- {{{
+" Allows 'Dirvish ssh://user@hostname/path'
+Plug 'https://github.com/bounceme/remote-viewer'
+nnoremap <leader>ss :Dirvish ssh://
+" }}}
+" Shows git status in Dirvish windows
+Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
 " }}}
 
 " Editing ----------------------------------------------------------------- {{{
