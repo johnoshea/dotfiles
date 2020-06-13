@@ -30,3 +30,4 @@ inoremap , ,<c-g>u
 " Use 'Marked.app' for Markdown previews
 nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
 
+call SetArrowKeys()

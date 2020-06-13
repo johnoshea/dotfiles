@@ -1057,27 +1057,32 @@ inoremap <C-j> <C-o>J
 " }}}
 " }}}
 " Arrow keys -------------------------------------------------------------- {{{
-" Repurpose arrow keys to move lines
-" Arrow key remapping:
-" Up/Dn = move line up/dn
-" Left/Right = indent/unindent
-" Normal mode
-nnoremap <silent> <Left> <<
-nnoremap <silent> <Right> >>
-nnoremap <silent> <Up>   :<C-u>move-2<CR>==
-nnoremap <silent> <Down> :<C-u>move+<CR>==
+function SetArrowKeys()
+    " Repurpose arrow keys to move lines
+    " Arrow key remapping:
+    " Up/Dn = move line up/dn
+    " Left/Right = indent/unindent
+    " Normal mode
+    nnoremap <silent> <buffer> <Left> <<
+    nnoremap <silent> <buffer> <Right> >>
+    nnoremap <silent> <buffer> <Up>   :<C-u>silent move-2<CR>:silent! ==<CR>
+    nnoremap <silent> <buffer> <Down> :<C-u>silent move+<CR>:silent! ==<CR>
 
-" Visual mode
-vnoremap <silent> <Left> <gv
-vnoremap <silent> <Right> >gv
-vnoremap <silent> <Up>   :move-2<CR>gv=gv
-vnoremap <silent> <Down> :move'>+<CR>gv=gv
+    " Visual mode
+    vnoremap <silent> <buffer> <Left> <gv
+    vnoremap <silent> <buffer> <Right> >gv
+    vnoremap <silent> <buffer> <Up>   :move-2<CR>gv=gv
+    vnoremap <silent> <buffer> <Down> :move'>+<CR>gv=gv
 
-" Insert mode
-inoremap <silent> <Left> <C-D>
-inoremap <silent> <Right> <C-T>
-inoremap <silent> <Up>   <C-o>:move-2<CR>gv=gv
-inoremap <silent> <Down> <C-o>:move'>+<CR>gv=gv
+    " Insert mode
+    inoremap <silent> <buffer> <Left> <C-D>
+    inoremap <silent> <buffer> <Right> <C-T>
+endfunction
+
+augroup arrowkeys
+    autocmd!
+    autocmd BufNewFile,Bufread * call SetArrowKeys()
+augroup END
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
