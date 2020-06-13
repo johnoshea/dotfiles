@@ -130,9 +130,6 @@ if has('macunix')
 
     Plug 'https://github.com/marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
-    " Use 'Marked.app' for Markdown previews
-    nnoremap <leader>ma :silent !open -a Marked\ 2.app '%:p'<cr>
-
     " Plugin: YouCompleteMe ----------------------------------------------- {{{
     function! BuildYCM(info)
         " info is a dictionary with 3 fields
