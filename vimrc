@@ -497,7 +497,6 @@ nmap <Leader>* <Plug>RgRawWordUnderCursor
 " Buffers ----------------------------------------------------------------- {{{
 " Plugin: vim-sayonara ---------------------------------------------------- {{{
 Plug 'https://github.com/mhinz/vim-sayonara'
-nnoremap <C-q><C-q> <ESC>:Sayonara<CR>
 " }}}
 
 Plug 'https://github.com/moll/vim-bbye'
@@ -986,14 +985,10 @@ nnoremap <S-Tab> <C-w>W
 xnoremap <leader>p "0p
 nnoremap <leader>p "0p
 
-" Move to the horizontal, as well as vertical, position for a mark
-nnoremap ' `
-
 " Don't select the end of line with '$' - I almost always cursor left when
 " doing this
 nmap $ g_
 
-nnoremap Y y$
 function! Twf()
   let temp = tempname()
   execute 'silent ! twf ' . @% . ' > ' . temp
@@ -1016,8 +1011,6 @@ nnoremap <leader>cl :cclose<CR>
 
 " }}}
 " Saving ------------------------------------------------------------------ {{{
-inoremap <D-s> <c-o>:w<CR>``
-nnoremap <D-s> :w<CR>``
 " Save normal buffers on <CR> - use `:update` to only save when modified -
 " also turn off search highlighting
 nnoremap <silent><expr> <CR> empty(&buftype) ? ":nohls<CR> \| :update\<CR>" : ":nohls<CR>\<CR>"
