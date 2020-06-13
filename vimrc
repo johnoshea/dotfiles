@@ -1004,6 +1004,24 @@ function! Twf()
 endfunction
 
 nnoremap <silent> <leader>tv :call Twf()<CR>
+
+" Formatting -------------------------------------------------------------- {{{
+" gq wrapper that:
+" - tries its best at keeping the cursor in place
+" - tries to handle formatter errors
+function! Format(type, ...)
+    normal! gggqG
+    if v:shell_error > 0
+        silent undo
+        redraw
+        echomsg 'formatprg "' . &formatprg . '" exited with status ' . v:shell_error
+    endif
+    call winrestview(w:gqview)
+    unlet w:gqview
+endfunction
+nmap <silent> gq :let w:gqview = winsaveview()<CR>:set opfunc=Format<CR>g@<CR>
+
+" }}}
 " Compiling --------------------------------------------------------------- {{{
 nnoremap <leader>cc :w<CR>:copen 6<CR><C-w>p:make<CR>
 nnoremap <leader>co :copen 6<CR>
