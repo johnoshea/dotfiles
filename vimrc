@@ -989,6 +989,10 @@ nnoremap <leader>p "0p
 " doing this
 nmap $ g_
 
+" Increment/decrement the selection as an ordered list
+vnoremap + g<C-a>gv
+vnoremap - g<C-x>gv
+
 function! Twf()
   let temp = tempname()
   execute 'silent ! twf ' . @% . ' > ' . temp
@@ -1080,6 +1084,7 @@ inoremap <silent> <Down> <C-o>:move'>+<CR>gv=gv
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
 nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
+nnoremap <leader>V :vsplit ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
 
 augroup VimFiles
     autocmd!
