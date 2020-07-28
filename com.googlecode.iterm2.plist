@@ -10,6 +10,8 @@
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -24,6 +26,8 @@
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<false/>
+	<key>Command</key>
+	<string>vim</string>
 	<key>CommandSelection</key>
 	<true/>
 	<key>Control</key>
@@ -24805,6 +24809,8 @@
 	<string>~/Documents/src/dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
+	<key>NSOverlayScrollersFallBackForAccessoryViews</key>
+	<false/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -24849,13 +24855,13 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>345 645 735 382 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>532 639 616 174 0 0 1680 1027 </string>
+	<string>972 949 616 174 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 713 400 129 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 606 620 392 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1080 0 0 1920 1080 </string>
+	<string>0 0 2560 1440 0 0 2560 1440 </string>
 	<key>NeverWarnAboutShortLivedSessions_4EB30510-30BD-4161-8B5A-6C35045BE6AC</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_EC39B4FA-9AC7-45D7-8361-F694DEC21044</key>
@@ -27480,9 +27486,9 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>160</integer>
 			<key>Command</key>
-			<string>vim</string>
+			<string>/usr/local/bin/zsh -c "/usr/local/bin/vim"</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -27530,6 +27536,8 @@
 			<string>Yes</string>
 			<key>Custom Directory</key>
 			<string>No</string>
+			<key>Custom Window Title</key>
+			<string>Vimwiki</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -27591,6 +27599,8 @@
 			<integer>0</integer>
 			<key>Initial Text</key>
 			<string></string>
+			<key>Initial Use Transparency</key>
+			<false/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -27873,13 +27883,15 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Hotkey Window</string>
+			<string>Sidebar</string>
 			<key>Non Ascii Font</key>
 			<string>Osaka-Mono 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>InputMono-Regular 11</string>
+			<string>JetBrainsMono-Regular 13</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<true/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -27887,7 +27899,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>2</integer>
 			<key>Rows</key>
-			<integer>50</integer>
+			<integer>80</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -28043,7 +28055,7 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.1478703997461929</real>
+			<real>0.0</real>
 			<key>Triggers</key>
 			<array>
 				<dict>
@@ -28063,32 +28075,40 @@
 			<false/>
 			<key>Use Cursor Guide</key>
 			<false/>
+			<key>Use Custom Window Title</key>
+			<true/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>0.90000000000000002</real>
+			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>7</integer>
+			<integer>0</integer>
 			<key>Working Directory</key>
 			<string>/Users/johno</string>
 		</dict>
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.11beta1</string>
+		<string>3.3.10beta4</string>
+		<string>3.3.12beta3</string>
+		<string>3.3.7beta1</string>
 		<string>3.3.7beta4</string>
 		<string>3.3.7beta3</string>
-		<string>3.3.4beta1</string>
-		<string>3.3.5beta3</string>
-		<string>3.3.2beta2</string>
-		<string>3.3.7beta2</string>
-		<string>3.3.7beta1</string>
-		<string>3.3.5beta1</string>
 		<string>3.3.3beta2</string>
 		<string>3.3.8beta4</string>
+		<string>3.3.5beta1</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.5beta3</string>
+		<string>3.3.10beta1</string>
+		<string>3.3.2beta2</string>
+		<string>3.4.0beta1</string>
+		<string>3.3.4beta1</string>
+		<string>3.3.12beta2</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -28100,21 +28120,23 @@
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1080}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
 		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1080}}</string>
+		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{269, 682}</string>
+		<string>{269, 683}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>B2250099-4A92-4C68-AC4F-86C62DBF9B2F</string>
+	<key>NoSyncLastOSVersion</key>
+	<string>Version 10.15.6 (Build 19G73)</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>52</integer>
+	<integer>96</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -28232,6 +28254,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>selectionLength</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -28243,6 +28273,14 @@
 				<string>triggerName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>parentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -28368,6 +28406,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>selection</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>autoNameFormat</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -28444,6 +28490,14 @@
 				<true/>
 				<key>name</key>
 				<string>style</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.jobPid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -28831,6 +28885,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncRestoreWindowsCount</key>
+	<integer>0</integer>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>588610892.03167403</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -28901,15 +28957,15 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing_new.xml?shard=63</string>
+	<string>https://iterm2.com/appcasts/testing_modern.xml?shard=63</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-26T06:47:23Z</date>
+	<date>2020-07-20T11:30:17Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>SeparateWindowTitlePerTab</key>
@@ -28980,7 +29036,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta4</string>
+	<string>3.4.0beta1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
