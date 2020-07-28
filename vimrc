@@ -288,7 +288,7 @@ augroup fugitive
     nnoremap <leader>gl :Gclog<CR>
     nnoremap <leader>gb :Git-blame<CR>
     nnoremap <leader>gf :Git-fetch<CR>
-    nnoremap <leader>gps :Git-push<CR>
+    nnoremap <leader>gps :Git push<CR>
     nnoremap <leader>gpl :Git pull<CR>
 augroup END
 " }}}
