@@ -430,7 +430,12 @@ let g:terraform_fmt_on_save = 1
 Plug 'https://github.com/tmux-plugins/vim-tmux',                    {'for': 'tmux'}
 " Nginx
 Plug 'https://github.com/chr4/nginx.vim',                           {'for': 'nginx'}
+" TOML
+Plug 'https://github.com/cespare/vim-toml',                         {'for': 'toml'}
+" Jinja2
+Plug 'https://github.com/Glench/Vim-Jinja2-Syntax',                 {'for': 'jinja2'}
 " }}}
+
 " Plugin: vimwiki --------------------------------------------------------- {{{
 Plug 'https://github.com/vimwiki/vimwiki'
 let WIKI_BASE_DIR = '~/vimwiki'
