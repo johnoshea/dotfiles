@@ -5,7 +5,7 @@ setlocal formatprg=black\ --quiet\ -\ 2>\ /dev/null
 if executable('black')
     augroup black
         autocmd!
-        autocmd BufWritePre *.py :normal GQ
+        autocmd BufWritePre *.py :normal gq
     augroup END
 endif
 
