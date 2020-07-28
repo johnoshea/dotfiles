@@ -47,7 +47,7 @@ if has('macunix')
     " Navigation
     " Plugin: FZF --------------------------------------------------------- {{{
     Plug '/usr/local/opt/fzf' | Plug 'https://github.com/junegunn/fzf.vim'
-    let $FZF_DEFAULT_COMMAND = 'fd --type f --color=always --exclude .git --ignore-file ~/.gitignore'
+    let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git --ignore-file ~/.gitignore'
     nnoremap <silent> <Leader><Leader> :Files<CR>
     nnoremap <silent> <Leader><CR> :Buffers<CR>
     nnoremap <silent> <Leader>` :Marks<CR>
