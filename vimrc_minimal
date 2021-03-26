@@ -1,0 +1,261 @@
+" .vimrc
+" Author: John O'Shea <john.m.oshea@gmail.com>
+" Source: <https://github.com/johnoshea/dotfiles>
+
+" Basic settings ---------------------------------------------------------- {{{
+
+" Miscellaneous settings
+set encoding=utf-8                " UTF-8 everywhere
+set termencoding=utf-8            " UTF-8 everywhere
+scriptencoding utf-8              " UTF-8 everywhere
+set clipboard=unnamedplus,unnamed,exclude:cons\|linux           " Use the system clipboard for copy/paste
+set ttyfast                       " Tell Vim we're using a fast connection - smoother redraws
+set backspace=indent,eol,start    " Backspace over everything in insert mode
+set writebackup                   " Use a backup file just for the purposes of saving
+set backupcopy=yes                " using 'auto'/'no' may cause file-watching programs to not see changes
+set history=10000                 " Keep 10000 lines of command line history
+set undolevels=10000              " Keep lots of undo
+set ruler                         " Show the cursor position all the time
+set showcmd                       " Display incomplete commands
+set display=lastline,uhex         " Show unprintables as hex and show as much of last line as possible
+set redrawtime=3000               " Wait up to 3s to syntax-hightlight large files
+set lazyredraw                    " Set lazy redraw, to speed up macros and the like
+set sessionoptions+=winpos,resize " Save window positions and sizes as well
+set hidden                        " Allow movement to another buffer w/o saving the current one
+set showmatch                     " Show matching bracket
+set matchtime=3                   " (for only 0.3s)
+set confirm                       " Get confirmation before we do anything stupid
+set whichwrap+=<,>,[,],h,l        " <left> and <right> move over line endings
+set visualbell                    " Flash instead of beeping
+set browsedir=current             " Open up the file-browser in the current directory
+set termencoding=utf-8            " And set UTF-8 for the terminal too
+set nobomb                        " Don't write a Byte Order Mark
+set matchpairs+=<:>               " Match angle-brackets as well by default
+set linebreak                     " Break lines at a sensible place
+set noerrorbells                  " Error bells are annoying
+set title                         " Set descriptive window/terminal title
+set report=0                      " Report any lines changed
+set splitright                    " When splitting vertically, split to the right
+set splitbelow                    " When splitting horizontally, split below
+set scrolloff=5                   " Don't go right to the edge of the window when scrolling
+set sidescroll=1                  " scroll one character at a time to reveal more text as needed
+set sidescrolloff=5               " Lines visible to the left/right of cursor when scrolling
+set laststatus=2                  " Always show a status line
+set nomodeline                    " Disallow modelines (for security reasons)
+set autowrite                     " Write file before some commands
+set wildmenu                      " Enable wildmenu for completion
+set wildmode=longest:full,full    " Complete the next full match
+set synmaxcol=250                 " Don't syntax-colour long lines (too slow otherwise)
+set virtualedit=all               " Allow the cursor to move to 'invalid' places
+set complete=.,w,b,t              " Complete current buffer, other windows, other buffers and tags
+set cmdheight=2                   " Avoid 'Press Enter' messages
+set fillchars=diff:⣿,vert:│       " Have different vertical splits for diffs
+set switchbuf=useopen             " Jump to first open window containing buffer (if possible)
+set diffopt+=vertical             " show diffs vertically
+if v:version > 810 || v:version == 810 && has('patch360')
+    set diffopt+=indent-heuristic    " add alternative diff options
+    " set diffopt+=algorithm:patience  " off by default as it's slower
+endif
+set noshowmode                    " vim-crystalline shows this for us
+set autoread                      " Auto-reload files modified outside of vim
+set nrformats=hex                 " Ignore octal/binary for incrementing/decrementing numbers
+
+" Time out on key codes but not mappings.
+" Basically this makes terminal Vim work sanely.
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
+set formatoptions+=c        " Auto-wrap comments
+set formatoptions+=n        " Recognize numbered lists
+set formatoptions+=o        " Insert comment leader after 'o' or 'O'
+set formatoptions+=q        " Allow formatting of comments with 'gq'
+set formatoptions+=r        " Insert comment leader after <Enter>
+set formatoptions-=t        " break comment-lines at &textwidth, but not code
+" Delete comment character when joining commented lines
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j      " remove extra comment leaders when joining lines
+  set nojoinspaces          " only add a single space when joining lines
+endif
+
+set shortmess=a             " Shortcut for various status line options
+set shortmess+=T            " Truncate messages in the middle if too long
+set shortmess+=I            " Disable intro message
+set shortmess+=t            " Truncate file at start if too long
+set shortmess+=O            " Message for reading file overwrites previous
+
+set viminfo='1000           " Keep marks for N files
+set viminfo+=<1000          " Keep N lines for each register
+set viminfo+=h              " Don't restore hlsearch on startup
+
+set completeopt+=menu      " use popup menu to show completions
+set completeopt+=menuone   " use popup menu even if only one completion match
+set completeopt+=preview   " show the preview window
+
+" }}}
+" Tabs -------------------------------------------------------------------- {{{
+" For an explanation of the 'tabs vs spaces' used below, see
+" <http://www.jwz.org/doc/tabs-vs-spaces.html>
+set shiftwidth=4                " # spaces for autoindent steps
+set shiftround                  " Always round to a multiple of 'shiftwidth'
+set tabstop=4                   " Tabs = 4 spaces, but 'expandtab' *must* be set
+set softtabstop=4               " # spaces that a tab counts for
+set expandtab                   " Turn all tabs to spaces on save
+set smarttab                    " Use 'shiftwidth' spaces instead of tabs
+set autoindent                  " Copy indent from current line when starting a new one
+filetype plugin indent on
+
+" }}}
+" Searching --------------------------------------------------------------- {{{
+set ignorecase                  " Ignore case when searching
+set infercase                   " Make completions smarter about cases
+set smartcase                   " Override 'ignorecase' when needed
+set incsearch                   " Show search matches as you type
+set hlsearch                    " Try seach highlights again
+
+augroup nohighlight
+    autocmd!
+    autocmd VimEnter * nohls
+augroup END
+
+" }}}
+" Command window ---------------------------------------------------------- {{{
+" Typos
+command! -bang E e<bang>
+command! -bang Q q<bang>
+command! -bang W w<bang>
+command! -bang QA qa<bang>
+command! -bang Qa qa<bang>
+command! -bang Wa wa<bang>
+command! -bang WA wa<bang>
+command! -bang Wq wq<bang>
+command! -bang WQ wq<bang>
+command! -bang Wn wn<bang>
+command! -bang WN wn<bang>
+command! -bang Xa xa<bang>
+command! -bang XA xa<bang>
+
+augroup command_window
+    autocmd!
+    " have <Ctrl-C> leave cmdline-window
+    autocmd CmdwinEnter * nnoremap <buffer> <C-c> :q\|echo ""<cr>
+    autocmd CmdwinEnter * inoremap <buffer> <C-c> <esc>:q\|echo ""<cr>
+    " start command line window in insert mode and no line numbers
+    autocmd CmdwinEnter * startinsert
+    autocmd CmdwinEnter * set nonumber
+augroup END
+
+" }}}
+" File loading ------------------------------------------------------------ {{{
+augroup vimStartup
+    autocmd!
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid, when inside an event handler
+    " (happens when dropping a file on gvim) and for a commit message (it's
+    " likely a different one than last time).
+    autocmd BufReadPost *
+      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+      \ |   exe "normal! g`\""
+      \ | endif
+
+augroup END
+
+" Remove any trailing whitespace that is in the file
+augroup removewhitespace
+    autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+augroup END
+
+" }}}
+" Undo -------------------------------------------------------------------- {{{
+" Trailing double slashes on directory names below cause Vim to save the
+" full path to each file, but with slashes escaped - means we can have
+" backup/undo files with the same names in multiple directories and keep
+" them distinct
+if exists('+undofile')
+    if !isdirectory(expand('~/.vim/tmp/undo'))
+        !mkdir -p ~/.vim/tmp/undo
+    endif
+    set backupdir^=~/.vim/tmp// " Backups are written to ~/.vim/tmp/ if possible
+    set directory^=~/.vim/tmp// " Swapfiles are also written to ~/.vim/tmp too
+    set undodir^=~/.vim/tmp/undo//,/tmp//
+
+    set writebackup     " protect against crash-during-write
+    set nobackup        " but do not persist backup after successful write
+    set backupcopy=auto " use rename-and-write-new method whenever safe
+    set undofile
+    set noswapfile
+    set updatetime=500 " Write swap files after 0.5 seconds of inactivity.
+    " Drop an undo breakpoint so I can recover from insert-mode ctrl-w's
+    inoremap <c-w> <c-g>u<c-w>
+endif
+" }}}
+" Mappings ---------------------------------------------------------------- {{{
+" Swap the behaviour of j/k with gj/gk - i.e. j/k always move by screenlines
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
+
+" Miscellaneous
+
+" Quickly select text you just pasted
+noremap gV `[v`]
+
+" Move to paragraph lines, not the spaces between them
+nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
+nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
+
+" Use <tab> to move between windows
+nnoremap <Tab> <C-w>w
+nnoremap <S-Tab> <C-w>W
+
+" Paste the first copy repeatedly using <localleader>p
+xnoremap <leader>p "0p
+nnoremap <leader>p "0p
+
+" Move to the horizontal, as well as vertical, position for a mark
+nnoremap ' `
+
+" Don't select the end of line with '$' - I almost always cursor left when
+" doing this
+nmap $ g_
+
+
+" Windows ----------------------------------------------------------------- {{{
+" Tmux-like split panes navigation
+noremap <C-W>\| :vsplit<CR><C-W>l
+noremap <C-W>- :split<CR><C-W>j
+noremap <C-W><C-W> <C-W>w
+" }}}
+
+" Lines ------------------------------------------------------------------- {{{
+" Keep the cursor in place while joining lines using 'J'
+nnoremap J mzJ`z
+" Join lines in insert mode
+inoremap <C-j> <C-o>J
+" }}}
+" }}}
+" Arrow keys -------------------------------------------------------------- {{{
+" Repurpose arrow keys to move lines
+" Arrow key remapping:
+" Up/Dn = move line up/dn
+" Left/Right = indent/unindent
+" Normal mode
+nnoremap <silent> <Left> <<
+nnoremap <silent> <Right> >>
+nnoremap <silent> <Up>   :<C-u>move-2<CR>==
+nnoremap <silent> <Down> :<C-u>move+<CR>==
+
+" Visual mode
+vnoremap <silent> <Left> <gv
+vnoremap <silent> <Right> >gv
+vnoremap <silent> <Up>   :move-2<CR>gv=gv
+vnoremap <silent> <Down> :move'>+<CR>gv=gv
+
+" Insert mode
+inoremap <silent> <Left> <C-D>
+inoremap <silent> <Right> <C-T>
+inoremap <silent> <Up>   <C-o>:move-2<CR>gv=gv
+inoremap <silent> <Down> <C-o>:move'>+<CR>gv=gv
+" }}}
