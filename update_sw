@@ -10,7 +10,7 @@ INSTALLED_CONFIG=${HOME}/.local/personal_config
 mkdir -p ${INSTALLED_CONFIG}
 echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE} / Go: ${CURRENT_GO}] ***"
 cd "$UPDATE_SW_DIR" || exit
-pyenv local 3.7.4
+pyenv local $(cat ~/.python-version)
 rbenv local 2.6.4
 nodenv local 12.8.0
 goenv local 1.13.4
