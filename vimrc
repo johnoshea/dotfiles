@@ -51,8 +51,8 @@ if has('macunix')
     imap <c-x><c-j> <plug>(fzf-complete-file-ag)
     imap <c-x><c-l> <plug>(fzf-complete-line)
     inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
-    " cd to Dropbox Notes dir (useful for Notational Velocity/Nebulous Notes)
-    nnoremap <leader>n :lcd ~/Dropbox/Notes<cr>:Files<cr>
+    " cd to Notes dir (useful for Notational Velocity/Nebulous Notes)
+    nnoremap <leader>n :lcd ~/Documents/3\ Current/Notes<cr>:Files<cr>
 
     " Command for git grep
     " - fzf#vim#grep(command, with_column, [options], [fullscreen])
@@ -465,7 +465,7 @@ Plug 'https://github.com/tpope/vim-dispatch'
 " Miscellaneous ----------------------------------------------------------- {{{
 " Plugin: Notational FZF -------------------------------------------------- {{{
 Plug 'https://github.com/Alok/notational-fzf-vim'
-let g:nv_search_paths = ['~/Dropbox/Notes']
+let g:nv_search_paths = ['~/3\ Current/Notes']
 let g:nv_use_short_pathnames = 1
 nnoremap <c-n> <ESC>:NV<CR>
 " }}}
