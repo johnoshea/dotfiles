@@ -213,7 +213,12 @@ let g:ale_linters = {
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_echo_msg_format = '%linter%> %code: %%s'
-let g:ale_fixers = {'python': ['isort']}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black', 'isort'],
+\   'javascript': ['prettier','eslint']
+\}
+let g:ale_fix_on_save = 1
 let g:ale_python_flake8_options = '--max-line-length=88'  " match 'black' formatter
 let g:ale_python_mypy_options = '--follow-imports=silent'
 " }}}
