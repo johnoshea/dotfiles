@@ -117,7 +117,12 @@ if has('macunix')
 
     Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
     let g:ycm_autoclose_preview_window_after_completion = 1
-    map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    let g:ycm_add_preview_to_completeopt = 'popup'
+    let g:ycm_confirm_extra_conf = 0
+    nnoremap <silent> <buffer> <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    nnoremap <silent> <buffer> <leader>yg :YcmCompleter GoTo<CR>
+    nnoremap <silent> <buffer> <leader>yr :YcmCompleter GoToReferences<CR>
+    nnoremap <silent> <buffer> <leader>yd :YcmCompleter GetDoc<CR>
     " }}}
 endif
 " }}}
