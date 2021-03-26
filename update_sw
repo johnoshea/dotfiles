@@ -37,6 +37,7 @@ brew doctor
 brew update
 brew upgrade
 brew cask upgrade
+brew uninstall neovim && brew uninstall luajit && brew install --HEAD luajit && brew install --HEAD neovim
 brew cleanup
 echo "*** Pyenv"
 echo
@@ -73,9 +74,12 @@ done
 echo "*** Cargo"
 echo
 cargo install-update -a
+echo "*** Neovim bundles"
+echo
+TERM=xterm-256color nvim +PlugUpdate! +qa
 echo "*** Vim bundles"
 echo
-TERM=xterm-256color vim +PlugUpdate! +qa
+TERM=xterm-256color /usr/local/bin/vim +PlugUpdate! +qa
 echo "*** zprezto submodules"
 echo
 cd ~/src/prezto || exit
