@@ -603,16 +603,8 @@ if has('gui_running')
   set lines=60
   set columns=180
 
-  if g:isMac
-    set guifont=SF\ Mono\ Powerline:h12
-    set fuoptions=maxvert,maxhorz
-  elseif g:isUnix
-    set guifont=Bitstream\ Vera\ Sans\ Mono:h10
-    set guioptions-=m
-  elseif g:isWindows
-    set guifont=Consolas:h12
-    set guioptions-=m
-  endif
+  set guifont=SF\ Mono\ Powerline:h12
+  set fuoptions=maxvert,maxhorz
 else
   if &t_Co >= 256
     " force true color on within tmux
@@ -771,18 +763,9 @@ augroup vimStartup
 augroup END
 
 " Fileformats
-" For any given OS, prefer its native fileformat for new files
-if g:isUnix || g:isMac
-    set fileformats=unix,dos,mac
-else
-   set fileformats=dos,unix,mac
-endif
+set fileformats=unix,dos,mac
 
-if g:isWindows
-    set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*,*\\bin\\*,*\\pkg\\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/bin/*,*/pkg/*
-endif
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/bin/*,*/pkg/*
 set wildignore+=*.pdf,*.zip,*.so                 " binaries
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
@@ -799,22 +782,12 @@ set wildignore+=*.pyc,*.pyo                      " Python byte code
 " backup/undo files with the same names in multiple directories and keep
 " them distinct
 if exists('+undofile')
-    if g:isWindows
-        if !isdirectory(expand('~/vimfiles/tmp/undo'))
-            !mkdir ~/vimfiles/tmp
-            !mkdir ~/vimfiles/tmp/undo
-        endif
-        set backupdir=~/vimfiles/tmp// " where to put backup files
-        set directory=~/vimfiles/tmp// " directory to place swap files in
-        set undodir=~/vimfiles/undo// " where to put undo files
-    else
-        if !isdirectory(expand('~/.vim/tmp/undo'))
-            !mkdir -p ~/.vim/tmp/undo
-        endif
-        set backupdir^=~/.vim/tmp// " Backups are written to ~/.vim/tmp/ if possible
-        set directory^=~/.vim/tmp// " Swapfiles are also written to ~/.vim/tmp too
-        set undodir^=~/.vim/tmp/undo//,/tmp//
+    if !isdirectory(expand('~/.vim/tmp/undo'))
+        !mkdir -p ~/.vim/tmp/undo
     endif
+    set backupdir^=~/.vim/tmp// " Backups are written to ~/.vim/tmp/ if possible
+    set directory^=~/.vim/tmp// " Swapfiles are also written to ~/.vim/tmp too
+    set undodir^=~/.vim/tmp/undo//,/tmp//
 
     set writebackup     " protect against crash-during-write
     set nobackup        " but do not persist backup after successful write
@@ -991,8 +964,8 @@ augroup arrowkeys
 augroup END
 " }}}
 " Vim editing ------------------------------------------------------------- {{{
-nnoremap <leader>v :e ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
-nnoremap <leader>V :vsplit ~/src/dotfiles/vimrc<cr>:lcd ~/src/dotfiles<cr>
+nnoremap <leader>v :e $MYVIMRC<cr>:lcd ~/src/dotfiles<cr>
+nnoremap <leader>V :vsplit $MYVIMRC<cr>:lcd ~/src/dotfiles<cr>
 
 augroup VimFiles
     autocmd!
@@ -1003,8 +976,8 @@ augroup end
 " the bang (!) forces it to overwrite this command rather than stack it
 augroup autosourcevimrc
     autocmd!
-    autocmd BufWritePost .vimrc :source ~/.vimrc
-    autocmd BufWritePost vimrc :source ~/.vimrc
+    autocmd BufWritePost .vimrc :source $MYVIMRC
+    autocmd BufWritePost vimrc :source $MYVIMRC
 augroup END
 
 " }}}
