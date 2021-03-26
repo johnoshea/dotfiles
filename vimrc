@@ -281,6 +281,10 @@ Plug 'https://github.com/sodapopcan/vim-twiggy'
 nnoremap <leader>tw :Twiggy<cr>
 nnoremap <leader>TW :Twiggy<space>
 " }}}
+" Plugin: committia.vim --------------------------------------------------- {{{
+Plug 'https://github.com/rhysd/committia.vim'
+let g:committia_open_only_vim_starting = 1
+" }}}
 " }}}
 
 " Display ----------------------------------------------------------------- {{{
