@@ -124,6 +124,9 @@ if has('macunix')
     nnoremap <silent> <buffer> <leader>yr :YcmCompleter GoToReferences<CR>
     nnoremap <silent> <buffer> <leader>yd :YcmCompleter GetDoc<CR>
     " }}}
+
+    " Create nicely-formatted code images from the selection
+    Plug 'https://github.com/segeljakt/vim-silicon'
 endif
 " }}}
 
