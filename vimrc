@@ -417,11 +417,19 @@ let g:vimwiki_global_ext = 0
 " let g:vimwiki_list = [{'path': '~/iCloud/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 " }}}
 " Colorschemes ------------------------------------------------------------ {{{
-" Default
-let g:gruvbox_italic=1
+" Gruvbox
 Plug 'https://github.com/gruvbox-community/gruvbox'
-" Alternate
+let g:gruvbox_italic=1
+let g:gruvbox_invert_signs=1
+let g:gruvbox_invert_indent_guides=1
+let g:gruvbox_contrast_dark='hard'
+" Paperwhite, for light terminal sessions
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
+" Srcery
+Plug 'https://github.com/srcery-colors/srcery-vim'
+let g:srcery_italic = 1
+let g:srcery_inverse_matches = 0
+let g:srcery_inverse_match_paren = 0
 " }}}
 " Text objects ------------------------------------------------------------ {{{
 " Use 'ia'/'aa' for arguments,
@@ -589,7 +597,7 @@ set clipboard=unnamed
 
 if has('gui_running')
   set background=dark
-  colorscheme gruvbox
+  colorscheme srcery
 
   set guioptions=egm
   set lines=60
@@ -615,7 +623,7 @@ else
       colorscheme PaperColor
       set background=light
     else
-      colorscheme gruvbox
+      colorscheme srcery
       set background=dark
     endif
   else
