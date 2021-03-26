@@ -679,6 +679,8 @@ augroup nohighlight
     autocmd VimEnter * nohls
 augroup END
 
+nnoremap ,, :nohls<CR>
+
 " Use tab and shift-tab to move between matches while in search ('/') mode
 cnoremap <expr>  <tab>    getcmdtype() =~ '[?/]' ? '<c-g>' : feedkeys('<tab>', 'int')[1]
 cnoremap <expr>  <s-tab>  getcmdtype() =~ '[?/]' ? '<c-t>' : feedkeys('<s-tab>', 'int')[1]
@@ -892,6 +894,20 @@ function! Twf()
 endfunction
 
 nnoremap <silent> <leader>tv :call Twf()<CR>
+
+" Try using Q as @q
+nnoremap Q @q
+
+" Try adding an 'edit register' mapping - type 'cq' followed by the register
+" to edit
+nnoremap <expr> cq call({r-> ":\<c-u>let @".r." = \<c-r>\<c-r>=string(getreg('".r."'))\<cr>\<c-f>\<left>" }, [nr2char(getchar())])
+
+" Try gs as a shortcut to start a global search and replace
+nnoremap gs :%s/
+
+" Get out of diff
+nnoremap <silent> <c-w><c-o> :diffoff!<bar>only<cr>
+nnoremap <silent> <c-w>o :diffoff!<bar>only<cr>
 
 " Formatting -------------------------------------------------------------- {{{
 " gq wrapper that:
