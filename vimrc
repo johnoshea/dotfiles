@@ -346,6 +346,8 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_fileTypeExclude = ['help']
 " }}}
 
+" Easier/better handling of in-file splits
+Plug 'https://github.com/wellle/visual-split.vim'
 " }}}
 " Filetypes/file formats -------------------------------------------------- {{{
 " Plugin: pgsql ----------------------------------------------------------- {{{
@@ -363,6 +365,17 @@ Plug 'https://github.com/tweekmonster/django-plus.vim',             {'for': 'dja
 " Javascript -------------------------------------------------------------- {{{
 Plug 'https://github.com/pangloss/vim-javascript',                  {'for': 'javascript'}
 Plug 'https://github.com/othree/javascript-libraries-syntax.vim',   {'for': 'javascript'}
+" }}}
+" Markdown ---------------------------------------------------------------- {{{
+Plug 'https://github.com/godlygeek/tabular'
+Plug 'https://github.com/plasticboy/vim-markdown'
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+" let g:vim_markdown_fenced_languages = ['csharp=cs']
+" Plugin: vim-table-mode -------------------------------------------------- {{{
+Plug 'https://github.com/dhruvasagar/vim-table-mode'
+let g:table_mode_corner='|'
+" }}}
 " }}}
 
 " Add CSS3 syntax highlighting
@@ -876,6 +889,7 @@ nmap $ g_
 vnoremap + g<C-a>gv
 vnoremap - g<C-x>gv
 
+" Try [twf](https://github.com/wvanlint/twf)
 function! Twf()
   let temp = tempname()
   execute 'silent ! twf ' . @% . ' > ' . temp
