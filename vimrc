@@ -27,20 +27,6 @@ if has('macunix')
         " }}}
         " Ultisnips snippets are now stored in honza/vim-snippets
         Plug 'https://github.com/honza/vim-snippets'
-
-        " Plugin: Tagbar -------------------------------------------------- {{{
-        Plug 'https://github.com/majutsushi/tagbar'
-        let g:tagbar_width = 40
-        let g:tagbar_autofocus = 1
-        let g:tagbar_sort = 0
-        let g:tagbar_compact = 1
-        let g:tagbar_expand = 0
-        let g:tagbar_singleclick = 1
-        let g:tagbar_usearrows = 1
-        nnoremap <leader>b :TagbarToggle<CR>
-        " }}}
-        " - auto-create 'tags' files - to disable per-directory, create a .notags file
-        Plug 'https://github.com/ludovicchabant/vim-gutentags'
     endif
     " }}}
 
@@ -117,18 +103,6 @@ if has('macunix')
     " vim-tmux-focus-events
     Plug 'https://github.com/tmux-plugins/vim-tmux-focus-events'
     nnoremap <leader>z :call system("tmux resize-pane -Z")<CR>
-
-    " 'Writing' plugins
-    Plug 'https://github.com/reedes/vim-pencil', {'for': ['text', 'markdown']}
-    " Adds insert-mode common typo fixes
-    Plug 'https://github.com/reedes/vim-litecorrect', {'for': ['text', 'markdown']}
-    " Adds iq/iQ/aq/aQ double/single text objects, plus '(', ')' to navigate by sentences
-    Plug 'https://github.com/reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
-    " Adds is/as 'sentence' text objects
-    Plug 'https://github.com/reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
-    Plug 'https://github.com/nelstrom/vim-markdown-folding', {'for': ['text', 'markdown']}
-
-    Plug 'https://github.com/marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
     " Plugin: YouCompleteMe ----------------------------------------------- {{{
     function! BuildYCM(info)
@@ -275,11 +249,6 @@ augroup fugitive
     autocmd!
     " Auto-clean fugitive buffers.
     autocmd BufReadPost fugitive://* set bufhidden=delete
-    " Map '..' to go up a directory in fugitive tree/blob buffers.
-    autocmd User fugitive
-        \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-        \   nnoremap <buffer> .. :edit %:h<CR> |
-        \ endif
 
     nnoremap <leader>gs :Git<CR>
     nnoremap <leader>ga :Gwrite<CR>
@@ -295,20 +264,8 @@ augroup END
 
 " Enable GitHub features in fugitive
 Plug 'https://github.com/tpope/vim-rhubarb'
-" Plugin: vim-extradite --------------------------------------------------- {{{
-Plug 'https://github.com/int3/vim-extradite'
-let g:extradite_showhash = 1
-nnoremap <leader>e :Extradite!<CR>
-" }}}
 Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
-Plug 'https://github.com/christoomey/vim-conflicted'
-" Plugin: vim-rooter ------------------------------------------------------ {{{
-" Auto-cd to the repo root
-Plug 'https://github.com/airblade/vim-rooter'
-let g:rooter_manual_only = 1
-nnoremap <leader>` :Rooter<cr>
-" }}}
 " Plugin: vim-twiggy ------------------------------------------------------ {{{
 Plug 'https://github.com/sodapopcan/vim-twiggy'
 nnoremap <leader>tw :Twiggy<cr>
@@ -388,17 +345,6 @@ let g:sql_type_default = 'pgsql'
 " Python ------------------------------------------------------------------ {{{
 Plug 'https://github.com/kalekundert/vim-coiled-snake',             {'for': 'python'}
 Plug 'https://github.com/Vimjas/vim-python-pep8-indent',            {'for': 'python'}
-" }}}
-" Go ---------------------------------------------------------------------- {{{
-Plug 'fatih/vim-go',                                                {'for': 'go', 'do': ':GoInstallBinaries'}
-let g:go_fmt_command = 'goimports'    " Run goimports along gofmt on each save
-let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_functions = 1
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 " }}}
 " Django ------------------------------------------------------------------ {{{
 Plug 'https://github.com/vim-scripts/django.vim',                   {'for': 'django'}
@@ -494,15 +440,6 @@ vmap <Leader>/ <Plug>RgRawVisualSelection
 nmap <Leader>* <Plug>RgRawWordUnderCursor
 " }}}
 " }}}
-
-" Buffers ----------------------------------------------------------------- {{{
-" Plugin: vim-sayonara ---------------------------------------------------- {{{
-Plug 'https://github.com/mhinz/vim-sayonara'
-" }}}
-
-Plug 'https://github.com/moll/vim-bbye'
-" }}}
-
 " Async ------------------------------------------------------------------- {{{
 " Add dispatch back in, so that Fugitive can use it
 Plug 'https://github.com/tpope/vim-dispatch'
@@ -516,8 +453,6 @@ let g:nv_use_short_pathnames = 1
 nnoremap <c-n> <ESC>:NV<CR>
 " }}}
 
-" Enable local vim settings files
-Plug 'https://github.com/embear/vim-localvimrc'
 " }}}
 
 call plug#end()
@@ -553,9 +488,7 @@ set showmatch                     " Show matching bracket
 set matchtime=3                   " (for only 0.3s)
 set confirm                       " Get confirmation before we do anything stupid
 set whichwrap+=<,>,[,],h,l        " <left> and <right> move over line endings
-set visualbell                    " Flash instead of beeping
 set browsedir=current             " Open up the file-browser in the current directory
-set termencoding=utf-8            " And set UTF-8 for the terminal too
 set nobomb                        " Don't write a Byte Order Mark
 set matchpairs+=<:>               " Match angle-brackets as well by default
 set linebreak                     " Break lines at a sensible place
@@ -722,9 +655,6 @@ set smartcase                   " Override 'ignorecase' when needed
 set incsearch                   " Show search matches as you type
 set hlsearch                    " Try seach highlights again
 
-" Search current word without moving cursor
-nnoremap<silent> <leader>k :let stay_star_view = winsaveview()<cr>:set hls!<cr>*:call winrestview(stay_star_view)<cr>
-
 augroup nohighlight
     autocmd!
     autocmd VimEnter * nohls
@@ -761,28 +691,6 @@ augroup command_window
     autocmd CmdwinEnter * set nonumber
 augroup END
 
-" Escape any non-backslashed path parts
-function! EscapeCommandWindowPaths() abort " {{{
-    let s:escaped_parts = []
-    let s:line_parts = split(getcmdline())
-    let s:count = 0
-    let s:words = len(s:line_parts) - 1
-    for s:line_part in s:line_parts
-        if s:count != 0 && s:count != s:words
-            let s:word_len = strlen(s:line_part) - 1
-            let s:last_char = strpart(s:line_part, s:word_len)
-            if s:last_char !=? '\'
-                let s:line_part = s:line_part . '\'
-            endif
-        endif
-        call add(s:escaped_parts, s:line_part)
-        let s:count += 1
-    endfor
-    let s:cmd = join(s:escaped_parts)
-    return s:cmd
-endfunction
-cmap <C-O> <C-\>eEscapeCommandWindowPaths()<CR>
-" }}}
 " }}}
 " Help -------------------------------------------------------------------- {{{
 " Open help in a vertical split instead of the default horizontal split
@@ -859,11 +767,6 @@ set wildignore+=*.DS_Store                       " OSX nonsense
 set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc,*.pyo                      " Python byte code
 
-" Remove any trailing whitespace that is in the file
-augroup removewhitespace
-    autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-augroup END
-
 " }}}
 " Undo -------------------------------------------------------------------- {{{
 " Trailing double slashes on directory names below cause Vim to save the
@@ -918,25 +821,6 @@ endif
 highlight Pmenu guibg=yellow guifg=black
 highlight PmenuSel guibg=white guifg=black
 
-" Trailing whitespace - only shown when not in insert mode
-augroup trailing
-    autocmd!
-    autocmd InsertEnter * :set listchars-=trail:⌴
-    autocmd InsertLeave * :set listchars+=trail:⌴
-    " Clear trailing whitespace in selected file types on save
-    autocmd BufWritePre *.py,*.js,*.sh,*.html,*.css,*.scss :%s/\s\+$//e
-augroup END
-
-" Cursorline/column
-" Only show cursorline in the current window and in normal mode.
-" Only show colorcolumn in the current window
-augroup clinecol
-    autocmd!
-    autocmd CursorHold * setlocal cursorline cursorcolumn
-    autocmd CursorMoved,InsertEnter *
-        \ if &l:cursorline | setlocal nocursorline nocursorcolumn | endif
-augroup END
-
 " Resize splits when the window is resized
 augroup resized
     autocmd!
@@ -948,8 +832,6 @@ if &diff
     syntax off
 endif
 
-" default netrw to tree-style listing
-let g:netrw_liststyle=3
 
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
@@ -977,10 +859,6 @@ nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 " Use <tab> to move between windows
 nnoremap <Tab> <C-w>w
 nnoremap <S-Tab> <C-w>W
-
-" TODO FINISH THIS
-" Open today's diary page
-" nnoremap <Leader>w<Leader>w :e ~/ownCloud/wikis/vimwiki/diary/`date +\%Y-\%m-\%d`.md<CR>
 
 " Paste the first copy repeatedly using <localleader>p
 xnoremap <leader>p "0p
@@ -1042,8 +920,6 @@ nnoremap <silent><expr> <CR> empty(&buftype) ? ":nohls<CR> \| :update\<CR>" : ":
 
 " Buffers ----------------------------------------------------------------- {{{
 set wildcharm=<tab>
-" Try using <BS> to switch back to previous buffer
-nnoremap <BS> <C-^>
 " }}}
 
 " Windows ----------------------------------------------------------------- {{{
@@ -1122,21 +998,6 @@ augroup END
 
 " }}}
 " Filetype-specific actions ----------------------------------------------- {{{
-" Bunch of stuff lifted from Tim Pope's vimrc
-augroup FTMisc
-    autocmd!
-    autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
-        \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
-augroup END
-
-" }}}
-" Filetype-specific settings ---------------------------------------------- {{{
-augroup FTOptions
-    autocmd!
-    autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
-    autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
-augroup END
-" }}}
 
 " Makefile settings ------------------------------------------------------- {{{
 " Make the tab key do actual tab characters for makefiles.
