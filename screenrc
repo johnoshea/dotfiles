@@ -1,0 +1,20 @@
+# disable the startup splash message that screen displays on startup
+startup_message off
+# create a status line at the bottom of the screen.  this will show the titles and locations of
+# all screen windows you have open at any given time
+
+#hardstatus alwayslastline "%{=b dw}:%{-b dw}:%{=b dk}[ %{-b dw}%{-b dg}$USER%{-b dw}@%{-b dg}%H %{=b dk}] [ %= %?%{-b dg}%-Lw%?%{+b dk}(%{+b dw}%n:%t%{+b dk})%?(%u)%?%{-b dw}%?%{-b dg}%+Lw%? %{=b dk}]%{-b dw}:%{+b dw}:"
+hardstatus alwayslastline
+hardstatus string "%{wk}%{-}%{ww} %{wk} (%{gk}%H%{-}%{wk}) %{Wk}:: %{-}%{wk}%-w %{+b wk}[%n %t]%{-} %+w%=%{wk}%{-}"
+
+# Keep a reasonable amount of history
+defscrollback 10000
+
+# In case our machine / connection goes 'fut'
+autodetach on
+
+# Remove the default 1-second pause
+vbellwait 0
+
+focus
+select 0
