@@ -412,9 +412,11 @@ let wiki_1.nested_syntaxes = {'python': 'python', 'sh': 'sh'}
 let wiki_1.ext = '.md'
 let wiki_1.folding = 'syntax'
 let wiki_1.syntax = 'markdown'
+let wiki_1.ext2syntax = {'.md': 'markdown', '.markdown': 'markdown'}
 let g:vimwiki_list = [wiki_1]
-let g:vimwiki_global_ext = 0
-" let g:vimwiki_list = [{'path': '~/iCloud/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_markdown_ext_link = 1  " add .md to links, for other markdown processors
+let g:vimwiki_global_ext = 0  " turn off temporary wikis
+" }}}
 " }}}
 " Colorschemes ------------------------------------------------------------ {{{
 " Gruvbox
@@ -531,7 +533,7 @@ set nomodeline                    " Disallow modelines (for security reasons)
 set autowrite                     " Write file before some commands
 set wildmenu                      " Enable wildmenu for completion
 set wildmode=longest:full,full    " Complete the next full match
-set synmaxcol=250                 " Don't syntax-colour long lines (too slow otherwise)
+set synmaxcol=300                 " Don't syntax-colour long lines (too slow otherwise)
 set virtualedit=all               " Allow the cursor to move to 'invalid' places
 set complete=.,w,b,t              " Complete current buffer, other windows, other buffers and tags
 set cmdheight=2                   " Avoid 'Press Enter' messages
@@ -830,6 +832,10 @@ if &diff
     syntax off
 endif
 
+" https://github.com/khuedoan/dotfiles/blob/97d5d7bb4f00374a19beb50eaa75a83a7d570b06/.vimrc#L48
+" Change cursor shape in different modes (see :help cursor-shape)
+let &t_EI = "\033[2 q" " NORMAL  █
+let &t_SI = "\033[5 q" " INSERT  |
 
 " }}}
 " Mappings ---------------------------------------------------------------- {{{
