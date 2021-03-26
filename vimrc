@@ -9,8 +9,7 @@ let g:maplocalleader=','
 " }}}
 " Plugins ----------------------------------------------------------------- {{{
 call plug#begin('~/.vim/bundle')
-
-" Mac-specific things ----------------------------------------------------- {{{
+" Mac-specific things ---------------------------------------------------- {{{
 if has('macunix')
 
     " Version-dependent plugins ------------------------------------------- {{{
@@ -100,7 +99,7 @@ if has('macunix')
 
     " - allow window nav to work across non-vim tmux panes (needs tmux config too)
     Plug 'https://github.com/christoomey/vim-tmux-navigator'
-    " vim-tmux-focus-events
+    " " vim-tmux-focus-events
     Plug 'https://github.com/tmux-plugins/vim-tmux-focus-events'
     nnoremap <leader>z :call system("tmux resize-pane -Z")<CR>
 
@@ -129,7 +128,6 @@ if has('macunix')
     Plug 'https://github.com/segeljakt/vim-silicon'
 endif
 " }}}
-
 " Navigation/filesystem --------------------------------------------------- {{{
 " Plugin: vim-sneak ------------------------------------------------------- {{{
 Plug 'https://github.com/justinmk/vim-sneak'
@@ -162,7 +160,6 @@ nnoremap <leader>ss :Dirvish ssh://
 " Shows git status in Dirvish windows
 Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
 " }}}
-
 " Editing ----------------------------------------------------------------- {{{
 " Plugin: undotree -------------------------------------------------------- {{{
 Plug 'https://github.com/simnalamburt/vim-mundo', {'on': 'MundoToggle'}
@@ -193,7 +190,6 @@ Plug 'https://github.com/Konfekt/FastFold'
 " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plug 'https://github.com/ConradIrwin/vim-bracketed-paste'
 " }}}
-
 " Code editing ------------------------------------------------------------ {{{
 " Plugin: ale ------------------------------------------------------------- {{{
 Plug 'https://github.com/dense-analysis/ale'
@@ -254,7 +250,6 @@ Plug 'https://github.com/tmsvg/pear-tree'
 let g:pear_tree_timeout = 60
 " }}}
 " }}}
-
 " Git --------------------------------------------------------------------- {{{
 " Plugin: Fugitive -------------------------------------------------------- {{{
 Plug 'https://github.com/tpope/vim-fugitive'
@@ -289,7 +284,6 @@ Plug 'https://github.com/rhysd/committia.vim'
 let g:committia_open_only_vim_starting = 1
 " }}}
 " }}}
-
 " Display ----------------------------------------------------------------- {{{
 " Plugin: vim-crystalline ------------------------------------------------- {{{
 Plug 'https://github.com/rbong/vim-crystalline'
@@ -353,7 +347,6 @@ let g:indentLine_fileTypeExclude = ['help']
 " }}}
 
 " }}}
-
 " Filetypes/file formats -------------------------------------------------- {{{
 " Plugin: pgsql ----------------------------------------------------------- {{{
 Plug 'https://github.com/lifepillar/pgsql.vim',                     {'for': 'sql'}
@@ -396,8 +389,6 @@ Plug 'https://github.com/chr4/nginx.vim',                           {'for': 'ngi
 Plug 'https://github.com/cespare/vim-toml',                         {'for': 'toml'}
 " Jinja2
 Plug 'https://github.com/Glench/Vim-Jinja2-Syntax',                 {'for': 'jinja2'}
-" }}}
-
 " Plugin: vimwiki --------------------------------------------------------- {{{
 Plug 'https://github.com/vimwiki/vimwiki'
 let WIKI_BASE_DIR = '~/vimwiki'
@@ -412,7 +403,6 @@ let g:vimwiki_list = [wiki_1]
 let g:vimwiki_global_ext = 0
 " let g:vimwiki_list = [{'path': '~/iCloud/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 " }}}
-
 " Colorschemes ------------------------------------------------------------ {{{
 " Default
 let g:gruvbox_italic=1
@@ -420,7 +410,6 @@ Plug 'https://github.com/gruvbox-community/gruvbox'
 " Alternate
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
 " }}}
-
 " Text objects ------------------------------------------------------------ {{{
 " Use 'ia'/'aa' for arguments,
 " or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
@@ -438,7 +427,6 @@ Plug 'https://github.com/lucapette/vim-textobj-underscore'
 " - provides 'i' indent object (e.g. 'vai')
 Plug 'https://github.com/michaeljsmith/vim-indent-object'
 " }}}
-
 " Search ------------------------------------------------------------------ {{{
 Plug 'https://github.com/markonm/traces.vim'
 " Plugin: vim-asterisk ---------------------------------------------------- {{{
@@ -461,7 +449,6 @@ nmap <Leader>* <Plug>RgRawWordUnderCursor
 " Add dispatch back in, so that Fugitive can use it
 Plug 'https://github.com/tpope/vim-dispatch'
 " }}}
-
 " Miscellaneous ----------------------------------------------------------- {{{
 " Plugin: Notational FZF -------------------------------------------------- {{{
 Plug 'https://github.com/Alok/notational-fzf-vim'
@@ -482,7 +469,7 @@ let g:isWindows = has('win32')
 " }}}
 " Basic settings ---------------------------------------------------------- {{{
 
-" Miscellaneous settings
+""" " Miscellaneous settings
 set encoding=utf-8                " UTF-8 everywhere
 set termencoding=utf-8            " UTF-8 everywhere
 scriptencoding utf-8              " UTF-8 everywhere
@@ -1055,5 +1042,4 @@ augroup plugins
 augroup END
 " }}}
 
-" }}}
 " }}}
