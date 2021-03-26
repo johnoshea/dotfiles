@@ -36,7 +36,7 @@ brew list --versions > ${INSTALLED_CONFIG}/homebrew_packages
 brew doctor
 brew update
 brew upgrade
-brew cask upgrade
+brew upgrade --cask
 brew uninstall neovim && brew uninstall luajit && brew install --HEAD luajit && brew install --HEAD neovim
 brew cleanup
 echo "*** Pyenv"
