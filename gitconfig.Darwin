@@ -28,6 +28,7 @@
     editor = vim
 [interactive]
     diffFilter = delta --color-only
+    singlekey = true
 [push]
 	default = simple
 [credential]
