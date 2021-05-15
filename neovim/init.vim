@@ -2,8 +2,6 @@
 " Author: John O'Shea <john.m.oshea@gmail.com>
 " Source: <https://github.com/johnoshea/dotfiles>
 
-set runtimepath+=~/.config/nvim/plugged/firenvim
-
 " let g:python3_host_prog = '/Users/johno/.pyenv/versions/py3nvim/bin/python3'
 let g:loaded_python_provider = 0
 
@@ -177,7 +175,6 @@ runtime macros/sandwich/keymap/surround.vim
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-unimpaired'
 Plug 'https://github.com/tpope/vim-abolish'
-Plug 'https://github.com/glacambre/firenvim', { 'do': { _ -> firenvim#install(0, 'export PATH=\"$PATH\"') } }
 Plug 'https://github.com/andymass/vim-visput'
 " Editing end }}}
 " Code editing --- {{{
