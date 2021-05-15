@@ -656,7 +656,7 @@ augroup END
 " Undo end }}}
 " Display options --- {{{
 " Use better looking listchars
-set listchars=tab:»\ ,extends:›,precedes:‹,trail:·,nbsp:‗,eol:$
+set listchars=tab:»\ ,extends:›,precedes:‹,trail:·,nbsp:␣,eol:↲,conceal:┊
 let &showbreak = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
 
 " Pop-up menu colors
