@@ -15,7 +15,7 @@
     p = push
     pc = push --set-upstream origin "$(git-branch-current 2> /dev/null)"
     pom = push origin master
-	conflicted = !vim +Conflicted
+	conflicted = !vi +Conflicted
 	amend = commit --amend -C HEAD
 	upstream = !git push \\\n    --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 [merge]
@@ -25,7 +25,7 @@
 	autocrlf = input
 	safecrlf = true
     pager = delta --dark --plus-color="#012800" --minus-color="#340001" --theme=\"Monokai Extended Bright\"
-    editor = vim
+    editor = vi
 [interactive]
     diffFilter = delta --color-only
     singlekey = true
