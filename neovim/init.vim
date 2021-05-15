@@ -527,9 +527,6 @@ set clipboard+=unnamedplus
 
 " Settings end }}}
 " Colors --- {{{
-" " force true color on within tmux
-" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 if $ITERM_PROFILE ==# 'Light'
     colorscheme PaperColor
@@ -540,21 +537,6 @@ else
 endif
 syntax enable
 set colorcolumn=80
-
-"  " restore screen after quitting
-"  if has('terminfo')
-"    let &t_Sf='\ESC[3%p1%dm'
-"    let &t_Sb='\ESC[4%p1%dm'
-"  else
-"    let &t_Sf='\ESC[3%dm'
-"    let &t_Sb='\ESC[4%dm'
-"  endif
-"
-"  " Prevent Vim from clobbering the scrollback buffer. See
-"  " http://www.shallowsky.com/linux/noaltscreen.html
-"  set t_ti= t_te=
-"  " don't clear background color
-"  set t_ut=
 " Colors end }}}
 " Tabs --- {{{
 " For an explanation of the 'tabs vs spaces' used below, see
