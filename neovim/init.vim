@@ -222,7 +222,7 @@ nmap <silent> <leader>tn <esc>:w<CR>:TestNearest<CR>
 nmap <silent> <leader>tf <esc>:w<CR>:TestFile<CR>
 nmap <silent> <leader>ts <esc>:w<CR>:TestSuite<CR>
 nmap <silent> <leader>tl <esc>:w<CR>:TestLast<CR>
-let g:test#strategy = 'dispatch'
+let g:test#strategy = 'vimux'
 " vim-test end }}}
 " tcomment --- {{{
 Plug 'https://github.com/tomtom/tcomment_vim'
@@ -336,16 +336,16 @@ Plug 'https://github.com/wellle/visual-split.vim'
 Plug 'https://github.com/machakann/vim-highlightedyank'
 " Display end }}}
 " Tmux --- {{{
-" Plugin: slimux --- {{{
-Plug 'https://github.com/grusky/slimux'
-nnoremap <Leader>sc :SlimuxREPLConfigure<CR>
-nnoremap <Leader>se :SlimuxREPLSendLine<CR>
-vnoremap <Leader>se :SlimuxREPLSendSelection<CR>
-nnoremap <Leader>sp :SlimuxShellPrompt<CR>
-nnoremap <Leader>sa :SlimuxShellLast<CR>
-nnoremap <Leader>sk :SlimuxSendKeysPrompt<CR>
-nnoremap <Leader>sl :SlimuxSendKeysLast<CR>
-" slimux end }}}
+" Plugin: vimux --- {{{
+Plug 'https://github.com/preservim/vimux'
+nnoremap <Leader>vp :VimuxPromptCommand<CR>
+nnoremap <Leader>vl :VimuxRunLastCommand<CR>
+nnoremap <Leader>vi :VimuxInspectRunner<CR>
+nnoremap <Leader>vq :VimuxCloseRunner<CR>
+nnoremap <Leader>vx :VimuxInterruptRunner<CR>
+" Zoom the runner pane (use <bind-key> z to restore runner pane)
+nnoremap <Leader>vz :call VimuxZoomRunner()<CR>
+" vimux end }}}
 " - allow window nav to work across non-vim tmux panes (needs tmux config too)
 Plug 'https://github.com/christoomey/vim-tmux-navigator'
 " " vim-tmux-focus-events
