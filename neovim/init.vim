@@ -633,6 +633,7 @@ set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store                       " OSX nonsense
 set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc,*.pyo                      " Python byte code
+
 " File loading end }}}
 " Undo --- {{{
 " Trailing double slashes on directory names below cause Vim to save the
