@@ -259,8 +259,10 @@ augroup END
 
 " Enable GitHub features in fugitive
 Plug 'https://github.com/tpope/vim-rhubarb'
+" vim-signify --- {{{
 Plug 'https://github.com/mhinz/vim-signify'
 let g:signify_vcs_list = [ 'git' ]
+" vim-signify end }}}
 " vim-twiggy --- {{{
 Plug 'https://github.com/sodapopcan/vim-twiggy'
 nnoremap <leader>tw :Twiggy<cr>
@@ -348,7 +350,7 @@ nnoremap <Leader>vz :call VimuxZoomRunner()<CR>
 " vimux end }}}
 " - allow window nav to work across non-vim tmux panes (needs tmux config too)
 Plug 'https://github.com/christoomey/vim-tmux-navigator'
-" " vim-tmux-focus-events
+" vim-tmux-focus-events
 Plug 'https://github.com/tmux-plugins/vim-tmux-focus-events'
 nnoremap <leader>z :call system("tmux resize-pane -Z")<CR>
 " Tmux end }}}
