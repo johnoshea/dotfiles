@@ -488,7 +488,7 @@ set nrformats=hex               " Ignore octal/binary for incrementing/decrement
 set formatoptions+=n            " Recognize numbered lists
 set nojoinspaces                " only add a single space when joining lines
 
-set spellfile=~/.vim/custom-dictionary.utf-8.add  " TODO change this
+set spellfile=~/.config/nvim/custom-dictionary.utf-8.add
 
 " display --- {{{
 set display=lastline            " Show as much of last line as possible
