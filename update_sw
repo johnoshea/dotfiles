@@ -77,9 +77,6 @@ cargo install-update -a
 echo "*** Neovim bundles"
 echo
 TERM=xterm-256color nvim +PlugUpdate! +qa
-echo "*** Vim bundles"
-echo
-TERM=xterm-256color /usr/local/bin/vim +PlugUpdate! +qa
 echo "*** zprezto submodules"
 echo
 cd ~/src/prezto || exit
