@@ -388,7 +388,6 @@ Plug 'https://github.com/pangloss/vim-javascript',                  {'for': 'jav
 Plug 'https://github.com/othree/javascript-libraries-syntax.vim',   {'for': 'javascript'}
 " Javascript end }}}
 " Markdown --- {{{
-Plug 'https://github.com/godlygeek/tabular'
 Plug 'https://github.com/plasticboy/vim-markdown'
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
