@@ -256,7 +256,8 @@ augroup fugitive
     nnoremap <leader>gpl :Git pull<CR>
 augroup END
 " Fugitive end }}}
-
+" Vim syntax, filetype, indents, etc
+Plug 'https://github.com/tpope/vim-git'
 " Enable GitHub features in fugitive
 Plug 'https://github.com/tpope/vim-rhubarb'
 " vim-signify --- {{{
