@@ -764,6 +764,10 @@ nnoremap <silent> <c-w>o :diffoff!<bar>only<cr>
 " Start `cgn` with the word under the cursor
 nmap cg* *Ncgn
 
+" Allow undo if I zap a word or line
+inoremap <C-u> <C-g>u<C-u>
+inoremap <C-w> <C-g>u<C-w>
+
 " Formatting --- {{{
 " gq wrapper that:
 " - tries its best at keeping the cursor in place
