@@ -1,6 +1,6 @@
 #!/bin/sh
 # Switch back to system Ruby/Python before updating
-UPDATE_SW_DIR="$HOME/src/update_sw"
+UPDATE_SW_DIR="$HOME"
 CURRENT_DIR=$(pwd)
 CURRENT_PYTHON=$(pyenv version | head -n1 | cut -f1 -d' ')
 CURRENT_RUBY=$(rbenv version | head -n1 | cut -f1 -d' ')
