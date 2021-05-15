@@ -454,7 +454,7 @@ vmap <Leader>/ <Plug>RgRawVisualSelection
 nmap <Leader>* <Plug>RgRawWordUnderCursor
 " vim-agriculture end }}}
 " Search end }}}
-
+Plug 'https://github.com/dstein64/vim-startuptime'
 call plug#end()
 " Plugins end }}}
 " Settings --- {{{
