@@ -641,7 +641,8 @@ augroup END
 
 set fileformats=unix,dos,mac
 
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/bin/*,*/pkg/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+""  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/bin/*,*/pkg/*
 set wildignore+=*.pdf,*.zip,*.so                 " binaries
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
