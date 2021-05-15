@@ -503,7 +503,6 @@ set sessionoptions+=resize      " ... save window sizes as well
 set diffopt=internal            " use the internal diff library
 set diffopt+=filler             " show filler lines
 set diffopt+=iwhiteall          " ignore whitespace
-set diffopt+=closeoff           " turn off diff if only one diff window left open
 set diffopt+=hiddenoff          " don't use diff mode for a buffer when it becomes hidden
 set diffopt+=vertical           " show diffs vertically
 set diffopt+=indent-heuristic   " use indent heuristic for diff
