@@ -29,6 +29,14 @@
 [interactive]
     diffFilter = delta --color-only
     singlekey = true
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+    hunk-header-style = omit
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow box
+    # file-decoration-style = none
 [push]
 	default = simple
 [credential]
