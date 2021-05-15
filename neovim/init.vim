@@ -306,11 +306,7 @@ let g:crystalline_enable_sep = 1
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_theme = 'default'
 " vim-crystalline end }}}
-" vim-diminactive --- {{{
-Plug 'https://github.com/blueyed/vim-diminactive'
-let g:diminactive_use_syntax = 1
-let g:diminactive_enable_focus = 1
-" vim-diminactive end t}}}
+Plug 'https://github.com/TaDaa/vimade'
 " listtoggle --- {{{
 Plug 'https://github.com/valloric/listtoggle'
 let g:lt_location_list_toggle_map = '<leader>l'
