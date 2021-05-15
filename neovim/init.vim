@@ -2,7 +2,7 @@
 " Author: John O'Shea <john.m.oshea@gmail.com>
 " Source: <https://github.com/johnoshea/dotfiles>
 
-" let g:python3_host_prog = '/Users/johno/.pyenv/versions/py3nvim/bin/python3'
+let g:python3_host_prog = expand('~/.config/nvim/.direnv/python-3.9.4/bin/python3')
 let g:loaded_python_provider = 0
 
 " Leader keys --- {{{
