@@ -15,9 +15,10 @@
     p = push
     pc = push --set-upstream origin "$(git-branch-current 2> /dev/null)"
     pom = push origin master
-	conflicted = !vi +Conflicted
+	conflicted = !nvim +Conflicted
 	amend = commit --amend -C HEAD
-	upstream = !git push \\\n    --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+    upstream = !git push \\\n    --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+    network = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 [merge]
     tool = vimdiff
 [core]
@@ -25,7 +26,7 @@
 	autocrlf = input
 	safecrlf = true
     pager = delta --dark --plus-color="#012800" --minus-color="#340001" --theme=\"Monokai Extended Bright\"
-    editor = vi
+	editor = nvim
 [interactive]
     diffFilter = delta --color-only
     singlekey = true
