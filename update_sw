@@ -1,10 +1,11 @@
 #!/bin/sh
 # Switch back to system Ruby/Python before updating
+. /usr/local/opt/nvm/nvm.sh
 UPDATE_SW_DIR="$HOME"
 CURRENT_DIR=$(pwd)
 CURRENT_PYTHON=$(pyenv version | head -n1 | cut -f1 -d' ')
 CURRENT_RUBY=$(rbenv version | head -n1 | cut -f1 -d' ')
-CURRENT_NODE=$(nodenv version | head -n1 | cut -f1 -d' ')
+CURRENT_NODE=$(nvm current)
 CURRENT_GO=$(goenv version | head -n1 | cut -f1 -d' ')
 INSTALLED_CONFIG=${HOME}/.local/personal_config
 mkdir -p ${INSTALLED_CONFIG}
@@ -12,7 +13,7 @@ echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / N
 cd "$UPDATE_SW_DIR" || exit
 pyenv local $(cat ~/.python-version)
 rbenv local 2.6.4
-nodenv local 12.8.0
+nvm use 16.13.0
 goenv local 1.13.4
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 echo "*** System software"
@@ -62,10 +63,9 @@ pipx upgrade-all
 echo "*** poetry"
 echo
 poetry self update
-echo "*** npm"
+echo "*** node"
 echo
-nodenv versions > ${INSTALLED_CONFIG}/nodenv_versions
-nodenv rehash
+nvm ls --no-colors --no-alias > ${INSTALLED_CONFIG}/nvm_versions
 npm list > ${INSTALLED_CONFIG}/npm_packages
 npm set progress=false
 npm install -g npm@latest
@@ -89,5 +89,5 @@ echo "Restoring previous Python/Ruby/Node/Go versions"
 cd "${CURRENT_DIR}" || exit
 pyenv local "${CURRENT_PYTHON}"
 rbenv local "${CURRENT_RUBY}"
-nodenv local "${CURRENT_NODE}"
+nvm use "${CURRENT_NODE}"
 goenv local "${CURRENT_GO}"
