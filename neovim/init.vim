@@ -13,27 +13,6 @@ let g:maplocalleader=','
 call plug#begin('~/.config/nvim/plugged')
 
 " Completion --- {{{
-" YouCompleteMe --- {{{
-function! BuildYCM(info)
-    " info is a dictionary with 3 fields
-    " - name:   name of the plugin
-    " - status: 'installed', 'updated', or 'unchanged'
-    " - force:  set on PlugInstall! or PlugUpdate!
-    if a:info.status ==# 'installed' || a:info.force
-        !./install.py
-    endif
-endfunction
-
-Plug 'https://github.com/Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_add_preview_to_completeopt = 'popup'
-let g:ycm_confirm_extra_conf = 0
-nnoremap <silent> <buffer> <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <silent> <buffer> <leader>yg :YcmCompleter GoTo<CR>
-nnoremap <silent> <buffer> <leader>yr :YcmCompleter GoToReferences<CR>
-nnoremap <silent> <buffer> <leader>yd :YcmCompleter GetDoc<CR>
-" YouCompleteMe end }}}
-" Completion end }}}
 " Snippets --- {{{
 " Plugin: ultisnips --- {{{
 Plug 'https://github.com/SirVer/ultisnips'
