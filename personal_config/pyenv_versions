@@ -1,5 +1,8 @@
   system
+  2.7.16
+  2.7.16/envs/redash_ldap
   2.7.18
+  3.5.10
   3.6.8
   3.6.8/envs/Insightly_email_backup
   3.7.4
@@ -19,6 +22,7 @@
   Insightly_email_backup
   ots_sender
   presigned_url_test
+  redash_ldap
   s3_bulk_undelete
   smartsource_availability_tracker
   studio_file_renamer
