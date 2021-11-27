@@ -46,6 +46,7 @@ let g:srcery_italic = 1
 " Srcery end  --- }}}
 " For light terminal sessions
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
+" Experimentation
 " Colorschemes end }}}
 " Navigation/filesystem --- {{{
 " FZF --- {{{
