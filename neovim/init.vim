@@ -610,10 +610,6 @@ augroup END
 set listchars=tab:»\ ,extends:›,precedes:‹,trail:·,nbsp:␣,eol:↲,conceal:┊
 let &showbreak = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
 
-" Pop-up menu colors
-highlight Pmenu guibg=yellow guifg=black
-highlight PmenuSel guibg=white guifg=black
-
 " Resize splits when the window is resized
 augroup resized
     autocmd!
