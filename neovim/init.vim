@@ -334,7 +334,7 @@ Plug 'https://github.com/Vimjas/vim-python-pep8-indent',            {'for': 'pyt
 " Python  end }}}
 " Django --- {{{
 Plug 'https://github.com/vim-scripts/django.vim',                   {'for': 'django'}
-Plug 'https://github.com/tweekmonster/django-plus.vim',             {'for': 'django'}
+Plug 'https://github.com/lieryan/django-plus.vim',                  {'for': 'django'}
 " Django end }}}
 " Markdown --- {{{
 Plug 'https://github.com/gabrielelana/vim-markdown'
@@ -346,7 +346,7 @@ let g:table_mode_corner='|'
 " Better JSON
 Plug 'https://github.com/tpope/vim-jdaddy',                         {'for': ['javascript', 'json']}
 " Terraform --- {{{
-Plug 'https://github.com/juliosueiras/vim-terraform-completion',    {'for': 'terraform'}
+" Plug 'https://github.com/juliosueiras/vim-terraform-completion',    {'for': 'terraform'}
 Plug 'https://github.com/hashivim/vim-terraform',                   {'for': 'terraform'}
 let g:terraform_align = 1
 let g:terraform_fmt_on_save = 1
