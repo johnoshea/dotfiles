@@ -501,35 +501,25 @@ local lsp_installer = require("nvim-lsp-installer")
 
 local lsp_installer_servers = require'nvim-lsp-installer.servers'
 
-local servers = {'bashls', 'dockerls', 'tailwindcss', 'terraformls', 'vimls', 'yamlls', 'cssls', 'jsonls', 'lemminx', 'sqlls', 'tflint', 'html', 'jedi_language_server'}
-for _, server in ipairs(servers) do
-    local server_available, requested_server = lsp_installer_servers.get_server(server)
-    if server_available then
-        requested_server:on_ready(function ()
-            local opts = {}
-            requested_server:setup(opts)
-        end)
-        if not requested_server:is_installed() then
-            -- Queue the server to be installed
-            requested_server:install()
-        end
-    end
+local function config(_config)
+	return vim.tbl_deep_extend("force", {
+		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	}, _config or {})
 end
 
--- -- Register a handler that will be called for all installed servers.
--- -- Alternatively, you may also register handlers on specific server instances instead (see example below).
--- lsp_installer.on_server_ready(function(server)
---     local opts = {}
---
---     -- (optional) Customize the options passed to the server
---     -- if server.name == "tsserver" then
---     --     opts.root_dir = function() ... end
---     -- end
---
---     -- This setup() function is exactly the same as lspconfig's setup function.
---     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
---     server:setup(opts)
--- end)
+require("lspconfig").jedi_language_server.setup(config())
+require("lspconfig").bashls.setup(config())
+require("lspconfig").dockerls.setup(config())
+require("lspconfig").tailwindcss.setup(config())
+require("lspconfig").terraformls.setup(config())
+-- require("lspconfig").vimls.setup(config())
+require("lspconfig").yamlls.setup(config())
+require("lspconfig").cssls.setup(config())
+require("lspconfig").jsonls.setup(config())
+require("lspconfig").lemminx.setup(config())
+require("lspconfig").sqlls.setup(config())
+require("lspconfig").tflint.setup(config())
+require("lspconfig").html.setup(config())
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
