@@ -391,7 +391,6 @@ scriptencoding utf-8
 set backupcopy=yes              " using 'auto'/'no' may cause file-watching programs to miss changes
 set undolevels=10000            " Keep lots of undo
 set lazyredraw                  " Set lazy redraw, to speed up macros and the like
-set hidden                      " Allow movement to another buffer w/o saving the current one
 set showmatch                   " Show matching bracket
 set matchtime=3                 " (for only 0.3s)
 set confirm                     " Get confirmation before we do anything stupid
@@ -410,12 +409,12 @@ set wildmode=longest:full,full  " Complete the next full match
 set virtualedit=all             " Allow the cursor to move to 'invalid' places
 set cmdheight=2                 " Avoid 'Press Enter' messages
 set fillchars=diff:⣿,vert:│     " Have different vertical splits for diffs
-set switchbuf=useopen           " Jump to first open window containing buffer (if possible)
 set breakindent                 " indent wrapped lines
 set noshowmode                  " vim-crystalline shows this for us
 set nrformats=hex               " Ignore octal/binary for incrementing/decrementing numbers
 set formatoptions+=n            " Recognize numbered lists
-set nojoinspaces                " only add a single space when joining lines
+set signcolumn=yes:1            " always display signs, allocate 1 column for doing so
+set completeopt=menu,menuone,noselect
 
 set spellfile=~/.config/nvim/custom-dictionary.utf-8.add
 
