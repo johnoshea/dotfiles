@@ -530,6 +530,8 @@ cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>
 " Folding --- {{{
 " The following open closed folds
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
+" Default to opening all folds
+set foldlevelstart=99
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
