@@ -257,7 +257,22 @@ let g:crystalline_enable_sep = 1
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_theme = 'default'
 " vim-crystalline end }}}
-Plug 'https://github.com/TaDaa/vimade'
+" Vimade --- {{{
+Plug 'https://github.com/TaDaa/vimade',                             {'on': 'VimadeEnable'}
+let g:vimade = {
+            \'fadelevel': 0.6,
+            \'checkinterval': 100,
+            \'enablefocusfading': 1
+            \}
+augroup vimade
+    autocmd!
+    autocmd WinNew,BufNew * ++once if !exists('g:vimade_loaded') |
+        \execute 'VimadeEnable' | endif
+    autocmd FocusLost * ++once if !exists('g:vimade_loaded') |
+        \execute 'VimadeEnable' |
+        \call vimade#FocusLost() | endif
+augroup END
+" Vimade end }}}
 " listtoggle --- {{{
 Plug 'https://github.com/valloric/listtoggle'
 let g:lt_location_list_toggle_map = '<leader>l'
