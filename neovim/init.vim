@@ -694,14 +694,6 @@ nnoremap Q @q
 " to edit
 nnoremap <expr> cq call({r-> ":\<c-u>let @".r." = \<c-r>\<c-r>=string(getreg('".r."'))\<cr>\<c-f>\<left>" }, [nr2char(getchar())])
 
-" Refactor remap.
-" Go to local definition and replace it in local scope. Uses textobj-indent
-" (for ai map).
-nmap gr 1gdvaio:s/<C-R>///gc<left><left><left>
-" Similar map for selections to turn an expression into a variable. No point
-" of definition so just use indent from textobj-indent. Clobbers @c register.
-xmap gr "cyvaio:s/<C-R>c//gc<left><left><left>
-
 " Use gs/gS for global/selection search and replaces
 nnoremap gs :%s/
 xnoremap gs :s/
@@ -714,10 +706,6 @@ nnoremap <silent> <c-w>o :diffoff!<bar>only<cr>
 
 " Start `cgn` with the word under the cursor
 nmap cg* *Ncgn
-
-" Allow undo if I zap a word or line
-inoremap <C-u> <C-g>u<C-u>
-inoremap <C-w> <C-g>u<C-w>
 
 " Formatting --- {{{
 " gq wrapper that:
