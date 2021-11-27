@@ -185,7 +185,11 @@ let g:ale_echo_msg_format = '%linter%> %code: %%s'
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black', 'isort'],
-\   'javascript': ['eslint']
+\   'json': ['prettier'],
+\   'markdown': ['prettier'],
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
+\   'css': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_python_flake8_options = '--max-line-length=88'  " match 'black' formatter
