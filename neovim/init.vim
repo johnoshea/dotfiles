@@ -364,16 +364,12 @@ Plug 'https://github.com/Glench/Vim-Jinja2-Syntax',                 {'for': 'jin
 Plug 'https://github.com/wellle/targets.vim'
 " Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
 Plug 'https://github.com/jeetsukumaran/vim-pythonsense'
-" Add [-, [+, [=, ]-, ]+, ]= "move by indent" maps
-Plug 'https://github.com/jeetsukumaran/vim-indentwise'
-" Add al/il for lines
-Plug 'https://github.com/kana/vim-textobj-line'
-" Needed for vim-textobj-underscore
-Plug 'https://github.com/kana/vim-textobj-user'
-" Add a_/i_ for underscores
-Plug 'https://github.com/lucapette/vim-textobj-underscore'
 " - provides 'i' indent object (e.g. 'vai')
 Plug 'https://github.com/michaeljsmith/vim-indent-object'
+" dependency for vim-textobj-line
+Plug 'https://github.com/kana/vim-textobj-user'
+" - provides al/il
+Plug 'https://github.com/kana/vim-textobj-line'
 " Text objects end }}}
 " Search --- {{{
 Plug 'https://github.com/markonm/traces.vim'
