@@ -294,6 +294,11 @@ nnoremap <silent> <leader>2 :set nonumber!<cr>:set norelativenumber!<cr>
 Plug 'https://github.com/wellle/visual-split.vim'
 
 Plug 'https://github.com/machakann/vim-highlightedyank'
+
+" trouble.nvim --- {{{
+Plug 'https://github.com/folke/trouble.nvim'
+Plug 'https://github.com/kyazdani42/nvim-web-devicons'
+" }}}
 " Display end }}}
 " Tmux --- {{{
 " Plugin: vimux --- {{{
@@ -386,6 +391,21 @@ let g:asterisk#keeppos = 1
 Plug 'https://github.com/dstein64/vim-startuptime'
 call plug#end()
 " Plugins end }}}
+" Trouble config --- {{{
+lua << EOTROUBLE
+require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOTROUBLE
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
+nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+" Trouble config end --- }}}
 " Settings --- {{{
 scriptencoding utf-8
 set backupcopy=yes              " using 'auto'/'no' may cause file-watching programs to miss changes
