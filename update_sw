@@ -18,7 +18,7 @@ goenv local 1.13.4
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 echo "*** System software"
 echo
-sudo softwareupdate --all --install
+# sudo softwareupdate --all --install
 echo "*** App Store programs"
 echo
 sudo mas outdated
