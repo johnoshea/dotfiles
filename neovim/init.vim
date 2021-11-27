@@ -13,19 +13,6 @@ let g:maplocalleader=','
 call plug#begin('~/.config/nvim/plugged')
 
 " Completion --- {{{
-" Snippets --- {{{
-" Plugin: ultisnips --- {{{
-Plug 'https://github.com/SirVer/ultisnips'
-let g:UltiSnipsSnippetDirectories= ['UltiSnips', 'my_snippets']
-let g:UltiSnipsSnippetsDir= '~/.vim/my_snippets/' " TODO change this
-let g:UltiSnipsListSnippets = '<c-g>l'
-let g:ultisnips_python_quoting_style = 'sphinx'
-let g:UltiSnipsExpandTrigger='<c-g><c-g>'
-let g:UltiSnipsJumpForwardTrigger='<c-g>n'
-let g:UltiSnipsJumpBackwardTrigger='<c-g>p'
-" ultisnips end }}}
-" Ultisnips snippets are now stored in honza/vim-snippets
-Plug 'https://github.com/honza/vim-snippets'
 " }}}
 " Colorschemes --- {{{
 " gruvbox --- {{{
@@ -51,7 +38,6 @@ nnoremap <silent> <Leader><CR> :Buffers<CR>
 nnoremap <silent> <Leader>` :Marks<CR>
 nnoremap <silent> <Leader>hi :History<CR>
 nnoremap <silent> <Leader>mp :Maps<CR>
-nnoremap <silent> <Leader>sn :Snippets<CR>
 nnoremap <silent> <Leader>cm :Commands<CR>
 nnoremap <silent> <Leader>r :Rg<CR>
 nnoremap <silent> <Leader>gg :GGrep<CR>
