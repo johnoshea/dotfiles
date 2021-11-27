@@ -20,7 +20,25 @@ Plug 'https://github.com/neovim/nvim-lspconfig'
 Plug 'https://github.com/williamboman/nvim-lsp-installer'
 " LSP end --- }}}
 " Completion --- {{{
+" nvim-cmp --- {{{
+Plug 'https://github.com/hrsh7th/nvim-cmp'
 " }}}
+" nvim-cmp helpers --- {{{
+Plug 'https://github.com/hrsh7th/cmp-nvim-lsp'
+" snippet engine
+Plug 'https://github.com/L3MON4D3/LuaSnip'
+" make LuaSnip work with nvim-cmp
+Plug 'https://github.com/saadparwaiz1/cmp_luasnip'
+" snippets for LuaSnip
+Plug 'https://github.com/rafamadriz/friendly-snippets'
+" buffer completion source
+Plug 'https://github.com/hrsh7th/cmp-buffer'
+" path completion source
+Plug 'https://github.com/hrsh7th/cmp-path'
+" add icons to lsp completion popup menu
+Plug 'https://github.com/onsails/lspkind-nvim'
+" }}}
+" Completion end }}}
 " Colorschemes --- {{{
 " srcery-vim --- {{{
 Plug 'https://github.com/srcery-colors/srcery-vim'
@@ -545,6 +563,79 @@ require "vim.lsp.protocol".CompletionItemKind = {
 
 EOL
 
+" Disable LSP diagnostics, so that ALE does that instead
+augroup disable_lsp_diagnostics
+    autocmd!
+    autocmd BufEnter * lua vim.lsp.diagnostic.disable()
+augroup END
+" LSP config end --- }}}
+" Completion config --- {{{
+lua << EOCMP
+require'luasnip'.config.set_config({
+    history = true,
+    updateevents = "TextChanged,TextChangedI"
+})
+require("luasnip.loaders.from_vscode").load()
+local luasnip = require('luasnip')
+local lspkind = require('lspkind')
+-- local compare = require('cmp.config.compare')
+-- local types = require('cmp.types')
+local cmp = require('cmp')
+
+cmp.setup({
+   snippet = {
+   	expand = function(args)
+   		require("luasnip").lsp_expand(args.body)
+   	end,
+    },
+     mapping = {
+       ["<Tab>"] = cmp.mapping(
+         function(fallback)
+           if cmp.visible() then
+             cmp.select_next_item()
+           elseif luasnip.expand_or_jumpable() then
+             luasnip.expand_or_jump()
+           else
+             fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+           end
+         end,
+         {"i", "s"}
+       ),
+       ["<S-Tab>"] = cmp.mapping(
+         function(fallback)
+           if cmp.visible() then
+             cmp.select_prev_item()
+           elseif luasnip.jumpable(-1) then
+             luasnip.jump(-1)
+           else
+             fallback()
+           end
+         end,
+         {"i", "s"}
+       ),
+   	   ["<C-e>"] = cmp.mapping.close(),
+       ["<cr>"] = cmp.mapping.confirm({
+         behavior = cmp.ConfirmBehavior.Replace,
+         select = false
+       })
+   },
+   formatting = {
+     format = lspkind.cmp_format({with_text = true, maxwidth = 50})
+   },
+   sources = {
+     { name = 'nvim_lsp' },
+     { name = 'luasnip' },
+     { name = 'buffer' },
+     { name = 'path' },
+   },
+})
+
+-- nvim_cmp_lsp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+EOCMP
+" Completion config end --- }}}
 " Trouble config --- {{{
 lua << EOTROUBLE
 require("trouble").setup {
