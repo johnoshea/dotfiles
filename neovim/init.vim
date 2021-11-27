@@ -105,8 +105,6 @@ Plug 'https://github.com/justinmk/vim-dirvish'
 Plug 'https://github.com/bounceme/remote-viewer'
 nnoremap <leader>ss :Dirvish ssh://
 " remote-viewer end }}}
-" Shows git status in Dirvish windows
-Plug 'https://github.com/kristijanhusak/vim-dirvish-git'
 " Navigation/filesystem end }}}
 " Editing --- {{{
 " vim-mundo --- {{{
@@ -276,13 +274,6 @@ nnoremap <silent> <leader>1 :set relativenumber!<cr>
 nnoremap <silent> <leader>2 :set nonumber!<cr>:set norelativenumber!<cr>
 " vim-numbertoggle end }}}
 
-" indentLine --- {{{
-Plug 'https://github.com/Yggdroot/indentLine'
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_fileTypeExclude = ['help']
-" indentline end }}}
-Plug 'https://github.com/lukas-reineke/indent-blankline.nvim'
-
 " Easier/better handling of in-file splits
 Plug 'https://github.com/wellle/visual-split.vim'
 
@@ -321,10 +312,6 @@ let g:vimwiki_list = [wiki_1]
 let g:vimwiki_markdown_ext_link = 1  " add .md to links, for other markdown processors
 let g:vimwiki_global_ext = 0  " turn off temporary wikis
 " vimwiki end }}}
-" pgsql --- {{{
-Plug 'https://github.com/lifepillar/pgsql.vim',                     {'for': 'sql'}
-let g:sql_type_default = 'pgsql'
-" pgsql end }}}
 " Python --- {{{
 Plug 'https://github.com/kalekundert/vim-coiled-snake',             {'for': 'python'}
 Plug 'https://github.com/Vimjas/vim-python-pep8-indent',            {'for': 'python'}
@@ -333,10 +320,6 @@ Plug 'https://github.com/Vimjas/vim-python-pep8-indent',            {'for': 'pyt
 Plug 'https://github.com/vim-scripts/django.vim',                   {'for': 'django'}
 Plug 'https://github.com/tweekmonster/django-plus.vim',             {'for': 'django'}
 " Django end }}}
-" Javascript --- {{{
-Plug 'https://github.com/pangloss/vim-javascript',                  {'for': 'javascript'}
-Plug 'https://github.com/othree/javascript-libraries-syntax.vim',   {'for': 'javascript'}
-" Javascript end }}}
 " Markdown --- {{{
 Plug 'https://github.com/gabrielelana/vim-markdown'
 " Plugin: vim-table-mode --- {{{
@@ -344,16 +327,8 @@ Plug 'https://github.com/dhruvasagar/vim-table-mode'
 let g:table_mode_corner='|'
 " vim-table-mode end }}}
 " Markdown end }}}
-" Add CSS3 syntax highlighting
-Plug 'https://github.com/hail2u/vim-css3-syntax',                   {'for': ['css', 'scss']}
-" CSS OmniComplete
-Plug 'https://github.com/othree/csscomplete.vim',                   {'for': ['css', 'scss']}
 " Better JSON
 Plug 'https://github.com/tpope/vim-jdaddy',                         {'for': ['javascript', 'json']}
-" CSV support
-Plug 'https://github.com/chrisbra/csv.vim',                         {'for': ['csv', 'tsv', 'psv']}
-" HTML
-Plug 'https://github.com/mattn/emmet-vim',                          {'for': 'html'}
 " Terraform --- {{{
 Plug 'https://github.com/juliosueiras/vim-terraform-completion',    {'for': 'terraform'}
 Plug 'https://github.com/hashivim/vim-terraform',                   {'for': 'terraform'}
@@ -364,8 +339,6 @@ let g:terraform_fmt_on_save = 1
 Plug 'https://github.com/tmux-plugins/vim-tmux',                    {'for': 'tmux'}
 " Nginx
 Plug 'https://github.com/chr4/nginx.vim',                           {'for': 'nginx'}
-" TOML
-Plug 'https://github.com/cespare/vim-toml',                         {'for': 'toml'}
 " Jinja2
 Plug 'https://github.com/Glench/Vim-Jinja2-Syntax',                 {'for': 'jinja2'}
 " Filetypes/file formats end }}}
@@ -397,12 +370,6 @@ map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)<Plug>(searchhi-update)
 map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)<Plug>(searchhi-update)
 let g:asterisk#keeppos = 1
 " vim-asterisk end }}}
-" vim-agriculture ------------------------------------------------- {{{
-Plug 'https://github.com/jesseleite/vim-agriculture'
-nmap <Leader>/ <Plug>RgRawSearch
-vmap <Leader>/ <Plug>RgRawVisualSelection
-nmap <Leader>* <Plug>RgRawWordUnderCursor
-" vim-agriculture end }}}
 " Search end }}}
 Plug 'https://github.com/dstein64/vim-startuptime'
 call plug#end()
