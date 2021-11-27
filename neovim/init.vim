@@ -779,7 +779,7 @@ augroup arrowkeys
 augroup END
 " Arrow keys end }}}
 " Vim editing --- {{{
-nnoremap <leader>v :e $MYVIMRC<cr>
+nnoremap <leader>ve :e $MYVIMRC<cr>
 nnoremap <leader>V :vsplit $MYVIMRC<cr>
 
 augroup VimFiles
