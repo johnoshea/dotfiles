@@ -11,7 +11,6 @@ let g:maplocalleader=','
 " Leader keys end }}}
 " Plugins --- {{{
 call plug#begin('~/.config/nvim/plugged')
-
 " Treesitter --- {{{
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " }}}
