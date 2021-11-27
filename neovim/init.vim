@@ -135,6 +135,7 @@ Plug 'https://github.com/andymass/vim-visput'
 " Editing end }}}
 " Code editing --- {{{
 " ale --- {{{
+let g:ale_disable_lsp = 1
 Plug 'https://github.com/dense-analysis/ale'
 " Specific to file types and are here for reference
 let g:ale_linters = {
