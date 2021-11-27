@@ -12,6 +12,9 @@ let g:maplocalleader=','
 " Plugins --- {{{
 call plug#begin('~/.config/nvim/plugged')
 
+" Treesitter --- {{{
+Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" }}}
 " Completion --- {{{
 " }}}
 " Colorschemes --- {{{
@@ -391,6 +394,22 @@ let g:asterisk#keeppos = 1
 Plug 'https://github.com/dstein64/vim-startuptime'
 call plug#end()
 " Plugins end }}}
+" Treesitter config --- {{{
+" This must be outside the vim-plug config section
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- ignore_install = { "javascript" }, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    --   disable = { "c", "rust" },  -- list of language that will be disabled
+  },
+  indent = {
+    enable = true
+  },
+}
+EOF
+" Treesitter config end --- }}}
 " Trouble config --- {{{
 lua << EOTROUBLE
 require("trouble").setup {
