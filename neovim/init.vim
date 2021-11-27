@@ -320,7 +320,7 @@ nnoremap <leader>z :call system("tmux resize-pane -Z")<CR>
 " Filetypes/file formats --- {{{
 " vimwiki --- {{{
 Plug 'https://github.com/vimwiki/vimwiki'
-let WIKI_BASE_DIR = '~/vimwiki'
+let WIKI_BASE_DIR = '~/Library/Mobile\ Documents/com~apple~CloudDocs/vimwiki'
 let wiki_1 = {}
 let wiki_1.path = WIKI_BASE_DIR . '/vimwiki/'
 let wiki_1.path_html = WIKI_BASE_DIR . '/vimwiki_html/'
