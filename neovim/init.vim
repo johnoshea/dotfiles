@@ -160,20 +160,12 @@ let g:ale_echo_msg_format = '%linter%> %code: %%s'
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black', 'isort'],
-\   'javascript': ['prettier','eslint']
+\   'javascript': ['eslint']
 \}
 let g:ale_fix_on_save = 1
 let g:ale_python_flake8_options = '--max-line-length=88'  " match 'black' formatter
 let g:ale_python_mypy_options = '--follow-imports=silent'
 " ale end }}}
-" vim-prettier --- {{{
-" post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-" use <leader>f to autoformat code
-nnoremap <leader>f :PrettierAsync<cr>
-" vim-prettier end }}}
 " vim-test --- {{{
 Plug 'https://github.com/janko-m/vim-test'
 nmap <silent> <leader>tn <esc>:w<CR>:TestNearest<CR>
