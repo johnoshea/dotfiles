@@ -191,6 +191,7 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'css': ['prettier'],
 \}
+
 let g:ale_fix_on_save = 1
 let g:ale_python_flake8_options = '--max-line-length=88'  " match 'black' formatter
 let g:ale_python_mypy_options = '--follow-imports=silent'
@@ -437,8 +438,23 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 " Treesitter config end --- }}}
+nnoremap gD :lua vim.lsp.buf.declaration()<CR>
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap K :lua vim.lsp.buf.hover()<CR>
+nnoremap gi :lua vim.lsp.buf.implementation()<CR>
+nnoremap <C-k> :lua vim.lsp.buf.signature_help()<CR>
+nnoremap <space>wa :lua vim.lsp.buf.add_workspace_folder()<CR>
+nnoremap <space>wr :lua vim.lsp.buf.remove_workspace_folder()<CR>
+nnoremap <space>wl :lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
+nnoremap <space>D :lua vim.lsp.buf.type_definition()<CR>
+nnoremap <space>rn :lua vim.lsp.buf.rename()<CR>
+nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap <space>e :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+nnoremap [d :lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap ]d :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <space>q :lua vim.lsp.diagnostic.set_loclist()<CR>
 " LSP config --- {{{
-lua <<EOL
+lua <<EO_LSP_CONFIG
 local nvim_lsp = require('lspconfig')
 
 local on_attach = function(client, bufnr)
@@ -449,22 +465,6 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-
   -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
     buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
@@ -556,7 +556,7 @@ require "vim.lsp.protocol".CompletionItemKind = {
   "   (type-param)"
 }
 
-EOL
+EO_LSP_CONFIG
 
 " Disable LSP diagnostics, so that ALE does that instead
 augroup disable_lsp_diagnostics
