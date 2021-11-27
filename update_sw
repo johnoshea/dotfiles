@@ -84,8 +84,7 @@ TERM=xterm-256color nvim +PlugUpdate! +qa
 echo "*** zprezto submodules"
 echo
 cd ~/src/prezto || exit
-git submodule update
-git submodule foreach git pull origin master --recurse-submodules
+git submodule update --recursive --remote
 echo
 echo "Restoring previous Python/Ruby/Node/Go versions"
 cd "${CURRENT_DIR}" || exit
