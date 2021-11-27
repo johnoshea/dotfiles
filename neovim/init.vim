@@ -15,13 +15,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Completion --- {{{
 " }}}
 " Colorschemes --- {{{
-" gruvbox --- {{{
-Plug 'https://github.com/gruvbox-community/gruvbox'
-let g:gruvbox_italic=1
-let g:gruvbox_invert_signs=1
-let g:gruvbox_invert_indent_guides=1
-let g:gruvbox_contrast_dark='hard'
-" gruvbox end }}}
 " srcery-vim --- {{{
 Plug 'https://github.com/srcery-colors/srcery-vim'
 let g:srcery_italic = 1
