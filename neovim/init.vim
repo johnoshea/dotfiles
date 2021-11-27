@@ -59,6 +59,7 @@ nnoremap <silent> <Leader>hi :History<CR>
 nnoremap <silent> <Leader>mp :Maps<CR>
 nnoremap <silent> <Leader>cm :Commands<CR>
 nnoremap <silent> <Leader>r :Rg<CR>
+nnoremap <silent> <Leader>/ :Rg
 nnoremap <silent> <Leader>gg :GGrep<CR>
 nnoremap <silent> <Leader>gf :GFiles<CR>
 nnoremap <silent> <Leader>C :Commits<CR>
