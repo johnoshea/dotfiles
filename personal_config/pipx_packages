@@ -1,9 +1,9 @@
 venvs are in /Users/johno/.local/pipx/venvs
 apps are exposed on your $PATH at /Users/johno/.local/bin
-   package airiam 0.1.52, Python 3.9.0
+   package airiam 0.1.56, Python 3.9.0
     - airiam
     - airiam.cmd
-   package black 21.10b0, Python 3.9.7
+   package black 21.11b1, Python 3.9.7
     - black
     - black-primer
     - blackd
@@ -15,6 +15,8 @@ apps are exposed on your $PATH at /Users/johno/.local/bin
     - git-cz
    package http-prompt 2.1.0, Python 3.9.0
     - http-prompt
+   package jedi-language-server 0.34.11, Python 3.9.8
+    - jedi-language-server
    package jmespath 0.10.0, Python 3.9.0
     - jp.py
    package jmespath-terminal 0.2.1, Python 3.9.0
@@ -28,7 +30,7 @@ apps are exposed on your $PATH at /Users/johno/.local/bin
     - pygmentize
    package vim-vint 0.3.21, Python 3.9.0
     - vint
-   package visidata 2.6.1, Python 3.9.0
+   package visidata 2.7.1, Python 3.9.0
     - vd
     - visidata
    package yamllint 1.26.3, Python 3.9.0
