@@ -145,7 +145,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " Editorconfig end }}}
 " vim-sandwich --- {{{
 Plug 'https://github.com/machakann/vim-sandwich'
-runtime macros/sandwich/keymap/surround.vim
 " vim-sandwich end }}}
 
 Plug 'https://github.com/tpope/vim-repeat'
@@ -632,6 +631,9 @@ nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 " Trouble config end --- }}}
+" vim-sandwich config --- {{{
+runtime macros/sandwich/keymap/surround.vim
+" vim-sandwich config end --- }}}
 " Settings --- {{{
 scriptencoding utf-8
 set backupcopy=yes              " using 'auto'/'no' may cause file-watching programs to miss changes
