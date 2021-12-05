@@ -449,10 +449,10 @@ nnoremap <space>wl :lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 nnoremap <space>D :lua vim.lsp.buf.type_definition()<CR>
 nnoremap <space>rn :lua vim.lsp.buf.rename()<CR>
 nnoremap gr :lua vim.lsp.buf.references()<CR>
-nnoremap <space>e :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-nnoremap [d :lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap ]d :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <space>q :lua vim.lsp.diagnostic.set_loclist()<CR>
+nnoremap <space>e :lua vim.diagnostic.open_float()<CR>
+nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
+nnoremap <space>q :lua vim.diagnostic.set_loclist()<CR>
 lua <<EO_LSP_CONFIG
 local nvim_lsp = require('lspconfig')
 
