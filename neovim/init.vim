@@ -408,7 +408,6 @@ Plug 'https://github.com/kana/vim-textobj-user'
 Plug 'https://github.com/kana/vim-textobj-line'
 " Text objects end }}}
 " Search --- {{{
-Plug 'https://github.com/markonm/traces.vim'
 " vim-asterisk ---------------------------------------------------- {{{
 Plug 'https://github.com/haya14busa/vim-asterisk'
 Plug 'https://github.com/qxxxb/vim-searchhi'
