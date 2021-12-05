@@ -437,6 +437,7 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 " Treesitter config end --- }}}
+" LSP config --- {{{
 nnoremap gD :lua vim.lsp.buf.declaration()<CR>
 nnoremap gd :lua vim.lsp.buf.definition()<CR>
 nnoremap K :lua vim.lsp.buf.hover()<CR>
@@ -452,7 +453,6 @@ nnoremap <space>e :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap [d :lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <space>q :lua vim.lsp.diagnostic.set_loclist()<CR>
-" LSP config --- {{{
 lua <<EO_LSP_CONFIG
 local nvim_lsp = require('lspconfig')
 
@@ -498,27 +498,20 @@ end
 -- lsp-installer
 local lsp_installer = require("nvim-lsp-installer")
 
-local lsp_installer_servers = require'nvim-lsp-installer.servers'
+-- Register a handler that will be called for all installed servers.
+-- Alternatively, you may also register handlers on specific server instances instead (see example below).
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
 
-local function config(_config)
-	return vim.tbl_deep_extend("force", {
-		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-	}, _config or {})
-end
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
 
-require("lspconfig").jedi_language_server.setup(config())
-require("lspconfig").bashls.setup(config())
-require("lspconfig").dockerls.setup(config())
-require("lspconfig").tailwindcss.setup(config())
-require("lspconfig").terraformls.setup(config())
--- require("lspconfig").vimls.setup(config())
-require("lspconfig").yamlls.setup(config())
-require("lspconfig").cssls.setup(config())
-require("lspconfig").jsonls.setup(config())
-require("lspconfig").lemminx.setup(config())
-require("lspconfig").sqlls.setup(config())
-require("lspconfig").tflint.setup(config())
-require("lspconfig").html.setup(config())
+    -- This setup() function is exactly the same as lspconfig's setup function.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    server:setup(opts)
+end)
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
