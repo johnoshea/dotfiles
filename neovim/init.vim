@@ -197,13 +197,8 @@ nmap <silent> <leader>ts <esc>:w<CR>:TestSuite<CR>
 nmap <silent> <leader>tl <esc>:w<CR>:TestLast<CR>
 let g:test#strategy = 'vimux'
 " vim-test end }}}
-" tcomment --- {{{
-Plug 'https://github.com/tomtom/tcomment_vim'
-" Prevent tcomment from making a zillion mappings (we just want the operator).
-let g:tcomment_mapleader2=''
-let g:tcomment_mapleader_comment_anyway=''
-let g:tcomment_textobject_inlinecomment=''
-" tcomment end }}}
+" Comment.nvim - use 'gcc', 'gbc', 'gco', 'gcO', 'gcA'
+Plug 'https://github.com/numToStr/Comment.nvim'
 " Pear-tree --- {{{
 Plug 'https://github.com/tmsvg/pear-tree'
 " If enabled, smart pair functions timeout after 60ms:
@@ -631,6 +626,9 @@ nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 " Trouble config end --- }}}
+" Comment.nvim config --- {{{
+lua require('Comment').setup()
+" Comment.nvim config end --- }}}
 " vim-sandwich config --- {{{
 runtime macros/sandwich/keymap/surround.vim
 " vim-sandwich config end --- }}}
