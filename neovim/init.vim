@@ -103,14 +103,8 @@ command! -bang -nargs=? -complete=dir Files
 command! -bang -nargs=? -complete=dir GFiles
 \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 " FZF end }}}
-" Plugin: vim-sneak --- {{{
-Plug 'https://github.com/justinmk/vim-sneak'
-nmap f <Plug>SneakForward
-xmap f <Plug>VSneakForward
-nmap F <Plug>SneakBackward
-xmap F <Plug>VSneakBackward
-let g:sneak#streak = 1
-" vim-sneak end }}}
+" lightspeed.nvim - show hints on 's', 'f', etc
+Plug 'https://github.com/ggandor/lightspeed.nvim'
 " Plugin: vim-obsession --- {{{
 Plug 'https://github.com/tpope/vim-obsession'
 nnoremap <leader>o :Obsession<cr>
