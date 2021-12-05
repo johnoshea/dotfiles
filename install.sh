@@ -77,6 +77,7 @@ make_symlinks () {
     ln -sf "$HOME/${DOTFILES}/CFUserTextEncoding" "$HOME/.CFUserTextEncoding"
     ln -sf "$HOME/${DOTFILES}/agignore" "$HOME/.agignore"
     ln -sf "$HOME/${DOTFILES}/curlrc" "$HOME/.curlrc"
+    ln -sf "$HOME/${DOTFILES}/digrc" "$HOME/.digrc"
     ln -sf "$HOME/${DOTFILES}/editorconfig" "$HOME/.editorconfig"
     ln -sf "$HOME/${DOTFILES}/eslintrc.js" "$HOME/.eslintrc.js"
     ln -sf "$HOME/${DOTFILES}/gemrc" "$HOME/.gemrc"
