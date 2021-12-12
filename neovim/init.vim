@@ -484,21 +484,26 @@ local function make_config()
 end
 
 -- lsp-installer
-local lsp_installer = require("nvim-lsp-installer")
+ local lsp_installer = require "nvim-lsp-installer"
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
+local function on_attach(client, bufnr)
+  -- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
+end
+
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
+  -- Specify the default options which we'll use to setup all servers
+  local default_opts = {
+    on_attach = on_attach,
+  }
 
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
+  -- Now we'll create a server_opts table where we'll specify our custom LSP server configuration
+  local server_opts = {
+    -- Provide settings that should only apply to the "eslintls" server
+  }
 
-    -- This setup() function is exactly the same as lspconfig's setup function.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
+  -- Use the server's custom settings, if they exist, otherwise default to the default options
+  local server_options = server_opts[server.name] and server_opts[server.name]() or default_opts
+  server:setup(server_options)
 end)
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
