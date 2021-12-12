@@ -541,7 +541,7 @@ EO_LSP_CONFIG
 " Disable LSP diagnostics, so that ALE does that instead
 augroup disable_lsp_diagnostics
     autocmd!
-    autocmd BufEnter * lua vim.lsp.diagnostic.disable()
+    autocmd BufEnter * lua vim.diagnostic.disable()
 augroup END
 " LSP config end --- }}}
 " Completion config --- {{{
