@@ -970,6 +970,10 @@ noremap <C-W><C-W> <C-W>w
 " Windows end }}}
 
 " Lines --- {{{
+" Keep the cursor centred when searching
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " Keep the cursor in place while joining lines using 'J'
 nnoremap J mzJ`z
 " Join lines in insert mode
