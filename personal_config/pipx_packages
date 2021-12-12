@@ -15,7 +15,7 @@ apps are exposed on your $PATH at /Users/johno/.local/bin
     - git-cz
    package http-prompt 2.1.0, Python 3.9.0
     - http-prompt
-   package jedi-language-server 0.34.11, Python 3.9.8
+   package jedi-language-server 0.34.12, Python 3.9.8
     - jedi-language-server
    package jmespath 0.10.0, Python 3.9.0
     - jp.py
