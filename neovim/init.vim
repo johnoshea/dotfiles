@@ -499,6 +499,15 @@ lsp_installer.on_server_ready(function(server)
   -- Now we'll create a server_opts table where we'll specify our custom LSP server configuration
   local server_opts = {
     -- Provide settings that should only apply to the "eslintls" server
+    ["pylsp"] = function()
+      default_opts.settings = {
+        plugins = {
+          pylint = {
+            enable = true,
+          },
+        }
+      }
+    end,
   }
 
   -- Use the server's custom settings, if they exist, otherwise default to the default options
