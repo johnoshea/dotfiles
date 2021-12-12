@@ -823,6 +823,12 @@ set noswapfile
 set updatetime=500 " Write swap files after 0.5 seconds of inactivity.
 " Drop an undo breakpoint so I can recover from insert-mode ctrl-w's
 inoremap <c-w> <c-g>u<c-w>
+" ...and do the same for punctuation
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+inoremap : :<c-g>u
 
 "Meaningful backup name, ex: filename@2015-04-05.14:59
 augroup named_backups
