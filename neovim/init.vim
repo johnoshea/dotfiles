@@ -1029,6 +1029,7 @@ augroup end
 augroup autosourcevimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC :source $MYVIMRC
+    autocmd BufWritePost neovim/init.vim :source $MYVIMRC
 augroup END
 " Vim editing end }}}
 " Autocommands --- {{{
