@@ -48,61 +48,24 @@ Plug 'https://github.com/NLKNguyen/papercolor-theme'
 " Experimentation
 " Colorschemes end }}}
 " Navigation/filesystem --- {{{
-" FZF --- {{{
-Plug '/usr/local/opt/fzf' | Plug 'https://github.com/junegunn/fzf.vim', { 'do': { -> fzf#install() } }
-let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git --ignore-file ~/.gitignore'
-nnoremap <silent> <Leader><Leader> :Files<CR>
-nnoremap <silent> <Leader><CR> :Buffers<CR>
-nnoremap <silent> <Leader>` :Marks<CR>
-nnoremap <silent> <Leader>hi :History<CR>
-nnoremap <silent> <Leader>mp :Maps<CR>
-nnoremap <silent> <Leader>cm :Commands<CR>
-nnoremap <silent> <Leader>r :Rg<CR>
-nnoremap <silent> <Leader>/ :Rg
-nnoremap <silent> <Leader>gg :GGrep<CR>
-nnoremap <silent> <Leader>gf :GFiles<CR>
-nnoremap <silent> <Leader>C :Commits<CR>
-nnoremap <silent> <Leader>tg :Tags<CR>
-" Insert mode completion
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
-" cd to Notes dir (useful for Notational Velocity/Nebulous Notes)
-nnoremap <leader>n :lcd ~/Documents/3\ Current/Notes<cr>:Files<cr>
-
-" Command for git grep
-" - fzf#vim#grep(command, with_column, [options], [fullscreen])
-command! -bang -nargs=* GGrep
-\ call fzf#vim#grep(
-\   'git grep --line-number '.shellescape(<q-args>), 0,
-\   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
-
-" Augmenting Rg command using fzf#vim#with_preview function
-"   * fzf#vim#with_preview([[options], [preview window], [toggle keys...]])
-"     * For syntax-highlighting, Ruby and any of the following tools are required:
-"       - Bat: https://github.com/sharkdp/bat
-"       - Highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
-"       - CodeRay: http://coderay.rubychan.de/
-"       - Rouge: https://github.com/jneen/rouge
-"
-"   :Rg  - Start fzf with hidden preview window that can be enabled with "?" key
-"   :Rg! - Start fzf in fullscreen and display the preview window above
-command! -bang -nargs=* Rg
-\ call fzf#vim#grep(
-\   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-\   <bang>0 ? fzf#vim#with_preview('up:60%')
-\           : fzf#vim#with_preview('right:50%:hidden', '?'),
-\   <bang>0)
-
-" Files command with preview window
-command! -bang -nargs=? -complete=dir Files
-\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-" Git files command with preview window
-command! -bang -nargs=? -complete=dir GFiles
-\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-" FZF end }}}
+" Telescope --- {{{
+Plug 'https://github.com/nvim-lua/plenary.nvim'
+Plug 'https://github.com/nvim-telescope/telescope.nvim'
+Plug 'https://github.com/nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+nnoremap <silent> <Leader><Leader> <cmd>Telescope find_files<CR>
+nnoremap <silent> <Leader><CR> <cmd>Telescope buffers<CR>
+nnoremap <silent> <Leader>` <cmd>Telescope marks<CR>
+nnoremap <silent> <Leader>hi <cmd>Telescope command_history<CR>
+nnoremap <silent> <Leader>he <cmd>Telescope help_tags<CR>
+nnoremap <silent> <Leader>mp <cmd>Telescope keymaps<CR>
+nnoremap <silent> <Leader>cm <cmd>Telescope commands<CR>
+nnoremap <silent> <Leader>rg <cmd>Telescope grep_string<CR>
+nnoremap <silent> <Leader>/ <cmd>Telescope live_grep<CR>
+nnoremap <silent> <Leader>gf <cmd>Telescope git_files<CR>
+nnoremap <silent> <Leader>C <cmd>Telescope git_commits<CR>
+nnoremap <silent> <Leader>tg <cmd>Telescope treesitter<CR>
+nnoremap <silent> <Leader>TS :Telescope<space>
+" Telescope end --- }}}
 " lightspeed.nvim - show hints on 's', 'f', etc
 Plug 'https://github.com/ggandor/lightspeed.nvim'
 " Plugin: vim-obsession --- {{{
@@ -646,6 +609,26 @@ lua require('Comment').setup()
 " vim-sandwich config --- {{{
 runtime macros/sandwich/keymap/surround.vim
 " vim-sandwich config end --- }}}
+" Telescope config --- {{{
+lua << EOTELESCOPE
+-- You dont need to set any of these options. These are the default ones. Only
+-- the loading is important
+require('telescope').setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require('telescope').load_extension('fzf')
+EOTELESCOPE
+" Telescope end --- }}}
 " Settings --- {{{
 scriptencoding utf-8
 set backupcopy=yes              " using 'auto'/'no' may cause file-watching programs to miss changes
