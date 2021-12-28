@@ -3,19 +3,19 @@ apps are exposed on your $PATH at /Users/johno/.local/bin
    package airiam 0.1.56, Python 3.9.0
     - airiam
     - airiam.cmd
-   package black 21.11b1, Python 3.9.7
+   package black 21.12b0, Python 3.9.7
     - black
     - black-primer
     - blackd
    package colorpedia 1.2.3, Python 3.9.0
     - color
     - colorpedia
-   package commitizen 2.20.0, Python 3.9.0
+   package commitizen 2.20.3, Python 3.9.0
     - cz
     - git-cz
    package http-prompt 2.1.0, Python 3.9.0
     - http-prompt
-   package jedi-language-server 0.34.12, Python 3.9.8
+   package jedi-language-server 0.35.0, Python 3.9.8
     - jedi-language-server
    package jmespath 0.10.0, Python 3.9.0
     - jp.py
@@ -30,7 +30,7 @@ apps are exposed on your $PATH at /Users/johno/.local/bin
     - pygmentize
    package vim-vint 0.3.21, Python 3.9.0
     - vint
-   package visidata 2.7.1, Python 3.9.0
+   package visidata 2.8, Python 3.9.0
     - vd
     - visidata
    package yamllint 1.26.3, Python 3.9.0
