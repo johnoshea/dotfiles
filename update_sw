@@ -13,7 +13,7 @@ echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / N
 cd "$UPDATE_SW_DIR" || exit
 pyenv local $(cat ~/.python-version)
 rbenv local 2.6.4
-nvm use 16.13.0
+nvm use 16.13.1
 goenv local 1.13.4
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 echo "*** System software"
