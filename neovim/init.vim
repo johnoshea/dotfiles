@@ -46,6 +46,7 @@ let g:srcery_italic = 1
 " For light terminal sessions
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
 " Experimentation
+Plug 'https://github.com/rebelot/kanagawa.nvim'
 " Colorschemes end }}}
 " Navigation/filesystem --- {{{
 " Telescope --- {{{
@@ -703,7 +704,7 @@ if $ITERM_PROFILE ==# 'Light'
     colorscheme PaperColor
     set background=light
 else
-    colorscheme srcery
+    colorscheme kanagawa
     set background=dark
 endif
 syntax enable
