@@ -110,7 +110,16 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " vim-sandwich --- {{{
 Plug 'https://github.com/machakann/vim-sandwich'
 " vim-sandwich end }}}
-
+" vim-schlepp --- {{{
+Plug 'https://github.com/zirrostig/vim-schlepp'
+vmap <unique> <up>    <Plug>SchleppUp
+vmap <unique> <down>  <Plug>SchleppDown
+vmap <unique> <left>  <Plug>SchleppLeft
+vmap <unique> <right> <Plug>SchleppRight
+vmap <unique> i <Plug>SchleppToggleReindent
+let g:Schlepp#allowSquishingLines = 1
+let g:Schlepp#allowSquishingBlock = 1
+" }}}
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-unimpaired'
 Plug 'https://github.com/tpope/vim-abolish'
@@ -314,7 +323,7 @@ let wiki_1.syntax = 'markdown'
 let wiki_1.ext2syntax = {'.md': 'markdown', '.markdown': 'markdown'}
 let g:vimwiki_list = [wiki_1]
 let g:vimwiki_markdown_ext_link = 1  " add .md to links, for other markdown processors
-let g:vimwiki_global_ext = 0  " turn off temporary wikis
+let g:vimwiki_global_ext = 0  " disable vimwiki for all Markdown files (outside its own folders)
 " vimwiki end }}}
 " Python --- {{{
 Plug 'https://github.com/kalekundert/vim-coiled-snake',             {'for': 'python'}
@@ -988,34 +997,6 @@ nnoremap J mzJ`z
 inoremap <C-j> <C-o>J
 " Lines end }}}
 " Mappings end }}}
-" Arrow keys --- {{{
-function SetArrowKeys()
-    " Repurpose arrow keys to move lines
-    " Arrow key remapping:
-    " Up/Dn = move line up/dn
-    " Left/Right = indent/unindent
-    " Normal mode
-    nnoremap <silent> <buffer> <Left> <<
-    nnoremap <silent> <buffer> <Right> >>
-    nnoremap <silent> <buffer> <Up>   :<C-u>silent move-2<CR>:silent! ==<CR>
-    nnoremap <silent> <buffer> <Down> :<C-u>silent move+<CR>:silent! ==<CR>
-
-    " Visual mode
-    vnoremap <silent> <buffer> <Left> <gv
-    vnoremap <silent> <buffer> <Right> >gv
-    vnoremap <silent> <buffer> <Up>   :move-2<CR>gv=gv
-    vnoremap <silent> <buffer> <Down> :move'>+<CR>gv=gv
-
-    " Insert mode
-    inoremap <silent> <buffer> <Left> <C-D>
-    inoremap <silent> <buffer> <Right> <C-T>
-endfunction
-
-augroup arrowkeys
-    autocmd!
-    autocmd BufNewFile,Bufread * call SetArrowKeys()
-augroup END
-" Arrow keys end }}}
 " Vim editing --- {{{
 nnoremap <leader>ve :e $MYVIMRC<cr>
 nnoremap <leader>V :vsplit $MYVIMRC<cr>
