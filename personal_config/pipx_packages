@@ -15,7 +15,7 @@ apps are exposed on your $PATH at /Users/johno/.local/bin
     - git-cz
    package http-prompt 2.1.0, Python 3.9.0
     - http-prompt
-   package jedi-language-server 0.35.0, Python 3.9.8
+   package jedi-language-server 0.35.1, Python 3.9.8
     - jedi-language-server
    package jmespath 0.10.0, Python 3.9.0
     - jp.py
@@ -26,7 +26,7 @@ apps are exposed on your $PATH at /Users/johno/.local/bin
    package pip-tools 6.4.0, Python 3.9.0
     - pip-compile
     - pip-sync
-   package pygments 2.10.0, Python 3.9.0
+   package pygments 2.11.2, Python 3.9.0
     - pygmentize
    package vim-vint 0.3.21, Python 3.9.0
     - vint
