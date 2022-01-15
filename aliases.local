@@ -1,0 +1,17 @@
+alias tower='gittower $(git rev-parse --show-toplevel)'
+
+# Use 'bat' for cat
+alias cat='bat --theme="Monokai Extended"'
+
+# Use 'prettyping' for ping
+alias ping='prettyping --nolegend -c 5'
+
+# Use fzf to preview files (using 'bat')
+alias show="fzf --preview 'bat --theme=\"Monokai Extended\" --color \"always\" -- {}'"
+
+# Use 'lsd' for ls
+alias ls='lsd --icon=never'
+
+# Terraform/AWS infrastructure shortcuts
+alias plan='make plan'
+alias apply='make apply'
