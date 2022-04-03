@@ -26,6 +26,7 @@ sudo mas upgrade
 echo "*** Ruby gems"
 echo
 rbenv rehash
+rm -f "${INSTALLED_CONFIG}/ruby_gems"
 gem list --local > "${INSTALLED_CONFIG}/ruby_gems"
 sudo gem update --system
 for outdated_gem in $(gem outdated | cut -f1 -d' ' | grep -v 'rdoc'); do
@@ -33,7 +34,8 @@ for outdated_gem in $(gem outdated | cut -f1 -d' ' | grep -v 'rdoc'); do
 done
 echo "*** Homebrew"
 echo
-brew list --versions > ${INSTALLED_CONFIG}/homebrew_packages
+rm -f "${INSTALLED_CONFIG}/homebrew_packages"
+brew list --versions > "${INSTALLED_CONFIG}/homebrew_packages"
 brew doctor
 brew update
 brew upgrade
@@ -46,29 +48,35 @@ brew uninstall neovim && brew uninstall luajit && brew install --HEAD luajit && 
 brew cleanup
 echo "*** Pyenv"
 echo
-pyenv versions > ${INSTALLED_CONFIG}/pyenv_versions
+rm -f "${INSTALLED_CONFIG}/pyenv_versions"
+pyenv versions > "${INSTALLED_CONFIG}/pyenv_versions"
 pyenv rehash
 echo "*** Goenv"
 echo
-goenv versions > ${INSTALLED_CONFIG}/goenv_versions
+rm -f "${INSTALLED_CONFIG}/goenv_versions"
+goenv versions > "${INSTALLED_CONFIG}/goenv_versions"
 goenv rehash
 echo "*** terraform"
 echo
-tfenv list > ${INSTALLED_CONFIG}/tfenv_versions
+rm -f "${INSTALLED_CONFIG}/tfenv_versions"
+tfenv list > "${INSTALLED_CONFIG}/tfenv_versions"
 tfenv install "$(tfenv list-remote | egrep -v '(alpha|beta|\-rc)' | head -n1)"
 echo "*** pipx"
 echo
 python3 -m pip install --upgrade pip setuptools
 python3 -m pip install -U pipx
-pipx list > ${INSTALLED_CONFIG}/pipx_packages
+rm -f "${INSTALLED_CONFIG}/pipx_packages"
+pipx list > "${INSTALLED_CONFIG}/pipx_packages"
 pipx upgrade-all
 echo "*** poetry"
 echo
 poetry self update
 echo "*** node"
 echo
-nvm ls --no-colors --no-alias > ${INSTALLED_CONFIG}/nvm_versions
-npm list > ${INSTALLED_CONFIG}/npm_packages
+rm -f "${INSTALLED_CONFIG}/nvm_versions"
+nvm ls --no-colors --no-alias > "${INSTALLED_CONFIG}/nvm_versions"
+rm -f "${INSTALLED_CONFIG}/npm_packages"
+npm list > "${INSTALLED_CONFIG}/npm_packages"
 npm set progress=false
 npm install -g npm@latest
 for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
