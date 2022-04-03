@@ -11,10 +11,10 @@ INSTALLED_CONFIG=${HOME}/.local/personal_config
 mkdir -p ${INSTALLED_CONFIG}
 echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE} / Go: ${CURRENT_GO}] ***"
 cd "$UPDATE_SW_DIR" || exit
-pyenv local $(cat ~/.python-version)
-rbenv local 2.6.4
-nvm use 16.13.1
-goenv local 1.13.4
+pyenv local "$(cat ~/.python-version)"
+rbenv local "$(cat ~/.rbenv/version)"
+nvm use 16.13.2
+goenv local "$(cat ~/.goenv/version)"
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 echo "*** System software"
 echo
