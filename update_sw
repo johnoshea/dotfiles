@@ -1,6 +1,6 @@
 #!/bin/sh
 # Switch back to system Ruby/Python before updating
-. /usr/local/opt/nvm/nvm.sh
+. /opt/homebrew/opt/nvm/nvm.sh
 UPDATE_SW_DIR="$HOME"
 CURRENT_DIR=$(pwd)
 CURRENT_PYTHON=$(pyenv version | head -n1 | cut -f1 -d' ')
