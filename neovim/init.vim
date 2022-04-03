@@ -118,9 +118,6 @@ vmap <unique> <up>    <Plug>SchleppUp
 vmap <unique> <down>  <Plug>SchleppDown
 vmap <unique> <left>  <Plug>SchleppLeft
 vmap <unique> <right> <Plug>SchleppRight
-vmap <unique> i <Plug>SchleppToggleReindent
-let g:Schlepp#allowSquishingLines = 1
-let g:Schlepp#allowSquishingBlock = 1
 " }}}
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-unimpaired'
