@@ -170,11 +170,9 @@ let g:test#strategy = 'vimux'
 " vim-test end }}}
 " Comment.nvim - use 'gcc', 'gbc', 'gco', 'gcO', 'gcA'
 Plug 'https://github.com/numToStr/Comment.nvim'
-" Pear-tree --- {{{
-Plug 'https://github.com/tmsvg/pear-tree'
-" If enabled, smart pair functions timeout after 60ms:
-let g:pear_tree_timeout = 60
-" Pear-tree end }}}
+" Lexima --- {{{
+Plug 'https://github.com/cohama/lexima.vim'
+" Lexima end }}}
 " Code editing end }}}
 " Git --- {{{
 " Fugitive --- {{{
