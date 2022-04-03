@@ -69,8 +69,8 @@ nnoremap <silent> <Leader>C <cmd>Telescope git_commits<CR>
 nnoremap <silent> <Leader>tg <cmd>Telescope treesitter<CR>
 nnoremap <silent> <Leader>TS :Telescope<space>
 " Telescope end --- }}}
-" lightspeed.nvim - show hints on 's', 'f', etc
-Plug 'https://github.com/ggandor/lightspeed.nvim'
+" Plugindd; leap.nvim - show hints on 's', 'f', etc
+Plug 'https://github.com/ggandor/leap.nvim'
 " Plugin: vim-obsession --- {{{
 Plug 'https://github.com/tpope/vim-obsession'
 nnoremap <leader>o :Obsession<cr>
@@ -635,6 +635,9 @@ require('telescope').setup {
 require('telescope').load_extension('fzf')
 EOTELESCOPE
 " Telescope end --- }}}
+" leap.vim config --- {{{
+lua require('leap').set_default_keymaps()
+" leap.vim end --- }}}
 " Settings --- {{{
 scriptencoding utf-8
 set backupcopy=yes              " using 'auto'/'no' may cause file-watching programs to miss changes
