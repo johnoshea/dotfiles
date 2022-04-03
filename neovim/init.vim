@@ -368,6 +368,8 @@ Plug 'https://github.com/michaeljsmith/vim-indent-object'
 Plug 'https://github.com/kana/vim-textobj-user'
 " - provides al/il
 Plug 'https://github.com/kana/vim-textobj-line'
+" - provides av/iv for camel- and snake-case segments
+Plug 'https://github.com/julian/vim-textobj-variable-segment'
 " Text objects end }}}
 " Search --- {{{
 " vim-asterisk ---------------------------------------------------- {{{
