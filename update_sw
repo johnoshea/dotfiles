@@ -68,9 +68,6 @@ python3 -m pip install -U pipx
 rm -f "${INSTALLED_CONFIG}/pipx_packages"
 pipx list > "${INSTALLED_CONFIG}/pipx_packages"
 pipx upgrade-all
-echo "*** poetry"
-echo
-poetry self update
 echo "*** node"
 echo
 rm -f "${INSTALLED_CONFIG}/nvm_versions"
