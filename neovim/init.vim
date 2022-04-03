@@ -39,6 +39,9 @@ Plug 'https://github.com/onsails/lspkind-nvim'
 " }}}
 " Completion end }}}
 " Colorschemes --- {{{
+Plug 'https://github.com/rose-pine/neovim'
+Plug 'https://github.com/Shatur/neovim-ayu'
+Plug 'https://github.com/EdenEast/nightfox.nvim'
 " srcery-vim --- {{{
 Plug 'https://github.com/srcery-colors/srcery-vim'
 let g:srcery_italic = 1
@@ -46,7 +49,6 @@ let g:srcery_italic = 1
 " For light terminal sessions
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
 " Experimentation
-Plug 'https://github.com/rebelot/kanagawa.nvim'
 " Colorschemes end }}}
 " Navigation/filesystem --- {{{
 " Telescope --- {{{
@@ -707,7 +709,21 @@ if $ITERM_PROFILE ==# 'Light'
     colorscheme PaperColor
     set background=light
 else
-    colorscheme kanagawa
+    lua << EOROSE
+        require('rose-pine').setup({
+    	---@usage 'main'|'moon'
+    	dark_variant = 'main',
+    	disable_italics = true,
+    })
+EOROSE
+    lua << EOAYU
+    require('ayu').setup({
+        overrides = {
+            LineNr = { fg = '#998942' }
+        }
+    })
+EOAYU
+    colorscheme ayu-dark
     set background=dark
 endif
 syntax enable
