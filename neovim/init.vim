@@ -292,6 +292,11 @@ Plug 'https://github.com/machakann/vim-highlightedyank'
 Plug 'https://github.com/folke/trouble.nvim'
 Plug 'https://github.com/kyazdani42/nvim-web-devicons'
 " }}}
+
+" hexokinase --- {{{
+Plug 'https://github.com/rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+let g:Hexokinase_highlighters = ['backgroundfull']
+" }}}
 " Display end }}}
 " Tmux --- {{{
 " Plugin: vimux --- {{{
