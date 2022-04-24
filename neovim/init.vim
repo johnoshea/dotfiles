@@ -465,7 +465,7 @@ local function make_config()
 end
 
 -- lsp-installer
- local lsp_installer = require "nvim-lsp-installer"
+local lsp_installer = require "nvim-lsp-installer"
 
 local function on_attach(client, bufnr)
   -- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
