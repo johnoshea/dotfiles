@@ -225,7 +225,7 @@ function! StatusLine(current, width) abort
   let l:s .= ' %f%h%w%m%r '
   let l:s .= ObsessionStatus() . ' '
   if a:current
-    let l:s .= crystalline#right_sep('', 'Fill') . ' ⎇ %{fugitive#head()}'
+    let l:s .= crystalline#right_sep('', 'Fill') . ' ⎇ %{FugitiveHead()}'
   endif
 
   let l:s .= '%='
