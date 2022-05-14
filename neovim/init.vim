@@ -667,6 +667,7 @@ set autowrite                   " Write file before some commands
 set wildmode=longest:full,full  " Complete the next full match
 set virtualedit=all             " Allow the cursor to move to 'invalid' places
 set cmdheight=2                 " Avoid 'Press Enter' messages
+set laststatus=3                " Single status line, shared across all windows
 set fillchars=diff:⣿,vert:│     " Have different vertical splits for diffs
 set breakindent                 " indent wrapped lines
 set noshowmode                  " vim-crystalline shows this for us
