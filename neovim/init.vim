@@ -652,6 +652,7 @@ set sidescrolloff=5             " Minimum no. of columns visible to the left/rig
 set nomodeline                  " Disallow modelines (for security reasons)
 set autowrite                   " Write file before some commands
 set wildmode=longest:full,full  " Complete the next full match
+set wildoptions+=pum            " Show wildmenu as a popup
 set virtualedit=all             " Allow the cursor to move to 'invalid' places
 set cmdheight=2                 " Avoid 'Press Enter' messages
 set laststatus=3                " Single status line, shared across all windows
