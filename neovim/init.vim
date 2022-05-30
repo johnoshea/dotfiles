@@ -910,30 +910,6 @@ nmap $ g_
 vnoremap + g<C-a>gv
 vnoremap - g<C-x>gv
 
-" Try [twf](https://github.com/wvanlint/twf)
-function! TwfExit(path)
-  function! TwfExitClosure(job_id, data, event) closure
-    bd!
-    try
-      let out = filereadable(a:path) ? readfile(a:path) : []
-    finally
-      silent! call delete(a:path)
-    endtry
-    if !empty(out)
-      execute 'edit! ' . out[0]
-    endif
-  endfunction
-  return funcref('TwfExitClosure')
-endfunction
-
-function! Twf()
-  let temp = tempname()
-  call termopen('twf ' . @% . ' > ' . temp, { 'on_exit': TwfExit(temp) })
-  startinsert
-endfunction
-
-nnoremap <silent> <leader>tv :call Twf()<CR>
-
 " Try using Q as @q
 nnoremap Q @q
 
