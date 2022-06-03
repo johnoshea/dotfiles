@@ -219,10 +219,7 @@ augroup END
 Plug 'https://github.com/tpope/vim-git'
 " Enable GitHub features in fugitive
 Plug 'https://github.com/tpope/vim-rhubarb'
-" vim-signify --- {{{
-Plug 'https://github.com/mhinz/vim-signify'
-let g:signify_vcs_list = [ 'git' ]
-" vim-signify end }}}
+Plug 'https://github.com/lewis6991/gitsigns.nvim'
 " vim-twiggy --- {{{
 Plug 'https://github.com/sodapopcan/vim-twiggy'
 nnoremap <leader>tw :Twiggy<cr>
@@ -680,6 +677,55 @@ EOTELESCOPE
 " leap.vim config --- {{{
 lua require('leap').set_default_keymaps()
 " leap.vim end --- }}}
+" gitsigns.nvim config --- {{{
+lua << EOGITSIGNS
+require('gitsigns').setup {
+  word_diff  = true, -- Toggle with `:Gitsigns toggle_word_diff`
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map('n', ']g', function()
+      if vim.wo.diff then return ']g' end
+      vim.schedule(function() gs.next_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+
+    map('n', '[g', function()
+      if vim.wo.diff then return '[g' end
+      vim.schedule(function() gs.prev_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+
+    -- Actions
+    -- Popup what's changed in a hunk under cursor
+    map({'n', 'v'}, '<leader>gp', ':Gitsigns preview_hunk<CR>')
+
+    -- Stage/reset individual hunks under cursor in a file
+    map({'n', 'v'}, '<leader>gs', ':Gitsigns stage_hunk<CR>')
+    map({'n', 'v'}, '<leader>gr', ':Gitsigns reset_hunk<CR>')
+    map({'n', 'v'}, '<leader>gu', ':Gitsigns undo_stage_hunk<CR>')
+
+    -- Stage/reset all hunks in a file
+    map({'n', 'v'}, '<leader>gS', ':Gitsigns stage_buffer<CR>')
+    map({'n', 'v'}, '<leader>gU', ':Gitsigns reset_buffer_index<CR>')
+    map({'n', 'v'}, '<leader>gR', ':Gitsigns reset_buffer<CR>')
+
+    -- Show git status
+    map({'n', 'v'}, '<leader>gg', ':Git status<CR>')
+
+    -- Text object
+    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+  end
+}
+EOGITSIGNS
+" gitsigns.nvim end --- }}}
 " Settings --- {{{
 scriptencoding utf-8
 set backupcopy=yes              " using 'auto'/'no' may cause file-watching programs to miss changes
