@@ -200,10 +200,14 @@ augroup fugitive
     " Auto-clean fugitive buffers.
     autocmd BufReadPost fugitive://* set bufhidden=delete
 
-    nnoremap <leader>gs :Git<CR>
+    nnoremap <leader>gi :Git<CR>
     nnoremap <leader>ga :Gwrite<CR>
     nnoremap <leader>gc :Gcommit %<CR>
-    nnoremap <leader>gd :Gvdiffsplit<CR>
+    nnoremap <leader>gd :Git difftool<CR>
+    nnoremap <leader>g\| :Gvdiffsplit<CR>
+    nnoremap <leader>go :windo diffoff<CR> \| :only<CR>
+    nnoremap <leader>g_ :Gdiffsplit<CR>
+    nnoremap <leader>gm :Git mergetool<CR>
     nnoremap <leader>gl :Gclog<CR>
     nnoremap <leader>gb :Git blame<CR>
     nnoremap <leader>gf :Git fetch<CR>
