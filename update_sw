@@ -63,8 +63,8 @@ tfenv list > "${INSTALLED_CONFIG}/tfenv_versions"
 tfenv install "$(tfenv list-remote | egrep -v '(alpha|beta|\-rc)' | head -n1)"
 echo "*** pipx"
 echo
-python3 -m pip install --upgrade pip setuptools
-python3 -m pip install -U pipx
+PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --upgrade pip setuptools
+PIP_REQUIRE_VIRTUALENV=false python3 -m pip install -U pipx
 rm -f "${INSTALLED_CONFIG}/pipx_packages"
 pipx list > "${INSTALLED_CONFIG}/pipx_packages"
 pipx upgrade-all
