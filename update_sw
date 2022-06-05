@@ -15,10 +15,6 @@ pyenv local "$(cat ~/.python-version)"
 rbenv local "$(cat ~/.rbenv/version)"
 nvm use 16.13.2
 goenv local "$(cat ~/.goenv/version)"
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-echo "*** System software"
-echo
-# sudo softwareupdate --all --install
 echo "*** App Store programs"
 echo
 sudo mas outdated
