@@ -56,7 +56,7 @@ echo "*** terraform"
 echo
 rm -f "${INSTALLED_CONFIG}/tfenv_versions"
 tfenv list > "${INSTALLED_CONFIG}/tfenv_versions"
-tfenv install "$(tfenv list-remote | egrep -v '(alpha|beta|\-rc)' | head -n1)"
+tfenv install "$(tfenv list-remote | grep -ve '(alpha|beta|\-rc)' | head -n1)"
 echo "*** pipx"
 echo
 PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --upgrade pip setuptools
