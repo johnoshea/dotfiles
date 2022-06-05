@@ -15,10 +15,12 @@ pyenv local "$(cat ~/.python-version)"
 rbenv local "$(cat ~/.rbenv/version)"
 nvm use 16.13.2
 goenv local "$(cat ~/.goenv/version)"
+
 echo "*** App Store programs"
 echo
 sudo mas outdated
 sudo mas upgrade
+
 echo "*** Ruby gems"
 echo
 rbenv rehash
@@ -28,6 +30,7 @@ sudo gem update --system
 for outdated_gem in $(gem outdated | cut -f1 -d' ' | grep -v 'rdoc'); do
     sudo gem update "${outdated_gem}"
 done
+
 echo "*** Homebrew"
 echo
 rm -f "${INSTALLED_CONFIG}/homebrew_packages"
@@ -39,24 +42,29 @@ brew upgrade --cask
 # don't prompt about running Chromium every time it's upgraded
 echo "*** Chromium permissions"
 [ -f /Applications/Chromium.app ] && xattr -d com.apple.quarantine /Applications/Chromium.app
+
 echo "*** neovim"
 brew uninstall neovim && brew uninstall luajit && brew install --HEAD luajit && brew install --HEAD neovim
 brew cleanup
+
 echo "*** Pyenv"
 echo
 rm -f "${INSTALLED_CONFIG}/pyenv_versions"
 pyenv versions > "${INSTALLED_CONFIG}/pyenv_versions"
 pyenv rehash
+
 echo "*** Goenv"
 echo
 rm -f "${INSTALLED_CONFIG}/goenv_versions"
 goenv versions > "${INSTALLED_CONFIG}/goenv_versions"
 goenv rehash
+
 echo "*** terraform"
 echo
 rm -f "${INSTALLED_CONFIG}/tfenv_versions"
 tfenv list > "${INSTALLED_CONFIG}/tfenv_versions"
 tfenv install "$(tfenv list-remote | grep -ve '(alpha|beta|\-rc)' | head -n1)"
+
 echo "*** pipx"
 echo
 PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --upgrade pip setuptools
@@ -64,6 +72,7 @@ PIP_REQUIRE_VIRTUALENV=false python3 -m pip install -U pipx
 rm -f "${INSTALLED_CONFIG}/pipx_packages"
 pipx list > "${INSTALLED_CONFIG}/pipx_packages"
 pipx upgrade-all
+
 echo "*** node"
 echo
 rm -f "${INSTALLED_CONFIG}/nvm_versions"
@@ -76,17 +85,21 @@ for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
 do
     npm --location=global install "$package"
 done
+
 echo "*** Cargo"
 echo
 cargo install-update -a
+
 echo "*** Neovim bundles"
 echo
 TERM=xterm-256color nvim +PlugUpdate! +qa
+
 echo "*** zprezto submodules"
 echo
 cd ~/src/prezto || exit
 git submodule update --recursive --remote
 echo
+
 echo "Restoring previous Python/Ruby/Node/Go versions"
 cd "${CURRENT_DIR}" || exit
 pyenv local "${CURRENT_PYTHON}"
