@@ -702,7 +702,7 @@ require('gitsigns').setup {
 
     -- Actions
     -- Popup what's changed in a hunk under cursor
-    map({'n', 'v'}, '<leader>gp', ':Gitsigns preview_hunk<CR>')
+    map({'n', 'v'}, '<leader>gpr', ':Gitsigns preview_hunk<CR>')
 
     -- Stage/reset individual hunks under cursor in a file
     map({'n', 'v'}, '<leader>gs', ':Gitsigns stage_hunk<CR>')
