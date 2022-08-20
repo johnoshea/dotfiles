@@ -164,7 +164,7 @@ augroup fugitive
     nnoremap <leader>g\| :Gvdiffsplit<CR>
     nnoremap <leader>go :windo diffoff<CR> \| :only<CR>
     nnoremap <leader>g_ :Gdiffsplit<CR>
-    nnoremap <leader>gm :Git mergetool<CR>
+    nnoremap <leader>gM :Git mergetool<CR>
     nnoremap <leader>gl :Gclog<CR>
     nnoremap <leader>g1 :Git log --oneline<CR>
     nnoremap <leader>gb :Git blame<CR>
