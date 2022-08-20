@@ -131,43 +131,9 @@ Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-unimpaired'
 Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/andymass/vim-visput'
+Plug 'https://github.com/hrsh7th/nvim-pasta'
 " Editing end }}}
 " Code editing --- {{{
-" ale --- {{{
-let g:ale_disable_lsp = 1
-Plug 'https://github.com/dense-analysis/ale'
-" Specific to file types and are here for reference
-let g:ale_linters = {
-			\	'css'            : ['csslint'],
-            \   'dockerfile'     : ['hadolint'],
-            \   'go'             : ['gopls'],
-			\	'html'           : ['htmlhint', 'tidy'],
-			\	'javascript'     : ['eslint'],
-			\	'json'           : ['jsonlint'],
-			\	'markdown'       : ['mdl'],
-			\	'python'         : ['pylint', 'flake8', 'mypy'],
-			\	'scss'           : ['sasslint'],
-			\	'sh'             : ['shellcheck', 'shell'],
-            \   'tf'             : ['tflint'],
-			\	'vim'            : ['vint'],
-			\	'yaml'           : ['yamllint'],
-			\ }
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_echo_msg_format = '%linter%> %code: %%s'
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black', 'isort'],
-\   'json': ['prettier'],
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'css': ['prettier'],
-\}
-
-let g:ale_fix_on_save = 1
-let g:ale_python_flake8_options = '--max-line-length=88'  " match 'black' formatter
-let g:ale_python_mypy_options = '--follow-imports=silent'
-" ale end }}}
 " vim-test --- {{{
 Plug 'https://github.com/janko-m/vim-test'
 nmap <silent> <leader>tn <esc>:w<CR>:TestNearest<CR>
