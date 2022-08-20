@@ -40,7 +40,8 @@
     file-style = bold yellow box
     # file-decoration-style = none
 [push]
-	default = simple
+    default = simple
+    autoSetupRemote = true
 [credential]
 	helper = osxkeychain
 [filter "media"]
