@@ -22,8 +22,6 @@
 
 -- Use `pspg` as a pager
 \setenv PAGER pspg
-\pset border 2
-\pset linestyle unicode
 
 \set ON_ERROR_STOP on
 \set ON_ERROR_ROLLBACK interactive
