@@ -16,7 +16,8 @@ Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " }}}
 " LSP --- {{{
 Plug 'https://github.com/neovim/nvim-lspconfig'
-Plug 'https://github.com/williamboman/nvim-lsp-installer'
+Plug 'https://github.com/williamboman/mason.nvim'
+Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
 " LSP end --- }}}
 " Completion --- {{{
 " nvim-cmp --- {{{
@@ -465,8 +466,18 @@ local function make_config()
   }
 end
 
--- lsp-installer
-require("nvim-lsp-installer").setup {}
+-- mason
+require("mason").setup {
+    ui = {
+        icons = {
+            package_installed = "✓"
+        }
+    }
+}
+require("mason-lspconfig").setup {
+    ensure_installed = { "sumneko_lua" },
+}
+
 local lspconfig = require("lspconfig")
 
 local function on_attach()
