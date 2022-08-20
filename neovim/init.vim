@@ -165,6 +165,7 @@ augroup fugitive
     nnoremap <leader>g_ :Gdiffsplit<CR>
     nnoremap <leader>gm :Git mergetool<CR>
     nnoremap <leader>gl :Gclog<CR>
+    nnoremap <leader>g1 :Git log --oneline<CR>
     nnoremap <leader>gb :Git blame<CR>
     nnoremap <leader>gf :Git fetch<CR>
     nnoremap <leader>gps :Git push<CR>
