@@ -187,6 +187,7 @@ nnoremap <leader>TW :Twiggy<space>
 Plug 'https://github.com/rhysd/committia.vim'
 let g:committia_open_only_vim_starting = 1
 " committia.vim end }}}
+Plug 'https://github.com/rhysd/git-messenger.vim'
 " Git end }}}
 " Display --- {{{
 " vim-crystalline --- {{{
