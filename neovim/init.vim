@@ -324,6 +324,7 @@ Plug 'https://github.com/tpope/vim-jdaddy',                         {'for': ['ja
 Plug 'https://github.com/hashivim/vim-terraform',                   {'for': 'terraform'}
 let g:terraform_align = 1
 let g:terraform_fmt_on_save = 1
+Plug 'https://github.com/aquasecurity/vim-tfsec',                   {'for': 'terraform'}
 " Terraform end }}}
 " Tmux.conf syntax
 Plug 'https://github.com/tmux-plugins/vim-tmux',                    {'for': 'tmux'}
