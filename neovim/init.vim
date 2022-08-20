@@ -262,6 +262,10 @@ Plug 'https://github.com/kyazdani42/nvim-web-devicons'
 Plug 'https://github.com/rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 let g:Hexokinase_highlighters = ['backgroundfull']
 " }}}
+" nvim-ufo --- {{{
+Plug 'https://github.com/kevinhwang91/promise-async'  " nvim-ufo dependency
+Plug 'https://github.com/kevinhwang91/nvim-ufo'
+" nvim-ufo end --- }}}
 " Display end }}}
 " Tmux --- {{{
 " Plugin: vimux --- {{{
@@ -677,6 +681,22 @@ require('gitsigns').setup {
 }
 EOGITSIGNS
 " gitsigns.nvim end --- }}}
+" nvim-ufo config --- {{{
+lua << EONVIMUFO
+vim.wo.foldcolumn = '1'
+vim.wo.foldlevel = 99 -- feel free to decrease the value
+vim.wo.foldenable = true
+-- option 2: nvim lsp as LSP client
+-- tell the sever the capability of foldingRange
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+
+require('ufo').setup()
+EONVIMUFO
+" nvim-ufo end --- }}}
 " Settings --- {{{
 scriptencoding utf-8
 set backupcopy=yes              " using 'auto'/'no' may cause file-watching programs to miss changes
