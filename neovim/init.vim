@@ -237,11 +237,6 @@ augroup vimade
         \call vimade#FocusLost() | endif
 augroup END
 " Vimade end }}}
-" listtoggle --- {{{
-Plug 'https://github.com/valloric/listtoggle'
-let g:lt_location_list_toggle_map = '<leader>ll'
-let g:lt_quickfix_list_toggle_map = '<leader>lq'
-" listtoggle end }}}
 
 " Better display of whitespace - adds :StripWhitespace too
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
