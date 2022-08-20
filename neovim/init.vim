@@ -127,13 +127,6 @@ xmap am <Plug>(textobj-sandwich-literal-query-a)
 omap im <Plug>(textobj-sandwich-literal-query-i)
 omap am <Plug>(textobj-sandwich-literal-query-a)
 " vim-sandwich end }}}
-" vim-schlepp --- {{{
-Plug 'https://github.com/zirrostig/vim-schlepp'
-vmap <unique> <up>    <Plug>SchleppUp
-vmap <unique> <down>  <Plug>SchleppDown
-vmap <unique> <left>  <Plug>SchleppLeft
-vmap <unique> <right> <Plug>SchleppRight
-" }}}
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-unimpaired'
 Plug 'https://github.com/tpope/vim-abolish'
@@ -1017,6 +1010,27 @@ nnoremap <silent> <c-w>o :diffoff!<bar>only<cr>
 
 " Start `cgn` with the word under the cursor
 nmap cg* *Ncgn
+
+" arrow keys --- {{{
+" Repurpose arrow keys to move lines
+" Normal mode
+nnoremap <silent> <Left> <<
+nnoremap <silent> <Right> >>
+nnoremap <silent> <Up>   :<C-u>move-2<CR>==
+nnoremap <silent> <Down> :<C-u>move+<CR>==
+
+" Visual mode
+vnoremap <silent> <Left> <gv
+vnoremap <silent> <Right> >gv
+vnoremap <silent> <Up>   :move-2<CR>gv=gv
+vnoremap <silent> <Down> :move'>+<CR>gv=gv
+
+" Insert mode
+inoremap <silent> <Left> <C-D>
+inoremap <silent> <Right> <C-T>
+inoremap <silent> <Up>   <C-o>:move-2<CR>gv=gv
+inoremap <silent> <Down> <C-o>:move'>+<CR>gv=gv
+" arrow keys end --- }}}
 
 " Formatting --- {{{
 " gq wrapper that:
