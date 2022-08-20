@@ -55,6 +55,7 @@ pyenv rehash
 
 echo "*** Goenv"
 echo
+brew upgrade --fetch-HEAD goenv
 rm -f "${INSTALLED_CONFIG}/goenv_versions"
 goenv versions > "${INSTALLED_CONFIG}/goenv_versions"
 goenv rehash
