@@ -675,12 +675,30 @@ require('gitsigns').setup {
     -- Show git status
     map({'n', 'v'}, '<leader>gg', ':Git status<CR>')
 
+    -- Toggle line blame
+    map({'n', 'v'}, '<leader>gB', ':Gitsigns toggle_current_line_blame<CR>:highlight link GitSignsCurrentLineBlame Todo<CR>')
+
     -- Text object
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
 EOGITSIGNS
 " gitsigns.nvim end --- }}}
+" nvim-pasta config --- {{{
+lua << EONVIMPASTA
+vim.keymap.set({ 'n', 'x' }, 'p', require('pasta.mappings').p)
+vim.keymap.set({ 'n', 'x' }, 'P', require('pasta.mappings').P)
+
+require('pasta').setup {
+  converters = {
+    require('pasta.converters').indentation,
+  },
+  paste_mode = true,
+  next_key = vim.api.nvim_replace_termcodes('<C-p>', true, true, true),
+  prev_key = vim.api.nvim_replace_termcodes('<C-n>', true, true, true),
+}
+EONVIMPASTA
+" nvim-pasta end --- }}}
 " nvim-ufo config --- {{{
 lua << EONVIMUFO
 vim.wo.foldcolumn = '1'
