@@ -227,22 +227,7 @@ let g:crystalline_enable_sep = 1
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_theme = 'default'
 " vim-crystalline end }}}
-" Vimade --- {{{
-Plug 'https://github.com/TaDaa/vimade',                             {'on': 'VimadeEnable'}
-let g:vimade = {
-            \'fadelevel': 0.6,
-            \'checkinterval': 100,
-            \'enablefocusfading': 1
-            \}
-augroup vimade
-    autocmd!
-    autocmd WinNew,BufNew * ++once if !exists('g:vimade_loaded') |
-        \execute 'VimadeEnable' | endif
-    autocmd FocusLost * ++once if !exists('g:vimade_loaded') |
-        \execute 'VimadeEnable' |
-        \call vimade#FocusLost() | endif
-augroup END
-" Vimade end }}}
+Plug 'https://github.com/levouh/tint.nvim'
 
 " Better display of whitespace - adds :StripWhitespace too
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
@@ -737,6 +722,13 @@ capabilities.textDocument.foldingRange = {
 require('ufo').setup()
 EONVIMUFO
 " nvim-ufo end --- }}}
+" tint.nvim config --- {{{
+lua <<EOTINT
+require("tint").setup({
+  amt = -75
+})
+EOTINT
+" tint.nvim end --- }}}
 " Settings --- {{{
 scriptencoding utf-8
 set backupcopy=yes              " using 'auto'/'no' may cause file-watching programs to miss changes
