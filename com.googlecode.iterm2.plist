@@ -24660,6 +24660,8 @@
 	<true/>
 	<key>EnableDivisionView</key>
 	<false/>
+	<key>EnableProxyIcon</key>
+	<false/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -25397,7 +25399,7 @@
 			<key>Reduce Flicker</key>
 			<true/>
 			<key>Right Option Key Sends</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>Rows</key>
 			<integer>50</integer>
 			<key>Screen</key>
@@ -28096,7 +28098,7 @@
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>ShowMetalFPSmeter</key>
-	<true/>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -28121,6 +28123,8 @@
 	<false/>
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
+	<key>TmuxUnpauseAutomatically</key>
+	<true/>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Recent Directories</string>
