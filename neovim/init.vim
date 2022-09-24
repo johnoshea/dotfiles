@@ -65,6 +65,7 @@ nnoremap <silent> <Leader>/ <cmd>Telescope live_grep<CR>
 nnoremap <silent> <Leader>gf <cmd>Telescope git_files<CR>
 nnoremap <silent> <Leader>C <cmd>Telescope git_commits<CR>
 nnoremap <silent> <Leader>tg <cmd>Telescope treesitter<CR>
+nnoremap <silent> <Leader>to <cmd>Telescope oldfiles<CR>
 nnoremap <silent> <Leader>TS :Telescope<space>
 " Telescope end --- }}}
 " Plugindd; leap.nvim - show hints on 's', 'f', etc
