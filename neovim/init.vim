@@ -334,17 +334,6 @@ Plug 'https://github.com/kana/vim-textobj-line'
 " - provides av/iv for camel- and snake-case segments
 Plug 'https://github.com/julian/vim-textobj-variable-segment'
 " Text objects end }}}
-" Search --- {{{
-" vim-asterisk ---------------------------------------------------- {{{
-Plug 'https://github.com/haya14busa/vim-asterisk'
-Plug 'https://github.com/qxxxb/vim-searchhi'
-map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)<Plug>(searchhi-update)
-map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)<Plug>(searchhi-update)
-map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)<Plug>(searchhi-update)
-map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)<Plug>(searchhi-update)
-let g:asterisk#keeppos = 1
-" vim-asterisk end }}}
-" Search end }}}
 Plug 'https://github.com/dstein64/vim-startuptime'
 call plug#end()
 " Plugins end }}}
