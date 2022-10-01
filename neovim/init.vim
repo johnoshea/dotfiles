@@ -40,12 +40,7 @@ Plug 'https://github.com/onsails/lspkind-nvim'
 " }}}
 " Completion end }}}
 " Colorschemes --- {{{
-Plug 'https://github.com/rose-pine/neovim'
 Plug 'https://github.com/Shatur/neovim-ayu'
-" srcery-vim --- {{{
-Plug 'https://github.com/srcery-colors/srcery-vim'
-let g:srcery_italic = 1
-" Srcery end  --- }}}
 " Experimentation
 " Colorschemes end }}}
 " Navigation/filesystem --- {{{
@@ -802,13 +797,6 @@ set clipboard+=unnamedplus
 " Settings end }}}
 " Colors --- {{{
 set termguicolors
-lua << EOROSE
-    require('rose-pine').setup({
-	---@usage 'main'|'moon'
-	dark_variant = 'main',
-	disable_italics = true,
-})
-EOROSE
 lua << EOAYU
 require('ayu').setup({
     overrides = {
