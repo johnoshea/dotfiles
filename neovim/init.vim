@@ -41,6 +41,7 @@ Plug 'https://github.com/onsails/lspkind-nvim'
 " Completion end }}}
 " Colorschemes --- {{{
 Plug 'https://github.com/Shatur/neovim-ayu'
+Plug 'https://github.com/rebelot/kanagawa.nvim'
 " Experimentation
 " Colorschemes end }}}
 " Navigation/filesystem --- {{{
@@ -804,7 +805,7 @@ require('ayu').setup({
     }
 })
 EOAYU
-colorscheme ayu-dark
+colorscheme kanagawa
 set background=dark
 
 syntax enable
