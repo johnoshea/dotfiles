@@ -995,12 +995,6 @@ nnoremap Q @q
 " to edit
 nnoremap <expr> cq call({r-> ":\<c-u>let @".r." = \<c-r>\<c-r>=string(getreg('".r."'))\<cr>\<c-f>\<left>" }, [nr2char(getchar())])
 
-" Use gs/gS for global/selection search and replaces
-nnoremap gs :%s/
-xnoremap gs :s/
-nnoremap gS :%S/
-xnoremap gS :S/
-
 " Get out of diff
 nnoremap <silent> <c-w><c-o> :diffoff!<bar>only<cr>
 nnoremap <silent> <c-w>o :diffoff!<bar>only<cr>
