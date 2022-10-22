@@ -748,6 +748,7 @@ set formatoptions+=n            " Recognize numbered lists
 set signcolumn=yes:1            " always display signs, allocate 1 column for doing so
 set completeopt=menu,menuone,noselect
 
+set spell
 set spellfile=~/.config/nvim/custom-dictionary.utf-8.add
 
 " display --- {{{
