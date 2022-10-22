@@ -400,6 +400,7 @@ nnoremap <space>e :lua vim.diagnostic.open_float()<CR>
 nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
 nnoremap <space>q :lua vim.diagnostic.set_loclist()<CR>
+nnoremap <space>f :lua vim.lsp.buf.format()<CR>
 lua <<EO_LSP_CONFIG
 local nvim_lsp = require('lspconfig')
 
