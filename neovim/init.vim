@@ -1005,6 +1005,9 @@ nnoremap <silent> <c-w>o :diffoff!<bar>only<cr>
 " Start `cgn` with the word under the cursor
 nmap cg* *Ncgn
 
+" Reverse selected text
+vnoremap <leader>rv c<C-O>:set revins<CR><C-R>"<Esc>:set norevins<CR>
+
 " arrow keys --- {{{
 " Repurpose arrow keys to move lines
 " Normal mode
