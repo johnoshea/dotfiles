@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 # Switch back to system Ruby/Python before updating
 . /opt/homebrew/opt/nvm/nvm.sh
 UPDATE_SW_DIR="$HOME"
@@ -100,6 +100,18 @@ echo
 cd ~/src/prezto || exit
 git submodule update --recursive --remote
 echo
+
+echo "*** Updating completions"
+echo
+if [[ ! -d "${HOME}/src/dotfiles/completions" ]]; then
+    mkdir -p "${HOME}/src/dotfiles/completions"
+fi
+direnv hook zsh >! "${HOME}/src/dotfiles/completions/_direnv"
+register-python-argcomplete pipx >! "${HOME}/src/dotfiles/completions/_pipx"
+goenv init - >! "${HOME}/src/dotfiles/completions/_goenv"
+rbenv init - --no-rehash zsh >! "${HOME}/src/dotfiles/completions/_rbenv"
+mcfly init zsh >! "${HOME}/src/dotfiles/completions/_mcfly"
+
 
 echo "Restoring previous Python/Ruby/Node/Go versions"
 cd "${CURRENT_DIR}" || exit
