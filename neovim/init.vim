@@ -64,7 +64,7 @@ nnoremap <silent> <Leader>tg <cmd>Telescope treesitter<CR>
 nnoremap <silent> <Leader>to <cmd>Telescope oldfiles<CR>
 nnoremap <silent> <Leader>TS :Telescope<space>
 " Telescope end --- }}}
-" Plugindd; leap.nvim - show hints on 's', 'f', etc
+" Plugin: leap.nvim - show hints on 's', 'f', etc
 Plug 'https://github.com/ggandor/leap.nvim'
 " Plugin: vim-obsession --- {{{
 Plug 'https://github.com/tpope/vim-obsession'
