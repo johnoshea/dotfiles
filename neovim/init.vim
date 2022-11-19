@@ -862,8 +862,6 @@ augroup END
 cabbrev h <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'h')<cr>
 cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>
 
-" show news in a vertical split if nvim opened without args
-autocmd VimEnter * if argc() == 0 | vert help news | exec '79wincmd|' | endif
 " Help end }}}
 " Folding --- {{{
 " The following open closed folds
