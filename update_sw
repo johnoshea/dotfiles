@@ -1,11 +1,10 @@
 #!/usr/bin/env zsh
 # Switch back to system Ruby/Python before updating
-. /opt/homebrew/opt/nvm/nvm.sh
 UPDATE_SW_DIR="$HOME"
 CURRENT_DIR=$(pwd)
 CURRENT_PYTHON=$(pyenv version | head -n1 | cut -f1 -d' ')
 CURRENT_RUBY=$(rbenv version | head -n1 | cut -f1 -d' ')
-CURRENT_NODE=$(nvm current)
+CURRENT_NODE=$(fnm current)
 CURRENT_GO=$(goenv version | head -n1 | cut -f1 -d' ')
 INSTALLED_CONFIG=${HOME}/.local/personal_config
 mkdir -p "${INSTALLED_CONFIG}"
@@ -13,7 +12,7 @@ echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / N
 cd "$UPDATE_SW_DIR" || exit
 pyenv local "$(cat ~/.python-version)"
 rbenv local "$(cat ~/.rbenv/version)"
-nvm use 16.13.2
+fnm use 19.1.0
 goenv local "$(cat ~/.goenv/version)"
 
 echo "*** App Store programs"
@@ -76,8 +75,8 @@ pipx upgrade-all
 
 echo "*** node"
 echo
-rm -f "${INSTALLED_CONFIG}/nvm_versions"
-nvm ls --no-colors --no-alias > "${INSTALLED_CONFIG}/nvm_versions"
+rm -f "${INSTALLED_CONFIG}/fnm_versions"
+fnm ls --no-colors --no-alias > "${INSTALLED_CONFIG}/fnm_versions"
 rm -f "${INSTALLED_CONFIG}/npm_packages"
 npm list > "${INSTALLED_CONFIG}/npm_packages"
 npm set progress=false
@@ -111,11 +110,12 @@ register-python-argcomplete pipx >! "${HOME}/src/dotfiles/completions/_pipx"
 goenv init - >! "${HOME}/src/dotfiles/completions/_goenv"
 rbenv init - --no-rehash zsh >! "${HOME}/src/dotfiles/completions/_rbenv"
 mcfly init zsh >! "${HOME}/src/dotfiles/completions/_mcfly"
+fnm env --use-on-cd >! "${HOME}/src/dotfiles/completions/_fnm"
 
 
 echo "Restoring previous Python/Ruby/Node/Go versions"
 cd "${CURRENT_DIR}" || exit
 pyenv local "${CURRENT_PYTHON}"
 rbenv local "${CURRENT_RUBY}"
-nvm use "${CURRENT_NODE}"
+fnm use "${CURRENT_NODE}"
 goenv local "${CURRENT_GO}"
