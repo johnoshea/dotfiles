@@ -164,7 +164,12 @@ return packer.startup(function(use)
   use { "tpope/vim-rhubarb" } -- enable GitHub features in Fugitive
   use { "sodapopcan/vim-twiggy" } -- git branch operations
   use { "lewis6991/gitsigns.nvim" }
-  use { "rhysd/git-messenger.vim", config = "vim.g.git_messenger_floating_win_opts = { border = 'single' }" }
+  use {
+    "rhysd/git-messenger.vim",
+    config = function()
+      vim.g.git_messenger_floating_win_opts = { border = 'single' }
+    end
+  }
 
 
   -- Tmux
