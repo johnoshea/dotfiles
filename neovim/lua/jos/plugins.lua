@@ -108,10 +108,6 @@ return packer.startup(function(use)
     requires = "kevinhwang91/promise-async"
   }
   use { "ntpeters/vim-better-whitespace" } -- adds `:StripWhitespace` command`
-  use {
-    "rrethy/vim-hexokinase",
-    run = "cd ~/.local/share/nvim/site/pack/packer/start/vim-hexokinase/ && make hexokinase",
-  }
 
 
   -- startup
