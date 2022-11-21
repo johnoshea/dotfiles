@@ -164,7 +164,6 @@ return packer.startup(function(use)
   use { "tpope/vim-rhubarb" } -- enable GitHub features in Fugitive
   use { "sodapopcan/vim-twiggy" } -- git branch operations
   use { "lewis6991/gitsigns.nvim" }
-  use { "rhysd/committia.vim", config = "vim.g.committia_open_only_on_vim_starting = 1" }
   use { "rhysd/git-messenger.vim", config = "vim.g.git_messenger_floating_win_opts = { border = 'single' }" }
 
 
