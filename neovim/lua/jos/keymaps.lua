@@ -75,17 +75,6 @@ keymap("n", "<leader>gpl", ":Git pull<CR>", opts)
 keymap("n", "<leader>tw", ":Twiggy<CR>", opts)
 keymap("n", "<leader>TW", ":Twiggy<space>", opts)
 
--- DAP
---keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
---keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
---keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
---keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
---keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
---keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
---keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
---keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
---keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
-
 -- Typos
 vim.cmd[[command! -bang E e<bang>]]
 vim.cmd[[command! -bang Q q<bang>]]
@@ -95,7 +84,6 @@ vim.cmd[[command! -bang Qa qa<bang>]]
 vim.cmd[[command! -bang Wa wa<bang>]]
 vim.cmd[[command! -bang WA wa<bang>]]
 vim.cmd[[command! -bang Wq wq<bang>]]
---vim.cmd[[command! -bang qw wq<bang>]]
 vim.cmd[[command! -bang WQ wq<bang>]]
 vim.cmd[[command! -bang Wn wn<bang>]]
 vim.cmd[[command! -bang WN wn<bang>]]
