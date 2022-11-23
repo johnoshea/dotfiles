@@ -54,7 +54,6 @@ vim.opt.wrap = false                            -- display lines as one long lin
 vim.opt.scrolloff = 8                           -- minimal number of screen lines to keep above and below the cursor
 vim.opt.sidescrolloff = 8                       -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
 vim.opt.virtualedit = "all"                     -- allow the cursor to move to 'invalid' places
-vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.fillchars.eob=" "                       -- show empty lines at the end of a buffer as ` ` {default `~`}
 vim.opt.fillchars.diff = "⣿"                    -- set 'deleted lines' display for diff
 VOL = vim.opt.listchars
