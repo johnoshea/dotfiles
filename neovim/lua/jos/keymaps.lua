@@ -158,6 +158,13 @@ keymap({ 'n', 'x' }, 'p', require('pasta.mappings').p, opts)
 keymap({ 'n', 'x' }, 'P', require('pasta.mappings').P, opts)
 keymap({ 'n' }, '<C-p>', require('pasta.mappings').toggle_pin, opts)
 
+-- vim-test
+keymap('n', '<leader>tf', '<CMD>TestFile<CR>', opts)
+keymap('n', '<leader>tn', '<CMD>TestNearest<CR>', opts)
+keymap('n', '<leader>tl', '<CMD>TestLast<CR>', opts)
+keymap('n', '<leader>tv', '<CMD>TestVisit<CR>zz', opts)
+keymap('n', '<leader>ts', '<CMD>TestSuite<CR>', opts)
+
 -- Line numbers
 keymap("n", "<leader>1", ":set relativenumber!<cr>", opts)
 keymap("n", "<leader>2", ":set nonumber!<cr>:set norelativenumber!<cr>", opts)
