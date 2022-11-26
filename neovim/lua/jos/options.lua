@@ -88,7 +88,6 @@ vim.opt.foldcolumn = '1'                        -- automatically close folds whe
 vim.opt.foldlevel = 99                          -- nvim-ufo needs a large value
 vim.opt.foldlevelstart = 99                     -- set default fold level when editing in another window
 vim.opt.foldenable = true                       -- fold by default
-vim.opt.foldopen = "all"                        -- open folds when I do something in one
 
 -- spelling
 vim.opt.spell = false                           -- don't spellcheck by default
