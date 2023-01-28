@@ -76,7 +76,7 @@ pipx upgrade-all
 echo "*** node"
 echo
 rm -f "${INSTALLED_CONFIG}/fnm_versions"
-fnm ls --no-colors --no-alias > "${INSTALLED_CONFIG}/fnm_versions"
+fnm ls > "${INSTALLED_CONFIG}/fnm_versions"
 rm -f "${INSTALLED_CONFIG}/npm_packages"
 npm list > "${INSTALLED_CONFIG}/npm_packages"
 npm set progress=false
