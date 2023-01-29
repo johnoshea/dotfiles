@@ -92,7 +92,7 @@ cargo install-update -a
 
 echo "*** Neovim bundles"
 echo
-TERM=xterm-256color nvim +PlugUpdate! +qa
+TERM=xterm-256color nvim +PackerSync! +qa
 
 echo "*** zprezto submodules"
 echo
