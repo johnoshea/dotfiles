@@ -111,6 +111,7 @@ goenv init - >! "${HOME}/src/dotfiles/completions/_goenv"
 rbenv init - --no-rehash zsh >! "${HOME}/src/dotfiles/completions/_rbenv"
 mcfly init zsh >! "${HOME}/src/dotfiles/completions/_mcfly"
 fnm env --use-on-cd >! "${HOME}/src/dotfiles/completions/_fnm"
+register-python-argcomplete cz >! "${HOME}/src/dotfiles/completions/_cz"
 
 
 echo "Restoring previous Python/Ruby/Node/Go versions"
