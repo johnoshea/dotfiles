@@ -131,6 +131,7 @@ keymap("n", "<Leader>vl", ":VimuxRunLastCommand<CR>", opts)
 keymap("n", "<Leader>vi", ":VimuxInspectRunner<CR>", opts)
 keymap("n", "<Leader>vq", ":VimuxCloseRunner<CR>", opts)
 keymap("n", "<Leader>vx", ":VimuxInterruptRunner<CR>", opts)
+keymap("n", "<Leader>vr", ":VimuxRunCommand<CR>", opts)
 keymap("n", "<Leader>vz", ":call VimuxZoomRunner()<CR>", opts) -- Zoom the runner pane (use <bind-key> z to restore runner pane)
 
 -- Undo
