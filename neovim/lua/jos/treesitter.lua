@@ -9,11 +9,32 @@ if not status_ok then
 end
 
 configs.setup({
-  ensure_installed = "all",  -- one of "all" or a list of languages
-  ignore_install = { "" }, -- List of parsers to ignore installing
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  
-  highlight = {
+	ensure_installed = {
+		"bash",
+		"css",
+		"diff",
+		"dockerfile",
+		"gitcommit",
+		"gitignore",
+		"go",
+		"hcl",
+		"html",
+		"htmldjango",
+		"javascript",
+		"json",
+		"lua",
+		"make",
+		"markdown",
+		"markdown_inline",
+		"python",
+		"sql",
+		"terraform",
+		"toml",
+		"yaml",
+	}, -- one of "all" or a list of languages
+	ignore_install = { "" }, -- List of parsers to ignore installing
+	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		-- Disable in large buffers, or for diff filetypes
