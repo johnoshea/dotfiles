@@ -42,6 +42,7 @@ vim.opt.shiftround = true                       -- always round to a multiple of
 
 -- display
 vim.opt.cursorline = true                       -- highlight the current line
+vim.opt.cursorcolumn = true                     -- highlight 'end of reasonable line length'
 vim.opt.colorcolumn = "80"                      -- indicate column 80
 vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = true                   -- set relative numbering
