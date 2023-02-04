@@ -14,8 +14,12 @@ configs.setup({
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   
   highlight = {
+	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "diff" }, -- list of language that will be disabled
+		-- Disable in large buffers, or for diff filetypes
+		disable = function(lang, bufnr)
+			return lang == "diff" or vim.api.nvim_buf_line_count(bufnr) > 50000
+		end,
 	},
 	autopairs = {
 		enable = true,
