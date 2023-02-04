@@ -145,13 +145,12 @@ keymap("i", "?", "?<c-g>u", opts)
 keymap("i", ":", ":<c-g>u", opts)
 
 -- Trouble
-keymap("n", "<leader>xx", "<md>TroubleToggle<cr>", opts)
-keymap("n", "<leader>xw", "<md>TroubleToggle workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>xd", "<md>TroubleToggle document_diagnostics<cr>", opts)
-keymap("n", "<leader>xq", "<md>TroubleToggle quickfix<cr>", opts)
-keymap("n", "<leader>xl", "<md>TroubleToggle loclist<cr>", opts)
-keymap("n", "gR", "<md>TroubleToggle lsp_references<cr>", opts)
-
+keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
+keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
+keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
+keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
 -- vim-test
 keymap('n', '<leader>tf', '<CMD>TestFile<CR>', opts)
