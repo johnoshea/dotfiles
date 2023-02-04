@@ -57,7 +57,6 @@ return packer.startup(function(use)
   use { "cohama/lexima.vim" }
   use { "vim-scripts/easydir.vim" } -- Create directories and files at the same time
   use { "gpanders/editorconfig.nvim" }
-  use { "hrsh7th/nvim-pasta" }
   use { "junegunn/vim-easy-align" } -- <number> or '*' for count, followed by character to align on
   use { "tpope/vim-repeat" }
   use { "tpope/vim-unimpaired" }
