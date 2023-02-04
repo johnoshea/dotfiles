@@ -208,4 +208,5 @@ return packer.startup(function(use)
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
+	use({ "JoosepAlviste/palenightfall.nvim" })
 end)
