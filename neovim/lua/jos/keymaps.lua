@@ -171,3 +171,5 @@ keymap("n", "ga", "<Plug>(EasyAlign)", opts) -- Start interactive EasyAlign for 
 -- folding
 keymap("n", "zO", "zCzO", opts) -- Make zO recursively open whatever top level fold we're in, no matter where the cursor happens to be.
 
+-- Command window
+keymap("c", "<C-c>", "<ESC>", opts)
