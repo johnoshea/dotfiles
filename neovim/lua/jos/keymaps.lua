@@ -38,9 +38,6 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Plugins --
--- NvimTree
-keymap("n", "-", ":NvimTreeFindFileToggle<CR>", opts)
-
 -- Telescope
 keymap("n", "<Leader><Leader>", ":Telescope find_files<CR>", opts)
 keymap("n", "<Leader><CR>", ":Telescope buffers<CR>", opts)
@@ -153,10 +150,6 @@ keymap("n", "<leader>xq", "<md>TroubleToggle quickfix<cr>", opts)
 keymap("n", "<leader>xl", "<md>TroubleToggle loclist<cr>", opts)
 keymap("n", "gR", "<md>TroubleToggle lsp_references<cr>", opts)
 
--- Nvim-pasta
-keymap({ 'n', 'x' }, 'p', require('pasta.mappings').p, opts)
-keymap({ 'n', 'x' }, 'P', require('pasta.mappings').P, opts)
-keymap({ 'n' }, '<C-p>', require('pasta.mappings').toggle_pin, opts)
 
 -- vim-test
 keymap('n', '<leader>tf', '<CMD>TestFile<CR>', opts)
