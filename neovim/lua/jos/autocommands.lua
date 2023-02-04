@@ -1,8 +1,10 @@
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
+	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "startuptime", "Trouble" },
+  -- leave <CR> on its original behavior for quickfix lists, etc
 	callback = function()
 		vim.cmd([[
       nnoremap <silent> <buffer> q :close<CR>
+      nnoremap <silent> <buffer> <CR> <CR>
       set nobuflisted
     ]])
 	end,
