@@ -3,6 +3,6 @@
 -- performance and stability are better than `foldmethod=nvim_treesitter#foldexpr()`
 require('ufo').setup({
     provider_selector = function(bufnr, filetype, buftype)
-        return {'treesitter', 'indent'}
+      return {'treesitter', 'indent'}
     end
 })
