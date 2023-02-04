@@ -29,6 +29,9 @@ keymap("n", "<localleader>,", "<cmd>nohlsearch<CR>", opts)
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
+-- Turn off magic for everything apart from forward- and backslashes
+keymap("x", "/", "<Esc>/\\%V", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
