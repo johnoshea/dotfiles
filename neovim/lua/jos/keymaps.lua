@@ -26,9 +26,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Clear highlights
 keymap("n", "<localleader>,", "<cmd>nohlsearch<CR>", opts)
 
--- Close buffers
---keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
