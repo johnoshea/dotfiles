@@ -19,6 +19,6 @@ null_ls.setup {
     formatting.black.with { extra_args = { "--fast" } },
     formatting.isort,
     formatting.stylua,
-    diagnostics.flake8,
+    diagnostics.ruff,
   },
 }
