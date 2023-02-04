@@ -46,9 +46,10 @@ configs.setup({
 		enable = true,
 	},
 	indent = {
-        enable = true,
-        disable = { "diff" }
-    },
+		enable = true,
+		additional_vim_regex_highlighting = false,
+		disable = { "diff", "python", "css" }, -- enabling this seems to break Python autoindent  ಠ_ಠ
+	},
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
