@@ -93,6 +93,3 @@ vim.opt.foldenable = true                       -- fold by default
 vim.opt.spell = false                           -- don't spellcheck by default
 vim.opt.spellfile = "~/.config/nvim/custom-dictionary.utf-8.add"
 
--- disable netrw, recommended by nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
