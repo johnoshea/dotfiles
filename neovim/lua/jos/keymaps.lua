@@ -53,6 +53,7 @@ keymap("n", "<Leader>C", ":Telescope git_commits<CR>", opts)
 keymap("n", "<Leader>tg", ":Telescope treesitter<CR>", opts)
 keymap("n", "<Leader>to", ":Telescope oldfiles<CR>", opts)
 keymap("n", "<Leader>tb", ":Telescope file_browser<CR>", opts)
+keymap("n", "<Leader>tz", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 keymap("n", "<Leader>TS", ":Telescope<space>", {})
 
 -- Git
