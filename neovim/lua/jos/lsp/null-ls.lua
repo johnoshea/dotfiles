@@ -12,13 +12,25 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
   debug = false,
   sources = {
+
+    -- diagnostics should be configured using Mason wherever possible
+
+    -- generic
     formatting.prettier.with {
-      extra_filetypes = { "toml" },
+      extra_filetypes = { "toml", "markdown", "md" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
+    formatting.trim_whitespace,
+    formatting.trim_newlines,
+
+    -- Python
     formatting.black.with { extra_args = { "--fast" } },
     formatting.isort,
-    formatting.stylua,
     diagnostics.ruff,
+    -- use the following for things like disabling specific typechecks, etc
+    -- diagnostics.ruff.with { extra_args = { "--OPTION_HERE" } },
+
+    -- Lua
+    formatting.stylua,
   },
 }
