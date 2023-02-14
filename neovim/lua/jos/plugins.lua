@@ -223,6 +223,19 @@ return packer.startup(function(use)
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
+  use({
+      'RubixDev/mason-update-all',
+      config = function()
+        require('mason-update-all').setup{
+          vim.api.nvim_create_autocmd('User', {
+          pattern = 'MasonUpdateAllComplete',
+          callback = function()
+              print('mason-update-all has finished')
+          end,
+          })
+        }
+      end
+  })
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate" }) -- highlight other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching
 
