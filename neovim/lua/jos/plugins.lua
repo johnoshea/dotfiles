@@ -225,12 +225,32 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim" })
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
-	use({
-		"nvim-telescope/telescope-file-browser.nvim",
-		config = function()
-			require("telescope").load_extension("file_browser")
-		end,
-	})
+  use {
+    "nvim-tree/nvim-tree.lua",
+    requires = {
+      "nvim-tree/nvim-web-devicons", -- optional, for file icons
+    },
+    tag = "nightly", -- optional, updated every week. (see issue #1193)
+    config = function ()
+      require("nvim-tree").setup({
+        sort_by = "case_sensitive",
+        view = {
+          width = 50,
+          mappings = {
+            list = {
+              { key = "u", action = "dir_up" },
+            },
+          },
+        },
+        renderer = {
+          group_empty = true,
+        },
+        filters = {
+          dotfiles = true,
+        },
+      })
+    end
+  }
 
 	-- Treesitter
 	use({

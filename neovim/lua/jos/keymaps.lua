@@ -52,7 +52,6 @@ keymap("n", "<Leader>gf", ":Telescope git_files<CR>", opts)
 keymap("n", "<Leader>C", ":Telescope git_commits<CR>", opts)
 keymap("n", "<Leader>tg", ":Telescope treesitter<CR>", opts)
 keymap("n", "<Leader>to", ":Telescope oldfiles<CR>", opts)
-keymap("n", "<Leader>tb", ":Telescope file_browser<CR>", opts)
 keymap("n", "<Leader>tz", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 keymap("n", "<Leader>TS", ":Telescope<space>", {})
 
@@ -73,6 +72,9 @@ keymap("n", "<leader>gps", ":Git push<CR>", opts)
 keymap("n", "<leader>gpl", ":Git pull<CR>", opts)
 keymap("n", "<leader>tw", ":Twiggy<CR>", opts)
 keymap("n", "<leader>TW", ":Twiggy<space>", opts)
+
+-- nvim-tree
+keymap("n", "-", ":NvimTreeToggle<CR>", opts)
 
 -- Typos
 vim.cmd[[command! -bang E e<bang>]]
