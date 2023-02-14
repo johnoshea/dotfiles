@@ -1,3 +1,5 @@
+vim.g.python3_host_prog = "~/src/dotfiles/neovim/.direnv/python-3.11.1/bin/python3"
+
 vim.opt.backup = false                          -- don't create a backup file
 vim.opt.backupcopy = "yes"                      -- using 'auto'/'no' may cause file-watching programs to miss changes
 vim.opt.undofile = true                         -- enable persistent undo

@@ -27,9 +27,11 @@ configs.setup({
 		"markdown",
 		"markdown_inline",
 		"python",
+    "regex",
 		"sql",
 		"terraform",
 		"toml",
+    "vim",
 		"yaml",
 	}, -- one of "all" or a list of languages
 	ignore_install = { "" }, -- List of parsers to ignore installing
