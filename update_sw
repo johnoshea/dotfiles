@@ -92,7 +92,11 @@ cargo install-update -a
 
 echo "*** Neovim bundles"
 echo
-TERM=xterm-256color nvim +PackerSync! +qa
+# Update Packer plugins
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+# Update Mason packages
+nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'
 
 echo "*** zprezto submodules"
 echo
