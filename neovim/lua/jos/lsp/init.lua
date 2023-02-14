@@ -3,6 +3,6 @@ if not status_ok then
   return
 end
 
-require "lsp.mason"
-require("lsp.handlers").setup()
-require "lsp.null-ls"
+require "jos.lsp.mason"
+require("jos.lsp.handlers").setup()
+require "jos.lsp.null-ls"
