@@ -68,6 +68,9 @@ keymap("n", "<leader>gpl", ":Git pull<CR>", opts)
 keymap("n", "<leader>tw", ":Twiggy<CR>", opts)
 keymap("n", "<leader>TW", ":Twiggy<space>", opts)
 
+-- nvim-tree
+keymap("n", "-", ":NvimTreeToggle<CR>", opts)
+
 -- Typos
 vim.cmd[[command! -bang E e<bang>]]
 vim.cmd[[command! -bang Q q<bang>]]
