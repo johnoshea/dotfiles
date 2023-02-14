@@ -94,7 +94,11 @@ return packer.startup(function(use)
 	use({ "julian/vim-textobj-variable-segment" }) -- provides av/iv for camel- and snake-case segments
 
 	--display
-	use({ "nvim-lualine/lualine.nvim" })
+	use({ "nvim-lualine/lualine.nvim",
+    config = function()
+      require("lualine").setup()
+    end
+  })
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",

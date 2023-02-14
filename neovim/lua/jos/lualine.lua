@@ -40,19 +40,19 @@ end
 lualine.setup {
   options = {
     globalstatus = true,
-    icons_enabled = true,
-    theme = "auto",
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
+    icons_enabled = false,
+    theme = "papercolor_light",
+    -- component_separators = { left = "", right = "" },
+    -- section_separators = { left = "", right = "" },
     disabled_filetypes = { "alpha", "dashboard" },
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = { "mode" },
-    lualine_b = { "filename", "branch" },
-    lualine_c = { diagnostics },
-    lualine_x = { diff, spaces, "encoding", filetype },
-    lualine_y = { location },
-    lualine_z = { "progress" },
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'progress'},
+    lualine_y = {'encoding', 'fileformat', 'filetype'},
+    lualine_z = {'location'}
   },
 }
