@@ -243,6 +243,12 @@ return packer.startup(function(use)
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  use {
+    "molecule-man/telescope-menufacture",
+    config = function()
+      require('telescope').load_extension "menufacture"
+    end
+  }
 
   use {
     "nvim-tree/nvim-tree.lua",
