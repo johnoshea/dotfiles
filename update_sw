@@ -90,13 +90,10 @@ echo "*** Cargo"
 echo
 cargo install-update -a
 
-echo "*** Neovim bundles"
+echo "*** Neovim"
 echo
-# Update Packer plugins
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
-# Update Mason packages
-nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'
+nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+nvim -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'
 
 echo "*** zprezto submodules"
 echo
