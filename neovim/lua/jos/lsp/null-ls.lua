@@ -16,21 +16,21 @@ null_ls.setup {
     -- diagnostics should be configured using Mason wherever possible
 
     -- generic
-    formatting.prettier.with {
-      extra_filetypes = { "toml", "markdown", "md" },
+    null_ls.builtins.formatting.prettier.with {
+      extra_filetypes = { "toml", "md" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
-    formatting.trim_whitespace,
-    formatting.trim_newlines,
+    null_ls.builtins.formatting.trim_whitespace,
+    null_ls.builtins.formatting.trim_newlines,
 
     -- Python
-    formatting.black.with { extra_args = { "--fast" } },
-    formatting.isort,
-    diagnostics.ruff,
-    -- use the following for things like disabling specific typechecks, etc
-    -- diagnostics.ruff.with { extra_args = { "--OPTION_HERE" } },
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.isort,
 
     -- Lua
-    formatting.stylua,
+    null_ls.builtins.formatting.stylua,
+
+    -- HCL
+    null_ls.builtins.formatting.terraform_fmt,
   },
 }
