@@ -6,31 +6,30 @@ end
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = null_ls.builtins.diagnostics
+-- local diagnostics = null_ls.builtins.diagnostics
 
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
 null_ls.setup {
   debug = false,
   sources = {
-
     -- diagnostics should be configured using Mason wherever possible
+    formatting.trim_whitespace,
+    formatting.trim_newlines,
+
+    -- Python
+    formatting.black,
+    formatting.isort,
+
+    -- Lua
+    formatting.stylua,
+
+    -- HCL
+    formatting.terraform_fmt,
 
     -- generic
-    null_ls.builtins.formatting.prettier.with {
+    formatting.prettier.with {
       extra_filetypes = { "toml", "md" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
-    null_ls.builtins.formatting.trim_whitespace,
-    null_ls.builtins.formatting.trim_newlines,
-
-    -- Python
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.isort,
-
-    -- Lua
-    null_ls.builtins.formatting.stylua,
-
-    -- HCL
-    null_ls.builtins.formatting.terraform_fmt,
   },
 }
