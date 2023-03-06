@@ -237,7 +237,13 @@ return packer.startup(function(use)
       }
     end
   })
-  use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+  use({
+    "jose-elias-alvarez/null-ls.nvim",  -- for formatters and linters
+    config = function()
+      require("null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  })
   use({ "RRethy/vim-illuminate" }) -- highlight other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching
 
   -- Telescope
