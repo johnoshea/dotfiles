@@ -1,6 +1,6 @@
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "startuptime", "Trouble" },
-  -- leave <CR> on its original behavior for quickfix lists, etc
+	-- leave <CR> on its original behavior for quickfix lists, etc
 	callback = function()
 		vim.cmd([[
       nnoremap <silent> <buffer> q :close<CR>
@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "gitcommit"},
+	pattern = { "gitcommit" },
 	callback = function()
 		vim.opt_local.wrap = true
 		vim.opt_local.spell = true
@@ -19,11 +19,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
-	pattern = { "fugitive"},
+	pattern = { "fugitive" },
 	callback = function()
 		vim.opt_local.bufhidden = "delete"
-    vim.opt_local.modifiable = false
-    vim.opt_local.readonly = true
+		vim.opt_local.modifiable = false
+		vim.opt_local.readonly = true
 	end,
 })
 
@@ -56,13 +56,13 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	callback = function()
 		vim.cmd("hi link illuminatedWord LspReferenceText")
-    vim.cmd("nohls")
+		vim.cmd("nohls")
 	end,
 })
 
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	callback = function()
-	local line_count = vim.api.nvim_buf_line_count(0)
+		local line_count = vim.api.nvim_buf_line_count(0)
 		if line_count >= 5000 then
 			vim.cmd("IlluminatePauseBuf")
 		end
