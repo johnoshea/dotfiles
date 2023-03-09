@@ -1,12 +1,21 @@
 local servers = {
-  "lua_ls",
-  "cssls",
-  "html",
-  "tsserver",
-  "pyright",
-  "bashls",
-  "jsonls",
-  "yamlls",
+	"bashls",
+	"cssls",
+	"html",
+	"jsonls",
+	"lua_ls",
+	"pyright",
+	"tsserver",
+	"yamlls",
+	"dockerls",
+	"gopls",
+	"lemminx", -- xml
+	"marksman", -- markdown
+	"ruff_lsp",
+	"sqlls",
+	"tailwindcss",
+	"taplo", -- toml
+	"terraformls",
 }
 
 local settings = {
