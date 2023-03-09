@@ -84,15 +84,14 @@ return packer.startup(function(use)
 		end,
 	})
 
-  -- text objects
-  use({ "wellle/targets.vim" })              -- Use 'ia'/'aa' for arguments, or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
-  use({ "jeetsukumaran/vim-pythonsense" })   -- Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
-  use({ "michaeljsmith/vim-indent-object" }) -- provides "i" indent object (e.g. "vai")
-  use({
-    "kana/vim-textobj-line",                 -- provides al/il
-    requires = "kana/vim-textobj-user",
-  })
-  use({ "julian/vim-textobj-variable-segment" }) -- provides av/iv for camel- and snake-case segments
+	-- text objects
+	use({ "wellle/targets.vim" }) -- Use 'ia'/'aa' for arguments, or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
+	use({ "michaeljsmith/vim-indent-object" }) -- provides "i" indent object (e.g. "vai")
+	use({
+		"kana/vim-textobj-line", -- provides al/il
+		requires = "kana/vim-textobj-user",
+	})
+	use({ "julian/vim-textobj-variable-segment" }) -- provides av/iv for camel- and snake-case segments
 
 	--display
 	use({
@@ -333,6 +332,7 @@ return packer.startup(function(use)
   use({ "Vimjas/vim-python-pep8-indent", ft = { "python" } })
   use({ "HallerPatrick/py_lsp.nvim", ft = { "python" } })
   use({ "chrisbra/csv.vim", ft = { "csv" } })
+	use({ "jeetsukumaran/vim-pythonsense", ft = { "python" } }) -- Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
 
 	-- Coding
 	use({ "janko-m/vim-test" })
