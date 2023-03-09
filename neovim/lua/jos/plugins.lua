@@ -325,13 +325,11 @@ return packer.startup(function(use)
 	use({ "tpope/vim-eunuch" }) -- :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
 	use({ "EinfachToll/DidYouMean" }) -- ask if I've mistyped a filename
 
-  -- File formats
-  use({ "tmux-plugins/vim-tmux", ft = { "tmux" } })
-  use({ "chr4/nginx.vim", ft = { "nginx" } })
-  use({ "Glench/Vim-Jinja2-Syntax", ft = { "jinja2" } })
-  use({ "Vimjas/vim-python-pep8-indent", ft = { "python" } })
-  use({ "HallerPatrick/py_lsp.nvim", ft = { "python" } })
-  use({ "chrisbra/csv.vim", ft = { "csv" } })
+	-- File formats
+	use({ "tmux-plugins/vim-tmux", ft = { "tmux" } })
+	use({ "chr4/nginx.vim", ft = { "nginx" } })
+	use({ "Glench/Vim-Jinja2-Syntax", ft = { "jinja2" } })
+	use({ "chrisbra/csv.vim", ft = { "csv" } })
 	use({ "jeetsukumaran/vim-pythonsense", ft = { "python" } }) -- Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
 
 	-- Coding
