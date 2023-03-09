@@ -103,6 +103,7 @@ echo
 
 echo "*** Updating completions"
 echo
+rm -f "${HOME}/.cache/zcompcache*"
 if [[ ! -d "${HOME}/src/dotfiles/completions" ]]; then
     mkdir -p "${HOME}/src/dotfiles/completions"
 fi
