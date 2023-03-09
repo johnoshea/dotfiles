@@ -1,10 +1,10 @@
-export PATH="/Users/johno/Library/Caches/fnm_multishells/96823_1677991127365/bin":$PATH
-export FNM_DIR="/Users/johno/Library/Application Support/fnm"
-export FNM_ARCH="arm64"
-export FNM_MULTISHELL_PATH="/Users/johno/Library/Caches/fnm_multishells/96823_1677991127365"
-export FNM_LOGLEVEL="info"
-export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+export PATH="/Users/johno/Library/Caches/fnm_multishells/69806_1678336228381/bin":$PATH
 export FNM_VERSION_FILE_STRATEGY="local"
+export FNM_DIR="/Users/johno/Library/Application Support/fnm"
+export FNM_LOGLEVEL="info"
+export FNM_ARCH="arm64"
+export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+export FNM_MULTISHELL_PATH="/Users/johno/Library/Caches/fnm_multishells/69806_1678336228381"
 autoload -U add-zsh-hook
 _fnm_autoload_hook () {
     if [[ -f .node-version || -f .nvmrc ]]; then
