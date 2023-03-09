@@ -331,6 +331,19 @@ return packer.startup(function(use)
 	use({ "Glench/Vim-Jinja2-Syntax", ft = { "jinja2" } })
 	use({ "chrisbra/csv.vim", ft = { "csv" } })
 	use({ "jeetsukumaran/vim-pythonsense", ft = { "python" } }) -- Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
+	use({
+		"linux-cultist/venv-selector.nvim",
+		requires = {
+			"neovim/nvim-lspconfig",
+			"nvim-telescope/telescope.nvim",
+		},
+		config = function()
+			require("venv-selector").setup({
+				name = ".direnv",
+			})
+		end,
+		ft = { "python" },
+	})
 
 	-- Coding
 	use({ "janko-m/vim-test" })
