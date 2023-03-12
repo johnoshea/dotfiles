@@ -190,12 +190,6 @@ return packer.startup(function(use)
 		},
 	})
 
-	use({
-		"luukvbaal/statuscol.nvim",
-		config = function()
-			require("statuscol").setup({ setopt = true, order = "FSNs", separator = " " })
-		end,
-	})
 
 	-- startup
 	use({ "dstein64/vim-startuptime" }) -- measure neovim startup time
