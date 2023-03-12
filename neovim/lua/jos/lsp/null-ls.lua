@@ -16,7 +16,6 @@ null_ls.setup({
     formatting.trim_newlines,
 
     -- Python
-    diagnostics.ruff,
     diagnostics.vulture,
     formatting.black,
     formatting.isort,
