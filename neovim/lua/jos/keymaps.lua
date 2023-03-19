@@ -1,5 +1,5 @@
-local keymap = vim.keymap.set       -- shorten function name
-local opts = { silent = true }      -- silent keymap option
+local keymap = vim.keymap.set -- shorten function name
+local opts = { silent = true } -- silent keymap option
 
 -- remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -58,8 +58,6 @@ keymap("n", "<Leader>to", ":Telescope oldfiles<CR>", opts)
 keymap("n", "<Leader>tz", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 keymap("n", "<Leader>TS", ":Telescope<space>", {})
 
-
-
 -- Git
 keymap("n", "<leader>gi", ":Git<CR>", opts)
 keymap("n", "<leader>ga", ":Gwrite<CR>", opts)
@@ -82,23 +80,23 @@ keymap("n", "<leader>TW", ":Twiggy<space>", opts)
 keymap("n", "-", ":NvimTreeToggle<CR>", opts)
 
 -- Typos
-vim.cmd[[command! -bang E e<bang>]]
-vim.cmd[[command! -bang Q q<bang>]]
-vim.cmd[[command! -bang W w<bang>]]
-vim.cmd[[command! -bang QA qa<bang>]]
-vim.cmd[[command! -bang Qa qa<bang>]]
-vim.cmd[[command! -bang Wa wa<bang>]]
-vim.cmd[[command! -bang WA wa<bang>]]
-vim.cmd[[command! -bang Wq wq<bang>]]
-vim.cmd[[command! -bang WQ wq<bang>]]
-vim.cmd[[command! -bang Wn wn<bang>]]
-vim.cmd[[command! -bang WN wn<bang>]]
+vim.cmd([[command! -bang E e<bang>]])
+vim.cmd([[command! -bang Q q<bang>]])
+vim.cmd([[command! -bang W w<bang>]])
+vim.cmd([[command! -bang QA qa<bang>]])
+vim.cmd([[command! -bang Qa qa<bang>]])
+vim.cmd([[command! -bang Wa wa<bang>]])
+vim.cmd([[command! -bang WA wa<bang>]])
+vim.cmd([[command! -bang Wq wq<bang>]])
+vim.cmd([[command! -bang WQ wq<bang>]])
+vim.cmd([[command! -bang Wn wn<bang>]])
+vim.cmd([[command! -bang WN wn<bang>]])
 
 -- Help
 -- Open help in a vertical split instead of the default horizontal split
 -- http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
-vim.cmd[[cabbrev h <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'h')<cr>]]
-vim.cmd[[cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>]]
+vim.cmd([[cabbrev h <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'h')<cr>]])
+vim.cmd([[cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : 'help')<cr>]])
 
 -- Saving
 -- Save normal buffers on <CR> - use `:update` to only save when modified -
@@ -110,7 +108,7 @@ keymap("n", "<CR>", ":nohls<CR> | :update<CR>", opts)
 -- Normal mode
 keymap("n", "<Left>", "<<", opts)
 keymap("n", "<Right>", ">>", opts)
-keymap("n", "<Up>",   ":<C-u>move-2<CR>==", opts)
+keymap("n", "<Up>", ":<C-u>move-2<CR>==", opts)
 keymap("n", "<Down>", ":<C-u>move+<CR>==", opts)
 
 -- Visual mode
@@ -161,11 +159,11 @@ keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
 keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
 -- vim-test
-keymap('n', '<leader>tf', '<CMD>TestFile<CR>', opts)
-keymap('n', '<leader>tn', '<CMD>TestNearest<CR>', opts)
-keymap('n', '<leader>tl', '<CMD>TestLast<CR>', opts)
-keymap('n', '<leader>tv', '<CMD>TestVisit<CR>zz', opts)
-keymap('n', '<leader>ts', '<CMD>TestSuite<CR>', opts)
+keymap("n", "<leader>tf", "<CMD>TestFile<CR>", opts)
+keymap("n", "<leader>tn", "<CMD>TestNearest<CR>", opts)
+keymap("n", "<leader>tl", "<CMD>TestLast<CR>", opts)
+keymap("n", "<leader>tv", "<CMD>TestVisit<CR>zz", opts)
+keymap("n", "<leader>ts", "<CMD>TestSuite<CR>", opts)
 
 -- Line numbers
 keymap("n", "<leader>1", ":set relativenumber!<cr>", opts)

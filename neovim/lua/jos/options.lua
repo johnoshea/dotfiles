@@ -98,26 +98,26 @@ vim.opt.spellfile = "~/.config/nvim/custom-dictionary.utf-8.add"
 
 -- Disable Builtins
 local builtins = {
-	"gzip",
-	"2html_plugin",
-	"getscript",
-	"getscriptPlugin",
-	"logiPat",
-	"matchit",
-	"matchparen",
-	"netrw",
-	"netrwFileHandlers",
-	"netrwPlugin",
-	"netrwSettings",
-	"rrhelper",
-	"tar",
-	"tarPlugin",
-	"vimball",
-	"vimballPlugin",
-	"zip",
-	"zipPlugin",
+  "gzip",
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "logiPat",
+  "matchit",
+  "matchparen",
+  "netrw",
+  "netrwFileHandlers",
+  "netrwPlugin",
+  "netrwSettings",
+  "rrhelper",
+  "tar",
+  "tarPlugin",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
 }
 
 for _, plugin in ipairs(builtins) do
-	vim.g["loaded_" .. plugin] = 1
+  vim.g["loaded_" .. plugin] = 1
 end
