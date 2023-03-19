@@ -340,6 +340,7 @@ return packer.startup(function(use)
 
   -- Coding
   use({ "janko-m/vim-test" })
+  use({ "github/copilot.vim" })
 
   -- Sessions
   use({

@@ -178,3 +178,6 @@ keymap("n", "zO", "zCzO", opts) -- Make zO recursively open whatever top level f
 
 -- Command window
 keymap("c", "<C-c>", "<ESC>", opts)
+
+-- Copilot
+keymap("i", "<M-\\>", "<C-O>:Copilot panel<CR>", opts)
