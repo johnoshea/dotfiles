@@ -180,4 +180,8 @@ keymap("n", "zO", "zCzO", opts) -- Make zO recursively open whatever top level f
 keymap("c", "<C-c>", "<ESC>", opts)
 
 -- Copilot
-keymap("i", "<M-\\>", "<C-O>:Copilot panel<CR>", opts)
+keymap("i", "<leader>\\", "<C-O>:Copilot panel<CR>", opts)
+
+-- Dash
+keymap("n", "<leader>dw", ":DashWord<CR>", opts)
+keymap("n", "<leader>da", ":DashWord<CR>", opts)
