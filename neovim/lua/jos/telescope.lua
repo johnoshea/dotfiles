@@ -3,16 +3,14 @@ if not status_ok then
   return
 end
 
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
 
-telescope.setup {
+telescope.setup({
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
     file_ignore_patterns = { ".git/", "node_modules" },
-
     mappings = {
       i = {
         ["<Down>"] = actions.cycle_history_next,
@@ -22,4 +20,20 @@ telescope.setup {
       },
     },
   },
-}
+  extensions = {
+    dash = {
+      file_type_keywords = {
+        dashboard = false,
+        NvimTree = false,
+        TelescopePrompt = true,
+        terminal = false,
+        packer = false,
+        fzf = false,
+        -- a table of strings will search on multiple keywords
+        python = { "python", "py" },
+        javascript = { "javascript", "nodejs" },
+        typescript = { "typescript", "javascript", "nodejs" },
+      },
+    },
+  },
+})

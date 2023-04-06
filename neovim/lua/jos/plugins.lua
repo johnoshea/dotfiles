@@ -341,6 +341,10 @@ return packer.startup(function(use)
   -- Coding
   use({ "janko-m/vim-test" })
   use({ "github/copilot.vim" })
+  use({
+    "mrjones2014/dash.nvim",
+    run = "make install",
+  })
 
   -- Sessions
   use({
