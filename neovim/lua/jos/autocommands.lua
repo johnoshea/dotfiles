@@ -69,4 +69,9 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = { ".env", ".secrets.toml" },
+  callback = function(args)
+    vim.diagnostic.disable(args.buf)
+  end,
 })
