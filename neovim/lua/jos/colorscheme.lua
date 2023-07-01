@@ -1,9 +1,9 @@
 local colorscheme = "kanagawa"
 
-require('ayu').setup({
-    overrides = {
-        LineNr = { fg = '#998942' }
-    }
+require("ayu").setup({
+  overrides = {
+    LineNr = { fg = "#998942" },
+  },
 })
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
