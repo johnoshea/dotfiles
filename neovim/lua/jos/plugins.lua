@@ -196,7 +196,7 @@ return packer.startup(function(use)
   -- colorschemes
   use({ "Shatur/neovim-ayu" })
   use({ "rebelot/kanagawa.nvim" })
-  use({ "JoosepAlviste/palenightfall.nvim" })
+  use({ "arturgoms/moonbow.nvim" })
 
   -- cmp plugins
   use({ "hrsh7th/nvim-cmp" }) -- The completion plugin

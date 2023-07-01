@@ -1,4 +1,4 @@
-local colorscheme = "kanagawa"
+local colorscheme = "kanagawa-dragon"
 
 require("ayu").setup({
   overrides = {
