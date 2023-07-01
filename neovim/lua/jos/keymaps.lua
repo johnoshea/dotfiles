@@ -39,7 +39,6 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 -- Telescope
--- keymap("n", "<Leader><Leader>", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader><Leader>", require("telescope").extensions.menufacture.find_files, opts)
 keymap("n", "<Leader><CR>", ":Telescope buffers<CR>", opts)
 keymap("n", "<Leader>`", ":Telescope marks<CR>", opts)
@@ -47,9 +46,7 @@ keymap("n", "<Leader>hi", ":Telescope command_history<CR>", opts)
 keymap("n", "<Leader>he", ":Telescope help_tags<CR>", opts)
 keymap("n", "<Leader>mp", ":Telescope keymaps<CR>", opts)
 keymap("n", "<Leader>cm", ":Telescope commands<CR>", opts)
--- keymap("n", "<Leader>rg", ":Telescope grep_string<CR>", opts)
 keymap("n", "<leader>rg", require("telescope").extensions.menufacture.grep_string, opts)
--- keymap("n", "<Leader>/", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>/", require("telescope").extensions.menufacture.live_grep, opts)
 keymap("n", "<Leader>gf", ":Telescope git_files<CR>", opts)
 keymap("n", "<Leader>C", ":Telescope git_commits<CR>", opts)
