@@ -56,7 +56,6 @@ return packer.startup(function(use)
     end,
   })
   use({ "vim-scripts/easydir.vim" }) -- Create directories and files at the same time
-  use({ "gpanders/editorconfig.nvim" })
   use({ "junegunn/vim-easy-align" }) -- <number> or '*' for count, followed by character to align on
   use({ "tpope/vim-repeat" })
   use({ "tpope/vim-unimpaired" })
