@@ -126,6 +126,14 @@ return packer.startup(function(use)
   -- FIX: bar
   -- WARN: baz
 
+  -- nvim-colorizer
+  use({
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end,
+  })
+
   -- Noice
   use({
     "folke/noice.nvim",
@@ -282,6 +290,7 @@ return packer.startup(function(use)
       ts_update()
     end,
   })
+  use({ "nvim-treesitter/nvim-treesitter-context" })
   use({ "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" })
 
   -- Git
@@ -317,11 +326,27 @@ return packer.startup(function(use)
   use({ "tpope/vim-eunuch" }) -- :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
   use({ "EinfachToll/DidYouMean" }) -- ask if I've mistyped a filename
 
+  -- Buffers
+  use({
+    "axkirillov/hbac.nvim",
+    config = function()
+      require("hbac").setup({
+        autoclose = true, -- set autoclose to false if you want to close manually
+        threshold = 10, -- hbac will start closing unedited buffers once that number is reached
+        close_command = function(bufnr)
+          vim.api.nvim_buf_delete(bufnr, {})
+        end,
+        close_buffers_with_windows = false, -- hbac will close buffers with associated windows if this option is `true`
+      })
+    end,
+  })
+
   -- File formats
   use({ "tmux-plugins/vim-tmux", ft = { "tmux" } })
   use({ "chr4/nginx.vim", ft = { "nginx" } })
   use({ "Glench/Vim-Jinja2-Syntax", ft = { "jinja2" } })
   use({ "chrisbra/csv.vim", ft = { "csv" } })
+  use({ "Vimjas/vim-python-pep8-indent", ft = { "python" } })
   use({ "jeetsukumaran/vim-pythonsense", ft = { "python" } }) -- Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
   use({
     "linux-cultist/venv-selector.nvim",

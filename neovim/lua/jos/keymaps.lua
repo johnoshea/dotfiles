@@ -186,3 +186,5 @@ keymap("n", "<leader>da", ":DashWord<CR>", opts)
 -- Copilot
 keymap("n", "<F5>", ":Copilot panel<CR>", opts)
 
+-- definition-or-references.nvim
+keymap("n", "gd", require("definition-or-references").definition_or_references, opts)
