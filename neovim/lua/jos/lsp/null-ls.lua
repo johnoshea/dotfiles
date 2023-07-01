@@ -16,7 +16,9 @@ null_ls.setup({
     formatting.trim_newlines,
 
     -- Python
-    diagnostics.vulture,
+    diagnostics.vulture.with({
+      args = { "--min-confidence", "80" },
+    }),
     formatting.black,
     formatting.isort,
     formatting.djlint,
