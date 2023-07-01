@@ -399,6 +399,8 @@ return packer.startup(function(use)
       })
     end,
   })
+
+  use({ "KostkaBrukowa/definition-or-references.nvim" })
   use({
     "mrjones2014/dash.nvim",
     run = "make install",
