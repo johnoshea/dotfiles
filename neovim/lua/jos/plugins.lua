@@ -423,6 +423,10 @@ return packer.startup(function(use)
               -- disable for .secrets files
               return false
             end
+            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%*.md") then
+              -- disable for .md files
+              return false
+            end
             return true
           end,
         },
