@@ -383,7 +383,7 @@ return packer.startup(function(use)
             jump_next = "]]",
             accept = "<CR>",
             refresh = "gr",
-            open = "<M-CR>",
+            open = "<F5>",
           },
           layout = {
             position = "bottom", -- | top | left | right
