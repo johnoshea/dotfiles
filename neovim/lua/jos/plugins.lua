@@ -36,7 +36,7 @@ packer.init({
       return require("packer.util").float({ border = "rounded" })
     end,
   },
-  max_jobs = 70,         -- not specifying can give 'too many open files' errors
+  max_jobs = 70, -- not specifying can give 'too many open files' errors
   git = {
     clone_timeout = 120, -- Timeout, in seconds, for git clones
   },
@@ -46,7 +46,7 @@ packer.init({
 return packer.startup(function(use)
   -- base
   use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
-  use({ "nvim-lua/plenary.nvim" })  -- Useful lua functions used by lots of plugins
+  use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 
   -- editing
   use({
@@ -84,10 +84,10 @@ return packer.startup(function(use)
   })
 
   -- text objects
-  use({ "wellle/targets.vim" })              -- Use 'ia'/'aa' for arguments, or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
+  use({ "wellle/targets.vim" }) -- Use 'ia'/'aa' for arguments, or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
   use({ "michaeljsmith/vim-indent-object" }) -- provides "i" indent object (e.g. "vai")
   use({
-    "kana/vim-textobj-line",                 -- provides al/il
+    "kana/vim-textobj-line", -- provides al/il
     requires = "kana/vim-textobj-user",
   })
   use({ "julian/vim-textobj-variable-segment" }) -- provides av/iv for camel- and snake-case segments
@@ -144,16 +144,16 @@ return packer.startup(function(use)
   use({ "arturgoms/moonbow.nvim" })
 
   -- cmp plugins
-  use({ "hrsh7th/nvim-cmp" })         -- The completion plugin
-  use({ "hrsh7th/cmp-buffer" })       -- buffer completions
-  use({ "hrsh7th/cmp-path" })         -- path completions
+  use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
+  use({ "hrsh7th/cmp-buffer" }) -- buffer completions
+  use({ "hrsh7th/cmp-path" }) -- path completions
   use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
   use({ "hrsh7th/cmp-nvim-lsp" })
   use({ "hrsh7th/cmp-nvim-lua" })
   use({ "onsails/lspkind-nvim" }) -- add icons to completion popup menu
 
   -- snippets
-  use({ "L3MON4D3/LuaSnip" })             --snippet engine
+  use({ "L3MON4D3/LuaSnip" }) --snippet engine
   use({ "rafamadriz/friendly-snippets" }) -- snippets for LuaSnip
 
   -- LSP
@@ -174,7 +174,7 @@ return packer.startup(function(use)
     end,
   })
   use({
-    "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
+    "nvimtools/none-ls.nvim", -- for formatters and linters
     config = function()
       require("null-ls").setup()
     end,
@@ -197,7 +197,7 @@ return packer.startup(function(use)
     requires = {
       "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
-    tag = "nightly",                 -- optional, updated every week. (see issue #1193)
+    tag = "nightly", -- optional, updated every week. (see issue #1193)
     config = function()
       require("nvim-tree").setup({
         sort_by = "case_sensitive",
@@ -237,7 +237,7 @@ return packer.startup(function(use)
 
   -- Git
   use({ "tpope/vim-fugitive" })
-  use({ "tpope/vim-rhubarb" })     -- enable GitHub features in Fugitive
+  use({ "tpope/vim-rhubarb" }) -- enable GitHub features in Fugitive
   use({ "sodapopcan/vim-twiggy" }) -- git branch operations
   use({ "lewis6991/gitsigns.nvim" })
   use({
@@ -278,7 +278,7 @@ return packer.startup(function(use)
   use({ "farmergreg/vim-lastplace" })
 
   -- Filesystem
-  use({ "tpope/vim-eunuch" })       -- :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
+  use({ "tpope/vim-eunuch" }) -- :Remove, :Move, :Rename, :Chmod, :Mkdir, :Wall, :SudoWrite, :SudoEdit
   use({ "EinfachToll/DidYouMean" }) -- ask if I've mistyped a filename
 
   -- Buffers
@@ -287,7 +287,7 @@ return packer.startup(function(use)
     config = function()
       require("hbac").setup({
         autoclose = true, -- set autoclose to false if you want to close manually
-        threshold = 10,   -- hbac will start closing unedited buffers once that number is reached
+        threshold = 10, -- hbac will start closing unedited buffers once that number is reached
         close_command = function(bufnr)
           vim.api.nvim_buf_delete(bufnr, {})
         end,
