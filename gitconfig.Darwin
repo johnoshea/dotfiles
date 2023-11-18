@@ -24,7 +24,7 @@
     tool = vimdiff
 [core]
 	excludesfile = /Users/johno/.gitignore_global
-	autocrlf = input
+	autocrlf = false
 	safecrlf = true
     pager = delta --dark --syntax-theme=\"gruvbox-dark\"
 	editor = nvim
