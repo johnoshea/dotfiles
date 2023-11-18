@@ -36,7 +36,7 @@ packer.init({
       return require("packer.util").float({ border = "rounded" })
     end,
   },
-  max_jobs = 70, -- not specifying can give 'too many open files' errors
+  max_jobs = 50, -- not specifying can give 'too many open files' errors
   git = {
     clone_timeout = 120, -- Timeout, in seconds, for git clones
   },
