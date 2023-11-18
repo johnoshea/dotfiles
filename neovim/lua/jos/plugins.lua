@@ -125,6 +125,12 @@ return packer.startup(function(use)
   -- NOTE: foo
   -- FIX: bar
   -- WARN: baz
+  use({
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup()
+    end,
+  })
 
   -- nvim-colorizer
   use({
