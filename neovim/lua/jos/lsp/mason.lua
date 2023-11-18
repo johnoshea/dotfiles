@@ -13,7 +13,7 @@ local servers = {
   "marksman", -- markdown
   "ruff_lsp",
   "sqlls",
-  -- "tailwindcss",
+  "tailwindcss",
   "taplo", -- toml
   "terraformls",
 }
