@@ -141,7 +141,7 @@ return packer.startup(function(use)
   -- colorschemes
   use({ "Shatur/neovim-ayu" })
   use({ "rebelot/kanagawa.nvim" })
-  use({ "arturgoms/moonbow.nvim" })
+  use({ "embark-theme/vim", as = "embark" })
 
   -- cmp plugins
   use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
