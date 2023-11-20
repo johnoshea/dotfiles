@@ -43,10 +43,10 @@ null_ls.setup({
     diagnostics.commitlint,
 
     -- generic
-    -- formatting.prettier.with({
-    --   extra_filetypes = { "toml", "md" },
-    --   extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-    -- }),
+    formatting.prettier.with({
+      extra_filetypes = { "toml", "md" },
+      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote", "--html-whitespace-sensitivity ignore" },
+    }),
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
