@@ -12,7 +12,7 @@ echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / N
 cd "$UPDATE_SW_DIR" || exit
 pyenv local "$(cat ~/.python-version)"
 rbenv local "$(cat ~/.rbenv/version)"
-fnm use 20.5.1
+fnm use 21.2.0
 goenv local "$(cat ~/.goenv/version)"
 
 echo "*** App Store programs"
