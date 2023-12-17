@@ -46,6 +46,7 @@ null_ls.setup({
     formatting.prettier.with({
       extra_filetypes = { "toml", "md" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote", "--html-whitespace-sensitivity ignore" },
+      disableLanguages = { "html" },
     }),
   },
   on_attach = function(client, bufnr)

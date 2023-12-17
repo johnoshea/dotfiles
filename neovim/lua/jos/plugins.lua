@@ -324,7 +324,7 @@ return packer.startup(function(use)
   -- File formats
   use({ "tmux-plugins/vim-tmux", ft = { "tmux" } })
   use({ "chr4/nginx.vim", ft = { "nginx" } })
-  use({ "Glench/Vim-Jinja2-Syntax", ft = { "jinja2" } })
+  -- use({ "Glench/Vim-Jinja2-Syntax", ft = { "jinja2" } })
   use({ "chrisbra/csv.vim", ft = { "csv" } })
   use({ "Vimjas/vim-python-pep8-indent", ft = { "python" } })
   use({ "jeetsukumaran/vim-pythonsense", ft = { "python" } }) -- Add af/if for functions, ac/ic for classes, ]m, ]M, [m, [M for moving
