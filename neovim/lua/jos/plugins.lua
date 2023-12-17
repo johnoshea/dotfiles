@@ -67,13 +67,10 @@ return packer.startup(function(use)
     end,
   })
 
-  -- use `saiwi` to prompt for before/after text
-  -- use `saiwt` to prompt for surrounding html tag
-  -- use `sawif` to prompt for a surrounding function name
   use({
-    "machakann/vim-sandwich",
+    "kylechui/nvim-surround",
     config = function()
-      vim.cmd([[runtime macros/sandwich/keymap/surround.vim]])
+      require("nvim-surround").setup()
     end,
   })
   use({
