@@ -200,6 +200,12 @@ return packer.startup(function(use)
     requires = { "nvim-lua/plenary.nvim" },
   })
   use({ "RRethy/vim-illuminate" }) -- highlight other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching
+  use({
+    "ray-x/lsp_signature.nvim",
+    config = function()
+      require("lsp_signature").setup()
+    end,
+  })
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })
