@@ -1,4 +1,5 @@
 alias tower='gittower $(git rev-parse --show-toplevel)'
+alias lg='lazygit'
 
 # Use 'bat' for cat
 alias cat='bat --theme="Monokai Extended"'
