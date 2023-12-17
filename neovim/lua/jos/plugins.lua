@@ -145,9 +145,8 @@ return packer.startup(function(use)
   use({ "lewis6991/impatient.nvim" }) -- spped up startup by caching
 
   -- colorschemes
-  use({ "Shatur/neovim-ayu" })
-  use({ "rebelot/kanagawa.nvim" })
   use({ "embark-theme/vim", as = "embark" })
+  use({ "catppuccin/nvim", as = "catppuccin" })
 
   -- cmp plugins
   use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
