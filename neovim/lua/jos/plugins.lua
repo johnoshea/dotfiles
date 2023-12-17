@@ -136,6 +136,16 @@ return packer.startup(function(use)
     end,
   })
 
+  -- nvim-bqf
+  use({ "kevinhwang91/nvim-bqf", ft = "qf" })
+  -- optional nvim-bqf dependency
+  use({
+    "junegunn/fzf",
+    run = function()
+      vim.fn["fzf#install"]()
+    end,
+  })
+
   -- nvim-colorizer
   use({
     "NvChad/nvim-colorizer.lua",
