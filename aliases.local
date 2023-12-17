@@ -2,13 +2,13 @@ alias tower='gittower $(git rev-parse --show-toplevel)'
 alias lg='lazygit'
 
 # Use 'bat' for cat
-alias cat='bat --theme="Monokai Extended"'
+alias cat='bat'
 
 # Use 'prettyping' for ping
 alias ping='prettyping --nolegend -c 5'
 
 # Use fzf to preview files (using 'bat')
-alias show="fzf --preview 'bat --theme=\"Monokai Extended\" --color \"always\" -- {}'"
+alias show="fzf --preview 'bat --color \"always\" -- {}'"
 
 # Use 'lsd' for ls
 alias ls='lsd --icon=never'
