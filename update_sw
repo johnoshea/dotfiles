@@ -117,7 +117,7 @@ register-python-argcomplete cz >! "${HOME}/src/dotfiles/completions/_cz"
 
 echo "*** pdm"
 echo
-pdm --pep582 zsh >! "${HOME}/src/dotfiles/_pdm"
+pdm completion zsh >! "${HOME}/src/dotfiles/_pdm"
 
 
 echo "Restoring previous Python/Ruby/Node/Go versions"
