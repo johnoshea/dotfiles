@@ -388,6 +388,7 @@ return packer.startup(function(use)
       })
     end,
   })
+  use({ "joshuavial/aider.nvim" })
 
   use({ "KostkaBrukowa/definition-or-references.nvim" })
 
