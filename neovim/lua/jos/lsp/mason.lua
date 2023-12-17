@@ -9,7 +9,7 @@ local servers = {
   "yamlls",
   "dockerls",
   "gopls",
-  "lemminx", -- xml
+  "lemminx",  -- xml
   "marksman", -- markdown
   "ruff_lsp",
   "sqlls",
