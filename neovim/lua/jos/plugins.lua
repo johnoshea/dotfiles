@@ -130,9 +130,7 @@ return packer.startup(function(use)
   -- FIX: bar
   -- WARN: baz
   use({
-    "j-hui/fidget.nvim",
     config = function()
-      require("fidget").setup()
     end,
   })
 
