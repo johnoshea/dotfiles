@@ -206,7 +206,12 @@ return packer.startup(function(use)
   use({ "rafamadriz/friendly-snippets" }) -- snippets for LuaSnip
 
   -- LSP
-  use({ "neovim/nvim-lspconfig" }) -- enable LSP
+  use({ -- enable LSP
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("lspconfig.ui.windows").default_options.border = "single"
+    end,
+  })
   use({ "williamboman/mason.nvim" })
   use({ "williamboman/mason-lspconfig.nvim" })
   use({
