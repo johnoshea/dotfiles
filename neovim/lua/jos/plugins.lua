@@ -376,6 +376,7 @@ return packer.startup(function(use)
     end,
     ft = { "python" },
   })
+  use({ "NoahTheDuke/vim-just" })
 
   -- Coding
   use({ "janko-m/vim-test" })
