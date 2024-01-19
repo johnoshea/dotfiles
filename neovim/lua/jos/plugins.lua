@@ -444,7 +444,6 @@ return packer.startup(function(use)
       })
     end,
   })
-  use({ "joshuavial/aider.nvim" })
 
   use({ "KostkaBrukowa/definition-or-references.nvim" })
 
@@ -452,6 +451,16 @@ return packer.startup(function(use)
   use({
     "mrjones2014/dash.nvim",
     run = "make install",
+  })
+
+  use({
+    "joshuavial/aider.nvim",
+    config = function()
+      require("aider").setup({
+        auto_manage_context = false,
+        default_bindings = false,
+      })
+    end,
   })
 
   -- Sessions

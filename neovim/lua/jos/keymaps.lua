@@ -189,8 +189,8 @@ keymap("n", "<leader>da", ":DashWord<CR>", opts)
 keymap("n", "<F5>", ":Copilot panel<CR>", opts)
 
 -- Aider-nvim
-keymap("n", "<leader>oa", "<cmd>lua AiderOpen()<cr>", opts)
-keymap("n", "<leader>ob", "<cmd>lua AiderBackground()<cr>", opts)
+keymap("n", "<leader>ao", "<cmd>lua AiderOpen()<cr>", opts)
+keymap("n", "<leader>ab", "<cmd>lua AiderBackground()<cr>", opts)
 
 -- definition-or-references.nvim
 keymap("n", "gd", require("definition-or-references").definition_or_references, opts)
