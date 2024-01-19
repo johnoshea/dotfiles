@@ -79,6 +79,7 @@ return packer.startup(function(use)
       vim.g.table_mode_corner = "|"
     end,
   })
+  use({ "LunarVim/bigfile.nvim" })
 
   -- text objects
   use({ "wellle/targets.vim" }) -- Use 'ia'/'aa' for arguments, or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
