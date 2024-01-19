@@ -80,6 +80,15 @@ return packer.startup(function(use)
     end,
   })
   use({ "LunarVim/bigfile.nvim" })
+  use({
+    "Wansmer/treesj",
+    requires = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      -- default keymaps (<space>m - toggle, <space>j - join, <space>s - split)
+      require("treesj").setup({ --[[ your config ]]
+      })
+    end,
+  })
 
   -- text objects
   use({ "wellle/targets.vim" }) -- Use 'ia'/'aa' for arguments, or i/a followed by any of , . ; : + - = ~ _ * # / | \ & $
