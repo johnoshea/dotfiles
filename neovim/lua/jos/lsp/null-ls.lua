@@ -39,9 +39,6 @@ null_ls.setup({
     -- bash/sh
     diagnostics.shellcheck,
 
-    -- git
-    diagnostics.commitlint,
-
     -- generic
     formatting.prettier.with({
       extra_filetypes = { "toml", "md" },
