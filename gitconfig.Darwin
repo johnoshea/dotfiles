@@ -22,7 +22,7 @@
     dft = difftool
     fza = "!git ls-files -m -o --exclude-standard | fzf -m --print0 --preview \"git diff {1}\" | xargs -0 git add"
 [merge]
-    tool = vimdiff
+	tool = Kaleidoscope
 [core]
 	excludesfile = /Users/johno/.gitignore_global
 	autocrlf = false
@@ -51,8 +51,10 @@
 	smudge = git media smudge %f
 [diff]
 	external = difft
+	tool = Kaleidoscope
 [difftool]
-    prompt = false
+	prompt = false
+	trustExitCode = true
 [difftool "difftastic"]
     cmd = difft "$LOCAL" "$REMOTE"
 # Use a pager for large output, just like other git commands.
@@ -85,3 +87,10 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
