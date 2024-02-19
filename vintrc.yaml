@@ -1,6 +1,0 @@
-cmdargs:
-  # Stricter checking
-  severity: style_problem
-
-  # Enable coloring
-  color: true
