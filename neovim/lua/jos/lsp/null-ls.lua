@@ -11,14 +11,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
   debug = false,
   sources = {
-    -- diagnostics should be configured using Mason wherever possible
-    formatting.trim_whitespace,
-    formatting.trim_newlines,
-
     -- Python
-    diagnostics.vulture.with({
-      args = { "--min-confidence", "80" },
-    }),
     formatting.black,
     formatting.isort,
     formatting.djlint,
@@ -30,14 +23,11 @@ null_ls.setup({
     formatting.terraform_fmt,
 
     -- yaml
-    diagnostics.yamllint,
-    formatting.yamlfmt,
+    -- diagnostics.yamllint,
+    -- formatting.yamlfmt,
 
     -- xml
     -- formatting.xmlformatter,
-
-    -- bash/sh
-    diagnostics.shellcheck,
 
     -- generic
     formatting.prettier.with({
