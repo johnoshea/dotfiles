@@ -119,6 +119,10 @@ echo "*** pdm"
 echo
 pdm completion zsh >! "${HOME}/src/dotfiles/_pdm"
 
+echo "*** tmux plugins"
+echo
+"${HOME}/tmux/plugins/tpm/bin/update_plugins" all
+
 
 echo "Restoring previous Python/Ruby/Node/Go versions"
 cd "${CURRENT_DIR}" || exit
