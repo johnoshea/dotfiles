@@ -58,6 +58,7 @@ keymap("n", "<Leader>tg", ":Telescope treesitter<CR>", opts)
 keymap("n", "<Leader>to", ":Telescope oldfiles<CR>", opts)
 keymap("n", "<Leader>tz", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 keymap("n", "<Leader>tj", ":Telescope jumplist<CR>", opts)
+keymap("n", "<Leader>sy", ":Telescope lsp_document_symbols<CR>", opts)
 keymap("n", "<Leader>TS", ":Telescope<space>", {})
 
 -- Git
