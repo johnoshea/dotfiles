@@ -49,12 +49,6 @@ return packer.startup(function(use)
   use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 
   -- editing
-  use({
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
-    end,
-  })
   use({ "vim-scripts/easydir.vim" }) -- Create directories and files at the same time
   use({ "junegunn/vim-easy-align" }) -- <number> or '*' for count, followed by character to align on
   use({ "tpope/vim-repeat" })
