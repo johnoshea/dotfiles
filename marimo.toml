@@ -1,0 +1,31 @@
+[completion]
+activate_on_typing = true
+copilot = true
+
+[save]
+autosave = "after_delay"
+autosave_delay = 1000
+format_on_save = false
+
+[formatting]
+line_length = 79
+
+[keymap]
+preset = "default"
+
+[runtime]
+auto_instantiate = true
+
+[display]
+theme = "light"
+code_editor_font_size = 14
+cell_output = "above"
+
+[package_management]
+manager = "pip"
+
+[experimental]
+ai = true
+
+[server]
+browser = "default"
