@@ -16,3 +16,9 @@ alias ls='lsd --icon=never'
 # Terraform/AWS infrastructure shortcuts
 alias plan='make plan'
 alias apply='make apply'
+
+# LLMs
+alias llm-opus='llm -m claude-3-opus'
+alias llm-gpt4='llm -m gpt-4-turbo'
+alias llm-mix='llm -m mixtral:latest'
+alias llm-gem='llm -m gemma:latest'
