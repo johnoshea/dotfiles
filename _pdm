@@ -1,6 +1,6 @@
 #compdef pdm
 
-PDM_PYTHON="/opt/homebrew/Cellar/pdm/2.14.0/libexec/bin/python"
+PDM_PYTHON="/opt/homebrew/Cellar/pdm/2.15.0/libexec/bin/python"
 PDM_PIP_INDEXES=($(command ${PDM_PYTHON} -m pdm config pypi.url))
 
 _pdm() {
