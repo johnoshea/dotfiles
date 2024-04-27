@@ -111,9 +111,9 @@ direnv hook zsh >! "${HOME}/src/dotfiles/completions/_direnv"
 register-python-argcomplete pipx >! "${HOME}/src/dotfiles/completions/_pipx"
 goenv init - >! "${HOME}/src/dotfiles/completions/_goenv"
 rbenv init - --no-rehash zsh >! "${HOME}/src/dotfiles/completions/_rbenv"
-mcfly init zsh >! "${HOME}/src/dotfiles/completions/_mcfly"
 fnm env --use-on-cd >! "${HOME}/src/dotfiles/completions/_fnm"
 register-python-argcomplete cz >! "${HOME}/src/dotfiles/completions/_cz"
+atuin init zsh >! "${HOME}/src/dotfiles/completions/_atuin"
 
 echo "*** pdm"
 echo
