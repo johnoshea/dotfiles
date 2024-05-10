@@ -1,11 +1,11 @@
-export PATH="/Users/johno/Library/Caches/fnm_multishells/35400_1714231835533/bin":$PATH
-export FNM_ARCH="arm64"
-export FNM_MULTISHELL_PATH="/Users/johno/Library/Caches/fnm_multishells/35400_1714231835533"
-export FNM_VERSION_FILE_STRATEGY="local"
+export PATH="/Users/johno/Library/Caches/fnm_multishells/70661_1714839510731/bin":$PATH
+export FNM_COREPACK_ENABLED="false"
 export FNM_DIR="/Users/johno/Library/Application Support/fnm"
+export FNM_ARCH="arm64"
+export FNM_MULTISHELL_PATH="/Users/johno/Library/Caches/fnm_multishells/70661_1714839510731"
+export FNM_VERSION_FILE_STRATEGY="local"
 export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
 export FNM_LOGLEVEL="info"
-export FNM_COREPACK_ENABLED="false"
 export FNM_RESOLVE_ENGINES="false"
 autoload -U add-zsh-hook
 _fnm_autoload_hook () {
