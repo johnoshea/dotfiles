@@ -4063,7 +4063,7 @@
 	<true/>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Codecierge</string>
+		<string>Command History</string>
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
