@@ -1,6 +1,6 @@
 #compdef pdm
 
-PDM_PYTHON="/opt/homebrew/Cellar/pdm/2.15.1/libexec/bin/python"
+PDM_PYTHON="/opt/homebrew/Cellar/pdm/2.15.3/libexec/bin/python"
 PDM_PYPI_URL=$(PDM_CHECK_UPDATE=0 "${PDM_PYTHON}" -m pdm config pypi.url)
 
 _pdm() {
@@ -153,7 +153,7 @@ _pdm() {
     export)
       arguments+=(
         {-g,--global}'[Use the global project, supply the project root with `-p` option]'
-        {-f+,--format+}"[Specify the export file format]:format:(pipfile poetry flit requirements setuppy)"
+        {-f+,--format+}"[Only requirements.txt is supported for now.]:format:(requirements)"
         "--no-hashes[Don't include artifact hashes]"
         "--no-markers[Don't include platform markers]"
         "--expandvars[Expand environment variables in requirements]"
@@ -238,7 +238,7 @@ _pdm() {
         '--json[Output dependencies in JSON document format]'
         '--csv[Output dependencies in CSV document format]'
         '--markdown[Output dependencies and legal notices in markdown document format - best effort basis]'
-        '{--tree,--graph}[Display a tree of dependencies]'
+        {--tree,--graph}'[Display a tree of dependencies]'
         "--freeze[Show the installed dependencies as pip's requirements.txt format]"
         "--include[Dependency groups to include in the output. By default all are included]:include:"
         "--exclude[Dependency groups to exclude from the output]:exclude:"
