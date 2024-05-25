@@ -11,7 +11,7 @@ alias ping='prettyping --nolegend -c 5'
 alias show="fzf --preview 'bat --color \"always\" -- {}'"
 
 # Use 'lsd' for ls
-alias ls='lsd --icon=never'
+alias ls='lsd --git --icon=never'
 
 # Terraform/AWS infrastructure shortcuts
 alias plan='make plan'
