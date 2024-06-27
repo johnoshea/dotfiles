@@ -1,6 +1,6 @@
 #compdef pdm
 
-PDM_PYTHON="/opt/homebrew/Cellar/pdm/2.15.3/libexec/bin/python"
+PDM_PYTHON="/opt/homebrew/Cellar/pdm/2.15.4/libexec/bin/python"
 PDM_PYPI_URL=$(PDM_CHECK_UPDATE=0 "${PDM_PYTHON}" -m pdm config pypi.url)
 
 _pdm() {
