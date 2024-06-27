@@ -19,10 +19,13 @@ alias apply='make apply'
 
 # LLMs
 alias llm-opus='llm -m claude-3-opus'
+alias llm-sonnet='llm -m claude-3.5-sonnet'
 alias llm-gpt4='llm -m gpt-4-turbo'
+alias llm-gpt4o='llm -m gpt-4o'
 alias llm-mix='llm -m mixtral:latest'
 alias llm-gem='llm -m gemma:latest'
 
 # Aider
 alias aider-gpt4o="aider"
 alias aider-opus="aider --opus"
+alias aider-sonnet="aider --sonnet"
