@@ -451,12 +451,6 @@ return packer.startup(function(use)
 
   use({ "KostkaBrukowa/definition-or-references.nvim" })
 
-  -- Dash
-  use({
-    "mrjones2014/dash.nvim",
-    run = "make install",
-  })
-
   use({
     "joshuavial/aider.nvim",
     config = function()
