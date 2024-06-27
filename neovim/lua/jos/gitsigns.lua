@@ -44,44 +44,55 @@ gitsigns.setup({
     end
 
     -- Navigation
-    map('n', ']g', function()
-      if vim.wo.diff then return ']c' end
-      vim.schedule(function() gs.next_hunk() end)
-      return '<Ignore>'
-    end, {expr=true})
+    map("n", "]g", function()
+      if vim.wo.diff then
+        return "]c"
+      end
+      vim.schedule(function()
+        gs.next_hunk()
+      end)
+      return "<Ignore>"
+    end, { expr = true })
 
-    map('n', '[g', function()
-      if vim.wo.diff then return '[c' end
-      vim.schedule(function() gs.prev_hunk() end)
-      return '<Ignore>'
-    end, {expr=true})
+    map("n", "[g", function()
+      if vim.wo.diff then
+        return "[c"
+      end
+      vim.schedule(function()
+        gs.prev_hunk()
+      end)
+      return "<Ignore>"
+    end, { expr = true })
 
     -- Actions
     -- Popup what's changed in a hunk under cursor
-    map('n', '<leader>gpr', gs.preview_hunk)
+    map("n", "<leader>gpr", gs.preview_hunk)
 
     -- stage/reset individual hunks under cursor
-    map({'n', 'v'}, '<leader>gs', gs.stage_hunk)
-    map({'n', 'v'}, '<leader>gr', gs.reset_hunk)
-    map({'n', 'v'}, '<leader>gu', gs.undo_stage_hunk)
+    map({ "n", "v" }, "<leader>gs", gs.stage_hunk)
+    map({ "n", "v" }, "<leader>gr", gs.reset_hunk)
+    map({ "n", "v" }, "<leader>gu", gs.undo_stage_hunk)
 
     -- stage/reset all hunks in a file
-    map({'n', 'v'}, '<leader>gS', gs.stage_buffer)
-    map({'n', 'v'}, '<leader>gR', gs.reset_buffer)
-    map({'n', 'v'}, '<leader>gU', gs.reset_buffer_index)
-
+    map({ "n", "v" }, "<leader>gS", gs.stage_buffer)
+    map({ "n", "v" }, "<leader>gR", gs.reset_buffer)
+    map({ "n", "v" }, "<leader>gU", gs.reset_buffer_index)
 
     -- toggle line blame
-    map({'n', 'v'}, '<leader>gb', function() gs.blame_line{full=true} end)
-    map({'n', 'v'}, '<leader>gB', gs.toggle_current_line_blame)
+    map({ "n", "v" }, "<leader>gb", function()
+      gs.blame_line({ full = true })
+    end)
+    map({ "n", "v" }, "<leader>gB", gs.toggle_current_line_blame)
 
     -- diffthis
-    map({'n', 'v'}, '<leader>gd', gs.diffthis)
-    map({'n', 'v'}, '<leader>gD', function() gs.diffthis('~') end)
+    map({ "n", "v" }, "<leader>gd", gs.diffthis)
+    map({ "n", "v" }, "<leader>gD", function()
+      gs.diffthis("~")
+    end)
 
-    map({'n', 'v'}, '<leader>td', gs.toggle_deleted)
+    map({ "n", "v" }, "<leader>td", gs.toggle_deleted)
 
     -- Text object
-    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-  end
-}
+    map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+  end,
+})
