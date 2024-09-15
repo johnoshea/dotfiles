@@ -26,3 +26,6 @@ alias llm-gpt4o='llm -m gpt-4o'
 alias aider-gpt4o="aider"
 alias aider-opus="aider --opus --cache-prompts --dark-mode"
 alias aider-sonnet="aider --sonnet --cache-prompts --dark-mode"
+
+# Chezmoi
+alias cm="chezmoi"
