@@ -1,0 +1,13 @@
+{
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "client_email": "gam-project-oo9-q6h-39k@gam-project-oo9-q6h-39k.iam.gserviceaccount.com",
+  "client_id": "100463124993964777803",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gam-project-oo9-q6h-39k%40gam-project-oo9-q6h-39k.iam.gserviceaccount.com",
+  "key_type": "default",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC9RQ+jVxheIR0J\n95bfcXTCK1kJUVrA+ir661O7UtIaNSCNE2plRBZLbs1Yhj3QksGWnIhocRWInL/H\nQx8PW5Ht5U1aStN9BqWs678dYEJHr9C3TTNqvYV6mXKjfMqmnt17OgHeoNbSS2Ct\nZroleC/gqsv0pkkc6Nuf2WVKEAsmOEjEwlT/Dem9P5izSmpjIgpYHh6SWkdlH3Xq\nPMTmrGEJDtGMQonFsbtDgqkvwB/JER8QvSge3Ujm+KHkWN+511T7bKsyEj4WZHFR\nBDqNZe6o9ACoZ9nQlPU6NE8PudqP+JeygP+JPq712BflcqDR7bDQeeL/MeuIvBN1\nlIJAv2snAgMBAAECggEAaHnGuBNLkCoXLXlN/ulR2hyzeUE/J2bwcrGT9sMw1uac\noUMmZ9+9rsXq9AKl/IwF8G1Xns9NY6ui8QtMCd4yH2+D02OaellA+sLnLAAGlium\nuogS6cjT9WjerwAjnPX0rCDJB2shKdQR+aXK+wPs6cdd7h4cHaksEoCeONPCU8Wp\nnhkMaAB3z3N+Mlh7+TALBcVJ3sKU+SxCnxEzlMN2da5bc1Rj8Lx/bS2RjBawnkj3\nwjQgnT82LbCXOhkplzofV5QbAqUIsiQXqEwBHQRJOE7dtEuUGoRyRYT32dJSdQ7f\nlap7cCURe+yvi2uCzn+Y2h31jdA8yZIpjz1HIQS2AQKBgQDzwMLzntHbOK4UfJQW\n6wT1jym0uaIco7CMOLY6hLAHB1VrNG8FqCDObCMZkxcF9bEwJcIwm5I1loKFKugX\n5/2JqdkGkfuIdeRsfqEznfqItC7PUwjhOVGkzx7hQrWMhhz286xMCboAMSK7/YUO\nvWQPhj1ilH0w3fy5qEyyJPrndwKBgQDGx4RYMoOdokQzcYqiJfDk2Zi0Ucf98udM\nzDgrr2GbnLGxSRuzoiYKUwkREnf8IC+oL9mLtrLDvVXO+ha9vXGx1Md7QC/90DCx\nSbMCkaGzpu2SOyaGpOcPIW/M6vMCA0gQWjdsxV/Ck1sJwtNQrdODcXoZErCT/PSo\nQaBsJL3l0QKBgGzeQHR9D+/gzed6iM3/pBRlH9SHQL+X4KeQQNu8Hb7V6LHcFmYp\nZJWtuLOYfaT8ymndw3DgWxoyIhOGSWk8BYJx6OvFUdnuBdrrZ+Zc/eQGzg1tYb7u\nUefRVlJ38AxWbiNiTCceBQRG7eOW5NHjhwhkBZC9D3k+/LyTTcYXPDUbAoGAIRvy\na05epc71VSxATynKqhOkX8SPbzkaVaxeXshjlavP3Ru0RYNomqeiBvnwikpCJd1y\netb/h6Ltu//j8c6wNVKft2PFmp0mvyDrdC4VpPrU71py3FJzOg3ztUodF+S8CB0+\nxhtKC/rHWyTcVb/eTzKDh9GZH80uYygrNFgaWUECgYBuOU4H3/FutpR3g75UyfBE\nYwrD4uDuroxHcnwuuqymgrqRAigzp1Jth2MT5fxOFzRAC50bO+Ner6caVFonBFnC\nbe/PysCSfj8U+kkVxaestQLmYdd/2NGFOSQtYG1EobSemAazOFjZJ1567lURLcMg\nYyr9RUdPmxD3Gi+FHDmMcQ==\n-----END PRIVATE KEY-----\n",
+  "private_key_id": "090ad2a934140c8e426c019c2e359f91ba87d0a2",
+  "project_id": "gam-project-oo9-q6h-39k",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "type": "service_account"
+}

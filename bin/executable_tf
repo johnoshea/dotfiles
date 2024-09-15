@@ -1,0 +1,9 @@
+#!/bin/bash
+
+docker run \
+  --platform linux/amd64 \
+  --interactive --tty --rm \
+  --volume "/Users/johno/src/aws_infrastructure/terraform":"/Users/johno/src/aws_infrastructure/terraform" \
+  --volume "/Users/johno/.aws":"/Users/johno/.aws" \
+  --workdir "$PWD" \
+  hashicorp/terraform:0.12.31 "$@"

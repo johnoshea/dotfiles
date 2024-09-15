@@ -1,0 +1,3 @@
+#!/bin/sh
+for jar in `find $1 -path "*.jar"`; do export CLASSPATH=$CLASSPATH:$jar; done 
+export CLASSPATH=.:$CLASSPATH

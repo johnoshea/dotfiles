@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+VERSION=$(pyenv version-name)
+
+if [ -n "$1" ]; then
+    VERSION=$1
+fi
+
+touch .envrc
+echo 'dotenv_if_exists' >> .envrc
+echo "layout pyenv $VERSION" >> .envrc

@@ -1,0 +1,2 @@
+#!/bin/sh
+podman machine stop && sleep 5 && podman machine start
