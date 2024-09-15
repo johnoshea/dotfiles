@@ -1,0 +1,4 @@
+source vimrc
+
+let g:coiled_snake_set_foldtext = 0
+

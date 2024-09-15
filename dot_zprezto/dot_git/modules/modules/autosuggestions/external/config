@@ -1,0 +1,18 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+	worktree = ../../../../../modules/autosuggestions/external
+[remote "origin"]
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[submodule "vendor/shunit2"]
+	url = https://github.com/kward/shunit2
+[submodule "vendor/stub.sh"]
+	url = https://github.com/ericfreese/stub.sh

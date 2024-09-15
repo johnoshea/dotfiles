@@ -1,0 +1,449 @@
+0000000000000000000000000000000000000000 723b3812e170975901fd371d549bc4ae78a88298 John O'Shea <john.m.oshea@gmail.com> 1493474811 +0100	clone: from git@github.com:johnoshea/prezto.git
+723b3812e170975901fd371d549bc4ae78a88298 723b3812e170975901fd371d549bc4ae78a88298 John O'Shea <john.m.oshea@gmail.com> 1493557753 +0100	checkout: moving from master to develop
+723b3812e170975901fd371d549bc4ae78a88298 723b3812e170975901fd371d549bc4ae78a88298 John O'Shea <john.m.oshea@gmail.com> 1493564862 +0100	checkout: moving from develop to develop
+723b3812e170975901fd371d549bc4ae78a88298 8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac John O'Shea <john.m.oshea@gmail.com> 1493572626 +0100	commit: Switch previous config to current prezto setup
+8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac 723b3812e170975901fd371d549bc4ae78a88298 John O'Shea <john.m.oshea@gmail.com> 1493573057 +0100	checkout: moving from develop to master
+723b3812e170975901fd371d549bc4ae78a88298 8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac John O'Shea <john.m.oshea@gmail.com> 1493573064 +0100	merge develop: Fast-forward
+8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac 8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac John O'Shea <john.m.oshea@gmail.com> 1493573076 +0100	checkout: moving from master to develop
+8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac 8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac John O'Shea <john.m.oshea@gmail.com> 1493640433 +0100	checkout: moving from develop to master
+8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac 7f925c86dccc432770bb5c0760b223740611258b John O'Shea <john.m.oshea@gmail.com> 1493640459 +0100	pull upstream master: Merge made by the 'recursive' strategy.
+7f925c86dccc432770bb5c0760b223740611258b 8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac John O'Shea <john.m.oshea@gmail.com> 1493640470 +0100	checkout: moving from master to develop
+8ae2acde5a7b84bdc97750c2f44ce7c48efe94ac 7f925c86dccc432770bb5c0760b223740611258b John O'Shea <john.m.oshea@gmail.com> 1493640479 +0100	merge master: Fast-forward
+7f925c86dccc432770bb5c0760b223740611258b 7f925c86dccc432770bb5c0760b223740611258b John O'Shea <john.m.oshea@gmail.com> 1493732275 +0100	checkout: moving from develop to master
+7f925c86dccc432770bb5c0760b223740611258b f537c87b2de2da3501a936016bed2d488fa9cba3 John O'Shea <john.m.oshea@gmail.com> 1493732297 +0100	pull upstream master: Merge made by the 'recursive' strategy.
+f537c87b2de2da3501a936016bed2d488fa9cba3 7f925c86dccc432770bb5c0760b223740611258b John O'Shea <john.m.oshea@gmail.com> 1493732302 +0100	checkout: moving from master to develop
+7f925c86dccc432770bb5c0760b223740611258b f537c87b2de2da3501a936016bed2d488fa9cba3 John O'Shea <john.m.oshea@gmail.com> 1493732309 +0100	merge master: Fast-forward
+f537c87b2de2da3501a936016bed2d488fa9cba3 265a6d12f6fcc82b5a505ef9a2e8c59ca7eff4cf John O'Shea <john.m.oshea@gmail.com> 1493732756 +0100	commit: Fix merge
+265a6d12f6fcc82b5a505ef9a2e8c59ca7eff4cf 109aecebac3f298fa696eade14fb468959c28ff3 John O'Shea <john.m.oshea@gmail.com> 1493732773 +0100	commit: Update submodules
+109aecebac3f298fa696eade14fb468959c28ff3 f537c87b2de2da3501a936016bed2d488fa9cba3 John O'Shea <john.m.oshea@gmail.com> 1493732799 +0100	checkout: moving from develop to master
+f537c87b2de2da3501a936016bed2d488fa9cba3 109aecebac3f298fa696eade14fb468959c28ff3 John O'Shea <john.m.oshea@gmail.com> 1493732809 +0100	merge develop: Fast-forward
+109aecebac3f298fa696eade14fb468959c28ff3 109aecebac3f298fa696eade14fb468959c28ff3 John O'Shea <john.m.oshea@gmail.com> 1493732816 +0100	checkout: moving from master to develop
+109aecebac3f298fa696eade14fb468959c28ff3 109aecebac3f298fa696eade14fb468959c28ff3 John O'Shea <john.m.oshea@gmail.com> 1493803621 +0100	checkout: moving from develop to master
+109aecebac3f298fa696eade14fb468959c28ff3 109aecebac3f298fa696eade14fb468959c28ff3 John O'Shea <john.m.oshea@gmail.com> 1493803636 +0100	checkout: moving from master to develop
+109aecebac3f298fa696eade14fb468959c28ff3 109aecebac3f298fa696eade14fb468959c28ff3 John O'Shea <john.m.oshea@gmail.com> 1493803656 +0100	checkout: moving from develop to master
+109aecebac3f298fa696eade14fb468959c28ff3 9e698c989745d1809f0b77a64f034744b243bf33 John O'Shea <john.m.oshea@gmail.com> 1493803673 +0100	pull upstream master: Merge made by the 'recursive' strategy.
+9e698c989745d1809f0b77a64f034744b243bf33 109aecebac3f298fa696eade14fb468959c28ff3 John O'Shea <john.m.oshea@gmail.com> 1493803677 +0100	checkout: moving from master to develop
+109aecebac3f298fa696eade14fb468959c28ff3 9e698c989745d1809f0b77a64f034744b243bf33 John O'Shea <john.m.oshea@gmail.com> 1493803687 +0100	merge master: Fast-forward
+9e698c989745d1809f0b77a64f034744b243bf33 9b0716d0b6dd6ba96e370ed6dffead8fe33777be John O'Shea <john.m.oshea@gmail.com> 1493803864 +0100	commit: Remove redundant node path setup
+9b0716d0b6dd6ba96e370ed6dffead8fe33777be 9e698c989745d1809f0b77a64f034744b243bf33 John O'Shea <john.m.oshea@gmail.com> 1493803877 +0100	checkout: moving from develop to master
+9e698c989745d1809f0b77a64f034744b243bf33 9b0716d0b6dd6ba96e370ed6dffead8fe33777be John O'Shea <john.m.oshea@gmail.com> 1493803883 +0100	merge develop: Fast-forward
+9b0716d0b6dd6ba96e370ed6dffead8fe33777be 9b0716d0b6dd6ba96e370ed6dffead8fe33777be John O'Shea <john.m.oshea@gmail.com> 1493803885 +0100	checkout: moving from master to develop
+9b0716d0b6dd6ba96e370ed6dffead8fe33777be 9b0716d0b6dd6ba96e370ed6dffead8fe33777be John O'Shea <john.m.oshea@gmail.com> 1494065197 +0100	checkout: moving from develop to master
+9b0716d0b6dd6ba96e370ed6dffead8fe33777be f8248055012b02d8b72d7550090863c0755e660f John O'Shea <john.m.oshea@gmail.com> 1494065217 +0100	pull upstream master: Merge made by the 'recursive' strategy.
+f8248055012b02d8b72d7550090863c0755e660f 9b0716d0b6dd6ba96e370ed6dffead8fe33777be John O'Shea <john.m.oshea@gmail.com> 1494065224 +0100	checkout: moving from master to develop
+9b0716d0b6dd6ba96e370ed6dffead8fe33777be f8248055012b02d8b72d7550090863c0755e660f John O'Shea <john.m.oshea@gmail.com> 1494065232 +0100	merge master: Fast-forward
+f8248055012b02d8b72d7550090863c0755e660f f8248055012b02d8b72d7550090863c0755e660f John O'Shea <john.m.oshea@gmail.com> 1494766694 +0100	checkout: moving from develop to master
+f8248055012b02d8b72d7550090863c0755e660f f8248055012b02d8b72d7550090863c0755e660f John O'Shea <john.m.oshea@gmail.com> 1494766719 +0100	checkout: moving from master to develop
+f8248055012b02d8b72d7550090863c0755e660f f8248055012b02d8b72d7550090863c0755e660f John O'Shea <john.m.oshea@gmail.com> 1495394953 +0100	checkout: moving from develop to master
+f8248055012b02d8b72d7550090863c0755e660f f8248055012b02d8b72d7550090863c0755e660f John O'Shea <john.m.oshea@gmail.com> 1495394975 +0100	checkout: moving from master to develop
+f8248055012b02d8b72d7550090863c0755e660f f8248055012b02d8b72d7550090863c0755e660f John O'Shea <john.m.oshea@gmail.com> 1495895794 +0100	reset: moving to HEAD
+f8248055012b02d8b72d7550090863c0755e660f f75201786192671f69c30c0442f60314941c248f John O'Shea <john.m.oshea@gmail.com> 1495895948 +0100	commit: Update submodules
+f75201786192671f69c30c0442f60314941c248f a8012b6087f863ba30fb029a9c06bf4f400c7208 John O'Shea <john.m.oshea@gmail.com> 1495896008 +0100	commit: Remove _mtools completion so my 'mcd' alias works
+a8012b6087f863ba30fb029a9c06bf4f400c7208 488d185919ff6edd4ae0e9c6947e418f0f8485a7 John O'Shea <john.m.oshea@gmail.com> 1495896046 +0100	commit: Bump 'numbered directory' access to 30
+488d185919ff6edd4ae0e9c6947e418f0f8485a7 f8248055012b02d8b72d7550090863c0755e660f John O'Shea <john.m.oshea@gmail.com> 1495904946 +0100	checkout: moving from develop to master
+f8248055012b02d8b72d7550090863c0755e660f 488d185919ff6edd4ae0e9c6947e418f0f8485a7 John O'Shea <john.m.oshea@gmail.com> 1495904946 +0100	merge develop: Fast-forward
+488d185919ff6edd4ae0e9c6947e418f0f8485a7 488d185919ff6edd4ae0e9c6947e418f0f8485a7 John O'Shea <john.m.oshea@gmail.com> 1495904955 +0100	checkout: moving from master to develop
+488d185919ff6edd4ae0e9c6947e418f0f8485a7 488d185919ff6edd4ae0e9c6947e418f0f8485a7 John O'Shea <john.m.oshea@gmail.com> 1496480827 +0100	checkout: moving from develop to master
+488d185919ff6edd4ae0e9c6947e418f0f8485a7 82580e3bfe2a8f0474f485c1c116eba7a9268dea John O'Shea <john.m.oshea@gmail.com> 1496480838 +0100	merge 7ae7a0266c04f2645bdf9917378645fc505e7461: Merge made by the 'recursive' strategy.
+82580e3bfe2a8f0474f485c1c116eba7a9268dea 488d185919ff6edd4ae0e9c6947e418f0f8485a7 John O'Shea <john.m.oshea@gmail.com> 1496480842 +0100	checkout: moving from master to develop
+488d185919ff6edd4ae0e9c6947e418f0f8485a7 82580e3bfe2a8f0474f485c1c116eba7a9268dea John O'Shea <john.m.oshea@gmail.com> 1496480847 +0100	merge master: Fast-forward
+82580e3bfe2a8f0474f485c1c116eba7a9268dea 82580e3bfe2a8f0474f485c1c116eba7a9268dea John O'Shea <john.m.oshea@gmail.com> 1497698066 +0100	checkout: moving from develop to master
+82580e3bfe2a8f0474f485c1c116eba7a9268dea 16fe7bfd6c5b3e2146f745d46e529748fba41cf6 John O'Shea <john.m.oshea@gmail.com> 1497698074 +0100	merge a0541ce7a5f3ee5b0d869f1cd2b5546558e3750d: Merge made by the 'recursive' strategy.
+16fe7bfd6c5b3e2146f745d46e529748fba41cf6 82580e3bfe2a8f0474f485c1c116eba7a9268dea John O'Shea <john.m.oshea@gmail.com> 1497698079 +0100	checkout: moving from master to develop
+82580e3bfe2a8f0474f485c1c116eba7a9268dea 16fe7bfd6c5b3e2146f745d46e529748fba41cf6 John O'Shea <john.m.oshea@gmail.com> 1497698089 +0100	merge master: Fast-forward
+16fe7bfd6c5b3e2146f745d46e529748fba41cf6 16fe7bfd6c5b3e2146f745d46e529748fba41cf6 John O'Shea <john.m.oshea@gmail.com> 1498295424 +0100	checkout: moving from develop to master
+16fe7bfd6c5b3e2146f745d46e529748fba41cf6 6d46aaba1b589aba9fab034e9a5c20d686426928 John O'Shea <john.m.oshea@gmail.com> 1498296193 +0100	commit (merge): Update with upstream changes
+6d46aaba1b589aba9fab034e9a5c20d686426928 16fe7bfd6c5b3e2146f745d46e529748fba41cf6 John O'Shea <john.m.oshea@gmail.com> 1498296201 +0100	checkout: moving from master to develop
+16fe7bfd6c5b3e2146f745d46e529748fba41cf6 6d46aaba1b589aba9fab034e9a5c20d686426928 John O'Shea <john.m.oshea@gmail.com> 1498296207 +0100	merge master: Fast-forward
+6d46aaba1b589aba9fab034e9a5c20d686426928 6d46aaba1b589aba9fab034e9a5c20d686426928 John O'Shea <john.m.oshea@gmail.com> 1498296237 +0100	checkout: moving from develop to develop
+6d46aaba1b589aba9fab034e9a5c20d686426928 6d46aaba1b589aba9fab034e9a5c20d686426928 John O'Shea <john.m.oshea@gmail.com> 1498901217 +0100	checkout: moving from develop to master
+6d46aaba1b589aba9fab034e9a5c20d686426928 aca99bd6b3243340abc7e9d4a1f9c4f0ed5a2bba John O'Shea <john.m.oshea@gmail.com> 1498901224 +0100	merge 5ef10f765896d5849c4c98bb495f0c82c5533bda: Merge made by the 'recursive' strategy.
+aca99bd6b3243340abc7e9d4a1f9c4f0ed5a2bba 6d46aaba1b589aba9fab034e9a5c20d686426928 John O'Shea <john.m.oshea@gmail.com> 1498901227 +0100	checkout: moving from master to develop
+6d46aaba1b589aba9fab034e9a5c20d686426928 aca99bd6b3243340abc7e9d4a1f9c4f0ed5a2bba John O'Shea <john.m.oshea@gmail.com> 1498901234 +0100	merge master: Fast-forward
+aca99bd6b3243340abc7e9d4a1f9c4f0ed5a2bba aca99bd6b3243340abc7e9d4a1f9c4f0ed5a2bba John O'Shea <john.m.oshea@gmail.com> 1499510874 +0100	checkout: moving from develop to master
+aca99bd6b3243340abc7e9d4a1f9c4f0ed5a2bba 25d22459e74144e284bd5f0503907de3c288ca9a John O'Shea <john.m.oshea@gmail.com> 1499510881 +0100	merge 75a60bc7bff3281ce3aae8fb4b25b8b461ccc0f7: Merge made by the 'recursive' strategy.
+25d22459e74144e284bd5f0503907de3c288ca9a aca99bd6b3243340abc7e9d4a1f9c4f0ed5a2bba John O'Shea <john.m.oshea@gmail.com> 1499510891 +0100	checkout: moving from master to develop
+aca99bd6b3243340abc7e9d4a1f9c4f0ed5a2bba 25d22459e74144e284bd5f0503907de3c288ca9a John O'Shea <john.m.oshea@gmail.com> 1499510899 +0100	merge master: Fast-forward
+25d22459e74144e284bd5f0503907de3c288ca9a 25d22459e74144e284bd5f0503907de3c288ca9a John O'Shea <john.m.oshea@gmail.com> 1499510938 +0100	checkout: moving from develop to master
+25d22459e74144e284bd5f0503907de3c288ca9a eabaf1a88500fbe07e90dae8754c32cd6be0b8c8 John O'Shea <john.m.oshea@gmail.com> 1499510952 +0100	pull upstream master: Merge made by the 'recursive' strategy.
+eabaf1a88500fbe07e90dae8754c32cd6be0b8c8 25d22459e74144e284bd5f0503907de3c288ca9a John O'Shea <john.m.oshea@gmail.com> 1499510959 +0100	checkout: moving from master to develop
+25d22459e74144e284bd5f0503907de3c288ca9a eabaf1a88500fbe07e90dae8754c32cd6be0b8c8 John O'Shea <john.m.oshea@gmail.com> 1499510965 +0100	merge master: Fast-forward
+eabaf1a88500fbe07e90dae8754c32cd6be0b8c8 cf293c88a83da34bb47ce4dc1c6ae007d92f803a John O'Shea <john.m.oshea@gmail.com> 1503109925 -0600	commit: Switch back to 'less' as my pager
+cf293c88a83da34bb47ce4dc1c6ae007d92f803a 474a8de999ecd733ea2856c3f7d695ec42843aa0 John O'Shea <john.m.oshea@gmail.com> 1503109988 -0600	commit: Remove Go config in favour of 'gvm'
+474a8de999ecd733ea2856c3f7d695ec42843aa0 24b2f88291aaf14738d3b4626e6c1a2f257b2329 John O'Shea <john.m.oshea@gmail.com> 1503110395 -0600	commit (merge): Update with latest upstream
+24b2f88291aaf14738d3b4626e6c1a2f257b2329 eabaf1a88500fbe07e90dae8754c32cd6be0b8c8 John O'Shea <john.m.oshea@gmail.com> 1503110406 -0600	checkout: moving from develop to master
+eabaf1a88500fbe07e90dae8754c32cd6be0b8c8 24b2f88291aaf14738d3b4626e6c1a2f257b2329 John O'Shea <john.m.oshea@gmail.com> 1503110406 -0600	merge develop: Fast-forward
+24b2f88291aaf14738d3b4626e6c1a2f257b2329 24b2f88291aaf14738d3b4626e6c1a2f257b2329 John O'Shea <john.m.oshea@gmail.com> 1503110406 -0600	checkout: moving from master to develop
+24b2f88291aaf14738d3b4626e6c1a2f257b2329 24b2f88291aaf14738d3b4626e6c1a2f257b2329 John O'Shea <john.m.oshea@gmail.com> 1503110415 -0600	checkout: moving from develop to master
+24b2f88291aaf14738d3b4626e6c1a2f257b2329 24b2f88291aaf14738d3b4626e6c1a2f257b2329 John O'Shea <john.m.oshea@gmail.com> 1503110422 -0600	checkout: moving from master to develop
+24b2f88291aaf14738d3b4626e6c1a2f257b2329 afa5761196b6b1a584e785cfdc582bc583bbbe74 John O'Shea <john.m.oshea@gmail.com> 1508944583 +0100	merge 109864429cea5763e57c77f060835bfcdbefb09f: Merge made by the 'recursive' strategy.
+afa5761196b6b1a584e785cfdc582bc583bbbe74 808e7025d54bcef35d8f5b1106c01270b5b0260b John O'Shea <john.m.oshea@gmail.com> 1509182010 +0100	commit: Swap 'less' back in instead of 'most'
+808e7025d54bcef35d8f5b1106c01270b5b0260b 9f10ffc9a721a8112c54c1bc6aead75eb9900c19 John O'Shea <john.m.oshea@gmail.com> 1509182286 +0100	commit: Updated external submodules
+9f10ffc9a721a8112c54c1bc6aead75eb9900c19 24b2f88291aaf14738d3b4626e6c1a2f257b2329 John O'Shea <john.m.oshea@gmail.com> 1509182304 +0100	checkout: moving from develop to master
+24b2f88291aaf14738d3b4626e6c1a2f257b2329 9f10ffc9a721a8112c54c1bc6aead75eb9900c19 John O'Shea <john.m.oshea@gmail.com> 1509182304 +0100	merge develop: Fast-forward
+9f10ffc9a721a8112c54c1bc6aead75eb9900c19 9f10ffc9a721a8112c54c1bc6aead75eb9900c19 John O'Shea <john.m.oshea@gmail.com> 1509182381 +0100	checkout: moving from master to develop
+9f10ffc9a721a8112c54c1bc6aead75eb9900c19 9f10ffc9a721a8112c54c1bc6aead75eb9900c19 John O'Shea <john.m.oshea@gmail.com> 1509182442 +0100	checkout: moving from develop to master
+9f10ffc9a721a8112c54c1bc6aead75eb9900c19 e63d39a03d6008279d623ccdbb8a8a886ca47468 John O'Shea <john.m.oshea@gmail.com> 1509182458 +0100	pull upstream master: Merge made by the 'recursive' strategy.
+e63d39a03d6008279d623ccdbb8a8a886ca47468 9f10ffc9a721a8112c54c1bc6aead75eb9900c19 John O'Shea <john.m.oshea@gmail.com> 1509182473 +0100	checkout: moving from master to develop
+9f10ffc9a721a8112c54c1bc6aead75eb9900c19 e63d39a03d6008279d623ccdbb8a8a886ca47468 John O'Shea <john.m.oshea@gmail.com> 1509182479 +0100	merge master: Fast-forward
+e63d39a03d6008279d623ccdbb8a8a886ca47468 e63d39a03d6008279d623ccdbb8a8a886ca47468 John O'Shea <john.m.oshea@gmail.com> 1509182482 +0100	checkout: moving from develop to master
+e63d39a03d6008279d623ccdbb8a8a886ca47468 af17f225c6f768d59797fd63b7cee9ddddf19b0c John O'Shea <john.m.oshea@gmail.com> 1511789542 +0000	commit (merge): Pull latest upstream changes
+af17f225c6f768d59797fd63b7cee9ddddf19b0c 7bd9c0174a8cbccc4847b286187bfc34a364f5ab John O'Shea <john.m.oshea@gmail.com> 1511789608 +0000	commit: Update submodules
+7bd9c0174a8cbccc4847b286187bfc34a364f5ab e63d39a03d6008279d623ccdbb8a8a886ca47468 John O'Shea <john.m.oshea@gmail.com> 1511789624 +0000	checkout: moving from master to develop
+e63d39a03d6008279d623ccdbb8a8a886ca47468 7bd9c0174a8cbccc4847b286187bfc34a364f5ab John O'Shea <john.m.oshea@gmail.com> 1511789624 +0000	merge master: Fast-forward
+7bd9c0174a8cbccc4847b286187bfc34a364f5ab 7bd9c0174a8cbccc4847b286187bfc34a364f5ab John O'Shea <john.m.oshea@gmail.com> 1511789628 +0000	checkout: moving from develop to master
+7bd9c0174a8cbccc4847b286187bfc34a364f5ab 09ac13621837b10807074b02da7e85eb8bf59ed5 John O'Shea <john.m.oshea@gmail.com> 1512224816 +0000	merge 8ed2c78de8d5094f9bc394c6cfd4e4c843420f0e: Merge made by the 'recursive' strategy.
+09ac13621837b10807074b02da7e85eb8bf59ed5 7bd9c0174a8cbccc4847b286187bfc34a364f5ab John O'Shea <john.m.oshea@gmail.com> 1512224824 +0000	checkout: moving from master to develop
+7bd9c0174a8cbccc4847b286187bfc34a364f5ab 09ac13621837b10807074b02da7e85eb8bf59ed5 John O'Shea <john.m.oshea@gmail.com> 1512224832 +0000	merge master: Fast-forward
+09ac13621837b10807074b02da7e85eb8bf59ed5 09ac13621837b10807074b02da7e85eb8bf59ed5 John O'Shea <john.m.oshea@gmail.com> 1512224837 +0000	checkout: moving from develop to master
+09ac13621837b10807074b02da7e85eb8bf59ed5 7baa11833cdf931ca01b02d51723f027a24651b3 John O'Shea <john.m.oshea@gmail.com> 1512224879 +0000	merge 7cdde9b631fffd25ed0c91aaaf5180b86d832038: Merge made by the 'recursive' strategy.
+7baa11833cdf931ca01b02d51723f027a24651b3 09ac13621837b10807074b02da7e85eb8bf59ed5 John O'Shea <john.m.oshea@gmail.com> 1512224887 +0000	checkout: moving from master to develop
+09ac13621837b10807074b02da7e85eb8bf59ed5 7baa11833cdf931ca01b02d51723f027a24651b3 John O'Shea <john.m.oshea@gmail.com> 1512224892 +0000	merge master: Fast-forward
+7baa11833cdf931ca01b02d51723f027a24651b3 7baa11833cdf931ca01b02d51723f027a24651b3 John O'Shea <john.m.oshea@gmail.com> 1512224897 +0000	checkout: moving from develop to master
+7baa11833cdf931ca01b02d51723f027a24651b3 05b26cfac9943b2d026f6f550fe8696d0e2326f2 John O'Shea <john.m.oshea@gmail.com> 1514916102 -0700	commit (merge): Merge in latest upstream code
+05b26cfac9943b2d026f6f550fe8696d0e2326f2 09da5374e9954c76d85616ef5a61ac454a0e9715 John O'Shea <john.m.oshea@gmail.com> 1514916204 -0700	commit: Update external submodules
+09da5374e9954c76d85616ef5a61ac454a0e9715 451b8e0c0c43ca2c9a5147280070290179d8c0c6 John O'Shea <john.m.oshea@gmail.com> 1514916229 -0700	commit: Simplify adding extra paths
+451b8e0c0c43ca2c9a5147280070290179d8c0c6 7baa11833cdf931ca01b02d51723f027a24651b3 John O'Shea <john.m.oshea@gmail.com> 1514916235 -0700	checkout: moving from master to develop
+7baa11833cdf931ca01b02d51723f027a24651b3 451b8e0c0c43ca2c9a5147280070290179d8c0c6 John O'Shea <john.m.oshea@gmail.com> 1514916241 -0700	merge master: Fast-forward
+451b8e0c0c43ca2c9a5147280070290179d8c0c6 451b8e0c0c43ca2c9a5147280070290179d8c0c6 John O'Shea <john.m.oshea@gmail.com> 1514916246 -0700	checkout: moving from develop to master
+451b8e0c0c43ca2c9a5147280070290179d8c0c6 10f47ca9c9bd70d0540058cd1012cf5541cc434e John O'Shea <john.m.oshea@gmail.com> 1518372100 -0700	merge 282b478fd2eb6658c063d4f32b9856201e5b886c: Merge made by the 'recursive' strategy.
+10f47ca9c9bd70d0540058cd1012cf5541cc434e 451b8e0c0c43ca2c9a5147280070290179d8c0c6 John O'Shea <john.m.oshea@gmail.com> 1518372107 -0700	checkout: moving from master to develop
+451b8e0c0c43ca2c9a5147280070290179d8c0c6 10f47ca9c9bd70d0540058cd1012cf5541cc434e John O'Shea <john.m.oshea@gmail.com> 1518372113 -0700	merge master: Fast-forward
+10f47ca9c9bd70d0540058cd1012cf5541cc434e 10f47ca9c9bd70d0540058cd1012cf5541cc434e John O'Shea <john.m.oshea@gmail.com> 1518372139 -0700	checkout: moving from develop to master
+10f47ca9c9bd70d0540058cd1012cf5541cc434e e67fa060c1763ec916de10a613155b8934890133 John O'Shea <john.m.oshea@gmail.com> 1523640957 +0100	commit: Add ripgrep display alias
+e67fa060c1763ec916de10a613155b8934890133 9b8637906519567af01c20c3d1f0e6d081b54351 John O'Shea <john.m.oshea@gmail.com> 1523640995 +0100	commit: Whitespace-only changes
+9b8637906519567af01c20c3d1f0e6d081b54351 b86e0c8968a4705d206ee9e0f53cd6da0a2f97d4 John O'Shea <john.m.oshea@gmail.com> 1523641022 +0100	commit: Add docker support
+b86e0c8968a4705d206ee9e0f53cd6da0a2f97d4 5373fc04911f045b94a364ec84e38ae7be5219d9 John O'Shea <john.m.oshea@gmail.com> 1523641058 +0100	commit: Move things to .zshrc.local
+5373fc04911f045b94a364ec84e38ae7be5219d9 2fda9f58b2ba3e7ed3bca8e4d0e931fd9dd56088 John O'Shea <john.m.oshea@gmail.com> 1523641095 +0100	commit: Customize pip options
+2fda9f58b2ba3e7ed3bca8e4d0e931fd9dd56088 76dc7082542cf920d32eb9c8241a392b84e06545 John O'Shea <john.m.oshea@gmail.com> 1523641133 +0100	merge 300102897a4710e1559e4435c686f794d126d3c3: Merge made by the 'recursive' strategy.
+76dc7082542cf920d32eb9c8241a392b84e06545 1ba0eb44fba72ce52cd27eaa1bbd7a0e130f8fc9 John O'Shea <john.m.oshea@gmail.com> 1526729301 +0100	commit (merge): Merge commit '2995b7d0c89d628a68ea789e21ea8f26ea8fa4d9'
+1ba0eb44fba72ce52cd27eaa1bbd7a0e130f8fc9 4664730eaebdcfab8644bf637638baf8a4d4ac55 John O'Shea <john.m.oshea@gmail.com> 1531825087 +0100	commit (merge): Merge commit 'e149367445d2bcb9faa6ada365dfd56efec39de8'
+4664730eaebdcfab8644bf637638baf8a4d4ac55 b964e5f4c156f75904717ec243ae79ca04fea9d8 John O'Shea <john.m.oshea@gmail.com> 1533908673 +0100	commit: Add Go path
+b964e5f4c156f75904717ec243ae79ca04fea9d8 39676cf64b06d97eb413e86a5c6b1f84c5df7013 John O'Shea <john.m.oshea@gmail.com> 1533908693 +0100	commit: Remove .node-version
+39676cf64b06d97eb413e86a5c6b1f84c5df7013 057efe2514e15c5ff34b8bb5a0d180c748455fca John O'Shea <john.m.oshea@gmail.com> 1533908727 +0100	commit: Speed up zsh startup
+057efe2514e15c5ff34b8bb5a0d180c748455fca 0126aaaec34fa97aeae42db2deaebff3fe6e5cf7 John O'Shea <john.m.oshea@gmail.com> 1533908754 +0100	commit: Add figlet alias
+0126aaaec34fa97aeae42db2deaebff3fe6e5cf7 15d7ae0e58f1fb53b894dd67c59950aa95320e43 John O'Shea <john.m.oshea@gmail.com> 1533908777 +0100	commit: Speed up pyenv startup
+15d7ae0e58f1fb53b894dd67c59950aa95320e43 563a5d1139f823d0e9670fc88befa0f87bcdb582 John O'Shea <john.m.oshea@gmail.com> 1533908806 +0100	commit: Make node-info work without nvm/nodenv
+563a5d1139f823d0e9670fc88befa0f87bcdb582 1e1a0291b9956ff55b564c39a773e547ddb0ece8 John O'Shea <john.m.oshea@gmail.com> 1533908823 +0100	commit: Fix broken gitref link in README.md
+1e1a0291b9956ff55b564c39a773e547ddb0ece8 035cfb4e4269bc5db6a958d6cd88a8a5d64c9f93 John O'Shea <john.m.oshea@gmail.com> 1540028530 +0100	commit (merge): Fix merge
+035cfb4e4269bc5db6a958d6cd88a8a5d64c9f93 10f47ca9c9bd70d0540058cd1012cf5541cc434e John O'Shea <john.m.oshea@gmail.com> 1540029478 +0100	checkout: moving from master to develop
+10f47ca9c9bd70d0540058cd1012cf5541cc434e 035cfb4e4269bc5db6a958d6cd88a8a5d64c9f93 John O'Shea <john.m.oshea@gmail.com> 1540029488 +0100	merge master: Fast-forward
+035cfb4e4269bc5db6a958d6cd88a8a5d64c9f93 035cfb4e4269bc5db6a958d6cd88a8a5d64c9f93 John O'Shea <john.m.oshea@gmail.com> 1540029496 +0100	checkout: moving from develop to master
+035cfb4e4269bc5db6a958d6cd88a8a5d64c9f93 17939278b4a99e900eec1d8af0c1079f7fdc7d07 John O'Shea <john.m.oshea@gmail.com> 1544271409 +0000	commit: Add extra PATH setting
+17939278b4a99e900eec1d8af0c1079f7fdc7d07 09d14a2345ca5b433bd837a1a1ed16958704d223 John O'Shea <john.m.oshea@gmail.com> 1544271427 +0000	commit: Update submodules
+09d14a2345ca5b433bd837a1a1ed16958704d223 035cfb4e4269bc5db6a958d6cd88a8a5d64c9f93 John O'Shea <john.m.oshea@gmail.com> 1544271466 +0000	checkout: moving from master to develop
+035cfb4e4269bc5db6a958d6cd88a8a5d64c9f93 09d14a2345ca5b433bd837a1a1ed16958704d223 John O'Shea <john.m.oshea@gmail.com> 1544271484 +0000	merge master: Fast-forward
+09d14a2345ca5b433bd837a1a1ed16958704d223 09d14a2345ca5b433bd837a1a1ed16958704d223 John O'Shea <john.m.oshea@gmail.com> 1544271489 +0000	checkout: moving from develop to master
+09d14a2345ca5b433bd837a1a1ed16958704d223 09d14a2345ca5b433bd837a1a1ed16958704d223 John O'Shea <john.m.oshea@gmail.com> 1545061296 +0000	checkout: moving from master to develop
+09d14a2345ca5b433bd837a1a1ed16958704d223 09d14a2345ca5b433bd837a1a1ed16958704d223 John O'Shea <john.m.oshea@gmail.com> 1545061311 +0000	checkout: moving from develop to master
+09d14a2345ca5b433bd837a1a1ed16958704d223 b8fb29c9c3625383531511cf30f9168c980c8aa9 John O'Shea <john.m.oshea@gmail.com> 1545061503 +0000	commit (merge): Merge branch 'master' of https://github.com/sorin-ionescu/prezto
+b8fb29c9c3625383531511cf30f9168c980c8aa9 4a922ff51c748e6561b12d883360548c9c2524a3 John O'Shea <john.m.oshea@gmail.com> 1545478246 +0000	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+4a922ff51c748e6561b12d883360548c9c2524a3 09d14a2345ca5b433bd837a1a1ed16958704d223 John O'Shea <john.m.oshea@gmail.com> 1545478279 +0000	checkout: moving from master to develop
+09d14a2345ca5b433bd837a1a1ed16958704d223 4a922ff51c748e6561b12d883360548c9c2524a3 John O'Shea <john.m.oshea@gmail.com> 1545478286 +0000	merge master: Fast-forward
+4a922ff51c748e6561b12d883360548c9c2524a3 5a52fc1cc2be11e1d5fed5f5333d16b56a0b7c4e John O'Shea <john.m.oshea@gmail.com> 1548524204 -0700	commit: Update external modules
+5a52fc1cc2be11e1d5fed5f5333d16b56a0b7c4e c509350becf851949b9e2dc8fbbee00d73062fac John O'Shea <john.m.oshea@gmail.com> 1548524221 -0700	commit: Use updated path for coreutils
+c509350becf851949b9e2dc8fbbee00d73062fac 4a922ff51c748e6561b12d883360548c9c2524a3 John O'Shea <john.m.oshea@gmail.com> 1548524237 -0700	checkout: moving from develop to master
+4a922ff51c748e6561b12d883360548c9c2524a3 c509350becf851949b9e2dc8fbbee00d73062fac John O'Shea <john.m.oshea@gmail.com> 1548524245 -0700	merge develop: Fast-forward
+c509350becf851949b9e2dc8fbbee00d73062fac f6fa2e58c6b3b31eed151027c400afd237085193 John O'Shea <john.m.oshea@gmail.com> 1548524283 -0700	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+f6fa2e58c6b3b31eed151027c400afd237085193 c509350becf851949b9e2dc8fbbee00d73062fac John O'Shea <john.m.oshea@gmail.com> 1548524328 -0700	checkout: moving from master to develop
+c509350becf851949b9e2dc8fbbee00d73062fac f6fa2e58c6b3b31eed151027c400afd237085193 John O'Shea <john.m.oshea@gmail.com> 1548524334 -0700	merge master: Fast-forward
+f6fa2e58c6b3b31eed151027c400afd237085193 f72ec8d68b9fe8725f05536fbec82f5e482eaa53 John O'Shea <john.m.oshea@gmail.com> 1550954870 -0700	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+f72ec8d68b9fe8725f05536fbec82f5e482eaa53 f6fa2e58c6b3b31eed151027c400afd237085193 John O'Shea <john.m.oshea@gmail.com> 1550954893 -0700	checkout: moving from develop to master
+f6fa2e58c6b3b31eed151027c400afd237085193 f72ec8d68b9fe8725f05536fbec82f5e482eaa53 John O'Shea <john.m.oshea@gmail.com> 1550954895 -0700	checkout: moving from master to develop
+f72ec8d68b9fe8725f05536fbec82f5e482eaa53 b14dadf1eeb05b7d3f81c488c255d4254149db65 John O'Shea <john.m.oshea@gmail.com> 1553480365 -0600	commit: Add Node binaries path
+b14dadf1eeb05b7d3f81c488c255d4254149db65 b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 John O'Shea <john.m.oshea@gmail.com> 1553480376 -0600	commit: Update external submodules
+b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 f6fa2e58c6b3b31eed151027c400afd237085193 John O'Shea <john.m.oshea@gmail.com> 1553480387 -0600	checkout: moving from develop to master
+f6fa2e58c6b3b31eed151027c400afd237085193 b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 John O'Shea <john.m.oshea@gmail.com> 1553480395 -0600	merge develop: Fast-forward
+b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 John O'Shea <john.m.oshea@gmail.com> 1553480398 -0600	checkout: moving from master to develop
+b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 617f8cabb3ace957d6c19b4cb832c39fc812c3a0 John O'Shea <john.m.oshea@gmail.com> 1553480409 -0600	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+617f8cabb3ace957d6c19b4cb832c39fc812c3a0 b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 John O'Shea <john.m.oshea@gmail.com> 1553480423 -0600	checkout: moving from develop to master
+b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 617f8cabb3ace957d6c19b4cb832c39fc812c3a0 John O'Shea <john.m.oshea@gmail.com> 1553480434 -0600	checkout: moving from master to develop
+617f8cabb3ace957d6c19b4cb832c39fc812c3a0 562a30feb634dd3de00fa7de1c8c1cc442b23f3d John O'Shea <john.m.oshea@gmail.com> 1555165645 -0600	commit: Update submodules
+562a30feb634dd3de00fa7de1c8c1cc442b23f3d b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 John O'Shea <john.m.oshea@gmail.com> 1555165667 -0600	checkout: moving from develop to master
+b2a07e66eb6a8b3a5c9ccd2ae40f2c09a368e719 562a30feb634dd3de00fa7de1c8c1cc442b23f3d John O'Shea <john.m.oshea@gmail.com> 1555165675 -0600	merge develop: Fast-forward
+562a30feb634dd3de00fa7de1c8c1cc442b23f3d 562a30feb634dd3de00fa7de1c8c1cc442b23f3d John O'Shea <john.m.oshea@gmail.com> 1555165697 -0600	checkout: moving from master to develop
+562a30feb634dd3de00fa7de1c8c1cc442b23f3d b4ef16ec130231f43750bcd762054faedfe18bda John O'Shea <john.m.oshea@gmail.com> 1558829497 -0600	commit: Update submodules
+b4ef16ec130231f43750bcd762054faedfe18bda 562a30feb634dd3de00fa7de1c8c1cc442b23f3d John O'Shea <john.m.oshea@gmail.com> 1558829501 -0600	checkout: moving from develop to master
+562a30feb634dd3de00fa7de1c8c1cc442b23f3d b4ef16ec130231f43750bcd762054faedfe18bda John O'Shea <john.m.oshea@gmail.com> 1558829508 -0600	merge develop: Fast-forward
+b4ef16ec130231f43750bcd762054faedfe18bda e9105236052194416a1b03611d579ffbcd2691d0 John O'Shea <john.m.oshea@gmail.com> 1558829519 -0600	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+e9105236052194416a1b03611d579ffbcd2691d0 b4ef16ec130231f43750bcd762054faedfe18bda John O'Shea <john.m.oshea@gmail.com> 1558829530 -0600	checkout: moving from master to develop
+b4ef16ec130231f43750bcd762054faedfe18bda e9105236052194416a1b03611d579ffbcd2691d0 John O'Shea <john.m.oshea@gmail.com> 1558829537 -0600	merge master: Fast-forward
+e9105236052194416a1b03611d579ffbcd2691d0 e9105236052194416a1b03611d579ffbcd2691d0 John O'Shea <john.m.oshea@gmail.com> 1558829552 -0600	checkout: moving from develop to master
+e9105236052194416a1b03611d579ffbcd2691d0 e9105236052194416a1b03611d579ffbcd2691d0 John O'Shea <john.m.oshea@gmail.com> 1558829558 -0600	checkout: moving from master to develop
+e9105236052194416a1b03611d579ffbcd2691d0 e9105236052194416a1b03611d579ffbcd2691d0 John O'Shea <john.m.oshea@gmail.com> 1558829564 -0600	checkout: moving from develop to master
+e9105236052194416a1b03611d579ffbcd2691d0 e9105236052194416a1b03611d579ffbcd2691d0 John O'Shea <john.m.oshea@gmail.com> 1558829575 -0600	checkout: moving from master to develop
+e9105236052194416a1b03611d579ffbcd2691d0 5a36a7975d3ff6d2d9e872d9683ca2b989284132 John O'Shea <john.m.oshea@gmail.com> 1558906961 -0600	commit: Don't add common, low-information commands to history
+5a36a7975d3ff6d2d9e872d9683ca2b989284132 e62ea7ff81276c5816e512f19ea4f3f54d347494 John O'Shea <john.m.oshea@gmail.com> 1558980262 -0600	commit: Overhaul 'johno' prompt
+e62ea7ff81276c5816e512f19ea4f3f54d347494 e9105236052194416a1b03611d579ffbcd2691d0 John O'Shea <john.m.oshea@gmail.com> 1558980421 -0600	checkout: moving from develop to master
+e9105236052194416a1b03611d579ffbcd2691d0 e62ea7ff81276c5816e512f19ea4f3f54d347494 John O'Shea <john.m.oshea@gmail.com> 1558980427 -0600	merge develop: Fast-forward
+e62ea7ff81276c5816e512f19ea4f3f54d347494 a42edb9fe17f770b4480b1823a8ea4d3afa09969 John O'Shea <john.m.oshea@gmail.com> 1560613987 -0600	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+a42edb9fe17f770b4480b1823a8ea4d3afa09969 fddc5bf0c7bb590103573f48d6d4474000e02c2c John O'Shea <john.m.oshea@gmail.com> 1563268842 +0100	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+fddc5bf0c7bb590103573f48d6d4474000e02c2c 7ad18cc7f9e8b72943a820efaa07c67131711c70 John O'Shea <john.m.oshea@gmail.com> 1563268906 +0100	commit: Bump up history size
+7ad18cc7f9e8b72943a820efaa07c67131711c70 6e897ba0561e798953559c03854ef70d910306ad John O'Shea <john.m.oshea@gmail.com> 1563268954 +0100	commit: Ignore common entries when adding to history
+6e897ba0561e798953559c03854ef70d910306ad 2d07b5076f05b973057a84ebda85b5b95732ab43 John O'Shea <john.m.oshea@gmail.com> 1563268979 +0100	commit: Add a 'cd /absolute/path' whenever CWD changes
+2d07b5076f05b973057a84ebda85b5b95732ab43 806c23c22befe265597625463db35160708b919c John O'Shea <john.m.oshea@gmail.com> 1563269013 +0100	commit: Add a 'cd after ls' hook function
+806c23c22befe265597625463db35160708b919c e1c81c28e5cc5467b85aa91fa1b15c32c6d6ce1e John O'Shea <john.m.oshea@gmail.com> 1563269046 +0100	commit: Remove old dirstack stuff that never worked well
+e1c81c28e5cc5467b85aa91fa1b15c32c6d6ce1e e62ea7ff81276c5816e512f19ea4f3f54d347494 John O'Shea <john.m.oshea@gmail.com> 1563271959 +0100	checkout: moving from master to develop
+e62ea7ff81276c5816e512f19ea4f3f54d347494 e1c81c28e5cc5467b85aa91fa1b15c32c6d6ce1e John O'Shea <john.m.oshea@gmail.com> 1563271984 +0100	merge master: Fast-forward
+e1c81c28e5cc5467b85aa91fa1b15c32c6d6ce1e 42333e04a6dbefef4269e4bff1a9136a4d2e30f2 John O'Shea <john.m.oshea@gmail.com> 1563625642 +0100	commit: Update submodules
+42333e04a6dbefef4269e4bff1a9136a4d2e30f2 081c45f0bbcb71034e3d917947c769d5d21363d8 John O'Shea <john.m.oshea@gmail.com> 1563625663 +0100	commit: Update prompt submodules
+081c45f0bbcb71034e3d917947c769d5d21363d8 e1c81c28e5cc5467b85aa91fa1b15c32c6d6ce1e John O'Shea <john.m.oshea@gmail.com> 1563625674 +0100	checkout: moving from develop to master
+e1c81c28e5cc5467b85aa91fa1b15c32c6d6ce1e 081c45f0bbcb71034e3d917947c769d5d21363d8 John O'Shea <john.m.oshea@gmail.com> 1563625684 +0100	merge develop: Fast-forward
+081c45f0bbcb71034e3d917947c769d5d21363d8 df3b95f63c4befec8607a89182ed9416a848fa1f John O'Shea <john.m.oshea@gmail.com> 1566829098 +0100	commit: Remove pipsi config details
+df3b95f63c4befec8607a89182ed9416a848fa1f 86bd1e7631bc542298013014e1c6328ca2958934 John O'Shea <john.m.oshea@gmail.com> 1566829186 +0100	commit: Update submodules
+86bd1e7631bc542298013014e1c6328ca2958934 32396f7747bc72aecad3ec4e185eeffb297ee557 John O'Shea <john.m.oshea@gmail.com> 1566829223 +0100	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+32396f7747bc72aecad3ec4e185eeffb297ee557 081c45f0bbcb71034e3d917947c769d5d21363d8 John O'Shea <john.m.oshea@gmail.com> 1566829237 +0100	checkout: moving from master to develop
+081c45f0bbcb71034e3d917947c769d5d21363d8 32396f7747bc72aecad3ec4e185eeffb297ee557 John O'Shea <john.m.oshea@gmail.com> 1566829245 +0100	merge master: Fast-forward
+32396f7747bc72aecad3ec4e185eeffb297ee557 32396f7747bc72aecad3ec4e185eeffb297ee557 John O'Shea <john.m.oshea@gmail.com> 1573404922 -0700	checkout: moving from develop to master
+32396f7747bc72aecad3ec4e185eeffb297ee557 be86187cf54197e2d2f9eadb6f7df8d2acf47b22 John O'Shea <john.m.oshea@gmail.com> 1573405001 -0700	commit: Add tmux support back in
+be86187cf54197e2d2f9eadb6f7df8d2acf47b22 86672e8e9a5d8ed1177c619bff38967fda7068bf John O'Shea <john.m.oshea@gmail.com> 1573405086 -0700	commit: Allow pyenv to build framework-enabled Pythons
+86672e8e9a5d8ed1177c619bff38967fda7068bf 47bc758db926eba71cba060fb9d7bd05056033ac John O'Shea <john.m.oshea@gmail.com> 1573405258 -0700	commit (merge): Merge branch 'master' of https://github.com/sorin-ionescu/prezto
+47bc758db926eba71cba060fb9d7bd05056033ac cf53ab335268af12ccbea5be6bb2bc3d9e4159ce John O'Shea <john.m.oshea@gmail.com> 1573770864 -0700	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+cf53ab335268af12ccbea5be6bb2bc3d9e4159ce 32396f7747bc72aecad3ec4e185eeffb297ee557 John O'Shea <john.m.oshea@gmail.com> 1573770881 -0700	checkout: moving from master to develop
+32396f7747bc72aecad3ec4e185eeffb297ee557 cf53ab335268af12ccbea5be6bb2bc3d9e4159ce John O'Shea <john.m.oshea@gmail.com> 1573770888 -0700	merge master: Fast-forward
+cf53ab335268af12ccbea5be6bb2bc3d9e4159ce cf53ab335268af12ccbea5be6bb2bc3d9e4159ce John O'Shea <john.m.oshea@gmail.com> 1573770902 -0700	checkout: moving from develop to master
+cf53ab335268af12ccbea5be6bb2bc3d9e4159ce cac63fb64c20f6593d10caf9b694f27e5cf49def John O'Shea <john.m.oshea@gmail.com> 1576866438 -0700	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+cac63fb64c20f6593d10caf9b694f27e5cf49def cf53ab335268af12ccbea5be6bb2bc3d9e4159ce John O'Shea <john.m.oshea@gmail.com> 1576866455 -0700	checkout: moving from master to develop
+cf53ab335268af12ccbea5be6bb2bc3d9e4159ce cac63fb64c20f6593d10caf9b694f27e5cf49def John O'Shea <john.m.oshea@gmail.com> 1576866476 -0700	merge master: Fast-forward
+cac63fb64c20f6593d10caf9b694f27e5cf49def e9b37383c1125c08564f888953d90bbb86d71ee6 John O'Shea <john.m.oshea@gmail.com> 1582367689 +0000	commit: Add gws. shortcut
+e9b37383c1125c08564f888953d90bbb86d71ee6 9116adbe9ddccbc3286917c7bd626efeb15b6261 John O'Shea <john.m.oshea@gmail.com> 1582367704 +0000	commit: Update submodules
+9116adbe9ddccbc3286917c7bd626efeb15b6261 cac63fb64c20f6593d10caf9b694f27e5cf49def John O'Shea <john.m.oshea@gmail.com> 1582368007 +0000	checkout: moving from develop to master
+cac63fb64c20f6593d10caf9b694f27e5cf49def 9116adbe9ddccbc3286917c7bd626efeb15b6261 John O'Shea <john.m.oshea@gmail.com> 1582368020 +0000	merge develop: Fast-forward
+9116adbe9ddccbc3286917c7bd626efeb15b6261 29bb47b8c6a4e6d8558b51cc8adb892ff4d190da John O'Shea <john.m.oshea@gmail.com> 1582368152 +0000	commit (merge): Merge branch 'master' of https://github.com/sorin-ionescu/prezto
+29bb47b8c6a4e6d8558b51cc8adb892ff4d190da 9116adbe9ddccbc3286917c7bd626efeb15b6261 John O'Shea <john.m.oshea@gmail.com> 1582368160 +0000	checkout: moving from master to develop
+9116adbe9ddccbc3286917c7bd626efeb15b6261 29bb47b8c6a4e6d8558b51cc8adb892ff4d190da John O'Shea <john.m.oshea@gmail.com> 1582368168 +0000	merge master: Fast-forward
+29bb47b8c6a4e6d8558b51cc8adb892ff4d190da 29bb47b8c6a4e6d8558b51cc8adb892ff4d190da John O'Shea <john.m.oshea@gmail.com> 1582368194 +0000	checkout: moving from develop to master
+29bb47b8c6a4e6d8558b51cc8adb892ff4d190da 33cb5412c888c5ab9b3948806838fbea025e9970 John O'Shea <john.m.oshea@gmail.com> 1586611157 +0100	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+33cb5412c888c5ab9b3948806838fbea025e9970 b518caf5c6665e06b254c62d46649c26f843d39f John O'Shea <john.m.oshea@gmail.com> 1587813725 +0100	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+b518caf5c6665e06b254c62d46649c26f843d39f d11ac4d49cec9c89aec1b54888dc651bf8809cfd John O'Shea <john.m.oshea@gmail.com> 1589031458 +0100	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+d11ac4d49cec9c89aec1b54888dc651bf8809cfd 49834f7c58a984044e7820db68d737dea68c3b6b John O'Shea <john.m.oshea@gmail.com> 1592049966 +0100	commit: Show more commands in history-stat
+49834f7c58a984044e7820db68d737dea68c3b6b 3d0caa11fd916cf4c714825240d467ce022f26d3 John O'Shea <john.m.oshea@gmail.com> 1592050016 +0100	commit: Use correct path for Golang
+3d0caa11fd916cf4c714825240d467ce022f26d3 d2e8e67960317d96a9273dddd54e4dfb7db29365 John O'Shea <john.m.oshea@gmail.com> 1592050066 +0100	commit: Add gcM git alias
+d2e8e67960317d96a9273dddd54e4dfb7db29365 a3e10bd3d07c31cf28d873b7ad370690f073f33a John O'Shea <john.m.oshea@gmail.com> 1592050116 +0100	commit: Update submodules
+a3e10bd3d07c31cf28d873b7ad370690f073f33a dd1a6d351006567451f43c22763615b8f0d62aa4 John O'Shea <john.m.oshea@gmail.com> 1592050570 +0100	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+dd1a6d351006567451f43c22763615b8f0d62aa4 b760fa32c81da456ee029da700bc297a6c3ae918 John O'Shea <john.m.oshea@gmail.com> 1594463994 +0100	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+b760fa32c81da456ee029da700bc297a6c3ae918 0f4b455d82e22775cd0dba3c39248eb2b48df6bd John O'Shea <john.m.oshea@gmail.com> 1596275558 +0100	commit: Update submodules
+0f4b455d82e22775cd0dba3c39248eb2b48df6bd f8d3e7f3934288e46295953992cb1658d283e180 John O'Shea <john.m.oshea@gmail.com> 1596275602 +0100	commit: Don't start tmux in the 'Sidebar' profile
+f8d3e7f3934288e46295953992cb1658d283e180 b5ec03f0cc607e86bc433a23ca91d84da1b86a9b John O'Shea <john.m.oshea@gmail.com> 1596275622 +0100	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+b5ec03f0cc607e86bc433a23ca91d84da1b86a9b 3f352fd050a9d05f17c8c3758eac0797e4b8a226 John O'Shea <john.m.oshea@gmail.com> 1616687174 -0600	commit: Update external modules
+3f352fd050a9d05f17c8c3758eac0797e4b8a226 d2c7e572c81ffad5e87bc0306b554fa9db61b623 John O'Shea <john.m.oshea@gmail.com> 1616687236 -0600	commit: Add 'curd' alias
+d2c7e572c81ffad5e87bc0306b554fa9db61b623 1538c7743aa6690e3ae99bdb09e88babae9a6ef2 John O'Shea <john.m.oshea@gmail.com> 1616688259 -0600	commit: Add my .zshrc.local file
+1538c7743aa6690e3ae99bdb09e88babae9a6ef2 3f4be883ec4415aef99a9c8f6a4d33bf42c677ef John O'Shea <john.m.oshea@gmail.com> 1616688328 -0600	commit: Switch to neovim
+3f4be883ec4415aef99a9c8f6a4d33bf42c677ef 545b0e0da8cebb168205504787bee3ecfb2d1827 John O'Shea <john.m.oshea@gmail.com> 1616688346 -0600	commit: Add 'autocd' back in
+545b0e0da8cebb168205504787bee3ecfb2d1827 edadee981289fde4866854bdda01b17441f675be John O'Shea <john.m.oshea@gmail.com> 1616688370 -0600	commit: Add prezto 'osx' module
+edadee981289fde4866854bdda01b17441f675be 8d8fc5068dbcb2685f89d965e2d947bb3e517fd6 John O'Shea <john.m.oshea@gmail.com> 1616688407 -0600	commit: Switch prompt to Powerlevel10k prompt
+8d8fc5068dbcb2685f89d965e2d947bb3e517fd6 b9b7e69151e41b08aa53aa779e36ad53858cf8d7 John O'Shea <john.m.oshea@gmail.com> 1616704204 -0600	commit: Remove display output while loading
+b9b7e69151e41b08aa53aa779e36ad53858cf8d7 4b01315add60870c5f943e56f3770c5948762467 John O'Shea <john.m.oshea@gmail.com> 1616704499 -0600	commit: Remove outdated pyenv version file
+4b01315add60870c5f943e56f3770c5948762467 545577878d1e7a3a45b7a9eeaf7f1f3adb2b353f John O'Shea <john.m.oshea@gmail.com> 1621709690 -0600	commit: Switch to nvim
+545577878d1e7a3a45b7a9eeaf7f1f3adb2b353f 2ab7fba2dec6b99eefe22d0643335778716a62b7 John O'Shea <john.m.oshea@gmail.com> 1621709736 -0600	commit: Add git-extras completion
+2ab7fba2dec6b99eefe22d0643335778716a62b7 624b45d53d35317236847302294fac303e9ea60c John O'Shea <john.m.oshea@gmail.com> 1621709747 -0600	commit: Update submodules
+624b45d53d35317236847302294fac303e9ea60c 421f709d9b2de9b76e3753cd07c1ff1f8f0c61c8 John O'Shea <john.m.oshea@gmail.com> 1621710654 -0600	commit (merge): Merge branch 'master' of https://github.com/sorin-ionescu/prezto
+421f709d9b2de9b76e3753cd07c1ff1f8f0c61c8 959b78a32bd72007f1133bef4da74b426eaa1395 John O'Shea <john.m.oshea@gmail.com> 1622309940 -0600	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+959b78a32bd72007f1133bef4da74b426eaa1395 5c8e935773835f5104ed74b07e6c5acf86fa83a7 John O'Shea <john.m.oshea@gmail.com> 1622683360 -0600	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+5c8e935773835f5104ed74b07e6c5acf86fa83a7 84a301822d2a5ab618ec8b7a1a4e93d4e0dd5e26 John O'Shea <john.m.oshea@gmail.com> 1623522650 -0600	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+84a301822d2a5ab618ec8b7a1a4e93d4e0dd5e26 e3c2fb34048b95ef9a0031617be437e83b216e7a John O'Shea <john.m.oshea@gmail.com> 1627759683 -0600	commit: Update external modules
+e3c2fb34048b95ef9a0031617be437e83b216e7a 1956cb1fe6151445cd6325889421156e89529652 John O'Shea <john.m.oshea@gmail.com> 1627759720 -0600	commit: Use built-in python module again
+1956cb1fe6151445cd6325889421156e89529652 1ee96fdcbb4b150efbd900d07f7f019f12eafea1 John O'Shea <john.m.oshea@gmail.com> 1627759737 -0600	commit: Add `gam` function
+1ee96fdcbb4b150efbd900d07f7f019f12eafea1 19d8d2b21b7694f21cfc1f45653fe023f179095c John O'Shea <john.m.oshea@gmail.com> 1627759807 -0600	commit: Remove my own Python support config
+19d8d2b21b7694f21cfc1f45653fe023f179095c e8e0a18e61265e7cc6d11420cac3537bc0bcfb55 John O'Shea <john.m.oshea@gmail.com> 1627759856 -0600	commit: Add config for Pyenv / older Pythons on Big Sur
+e8e0a18e61265e7cc6d11420cac3537bc0bcfb55 166cbe2fca25319db2551f0cc74a86c93259017d John O'Shea <john.m.oshea@gmail.com> 1627759880 -0600	pull -v --progress upstream refs/heads/master (start): checkout 166cbe2fca25319db2551f0cc74a86c93259017d
+166cbe2fca25319db2551f0cc74a86c93259017d e8e0a18e61265e7cc6d11420cac3537bc0bcfb55 John O'Shea <john.m.oshea@gmail.com> 1627760362 -0600	rebase (abort): updating HEAD
+e8e0a18e61265e7cc6d11420cac3537bc0bcfb55 f89d019f5b177c7e4e6953da0b1d7e096a3043c3 John O'Shea <john.m.oshea@gmail.com> 1627760481 -0600	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+f89d019f5b177c7e4e6953da0b1d7e096a3043c3 d5091411b985ec08304057143eca2cd6ff6524c5 John O'Shea <john.m.oshea@gmail.com> 1640820873 -0700	commit: Alias docker to podman
+d5091411b985ec08304057143eca2cd6ff6524c5 de81833500a7c5efb7ba3b59465382c618022f9e John O'Shea <john.m.oshea@gmail.com> 1640820903 -0700	commit: Use neovim as editor for 'v'
+de81833500a7c5efb7ba3b59465382c618022f9e 0229ddfe2bcf6be51f28915585a5a1dae396afa8 John O'Shea <john.m.oshea@gmail.com> 1640820939 -0700	commit: Enable node support
+0229ddfe2bcf6be51f28915585a5a1dae396afa8 4761eb87ebf73b4d4372238ed25fa41e0333688d John O'Shea <john.m.oshea@gmail.com> 1640820971 -0700	commit: Update McFly settings
+4761eb87ebf73b4d4372238ed25fa41e0333688d 71022ce31b0083f836dc9fe61abf1df5f391fa6b John O'Shea <john.m.oshea@gmail.com> 1640821082 -0700	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+71022ce31b0083f836dc9fe61abf1df5f391fa6b be648b0723b1502b06bc78821096506b843d09b9 John O'Shea <john.m.oshea@gmail.com> 1641671870 -0700	commit: Update submodules
+be648b0723b1502b06bc78821096506b843d09b9 a36145b84eb0023086cf09f288bed04818e000e8 John O'Shea <john.m.oshea@gmail.com> 1642268421 -0700	pull -v --progress upstream refs/heads/master: Merge made by the 'ort' strategy.
+a36145b84eb0023086cf09f288bed04818e000e8 6051bee0d953a69e664411bdb312564081e8053b John O'Shea <john.m.oshea@gmail.com> 1642287522 -0700	commit: Update Powerlevel10k prompt
+6051bee0d953a69e664411bdb312564081e8053b 7fa0cbf67045e16e39b5c615f7d781a56c72fc3d John O'Shea <john.m.oshea@gmail.com> 1645897439 -0700	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+7fa0cbf67045e16e39b5c615f7d781a56c72fc3d 4d464860f6269c3858ef43d0612099b83bd6db51 John O'Shea <john.m.oshea@gmail.com> 1646501922 -0700	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+4d464860f6269c3858ef43d0612099b83bd6db51 c774656c934448daecdcce9aecb3aef21de86ce2 John O'Shea <john.m.oshea@gmail.com> 1648937247 -0600	commit: Update Homebrew paths for M1 architecture
+c774656c934448daecdcce9aecb3aef21de86ce2 d10b5a24100c1ad9baf89c05adb05ae39bee2839 John O'Shea <john.m.oshea@gmail.com> 1648937262 -0600	commit: Remove Gruvbox helper script
+d10b5a24100c1ad9baf89c05adb05ae39bee2839 5f13e56c5ab311f86dc230342633ed8360fcc60c John O'Shea <john.m.oshea@gmail.com> 1648937299 -0600	commit: Re-order prezto module loading
+5f13e56c5ab311f86dc230342633ed8360fcc60c 3d2cd265bd4b28327d3b94001913605105f32ca7 John O'Shea <john.m.oshea@gmail.com> 1648937328 -0600	commit: Re-enable prezto tmux config
+3d2cd265bd4b28327d3b94001913605105f32ca7 178ef71b6889928eae6020ced14c3e18ba8a7fa9 John O'Shea <john.m.oshea@gmail.com> 1648937350 -0600	commit: Change McFly display position
+178ef71b6889928eae6020ced14c3e18ba8a7fa9 771c54f772554db8c9254ec0d864f990914f438f John O'Shea <john.m.oshea@gmail.com> 1648937419 -0600	commit: Remove no-longer-in-use functions
+771c54f772554db8c9254ec0d864f990914f438f ba3d11f8aea0eee69fc88b671343beeb52bad18f John O'Shea <john.m.oshea@gmail.com> 1648937430 -0600	commit: Update submodules
+ba3d11f8aea0eee69fc88b671343beeb52bad18f 99eb19b6c8dd912f4d5b84d398b63abbb80b438c John O'Shea <john.m.oshea@gmail.com> 1648937549 -0600	commit (merge): Merge branch 'master' of https://github.com/sorin-ionescu/prezto
+99eb19b6c8dd912f4d5b84d398b63abbb80b438c 1037f1e3ab563ab967e969d22fceb587d34cf8a9 John O'Shea <john.m.oshea@gmail.com> 1649530383 -0600	commit: Update Powerlevel10K submodule
+1037f1e3ab563ab967e969d22fceb587d34cf8a9 02fff5cb753f357d71479ef96389043ceec1a7ca John O'Shea <john.m.oshea@gmail.com> 1649530708 -0600	commit (merge): Merge branch 'master' of https://github.com/sorin-ionescu/prezto
+02fff5cb753f357d71479ef96389043ceec1a7ca b11849c7dc1c1c323152a2b5d7b634664b2cc39c John O'Shea <john.m.oshea@gmail.com> 1650760251 -0600	pull -v --progress upstream refs/heads/master: Merge made by the 'recursive' strategy.
+b11849c7dc1c1c323152a2b5d7b634664b2cc39c 65361d1becfdc4eff1e2f1755a40015b76ea9fff John O'Shea <john.m.oshea@gmail.com> 1650760311 -0600	commit: Add broot completion script
+65361d1becfdc4eff1e2f1755a40015b76ea9fff 15538a487e1e25fb3b9e6822b003e33e4545348e John O'Shea <john.m.oshea@gmail.com> 1651420685 -0600	commit: Update submodules
+15538a487e1e25fb3b9e6822b003e33e4545348e a8512d995c1b079f900d9a75e2447701102cb20f John O'Shea <john.m.oshea@gmail.com> 1652572605 -0600	commit: Update submodules
+a8512d995c1b079f900d9a75e2447701102cb20f f18d09a70249714f0536b14abd2b47db9353bfbd John O'Shea <john.m.oshea@gmail.com> 1653937691 -0600	commit: Update submodules
+f18d09a70249714f0536b14abd2b47db9353bfbd 36031cac00f9d557f391e26508ebe1c19a67d036 John O'Shea <john.m.oshea@gmail.com> 1655756363 -0600	pull -v --progress --no-rebase upstream refs/heads/master: Merge made by the 'recursive' strategy.
+36031cac00f9d557f391e26508ebe1c19a67d036 a88989a52b44e7ee085c62a9e061dd09079d814c John O'Shea <john.m.oshea@gmail.com> 1660988528 +0100	commit: Update submodules
+a88989a52b44e7ee085c62a9e061dd09079d814c 6a2ab66538930a4f99b2477e1756b8ed6430c344 John O'Shea <john.m.oshea@gmail.com> 1660988551 +0100	commit: Add 'vimdiff'-like shortcut for neovim
+6a2ab66538930a4f99b2477e1756b8ed6430c344 a9bf6da9d0f1c78c6955668478559dea05c79af5 John O'Shea <john.m.oshea@gmail.com> 1660988593 +0100	commit: Remove 'podman = docker' alias
+a9bf6da9d0f1c78c6955668478559dea05c79af5 f62429f1a792cff2eb4e9f1821262f6edd50469f John O'Shea <john.m.oshea@gmail.com> 1660988607 +0100	commit: Whitespace-only change
+f62429f1a792cff2eb4e9f1821262f6edd50469f 51c4ff6de4e2d1afd30e52ba19b21b1128fd1ed5 John O'Shea <john.m.oshea@gmail.com> 1660988622 +0100	pull -v --progress --rebase upstream refs/heads/master (start): checkout 51c4ff6de4e2d1afd30e52ba19b21b1128fd1ed5
+51c4ff6de4e2d1afd30e52ba19b21b1128fd1ed5 d52cd3f423ffcc946d3bcb122065347f0e4bc384 John O'Shea <john.m.oshea@gmail.com> 1660989256 +0100	commit: Switch previous config to current prezto setup
+d52cd3f423ffcc946d3bcb122065347f0e4bc384 02942f716f56bbd6e2bed9a07f46b2e86a54dda3 John O'Shea <john.m.oshea@gmail.com> 1660989284 +0100	commit: Switch previous config to current prezto setup
+02942f716f56bbd6e2bed9a07f46b2e86a54dda3 b23f36c01e1b287887327e5a5c4830bfd726ec4c John O'Shea <john.m.oshea@gmail.com> 1660989422 +0100	commit: Fix merge
+b23f36c01e1b287887327e5a5c4830bfd726ec4c a8326f54d35c1ab356617d24b5c28387b06f6916 John O'Shea <john.m.oshea@gmail.com> 1660989441 +0100	commit: Update submodules
+a8326f54d35c1ab356617d24b5c28387b06f6916 063cc3ffcae2515b8ee7bad3089f38a7bf74f094 John O'Shea <john.m.oshea@gmail.com> 1660989441 +0100	rebase (continue) (pick): Remove redundant node path setup
+063cc3ffcae2515b8ee7bad3089f38a7bf74f094 d57d76d784743f39168f2b9b0f4d5a4b909a72b3 John O'Shea <john.m.oshea@gmail.com> 1660989441 +0100	rebase (continue) (pick): Remove _mtools completion so my 'mcd' alias works
+d57d76d784743f39168f2b9b0f4d5a4b909a72b3 e24e400488d7484ad3e05ad1456294aaad1a9b9e John O'Shea <john.m.oshea@gmail.com> 1660989441 +0100	rebase (continue) (pick): Bump 'numbered directory' access to 30
+e24e400488d7484ad3e05ad1456294aaad1a9b9e 1f778d9ff2c77b49d8e5fa4d796a01a44520ec55 John O'Shea <john.m.oshea@gmail.com> 1660989469 +0100	commit: Switch back to 'less' as my pager
+1f778d9ff2c77b49d8e5fa4d796a01a44520ec55 52fe465542cf782bc94232379d73a3ae454a576f John O'Shea <john.m.oshea@gmail.com> 1660989469 +0100	rebase (continue) (pick): Remove Go config in favour of 'gvm'
+52fe465542cf782bc94232379d73a3ae454a576f 2e0186e238567031389d99e1d636c5bc0da1ddeb John O'Shea <john.m.oshea@gmail.com> 1660989469 +0100	rebase (continue) (pick): Swap 'less' back in instead of 'most'
+2e0186e238567031389d99e1d636c5bc0da1ddeb 9ed9698d90b880b6c2a27883ff6c3c0079934eea John O'Shea <john.m.oshea@gmail.com> 1660989522 +0100	commit: Updated external submodules
+9ed9698d90b880b6c2a27883ff6c3c0079934eea 68d80bdcad5a37863d59d813fde6d673b0c3dc86 John O'Shea <john.m.oshea@gmail.com> 1660989540 +0100	commit: Update submodules
+68d80bdcad5a37863d59d813fde6d673b0c3dc86 dffc4aca904f01c7d676b5d78723fed5ebba0ee4 John O'Shea <john.m.oshea@gmail.com> 1660989581 +0100	commit: Update external submodules
+dffc4aca904f01c7d676b5d78723fed5ebba0ee4 cce92bd7395fedb47ff2c37aeb552771cb8e2757 John O'Shea <john.m.oshea@gmail.com> 1660989581 +0100	rebase (continue) (pick): Simplify adding extra paths
+cce92bd7395fedb47ff2c37aeb552771cb8e2757 01a2eaadd67b655db0acc74f098ca01d1601b47c John O'Shea <john.m.oshea@gmail.com> 1660989722 +0100	commit: Add ripgrep display alias
+01a2eaadd67b655db0acc74f098ca01d1601b47c 4dedb0ae36aa36e5e3ee2891d3e47a162ff82289 John O'Shea <john.m.oshea@gmail.com> 1660989801 +0100	commit: Whitespace-only changes
+4dedb0ae36aa36e5e3ee2891d3e47a162ff82289 d4f1cea793c27296cb24edcebeb4012100627116 John O'Shea <john.m.oshea@gmail.com> 1660989801 +0100	rebase (continue) (pick): Add docker support
+d4f1cea793c27296cb24edcebeb4012100627116 7cb5c818053992dcd8a69b9a3e3f824ffcb70e9a John O'Shea <john.m.oshea@gmail.com> 1660989801 +0100	rebase (continue) (pick): Move things to .zshrc.local
+7cb5c818053992dcd8a69b9a3e3f824ffcb70e9a 86210c17081fc219e0318f34a291d20762098bf1 John O'Shea <john.m.oshea@gmail.com> 1660989801 +0100	rebase (continue) (pick): Customize pip options
+86210c17081fc219e0318f34a291d20762098bf1 998594ad97ff1cbde50543e3b974b872437a014d John O'Shea <john.m.oshea@gmail.com> 1660989801 +0100	rebase (continue) (pick): Add Go path
+998594ad97ff1cbde50543e3b974b872437a014d 66bbc871babb4cab8656d05ca192041e34bedbbf John O'Shea <john.m.oshea@gmail.com> 1660989836 +0100	commit: Speed up zsh startup
+66bbc871babb4cab8656d05ca192041e34bedbbf 969d47d67a1b3036ca37b462689777db7b34a1c9 John O'Shea <john.m.oshea@gmail.com> 1660989836 +0100	rebase (continue) (pick): Add figlet alias
+969d47d67a1b3036ca37b462689777db7b34a1c9 f62429f1a792cff2eb4e9f1821262f6edd50469f John O'Shea <john.m.oshea@gmail.com> 1660989884 +0100	rebase (abort): updating HEAD
+f62429f1a792cff2eb4e9f1821262f6edd50469f 0e9e1c78ede5afb3335ab38376e860588be6b6f0 John O'Shea <john.m.oshea@gmail.com> 1660989945 +0100	cherry-pick: utility: Make 'http-serve' handler faster for well known cases
+0e9e1c78ede5afb3335ab38376e860588be6b6f0 488ffdaea5cada1fab572d4732ca2ee819dc481f John O'Shea <john.m.oshea@gmail.com> 1660989950 +0100	cherry-pick: feat(module/ssh): add globbing for ssh-add param
+488ffdaea5cada1fab572d4732ca2ee819dc481f 90a4c1ee31b9955c6c60fbf3d04f1f4c04e0b043 John O'Shea <john.m.oshea@gmail.com> 1661166807 +0100	commit: Update HISTORY_IGNORE config
+90a4c1ee31b9955c6c60fbf3d04f1f4c04e0b043 673b0c8a092313a273ed90c389504fa827861479 John O'Shea <john.m.oshea@gmail.com> 1662388158 -0600	commit: Add iTerm2 shell integration
+673b0c8a092313a273ed90c389504fa827861479 85b2205d74f151da538b3726edbd2885f43d08fb John O'Shea <john.m.oshea@gmail.com> 1662388167 -0600	commit: Update submodules
+85b2205d74f151da538b3726edbd2885f43d08fb eef978da93f0a1c4333cb24e380f95f7fcc76a6d John O'Shea <john.m.oshea@gmail.com> 1663431132 -0600	commit: Update submodules
+eef978da93f0a1c4333cb24e380f95f7fcc76a6d 50776b7be6e68bca7764f20a81fa01ba5cb6ee1a John O'Shea <john.m.oshea@gmail.com> 1664037725 -0600	commit: Update submodules
+50776b7be6e68bca7764f20a81fa01ba5cb6ee1a 4b09cf03b0b74d19760b74d1a216f84c2d1d4eaf John O'Shea <john.m.oshea@gmail.com> 1664037751 -0600	commit: Add 'zman' configuration
+4b09cf03b0b74d19760b74d1a216f84c2d1d4eaf 2638c4e4001c1ac8b3e9162f22292d227a4fedff John O'Shea <john.m.oshea@gmail.com> 1665246602 -0600	commit: Update submodules
+2638c4e4001c1ac8b3e9162f22292d227a4fedff 71968f4a1f11839d6eae438548d250e3ba51bdee John O'Shea <john.m.oshea@gmail.com> 1666458556 -0600	commit: Update submodules
+71968f4a1f11839d6eae438548d250e3ba51bdee 281ece45b233897d440707ecf1aee9f785c81eb7 John O'Shea <john.m.oshea@gmail.com> 1666458602 -0600	cherry-pick: Add exception for PyCharm terminal emulation
+281ece45b233897d440707ecf1aee9f785c81eb7 9058ecc944b003f557bd93bc52ac9be7cf408464 John O'Shea <john.m.oshea@gmail.com> 1667063817 -0600	cherry-pick: Add `-` alias for `cd -`
+9058ecc944b003f557bd93bc52ac9be7cf408464 eb3324f4cc270c132070b5dce15c9db89bd397f5 John O'Shea <john.m.oshea@gmail.com> 1667063817 -0600	cherry-pick: Set `EXTENDED_GLOB` in the python module
+eb3324f4cc270c132070b5dce15c9db89bd397f5 83c046d19d2cc5cdde8d86a21f6f7d9a2f2ac939 John O'Shea <john.m.oshea@gmail.com> 1667063817 -0600	cherry-pick: Support `virtualenvwrapper` with / without `pyenv` `virtualenv-init` or `virtualenvwrapper` plugins
+83c046d19d2cc5cdde8d86a21f6f7d9a2f2ac939 689ca8f630746641f983481746626a2a627f7c2f John O'Shea <john.m.oshea@gmail.com> 1668272869 -0700	commit: Update submodules
+689ca8f630746641f983481746626a2a627f7c2f 1091785d303a820db739243d540dbe8285b44031 John O'Shea <john.m.oshea@gmail.com> 1668886328 -0700	commit: Remove vimwiki aliases
+1091785d303a820db739243d540dbe8285b44031 26c81e74681ec589bc030425e67b725de9b7e80d John O'Shea <john.m.oshea@gmail.com> 1668886424 -0700	commit: Don't eval completions, source them
+26c81e74681ec589bc030425e67b725de9b7e80d 19b2e8d8a4c9949e008ef829a4177c149670e57c John O'Shea <john.m.oshea@gmail.com> 1668886493 -0700	commit: Update submodules
+19b2e8d8a4c9949e008ef829a4177c149670e57c 76eb6113e1bf27065c2622da1cf125b77da2f47b John O'Shea <john.m.oshea@gmail.com> 1669230480 -0700	commit: Add fnm completions to .zshrc.local
+76eb6113e1bf27065c2622da1cf125b77da2f47b 62fbe2d97d9805090764bfd9ed34241910373192 John O'Shea <john.m.oshea@gmail.com> 1672514644 -0700	commit: Remove node config - using fnm now
+62fbe2d97d9805090764bfd9ed34241910373192 5dd1146b05fc96fd14610e744b210e253bc386aa John O'Shea <john.m.oshea@gmail.com> 1672514660 -0700	commit: Add mason binaries to PATH
+5dd1146b05fc96fd14610e744b210e253bc386aa f5ba6ab200d54c1608f1051cacc4a29974ba5f75 John O'Shea <john.m.oshea@gmail.com> 1672514686 -0700	commit: Explicitly set which version of zsh I'm using
+f5ba6ab200d54c1608f1051cacc4a29974ba5f75 837fc9960bf28e2a5333d8807128298ad5d9553c John O'Shea <john.m.oshea@gmail.com> 1672514696 -0700	commit: Update submodules
+837fc9960bf28e2a5333d8807128298ad5d9553c c4136f87dd1c1700370916d642774a1bbe4916c4 John O'Shea <john.m.oshea@gmail.com> 1673112175 -0700	commit: Update submodules
+c4136f87dd1c1700370916d642774a1bbe4916c4 61a5b1bd1317aa4a1d633793c452b7fd3f6ab92e John O'Shea <john.m.oshea@gmail.com> 1673718862 -0700	cherry-pick: Fix zcompile race condition
+61a5b1bd1317aa4a1d633793c452b7fd3f6ab92e 3e020ec432619bc36766dfcb47ae17ab4939db60 John O'Shea <john.m.oshea@gmail.com> 1674322855 -0700	cherry-pick: prompt: update powerlevel10k submodule to v1.17.0
+3e020ec432619bc36766dfcb47ae17ab4939db60 fd4f67f809ee9744a31b9a24bcdd29184724b257 John O'Shea <john.m.oshea@gmail.com> 1675531662 -0700	cherry-pick: Fix osx module manp function
+fd4f67f809ee9744a31b9a24bcdd29184724b257 2e7d134798347a201af601b8837d779300e8494a John O'Shea <john.m.oshea@gmail.com> 1675531662 -0700	cherry-pick: gnu-utility: add awk
+2e7d134798347a201af601b8837d779300e8494a 02bfe8cd1a1a667031987e2f409ca1211c988e60 John O'Shea <john.m.oshea@gmail.com> 1675531686 -0700	commit: Add commitizen completions
+02bfe8cd1a1a667031987e2f409ca1211c988e60 b28850a98a3474d7f8492534444f757a1d49e978 John O'Shea <john.m.oshea@gmail.com> 1675531707 -0700	commit: Add homebrew ssh-copy-id to $PATH
+b28850a98a3474d7f8492534444f757a1d49e978 7ef40bed8d05aa6e93592c6da6e9b5421c234137 John O'Shea <john.m.oshea@gmail.com> 1677345870 -0700	commit: Update external modules
+7ef40bed8d05aa6e93592c6da6e9b5421c234137 af99922d08afcc61a17a21665d5f8371f4232760 John O'Shea <john.m.oshea@gmail.com> 1677345886 -0700	commit: Don't send Homebrew analytics to Google
+af99922d08afcc61a17a21665d5f8371f4232760 a54e4a47717ba41405d020c9f1b934a4d4edbe68 John O'Shea <john.m.oshea@gmail.com> 1677345908 -0700	commit: Add homebrew zprezto module
+a54e4a47717ba41405d020c9f1b934a4d4edbe68 7cca2b38d76992c03b66a425a6ee36094ecf64fe John O'Shea <john.m.oshea@gmail.com> 1677345922 -0700	commit: Try zsh-vi-mode plugin
+7cca2b38d76992c03b66a425a6ee36094ecf64fe 5ef3145765666f5f95d85a055f3bf8f02f589403 John O'Shea <john.m.oshea@gmail.com> 1678330708 -0700	commit: WIP: try streamlining 'source' commands
+5ef3145765666f5f95d85a055f3bf8f02f589403 746813b784ddd4b95f1f9bab57e85f5151f94efe John O'Shea <john.m.oshea@gmail.com> 1678330807 -0700	commit: Update external submodules
+746813b784ddd4b95f1f9bab57e85f5151f94efe 7cca2b38d76992c03b66a425a6ee36094ecf64fe John O'Shea <john.m.oshea@gmail.com> 1678330918 -0700	checkout: moving from master to 7cca2b38d76992c03b66a425a6ee36094ecf64fe
+7cca2b38d76992c03b66a425a6ee36094ecf64fe 746813b784ddd4b95f1f9bab57e85f5151f94efe John O'Shea <john.m.oshea@gmail.com> 1678330953 -0700	checkout: moving from 7cca2b38d76992c03b66a425a6ee36094ecf64fe to 746813b784ddd4b95f1f9bab57e85f5151f94efe
+746813b784ddd4b95f1f9bab57e85f5151f94efe 746813b784ddd4b95f1f9bab57e85f5151f94efe John O'Shea <john.m.oshea@gmail.com> 1678330969 -0700	checkout: moving from 746813b784ddd4b95f1f9bab57e85f5151f94efe to master
+746813b784ddd4b95f1f9bab57e85f5151f94efe f6e1ceb9f1c7b195401c56dc3bdcc557251cfa5e John O'Shea <john.m.oshea@gmail.com> 1678335141 -0700	commit: Remove stuff I've never used
+f6e1ceb9f1c7b195401c56dc3bdcc557251cfa5e 4931c17c5fcdbd4f78e43fab87f0e38090a268fe John O'Shea <john.m.oshea@gmail.com> 1678335169 -0700	commit: Simplify tmux startup
+4931c17c5fcdbd4f78e43fab87f0e38090a268fe 27a66e8b50b5d0ad3da58fdfd99a7a20d16fd59c John O'Shea <john.m.oshea@gmail.com> 1678335191 -0700	commit: Move .zshrc.local contents into main .zshrc
+27a66e8b50b5d0ad3da58fdfd99a7a20d16fd59c f2bc91a8f159915918e6ab400d792d08e4a8928e John O'Shea <john.m.oshea@gmail.com> 1678337372 -0700	commit: Remove unused config
+f2bc91a8f159915918e6ab400d792d08e4a8928e 4b0fc7a7e2da2af92b87cf2641a205aba8f896e9 John O'Shea <john.m.oshea@gmail.com> 1678337402 -0700	commit: Move exports further up the file
+4b0fc7a7e2da2af92b87cf2641a205aba8f896e9 1bc5ba4562e7b82c01b6b4d593eaae8e863c23c4 John O'Shea <john.m.oshea@gmail.com> 1678337430 -0700	commit: Formatting changes
+1bc5ba4562e7b82c01b6b4d593eaae8e863c23c4 1ab251941ddce099b1172b8af82ef62535bbb9c9 John O'Shea <john.m.oshea@gmail.com> 1678337442 -0700	commit: Remove zsh-vi-mode plugin - clashing with McFly
+1ab251941ddce099b1172b8af82ef62535bbb9c9 74c07a384b63df824383711464600f584f475f6b John O'Shea <john.m.oshea@gmail.com> 1679155770 -0600	commit: Update submodules
+74c07a384b63df824383711464600f584f475f6b 67e64e80881cc443e288b5f2450d640c23d0c810 John O'Shea <john.m.oshea@gmail.com> 1680545591 -0600	commit: Update submodules
+67e64e80881cc443e288b5f2450d640c23d0c810 407c0dc408871493ab4e7f81d114dd77eaaf83cf John O'Shea <john.m.oshea@gmail.com> 1680972761 -0600	commit: Update submodules
+407c0dc408871493ab4e7f81d114dd77eaaf83cf 5c62bd9b1646a3baa062805533afe10b0dfa2215 John O'Shea <john.m.oshea@gmail.com> 1680972769 -0600	commit: Add chatblade alias
+5c62bd9b1646a3baa062805533afe10b0dfa2215 d62823d8f4b39084cb42d91d3471ea382dadc5df John O'Shea <john.m.oshea@gmail.com> 1680972790 -0600	commit: Reorder exports in zshrc
+d62823d8f4b39084cb42d91d3471ea382dadc5df 4aad132d4a77f628ffadf543bb26a5821add77ae John O'Shea <john.m.oshea@gmail.com> 1680972826 -0600	commit: Add 'read in API keys' code
+4aad132d4a77f628ffadf543bb26a5821add77ae addf71a0f617fcf26edaed0d2441a16055c0af59 John O'Shea <john.m.oshea@gmail.com> 1682787960 -0600	commit: Update submodules
+addf71a0f617fcf26edaed0d2441a16055c0af59 804f6f8519398361d85d629afa18aa18b19bb250 John O'Shea <john.m.oshea@gmail.com> 1682788432 -0600	commit (cherry-pick): Add zstyle to skip aliases for additional modules
+804f6f8519398361d85d629afa18aa18b19bb250 804f6f8519398361d85d629afa18aa18b19bb250 John O'Shea <john.m.oshea@gmail.com> 1682788563 -0600	reset: moving to 804f6f8519398361d85d629afa18aa18b19bb250
+804f6f8519398361d85d629afa18aa18b19bb250 956dbb9f8c49d7520ffeb5c6c21e0e7f87866777 John O'Shea <john.m.oshea@gmail.com> 1682788563 -0600	cherry-pick: prompt: Update async submodule to 1.8.6
+956dbb9f8c49d7520ffeb5c6c21e0e7f87866777 067a0f279c3ec9b454e7bd0fb2bcaf13edd153cd John O'Shea <john.m.oshea@gmail.com> 1682788649 -0600	commit (cherry-pick): history: Remove 'HISTFILE' path relocation warning
+067a0f279c3ec9b454e7bd0fb2bcaf13edd153cd 3c1cc0d3a6b231c1d9d5b9b506d534cbfda683ae John O'Shea <john.m.oshea@gmail.com> 1682788671 -0600	cherry-pick: prompt: Remove 'powerlevel9k' deprecation warning
+3c1cc0d3a6b231c1d9d5b9b506d534cbfda683ae 6fa7cdd0fb3a83ca846f9126720c4380315797b4 John O'Shea <john.m.oshea@gmail.com> 1682788671 -0600	cherry-pick: python: Expand Python command pattern per convention
+6fa7cdd0fb3a83ca846f9126720c4380315797b4 30c8f9a06242997d77b127dc74a10dcb59476130 John O'Shea <john.m.oshea@gmail.com> 1682788671 -0600	cherry-pick: gnu-utility: Remove now obsolete egrep and fgrep
+30c8f9a06242997d77b127dc74a10dcb59476130 8bcacae121bd8580b3a78f54984cb9d0c15aae1a John O'Shea <john.m.oshea@gmail.com> 1685810414 -0600	cherry-pick: prompt: update powerlevel10k submodule to v1.18.0
+8bcacae121bd8580b3a78f54984cb9d0c15aae1a 30c8f9a06242997d77b127dc74a10dcb59476130 John O'Shea <john.m.oshea@gmail.com> 1685810423 -0600	reset: moving to 30c8f9a06242997d77b127dc74a10dcb59476130
+30c8f9a06242997d77b127dc74a10dcb59476130 d78b99884f20d16b3f062bccb2deb171c3d89b3f John O'Shea <john.m.oshea@gmail.com> 1685829763 -0600	commit: Update aliases
+d78b99884f20d16b3f062bccb2deb171c3d89b3f 53807d7ae519f46cb2af236d172d29a903c7f22e John O'Shea <john.m.oshea@gmail.com> 1685829814 -0600	commit: Fix syntax error in HISTORY_IGNORE
+53807d7ae519f46cb2af236d172d29a903c7f22e 4ca12104801710e472772f29feea7405dcb84f4e John O'Shea <john.m.oshea@gmail.com> 1685829889 -0600	commit: Leave duplicate commands in history
+4ca12104801710e472772f29feea7405dcb84f4e 6a22cfb46dd06b1f30a066f233fd0861b2779115 John O'Shea <john.m.oshea@gmail.com> 1685829898 -0600	cherry-pick: prompt: update powerlevel10k submodule to v1.18.0
+6a22cfb46dd06b1f30a066f233fd0861b2779115 bbe62078c3513bc7e7e29c1290a22495757edb14 John O'Shea <john.m.oshea@gmail.com> 1685829991 -0600	commit (cherry-pick): history: Reformat inline comments
+bbe62078c3513bc7e7e29c1290a22495757edb14 976e3b401852c213c13d6b05c1766d7fa9f51d1a John O'Shea <john.m.oshea@gmail.com> 1685830011 -0600	commit (cherry-pick): history: Remove interim zstyle variables
+976e3b401852c213c13d6b05c1766d7fa9f51d1a a51f905e1eca8d564d6b9fc200215520c0f75f3a John O'Shea <john.m.oshea@gmail.com> 1685830011 -0600	cherry-pick: general: Documentation update for zstyle based alias skipping support
+a51f905e1eca8d564d6b9fc200215520c0f75f3a 785ab459febd78e6ff8b99741a6f7bf24c83897d John O'Shea <john.m.oshea@gmail.com> 1685830011 -0600	cherry-pick: python: Remove pip completion from prezto local
+785ab459febd78e6ff8b99741a6f7bf24c83897d 2c50fdc8c62c042ef85a4fff304044b588239eb8 John O'Shea <john.m.oshea@gmail.com> 1688227171 -0600	commit (cherry-pick): prompt: update powerlevel10k submodule to v1.19.0
+2c50fdc8c62c042ef85a4fff304044b588239eb8 a4a3cf90e649f91d0e3caefa23c0c10c223f4e81 John O'Shea <john.m.oshea@gmail.com> 1688227218 -0600	commit: Add in path for homebrew completions
+a4a3cf90e649f91d0e3caefa23c0c10c223f4e81 abd1eefa369a2e233a3be319988f6939b6ef0dc6 John O'Shea <john.m.oshea@gmail.com> 1688227245 -0600	commit: Add path for `dockerized`
+abd1eefa369a2e233a3be319988f6939b6ef0dc6 33ce91265331f4886e28f495577accb5e352c7ff John O'Shea <john.m.oshea@gmail.com> 1688227260 -0600	commit: Update submodules
+33ce91265331f4886e28f495577accb5e352c7ff 2c750fd261fd44f8fc9bb8017163755e4e031bda John O'Shea <john.m.oshea@gmail.com> 1688835666 -0600	commit: Update submodules
+2c750fd261fd44f8fc9bb8017163755e4e031bda 81dbd42f647f78bad2b814afa16bd68022111112 John O'Shea <john.m.oshea@gmail.com> 1692357599 +0100	commit: Add Orbstack cli/integration
+81dbd42f647f78bad2b814afa16bd68022111112 112ee6406d0d5f5864062d0ee51a4e4b4ae72ec1 John O'Shea <john.m.oshea@gmail.com> 1693667115 -0600	commit: Update submodules
+112ee6406d0d5f5864062d0ee51a4e4b4ae72ec1 837e13472635dd3deedb475bf99a26aaba3618d0 John O'Shea <john.m.oshea@gmail.com> 1693667156 -0600	commit (cherry-pick): prompt: update powerlevel10k submodule to v1.19.0
+837e13472635dd3deedb475bf99a26aaba3618d0 9567c6f1fdab4972c2ae817680ee307d31af880f John O'Shea <john.m.oshea@gmail.com> 1694882480 -0600	commit: Update submodules
+9567c6f1fdab4972c2ae817680ee307d31af880f 3e29812d42684e6ebbbb0fcf4ed53b4ef9e661da John O'Shea <john.m.oshea@gmail.com> 1694882518 -0600	commit (cherry-pick): completion: Update completion submodule to 0.35.0
+3e29812d42684e6ebbbb0fcf4ed53b4ef9e661da 3e29812d42684e6ebbbb0fcf4ed53b4ef9e661da John O'Shea <john.m.oshea@gmail.com> 1694882525 -0600	reset: moving to 3e29812d42684e6ebbbb0fcf4ed53b4ef9e661da
+3e29812d42684e6ebbbb0fcf4ed53b4ef9e661da 3e29812d42684e6ebbbb0fcf4ed53b4ef9e661da John O'Shea <john.m.oshea@gmail.com> 1694882532 -0600	reset: moving to 3e29812d42684e6ebbbb0fcf4ed53b4ef9e661da
+3e29812d42684e6ebbbb0fcf4ed53b4ef9e661da 0319c88ddd2db4eb980ae8a713471fd948acacd5 John O'Shea <john.m.oshea@gmail.com> 1694882532 -0600	cherry-pick: utility: Detect lsd and honor its GNU ls compatibility
+0319c88ddd2db4eb980ae8a713471fd948acacd5 03cf69fa1127d5ac4830140762cbf044840318c5 John O'Shea <john.m.oshea@gmail.com> 1694882532 -0600	cherry-pick: history-substring-search: add fuzzy and unique
+03cf69fa1127d5ac4830140762cbf044840318c5 8e9f40b457bab45e79326d6e9b32f1c1eb549683 John O'Shea <john.m.oshea@gmail.com> 1694882739 -0600	commit (cherry-pick): history-substring-search: Tweak documentation and cleanup
+8e9f40b457bab45e79326d6e9b32f1c1eb549683 c4dba752d21b89f117815cfebbc3316b6a8897ff John O'Shea <john.m.oshea@gmail.com> 1694882739 -0600	cherry-pick: docs(history-substring-search): add `prefixed` setting example comment
+c4dba752d21b89f117815cfebbc3316b6a8897ff a5e3d05850150ce7fd9b861f6219a322d780f804 John O'Shea <john.m.oshea@gmail.com> 1694882739 -0600	cherry-pick: feat(history-substring-search): add `prefixed` setting
+a5e3d05850150ce7fd9b861f6219a322d780f804 c86f40839cf7be9fe572ea55682aaca15bc98f11 John O'Shea <john.m.oshea@gmail.com> 1696890171 -0600	commit: Update submodules
+c86f40839cf7be9fe572ea55682aaca15bc98f11 07d9b38e64260272f3a8424e8415bd1492479f88 John O'Shea <john.m.oshea@gmail.com> 1699130492 -0600	commit: Update submodules
+07d9b38e64260272f3a8424e8415bd1492479f88 522c18806f2ec9006a97b5d1f6f28d00e0696880 John O'Shea <john.m.oshea@gmail.com> 1699750665 -0700	commit: Update submodules
+522c18806f2ec9006a97b5d1f6f28d00e0696880 3318a6d12795f5f423495be147df25d527e90bbd John O'Shea <john.m.oshea@gmail.com> 1699750721 -0700	cherry-pick: python: Remove pyenv init woraround for pyenv >= 2.3.0
+3318a6d12795f5f423495be147df25d527e90bbd b5446a0ef5a6a6089197e1e1defaaeac10fc1603 John O'Shea <john.m.oshea@gmail.com> 1699750721 -0700	cherry-pick: remove alias sl='ls'
+b5446a0ef5a6a6089197e1e1defaaeac10fc1603 1f0c5d295cdfbc9270a7bd6fc92d2bf17210bd3c John O'Shea <john.m.oshea@gmail.com> 1699750768 -0700	commit (cherry-pick): feat: Update submodules to avoid error with using zsh 5.9
+1f0c5d295cdfbc9270a7bd6fc92d2bf17210bd3c 7b11b8e4bf2d65e8b39ff15af97198418dceceaf John O'Shea <john.m.oshea@gmail.com> 1700329753 -0700	commit: Update submodules
+7b11b8e4bf2d65e8b39ff15af97198418dceceaf d6736aea319d4123b40be65ae53458b9952ca0c5 John O'Shea <john.m.oshea@gmail.com> 1700500529 -0700	commit: Add PyCharm to PATH
+d6736aea319d4123b40be65ae53458b9952ca0c5 c0c9c9705cef2717bdca7cdcf6068c8b3ec35554 John O'Shea <john.m.oshea@gmail.com> 1700500589 -0700	commit: Bump up Node RAM use to maybe prevent crashes
+c0c9c9705cef2717bdca7cdcf6068c8b3ec35554 7a3af1d967df480156c8116ae897776051ef9cd1 John O'Shea <john.m.oshea@gmail.com> 1700941426 -0700	commit: feat: add `git reset --keep` alias
+7a3af1d967df480156c8116ae897776051ef9cd1 3a4fa74a214962d473ec724dd46a47fe5ec73767 John O'Shea <john.m.oshea@gmail.com> 1700941450 -0700	commit: feat: update submodules
+3a4fa74a214962d473ec724dd46a47fe5ec73767 6d15a79191006938343c5df2983aea8da0795232 John O'Shea <john.m.oshea@gmail.com> 1701536728 -0700	commit: Update submodules
+6d15a79191006938343c5df2983aea8da0795232 3a4111216b79a41aeaa644902268a0aa13fd3568 John O'Shea <john.m.oshea@gmail.com> 1701536800 -0700	commit: Add `fzf-tab` completion menu
+3a4111216b79a41aeaa644902268a0aa13fd3568 140ed1c910227161fc06cb92e126124043873dc6 John O'Shea <john.m.oshea@gmail.com> 1701536898 -0700	commit (cherry-pick): editor: Adjust subheading level in documentation
+140ed1c910227161fc06cb92e126124043873dc6 3170b83a9b7df8966989f95ba95265642e376b32 John O'Shea <john.m.oshea@gmail.com> 1701536911 -0700	commit (cherry-pick): feat(editor): add zstyle configuration for WORDCHARS
+3170b83a9b7df8966989f95ba95265642e376b32 10d061afc299ab4a9be7b7a5fa27bb4c911c493a John O'Shea <john.m.oshea@gmail.com> 1702156621 -0700	commit: Update submodules
+10d061afc299ab4a9be7b7a5fa27bb4c911c493a 10d061afc299ab4a9be7b7a5fa27bb4c911c493a John O'Shea <john.m.oshea@gmail.com> 1702158419 -0700	reset: moving to HEAD
+10d061afc299ab4a9be7b7a5fa27bb4c911c493a 3a4fa74a214962d473ec724dd46a47fe5ec73767 John O'Shea <john.m.oshea@gmail.com> 1702158419 -0700	checkout: moving from master to 3a4fa74a214962d473ec724dd46a47fe5ec73767
+3a4fa74a214962d473ec724dd46a47fe5ec73767 7b11b8e4bf2d65e8b39ff15af97198418dceceaf John O'Shea <john.m.oshea@gmail.com> 1702158445 -0700	checkout: moving from 3a4fa74a214962d473ec724dd46a47fe5ec73767 to 7b11b8e4bf2d65e8b39ff15af97198418dceceaf
+7b11b8e4bf2d65e8b39ff15af97198418dceceaf 10d061afc299ab4a9be7b7a5fa27bb4c911c493a John O'Shea <john.m.oshea@gmail.com> 1702158645 -0700	checkout: moving from 7b11b8e4bf2d65e8b39ff15af97198418dceceaf to 10d061afc299ab4a9be7b7a5fa27bb4c911c493a
+10d061afc299ab4a9be7b7a5fa27bb4c911c493a 10d061afc299ab4a9be7b7a5fa27bb4c911c493a John O'Shea <john.m.oshea@gmail.com> 1702158656 -0700	checkout: moving from 10d061afc299ab4a9be7b7a5fa27bb4c911c493a to master
+10d061afc299ab4a9be7b7a5fa27bb4c911c493a 3e7483c66e4332316e780fa53c5c878dbfeca9f7 John O'Shea <john.m.oshea@gmail.com> 1702831667 -0700	commit: feat: update submodules
+3e7483c66e4332316e780fa53c5c878dbfeca9f7 3c2b9358599f6ffb2486a17786e32282c6490c64 John O'Shea <john.m.oshea@gmail.com> 1702831722 -0700	commit: fix: add pdm completions as per documentation
+3c2b9358599f6ffb2486a17786e32282c6490c64 8a46d750ea1c9cb6bd0c4aa04eb74f2095acc90e John O'Shea <john.m.oshea@gmail.com> 1702831752 -0700	commit: feat: add Catppuccin colors for fzf
+8a46d750ea1c9cb6bd0c4aa04eb74f2095acc90e de9f29265af36f5b99e63a705b960311c9aa58fe John O'Shea <john.m.oshea@gmail.com> 1702831777 -0700	commit: fix: update tmux session name for easier renames
+de9f29265af36f5b99e63a705b960311c9aa58fe 98ff88bcd5d6b9e9befa5708476680ebcad74c21 John O'Shea <john.m.oshea@gmail.com> 1702831881 -0700	commit: fix: remove `zman`, which I've never really used
+98ff88bcd5d6b9e9befa5708476680ebcad74c21 88446c25b62eed85bc93d2f82fdf36cee052c32b John O'Shea <john.m.oshea@gmail.com> 1702831912 -0700	commit: feat: reinstate fzf-tab, with better config values
+88446c25b62eed85bc93d2f82fdf36cee052c32b 95157c4d64353bdb3d80fa7fa704a3e67233ad05 John O'Shea <john.m.oshea@gmail.com> 1702831987 -0700	commit: feat: add commitizen configuration
+95157c4d64353bdb3d80fa7fa704a3e67233ad05 d79715f4903d054b049428c39ff262b8c5412d49 John O'Shea <john.m.oshea@gmail.com> 1702857584 -0700	commit: fix: Remove fzf-tab again
+d79715f4903d054b049428c39ff262b8c5412d49 aa5d074767964c6e1bb6daf9c33ae5b4b7789bde John O'Shea <john.m.oshea@gmail.com> 1703443077 -0700	commit: feat: update submodules
+aa5d074767964c6e1bb6daf9c33ae5b4b7789bde 488e1363d6a11317679a20af10c65aa4d2d98650 John O'Shea <john.m.oshea@gmail.com> 1703781774 -0700	commit: feat: update Chatblade default OpenAI model
+488e1363d6a11317679a20af10c65aa4d2d98650 23f4f318274d24a881c9c147bf27b460997d5d4c John O'Shea <john.m.oshea@gmail.com> 1703781801 -0700	commit: fix: remove commitizen completions
+23f4f318274d24a881c9c147bf27b460997d5d4c 32798da9d00c2b60bb16ef1c928d12ff074427fb John O'Shea <john.m.oshea@gmail.com> 1705188058 -0700	commit: feat: Update submodules
+32798da9d00c2b60bb16ef1c928d12ff074427fb 7284e5753fe2e54d04e8ab32ff21ad8bf83bc8a8 John O'Shea <john.m.oshea@gmail.com> 1707841754 -0700	cherry-pick: Adjust instruction for setting custom $ZDOTDIR
+7284e5753fe2e54d04e8ab32ff21ad8bf83bc8a8 4216bbe4a56cbe5d05cbb108c685abcd254c7d89 John O'Shea <john.m.oshea@gmail.com> 1707841754 -0700	cherry-pick: prompt: update powerlevel10k submodule to v1.20.0
+4216bbe4a56cbe5d05cbb108c685abcd254c7d89 3f729a05cf24de4ae00290d9a2bd733673844ebd John O'Shea <john.m.oshea@gmail.com> 1707841780 -0700	commit: feat: add `n` function to cd & ls anywhere in ~
+3f729a05cf24de4ae00290d9a2bd733673844ebd d94eb486a2008efdc7fd0069c4ddf4515727f7f5 John O'Shea <john.m.oshea@gmail.com> 1707841870 -0700	commit: feat: update ChatGPT model for chatblade
+d94eb486a2008efdc7fd0069c4ddf4515727f7f5 fc41ebeecdeb9ab3e6a12869aa78ad0797401306 John O'Shea <john.m.oshea@gmail.com> 1708209274 -0700	commit: chore: Update submodules
+fc41ebeecdeb9ab3e6a12869aa78ad0797401306 a96a117f7d6b297546fcc26c7c0bdf6c88a3c2bd John O'Shea <john.m.oshea@gmail.com> 1710629076 -0600	commit: feat: update submodules
+a96a117f7d6b297546fcc26c7c0bdf6c88a3c2bd fc537c8ccbfdbb653de44b434dbe8c11e80f2f15 John O'Shea <john.m.oshea@gmail.com> 1711214171 -0600	commit: chore: update submodules
+fc537c8ccbfdbb653de44b434dbe8c11e80f2f15 faf179b79a590cff65779fe09eb44225b9dddb48 John O'Shea <john.m.oshea@gmail.com> 1711214191 -0600	cherry-pick: fix zstyle case-insensitive completion
+faf179b79a590cff65779fe09eb44225b9dddb48 ae212c87480b033ab98b18163e280ae32c4fb052 John O'Shea <john.m.oshea@gmail.com> 1713030593 -0600	commit: chore: update submodules
+ae212c87480b033ab98b18163e280ae32c4fb052 67de838a82f2bf7f163d848088f6cfb74ccbb94a John O'Shea <john.m.oshea@gmail.com> 1713030625 -0600	cherry-pick: Allow .dir_colors to be a symlink
+67de838a82f2bf7f163d848088f6cfb74ccbb94a 5a244ac84762031a900ecaacf0c9fc32c4724b59 John O'Shea <john.m.oshea@gmail.com> 1713030625 -0600	cherry-pick: Update Python virtualenvwrapper documentation
+5a244ac84762031a900ecaacf0c9fc32c4724b59 5a244ac84762031a900ecaacf0c9fc32c4724b59 John O'Shea <john.m.oshea@gmail.com> 1713030652 -0600	reset: moving to 5a244ac84762031a900ecaacf0c9fc32c4724b59
+5a244ac84762031a900ecaacf0c9fc32c4724b59 950f64bf39de89f25128d718b3a863bfc455a142 John O'Shea <john.m.oshea@gmail.com> 1713030652 -0600	cherry-pick: Allow overriding _ssh_agent_sock for symmetry to _ssh_agent_env
+950f64bf39de89f25128d718b3a863bfc455a142 c0ec127d2e1ed79ad9600c90f0ab7da84fd9f7d6 John O'Shea <john.m.oshea@gmail.com> 1713030652 -0600	cherry-pick: osx: Add trash function
+c0ec127d2e1ed79ad9600c90f0ab7da84fd9f7d6 c33c5ca543128fb0a48efe8d8bcf1ee753ea42d5 John O'Shea <john.m.oshea@gmail.com> 1713030652 -0600	cherry-pick: screen module: don't try to attach to dead screens
+c33c5ca543128fb0a48efe8d8bcf1ee753ea42d5 a37c77d40bc85b3e6b40b2af6c7c5aa9fbb08144 John O'Shea <john.m.oshea@gmail.com> 1713030652 -0600	cherry-pick: Remove Python module comment about completion
+a37c77d40bc85b3e6b40b2af6c7c5aa9fbb08144 0973d2bdbb3c18dad716f50e777bde7ea6858569 John O'Shea <john.m.oshea@gmail.com> 1713030858 -0600	commit (cherry-pick): fix: homebrew: Simplify caching `brew shellenv`
+0973d2bdbb3c18dad716f50e777bde7ea6858569 0973d2bdbb3c18dad716f50e777bde7ea6858569 John O'Shea <john.m.oshea@gmail.com> 1713030927 -0600	reset: moving to 0973d2bdbb3c18dad716f50e777bde7ea6858569
+0973d2bdbb3c18dad716f50e777bde7ea6858569 f7554ead6e7e80ac196ae8ada3bd7bdffec680ab John O'Shea <john.m.oshea@gmail.com> 1713653950 -0600	commit: chore: update submodules
+f7554ead6e7e80ac196ae8ada3bd7bdffec680ab 47eb8b3846cb180494d6bf280c74e04ee3d56bb5 John O'Shea <john.m.oshea@gmail.com> 1713654017 -0600	cherry-pick: Removing fig from README.md
+47eb8b3846cb180494d6bf280c74e04ee3d56bb5 a72b7eae66c7a5edb73a25aee503c5635320a65b John O'Shea <john.m.oshea@gmail.com> 1713717901 -0600	commit: feat: swap atuin in place of mcfly
+a72b7eae66c7a5edb73a25aee503c5635320a65b 53e6a158413bd4c7128940a056340bff8b46e83a John O'Shea <john.m.oshea@gmail.com> 1714259400 -0600	commit: feat: update submodules
+53e6a158413bd4c7128940a056340bff8b46e83a be8bca1a2ff0bd754dcd92fe3852719903ae70b6 John O'Shea <john.m.oshea@gmail.com> 1715376855 -0600	commit: fix: remove outdated Homebrew analytics config
+be8bca1a2ff0bd754dcd92fe3852719903ae70b6 64244dd88d3e59abb295b9bcd435b1215a9ab5f1 John O'Shea <john.m.oshea@gmail.com> 1716658478 -0600	commit: chore: update submodules

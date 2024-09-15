@@ -1,0 +1,12 @@
+f30d2d2d3a60905a09b516f843c130232da10060		branch 'master' of https://github.com/andymass/vim-matchup
+c5bb1c362dda41d948c216e69265888c4a423c08	not-for-merge	branch 'bugfix-testrb' of https://github.com/andymass/vim-matchup
+dc1e231e38be53bd5572772b1d9cb83c6bed3c36	not-for-merge	branch 'compat-898' of https://github.com/andymass/vim-matchup
+aec60e0c441139cdea3e3cd7a57cc63d0f3632ac	not-for-merge	branch 'dev-linting' of https://github.com/andymass/vim-matchup
+58cd300d98f4377ec62f8d22553dd40017d1870c	not-for-merge	branch 'devel' of https://github.com/andymass/vim-matchup
+e581db9fda44c8572d32c6a445d65ef4e6ea1b52	not-for-merge	branch 'devel2' of https://github.com/andymass/vim-matchup
+184a1b825e5ff1377b5de00ae55600f3744eed7c	not-for-merge	branch 'feature-deferred' of https://github.com/andymass/vim-matchup
+c1ab8c9e8e86e036a5dce6a4051c053ee904ab70	not-for-merge	branch 'feature-offscreen-popup-both' of https://github.com/andymass/vim-matchup
+1f73e8eba63c1f7ed344c461bcc28d73a4965606	not-for-merge	branch 'feature-surround' of https://github.com/andymass/vim-matchup
+71132a93ea703ea35cc2b3e6d4351945b9ea5a5e	not-for-merge	branch 'feature-treesitter' of https://github.com/andymass/vim-matchup
+661a165a32a73f4ff076c1aaf3f50129d6dca409	not-for-merge	branch 'fix-github-action' of https://github.com/andymass/vim-matchup
+7b71df6a53acb96337199228ee8eaaae2c1ecf06	not-for-merge	branch 'github-actions' of https://github.com/andymass/vim-matchup

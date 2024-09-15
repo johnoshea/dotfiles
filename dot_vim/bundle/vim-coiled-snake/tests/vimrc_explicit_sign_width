@@ -1,0 +1,10 @@
+set cpoptions-=C
+
+call plug#begin()
+Plug '~/vim-coiled-snake'
+Plug 'Konfekt/FastFold'
+call plug#end()
+
+set signcolumn=yes
+let g:coiled_snake_explicit_sign_width=5
+

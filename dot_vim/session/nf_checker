@@ -1,0 +1,101 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/Dropbox/src/netflix_checker
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+argglobal
+%argdel
+$argadd nf_checker.py
+set lines=79 columns=238
+edit nf_checker.py
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 238)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 238)
+argglobal
+setlocal fdm=indent
+setlocal fde=coiledsnake#FoldExpr(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+let s:l = 111 - ((72 * winheight(0) + 38) / 76)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+111
+normal! 0
+wincmd w
+argglobal
+if bufexists("netflix/folder.py") | buffer netflix/folder.py | else | edit netflix/folder.py | endif
+setlocal fdm=manual
+setlocal fde=coiledsnake#FoldExpr(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+3,12fold
+19,24fold
+18,39fold
+40,46fold
+47,57fold
+58,81fold
+83,86fold
+82,97fold
+99,103fold
+98,112fold
+114,124fold
+113,158fold
+159,171fold
+173,177fold
+172,183fold
+185,198fold
+184,231fold
+15,231fold
+let s:l = 182 - ((37 * winheight(0) + 38) / 76)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+182
+normal! 0
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 238)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 238)
+tabnext 1
+badd +0 nf_checker.py
+badd +0 netflix/folder.py
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=aTtOIc
+set winminheight=1 winminwidth=1
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+nohlsearch
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

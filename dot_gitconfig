@@ -1,0 +1,94 @@
+[user]
+	name = John O'Shea
+	email = john.m.oshea@gmail.com
+[color]
+    ui = auto
+[alias]
+    b = branch
+    ws = status
+    ci = commit --verbose
+    co = checkout
+    bc = checkout -b
+    wd = diff
+    id = diff --cached
+    fm = pull
+    p = push
+    pc = push --set-upstream origin "$(git-branch-current 2> /dev/null)"
+    pom = push origin master
+	conflicted = !nvim +Conflicted
+	amend = commit --amend -C HEAD
+    upstream = !git push \\\n    --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+    network = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    dft = difftool
+    fza = "!git ls-files -m -o --exclude-standard | fzf -m --print0 --preview \"git diff {1}\" | xargs -0 git add"
+    rb = "!git reflog | egrep -io \"moving from ([^[:space:]]+)\" | awk '{ print $3 }' | awk ' !x[$0]++' | egrep -v '^[a-f0-9]{40}$' | fzf | xargs git checkout"
+[core]
+	excludesfile = /Users/johno/.gitignore_global
+	autocrlf = false
+	safecrlf = true
+    ; pager = delta --dark --syntax-theme=\"gruvbox-dark\"
+    pager = delta
+	editor = nvim
+[interactive]
+    diffFilter = delta --color-only
+    singlekey = true
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+    hunk-header-style = omit
+    navigate = true
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow box
+    # file-decoration-style = none
+[push]
+    default = simple
+    autoSetupRemote = true
+[credential]
+	helper = osxkeychain
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[diff]
+    external = difft
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+    cmd = difft --display json "$LOCAL" "$REMOTE"
+[pager]
+    difftool = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 227
+	frag = magenta bold
+	commit = 227 bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[sequence]
+	editor = interactive-rebase-tool
+[commit]
+	verbose = true
+[hub]
+	host = wordbank.github.com
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false

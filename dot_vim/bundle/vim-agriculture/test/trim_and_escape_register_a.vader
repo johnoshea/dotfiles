@@ -1,0 +1,14 @@
+Given (A fancy star wars line that needs escaping):
+    # Who's scruffy \looking%?
+
+Do (Yank text to register a):
+  V"ay
+
+Execute (Escape text in register a):
+  call agriculture#trim_and_escape_register_a()
+
+Do (Paste escaped text from register a):
+  V"ap
+
+Expect (Pasted text was properly escaped):
+  \# Who\'s scruffy \\looking\%?

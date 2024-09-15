@@ -1,0 +1,3 @@
+60ba5e11a61618c0344e2db190210145083c91f8		branch 'master' of https://github.com/Vimjas/vim-python-pep8-indent
+dac91047444e5c907226b1cae39bb3ce428bc441	not-for-merge	branch 'jedi' of https://github.com/Vimjas/vim-python-pep8-indent
+ab2844906e70c68526f90575bcc1b38d852cf0cc	not-for-merge	branch 'pr/34' of https://github.com/Vimjas/vim-python-pep8-indent

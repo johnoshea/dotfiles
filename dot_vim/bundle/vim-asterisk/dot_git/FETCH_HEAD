@@ -1,0 +1,3 @@
+77e97061d6691637a034258cc415d98670698459		branch 'master' of https://github.com/haya14busa/vim-asterisk
+7ecc1f6b316f2609c717eb6998b738de7004917a	not-for-merge	branch 'fix-selection-handling' of https://github.com/haya14busa/vim-asterisk
+ccca39c6831840f40ea003ece006128f22f7394c	not-for-merge	branch 'jump-to-first-much-with-sharp-in-visual-mode' of https://github.com/haya14busa/vim-asterisk

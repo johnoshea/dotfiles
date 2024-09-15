@@ -1,0 +1,7 @@
+#compdef adr
+
+_adr_completion() {
+  eval $(env _TYPER_COMPLETE_ARGS="${words[1,$CURRENT]}" _ADR_COMPLETE=complete_zsh adr)
+}
+
+compdef _adr_completion adr

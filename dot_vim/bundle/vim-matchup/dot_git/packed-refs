@@ -1,0 +1,16 @@
+# pack-refs with: peeled fully-peeled sorted 
+a2cfb9df56b31b85044e0fced598835e53836226 refs/remotes/origin/ci
+dc1e231e38be53bd5572772b1d9cb83c6bed3c36 refs/remotes/origin/compat-898
+58cd300d98f4377ec62f8d22553dd40017d1870c refs/remotes/origin/devel
+e581db9fda44c8572d32c6a445d65ef4e6ea1b52 refs/remotes/origin/devel2
+184a1b825e5ff1377b5de00ae55600f3744eed7c refs/remotes/origin/feature-deferred
+c1ab8c9e8e86e036a5dce6a4051c053ee904ab70 refs/remotes/origin/feature-offscreen-popup-both
+1f73e8eba63c1f7ed344c461bcc28d73a4965606 refs/remotes/origin/feature-surround
+661a165a32a73f4ff076c1aaf3f50129d6dca409 refs/remotes/origin/fix-github-action
+7b71df6a53acb96337199228ee8eaaae2c1ecf06 refs/remotes/origin/github-actions
+52b3ec1ee8d0f78c69bae6cc32f3c2d1a023a8c8 refs/remotes/origin/master
+f41cb5a3c659c05a5cf14793af9d27fd8f073f30 refs/tags/0.4.0
+db56abe5fedfdad47b0c8429472631a008fdd255 refs/tags/v0.1.0
+0bad5eff9e0951728fab80ecf18f368e8476dcba refs/tags/v0.2.0
+afd7a6b98193aef35f7f06386aa0573efbab4e2e refs/tags/v0.3.0
+68369952a3fce27f778213ac861c0b6e8e8cd115 refs/tags/v0.5.0

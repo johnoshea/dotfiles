@@ -1,0 +1,28 @@
+alias tower='gittower $(git rev-parse --show-toplevel)'
+alias lg='lazygit'
+
+# Use 'bat' for cat
+alias cat='bat'
+
+# Use 'prettyping' for ping
+alias ping='prettyping --nolegend -c 5'
+
+# Use fzf to preview files (using 'bat')
+alias show="fzf --preview 'bat --color \"always\" -- {}'"
+
+# Use 'lsd' for ls
+alias ls='lsd --git --icon=never'
+
+# Terraform/AWS infrastructure shortcuts
+alias plan='make plan'
+alias apply='make apply'
+
+# LLMs
+alias llm-sonnet='llm -m claude-3.5-sonnet'
+alias llm-gpt4='llm -m gpt-4-turbo'
+alias llm-gpt4o='llm -m gpt-4o'
+
+# Aider
+alias aider-gpt4o="aider"
+alias aider-opus="aider --opus --cache-prompts --dark-mode"
+alias aider-sonnet="aider --sonnet --cache-prompts --dark-mode"

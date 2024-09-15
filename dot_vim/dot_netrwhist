@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/johno/Documents/src/dotfiles'
+let g:netrw_dirhist_2='/Users/johno/Documents/src/aws_infrastructure/terraform/base/s3/glb/com.wordbank.global.storage.sg01-studio-data'
+let g:netrw_dirhist_1='/Users/johno/Documents/src/aws_infrastructure/terraform/base/s3'
+let g:netrw_dirhist_0='/Users/johno/Documents/src/aws_infrastructure/terraform/base/s3/den/com.wordbank.denver.infrastructure.logs'
+let g:netrw_dirhist_9='/Users/johno/Documents/src/aws_infrastructure/terraform/base/s3/glb/com.wordbank.global.storage.sg01-production-data'
+let g:netrw_dirhist_8='/Users/johno/Documents/src/aws_infrastructure/terraform/base/s3/glb/com.wordbank.global.backups.efs-awsglbfs02'
+let g:netrw_dirhist_7='/Users/johno/Documents/src/aws_infrastructure/terraform/base/s3/den'
+let g:netrw_dirhist_6='/Users/johno/Documents/src/aws_infrastructure/terraform/base/s3'
+let g:netrw_dirhist_5='/Users/johno/Documents/src/aws_infrastructure/terraform/base/s3/glb'
+let g:netrw_dirhist_4='/Users/johno/Documents/src/aws_infrastructure/terraform/base/s3/glb/com.wordbank.global.apps.bookstack'

@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 fedc22e9bbd046867860e772d7d6787f5dae9d4c John O'Shea <john.m.oshea@gmail.com> 1493474813 +0100	clone: from https://github.com/zsh-users/zsh-autosuggestions
+fedc22e9bbd046867860e772d7d6787f5dae9d4c 2cb6eb6e29852e64a146b0284275ecdc0661b082 John O'Shea <john.m.oshea@gmail.com> 1495904991 +0100	pull: Fast-forward
+2cb6eb6e29852e64a146b0284275ecdc0661b082 e30436574599df0f127153fea0c2ea86942ba11a John O'Shea <john.m.oshea@gmail.com> 1499509778 +0100	pull origin master --recurse-submodules: Fast-forward
