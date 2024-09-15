@@ -1,0 +1,62 @@
+venvs are in /Users/johno/.local/pipx/venvs
+apps are exposed on your $PATH at /Users/johno/.local/bin
+manual pages are exposed at /Users/johno/.local/share/man
+   package aider-chat 0.55.0, installed using Python 3.9.9
+    - aider
+   package black 24.8.0, installed using Python 3.9.9
+    - black
+    - black-primer
+    - blackd
+   package chatblade 0.6.4, installed using Python 3.9.9
+    - chatblade
+   package colorpedia 1.2.3, installed using Python 3.9.9
+    - color
+    - colorpedia
+   package commitizen 3.29.0, installed using Python 3.9.9
+    - cz
+    - git-cz
+   package creosote 3.0.2, installed using Python 3.9.9
+    - creosote
+   package cruft 2.15.0, installed using Python 3.9.9
+    - cruft
+   package frogmouth 0.9.2, installed using Python 3.9.9
+    - frogmouth
+   package git-filter-repo 2.45.0, installed using Python 3.9.9
+    - git-filter-repo
+   package gixy 0.1.21, installed using Python 3.9.9
+    - gixy
+   package http-prompt 2.1.0, installed using Python 3.9.9
+    - http-prompt
+   package jmespath 1.0.1, installed using Python 3.9.9
+    - jp.py
+   package llm 0.15, installed using Python 3.9.9
+    - llm
+   package nox 2024.4.15, installed using Python 3.9.9
+    - nox
+    - tox-to-nox
+   package openplayground 0.1.5, installed using Python 3.9.9
+    - openplayground
+   package pep8 1.7.1, installed using Python 3.9.9
+    - pep8
+   package pip-tools 7.4.1, installed using Python 3.9.9
+    - pip-compile
+    - pip-sync
+   package poetry 1.8.3, installed using Python 3.9.9
+    - poetry
+   package pygments 2.18.0, installed using Python 3.9.9
+    - pygmentize
+   package ruff 0.6.4, installed using Python 3.9.9
+    - ruff
+   package ruff-lsp 0.0.56, installed using Python 3.9.9
+    - ruff-lsp
+   package shot-scraper 1.4, installed using Python 3.9.9
+    - shot-scraper
+   package visidata 3.0.2, installed using Python 3.9.9
+    - vd
+    - vd2to3.vdx
+    - vgit
+    - visidata
+    - man1/vd.1
+    - man1/visidata.1
+   package xkcdpass 1.19.9, installed using Python 3.9.9
+    - xkcdpass
