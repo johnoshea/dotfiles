@@ -1,34 +1,13 @@
 #!/usr/bin/env zsh
-# Switch back to system Ruby/Python before updating
 UPDATE_SW_DIR="$HOME"
 CURRENT_DIR=$(pwd)
-CURRENT_PYTHON=$(pyenv version | head -n1 | cut -f1 -d' ')
-CURRENT_RUBY=$(rbenv version | head -n1 | cut -f1 -d' ')
-CURRENT_NODE=$(fnm current)
-CURRENT_GO=$(goenv version | head -n1 | cut -f1 -d' ')
 INSTALLED_CONFIG=${HOME}/.local/personal_config
 mkdir -p "${INSTALLED_CONFIG}"
-echo "*** Active versions [Python: ${CURRENT_PYTHON} / Ruby: ${CURRENT_RUBY} / Node: ${CURRENT_NODE} / Go: ${CURRENT_GO}] ***"
-cd "$UPDATE_SW_DIR" || exit
-pyenv local "$(cat ~/.python-version)"
-rbenv local "$(cat ~/.rbenv/version)"
-fnm use 21.2.0
-goenv local "$(cat ~/.goenv/version)"
 
 echo "*** App Store programs"
 echo
 sudo mas outdated
 sudo mas upgrade
-
-echo "*** Ruby gems"
-echo
-rbenv rehash
-rm -f "${INSTALLED_CONFIG}/ruby_gems"
-gem list --local > "${INSTALLED_CONFIG}/ruby_gems"
-sudo gem update --system
-for outdated_gem in $(gem outdated | cut -f1 -d' ' | grep -v 'rdoc'); do
-    sudo gem update "${outdated_gem}"
-done
 
 echo "*** Homebrew"
 echo
@@ -38,53 +17,6 @@ brew doctor
 brew update
 brew upgrade
 brew upgrade --cask
-# don't prompt about running Chromium every time it's upgraded
-echo "*** Chromium permissions"
-[ -f /Applications/Chromium.app ] && xattr -d com.apple.quarantine /Applications/Chromium.app
-
-echo "*** neovim"
-brew uninstall neovim && brew uninstall --ignore-dependencies luajit && brew install luajit && brew install --HEAD neovim
-brew cleanup
-
-echo "*** Pyenv"
-echo
-rm -f "${INSTALLED_CONFIG}/pyenv_versions"
-pyenv versions > "${INSTALLED_CONFIG}/pyenv_versions"
-pyenv rehash
-
-echo "*** Goenv"
-echo
-brew upgrade --fetch-HEAD goenv
-rm -f "${INSTALLED_CONFIG}/goenv_versions"
-goenv versions > "${INSTALLED_CONFIG}/goenv_versions"
-goenv rehash
-
-echo "*** terraform"
-echo
-rm -f "${INSTALLED_CONFIG}/tfenv_versions"
-tfenv list > "${INSTALLED_CONFIG}/tfenv_versions"
-tfenv install "$(tfenv list-remote | grep -ve '(alpha|beta|\-rc)' | head -n1)"
-
-echo "*** pipx"
-echo
-PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --upgrade pip setuptools
-PIP_REQUIRE_VIRTUALENV=false python3 -m pip install -U pipx
-rm -f "${INSTALLED_CONFIG}/pipx_packages"
-pipx list > "${INSTALLED_CONFIG}/pipx_packages"
-pipx upgrade-all
-
-echo "*** node"
-echo
-rm -f "${INSTALLED_CONFIG}/fnm_versions"
-fnm ls > "${INSTALLED_CONFIG}/fnm_versions"
-rm -f "${INSTALLED_CONFIG}/npm_packages"
-npm list > "${INSTALLED_CONFIG}/npm_packages"
-npm set progress=false
-npm install -g npm@latest
-for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
-do
-    npm --location=global install "$package"
-done
 
 echo "*** Cargo"
 echo
@@ -92,41 +24,20 @@ cargo install-update -a
 
 echo "*** Neovim"
 echo
+brew uninstall neovim && brew uninstall --ignore-dependencies luajit && brew install luajit && brew install --HEAD neovim
+brew cleanup
 nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 nvim -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'
-
-echo "*** zprezto submodules"
-echo
-cd ~/src/prezto || exit
-git submodule update --recursive --remote
-echo
 
 echo "*** Updating completions"
 echo
 rm -f "${HOME}/.cache/zcompcache*"
-if [[ ! -d "${HOME}/src/dotfiles/completions" ]]; then
-    mkdir -p "${HOME}/src/dotfiles/completions"
+if [[ ! -d "${HOME}/.local/completions" ]]; then
+    mkdir -p "${HOME}/.local/completions"
 fi
-direnv hook zsh >! "${HOME}/src/dotfiles/completions/_direnv"
-register-python-argcomplete pipx >! "${HOME}/src/dotfiles/completions/_pipx"
-goenv init - >! "${HOME}/src/dotfiles/completions/_goenv"
-rbenv init - --no-rehash zsh >! "${HOME}/src/dotfiles/completions/_rbenv"
-fnm env --use-on-cd >! "${HOME}/src/dotfiles/completions/_fnm"
-register-python-argcomplete cz >! "${HOME}/src/dotfiles/completions/_cz"
-atuin init zsh >! "${HOME}/src/dotfiles/completions/_atuin"
-
-echo "*** pdm"
-echo
-pdm completion zsh >! "${HOME}/src/dotfiles/_pdm"
+atuin init zsh >! "${HOME}/.local/completions/_atuin"
+zoxide init zsh >! "${HOME}/.local/completions/_zoxide"
 
 echo "*** tmux plugins"
 echo
 "${HOME}/.tmux/plugins/tpm/bin/update_plugins" all
-
-
-echo "Restoring previous Python/Ruby/Node/Go versions"
-cd "${CURRENT_DIR}" || exit
-pyenv local "${CURRENT_PYTHON}"
-rbenv local "${CURRENT_RUBY}"
-fnm use "${CURRENT_NODE}"
-goenv local "${CURRENT_GO}"
