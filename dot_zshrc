@@ -189,6 +189,12 @@ if which atuin > /dev/null; then
     source "${HOME}/.local/completions/_atuin"
 fi
 
+if which zoxide > /dev/null; then
+    source "${HOME}/.local/completions/_zoxide"
+fi
+
+if which uv > /dev/null; then
+    source "${HOME}/.local/completions/_uv"
 fi
 
 function gam() { "/Users/johno/bin/gam/gam" "$@" ; }
