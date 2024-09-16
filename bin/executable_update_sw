@@ -22,6 +22,10 @@ echo "*** Cargo"
 echo
 cargo install-update -a
 
+echo "*** uv"
+echo
+uv tool upgrade
+
 echo "*** Neovim"
 echo
 brew uninstall neovim && brew uninstall --ignore-dependencies luajit && brew install luajit && brew install --HEAD neovim
@@ -37,6 +41,7 @@ if [[ ! -d "${HOME}/.local/completions" ]]; then
 fi
 atuin init zsh >! "${HOME}/.local/completions/_atuin"
 zoxide init zsh >! "${HOME}/.local/completions/_zoxide"
+uv generate-shell-completion zsh >! "${HOME}/.local/completions/_uv"
 
 echo "*** tmux plugins"
 echo
