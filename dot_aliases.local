@@ -29,3 +29,279 @@ alias aider-sonnet="aider --sonnet --cache-prompts --dark-mode"
 
 # Chezmoi
 alias cm="chezmoi"
+
+# Git
+alias g='git'
+
+# Git Branch (b)
+alias gb='git branch'
+alias gba='git branch --all --verbose'
+alias gbc='git checkout -b'
+alias gbd='git branch --delete'
+alias gbD='git branch --delete --force'
+alias gbl='git branch --verbose'
+alias gbL='git branch --all --verbose'
+alias gbm='git branch --move'
+alias gbM='git branch --move --force'
+alias gbr='git branch --move'
+alias gbR='git branch --move --force'
+alias gbs='git show-branch'
+alias gbS='git show-branch --all'
+alias gbv='git branch --verbose'
+alias gbV='git branch --verbose --verbose'
+alias gbx='git branch --delete'
+alias gbX='git branch --delete --force'
+
+# Git Commit (c)
+alias gc='git commit --verbose'
+alias gcS='git commit --verbose --gpg-sign'
+alias gca='git commit --verbose --all'
+alias gcaS='git commit --verbose --all --gpg-sign'
+alias gcm='git commit --message'
+alias gcmS='git commit --message --gpg-sign'
+alias gcam='git commit --all --message'
+alias gco='git checkout'
+alias gcO='git checkout --patch'
+alias gcf='git commit --amend --reuse-message HEAD'
+alias gcfS='git commit --amend --reuse-message HEAD --gpg-sign'
+alias gcF='git commit --verbose --amend'
+alias gcFS='git commit --verbose --amend --gpg-sign'
+alias gcp='git cherry-pick --ff'
+alias gcP='git cherry-pick --no-commit'
+alias gcr='git revert'
+alias gcR='git reset "HEAD^"'
+alias gcs='git show'
+alias gcsS='git show --pretty=short --show-signature'
+alias gcl='git-commit-lost'
+alias gcy='git cherry --verbose --abbrev'
+alias gcY='git cherry --verbose'
+alias gcM='git checkout master && git pull'
+
+# Git Conflict (C)
+alias gCl='git --no-pager diff --name-only --diff-filter=U'
+alias gCa='git add $(gCl)'
+alias gCe='git mergetool $(gCl)'
+alias gCo='git checkout --ours --'
+alias gCO='gCo $(gCl)'
+alias gCt='git checkout --theirs --'
+alias gCT='gCt $(gCl)'
+
+# Git Data (d)
+alias gd='git ls-files'
+alias gdc='git ls-files --cached'
+alias gdx='git ls-files --deleted'
+alias gdm='git ls-files --modified'
+alias gdu='git ls-files --other --exclude-standard'
+alias gdk='git ls-files --killed'
+alias gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
+
+# Git Fetch (f)
+alias gf='git fetch'
+alias gfa='git fetch --all'
+alias gfc='git clone'
+alias gfcr='git clone --recurse-submodules'
+alias gfm='git pull'
+alias gfma='git pull --autostash'
+alias gfr='git pull --rebase'
+alias gfra='git pull --rebase --autostash'
+
+# Git Grep (g)
+alias gg='git grep'
+alias ggi='git grep --ignore-case'
+alias ggl='git grep --files-with-matches'
+alias ggL='git grep --files-without-matches'
+alias ggv='git grep --invert-match'
+alias ggw='git grep --word-regexp'
+
+# Git Index (i)
+alias gia='git add'
+alias giA='git add --patch'
+alias giu='git add --update'
+alias gid='git diff --no-ext-diff --cached'
+alias giD='git diff --no-ext-diff --cached --word-diff'
+alias gii='git update-index --assume-unchanged'
+alias giI='git update-index --no-assume-unchanged'
+alias gir='git reset'
+alias giR='git reset --patch'
+alias gix='git rm -r --cached'
+alias giX='git rm -r --force --cached'
+
+# Git Log (l)
+alias gl='git log --topo-order --pretty=format:"$_git_log_medium_format"'
+alias gls='git log --topo-order --stat --pretty=format:"$_git_log_medium_format"'
+alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"$_git_log_medium_format"'
+alias glo='git log --topo-order --pretty=format:"$_git_log_oneline_format"'
+alias glg='git log --topo-order --graph --pretty=format:"$_git_log_oneline_format"'
+alias glb='git log --topo-order --pretty=format:"$_git_log_brief_format"'
+alias glc='git shortlog --summary --numbered'
+alias glS='git log --show-signature'
+alias glp="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+
+# Git Merge (m)
+alias gm='git merge'
+alias gmC='git merge --no-commit'
+alias gmF='git merge --no-ff'
+alias gma='git merge --abort'
+alias gmt='git mergetool'
+
+# Git Push (p)
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+alias gpF='git push --force'
+alias gpa='git push --all'
+alias gpA='git push --all && git push --tags'
+alias gpt='git push --tags'
+alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+alias gpp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
+
+# Git Rebase (r)
+alias gr='git rebase'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias gri='git rebase --interactive'
+alias grs='git rebase --skip'
+
+# Git Remote (R)
+alias gR='git remote'
+alias gRl='git remote --verbose'
+alias gRa='git remote add'
+alias gRx='git remote rm'
+alias gRm='git remote rename'
+alias gRu='git remote update'
+alias gRp='git remote prune'
+alias gRs='git remote show'
+alias gRb='git-hub-browse'
+
+# Git Stash (s)
+alias gs='git stash'
+alias gsa='git stash apply'
+alias gsx='git stash drop'
+alias gsX='git-stash-clear-interactive'
+alias gsl='git stash list'
+alias gsL='git-stash-dropped'
+alias gsd='git stash show --patch --stat'
+alias gsp='git stash pop'
+alias gsr='git-stash-recover'
+alias gss='git stash save --include-untracked'
+alias gsS='git stash save --patch --no-keep-index'
+alias gsw='git stash save --include-untracked --keep-index'
+
+# Git Submodule (S)
+alias gS='git submodule'
+alias gSa='git submodule add'
+alias gSf='git submodule foreach'
+alias gSi='git submodule init'
+alias gSI='git submodule update --init --recursive'
+alias gSl='git submodule status'
+alias gSm='git-submodule-move'
+alias gSs='git submodule sync'
+alias gSu='git submodule update --remote --recursive'
+alias gSx='git-submodule-remove'
+
+# Git Tag (t)
+alias gt='git tag'
+alias gtl='git tag --list'
+alias gts='git tag --sign'
+alias gtv='git verify-tag'
+
+# Git Working Copy (w)
+alias gws='git status --short'
+alias gws.='git status --short .'
+alias gwS='git status'
+alias gwd='git diff --no-ext-diff'
+alias gwD='git diff --no-ext-diff --word-diff'
+alias gwr='git reset --soft'
+alias gwR='git reset --hard'
+alias gwk='git reset --keep'
+alias gwc='git clean --dry-run'
+alias gwC='git clean --force'
+alias gwx='git rm -r'
+alias gwX='git rm -r --force'
+
+# Copy the current directory basename to the clipboard
+alias curd='echo "${PWD##*/}" | pbc'
+
+# Disable correction.
+alias ack='nocorrect ack'
+alias cd='nocorrect cd'
+alias cp='nocorrect cp'
+alias ebuild='nocorrect ebuild'
+alias gcc='nocorrect gcc'
+alias gist='nocorrect gist'
+alias grep='nocorrect grep'
+alias heroku='nocorrect heroku'
+alias ln='nocorrect ln'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
+alias mysql='nocorrect mysql'
+alias rm='nocorrect rm'
+alias xmlf='xmllint --format'
+
+# Disable globbing.
+alias bower='noglob bower'
+alias fc='noglob fc'
+alias find='noglob find'
+alias ftp='noglob ftp'
+alias history='noglob history'
+alias locate='noglob locate'
+alias rake='noglob rake'
+alias rsync='noglob rsync'
+alias scp='noglob scp'
+alias sftp='noglob sftp'
+
+alias diffu="diff --unified"
+alias mkdir="mkdir -p"
+alias po='popd'
+alias pu='pushd'
+alias sa='alias | grep -i'
+alias type='type -a'
+
+# Suffix commands
+alias -g G=' | egrep '
+alias -g Gi=' | egrep  -i'
+alias -g Gv=' | egrep  -v'
+alias -g Gvi=' | egrep  -vi'
+alias -g H=' | head '
+alias -g L=' | less '
+alias -g T=' | tee '
+alias -g Wcl=' | wc -l'
+alias -g Wcw=' | wc -w'
+alias -g Fd=' && figlet DONE'
+
+# reload zsh config
+alias reload!='source ~/.zshrc'
+
+# Network commands
+alias ping='ping -c 4 '
+alias ping1k='ping -c 1000 '
+
+# Neovim
+alias vi='nvim'
+alias nvd='nvim -d'
+
+# Frogmouth
+alias fm='frogmouth'
+
+# ls
+alias l='ls -1A'         # Lists in one column, hidden files.
+alias ll='ls -lh'        # Lists human readable sizes.
+alias lr='ll -R'         # Lists human readable sizes, recursively.
+alias la='ll -A'         # Lists human readable sizes, hidden files.
+alias lm='la | "$PAGER"' # Lists human readable sizes, hidden files through pager.
+alias lk='ll -Sr'        # Lists sorted by size, largest last.
+alias lt='ll -tr'        # Lists sorted by date, most recent last.
+alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
+alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
+
+# Ripgrep
+alias rg="rg --colors 'path:fg:green' --colors 'path:style:intense' --colors 'line:style:intense' --colors 'line:fg:green' --colors 'line:style:intense' --colors 'match:fg:yellow' --colors 'match:style:bold' --smart-case"
+
+# Clipboard
+alias pbc='pbcopy'
+alias pbp='pbpaste'
+
+# Resource Usage
+alias df='df -kh'
+alias du='du -kh'
+
