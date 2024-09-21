@@ -48,6 +48,9 @@ fi
 if which uv > /dev/null; then
     uv generate-shell-completion zsh >! "${HOME}/.local/completions/_uv"
 fi
+if which mise > /dev/null; then
+    mise activate zsh >! "${HOME}/.local/completions/_mise"
+fi
 
 echo "*** tmux plugins"
 echo

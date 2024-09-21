@@ -197,6 +197,10 @@ if which uv > /dev/null; then
     source "${HOME}/.local/completions/_uv"
 fi
 
+if which mise > /dev/null; then
+    source "${HOME}/.local/completions/_mise"
+fi
+
 function gam() { "/Users/johno/bin/gam/gam" "$@" ; }
 
 # Yazi
