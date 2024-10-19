@@ -321,6 +321,7 @@ return packer.startup(function(use)
     config = function()
       require("octo").setup({
         ssh_aliases = { ["wordbank.github.com"] = "github.com" },
+        gh_cmd = "/opt/homebrew/bin/gh",
       })
     end,
   })
