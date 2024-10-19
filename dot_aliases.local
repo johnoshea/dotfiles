@@ -23,9 +23,12 @@ alias llm-gpt4='llm -m gpt-4-turbo'
 alias llm-gpt4o='llm -m gpt-4o'
 
 # Aider
-alias aider-gpt4o="aider"
-alias aider-opus="aider --opus --cache-prompts --dark-mode"
-alias aider-sonnet="aider --sonnet --cache-prompts --dark-mode"
+alias aider-gpt4o="aider --vim --dark-mode"
+alias aider-o1-mini="aider --o1-mini --vim --dark-mode"
+alias aider-o1-preview="aider --o1-preview --vim --dark-mode"
+alias aider-opus="aider --opus --cache-prompts --vim --dark-mode"
+alias aider-sonnet="aider --sonnet --cache-prompts --vim --dark-mode"
+alias aider-o1-architect="aider --o1-preview --architect --editor-model claude-3-5-sonnet-20240620 --vim --dark-mode"
 
 # Chezmoi
 alias cm="chezmoi"
