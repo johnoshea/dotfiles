@@ -81,7 +81,7 @@
 [init]
 	defaultBranch = main
 [mergetool]
-	prompt = false
+    prompt = false
 [includeIf "gitdir:~/src/wb/"]
     path = ~/src/wb/.gitconfig
 [includeIf "gitdir:~/src/me/"]
