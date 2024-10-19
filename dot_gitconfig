@@ -19,6 +19,7 @@
     dft = difftool
     fza = "!git ls-files -m -o --exclude-standard | fzf -m --print0 --preview \"git diff {1}\" | xargs -0 git add"
     rb = "!git reflog | egrep -io \"moving from ([^[:space:]]+)\" | awk '{ print $3 }' | awk ' !x[$0]++' | egrep -v '^[a-f0-9]{40}$' | fzf | xargs git checkout"
+    bb = !~/bin/better_branch.sh
 [core]
 	excludesfile = /Users/johno/.gitignore_global
 	autocrlf = false
