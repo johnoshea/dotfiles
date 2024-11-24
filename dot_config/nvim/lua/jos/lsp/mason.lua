@@ -10,7 +10,6 @@ local servers = {
   "gopls",
   "lemminx", -- xml
   "marksman", -- markdown
-  "ruff_lsp",
   "sqlls",
   -- "tailwindcss",
   "taplo", -- toml
