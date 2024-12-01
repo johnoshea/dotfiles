@@ -28,10 +28,10 @@ uv tool upgrade --all
 
 echo "*** Neovim"
 echo
-brew uninstall neovim && brew uninstall --ignore-dependencies luajit && brew install luajit && brew install --HEAD neovim
+brew uninstall neovim && brew uninstall --ignore-dependencies luajit && brew install luajit && brew install neovim
 brew cleanup
-nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-nvim -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'
+nvim --headless "+Lazy! sync" +qa
+nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'
 
 echo "*** Updating completions"
 echo

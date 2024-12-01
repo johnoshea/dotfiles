@@ -1,0 +1,5 @@
+-- local keymap = vim.keymap.set -- shorten function name
+-- local opts = { silent = true } -- silent keymap option
+--
+-- keymap("n", "q", ":close<cr>", opts) -- close on 'q'
+-- keymap("n", "<cr>", "<cr>", opts) -- set <cr> back to default behavior
