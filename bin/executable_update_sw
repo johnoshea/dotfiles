@@ -26,6 +26,10 @@ echo "*** uv"
 echo
 uv tool upgrade --all
 
+echo "*** zsh4humans"
+echo
+-z4h-cmd-update
+
 echo "*** Neovim"
 echo
 brew uninstall neovim && brew uninstall --ignore-dependencies luajit && brew install luajit && brew install neovim
