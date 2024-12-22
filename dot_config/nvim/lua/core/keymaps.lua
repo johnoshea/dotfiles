@@ -70,7 +70,7 @@ vim.cmd([[cabbrev help <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'vert h' : '
 -- Saving
 -- Save normal buffers on <CR> - use `:update` to only save when modified -
 -- also turn off search highlighting
-keymap("n", "<CR>", ":nohls<CR> | :update<CR>", opts)
+keymap("n", "<CR>", "<ESC>:update<CR> | :nohls<CR>", opts)
 
 -- Window movement
 -- Use <tab> to move between windows
