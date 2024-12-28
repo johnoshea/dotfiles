@@ -198,6 +198,7 @@ if which uv > /dev/null; then
 fi
 
 if which mise > /dev/null; then
+    eval "$(/opt/homebrew/bin/mise activate zsh)"
     source "${HOME}/.local/completions/_mise"
 fi
 
