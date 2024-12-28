@@ -39,7 +39,7 @@ return {
     --
     -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
     -- and elegantly composed help section, `:help lsp-vs-treesitter`
-    vim.lsp.set_log_level("off")
+    vim.lsp.set_log_level("error")
     -- and when you need it for debugging, switch it to vim.lsp.set_log_level("debug").
 
     --  This function gets run when an LSP attaches to a particular buffer.
