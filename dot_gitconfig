@@ -39,6 +39,9 @@
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow box
     # file-decoration-style = none
+    navigate = true  # use n and N to move between diff sections
+[merge]
+    conflictstyle = zdiff3
 [push]
     default = simple
     autoSetupRemote = true
