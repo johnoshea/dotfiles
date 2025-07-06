@@ -1,2 +1,0 @@
-0000000000000000000000000000000000000000 9e110406fa743b07ecc539c9b4ecab0e9bb50449 John O'Shea <john.m.oshea@gmail.com> 1503109341 -0600	fetch --no-prune --recurse-submodules-default on-demand --submodule-prefix modules/autosuggestions/external/: storing head
-9e110406fa743b07ecc539c9b4ecab0e9bb50449 ae4c344e829a7ecb465e14ef4e9cbc3a1d2d727b John O'Shea <john.m.oshea@gmail.com> 1508944588 +0100	fetch origin: fast-forward
