@@ -218,8 +218,6 @@ if which mise > /dev/null; then
     source "${HOME}/.local/completions/_mise"
 fi
 
-function gam() { "/Users/johno/bin/gam/gam" "$@" ; }
-
 # Yazi
 autoload -Uz yy
 
