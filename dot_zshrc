@@ -185,6 +185,11 @@ if which assh > /dev/null; then
     alias ssh="assh wrapper ssh"
 fi
 
+# Keep this before atuin, so atuin defines ctrl-r
+if which fzf > /dev/null; then
+    source "${HOME}/.local/completions/_fzf"
+fi
+
 if which atuin > /dev/null; then
     source "${HOME}/.local/completions/_atuin"
 fi
