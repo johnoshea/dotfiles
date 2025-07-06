@@ -34,6 +34,7 @@ vim.opt.shiftround = true -- always round to a multiple of 'shiftwidth'
 -- display
 vim.opt.cursorline = true -- highlight the current line
 vim.opt.inccommand = "split" -- preview substitutions live, as you type!
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
