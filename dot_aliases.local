@@ -18,9 +18,15 @@ alias plan='make plan'
 alias apply='make apply'
 
 # LLMs
-alias llm-sonnet='llm -m claude-3.5-sonnet'
-alias llm-gpt4='llm -m gpt-4-turbo'
+alias llm-install-plugins="llm install llm-openai-plugin llm-claude-3 llm-gemini llm-ollama llm-bedrock llm-openrouter"
+alias llm-list-plugins="llm plugins | jq -r '.[].name' | grep -v '^$'"
+alias llm-sonnet='llm -m claude-3.7-sonnet'
+alias llm-o1='llm -m o1'
+alias llm-o3-mini='llm -m o3-mini'
 alias llm-gpt4o='llm -m gpt-4o'
+alias llm-deepseek-7b='llm -m erwan2/DeepSeek-R1-Distill-Qwen-7B'
+alias llm-deepseek-14b='llm -m deepseek-r1:14b'
+alias llm-deepseek-32b='llm -m deepseek-r1:32b'
 
 # Aider
 ## Single-model aliases
