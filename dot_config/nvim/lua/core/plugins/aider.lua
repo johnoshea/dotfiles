@@ -2,8 +2,9 @@ return {
   "joshuavial/aider.nvim",
   config = function()
     require("aider").setup({
-      auto_manage_context = false,
-      default_bindings = false,
+      auto_manage_context = true,
+      default_bindings = true,
+      vim = true,
     })
   end,
 }
