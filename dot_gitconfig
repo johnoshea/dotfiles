@@ -20,6 +20,8 @@
     fza = "!git ls-files -m -o --exclude-standard | fzf -m --print0 --preview \"git diff {1}\" | xargs -0 git add"
     rb = "!git reflog | egrep -io \"moving from ([^[:space:]]+)\" | awk '{ print $3 }' | awk ' !x[$0]++' | egrep -v '^[a-f0-9]{40}$' | fzf | xargs git checkout"
     bb = !~/bin/better_branch.sh
+    ad = difftool --tool=araxis --dir-diff
+    ads = difftool --tool=araxis --dir-diff --staged
 [core]
 	excludesfile = /Users/johno/.gitignore_global
 	autocrlf = false
@@ -40,7 +42,10 @@
     file-style = bold yellow box
     # file-decoration-style = none
     navigate = true  # use n and N to move between diff sections
+[diff]
+    tool = araxis
 [merge]
+    tool = araxis
     conflictstyle = zdiff3
 [push]
     default = simple
@@ -51,12 +56,8 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
-[diff]
-    external = difft
 [difftool]
 	prompt = false
-[difftool "difftastic"]
-    cmd = difft --display json "$LOCAL" "$REMOTE"
 [pager]
     difftool = true
 [filter "lfs"]
