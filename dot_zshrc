@@ -131,8 +131,6 @@ EXTRA_PATHS=(
     /usr/local/opt/coreutils/libexec/gnubin
     /Library/Developer/Toolchains/swift-latest.xctoolchain
     ${HOME}/.cargo/bin
-    ${HOME}/.node/bin
-    ${GOPATH}/bin
     /usr/local/opt/sqlite/bin
     /Applications/PyCharm.app/Contents/MacOS
 )
