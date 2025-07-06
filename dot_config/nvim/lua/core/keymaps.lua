@@ -105,3 +105,12 @@ keymap("c", "<C-c>", "<ESC>", opts)
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 keymap("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- Toggle diagnostics
+keymap("n", "<leader>dt", function()
+  if vim.diagnostic.is_enabled() then
+    vim.diagnostic.enable(false)
+  else
+    vim.diagnostic.enable()
+  end
+end, { desc = "Toggle diagnostics" })
