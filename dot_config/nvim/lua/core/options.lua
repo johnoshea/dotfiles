@@ -56,6 +56,7 @@ VOL = vim.opt.listchars
 VOL = "tab:» ,extends:›,precedes:‹" -- Use better looking listchars
 VOL = VOL .. ",trail:·,nbsp:␣,eol:↲,conceal:┊"
 vim.opt.showbreak = "↪  " -- Show ↪ at the beginning of wrapped lines
+vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 vim.opt.shortmess:append("c") -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
 vim.opt.whichwrap:append("<,>,[,],h,l") -- keys allowed to move to the previous/next line when the beginning/end of line is reached
