@@ -4,11 +4,6 @@ CURRENT_DIR=$(pwd)
 INSTALLED_CONFIG=${HOME}/.local/personal_config
 mkdir -p "${INSTALLED_CONFIG}"
 
-echo "*** App Store programs"
-echo
-sudo mas outdated
-sudo mas upgrade
-
 echo "*** Homebrew"
 echo
 rm -f "${INSTALLED_CONFIG}/homebrew_packages"
@@ -26,19 +21,7 @@ echo "*** uv"
 echo
 uv tool upgrade --all
 
-echo "*** zsh4humans"
 echo
-# Include the z4h function definition so we don't get an error
-# when we call it
-z4h () {
-        if (( ${+functions[-z4h-cmd-${1-}]} ))
-        then
-                -z4h-cmd-"$1" "${@:2}"
-        else
-                return 1
-        fi
-}
-z4h update
 
 echo "*** Neovim"
 echo
