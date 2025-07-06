@@ -218,8 +218,6 @@ if which mise > /dev/null; then
     source "${HOME}/.local/completions/_mise"
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 function gam() { "/Users/johno/bin/gam/gam" "$@" ; }
 
 # Yazi
