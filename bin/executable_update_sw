@@ -58,3 +58,9 @@ fi
 echo "*** tmux plugins"
 echo
 "${HOME}/.tmux/plugins/tpm/bin/update_plugins" all
+
+echo "*** zsh4humans"
+echo
+echo "Remember to run 'z4h update'"
+
+
