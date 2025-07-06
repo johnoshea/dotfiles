@@ -32,6 +32,15 @@ return { -- Autoformat
     end,
     formatters_by_ft = {
       lua = { "stylua" },
+      python = { "ruff format" },
+      javascript = { "biome" },
+      json = { "biome" },
+      yaml = { "prettier" },
+      html = { "prettier" },
+      css = { "prettier" },
+      markdown = { "markdownlint-cli2" },
+      hcl = { "hclfmt" },
+      django = { "djlint" },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
