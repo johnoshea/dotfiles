@@ -28,6 +28,9 @@ alias llm-deepseek-7b='llm -m erwan2/DeepSeek-R1-Distill-Qwen-7B'
 alias llm-deepseek-14b='llm -m deepseek-r1:14b'
 alias llm-deepseek-32b='llm -m deepseek-r1:32b'
 
+# Claude
+alias claude="/Users/johno/.claude/local/claude"
+
 # Aider
 ## Single-model aliases
 alias aider-deepseek-r1="aider --model openrouter/deepseek/deepseek-r1 --vim --dark-mode"
