@@ -225,6 +225,9 @@ function gam() { "/Users/johno/bin/gam/gam" "$@" ; }
 # Yazi
 autoload -Uz yy
 
+# dv
+autoload -Uz dv
+
 # Expands .... to ../..
 function expand-dot-to-parent-directory-path {
   if [[ $LBUFFER = *.. ]]; then
