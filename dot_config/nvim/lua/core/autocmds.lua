@@ -38,6 +38,14 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
   end,
 })
 
+-- don't run mini.ai in fugitive buffers (keymaps clash)
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "fugitive" },
+  callback = function()
+    vim.b.miniai_disable = true
+  end,
+})
+
 -- resize splits if the nvim/terminal window is resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   callback = function()
