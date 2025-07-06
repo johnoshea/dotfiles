@@ -23,12 +23,20 @@ alias llm-gpt4='llm -m gpt-4-turbo'
 alias llm-gpt4o='llm -m gpt-4o'
 
 # Aider
-alias aider-gpt4o="aider --vim --dark-mode"
-alias aider-o1-mini="aider --o1-mini --vim --dark-mode"
-alias aider-o1-preview="aider --o1-preview --vim --dark-mode"
-alias aider-opus="aider --opus --cache-prompts --vim --dark-mode"
-alias aider-sonnet="aider --sonnet --cache-prompts --vim --dark-mode"
-alias aider-o1-architect="aider --o1-preview --architect --editor-model claude-3-5-sonnet-20240620 --vim --dark-mode"
+## Single-model aliases
+alias aider-deepseek-r1="aider --model openrouter/deepseek/deepseek-r1 --vim --dark-mode"
+alias aider-o4-mini="aider --model o4-mini --reasoning-effort high --vim --dark-mode"
+alias aider-o3="aider --model o3 --no-stream--vim --dark-mode"
+alias aider-sonnet="aider --model claude-3-7-sonnet-latest --thinking-tokens 32768 --cache-prompts --vim --dark-mode"
+alias aider-opus="aider --model claude-4-opus-20250514 --cache-prompts --vim --dark-mode --notifications --no-gitignore"
+alias aider-gemini="aider --model gemini/gemini-2.5-pro-preview-03-25 --edit-format udiff-simple --cache-prompts --vim --dark-mode"
+## Architect aliases
+alias aaider-deepseek-r1="aider --model openrouter/deepseek/deepseek-r1 --architect --editor-model claude-3-5-sonnet-latest --cache-prompts --vim --dark-mode"
+alias aaider-o3="aider --model o3 --architect --no-stream --vim --dark-mode"
+alias aaider-o3-sonnet="aider --model o3 --architect --no-stream --editor-model claude-3-7-sonnet-latest --cache-prompts --vim --dark-mode"
+alias aaider-sonnet="aider --model claude-3-7-sonnet-latest --architect --thinking-tokens 32768 --editor-model claude-3-5-sonnet-latest --cache-prompts --vim --dark-mode"
+alias aaider-opus="aider --model claude-4-opus-20250514 --architect --editor-model claude-3-5-sonnet-latest --cache-prompts --vim --dark-mode --notifications --no-gitignore"
+alias aaider-gemini="aider --model gemini/gemini-2.5-pro-preview-03-25 --architect --editor-model claude-3-5-sonnet-latest --cache-prompts --vim --dark-mode"
 
 # Chezmoi
 alias cm="chezmoi"
