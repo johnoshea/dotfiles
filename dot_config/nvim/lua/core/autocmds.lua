@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = { ".env", ".secrets.toml" },
   callback = function(args)
-    vim.diagnostic.enable(false, args.buf)
+    vim.diagnostic.enable(false, { bufnr = args.buf })
   end,
 })
 
@@ -71,3 +71,12 @@ vim.api.nvim_create_autocmd(
   { "InsertEnter", "WinLeave" },
   { pattern = "*", command = "set nocursorline", group = cursorGrp }
 )
+
+-- set up folding after LSP attaches
+vim.api.nvim_create_autocmd("LspNotify", {
+  callback = function(args)
+    if args.data.method == "textDocument/didOpen" then
+      vim.lsp.foldclose("imports", vim.fn.bufwinid(args.buf))
+    end
+  end,
+})
