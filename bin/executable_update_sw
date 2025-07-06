@@ -38,6 +38,9 @@ rm -f "${HOME}/.cache/zcompcache*"
 if [[ ! -d "${HOME}/.local/completions" ]]; then
     mkdir -p "${HOME}/.local/completions"
 fi
+if which fzf > /dev/null; then
+    fzf --zsh >! "${HOME}/.local/completions/_fzf"
+fi
 if which atuin > /dev/null; then
     atuin init zsh >! "${HOME}/.local/completions/_atuin"
 fi
@@ -46,6 +49,7 @@ if which zoxide > /dev/null; then
 fi
 if which uv > /dev/null; then
     uv generate-shell-completion zsh >! "${HOME}/.local/completions/_uv"
+    uvx --generate-shell-completion zsh >! "${HOME}/.local/completions/_uvx"
 fi
 if which mise > /dev/null; then
     mise activate zsh >! "${HOME}/.local/completions/_mise"
