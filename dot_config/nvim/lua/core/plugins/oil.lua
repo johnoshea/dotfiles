@@ -12,6 +12,9 @@ return {
       keymaps = {
         ["<Esc>"] = "actions.close",
       },
+      win_options = {
+        signcolumn = "auto:2",
+      },
     })
     vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", { desc = "Open parent directory" })
   end,
