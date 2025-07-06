@@ -125,6 +125,7 @@ path=(
 )
 
 EXTRA_PATHS=(
+    ${HOME}/.claude/local
     ${HOME}/bin/dockerized/bin
     /opt/homebrew/opt/ssh-copy-id/bin
     ${HOME}/.local/bin
@@ -133,6 +134,7 @@ EXTRA_PATHS=(
     ${HOME}/.cargo/bin
     /usr/local/opt/sqlite/bin
     /Applications/PyCharm.app/Contents/MacOS
+    /Applications/Araxis\ Merge.app/Contents/Utilities
 )
 for EXTRA_PATH in $EXTRA_PATHS; do
   if [[ -d $EXTRA_PATH ]]; then
