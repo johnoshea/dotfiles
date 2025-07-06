@@ -21,6 +21,7 @@ return {
     keymap("n", "<leader>fc", ":Gcommit %<CR>", createOpts({ desc = "[f]ugitive [c]ommit" }))
     keymap("n", "<leader>fD", ":Git difftool<CR>", createOpts({ desc = "[f]ugitive [D]ifftool" }))
     keymap("n", "<leader>fv", ":Gvdiffsplit<CR>", createOpts({ desc = "[f]ugitive [v] Gvdiffsplit" }))
+    keymap("n", "<leader>fV", ":Gvdiffsplit!<CR>", createOpts({ desc = "[f]ugitive [V] Gvdiffsplit!" }))
     keymap("n", "<leader>fd", ":Gdiffsplit<CR>", createOpts({ desc = "[f]ugitive [d]iffsplit" }))
     keymap("n", "<leader>fo", ":windo diffoff<CR> | :only<CR>", createOpts({ desc = "[f]ugitive diff[o]ff" }))
     keymap("n", "<leader>fM", ":Git mergetool<CR>", createOpts({ desc = "[f]ugitive [M]ergetool" }))
