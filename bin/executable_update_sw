@@ -21,7 +21,9 @@ echo "*** uv"
 echo
 uv tool upgrade --all
 
+echo "*** Claude Code"
 echo
+${HOME}/.claude/local/claude update
 
 echo "*** Neovim"
 echo
