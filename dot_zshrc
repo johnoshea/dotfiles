@@ -243,3 +243,4 @@ bindkey -M viins "^ " glob-alias
 bindkey -M viins "^F" vi-forward-word
 bindkey -M viins "^E" vi-add-eol
 bindkey -M viins "." expand-dot-to-parent-directory-path
+bindkey -M viins "^X^E" edit-command-line
