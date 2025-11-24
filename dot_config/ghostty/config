@@ -48,3 +48,8 @@ confirm-close-surface = false
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+
+font-family = "Berkeley Mono"
+# font-family = "JetBrainsMono NFM"
+
+font-size = 14
