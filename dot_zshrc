@@ -135,6 +135,8 @@ EXTRA_PATHS=(
     /usr/local/opt/sqlite/bin
     /Applications/PyCharm.app/Contents/MacOS
     /Applications/Araxis\ Merge.app/Contents/Utilities
+    ${HOME}/src/wb/google-cloud-sdk/bin
+    ${HOME}/bin/gam7
 )
 for EXTRA_PATH in $EXTRA_PATHS; do
   if [[ -d $EXTRA_PATH ]]; then
@@ -216,6 +218,11 @@ fi
 if which mise > /dev/null; then
     eval "$(/opt/homebrew/bin/mise activate zsh)"
     source "${HOME}/.local/completions/_mise"
+fi
+
+# Google Cloud SDK
+if [ -f "${HOME}/src/wb/google-cloud-sdk/completion.zsh.inc" ]; then
+    . "${HOME}/src/wb/google-cloud-sdk/completion.zsh.inc"
 fi
 
 # Yazi
