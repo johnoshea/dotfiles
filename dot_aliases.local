@@ -8,7 +8,7 @@ alias cat='bat'
 alias ping='prettyping --nolegend -c 5'
 
 # Use fzf to preview files (using 'bat')
-alias show="fzf --preview 'bat --color \"always\" -- {}'"
+alias show="fzf --preview 'bat --color \"always\" -- {}' --tmux=80%"
 
 # Use 'lsd' for ls
 alias ls='lsd --git --icon=never'
@@ -35,7 +35,7 @@ alias g='git'
 alias gb='git branch'
 alias gba='git branch --all --verbose'
 alias gbc='git checkout -b'
-alias gbd='git branch --delete'
+alias gbd="git branch | fzf -m | xargs git branch -D"
 alias gbD='git branch --delete --force'
 alias gbl='git branch --verbose'
 alias gbL='git branch --all --verbose'
