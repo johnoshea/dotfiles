@@ -277,6 +277,7 @@ alias ping1k='ping -c 1000 '
 # Neovim
 alias vi='nvim'
 alias nvd='nvim -d'
+alias nvim='sidekick neovim'
 
 # Frogmouth
 alias fm='frogmouth'
