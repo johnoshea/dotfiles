@@ -19,7 +19,10 @@ cargo install-update -a
 
 echo "*** uv"
 echo
+uv python upgrade
 uv tool upgrade --all
+uv cache prune
+
 
 echo "*** Claude Code"
 echo
