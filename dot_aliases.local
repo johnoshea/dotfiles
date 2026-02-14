@@ -22,22 +22,6 @@ alias llm-install-plugins="llm install llm-openai-plugin llm-anthropic llm-gemin
 alias llm-list-plugins="llm plugins | jq -r '.[].name' | grep -v '^$'"
 # Claude
 alias claude="/Users/johno/.claude/local/claude"
-
-# Aider
-## Single-model aliases
-alias aider-deepseek-r1="aider --model openrouter/deepseek/deepseek-r1 --vim --dark-mode"
-alias aider-o4-mini="aider --model o4-mini --reasoning-effort high --vim --dark-mode"
-alias aider-o3="aider --model o3 --no-stream--vim --dark-mode"
-alias aider-sonnet="aider --model claude-3-7-sonnet-latest --thinking-tokens 32768 --cache-prompts --vim --dark-mode"
-alias aider-opus="aider --model claude-4-opus-20250514 --cache-prompts --vim --dark-mode --notifications --no-gitignore"
-alias aider-gemini="aider --model gemini/gemini-2.5-pro-preview-03-25 --edit-format udiff-simple --cache-prompts --vim --dark-mode"
-## Architect aliases
-alias aaider-deepseek-r1="aider --model openrouter/deepseek/deepseek-r1 --architect --editor-model claude-3-5-sonnet-latest --cache-prompts --vim --dark-mode"
-alias aaider-o3="aider --model o3 --architect --no-stream --vim --dark-mode"
-alias aaider-o3-sonnet="aider --model o3 --architect --no-stream --editor-model claude-3-7-sonnet-latest --cache-prompts --vim --dark-mode"
-alias aaider-sonnet="aider --model claude-3-7-sonnet-latest --architect --thinking-tokens 32768 --editor-model claude-3-5-sonnet-latest --cache-prompts --vim --dark-mode"
-alias aaider-opus="aider --model claude-4-opus-20250514 --architect --editor-model claude-3-5-sonnet-latest --cache-prompts --vim --dark-mode --notifications --no-gitignore"
-alias aaider-gemini="aider --model gemini/gemini-2.5-pro-preview-03-25 --architect --editor-model claude-3-5-sonnet-latest --cache-prompts --vim --dark-mode"
 alias llm-sonnet='llm -m claude-sonnet-4.5'
 alias llm-opus='llm -m claude-opus-4.5'
 alias llm-gemini='llm -m gemini-3-pro-preview'
