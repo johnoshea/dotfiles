@@ -22,6 +22,7 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
 
     -- Add your own debuggers here
+    "mfussenegger/nvim-dap-python",
     "leoluz/nvim-dap-go",
   },
   keys = {
