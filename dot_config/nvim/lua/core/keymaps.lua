@@ -114,3 +114,7 @@ keymap("n", "<leader>dt", function()
     vim.diagnostic.enable()
   end
 end, { desc = "Toggle diagnostics" })
+
+-- leap
+keymap("n", "s", "<Plug>(leap)")
+keymap("n", "S", "<Plug>(leap-from-window)")
