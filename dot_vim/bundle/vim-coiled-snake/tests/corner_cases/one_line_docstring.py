@@ -1,3 +1,0 @@
-class Foo:
-    """Docstring"""
-    pass

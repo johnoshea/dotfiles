@@ -1,3 +1,0 @@
-@bar
-def foo():
-    pass

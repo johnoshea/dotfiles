@@ -1,3 +1,0 @@
-source vimrc
-
-let g:coiled_snake_foldtext_flags = []

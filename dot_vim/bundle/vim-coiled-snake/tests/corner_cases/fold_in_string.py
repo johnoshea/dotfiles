@@ -1,6 +1,0 @@
-"""
-Docstring
-
-def foo():
-    pass
-"""
