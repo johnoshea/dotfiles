@@ -57,21 +57,22 @@ call s:SetGlobalOptDefault('table_mode_sort_map', g:table_mode_map_prefix.'s')
 call s:SetGlobalOptDefault('table_mode_tableize_map', g:table_mode_map_prefix.'t')
 call s:SetGlobalOptDefault('table_mode_tableize_d_map', '<Leader>T')
 
+call s:SetGlobalOptDefault('table_mode_syntax_dict', {
+\   'contains': 'TableBorder,TableSeparator,TableColumnAlign,' .
+\               'yesCell,noCell,maybeCell,redCell,greenCell,yellowCell,blueCell,whiteCell,darkCell',
+\   'containedin': 'ALL'
+\})
+
 call s:SetGlobalOptDefault('table_mode_syntax', 1)
 call s:SetGlobalOptDefault('table_mode_auto_align', 1)
 call s:SetGlobalOptDefault('table_mode_update_time', 500)
 call s:SetGlobalOptDefault('table_mode_tableize_auto_border', 0)
-
-function! s:TableEchoCell() "{{{1
-  if tablemode#table#IsRow('.')
-    echomsg '$' . tablemode#spreadsheet#RowNr('.') . ',' . tablemode#spreadsheet#ColumnNr('.')
-  endif
-endfunction
-
-" Define Commands & Mappings {{{1
+call s:SetGlobalOptDefault('table_mode_ignore_align', 0)
 
 if !g:table_mode_always_active "{{{2
-  exec "nnoremap <silent>" g:table_mode_map_prefix . g:table_mode_toggle_map ":<C-U>call tablemode#Toggle()<CR>"
+  if !g:table_mode_disable_mappings
+    exec "nnoremap <silent>" g:table_mode_map_prefix . g:table_mode_toggle_map ":<C-U>call tablemode#Toggle()<CR>"
+  endif
   command! -nargs=0 TableModeToggle call tablemode#Toggle()
   command! -nargs=0 TableModeEnable call tablemode#Enable()
   command! -nargs=0 TableModeDisable call tablemode#Disable()
@@ -113,7 +114,7 @@ nnoremap <silent> <Plug>(table-mode-insert-column-after) :<C-U>call tablemode#sp
 nnoremap <silent> <Plug>(table-mode-add-formula) :call tablemode#spreadsheet#formula#Add()<CR>
 nnoremap <silent> <Plug>(table-mode-eval-formula) :call tablemode#spreadsheet#formula#EvaluateFormulaLine()<CR>
 
-nnoremap <silent> <Plug>(table-mode-echo-cell) :call <SID>TableEchoCell()<CR>
+nnoremap <silent> <Plug>(table-mode-echo-cell) :call tablemode#spreadsheet#EchoCell()<CR>
 
 nnoremap <silent> <Plug>(table-mode-sort) :call tablemode#spreadsheet#Sort('')<CR>
 

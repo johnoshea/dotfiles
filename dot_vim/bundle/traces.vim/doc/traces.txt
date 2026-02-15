@@ -16,6 +16,7 @@ CONTENTS					*traces-contents*
 				|g:traces_search_timeout|
 				|g:traces_preview_window|
 				|g:traces_abolish_integration|
+				|g:traces_normal_preview|
 4. Highlights		|traces-highlights|
 				|hl-TracesSearch|
 				|hl-TracesReplace|
@@ -52,6 +53,7 @@ Live preview is implemented for the following Ex commands:
   |:substitute|
   |:smagic|
   |:snomagic|
+  |:normal|
 
 ==============================================================================
 REQUIREMENTS					*traces-requirements*
@@ -61,8 +63,6 @@ Vim 8.1
 or
 
 Neovim 0.2.3
-  - Note: this plugin is not compatible with |inccommand|, please turn it
-    off if you want to use this plugin
 
 ==============================================================================
 OPTIONS 					*traces-options*
@@ -139,10 +139,19 @@ g:traces_preview_window string (default empty)
                   let g:traces_preview_window =
                         \ "winwidth('%') > 160 ? 'bot vnew' : 'bot 10new'"
 <
-
                                                 *g:traces_abolish_integration*
 g:traces_abolish_integration boolean (default 0)
                 If value is 1, |:Subvert| from abolish.vim will be previewed.
+
+                                                *g:traces_normal_preview*
+g:traces_normal_preview boolean (default 0)
+                WARNING: experimental, unstable
+                The following actions performed during the preview might break
+                the preview or lose the undo history.
+                  - opening, closing or switching buffers or windows
+
+                If value is 1, |:normal| will be previewed.
+                Requires patch 8.2.2961 on Vim.
 
 ==============================================================================
 HIGHLIGHTS					*traces-highlights*

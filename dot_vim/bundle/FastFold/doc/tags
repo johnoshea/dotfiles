@@ -10,6 +10,7 @@ fastfold-intro	FastFold.txt	/*fastfold-intro*
 g:fastfold_fdmhook	FastFold.txt	/*g:fastfold_fdmhook*
 g:fastfold_fold_command_suffixes	FastFold.txt	/*g:fastfold_fold_command_suffixes*
 g:fastfold_fold_movement_commands	FastFold.txt	/*g:fastfold_fold_movement_commands*
+g:fastfold_foldmethods	FastFold.txt	/*g:fastfold_foldmethods*
 g:fastfold_force	FastFold.txt	/*g:fastfold_force*
 g:fastfold_minlines	FastFold.txt	/*g:fastfold_minlines*
 g:fastfold_savehook	FastFold.txt	/*g:fastfold_savehook*

@@ -5,6 +5,7 @@
 :MatchupWhereAmI	matchup.txt	/*:MatchupWhereAmI*
 :NoMatchParen	matchup.txt	/*:NoMatchParen*
 <plug>(matchup-hi-surround)	matchup.txt	/*<plug>(matchup-hi-surround)*
+MatchupVirtualText	matchup.txt	/*MatchupVirtualText*
 Na%	matchup.txt	/*Na%*
 Ni%	matchup.txt	/*Ni%*
 [%	matchup.txt	/*[%*
@@ -37,6 +38,7 @@ g:matchup_matchparen_deferred_fade_time	matchup.txt	/*g:matchup_matchparen_defer
 g:matchup_matchparen_deferred_hide_delay	matchup.txt	/*g:matchup_matchparen_deferred_hide_delay*
 g:matchup_matchparen_deferred_show_delay	matchup.txt	/*g:matchup_matchparen_deferred_show_delay*
 g:matchup_matchparen_enabled	matchup.txt	/*g:matchup_matchparen_enabled*
+g:matchup_matchparen_end_sign	matchup.txt	/*g:matchup_matchparen_end_sign*
 g:matchup_matchparen_hi_background	matchup.txt	/*g:matchup_matchparen_hi_background*
 g:matchup_matchparen_hi_surround_always	matchup.txt	/*g:matchup_matchparen_hi_surround_always*
 g:matchup_matchparen_insert_timeout	matchup.txt	/*g:matchup_matchparen_insert_timeout*
@@ -57,6 +59,12 @@ g:matchup_surround_enabled	matchup.txt	/*g:matchup_surround_enabled*
 g:matchup_text_obj_enabled	matchup.txt	/*g:matchup_text_obj_enabled*
 g:matchup_text_obj_linewise_operators	matchup.txt	/*g:matchup_text_obj_linewise_operators*
 g:matchup_transmute_enabled	matchup.txt	/*g:matchup_transmute_enabled*
+g:matchup_treesitter_disable_virtual_text	matchup.txt	/*g:matchup_treesitter_disable_virtual_text*
+g:matchup_treesitter_disabled	matchup.txt	/*g:matchup_treesitter_disabled*
+g:matchup_treesitter_enable_quotes	matchup.txt	/*g:matchup_treesitter_enable_quotes*
+g:matchup_treesitter_enabled	matchup.txt	/*g:matchup_treesitter_enabled*
+g:matchup_treesitter_include_match_words	matchup.txt	/*g:matchup_treesitter_include_match_words*
+g:matchup_treesitter_stopline	matchup.txt	/*g:matchup_treesitter_stopline*
 i%	matchup.txt	/*i%*
 match-up	matchup.txt	/*match-up*
 matchup	matchup.txt	/*matchup*
@@ -87,6 +95,7 @@ matchup-options	matchup.txt	/*matchup-options*
 matchup-opts-matchparen	matchup.txt	/*matchup-opts-matchparen*
 matchup-overview	matchup.txt	/*matchup-overview*
 matchup-patch	matchup.txt	/*matchup-patch*
+matchup-treesitter	matchup.txt	/*matchup-treesitter*
 matchup-usage	matchup.txt	/*matchup-usage*
 matchup.txt	matchup.txt	/*matchup.txt*
 open-to-close-block	matchup.txt	/*open-to-close-block*
@@ -94,4 +103,5 @@ v_Na%	matchup.txt	/*v_Na%*
 v_Ni%	matchup.txt	/*v_Ni%*
 v_a%	matchup.txt	/*v_a%*
 v_i%	matchup.txt	/*v_i%*
+vim-matchup	matchup.txt	/*vim-matchup*
 z%	matchup.txt	/*z%*

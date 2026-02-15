@@ -1,11 +1,25 @@
 " textobj object - search & select a sandwiched text
 
 " variables "{{{
+function! s:SID() abort
+  return matchstr(expand('<sfile>'), '<SNR>\zs\d\+\ze_SID$')
+endfunction
+let s:SNR = printf("\<SNR>%s_", s:SID())
+delfunction s:SID
+
+nnoremap <SID>(v) v
+nnoremap <SID>(V) V
+nnoremap <SID>(CTRL-v) <C-v>
+
+let s:KEY_v = printf('%s(v)', s:SNR)
+let s:KEY_V = printf('%s(V)', s:SNR)
+let s:KEY_CTRL_v = printf('%s(CTRL-v)', s:SNR)
+
 " null valiables
 let s:null_coord = [0, 0]
 
 " common functions
-let s:lib = textobj#sandwich#lib#get()
+let s:lib = textobj#sandwich#lib#import()
 "}}}
 
 function! textobj#sandwich#textobj#new(kind, a_or_i, mode, count, recipes, opt) abort  "{{{
@@ -268,9 +282,9 @@ function! s:textobj._get_region(sandwich, stimeoutlen) dict abort "{{{
     let v = self.visual.mode
   else
     let cmd = 'normal'
-    let v = self.visual.mode ==# 'v' ? "\<Plug>(sandwich-v)" :
-          \ self.visual.mode ==# 'V' ? "\<Plug>(sandwich-V)" :
-          \ "\<Plug>(sandwich-CTRL-v)"
+    let v = self.visual.mode ==# 'v' ? s:KEY_v :
+          \ self.visual.mode ==# 'V' ? s:KEY_V :
+          \ s:KEY_CTRL_v
   endif
 
   if self.mode ==# 'x'
@@ -372,7 +386,8 @@ function! s:textobj.elect(candidates) dict abort "{{{
   let elected = {}
   if len(a:candidates) >= self.count
     " election
-    let map_rule = 'extend(v:val, {"len": s:get_buf_length(v:val.coord.inner_head, v:val.coord.inner_tail)})'
+    let cursor = self.cursor
+    let map_rule = 'extend(v:val, {"len": s:representative_length(v:val.coord, cursor)})'
     call map(a:candidates, map_rule)
     call s:lib.sort(a:candidates, function('s:compare_buf_length'), self.count)
     let elected = a:candidates[self.count - 1]
@@ -557,6 +572,15 @@ function! s:is_equal_or_ahead(coord1, coord2) abort  "{{{
   return a:coord1[0] > a:coord2[0] || (a:coord1[0] == a:coord2[0] && a:coord1[1] >= a:coord2[1])
 endfunction
 "}}}
+function! s:representative_length(coord, cursor) abort "{{{
+  let inner_head = a:coord.inner_head
+  let inner_tail = a:coord.inner_tail
+  if s:is_in_between(a:cursor, inner_head, inner_tail)
+    return s:get_buf_length(inner_head, inner_tail)
+  else
+    return s:get_buf_length(a:coord.head, a:coord.tail)
+  endif
+endfunction "}}}
 function! s:compare_buf_length(i1, i2) abort  "{{{
   return a:i1.len - a:i2.len
 endfunction

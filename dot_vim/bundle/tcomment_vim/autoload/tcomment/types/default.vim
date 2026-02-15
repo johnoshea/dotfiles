@@ -1,8 +1,8 @@
 " @Author:      Tom Link (mailto:micathom AT gmail com?subject=[vim])
 " @Website:     https://github.com/tomtom
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
-" @Last Change: 2021-03-29
-" @Revision:    35
+" @Last Change: 2022-12-07
+" @Revision:    36
 
 call tcomment#type#Define('aap',              '# %s'             )
 call tcomment#type#Define('ada',              '-- %s'            )
@@ -54,6 +54,7 @@ call tcomment#type#Define('css_inline',       g:tcomment#inline_fmt_c  )
 call tcomment#type#Define('cucumber',         '# %s'             )
 call tcomment#type#Define('cuda',             tcomment#GetLineC('// %s'))
 call tcomment#type#Define('cypher',           '// %s'            )
+call tcomment#type#Define('dart',             '// %s'            )
 call tcomment#type#Define('debcontrol',       '# %s'             )
 call tcomment#type#Define('debsources',       '# %s'             )
 call tcomment#type#Define('desktop',          '# %s'             )
@@ -80,6 +81,7 @@ call tcomment#type#Define('form',             {'commentstring': '* %s', 'col': 1
 call tcomment#type#Define('forth',            '\ %s'             )
 call tcomment#type#Define('fsharp',           '// %s'            )
 call tcomment#type#Define('fstab',            '# %s'             )
+call tcomment#type#Define('gdscript',         '# %s'             )
 call tcomment#type#Define('gitconfig',        '# %s'             )
 call tcomment#type#Define('gitcommit',        '# %s'             )
 call tcomment#type#Define('gitignore',        '# %s'             )
@@ -147,6 +149,7 @@ call tcomment#type#Define('markdown.pandoc_block', "<!---%s--->\n  ")
 call tcomment#type#Define('matlab',           '%% %s'            )
 call tcomment#type#Define('matlab_block',     '%%{%s%%}'         )
 call tcomment#type#Define('meson',            '# %s'             )
+call tcomment#type#Define('mojo',             '# %s'            )
 call tcomment#type#Define('monkey',           ''' %s'            )
 call tcomment#type#Define('msidl',            '// %s'            )
 call tcomment#type#Define('msidl_block',      g:tcomment#block_fmt_c   )
@@ -155,6 +158,7 @@ call tcomment#type#Define('named_block',      g:tcomment#block_fmt_c   )
 call tcomment#type#Define('nginx',            '# %s'             )
 call tcomment#type#Define('nim',              '# %s'             )
 call tcomment#type#Define('nix',              '# %s'             )
+call tcomment#type#Define('nix_inline',       g:tcomment#inline_fmt_c  )
 call tcomment#type#Define('nroff',            '.\" %s'           )
 call tcomment#type#Define('noweb',            '%% %s'            )
 call tcomment#type#Define('nsis',             '# %s'             )
@@ -269,6 +273,7 @@ call tcomment#type#Define('typescript.tsx_block', g:tcomment#block_fmt_c   )
 call tcomment#type#Define('typescript.tsx_inline', g:tcomment#inline_fmt_c )
 call tcomment#type#Define('typoscript',       '# %s'             )
 call tcomment#type#Define('upstart',          '# %s'             )
+call tcomment#type#Define('unison',           '-- %s'            )
 call tcomment#type#Define('vader',            {'col': 1, 'commentstring': '" %s' })
 call tcomment#type#Define('vhdl',             '-- %s'            )
 call tcomment#type#Define('verilog',          '// %s'            )
@@ -281,7 +286,7 @@ call tcomment#type#Define('viki',             '%% %s'            )
 call tcomment#type#Define('viki_3',           '%%%%%% %s'        )
 call tcomment#type#Define('viki_inline',      '{cmt: %s}'        )
 call tcomment#type#Define('vim',              {'choose': [
-      \ {'if': 'search(''^\s*vim9script\s*$'', "bcnW") ||' .
+      \ {'if': 'search(''^\s*:\?vim9script\>'', "bcnW") ||' .
       \        'getline(search(''^\s*\%(fu\%[nction]\|def\)\>'', ''bcnWz'')) =~# ''^\s*def\>'' && search(''^\s*def\>'', ''bcnWz'') < line("''[")',
       \  'commentstring': '# %s'},
       \ {'commentstring': '" %s'}],

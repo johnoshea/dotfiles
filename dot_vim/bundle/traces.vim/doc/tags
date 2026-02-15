@@ -1,5 +1,6 @@
 g:traces_abolish_integration	traces.txt	/*g:traces_abolish_integration*
 g:traces_enabled	traces.txt	/*g:traces_enabled*
+g:traces_normal_preview	traces.txt	/*g:traces_normal_preview*
 g:traces_num_range_preview	traces.txt	/*g:traces_num_range_preview*
 g:traces_preserve_view_state	traces.txt	/*g:traces_preserve_view_state*
 g:traces_preview_window	traces.txt	/*g:traces_preview_window*

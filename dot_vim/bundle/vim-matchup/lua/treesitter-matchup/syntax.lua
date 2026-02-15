@@ -1,23 +1,60 @@
-if not pcall(require, 'nvim-treesitter') then
-  return {
-    is_active = function() return false end,
-    synID = function(lnum, col, transparent)
-      return vim.fn.synID(lnum, col, transparent)
-    end
-  }
-end
-
 local api = vim.api
+local vts = vim.treesitter
 local hl_info = require'treesitter-matchup.third-party.hl-info'
+local internal = require'treesitter-matchup.internal'
 
 local M = {}
 
+---@param bufnr integer?
+---@return boolean
 function M.is_active(bufnr)
   bufnr = bufnr or api.nvim_get_current_buf()
   return (hl_info.active()
-    and api.nvim_buf_get_option(bufnr, 'syntax') == '')
+    and vim.bo[bufnr].syntax == '')
 end
 
+--- Get all nodes that are marked as skip
+---@param bufnr integer
+function M.get_skips(bufnr)
+  local matches = internal.get_matches(bufnr)
+
+  local skips = {} ---@type table<string, 1>
+
+  for _, match in ipairs(matches) do
+    if match.skip then
+      skips[internal.range_id(match.skip.info.range)] = 1
+    end
+  end
+
+  return skips
+end
+
+---@param lnum integer
+---@param col integer
+---@return boolean
+function M.lang_skip(lnum, col)
+  local bufnr = api.nvim_get_current_buf()
+  local skips = M.get_skips(bufnr)
+
+  if vim.tbl_isempty(skips) then
+    return false
+  end
+
+  local success, node = pcall(vts.get_node, {pos = {lnum - 1, col - 1}})
+  if not success or not node then
+    return false
+  end
+  ---@diagnostic disable-next-line: missing-fields LuaLS bug
+  if skips[internal.range_id({node:range()})] then
+    return true
+  end
+
+  return false
+end
+
+---@param lnum integer
+---@param col integer
+---@param transparent 1|0
 function M.synID(lnum, col, transparent)
   if not M.is_active() then
     return vim.fn.synID(lnum, col, transparent)

@@ -1,1 +1,7 @@
-5150f1ec06f51b087a11c71b498a4c4497e71e2c		branch 'master' of https://github.com/dhruvasagar/vim-table-mode
+bb025308a45c67c7c8f0763ba37bc2ee3f534df0		branch 'master' of https://github.com/dhruvasagar/vim-table-mode
+81fb86a0195c1ceb1379db321c8b3f2d81f6633f	not-for-merge	branch 'feature/switch-to-vim-testify' of https://github.com/dhruvasagar/vim-table-mode
+2d648cda145ea96f08bf1b9065a2468b56ded66f	not-for-merge	tag 'v4.7.5' of https://github.com/dhruvasagar/vim-table-mode
+cd914a6014b8fb6e836ec42e4d7ecb5e24eb9d86	not-for-merge	tag 'v4.7.6' of https://github.com/dhruvasagar/vim-table-mode
+f96de3b8e24c7603032b8e1ff0c3546ce1fbc82b	not-for-merge	tag 'v4.7.6.1' of https://github.com/dhruvasagar/vim-table-mode
+b84b888c9462e15fac674c33a40a5e5279a37920	not-for-merge	tag 'v4.8.0' of https://github.com/dhruvasagar/vim-table-mode
+f8e1d3f58d24c13290bfe99858c57d05a6e440d2	not-for-merge	tag 'v4.8.1' of https://github.com/dhruvasagar/vim-table-mode

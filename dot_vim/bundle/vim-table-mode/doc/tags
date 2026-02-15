@@ -6,6 +6,8 @@
 :TableModeToggle	table-mode.txt	/*:TableModeToggle*
 :TableSort	table-mode.txt	/*:TableSort*
 :Tableize	table-mode.txt	/*:Tableize*
+formula-expressions	table-mode.txt	/*formula-expressions*
+table-formulas	table-mode.txt	/*table-formulas*
 table-mode-:TableAddFormula	table-mode.txt	/*table-mode-:TableAddFormula*
 table-mode-:TableEvalFormulaLine	table-mode.txt	/*table-mode-:TableEvalFormulaLine*
 table-mode-:TableModeDisable	table-mode.txt	/*table-mode-:TableModeDisable*
@@ -35,6 +37,7 @@ table-mode-eval-formula-map	table-mode.txt	/*table-mode-eval-formula-map*
 table-mode-fillchar	table-mode.txt	/*table-mode-fillchar*
 table-mode-getting-started	table-mode.txt	/*table-mode-getting-started*
 table-mode-header-fillchar	table-mode.txt	/*table-mode-header-fillchar*
+table-mode-ignore-align	table-mode.txt	/*table-mode-ignore-align*
 table-mode-insert-column-after-map	table-mode.txt	/*table-mode-insert-column-after-map*
 table-mode-insert-column-before-map	table-mode.txt	/*table-mode-insert-column-before-map*
 table-mode-introduction	table-mode.txt	/*table-mode-introduction*
@@ -52,6 +55,7 @@ table-mode-mappings-op-trigger	table-mode.txt	/*table-mode-mappings-op-trigger*
 table-mode-mappings-prefix	table-mode.txt	/*table-mode-mappings-prefix*
 table-mode-mappings-realign	table-mode.txt	/*table-mode-mappings-realign*
 table-mode-mappings-sort-column	table-mode.txt	/*table-mode-mappings-sort-column*
+table-mode-mappings-tableize	table-mode.txt	/*table-mode-mappings-tableize*
 table-mode-mappings-toggle	table-mode.txt	/*table-mode-mappings-toggle*
 table-mode-mappings-trigger	table-mode.txt	/*table-mode-mappings-trigger*
 table-mode-motion-down-map	table-mode.txt	/*table-mode-motion-down-map*

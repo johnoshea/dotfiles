@@ -1,10 +1,3 @@
 syn match cssSelectorOp "[|]"
-syn keyword cssPseudoClassId contained scope current past future default valid required optional blank playing paused
-syn match cssPseudoClassId contained "\<\(any\|local\)-link\>"
-syn match cssPseudoClassId contained "\<read-\(only\|write\)\>"
-syn match cssPseudoClassId contained "\<placeholder-shown\>"
-syn match cssPseudoClassId contained "\<\(in\|out-of\)-range\>"
-syn match cssPseudoClassId contained "\<user-invalid\>"
-syn match cssPseudoClassId contained "\<target-within\>"
-syn match cssPseudoClassId contained "\<focus-\(within\|visible\)\>"
-syn region cssPseudoClassLang matchgroup=cssPseudoClassId start=":\(is\|dir\|local-link\|current\|nth\(-last\)\=-col\|has\|where\)(" end=")" oneline
+syn keyword cssPseudoClassId contained defined any-link scope playing paused seeking buffering stalled muted volume-locked open popover-open modal fullscreen picture-in-picture read-only read-write placeholder-shown autofill default valid in-range out-of-range required optional user-valid user-invalid
+syn region cssPseudoClassLang matchgroup=cssPseudoClassId start=":\(where\|has\|dir\)(" end=")" oneline

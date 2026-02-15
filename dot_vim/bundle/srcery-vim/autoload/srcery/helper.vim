@@ -21,3 +21,5 @@ function! srcery#helper#GetColor(group, ...) abort
 
   return [ l:gui_color, l:term_color ]
 endfunction
+
+" vim: fdm=marker ts=2 sts=2 sw=2 fdl=0:

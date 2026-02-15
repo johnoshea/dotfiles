@@ -14,7 +14,8 @@ func! sneak#util#isvisualop(op) abort
 endf
 
 func! sneak#util#getc() abort
-  let c = getchar()
+  sleep 1m
+  let c = (has('patch-9.1.1070') || has('nvim-0.11')) ? getchar(-1,{'cursor':'keep'}) : getchar()
   return type(c) == type(0) ? nr2char(c) : c
 endf
 
@@ -71,7 +72,7 @@ func! sneak#util#wincol1() abort
   return c
 endf
 
-"Moves the cursor to the first line after the current folded lines.
+"Moves the cursor to the outmost position in the current folded area.
 "Returns:
 "     1  if the cursor was moved
 "     0  if the cursor is not in a fold
@@ -83,8 +84,8 @@ func! sneak#util#skipfold(current_line, reverse) abort
                 \ || foldedge >= line("w$")  "fold ends at/below bottom of window.
       return -1
     endif
-    call line(foldedge)
-    call col(a:reverse ? 1 : '$')
+    call cursor(foldedge, 0)
+    call cursor(0, a:reverse ? 1 : col('$'))
     return 1
   endif
   return 0
@@ -103,7 +104,8 @@ endf
 " Removes highlighting.
 func! sneak#util#removehl() abort
   silent! call matchdelete(w:sneak_hl_id)
-  silent! call matchdelete(w:sneak_sc_hl)
+  silent! call matchdelete(w:sneak_cur_hl)
+  silent! call matchdelete(w:sneak_scope_hl)
 endf
 
 " Gets the 'links to' value of the specified highlight group, if any.
@@ -120,6 +122,7 @@ endfunc
 
 func! s:init_hl() abort
   exec "highlight default Sneak guifg=white guibg=magenta ctermfg=white ctermbg=".(&t_Co < 256 ? "magenta" : "201")
+  exec "highlight default SneakCurrent guifg=black guibg=LightMagenta ctermfg=0 ctermbg=LightMagenta"
 
   if &background ==# 'dark'
     highlight default SneakScope guifg=black guibg=white ctermfg=0     ctermbg=255

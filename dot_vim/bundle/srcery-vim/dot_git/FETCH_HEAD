@@ -1,1 +1,5 @@
-9c692e3f17b3485969b55d76a708136e2ccaa5de		branch 'master' of https://github.com/srcery-colors/srcery-vim
+1fef59020077b4ed1006b4d12975dfd8ef4ee2bc		branch 'master' of https://github.com/srcery-colors/srcery-vim
+300a8a82b66f5f23e5e6ce5dbe727624c1becf07	not-for-merge	branch 'feat/modernize' of https://github.com/srcery-colors/srcery-vim
+44eadc74ff42ced89e85300d69f8297ffe11589e	not-for-merge	tag 'v1.0.0' of https://github.com/srcery-colors/srcery-vim
+ffe6b8e975bb2f218cbeb3e785d2f12d9f88b37d	not-for-merge	tag 'v2.0.0' of https://github.com/srcery-colors/srcery-vim
+349ba0d383a0652f71843ad963499c16043c4f5f	not-for-merge	tag 'v2.1.0' of https://github.com/srcery-colors/srcery-vim

@@ -5,6 +5,11 @@ set cpoptions&vim
 let $TF_CLI_ARGS_fmt=''
 
 function! terraform#fmt() abort
+  silent execute 'w !'.g:terraform_binary_path.' fmt -check -'
+  if v:shell_error == 0
+    return
+  endif
+
   " Save the view.
   let curw = winsaveview()
 
@@ -29,17 +34,6 @@ function! terraform#fmt() abort
   " Delete the temporary file, and restore the view.
   call delete(tmpfile)
   call winrestview(curw)
-endfunction
-
-function! terraform#align() abort
-  let p = '^.*=[^>]*$'
-  if exists(':Tabularize') && getline('.') =~# '^.*=' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^=]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*=\s*\zs.*'))
-    Tabularize/=.*/l1
-    normal! 0
-    call search(repeat('[^=]*=',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
 endfunction
 
 function! terraform#commands(ArgLead, CmdLine, CursorPos) abort

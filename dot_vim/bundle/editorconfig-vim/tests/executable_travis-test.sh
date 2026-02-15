@@ -11,6 +11,17 @@ if [[ ( ! "${TEST_WHICH:-}" ) && "${1:-}" ]]; then
     export TEST_WHICH="$1"
 fi
 
+if [[ ! "${TEST_WHICH:-}" ]]; then
+    cat <<EOT
+Usage: $0 \$WHICH
+  or:  TEST_WHICH=\$WHICH $0
+Run automated tests of editorconfig-vim
+
+\$WHICH can be "core" or "plugin".
+EOT
+    exit 2
+fi
+
 if [[ "$TEST_WHICH" = 'plugin' ]]; then       # test plugin
 
     # If not running from Travis, do what Travis would have
@@ -24,7 +35,7 @@ if [[ "$TEST_WHICH" = 'plugin' ]]; then       # test plugin
         bundle install --jobs=3 --retry=3 --deployment
     fi
 
-    # Use the standalone Vimscript EditorConfig core to test the plugin's
+    # Use the standalone Vim script EditorConfig core to test the plugin's
     # external_command mode
     export EDITORCONFIG_VIM_EXTERNAL_CORE=tests/core/editorconfig
 

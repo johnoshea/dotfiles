@@ -127,10 +127,16 @@ function! matchup#text_obj#delimited(is_inner, visual, type) abort " {{{1
       let [l:l2, l:c2] = matchup#pos#prev(l:l2, l:c2)[1:2]
 
       " make *i% more like *it for html
-      if matchup#quirks#ishtmllike()
-            \ && matchup#util#matchpref('classic_textobj', 1)
-            \ && l:close.match =~? '/\w\+\s*>'
+      " don't include next <
+      if l:line_count < 2 && matchup#quirks#ishtmllike()
+            \ && !matchup#util#matchpref('classic_textobj', 0)
+            \ && l:close.match =~? '^/\w\+\s*>\=$'
+            \ && !(a:visual
+            \      && matchup#pos#equal([l:l1, l:c1], [l:l2, l:c2]))
         let [l:l2, l:c2] = matchup#pos#prev(l:l2, l:c2)[1:2]
+        if l:open.match !~? '>$'
+          let [l:l1, l:c1] = matchup#pos#next(l:l1, l:c1)[1:2]
+        endif
       endif
 
       " don't select only indent at close
@@ -209,10 +215,14 @@ function! matchup#text_obj#delimited(is_inner, visual, type) abort " {{{1
       let l:c2 += matchup#delim#end_offset(l:close)
 
       " make *a% more like *at for html
+      " capture starting <
       if matchup#quirks#ishtmllike()
-            \ && matchup#util#matchpref('classic_textobj', 1)
-            \ && l:close.match =~? '/\w\+\s*>'
+            \ && !matchup#util#matchpref('classic_textobj', 0)
+            \ && l:close.match =~? '^/\w\+\s*>\=$'
         let l:c1 -= 1
+        if l:close.match !~? '>$'
+          let l:c2 += 1
+        endif
       endif
 
       " special case for delete operator

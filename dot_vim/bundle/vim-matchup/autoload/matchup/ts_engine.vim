@@ -15,20 +15,10 @@ function! s:forward(fn, ...)
 endfunction
 
 function! matchup#ts_engine#is_enabled(bufnr) abort
-  if !has('nvim-0.5.0')
+  if !has('nvim-0.9.0')
     return 0
   endif
   return +s:forward('is_enabled', a:bufnr)
-endfunction
-
-let s:attached = {}
-
-function! matchup#ts_engine#attach(bufnr, lang) abort
-  let s:attached[a:bufnr] = a:lang
-endfunction
-
-function! matchup#ts_engine#detach(bufnr, lang) abort
-  unlet s:attached[a:bufnr]
 endfunction
 
 function! matchup#ts_engine#get_delim(opts) abort
@@ -48,7 +38,12 @@ function! matchup#ts_engine#get_delim(opts) abort
 endfunction
 
 function! matchup#ts_engine#get_matching(down, _) dict abort
+  call matchup#perf#tic('ts_engine.get_matching')
+
   let l:list = s:forward('get_matching', self, a:down, bufnr('%'))
+
+  call matchup#perf#toc('ts_engine.get_matching', 'done')
+
   return l:list
 endfunction
 

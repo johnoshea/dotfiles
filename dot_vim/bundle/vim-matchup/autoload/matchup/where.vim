@@ -106,7 +106,7 @@ endfunction
 
 function! s:arrow()
   if empty(g:matchup_where_separator)
-    return '▶'
+    return g:matchup_matchparen_start_sign
   endif
   return g:matchup_where_separator
 endfunction
@@ -130,7 +130,7 @@ endfunction
 
 function! s:EchoHLString(str)
   let l:str = '%<' . substitute(a:str, '%{[^}]\+}', '', 'g')
-  let l:pat = '\%(%\(<\)\|%#\(\w*\)#\)'
+  let l:pat = '\%(%\(<\)\|%#\([0-9A-Za-z_@.]*\)#\)'
   let l:components = split(l:str, l:pat.'\&')
   call map(l:components, 'matchlist(v:val, "^".l:pat."\\(.*\\)")')
 

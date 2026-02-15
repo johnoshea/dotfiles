@@ -58,17 +58,17 @@ def _check_sanity():
 
 INLINE_HELP = '''\
 " Mundo (%d) - Press ? for Help:
-" j/k  - Next/Prev undo state.
-" J/K  - Next/Prev write state.
-" i    - Toggle 'inline diff' mode.
-" /    - Find changes that match string.
-" n/N  - Next/Prev undo that matches search.
-" P    - Play current state to selected undo.
-" d    - Vert diff of undo with current state.
-" p    - Diff of selected undo and current state.
-" r    - Diff of selected undo and prior undo.
-" q    - Quit!
-" <cr> - Revert to selected state.
+" j/k   Next/Prev undo state.
+" J/K   Next/Prev write state.
+" i     Toggle 'inline diff' mode.
+" /     Find changes that match string.
+" n/N   Next/Prev undo that matches search.
+" P     Play current state to selected undo.
+" d     Vert diff of undo with current state.
+" p     Diff selected undo and current state.
+" r     Diff selected undo and prior undo.
+" q     Quit!
+" <cr>  Revert to selected state.
 
 '''
 
@@ -194,7 +194,7 @@ def MundoGetTargetState():# {{{
     """ Get the current undo number that mundo is at. """
     util._goto_window_for_buffer('__Mundo__')
     target_line = vim.eval("getline('.')")
-    matches = re.match('^[^\[]* \[([0-9]+)\] .*$', target_line)
+    matches = re.match(r'^[^\[]* \[([0-9]+)\] .*$', target_line)
     if matches:
         return int(matches.group(1))
     return 0
@@ -387,7 +387,7 @@ def MundoRenderPatchdiff():# {{{
         vim.command('bdelete')
         # diff the temp file
         vim.command('silent! keepalt vert diffpatch %s' % (filename))
-        vim.command('set buftype=nofile bufhidden=delete')
+        vim.command('setlocal buftype=nofile bufhidden=delete')
         return True
     return False
 # }}}

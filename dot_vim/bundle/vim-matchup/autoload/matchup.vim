@@ -4,6 +4,8 @@
 " Email:      a@normed.space
 "
 
+scriptencoding utf-8
+
 let s:save_cpo = &cpo
 set cpo&vim
 
@@ -41,6 +43,8 @@ function! s:init_options()
   call s:init_option('matchup_matchparen_nomode', '')
   call s:init_option('matchup_matchparen_hi_surround_always', 0)
   call s:init_option('matchup_matchparen_hi_background', 0)
+  call s:init_option('matchup_matchparen_start_sign', '▶')
+  call s:init_option('matchup_matchparen_end_sign', '◀')
 
   call s:init_option('matchup_matchparen_timeout',
         \ get(g:, 'matchparen_timeout', 300))
@@ -72,6 +76,15 @@ function! s:init_options()
   call s:init_option('matchup_where_separator', '')
 
   call s:init_option('matchup_matchpref', {})
+
+  if has('nvim')
+    call s:init_option('matchup_treesitter_enabled', has('nvim-0.11.2') ? v:true : v:false)
+    call s:init_option('matchup_treesitter_disabled', [])
+    call s:init_option('matchup_treesitter_include_match_words', v:false)
+    call s:init_option('matchup_treesitter_enable_quotes', v:true)
+    call s:init_option('matchup_treesitter_disable_virtual_text', v:false)
+    call s:init_option('matchup_treesitter_stopline', 400)
+  endif
 endfunction
 
 function! s:init_option(option, default)
@@ -162,6 +175,8 @@ endfunction
 
 " }}}1
 
+let s:ignore_key = len(expand("\<ignore>")) > 0 ? '<ignore>' : ''
+
 function! s:init_default_mappings()
   if !get(g:,'matchup_mappings_enabled', 1) | return | endif
 
@@ -169,6 +184,13 @@ function! s:init_default_mappings()
     if !hasmapto(a:rhs, a:mode)
           \ && ((a:0 > 0) || (maparg(a:lhs, a:mode) ==# ''))
       silent execute a:mode . 'map <silent> ' a:lhs a:rhs
+    endif
+  endfunction
+
+  function! s:omap(mode, lhs, rhs, ...)  " issues/199
+    if !hasmapto(a:rhs, a:mode)
+          \ && ((a:0 > 0) || (maparg(a:lhs, a:mode) ==# ''))
+      silent execute a:mode . 'map <silent> ' a:lhs s:ignore_key . a:rhs
     endif
   endfunction
 
@@ -194,8 +216,8 @@ function! s:init_default_mappings()
     call s:map('x', 'z%', '<plug>(matchup-z%)')
 
     if !s:old_style_ops
-      call s:map('o', '%', '<plug>(matchup-%)')
-      call s:map('o', 'g%', '<plug>(matchup-g%)')
+      call s:omap('o', '%', '<plug>(matchup-%)')
+      call s:omap('o', 'g%', '<plug>(matchup-g%)')
       call s:map('o', ']%', '<plug>(matchup-]%)')
       call s:map('o', '[%', '<plug>(matchup-[%)')
       call s:map('o', 'z%', '<plug>(matchup-z%)')
@@ -236,10 +258,17 @@ function! s:motion_init_module() " {{{1
         \ empty(g:v_motion_force) ? 'v' : g:v_motion_force
 
   " the basic motions % and g%
-  nnoremap <silent> <plug>(matchup-%)
-        \ :<c-u>call matchup#motion#find_matching_pair(0, 1)<cr>
-  nnoremap <silent> <plug>(matchup-g%)
-        \ :<c-u>call matchup#motion#find_matching_pair(0, 0)<cr>
+  if has('patch-8.2.1978') || has('nvim')
+    nnoremap <silent> <plug>(matchup-%)
+	  \ <cmd>call matchup#motion#find_matching_pair(0, 1)<cr>
+    nnoremap <silent> <plug>(matchup-g%)
+	  \ <cmd>call matchup#motion#find_matching_pair(0, 0)<cr>
+  else
+    nnoremap <silent> <plug>(matchup-%)
+	  \ :<c-u>call matchup#motion#find_matching_pair(0, 1)<cr>
+    nnoremap <silent> <plug>(matchup-g%)
+	  \ :<c-u>call matchup#motion#find_matching_pair(0, 0)<cr>
+  endif
 
   " visual and operator-pending
   xnoremap <silent> <sid>(matchup-%)
@@ -255,10 +284,17 @@ function! s:motion_init_module() " {{{1
         \ :<c-u>call matchup#motion#op('g%')<cr>
 
   " ]% and [%
-  nnoremap <silent> <plug>(matchup-]%)
-        \ :<c-u>call matchup#motion#find_unmatched(0, 1)<cr>
-  nnoremap <silent> <plug>(matchup-[%)
-        \ :<c-u>call matchup#motion#find_unmatched(0, 0)<cr>
+  if has('patch-8.2.1978') || has('nvim')
+    nnoremap <silent> <plug>(matchup-]%)
+	  \ <cmd>call matchup#motion#find_unmatched(0, 1)<cr>
+    nnoremap <silent> <plug>(matchup-[%)
+	  \ <cmd>call matchup#motion#find_unmatched(0, 0)<cr>
+  else
+    nnoremap <silent> <plug>(matchup-]%)
+	  \ :<c-u>call matchup#motion#find_unmatched(0, 1)<cr>
+    nnoremap <silent> <plug>(matchup-[%)
+	  \ :<c-u>call matchup#motion#find_unmatched(0, 0)<cr>
+  endif
 
   xnoremap <silent> <sid>(matchup-]%)
         \ :<c-u>call matchup#motion#find_unmatched(1, 1)<cr>
@@ -272,14 +308,34 @@ function! s:motion_init_module() " {{{1
         \ :<c-u>call matchup#motion#op('[%')<cr>
 
   " jump inside z%
-  nnoremap <silent> <plug>(matchup-z%)
-        \ :<c-u>call matchup#motion#jump_inside(0)<cr>
+  if has('patch-8.2.1978') || has('nvim')
+    nnoremap <silent> <plug>(matchup-z%)
+	  \ <cmd>call matchup#motion#jump_inside(0)<cr>
+  else
+    nnoremap <silent> <plug>(matchup-z%)
+	  \ :<c-u>call matchup#motion#jump_inside(0)<cr>
+  endif
 
   xnoremap <silent> <sid>(matchup-z%)
         \ :<c-u>call matchup#motion#jump_inside(1)<cr>
   xmap     <silent> <plug>(matchup-z%) <sid>(matchup-z%)
   onoremap <silent> <plug>(matchup-z%)
         \ :<c-u>call matchup#motion#op('z%')<cr>
+
+  " 'opposite' of z%
+  if has('patch-8.2.1978') || has('nvim')
+    nnoremap <silent> <plug>(matchup-Z%)
+	  \ <cmd>call matchup#motion#jump_inside_prev(0)<cr>
+  else
+    nnoremap <silent> <plug>(matchup-Z%)
+	  \ :<c-u>call matchup#motion#jump_inside_prev(0)<cr>
+  endif
+
+  xnoremap <silent> <sid>(matchup-Z%)
+        \ :<c-u>call matchup#motion#jump_inside_prev(1)<cr>
+  xmap     <silent> <plug>(matchup-Z%) <sid>(matchup-Z%)
+  onoremap <silent> <plug>(matchup-Z%)
+        \ :<c-u>call matchup#motion#op('Z%')<cr>
 
   inoremap <silent> <plug>(matchup-c_g%)
         \ <c-\><c-o>:call matchup#motion#insert_mode()<cr>
@@ -358,11 +414,35 @@ endfunction
 
 " }}}1
 function! s:treesitter_init_module() " {{{1
-  if !has('nvim-0.5.0')
+  if !matchup#loader#_treesitter_may_be_supported()
     return
   endif
 
-  lua require'treesitter-matchup'.init()
+  lua <<LUA
+  vim.api.nvim_create_autocmd({'FileType'}, {
+    pattern = {'query'},
+    group = vim.api.nvim_create_augroup('matchup_filetype_query', {
+      clear = true
+    }),
+    callback = function(ftevent)
+      vim.api.nvim_create_autocmd({'BufWritePost'}, {
+        buffer = ftevent.buf,
+        group = vim.api.nvim_create_augroup('MatchupTreesitter', {
+          clear = true
+        }),
+        callback = function(bwpevent)
+          local _, _, query_lang = string.find(bwpevent.file, "([^/]*)/matchup.scm$")
+          if query_lang then
+            vim.treesitter.query.get:clear(
+              query_lang,
+              "matchup"
+            )
+          end
+        end
+      })
+    end
+  })
+LUA
 endfunction
 
 "}}}1
@@ -370,4 +450,3 @@ endfunction
 let &cpo = s:save_cpo
 
 " vim: fdm=marker sw=2
-

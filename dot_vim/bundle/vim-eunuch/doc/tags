@@ -2,11 +2,11 @@ eunuch	eunuch.txt	/*eunuch*
 eunuch-:Cfind	eunuch.txt	/*eunuch-:Cfind*
 eunuch-:Chmod	eunuch.txt	/*eunuch-:Chmod*
 eunuch-:Clocate	eunuch.txt	/*eunuch-:Clocate*
+eunuch-:Copy	eunuch.txt	/*eunuch-:Copy*
 eunuch-:Delete	eunuch.txt	/*eunuch-:Delete*
-eunuch-:Find	eunuch.txt	/*eunuch-:Find*
+eunuch-:Duplicate	eunuch.txt	/*eunuch-:Duplicate*
 eunuch-:Lfind	eunuch.txt	/*eunuch-:Lfind*
 eunuch-:Llocate	eunuch.txt	/*eunuch-:Llocate*
-eunuch-:Locate	eunuch.txt	/*eunuch-:Locate*
 eunuch-:Mkdir	eunuch.txt	/*eunuch-:Mkdir*
 eunuch-:Move	eunuch.txt	/*eunuch-:Move*
 eunuch-:Remove	eunuch.txt	/*eunuch-:Remove*
@@ -18,4 +18,6 @@ eunuch-:W	eunuch.txt	/*eunuch-:W*
 eunuch-:Wall	eunuch.txt	/*eunuch-:Wall*
 eunuch-about	eunuch.txt	/*eunuch-about*
 eunuch-commands	eunuch.txt	/*eunuch-commands*
+eunuch-passive	eunuch.txt	/*eunuch-passive*
 eunuch.txt	eunuch.txt	/*eunuch.txt*
+g:eunuch_interpreters	eunuch.txt	/*g:eunuch_interpreters*

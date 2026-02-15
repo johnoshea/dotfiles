@@ -361,11 +361,11 @@ function! s:current_compiler(...) abort
   return get((empty(&l:makeprg) ? g: : b:), 'current_compiler', a:0 ? a:1 : '')
 endfunction
 
-function! s:set_current_compiler(name) abort
-  if empty(a:name)
+function! s:set_current_compiler(name, ...) abort
+  if empty(a:name) && (!a:0 || a:1 ==# bufnr(''))
     unlet! b:current_compiler
   else
-    let b:current_compiler = a:name
+    call setbufvar(a:0 ? a:1 : bufnr(''), 'current_compiler', a:name)
   endif
 endfunction
 
@@ -479,7 +479,7 @@ function! s:focus(count) abort
   endif
 endfunction
 
-function! dispatch#spawn_command(bang, command, count, ...) abort
+function! dispatch#spawn_command(bang, command, count, mods, ...) abort
   let [command, opts] = s:extract_opts(a:command)
   if empty(command) && a:count >= 0
     let command = s:focus(a:count)
@@ -487,19 +487,27 @@ function! dispatch#spawn_command(bang, command, count, ...) abort
     let [command, opts] = s:extract_opts(command, opts)
   endif
   let opts.background = a:bang
+  let opts.mods = a:mods ==# '<mods>' ? '' : a:mods
   call dispatch#spawn(command, opts, a:count)
   return ''
 endfunction
 
+function! s:doautocmd(event) abort
+  if v:version >= 704 || (v:version == 703 && has('patch442'))
+    return 'doautocmd <nomodeline> ' . a:event
+  elseif &modelines == 0 || !&modeline
+    return 'doautocmd ' . a:event
+  else
+    return 'try|set modelines=0|doautocmd ' . a:event . '|finally|set modelines=' . &modelines . '|endtry'
+  endif
+endfunction
+
 function! s:compiler_getcwd() abort
-  let modelines = &modelines
   try
-    let &modelines = 0
-    silent doautocmd QuickFixCmdPre dispatch-make-complete
+    exe s:doautocmd('QuickFixCmdPre dispatch-make-complete')
     return getcwd()
   finally
-    silent doautocmd QuickFixCmdPost dispatch-make-complete
-    let &modelines = modelines
+    exe s:doautocmd('QuickFixCmdPost dispatch-make-complete')
   endtry
 endfunction
 
@@ -526,9 +534,10 @@ function! s:parse_start(command, count) abort
   return [command, opts]
 endfunction
 
-function! dispatch#start_command(bang, command, count, ...) abort
+function! dispatch#start_command(bang, command, count, mods, ...) abort
   let [command, opts] = s:parse_start(a:command, a:count)
   let opts.background = get(opts, 'background') || a:bang
+  let opts.mods = a:mods ==# '<mods>' ? '' : a:mods
   if command =~# '^:\S'
     unlet! g:dispatch_last_start
     return s:wrapcd(get(opts, 'directory', getcwd()),
@@ -555,6 +564,7 @@ function! dispatch#spawn(command, ...) abort
         \ 'command': command,
         \ 'directory': getcwd(),
         \ 'title': '',
+        \ 'mods': '',
         \ }, a:0 ? a:1 : {})
   if empty(a:command)
     call extend(request, {'wait': 'never'}, 'keep')
@@ -667,6 +677,9 @@ function! dispatch#compiler_options(compiler) abort
   let current_compiler = get(b:, 'current_compiler', '')
   let makeprg = &l:makeprg
   let efm = &l:efm
+  if empty(a:compiler)
+    return {}
+  endif
 
   try
     if a:compiler ==# 'make'
@@ -676,7 +689,11 @@ function! dispatch#compiler_options(compiler) abort
       return {'program': 'make', 'format': &errorformat}
     endif
     let &l:makeprg = ''
-    execute 'compiler '.dispatch#fnameescape(a:compiler)
+    try
+      execute 'compiler' dispatch#fnameescape(a:compiler)
+    catch /^Vim(compiler):E666:/
+      return {}
+    endtry
     let options = {'format': &errorformat}
     if !empty(&l:makeprg)
       let options.program = &l:makeprg
@@ -783,7 +800,7 @@ function! dispatch#command_complete(A, L, P) abort
     else
       let results = []
     endif
-  elseif a:A =~# '^\%(\w:\|\.\)\=[\/]'
+  elseif a:A =~# '[\/]'
     let results = s:file_complete(a:A)
   else
     let results = []
@@ -795,14 +812,11 @@ function! dispatch#command_complete(A, L, P) abort
 endfunction
 
 function! dispatch#make_complete(A, L, P) abort
-  let modelines = &modelines
   try
-    let &modelines = 0
-    silent doautocmd QuickFixCmdPre dispatch-make-complete
+    exe s:doautocmd('QuickFixCmdPre dispatch-make-complete')
     return s:compiler_complete(&errorformat, s:current_compiler(), a:A, a:L, a:P)
   finally
-    silent doautocmd QuickFixCmdPost dispatch-make-complete
-    let &modelines = modelines
+    exe s:doautocmd('QuickFixCmdPost dispatch-make-complete')
   endtry
 endfunction
 
@@ -811,11 +825,10 @@ if !exists('s:makes')
   let s:files = {}
 endif
 
-function! dispatch#compile_command(bang, args, count, ...) abort
-  let [args, request] = s:extract_opts(a:args)
+function! dispatch#compile_command(bang, args, count, mods, ...) abort
+  let [args, request] = s:extract_opts(a:args, {'mods': a:mods ==# '<mods>' ? '' : a:mods})
 
   if empty(args)
-    let args = '--'
     let default_dispatch = 1
     if type(get(b:, 'dispatch')) == type('')
       unlet! default_dispatch
@@ -828,6 +841,9 @@ function! dispatch#compile_command(bang, args, count, ...) abort
       endif
     endfor
     let [args, request] = s:extract_opts(args, request)
+  endif
+  if empty(args)
+    let args = '--'
   endif
 
   if args =~# '^!'
@@ -850,20 +866,28 @@ function! dispatch#compile_command(bang, args, count, ...) abort
         \ }, 'keep')
 
   if executable ==# '_' || executable ==# '--'
-    if has_key(request, 'compiler')
-      call extend(request, dispatch#compiler_options(request.compiler))
+    if !empty(get(request, 'compiler', ''))
+      let compiler_options = dispatch#compiler_options(request.compiler)
+      if !has_key(compiler_options, 'format')
+        return 'compiler ' . dispatch#fnameescape(request.compiler)
+      endif
+      call extend(request, compiler_options)
     else
       let request.compiler = s:current_compiler()
       let request.program = &makeprg
       let request.format = &errorformat
     endif
     let request.args = s:default_args(args, exists('default_dispatch') && a:count < 0 ? 0 : a:count, request.format)
-    let request.command = s:build_make(request.program, request.args)
+    let request.command = s:build_make(get(request, 'program', get(request, 'compiler', '--')), request.args)
   else
     let [compiler, prefix, program, rest] = s:compiler_split(args)
     let request.compiler = get(request, 'compiler', compiler)
     if !empty(request.compiler)
-      call extend(request,dispatch#compiler_options(request.compiler))
+      let compiler_options = dispatch#compiler_options(request.compiler)
+      if !has_key(compiler_options, 'format')
+        return 'compiler ' . dispatch#fnameescape(request.compiler)
+      endif
+      call extend(request, compiler_options)
       if request.compiler ==# compiler
         let request.program = prefix . program
         let request.args = rest[1:-1]
@@ -892,7 +916,6 @@ function! dispatch#compile_command(bang, args, count, ...) abort
   let request.title = get(request, 'title', get(request, 'compiler', 'make'))
 
   call dispatch#autowrite()
-  cclose
   let request.file = dispatch#tempname()
   let &errorfile = request.file
 
@@ -900,16 +923,15 @@ function! dispatch#compile_command(bang, args, count, ...) abort
   let efm = &l:efm
   let makeprg = &l:makeprg
   let compiler = get(b:, 'current_compiler', '')
-  let modelines = &modelines
   let after = ''
   let cd = s:cd_command()
+  let bufnr = bufnr('')
   try
-    let &modelines = 0
     call s:set_current_compiler(get(request, 'compiler', ''))
     let v:lnum = a:count > 0 ? a:count : 0
     let &l:efm = request.format
     let &l:makeprg = request.command
-    silent doautocmd QuickFixCmdPre dispatch-make
+    exe s:doautocmd('QuickFixCmdPre dispatch-make')
     let request.directory = get(request, 'directory', getcwd())
     if request.directory !=# getcwd()
       let cwd = getcwd()
@@ -922,7 +944,7 @@ function! dispatch#compile_command(bang, args, count, ...) abort
 
     call writefile([], request.file)
 
-    if exists(':chistory')
+    if has('patch-8.0.1023')
       let result = s:dispatch(request)
     else
       let result = 0
@@ -933,6 +955,8 @@ function! dispatch#compile_command(bang, args, count, ...) abort
         if result is 2
           exe 'botright copen' get(g:, 'dispatch_quickfix_height', '')
           wincmd p
+        elseif winnr('$') > 1
+          cclose
         endif
       endif
     else
@@ -955,12 +979,11 @@ function! dispatch#compile_command(bang, args, count, ...) abort
       redraw!
     endif
   finally
-    silent doautocmd QuickFixCmdPost dispatch-make
+    exe s:doautocmd('QuickFixCmdPost dispatch-make')
     let v:lnum = lnum
-    let &modelines = modelines
-    let &l:efm = efm
-    let &l:makeprg = makeprg
-    call s:set_current_compiler(compiler)
+    call setbufvar(bufnr, '&efm', efm)
+    call setbufvar(bufnr, '&makeprg', makeprg)
+    call s:set_current_compiler(compiler, bufnr)
     if exists('cwd')
       execute cd dispatch#fnameescape(cwd)
     endif
@@ -1027,7 +1050,7 @@ function! dispatch#focus_command(bang, args, count, ...) abort
     let [args, opts] = dispatch#focus(line(a:args[1]), opts)
   elseif args =~# '^:\d*Dispatch$'
     let [args, opts] = dispatch#focus(+matchstr(a:args, '\d\+'), opts)
-  elseif args =~# '^--\S\@!' && !has_key(opts, 'compiler')
+  elseif args =~# '^\%(--\|:[Mm]ake\)\S\@!' && !has_key(opts, 'compiler')
     let args = s:default_args(args, -1)
     let args = s:build_make(&makeprg, args)
     let args = dispatch#expand(args, 0)
@@ -1201,7 +1224,7 @@ function! dispatch#complete(file, ...) abort
     let request = s:request(a:file)
     let request.completed = 1
     try
-      let status = readfile(request.file . '.complete', 1)[0]
+      let status = +readfile(request.file . '.complete', 1)[0]
     catch
       let status = -1
       call writefile([-1], request.file . '.complete')
@@ -1226,7 +1249,7 @@ function! dispatch#complete(file, ...) abort
       echohl DispatchCompleteMsg
       let label = 'Complete:'
     endif
-    call s:echo_truncated(label . '!', request.expanded . ' ' . s:postfix(request))
+    call s:echo_truncated(label . ' !', request.expanded . ' ' . s:postfix(request))
     echohl NONE
     if !a:0
       checktime
@@ -1295,9 +1318,7 @@ function! s:cgetfile(request, event, ...) abort
   let compiler = get(b:, 'current_compiler', '')
   let cd = s:cd_command()
   let dir = getcwd()
-  let modelines = &modelines
   try
-    let &modelines = 0
     call s:set_current_compiler(get(request, 'compiler', ''))
     exe cd dispatch#fnameescape(request.directory)
     if a:0 && a:1
@@ -1308,7 +1329,7 @@ function! s:cgetfile(request, event, ...) abort
     let &l:makeprg = dispatch#escape(request.expanded)
     let title = ':Dispatch '.dispatch#escape(request.expanded) . ' ' . s:postfix(request)
     if len(a:event)
-      exe 'silent doautocmd QuickFixCmdPre' a:event
+      exe s:doautocmd('QuickFixCmdPre ' . a:event)
     endif
     if exists(':chistory') && get(getqflist({'title': 1}), 'title', '') ==# title
       call setqflist([], 'r')
@@ -1320,10 +1341,9 @@ function! s:cgetfile(request, event, ...) abort
       call setqflist([], 'r', {'title': title})
     endif
     if len(a:event)
-      exe 'silent doautocmd QuickFixCmdPost' a:event
+      exe s:doautocmd('QuickFixCmdPost ' . a:event)
     endif
   finally
-    let &modelines = modelines
     exe cd dispatch#fnameescape(dir)
     let &l:efm = efm
     let &l:makeprg = makeprg
@@ -1342,7 +1362,11 @@ function! s:cwindow(request, all, copen, mods, event) abort
   if mods !~# 'aboveleft\|belowright\|leftabove\|rightbelow\|topleft\|botright'
     let mods = 'botright ' . mods
   endif
-  execute (mods) (a:copen ? 'copen' : 'cwindow') height
+  if a:copen
+    execute (mods) 'copen' height
+  elseif !was_qf || winnr('$') > 1
+    execute (mods) 'cwindow' height
+  endif
   if !was_qf && s:is_quickfix() && a:copen !=# -2
     wincmd p
   endif

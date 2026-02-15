@@ -34,13 +34,13 @@ function! matchup#delim#get_current(type, side, ...) abort " {{{1
 endfunction
 
 " }}}1
-function! matchup#delim#get_surrounding(type, count, opts) " {{{1
+function! matchup#delim#get_surrounding(type, count, opts) abort " {{{1
   return matchup#delim#get_surrounding_impl(a:type, a:count, a:opts)
 endfunction
 
 " }}}1
 
-function! s:get_delim_multi(opts) " {{{1
+function! s:get_delim_multi(opts) abort " {{{1
   let l:best = {}
   for l:e in get(get(b:, 'matchup_active_engines', {}), a:opts.type, [])
     let l:res = call(s:engines[l:e].get_delim, [a:opts])
@@ -62,7 +62,7 @@ endfunction
 
 " }}}1
 
-function! matchup#delim#get_matching(delim, ...) " {{{1
+function! matchup#delim#get_matching(delim, ...) abort " {{{1
   if empty(a:delim) || !has_key(a:delim, 'lnum') | return {} | endif
 
   let l:opts = a:0 && type(a:1) == type({}) ? a:1 : {}
@@ -118,7 +118,7 @@ function! matchup#delim#get_matching(delim, ...) " {{{1
     let l:matching.match = l:match
     let l:matching.side = l:i == 0 ? 'open'
           \ : l:i == len(l:matches)-1 ? 'close' : 'mid'
-    let l:matching.class[1] = 'FIXME'
+    let l:matching.class[1] = '__mid__'
     let l:matching.match_index = l:i
 
     call add(l:matching_list, l:matching)
@@ -149,7 +149,7 @@ endfunction
 
 " }}}1
 
-function! matchup#delim#get_surrounding_impl(type, ...) " {{{1
+function! matchup#delim#get_surrounding_impl(type, ...) abort " {{{1
   call matchup#perf#tic('delim#get_surrounding')
 
   let l:save_pos = matchup#pos#get_cursor()
@@ -189,7 +189,7 @@ function! matchup#delim#get_surrounding_impl(type, ...) " {{{1
 
   while l:pos_val_open < l:pos_val_last
     " store found delims in a cache by cursor position
-    let l:key = string(getcurpos())
+    let l:key = string(getcurpos()) . mode()
     if has_key(s:cache[l:bufnr], l:key)
       let l:open = s:cache[l:bufnr][l:key]
     else
@@ -257,7 +257,7 @@ let s:cache = {}
 let s:cache_valid = {}
 
 " }}}1
-function! matchup#delim#get_surround_nearest(open, ...) " {{{1
+function! matchup#delim#get_surround_nearest(open, ...) abort " {{{1
   " finds the first consecutive pair whose start
   " positions surround pos (default to the cursor)
   let l:cur_pos = a:0 ? a:1 : matchup#pos#get_cursor()
@@ -283,7 +283,7 @@ endfunction
 
 " }}}1
 
-function! matchup#delim#jump_target(delim) " {{{1
+function! matchup#delim#jump_target(delim) abort " {{{1
   let l:save_pos = matchup#pos#get_cursor()
 
   " unicode note: technically wrong, but works in practice
@@ -311,7 +311,7 @@ function! matchup#delim#jump_target(delim) " {{{1
 endfunction
 
 " }}}1
-function! matchup#delim#end_offset(delim) " {{{1
+function! matchup#delim#end_offset(delim) abort " {{{1
   return max([0, match(a:delim.match, '.$')])
 endfunction
 
@@ -332,21 +332,27 @@ function! s:get_delim(opts) abort " {{{1
   "     'side'        : 'open'     | 'close'
   "                   | 'both'     | 'mid'
   "                   | 'both_all' | 'open_mid'
-  "  }
+  "   }
   "
   "  }}}2
   " returns: {{{2
-  "   delim = { (TODO update)
-  "     type     : 'delim'
+  "   delim = {
   "     lnum     : line number
   "     cnum     : column number
+  "     type     : e.g., 'delim_tex'
   "     match    : the actual text match
-  "     augment  : how to match a corresponding open
-  "     groups   : dict of captured groups
   "     side     : 'open' | 'close' | 'mid'
   "     class    : [ c1, c2 ] identifies the kind of match_words
-  "     regexone : the regex item, like \1foo
-  "     regextwo : the regex_capture item, like \(group\)foo
+  "     skip     : skip state
+  "     get_matching: callback used to get matching delims
+  "     highlighting: whether the request was for highlighting
+  "
+  "     ... Parser dependent ...
+  "     augment  : how to match a corresponding open
+  "     groups   : dict of captured groups
+  "     regexone : the regex items, like \1foo
+  "     regextwo : the regex_capture items, like \(group\)foo
+  "     midmap   : ??
   "   }
   "
   " }}}2
@@ -354,6 +360,8 @@ function! s:get_delim(opts) abort " {{{1
   if !get(b:, 'matchup_delim_enabled', 0)
     return {}
   endif
+
+  if has('*state') && state('a') !=# '' | return {} | endif
 
   call matchup#perf#tic('s:get_delim')
 
@@ -375,7 +383,7 @@ function! s:get_delim(opts) abort " {{{1
     let l:cursorpos -= 1
   endif
 
-  let s:invert_skip = 0
+  call matchup#delim#set_invert_skip(0)
 
   if a:opts.direction ==# 'current'
     let l:check_skip = get(a:opts, 'check_skip',
@@ -398,7 +406,6 @@ function! s:get_delim(opts) abort " {{{1
   " note: we expect this to give false-positives with \ze
   if a:opts.direction ==# 'current'
     let l:re .= '\%>'.(l:cursorpos).'c'
-  "  let l:re = '\%<'.(l:cursorpos+1).'c' . l:re
   endif
 
   " allow overlapping delimiters
@@ -411,12 +418,7 @@ function! s:get_delim(opts) abort " {{{1
     let l:re .= '\&'
   endif
 
-  " move cursor one left for searchpos if necessary
   let l:need_restore_cursor = 0
-  if l:insertmode
-    call matchup#pos#set_cursor(line('.'), col('.')-1)
-    let l:need_restore_cursor = 1
-  endif
 
   " stopline may depend on the current action
   let l:stopline = get(a:opts, 'stopline', s:stopline)
@@ -433,14 +435,16 @@ function! s:get_delim(opts) abort " {{{1
           \ : a:opts.direction ==# 'prev'
           \   ? searchpos(l:re, 'bcnW',
           \               max([line('.') - l:stopline, 1]), l:to)
-          \   : searchpos(l:re, 'bcnW', line('.'), l:to)
+          \   : searchpos(l:re, l:insertmode ? 'bnW' : 'bcnW',
+          \               line('.'), l:to)
     if l:lnum == 0 | break | endif
 
-    " note: the skip here should not be needed
+    " note: the skip here should never be called
     " in 'current' mode, but be explicit
     if a:opts.direction !=# 'current'
           \ && (l:check_skip || g:matchup_delim_noskips == 1
-          \     && getline(l:lnum)[l:cnum-1] =~? '[^[:punct:]]')
+          \     && getline(l:lnum)[l:cnum-1] =~? '[^[:punct:]]'
+          \     || g:matchup_delim_noskips >= 2)
           \ && matchup#delim#skip(l:lnum, l:cnum)
           \ && (a:opts.direction ==# 'prev' ? (l:lnum > 1 || l:cnum > 1)
           \     : (l:lnum < line('$') || l:cnum < len(getline('$'))))
@@ -501,12 +505,8 @@ function! s:get_delim(opts) abort " {{{1
         \ 'cnum'     : l:cnum,
         \ 'type'     : '',
         \ 'match'    : '',
-        \ 'augment'  : '',
-        \ 'groups'   : '',
         \ 'side'     : '',
         \ 'class'    : [],
-        \ 'regexone' : '',
-        \ 'regextwo' : '',
         \ 'skip'     : l:skip_state,
         \}
 
@@ -593,16 +593,17 @@ function! s:parser_delim_new(lnum, cnum, opts) " {{{1
 
       " handle syntax check- currently used for 'same' matches
       if has_key(l:extra_entry, 'syn')
-        let l:pat = l:extra_entry.syn
+        let [l:pat; l:args] = split(l:extra_entry.syn, ';')
+        let l:offs = str2nr(get(l:args, 0, 0))
+        let l:invert = 0
         if l:pat[0] ==? '!'
+          let l:invert = 1
           let l:pat = l:pat[1:]
-          if matchup#util#in_synstack(l:pat, a:lnum, a:cnum)
-            continue
-          endif
-        else
-          if !matchup#util#in_synstack(l:pat, a:lnum, a:cnum)
-            continue
-          endif
+        endif
+        let l:res = matchup#util#in_synstack(
+              \ l:pat, a:lnum, a:cnum + l:offs)
+        if l:invert && l:res || !l:invert && !l:res
+          continue
         endif
       endif
 
@@ -622,7 +623,7 @@ function! s:parser_delim_new(lnum, cnum, opts) " {{{1
   let l:match = l:matches[0]
 
   let l:list = b:matchup_delim_lists[a:opts.type]
-  let l:thisrenr  = l:list.regex[l:i / l:ns]
+  let l:thisregex  = l:list.regex[l:i / l:ns]
   let l:thisrecap = l:list.regex_capture[l:i / l:ns]
 
   let l:augment = {}
@@ -632,9 +633,7 @@ function! s:parser_delim_new(lnum, cnum, opts) " {{{1
   let l:id = 0
 
   if l:side ==# 'open'
-    " XXX we might as well store all the groups...
-    "for l:br in keys(l:thisrecap.need_grp)
-    for l:br in range(1,9)
+    for l:br in keys(l:thisrecap.need_grp)
       if empty(l:matches[l:br]) | continue | endif
       let l:groups[l:br] = l:matches[l:br]
     endfor
@@ -643,10 +642,12 @@ function! s:parser_delim_new(lnum, cnum, opts) " {{{1
           \ ? len(l:thisrecap.mid_list)+1
           \ : l:mid_id
 
+    " groups here must be renumbered to match the open pattern
     if has_key(l:thisrecap.grp_renu, l:id)
       for [l:br, l:to] in items(l:thisrecap.grp_renu[l:id])
         let l:groups[l:to] = l:matches[l:br]
       endfor
+      " let l:groups[0] = l:matches[0]
     endif
 
     " fill in augment pattern
@@ -668,7 +669,7 @@ function! s:parser_delim_new(lnum, cnum, opts) " {{{1
         \ 'side'         : l:side,
         \ 'class'        : [(l:i / l:ns), l:id],
         \ 'get_matching' : s:engines.classic.get_matching,
-        \ 'regexone'     : l:thisrenr,
+        \ 'regexone'     : l:thisregex,
         \ 'regextwo'     : l:thisrecap,
         \ 'midmap'       : get(l:list, 'midmap', {}),
         \ 'highlighting' : get(a:opts, 'highlighting', 0),
@@ -692,30 +693,31 @@ function! s:get_matching_delims(down, stopline) dict abort " {{{1
       \ : [self.regextwo.open, 'bW', max([line('.') - a:stopline, 1])]
 
   " these are the anchors for searchpairpos
-  let l:open = self.regexone.open     " TODO is this right? BADLOGIC
+  " default to the backref '\1' patterns which will be filled in
+  let l:open = self.regexone.open
   let l:close = self.regexone.close
 
-  " if we're searching up, we anchor by the augment, if it exists
+  " if we're searching up, we anchor by the augment string, if it exists
   if !a:down && !empty(self.augment)
     let l:open = self.augment.str
   endif
 
-  " TODO temporary workaround for BADLOGIC
-  if a:down && self.side ==# 'mid'
+  " if going down from mid, we might not have all the groups yet
+  " TODO this could be improved via close augment strings
+  if a:down && self.side ==# 'mid' && !empty(self.augment.unresolved)
     let l:open = self.regextwo.open
+    let l:close = self.regextwo.close
   endif
 
   " turn \(\) into \%(\) for searchpairpos
   let l:open  = matchup#loader#remove_capture_groups(l:open)
   let l:close = matchup#loader#remove_capture_groups(l:close)
 
-  " fill in back-references
-  " TODO: BADLOGIC2: when going up we don't have these groups yet..
-  " the second anchor needs to be mid/self for mid self
+  " fill in necessary back-references
   let l:open = matchup#delim#fill_backrefs(l:open, self.groups, 0)
   let l:close = matchup#delim#fill_backrefs(l:close, self.groups, 0)
 
-  let s:invert_skip = self.skip
+  call matchup#delim#set_invert_skip(self.skip)
   if empty(b:matchup_delim_skip)
     let l:skip = 'matchup#delim#skip_default()'
   else
@@ -748,6 +750,7 @@ function! s:get_matching_delims(down, stopline) dict abort " {{{1
   " improves perceptual performance in insert mode
   if mode() ==# 'i' || mode() ==# 'R'
     if !g:matchup_matchparen_deferred
+          \ && exists('*state') && state('s') ==# ''
       sleep 1m
     endif
   endif
@@ -779,24 +782,28 @@ function! s:get_matching_delims(down, stopline) dict abort " {{{1
     let l:re = s:process_hlend(l:re, -1)
   endif
 
-  " get the match and groups
+  " get the corresponding match and (additional) groups
   let l:has_zs = self.regextwo.extra_info.has_zs
   let l:re_anchored = l:ic . s:anchor_regex(l:re, l:cnum_corr, l:has_zs)
+
   let l:matches = matchlist(getline(l:lnum_corr), l:re_anchored)
   let l:match_corr = l:matches[0]
 
   " store these in these groups
   if a:down
-    " let l:id = len(self.regextwo.mid_list)+1
-    " for [l:from, l:to] in items(self.regextwo.grp_renu[l:id])
-    "   let self.groups[l:to] = l:matches[l:from]
-    " endfor
+    let l:id = len(self.regextwo.mid_list) + 1
+    for [l:from, l:to] in items(get(self.regextwo.grp_renu, l:id, {}))
+      if !has_key(self.groups, l:to) && !empty(l:matches[l:from])
+        let self.groups[l:to] = l:matches[l:from]
+      endif
+    endfor
   else
-    for l:to in range(1,9)
+    for l:to in keys(self.regextwo.need_grp)
       if !has_key(self.groups, l:to) && !empty(l:matches[l:to])
         " TODO mark context
         let self.groups[l:to] = l:matches[l:to]
       endif
+      " let self.groups[0] = l:matches[0]
     endfor
   endif
 
@@ -880,6 +887,8 @@ function! matchup#delim#skip_default()
         \ ? !s:invert_skip : s:invert_skip
 endfunction
 
+""
+" regular skip expression at cursor
 function! matchup#delim#skip0()
   let s:eff_curpos = [line('.'), col('.')]
   execute 'return' (s:invert_skip ? '!(' : '(') b:matchup_delim_skip ')'
@@ -906,6 +915,11 @@ function! matchup#delim#skip2(strike, def)
 endfunction
 
 let s:invert_skip = 0
+
+function! matchup#delim#set_invert_skip(val) abort
+  let s:invert_skip = a:val
+endfunction
+
 let s:eff_curpos = [1, 1]
 
 " effective column/line
@@ -923,7 +937,7 @@ endfunction
 
 " }}}1
 
-function! matchup#delim#fill_backrefs(re, groups, warn) " {{{1
+function! matchup#delim#fill_backrefs(re, groups, warn) abort " {{{1
   return substitute(a:re, g:matchup#re#backref,
         \ '\=s:get_backref(a:groups, submatch(1), a:warn)', 'g')
         " \ '\=get(a:groups, submatch(1), "")', 'g')
@@ -988,4 +1002,3 @@ let s:engines = {
 let &cpo = s:save_cpo
 
 " vim: fdm=marker sw=2
-

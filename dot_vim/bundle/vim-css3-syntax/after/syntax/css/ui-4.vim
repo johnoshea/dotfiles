@@ -1,3 +1,2 @@
-syn match cssUIProp contained "\<caret\(-shape\)\=\>"
-syn keyword cssUIAttr contained fade underscore
-syn region cssFunction contained matchgroup=cssFunctionName start="\<fade\s*(" end=")" oneline keepend
+syn keyword cssFontProp contained caret-shape caret-animation caret interactivity interest-delay-start interest-delay-end interest-delay accent-color
+syn keyword cssFontAttr contained underscore inert

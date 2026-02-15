@@ -2,6 +2,13 @@ scriptencoding utf-8
 
 let s:suite = themis#suite('textobj-sandwich: query:')
 
+function! s:suite.before() abort  "{{{
+  omap is <Plug>(textobj-sandwich-query-i)
+  xmap is <Plug>(textobj-sandwich-query-i)
+  omap as <Plug>(textobj-sandwich-query-a)
+  xmap as <Plug>(textobj-sandwich-query-a)
+endfunction
+"}}}
 function! s:suite.before_each() abort "{{{
   %delete
   syntax off
@@ -22,6 +29,10 @@ endfunction
 "}}}
 function! s:suite.after() abort "{{{
   call s:suite.before_each()
+  ounmap is
+  xunmap is
+  ounmap as
+  xunmap as
 endfunction
 "}}}
 
@@ -66,58 +77,48 @@ function! s:suite.input() abort "{{{
 
   " #6
   call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis`
+  normal 0ffdis`h
   call g:assert.equals(getline('.'), '```baz``bar``bar``baz```', 'failed at #6')
 
   " #7
   call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis`h
-  call g:assert.equals(getline('.'), '```baz``bar``bar``baz```', 'failed at #7')
+  normal 0ffdis``h
+  call g:assert.equals(getline('.'), '```baz````baz```', 'failed at #7')
 
   " #8
   call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis``
-  call g:assert.equals(getline('.'), '```baz````baz```', 'failed at #8')
+  normal 0ffdis```
+  call g:assert.equals(getline('.'), '``````', 'failed at #8')
 
   " #9
   call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis``h
-  call g:assert.equals(getline('.'), '```baz````baz```', 'failed at #9')
-
-  " #10
-  call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis```
-  call g:assert.equals(getline('.'), '``````', 'failed at #10')
+  execute "normal 0ffdis`\<Esc>"
+  call g:assert.equals(getline('.'), '```baz``bar`foo`bar``baz```', 'failed at #9')
 
   let g:sandwich#recipes = []
   let g:textobj#sandwich#recipes = [
         \   {'buns': ['```', '```']},
         \ ]
 
+  " #10
+  call setline('.', '```baz``bar`foo`bar``baz```')
+  normal 0ffdis`h
+  call g:assert.equals(getline('.'), '```baz``bar``bar``baz```', 'failed at #10')
+
   " #11
   call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis`
+  normal 0ffdis``h
   call g:assert.equals(getline('.'), '```baz``bar``bar``baz```', 'failed at #11')
 
   " #12
   call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis`h
-  call g:assert.equals(getline('.'), '```baz``bar``bar``baz```', 'failed at #12')
+  normal 0ffdis```
+  call g:assert.equals(getline('.'), '``````', 'failed at #12')
 
   " #13
   call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis``
-  call g:assert.equals(getline('.'), '```baz``bar``bar``baz```', 'failed at #13')
-
-  " #14
-  call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis``h
-  call g:assert.equals(getline('.'), '```baz``bar``bar``baz```', 'failed at #14')
-
-  " #15
-  call setline('.', '```baz``bar`foo`bar``baz```')
-  normal 0ffdis```
-  call g:assert.equals(getline('.'), '``````', 'failed at #15')
+  execute "normal 0ffdis`\<Esc>"
+  call g:assert.equals(getline('.'), '```baz``bar`foo`bar``baz```', 'failed at #13')
 
   let g:sandwich#recipes = []
   let g:textobj#sandwich#recipes = [
@@ -125,30 +126,25 @@ function! s:suite.input() abort "{{{
         \   {'buns': ['```', '```']},
         \ ]
 
-  " #16
-  call setline('.', '```qux``baz`bar"foo"bar`baz``qux```')
-  normal 0ffdis`
-  call g:assert.equals(getline('.'), '```qux``baz`bar""bar`baz``qux```', 'failed at #16')
-
-  " #17
+  " #14
   call setline('.', '```qux``baz`bar"foo"bar`baz``qux```')
   normal 0ffdis`h
-  call g:assert.equals(getline('.'), '```qux``baz`bar""bar`baz``qux```', 'failed at #17')
+  call g:assert.equals(getline('.'), '```qux``baz`bar""bar`baz``qux```', 'failed at #14')
 
-  " #18
-  call setline('.', '```qux``baz`bar"foo"bar`baz``qux```')
-  normal 0ffdis``
-  call g:assert.equals(getline('.'), '```qux``baz`bar""bar`baz``qux```', 'failed at #18')
-
-  " #19
+  " #15
   call setline('.', '```qux``baz`bar"foo"bar`baz``qux```')
   normal 0ffdis``h
-  call g:assert.equals(getline('.'), '```qux``baz`bar""bar`baz``qux```', 'failed at #19')
+  call g:assert.equals(getline('.'), '```qux``baz`bar""bar`baz``qux```', 'failed at #15')
 
-  " #20
+  " #16
   call setline('.', '```qux``baz`bar"foo"bar`baz``qux```')
   normal 0ffdis```
-  call g:assert.equals(getline('.'), '``````', 'failed at #20')
+  call g:assert.equals(getline('.'), '``````', 'failed at #16')
+
+  " #17
+  call setline('.', '```baz``bar`foo`bar``baz```')
+  execute "normal 0ffdis`\<Esc>"
+  call g:assert.equals(getline('.'), '```baz``bar`foo`bar``baz```', 'failed at #17')
 endfunction
 "}}}
 
@@ -3441,7 +3437,7 @@ function! s:suite.a_o_priority() abort  "{{{
   " #1
   call setline('.', '(((foo)))')
   let @@ = 'fail'
-  normal 0ffyas(
+  normal 0ffyas(h
   call g:assert.equals(@@, '(foo)', 'failed at #1')
 
   " #2
@@ -5603,6 +5599,30 @@ function! s:suite.a_function_interface() abort  "{{{
   call g:assert.equals(getline('.'), '[foo]', 'failed at #6')
 endfunction
 "}}}
+
+" input_fallback
+function! s:suite.input_fallback() abort "{{{
+  let g:sandwich#recipes = []
+  let g:textobj#sandwich#recipes = []
+
+  let g:sandwich#input_fallback = 1
+  call setline('.', 'afooa')
+  let @@ = 'fail'
+  normal 0yisa
+  call g:assert.equals(@@, 'foo', 'failed at #1')
+
+  let g:sandwich#input_fallback = 0
+  call setline('.', 'afooa')
+  let @@ = 'fail'
+  normal 0yisa
+  call g:assert.equals(@@, 'fail', 'failed at #2')
+
+  unlet! g:sandwich#input_fallback
+  call setline('.', 'afooa')
+  let @@ = 'fail'
+  normal 0yisa
+  call g:assert.equals(@@, 'foo', 'failed at #3')
+endfunction "}}}
 
 " vim:set foldmethod=marker:
 " vim:set commentstring="%s:

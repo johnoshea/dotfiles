@@ -9,6 +9,7 @@ set cpo&vim
 let g:traces_enabled             = get(g:, 'traces_enabled', 1)
 let g:traces_preserve_view_state = get(g:, 'traces_preserve_view_state')
 let g:traces_substitute_preview  = get(g:, 'traces_substitute_preview', 1)
+let g:traces_normal_preview      = get(g:, 'traces_normal_preview', 0)
 let g:traces_num_range_preview   = get(g:, 'traces_num_range_preview', 0)
 let g:traces_skip_modifiers      = get(g:, 'traces_skip_modifiers', 1)
 let g:traces_preview_window      = get(g:, 'traces_preview_window', '')
@@ -41,7 +42,7 @@ function! s:create_cmdl_changed_au(...) abort
 endfunction
 
 function! s:t_start() abort
-  if !g:traces_enabled || mode(1) =~# '^c.'
+  if !g:traces_enabled || mode(1) =~# '^c.' || &buftype ==# 'terminal'
     return
   endif
   if exists('##CmdlineChanged')
@@ -92,17 +93,22 @@ augroup traces_augroup
   " visual mode
   autocmd CursorMoved * let s:view = extend(winsaveview(), {'mode': mode()})
 
-  " 'incsearch' is not compatible with traces.vim, turn it off temporarily
-  " when in Command-line mode
+  " 'incsearch' is not compatible with traces.vim, turn it off for : command-line
   " https://github.com/vim/vim/commit/b0acacd767a2b0618a7f3c08087708f4329580d0
   " https://github.com/neovim/neovim/pull/12721/commits/e8a8b9ed08405c830a049c4e43910c5ce9cdb669
   autocmd CmdlineEnter,CmdwinLeave : let s:incsearch = &incsearch
         \| noautocmd let &incsearch = 0
   autocmd CmdlineLeave,CmdwinEnter : if exists('s:incsearch') | noautocmd let &incsearch = s:incsearch | endif
+  if exists('+inccommand')
+    " 'inccommand' is not compatible with traces.vim, turn it off
+    " https://github.com/neovim/neovim/commit/7215d356949bf07960cc3a3d8b83772635d729d0
+    autocmd CmdlineEnter : noautocmd let &inccommand = ''
+  endif
 augroup END
 
 highlight default link TracesSearch Search
 highlight default link TracesReplace TracesSearch
+highlight default link TracesCursor TracesSearch
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

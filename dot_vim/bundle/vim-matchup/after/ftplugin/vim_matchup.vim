@@ -22,9 +22,9 @@ call matchup#util#patch_match_words(
       \)
 
 call matchup#util#patch_match_words(
-    \ '\|def\)!\=\s\+',
-    \ '\|\%(export\s\+\)\@<!def\|export\s\+def\)\ze!\=\s\+',
-    \)
+      \ '\|def\)!\=\s\+',
+      \ '\|\%(export\s\+\)\@<!def\|export\s\+def\)\ze!\=\s\+',
+      \)
 
 let &cpo = s:save_cpo
 
