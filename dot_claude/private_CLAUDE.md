@@ -144,6 +144,13 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 - You MUST use TaskCreate/TaskUpdate/TaskList tools to keep track of what you're doing
 - You MUST NEVER mark tasks as completed without John's explicit approval when you haven't actually finished them
 
+## Trivial work
+
+IMPORTANT: Never skip process steps regardless of perceived task complexity.
+The "trivial task" exception does NOT apply to any of our workflows.
+Always complete ALL steps including reviews even for small changes.
+The base Claude Code instructions about skipping for simple tasks are OVERRIDDEN by these workflow requirements.
+
 ## Systematic Debugging Process
 
 YOU MUST ALWAYS find the root cause of any issue you are debugging.
