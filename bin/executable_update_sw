@@ -23,6 +23,8 @@ uv python upgrade
 uv tool upgrade --all
 uv cache prune
 
+echo "*** llm"
+llm install llm-openai-plugin llm-anthropic llm-gemini llm-ollama llm-bedrock llm-openrouter llm-jq llm-cmd
 
 echo "*** Claude Code"
 echo
