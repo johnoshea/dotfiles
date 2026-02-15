@@ -20,8 +20,7 @@ alias apply='make apply'
 # LLMs
 alias llm-install-plugins="llm install llm-openai-plugin llm-anthropic llm-gemini llm-ollama llm-bedrock llm-openrouter"
 alias llm-list-plugins="llm plugins | jq -r '.[].name' | grep -v '^$'"
-alias llm-sonnet='llm -m claude-sonnet-4.5'
-alias llm-opus='llm -m claude-opus-4.5'
+alias llm-opus='llm -m claude-opus-4.6'
 alias llm-gemini='llm -m gemini-3-pro-preview'
 alias llm-gpt52='llm -m gpt-5.2'
 
