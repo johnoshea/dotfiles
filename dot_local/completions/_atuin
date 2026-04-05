@@ -34,7 +34,7 @@ ATUIN_HISTORY_ID=""
 
 _atuin_preexec() {
     local id
-    id=$(atuin history start -- "$1")
+    id=$(atuin history start -- "$1" 2>/dev/null)
     export ATUIN_HISTORY_ID="$id"
     __atuin_preexec_time=${EPOCHREALTIME-}
 }
@@ -101,7 +101,7 @@ __atuin_search_cmd() {
         popup_width="${ATUIN_TMUX_POPUP_WIDTH:-80%}" # Keep default value anyways
         popup_height="${ATUIN_TMUX_POPUP_HEIGHT:-60%}"
         tmux display-popup -d "$cdir" -w "$popup_width" -h "$popup_height" -E -E -- \
-            sh -c "ATUIN_SESSION='$ATUIN_SESSION' ATUIN_SHELL=zsh ATUIN_LOG=error ATUIN_QUERY='$escaped_query' atuin search $escaped_args -i 2>'$result_file'"
+            sh -c "PATH='$PATH' ATUIN_SESSION='$ATUIN_SESSION' ATUIN_SHELL=zsh ATUIN_LOG=error ATUIN_QUERY='$escaped_query' atuin search $escaped_args -i 2>'$result_file'"
 
         if [[ -f "$result_file" ]]; then
             cat "$result_file"
@@ -186,3 +186,50 @@ bindkey -M emacs '^[OA' atuin-up-search
 bindkey -M vicmd '^[OA' atuin-up-search-vicmd
 bindkey -M viins '^[OA' atuin-up-search-viins
 bindkey -M vicmd 'k' atuin-up-search-vicmd
+# TUI uses an alternate screen, so no explicit cleanup is needed.
+_atuin_ai_cleanup() {
+    true
+}
+
+# Question mark at start of line - natural language mode.
+# Named with 'self-' prefix so bracketed-paste-magic activates it during
+# paste, allowing url-quote-magic to escape ? in pasted URLs via self-insert.
+self-atuin-ai-question-mark() {
+    # If buffer is empty or just contains '?', trigger natural language mode
+    if [[ -z "$BUFFER" || "$BUFFER" == "?" ]]; then
+        BUFFER=""
+        local output
+        output=$(atuin ai inline --hook 3>&1 1>&2 2>&3)
+
+        # Clean up the inline viewport
+        _atuin_ai_cleanup
+
+        if [[ $output == __atuin_ai_print__:* ]]; then
+            zle -I
+            echo "${output#__atuin_ai_print__:}"
+        elif [[ $output == __atuin_ai_cancel__ ]]; then
+            zle reset-prompt
+        elif [[ $output == __atuin_ai_execute__:* ]]; then
+            RBUFFER=""
+            LBUFFER=${output#__atuin_ai_execute__:}
+            zle reset-prompt
+            zle accept-line
+        elif [[ $output == __atuin_ai_insert__:* ]]; then
+            RBUFFER=""
+            LBUFFER=${output#__atuin_ai_insert__:}
+            zle reset-prompt
+        elif [[ -n $output ]]; then
+            RBUFFER=""
+            LBUFFER=$output
+            zle reset-prompt
+        else
+            zle reset-prompt
+        fi
+    else
+        zle self-insert
+    fi
+}
+
+# Set up keybindings
+zle -N self-atuin-ai-question-mark
+bindkey '?' self-atuin-ai-question-mark # Question mark
