@@ -1,0 +1,86 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "d8b08a15-0c61-4381-bcb7-32e9e73a40c8",
+        "type": "model",
+        "backgroundColor": "bgWhite"
+      },
+      {
+        "id": "f3658184-2750-4363-b846-f2ec88af632c",
+        "type": "custom-command",
+        "backgroundColor": "bgBrightBlack",
+        "commandPath": "basename $(pwd)"
+      },
+      {
+        "id": "cc687783-15d4-4026-8f57-9c6c8c3d1583",
+        "type": "git-branch",
+        "backgroundColor": "bgBrightWhite"
+      },
+      {
+        "id": "62fb81d3-2320-4752-b3c1-deed9fe54245",
+        "type": "git-changes",
+        "backgroundColor": "bgRed"
+      },
+      {
+        "id": "90e3e240-7864-429c-9625-d122f006de1a",
+        "type": "git-worktree",
+        "backgroundColor": "bgYellow"
+      }
+    ],
+    [
+      {
+        "id": "019961ab-3364-4de8-a575-3d5fc0da657d",
+        "type": "session-usage",
+        "backgroundColor": "bgWhite"
+      },
+      {
+        "id": "d12b7f2c-610c-433e-9883-82e38c5a4604",
+        "type": "block-timer",
+        "backgroundColor": "bgGreen"
+      },
+      {
+        "id": "f352a4cc-30cc-407d-8e44-9458baf4a817",
+        "type": "reset-timer",
+        "backgroundColor": "bgBrightYellow"
+      },
+      {
+        "id": "ff773b71-7797-4c13-b368-39b0d98d33d6",
+        "type": "weekly-usage",
+        "backgroundColor": "bgYellow"
+      },
+      {
+        "id": "5dd12d7f-6635-4541-b891-7e2876f54fa9",
+        "type": "weekly-reset-timer",
+        "backgroundColor": "bgWhite"
+      },
+      {
+        "id": "de073c6c-a3f4-4fb5-b101-90322e7cb6a5",
+        "type": "context-bar",
+        "backgroundColor": "bgBrightWhite"
+      }
+    ]
+  ],
+  "flexMode": "full-until-compact",
+  "compactThreshold": 60,
+  "colorLevel": 3,
+  "defaultPadding": " ",
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "powerline": {
+    "enabled": true,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [
+      ""
+    ],
+    "theme": "tokyonight",
+    "autoAlign": true
+  }
+}
