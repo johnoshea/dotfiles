@@ -91,3 +91,5 @@
     path = ~/src/wb/.gitconfig
 [includeIf "gitdir:~/src/me/"]
     path = ~/src/me/.gitconfig
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+    path = ~/src/me/.gitconfig
