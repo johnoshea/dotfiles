@@ -59,6 +59,9 @@ fi
 if which mise > /dev/null; then
     mise activate zsh >! "${HOME}/.local/completions/_mise"
 fi
+if which just > /dev/null; then
+    just --completions zsh >! "${HOME}/.local/completions/_just"
+fi
 
 echo "*** tmux plugins"
 echo

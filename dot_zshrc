@@ -223,6 +223,10 @@ if which mise > /dev/null; then
     source "${HOME}/.local/completions/_mise"
 fi
 
+if which just > /dev/null; then
+    source "${HOME}/.local/completions/_just"
+fi
+
 # Google Cloud SDK
 if [ -f "${HOME}/src/wb/google-cloud-sdk/completion.zsh.inc" ]; then
     . "${HOME}/src/wb/google-cloud-sdk/completion.zsh.inc"
