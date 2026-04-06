@@ -37,6 +37,10 @@ brew cleanup
 nvim --headless "+Lazy! sync" +qa
 nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'
 
+echo "*** Mise"
+echo
+mise upgrade
+
 echo "*** Updating completions"
 echo
 rm -f "${HOME}/.cache/zcompcache*"
