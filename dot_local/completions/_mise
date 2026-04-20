@@ -1,6 +1,7 @@
 export PATH='/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.antigravity/antigravity/bin:/Users/johno/.orbstack/bin:/Users/johno/.cache/lm-studio/bin:/Users/johno/.cache/lm-studio/bin:/Users/johno/.cache/lm-studio/bin:/Users/johno/.cache/lm-studio/bin:/Users/johno/.cache/lm-studio/bin:/Users/johno/.claude/local:/Users/johno/.cache/lm-studio/bin:/Users/johno/.cache/lm-studio/bin:/Users/johno/.cache/lm-studio/bin:/Users/johno/bin/gam7:/Users/johno/src/wb/google-cloud-sdk/bin:/Applications/Araxis Merge.app/Contents/Utilities:/Applications/PyCharm.app/Contents/MacOS:/Users/johno/.cargo/bin:/Users/johno/.local/bin:/opt/homebrew/opt/ssh-copy-id/bin:/Users/johno/bin/dockerized/bin:/Users/johno/bin:/Users/johno/.local/share/nvim/mason/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:/Users/johno/.cache/zsh4humans/v5/zsh4humans/zb:/Library/Frameworks/Python.framework/Versions/3.14/bin:/System/Cryptexes/App/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/Applications/Little Snitch.app/Contents/Components:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Ghostty.app/Contents/MacOS:/Users/johno/.cache/zsh4humans/v5/fzf/bin:/opt/pkg/env/active/bin:/Users/johno/.cache/lm-studio/bin'
-precmd_functions=( ${precmd_functions:#_mise_hook_precmd} )
-chpwd_functions=( ${chpwd_functions:#_mise_hook_chpwd} )
+autoload -Uz add-zsh-hook
+add-zsh-hook -d precmd _mise_hook_precmd 2>/dev/null
+add-zsh-hook -d chpwd _mise_hook_chpwd 2>/dev/null
 (( $+functions[_mise_hook_precmd] )) && unset -f _mise_hook_precmd
 (( $+functions[_mise_hook_chpwd] )) && unset -f _mise_hook_chpwd
 (( $+functions[_mise_hook] )) && unset -f _mise_hook
@@ -9,11 +10,13 @@ unset MISE_SHELL
 unset __MISE_DIFF
 unset __MISE_SESSION
 unset __MISE_ZSH_PRECMD_RUN
+unset __MISE_ZSH_CHPWD_RAN
 export MISE_SHELL=zsh
 if [ -z "${__MISE_ORIG_PATH:-}" ]; then
   export __MISE_ORIG_PATH="$PATH"
 fi
 export __MISE_ZSH_PRECMD_RUN=0
+export __MISE_ZSH_CHPWD_RAN=0
 
 mise() {
   local command
@@ -36,23 +39,23 @@ mise() {
   command /opt/homebrew/bin/mise "$command" "$@"
 }
 
+autoload -Uz add-zsh-hook
 _mise_hook() {
   eval "$(/opt/homebrew/bin/mise hook-env -s zsh)";
 }
 _mise_hook_precmd() {
+  if [[ "${__MISE_ZSH_CHPWD_RAN:-0}" == "1" ]]; then
+    export __MISE_ZSH_CHPWD_RAN=0
+    return
+  fi
   eval "$(/opt/homebrew/bin/mise hook-env -s zsh --reason precmd)";
 }
 _mise_hook_chpwd() {
+  export __MISE_ZSH_CHPWD_RAN=1
   eval "$(/opt/homebrew/bin/mise hook-env -s zsh --reason chpwd)";
 }
-typeset -ag precmd_functions;
-if [[ -z "${precmd_functions[(r)_mise_hook_precmd]+1}" ]]; then
-  precmd_functions=( _mise_hook_precmd ${precmd_functions[@]} )
-fi
-typeset -ag chpwd_functions;
-if [[ -z "${chpwd_functions[(r)_mise_hook_chpwd]+1}" ]]; then
-  chpwd_functions=( _mise_hook_chpwd ${chpwd_functions[@]} )
-fi
+add-zsh-hook precmd _mise_hook_precmd
+add-zsh-hook chpwd _mise_hook_chpwd
 
 _mise_hook
 if [ -z "${_mise_cmd_not_found:-}" ]; then
