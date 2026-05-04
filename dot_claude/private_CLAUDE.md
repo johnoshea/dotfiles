@@ -69,14 +69,23 @@ Pre-existing docs, READMEs, CLAUDE.md files, inline comments, and prior-conversa
 
 ## Design Philosophy
 
-The primary enemy is **complexity**. Every decision should reduce, not increase, the total complexity of the system. We follow the principles from Ousterhout's "A Philosophy of Software Design":
+The primary enemy is **complexity**. We follow Ousterhout's "A Philosophy of Software Design" — but the failure mode is knowing the principles without applying them. Treat the checks below as triggers you must run before submitting non-trivial code, not abstract advice.
 
-- **Deep modules over shallow modules.** A well-designed module has a simple interface that hides significant implementation complexity. A module with a complex interface that does little is a design smell — it pushes complexity onto its callers.
-- **Information hiding is paramount.** Each module should encapsulate design decisions that are likely to change. If knowledge about a module's internals leaks into other modules, the design is wrong.
-- **Define errors out of existence.** Where possible, design interfaces so that error conditions cannot arise, rather than adding layers of error handling. See Error Handling Philosophy below for details.
-- **Write obvious code.** If a piece of code needs a comment to explain *what* it does, redesign the code before adding the comment. Comments should explain *why* (design rationale, non-obvious constraints), not *what*.
-- **Separate general-purpose from special-purpose.** General-purpose interfaces with special-purpose implementations tend to produce the best module designs. But don't build general-purpose machinery speculatively — only extract it when a real second use case appears (see YAGNI below).
-- **Strategic, not tactical.** Invest a little extra effort now to produce a clean design rather than taking the fastest path that works. This doesn't mean gold-plating — it means when the right fix involves restructuring a module's interface, do that instead of patching around it.
+**Before submitting, ask:**
+
+1. **Does each abstraction earn its keep?** For each new function/class, is the body larger than the words needed to describe its purpose? If the body is shorter than the docstring, collapse it. If much larger, you're hiding complexity well — keep it. (Deep modules over shallow.)
+2. **Could a reviewer follow this diff without reading the rest of the module?** If not, either the diff is doing too much, or context belongs in a comment about *why*. (Information hiding.)
+3. **For each parameter, option, or branch you added: if you removed it, who would notice?** If nobody, why is it there? (YAGNI.)
+4. **Are you patching around a design problem instead of fixing it?** If the right fix is restructuring an interface, do that. If out of scope, file a GitHub issue. (Strategic, not tactical.)
+5. **Before adding a try/except or null-check: can the interface be redesigned so this error is unrepresentable?** (Define errors out of existence — see Error Handling below.)
+
+**Smell list — pause and reconsider before submitting if you see:**
+
+- A function with 5+ parameters
+- A "manager"/"helper"/"utils" class that orchestrates without owning state — likely a procedure pretending to be a class
+- catch-and-rethrow that adds no information
+- A new abstraction with one caller and no second use case in sight
+- Code that needs a comment to explain *what* it does (rename or restructure instead — comments are for *why*)
 
 ### YAGNI and Simplicity
 
