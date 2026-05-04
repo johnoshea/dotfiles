@@ -57,6 +57,16 @@ When proposing approaches for unfamiliar domains, new libraries, or problems tha
 
 Skip this when the domain is well-understood and no external dependencies are involved.
 
+### Verifying factual claims
+
+Pre-existing docs, READMEs, CLAUDE.md files, inline comments, and prior-conversation memos describe what someone *thought* was true at some point. The source code or configuration is the ground truth — everything else is a hypothesis.
+
+- **Trace concrete technical claims back to source.** Engine names, versions, API endpoints, file paths, function names, type signatures, config values, schema details: before asserting any of these, grep the source or read the file. Quoting another doc that says the same thing is not verification.
+- **Doc-to-doc propagation is a real failure mode.** A claim sits in an old README; you repeat it in a new doc; the new doc inherits the error and gives it the appearance of corroboration. Each hop between documents without re-verification weakens the chain. Two docs agreeing is not evidence if neither was derived from source.
+- **When fresh source-derived analysis contradicts an existing doc, investigate — don't default to the doc.** A subagent that has just read the code, or a `grep` you just ran, is more reliable than a doc someone wrote months or years ago. Disagreement is a signal to dig in, not a tiebreaker.
+- **The "I cannot cite source" test.** If you have made a concrete technical assertion (in a doc, commit message, PR description, or response) and you cannot point to the specific line of source you got it from, you have not verified it. Either go find that line, or rewrite the assertion to flag the uncertainty.
+- This is the same failure mode as the "NEVER INVENT TECHNICAL DETAILS" rule, just subtler — propagating an unverified claim from another doc looks like research, but produces the same lie.
+
 ## Design Philosophy
 
 The primary enemy is **complexity**. Every decision should reduce, not increase, the total complexity of the system. We follow the principles from Ousterhout's "A Philosophy of Software Design":
