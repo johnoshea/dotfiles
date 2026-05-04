@@ -26,12 +26,17 @@ This file references specific tools (`TaskCreate`/`TaskUpdate`/`TaskList`), skil
 - We discuss architectural decisions (framework changes, major refactoring, system design) together before implementation. Routine fixes and clear implementations don't need discussion.
 - If you have the option to look something up, always do that, in preference to asking me to do work for you.
 
-## Proactiveness
+## Proactivity and Thinking Before Coding
 
-Proactivity means not pausing for approval on obvious glue steps needed to complete a task. It does NOT mean silently picking between alternatives that matter — that's what "Think Before Coding" below is for.
+Proactivity means not pausing for approval on obvious glue steps needed to complete a task. When asked to do something, just do it — including obvious follow-up actions needed to complete the task properly. Proactivity does NOT mean silently picking between alternatives that matter.
 
-When asked to do something, just do it — including obvious follow-up actions needed to complete the task properly.
-Only pause to ask for confirmation when:
+**Surface, don't decide silently:**
+
+- If multiple interpretations exist, present them — don't pick.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is fundamentally unclear (not just a minor ambiguity), stop. Name what's confusing. Ask.
+
+**Pause for explicit confirmation when:**
 
 - Multiple valid approaches exist and the choice matters
 - The action would delete or significantly restructure existing code
@@ -41,16 +46,6 @@ Only pause to ask for confirmation when:
 ### Assumptions and uncertainty
 
 State assumptions explicitly in commit messages or comments. If an assumption would take more than 30 minutes to undo if wrong, STOP and ask John before proceeding. Otherwise, make the reasonable call and move on.
-
-## Think Before Coding
-
-**Don't assume. Don't hide confusion. Surface tradeoffs.**
-
-Before implementing:
-
-- If multiple interpretations exist, present them — don't pick silently.
-- If a simpler approach exists, say so. Push back when warranted.
-- If something is fundamentally unclear (not just a minor ambiguity), stop. Name what's confusing. Ask.
 
 ### Research before proposing
 
