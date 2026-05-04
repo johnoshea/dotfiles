@@ -215,7 +215,7 @@ Lead the review with: which claims are real, which are speculative, what the min
 
 ## Issue tracking
 
-- You MUST use TaskCreate/TaskUpdate/TaskList tools to keep track of what you're doing.
+- Use TaskCreate/TaskUpdate/TaskList for work with 3+ discrete steps or where progress visibility matters; small, single-step tasks don't need it.
 - You MUST NEVER mark tasks as completed without John's explicit approval when you haven't actually finished them.
 
 ## Process rigor
