@@ -127,6 +127,16 @@ Performance is lower priority than simplicity and maintainability — but not in
 - If you're adding a network call or disk I/O to a hot path (called per-request, per-item, or in a loop), flag it.
 - Don't optimize speculatively. If performance matters, measure first, then optimize the measured bottleneck.
 
+## Domain language (CONTEXT.md)
+
+A project's `CONTEXT.md` (at the repo root) is the canonical glossary of domain terms — the names of good seams. When present, treat it as authoritative for domain vocabulary; READMEs and inline comments drift, `CONTEXT.md` is what the team agrees the terms mean now.
+
+- **At brainstorming time**: read `CONTEXT.md` before exploring approaches. Use its vocabulary in the spec. If the spec introduces a new domain concept, add it to `CONTEXT.md` in the same commit as the spec.
+- **At implementation time**: when a new domain concept lands in code (a class, dataclass, enum value, or function name carrying domain meaning), update `CONTEXT.md` in the same commit. Renames and disambiguations belong there too.
+- **At review time**: the `improve-codebase-architecture` skill is the periodic safety net — it surfaces drift and deepening opportunities against the current vocabulary. Run it as a review pass, not as the primary lifecycle.
+
+Create `CONTEXT.md` lazily — the first time a term needs to be recorded — not as upfront scaffolding for projects too small to have a domain. Format: a `## Language` section with one-sentence definitions and `_Avoid_:` aliases for each term; a `## Relationships` section showing cardinality between terms; a `## Flagged ambiguities` section for terms still in flux. Single `CONTEXT.md` per repo; subdivide only if subdomains genuinely diverge in vocabulary (rare).
+
 ## Security
 
 - NEVER commit secrets, credentials, API keys, or tokens to the repository. Use environment variables or a secrets manager.
