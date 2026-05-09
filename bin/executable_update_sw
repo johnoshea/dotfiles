@@ -41,6 +41,10 @@ echo "*** Mise"
 echo
 mise upgrade
 
+echo "*** node"
+echo
+npm update -g
+
 echo "*** Updating completions"
 echo
 rm -f "${HOME}/.cache/zcompcache*"
