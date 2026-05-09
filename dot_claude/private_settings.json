@@ -37,8 +37,6 @@
     "superpowers@superpowers-marketplace": true,
     "hookify@claude-plugins-official": true,
     "elements-of-style@superpowers-marketplace": true,
-    "episodic-memory@superpowers-marketplace": true,
-    "kit-cli@cased-claude-code-plugins": true,
     "pyright-lsp@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
@@ -46,7 +44,7 @@
     "code-review@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "safety-net@cc-marketplace": true,
-    "sentry@claude-plugins-official": true
+    "episodic-memory@superpowers-marketplace": true
   },
   "alwaysThinkingEnabled": true,
   "editorMode": "vim",
