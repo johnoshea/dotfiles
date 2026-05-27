@@ -44,6 +44,7 @@
     "code-review@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "safety-net@cc-marketplace": true,
+    "crit@crit": true,
     "episodic-memory@superpowers-marketplace": true
   },
   "extraKnownMarketplaces": {
