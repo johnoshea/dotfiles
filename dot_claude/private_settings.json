@@ -26,6 +26,16 @@
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/process-downshift.sh"
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
