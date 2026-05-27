@@ -46,6 +46,20 @@
     "safety-net@cc-marketplace": true,
     "episodic-memory@superpowers-marketplace": true
   },
+  "extraKnownMarketplaces": {
+    "prime-radiant-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "prime-radiant-inc/prime-radiant-marketplace"
+      }
+    },
+    "crit": {
+      "source": {
+        "source": "github",
+        "repo": "tomasz-tomczyk/crit"
+      }
+    }
+  },
   "alwaysThinkingEnabled": true,
   "editorMode": "vim",
   "preferredNotifChannel": "ghostty",
