@@ -212,17 +212,15 @@ return {
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-    require("mason-lspconfig").setup({
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for ts_ls)
-          server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-          require("lspconfig")[server_name].setup(server)
-        end,
-      },
-    })
+    -- mason-lspconfig v2 auto-enables every installed server via `vim.lsp.enable()`
+    -- and dropped the old `handlers` API. Per-server overrides from the `servers`
+    -- table above are therefore applied through `vim.lsp.config()`; the "*" entry
+    -- broadcasts our nvim-cmp capabilities to every server.
+    require("mason-lspconfig").setup()
+
+    vim.lsp.config("*", { capabilities = capabilities })
+    for server, config in pairs(servers) do
+      vim.lsp.config(server, config)
+    end
   end,
 }
