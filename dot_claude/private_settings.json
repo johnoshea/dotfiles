@@ -82,6 +82,8 @@
     }
   },
   "alwaysThinkingEnabled": true,
+  "effortLevel": "xhigh",
+  "skipWorkflowUsageWarning": true,
   "editorMode": "vim",
   "preferredNotifChannel": "ghostty",
   "feedbackSurveyState": {
