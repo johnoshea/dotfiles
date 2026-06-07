@@ -49,4 +49,4 @@ A project's `CONTEXT.md` (repo root) is the canonical glossary of domain terms â
 
 ## Toolchain
 
-- Python: `uv run`, `uv add`, `ruff`, `pytest`. Prefer `just <task>` if present.
+- Python: `uv run`, `uv add`, `ruff`, `pytest`, `ty`, `rodney`. Prefer `just <task>` if present.
