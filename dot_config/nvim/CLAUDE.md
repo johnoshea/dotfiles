@@ -59,7 +59,7 @@ Each plugin gets its own file in `lua/core/plugins/`. The file returns a lazy.nv
 - **File explorer**: Oil.nvim (floating, opened with `-`) -- netrw is disabled
 - **Fuzzy finder**: Telescope with fzf-native
 - **Git**: Fugitive (`<leader>f` prefix), gitsigns, vim-twiggy for branches, octo.nvim for GitHub
-- **LSP**: nvim-lspconfig + Mason for auto-install. Only `lua_ls` is explicitly configured; others use Mason defaults. LSP log level is set to `"error"` (change to `"debug"` when troubleshooting)
+- **LSP**: nvim-lspconfig + Mason (mason-lspconfig **v2**). `lua_ls` and `harper_ls` carry explicit settings; every other Mason-installed server is auto-enabled with defaults. LSP log level is `"error"` (switch to `"debug"` to troubleshoot). **Gotcha:** v2 dropped kickstart's `handlers` API and auto-enables every installed server via `vim.lsp.enable()`. Per-server overrides in the `servers` table (`nvim-lspconfig.lua`) are applied through `vim.lsp.config()` -- the old `require("lspconfig")[name].setup()` handler is silently ignored, so settings placed there never reach the server.
 - **Completion**: nvim-cmp with LSP source
 - **Formatting**: conform.nvim with format-on-save (stylua for Lua, ruff for Python, biome for JS/JSON, prettier for YAML/HTML/CSS)
 - **Linting**: nvim-lint (hadolint for Dockerfiles, tflint for Terraform)
