@@ -33,8 +33,8 @@ The primary enemy is **complexity**. We follow Ousterhout's "A Philosophy of Sof
 
 - Never invent technical details (env vars, flags, APIs). Grep the source or say you don't know.
 - Never commit secrets. Validate input at system boundaries.
-- Feature branch, never main. Commit often. Never skip pre-commit hooks. PR
-  before merge.
+- Commit straight to main, small and often. Every commit leaves main releasable: tests green, hooks never skipped.
+- Work too big to land in one releasable commit goes behind a feature flag or branch-by-abstraction — never a long-lived branch.
 - Don't gut or rewrite a module without asking.
 
 ## Testing
