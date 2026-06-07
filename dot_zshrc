@@ -227,6 +227,10 @@ if which just > /dev/null; then
     source "${HOME}/.local/completions/_just"
 fi
 
+if which rumdl > /dev/null; then
+    source "${HOME}/.local/completions/_rumdl"
+fi
+
 # Google Cloud SDK
 if [ -f "${HOME}/src/wb/google-cloud-sdk/completion.zsh.inc" ]; then
     . "${HOME}/src/wb/google-cloud-sdk/completion.zsh.inc"

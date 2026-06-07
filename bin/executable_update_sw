@@ -70,6 +70,9 @@ fi
 if which just > /dev/null; then
     just --completions zsh >! "${HOME}/.local/completions/_just"
 fi
+if which rumdl > /dev/null; then
+    rumdl completions zsh >! "${HOME}/.local/completions/_rumdl"
+fi
 
 echo "*** tmux plugins"
 echo
