@@ -8,6 +8,11 @@
         "backgroundColor": "bgWhite"
       },
       {
+        "id": "f27fffb6-bcef-4895-8e9b-d4fccc113a91",
+        "type": "thinking-effort",
+        "backgroundColor": "bgBrightMagenta"
+      },
+      {
         "id": "f3658184-2750-4363-b846-f2ec88af632c",
         "type": "custom-command",
         "backgroundColor": "bgBrightBlack",
@@ -17,11 +22,6 @@
         "id": "cc687783-15d4-4026-8f57-9c6c8c3d1583",
         "type": "git-branch",
         "backgroundColor": "bgBrightWhite"
-      },
-      {
-        "id": "62fb81d3-2320-4752-b3c1-deed9fe54245",
-        "type": "git-changes",
-        "backgroundColor": "bgRed"
       },
       {
         "id": "90e3e240-7864-429c-9625-d122f006de1a",
@@ -54,11 +54,19 @@
         "id": "5dd12d7f-6635-4541-b891-7e2876f54fa9",
         "type": "weekly-reset-timer",
         "backgroundColor": "bgWhite"
+      }
+    ],
+    [
+      {
+        "id": "c5f42ab5-7b4f-4c0d-8599-705a1efc0d07",
+        "type": "context-bar",
+        "backgroundColor": "bgBrightYellow"
       },
       {
-        "id": "de073c6c-a3f4-4fb5-b101-90322e7cb6a5",
-        "type": "context-bar",
-        "backgroundColor": "bgBrightWhite"
+        "id": "1fabd8e5-f691-4fa4-a37a-dfd7a7dd6d79",
+        "type": "custom-command",
+        "backgroundColor": "bgCyan",
+        "commandPath": "/Users/johno/.local/share/mise/installs/bun/latest/bin/bunx cc-safety-net statusline --claude-code"
       }
     ]
   ],
@@ -68,6 +76,8 @@
   "defaultPadding": " ",
   "inheritSeparatorColors": false,
   "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "minimalistMode": false,
   "powerline": {
     "enabled": true,
     "separators": [
@@ -80,7 +90,8 @@
     "endCaps": [
       ""
     ],
-    "theme": "tokyonight",
-    "autoAlign": true
+    "theme": "nord",
+    "autoAlign": true,
+    "continueThemeAcrossLines": true
   }
 }
