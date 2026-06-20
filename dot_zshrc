@@ -124,15 +124,13 @@ path=(
 )
 
 EXTRA_PATHS=(
+    ${HOME}/go/bin
     ${HOME}/.claude/local
-    ${HOME}/bin/dockerized/bin
-    /opt/homebrew/opt/ssh-copy-id/bin
+    /opt/homebrew/opt/{sqlite,ssh-copy-id}/bin
     ${HOME}/.local/bin
     /usr/local/opt/coreutils/libexec/gnubin
     /Library/Developer/Toolchains/swift-latest.xctoolchain
     ${HOME}/.cargo/bin
-    /usr/local/opt/sqlite/bin
-    /Applications/PyCharm.app/Contents/MacOS
     /Applications/Araxis\ Merge.app/Contents/Utilities
     ${HOME}/src/wb/google-cloud-sdk/bin
     ${HOME}/bin/gam7
