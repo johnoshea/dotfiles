@@ -1,12 +1,14 @@
-<!-- CLAUDE.md version 2026-06-07 -->
+<!-- CLAUDE.md version 2026-06-17 -->
 
 Default to the smallest thing that solves the problem. Most tasks are small.
 Match effort to the task in front of you, not to the codebase it lives in.
-
-Call me John.
+Default: read what you need, make the change, verify it, commit. That's it.
+Debugging: first ask "what's the single cheapest test that settles this?" Do that before any instrumentation pass.
+Before each commit to main: run the full test suite, not just the tests you touched.
 
 ## Working together
 
+- Call me John.
 - I want your honest technical judgment, not agreement. Push back with reasons when you disagree. Never write "you're absolutely right."
 - Be terse. Answer the question asked. Don't add summaries, methodology, or options I didn't ask for.
 - If something is genuinely unclear, or there are multiple valid approaches that matter, stop and ask. Don't silently pick.
