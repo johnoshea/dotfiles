@@ -393,6 +393,94 @@ esac
     ;;
 esac
 ;;
+(code-block-tools-docs)
+_arguments "${_arguments_options[@]}" : \
+'--color=[Control colored output]:COLOR:(auto always never)' \
+'*-c+[Path to a configuration file, or an inline TOML override (e.g. \`MD013.reflow=true\`). Can be passed multiple times.]:CONFIG_OPTION:_default' \
+'*--config=[Path to a configuration file, or an inline TOML override (e.g. \`MD013.reflow=true\`). Can be passed multiple times.]:CONFIG_OPTION:_default' \
+'--no-config[Ignore all configuration files and use built-in defaults (--isolated is also accepted)]' \
+'(--no-config)--isolated[Ignore all configuration files (alias for --no-config)]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+":: :_rumdl__subcmd__code-block-tools-docs_commands" \
+"*::: :->code-block-tools-docs" \
+&& ret=0
+
+    case $state in
+    (code-block-tools-docs)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:rumdl-code-block-tools-docs-command-$line[1]:"
+        case $line[1] in
+            (generate)
+_arguments "${_arguments_options[@]}" : \
+'--color=[Control colored output]:COLOR:(auto always never)' \
+'*-c+[Path to a configuration file, or an inline TOML override (e.g. \`MD013.reflow=true\`). Can be passed multiple times.]:CONFIG_OPTION:_default' \
+'*--config=[Path to a configuration file, or an inline TOML override (e.g. \`MD013.reflow=true\`). Can be passed multiple times.]:CONFIG_OPTION:_default' \
+'--no-config[Ignore all configuration files and use built-in defaults (--isolated is also accepted)]' \
+'(--no-config)--isolated[Ignore all configuration files (alias for --no-config)]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(check)
+_arguments "${_arguments_options[@]}" : \
+'--color=[Control colored output]:COLOR:(auto always never)' \
+'*-c+[Path to a configuration file, or an inline TOML override (e.g. \`MD013.reflow=true\`). Can be passed multiple times.]:CONFIG_OPTION:_default' \
+'*--config=[Path to a configuration file, or an inline TOML override (e.g. \`MD013.reflow=true\`). Can be passed multiple times.]:CONFIG_OPTION:_default' \
+'--no-config[Ignore all configuration files and use built-in defaults (--isolated is also accepted)]' \
+'(--no-config)--isolated[Ignore all configuration files (alias for --no-config)]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(print)
+_arguments "${_arguments_options[@]}" : \
+'--color=[Control colored output]:COLOR:(auto always never)' \
+'*-c+[Path to a configuration file, or an inline TOML override (e.g. \`MD013.reflow=true\`). Can be passed multiple times.]:CONFIG_OPTION:_default' \
+'*--config=[Path to a configuration file, or an inline TOML override (e.g. \`MD013.reflow=true\`). Can be passed multiple times.]:CONFIG_OPTION:_default' \
+'--no-config[Ignore all configuration files and use built-in defaults (--isolated is also accepted)]' \
+'(--no-config)--isolated[Ignore all configuration files (alias for --no-config)]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_rumdl__subcmd__code-block-tools-docs__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:rumdl-code-block-tools-docs-help-command-$line[1]:"
+        case $line[1] in
+            (generate)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(check)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(print)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
 (import)
 _arguments "${_arguments_options[@]}" : \
 '-o+[Output file path (default\: .rumdl.toml)]:OUTPUT:_default' \
@@ -547,6 +635,34 @@ _arguments "${_arguments_options[@]}" : \
     ;;
 esac
 ;;
+(code-block-tools-docs)
+_arguments "${_arguments_options[@]}" : \
+":: :_rumdl__subcmd__help__subcmd__code-block-tools-docs_commands" \
+"*::: :->code-block-tools-docs" \
+&& ret=0
+
+    case $state in
+    (code-block-tools-docs)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:rumdl-help-code-block-tools-docs-command-$line[1]:"
+        case $line[1] in
+            (generate)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(check)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(print)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
 (import)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
@@ -591,6 +707,7 @@ _rumdl_commands() {
 'config:Show configuration or query a specific key' \
 'server:Start the Language Server Protocol server' \
 'schema:Generate or check JSON schema for rumdl.toml' \
+'code-block-tools-docs:Generate or check the built-in code-block-tools docs table' \
 'import:Import and convert markdownlint configuration files' \
 'vscode:Install the rumdl VS Code extension' \
 'completions:Generate shell completion scripts' \
@@ -609,6 +726,61 @@ _rumdl__subcmd__check_commands() {
 _rumdl__subcmd__clean_commands() {
     local commands; commands=()
     _describe -t commands 'rumdl clean commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__code-block-tools-docs_commands] )) ||
+_rumdl__subcmd__code-block-tools-docs_commands() {
+    local commands; commands=(
+'generate:Generate/update the built-in tools table in docs/code-block-tools.md' \
+'check:Check if the built-in tools docs are up-to-date' \
+'print:Print the generated table to stdout' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'rumdl code-block-tools-docs commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__code-block-tools-docs__subcmd__check_commands] )) ||
+_rumdl__subcmd__code-block-tools-docs__subcmd__check_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl code-block-tools-docs check commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__code-block-tools-docs__subcmd__generate_commands] )) ||
+_rumdl__subcmd__code-block-tools-docs__subcmd__generate_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl code-block-tools-docs generate commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__code-block-tools-docs__subcmd__help_commands] )) ||
+_rumdl__subcmd__code-block-tools-docs__subcmd__help_commands() {
+    local commands; commands=(
+'generate:Generate/update the built-in tools table in docs/code-block-tools.md' \
+'check:Check if the built-in tools docs are up-to-date' \
+'print:Print the generated table to stdout' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'rumdl code-block-tools-docs help commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__code-block-tools-docs__subcmd__help__subcmd__check_commands] )) ||
+_rumdl__subcmd__code-block-tools-docs__subcmd__help__subcmd__check_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl code-block-tools-docs help check commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__code-block-tools-docs__subcmd__help__subcmd__generate_commands] )) ||
+_rumdl__subcmd__code-block-tools-docs__subcmd__help__subcmd__generate_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl code-block-tools-docs help generate commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__code-block-tools-docs__subcmd__help__subcmd__help_commands] )) ||
+_rumdl__subcmd__code-block-tools-docs__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl code-block-tools-docs help help commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__code-block-tools-docs__subcmd__help__subcmd__print_commands] )) ||
+_rumdl__subcmd__code-block-tools-docs__subcmd__help__subcmd__print_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl code-block-tools-docs help print commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__code-block-tools-docs__subcmd__print_commands] )) ||
+_rumdl__subcmd__code-block-tools-docs__subcmd__print_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl code-block-tools-docs print commands' commands "$@"
 }
 (( $+functions[_rumdl__subcmd__completions_commands] )) ||
 _rumdl__subcmd__completions_commands() {
@@ -679,6 +851,7 @@ _rumdl__subcmd__help_commands() {
 'config:Show configuration or query a specific key' \
 'server:Start the Language Server Protocol server' \
 'schema:Generate or check JSON schema for rumdl.toml' \
+'code-block-tools-docs:Generate or check the built-in code-block-tools docs table' \
 'import:Import and convert markdownlint configuration files' \
 'vscode:Install the rumdl VS Code extension' \
 'completions:Generate shell completion scripts' \
@@ -697,6 +870,30 @@ _rumdl__subcmd__help__subcmd__check_commands() {
 _rumdl__subcmd__help__subcmd__clean_commands() {
     local commands; commands=()
     _describe -t commands 'rumdl help clean commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__help__subcmd__code-block-tools-docs_commands] )) ||
+_rumdl__subcmd__help__subcmd__code-block-tools-docs_commands() {
+    local commands; commands=(
+'generate:Generate/update the built-in tools table in docs/code-block-tools.md' \
+'check:Check if the built-in tools docs are up-to-date' \
+'print:Print the generated table to stdout' \
+    )
+    _describe -t commands 'rumdl help code-block-tools-docs commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__help__subcmd__code-block-tools-docs__subcmd__check_commands] )) ||
+_rumdl__subcmd__help__subcmd__code-block-tools-docs__subcmd__check_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl help code-block-tools-docs check commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__help__subcmd__code-block-tools-docs__subcmd__generate_commands] )) ||
+_rumdl__subcmd__help__subcmd__code-block-tools-docs__subcmd__generate_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl help code-block-tools-docs generate commands' commands "$@"
+}
+(( $+functions[_rumdl__subcmd__help__subcmd__code-block-tools-docs__subcmd__print_commands] )) ||
+_rumdl__subcmd__help__subcmd__code-block-tools-docs__subcmd__print_commands() {
+    local commands; commands=()
+    _describe -t commands 'rumdl help code-block-tools-docs print commands' commands "$@"
 }
 (( $+functions[_rumdl__subcmd__help__subcmd__completions_commands] )) ||
 _rumdl__subcmd__help__subcmd__completions_commands() {
