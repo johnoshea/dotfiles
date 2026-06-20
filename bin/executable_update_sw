@@ -46,6 +46,11 @@ echo "*** node"
 echo
 npm update -g
 
+echo "*** Go"
+echo
+go install github.com/hashicorp/hcl/v2/cmd/hclfmt@latest
+go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+
 echo "*** Updating completions"
 echo
 rm -f "${HOME}/.cache/zcompcache*"
