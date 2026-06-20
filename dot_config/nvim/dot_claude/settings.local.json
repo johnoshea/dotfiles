@@ -4,7 +4,9 @@
       "WebFetch(domain:neovim.io)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:www.reddit.com)",
-      "WebFetch(domain:gpanders.com)"
+      "WebFetch(domain:gpanders.com)",
+      "Bash(superhtml --help)",
+      "Bash(superhtml fmt *)"
     ]
   }
 }
