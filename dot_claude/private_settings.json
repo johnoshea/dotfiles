@@ -53,11 +53,9 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "superpowers@superpowers-marketplace": true,
     "hookify@claude-plugins-official": true,
     "elements-of-style@superpowers-marketplace": true,
     "pyright-lsp@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
     "code-review@claude-plugins-official": true,
@@ -65,7 +63,9 @@
     "safety-net@cc-marketplace": true,
     "crit@crit": true,
     "episodic-memory@superpowers-marketplace": true,
-    "lua-lsp@claude-plugins-official": true
+    "lua-lsp@claude-plugins-official": true,
+    "interface-design@interface-design": true,
+    "superpowers@superpowers-marketplace": true
   },
   "extraKnownMarketplaces": {
     "prime-radiant-marketplace": {
@@ -78,6 +78,12 @@
       "source": {
         "source": "github",
         "repo": "tomasz-tomczyk/crit"
+      }
+    },
+    "interface-design": {
+      "source": {
+        "source": "github",
+        "repo": "Dammyjay93/interface-design"
       }
     }
   },
