@@ -4,11 +4,20 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local lint = require("lint")
+      -- Values are nvim-lint linter *names* (keys into require("lint").linters),
+      -- not shell commands -- no subcommands/flags. Filetypes must be real
+      -- Neovim filetypes (shell scripts are `sh`, not `shell`).
       lint.linters_by_ft = {
-        -- markdown = { "markdownlint" },
+        markdown = { "rumdl" },
+        django = { "djlint" },
+        python = { "ruff" },
         dockerfile = { "hadolint" },
-        -- json = { "jsonlint" },
+        javascript = { "biomejs" },
+        json = { "biomejs" },
         terraform = { "tflint" },
+        sh = { "shellcheck" },
+        -- html diagnostics come from the superhtml LSP, not nvim-lint.
+        -- ty has no nvim-lint adapter; yaml linting would need yamllint installed.
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

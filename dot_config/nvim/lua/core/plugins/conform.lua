@@ -30,17 +30,25 @@ return { -- Autoformat
         lsp_format = lsp_format_opt,
       }
     end,
+    -- Formatters conform has no builtin for: register the real command here,
+    -- then reference these names (not "tool subcommand" strings) below.
+    formatters = {
+      superhtml = { command = "superhtml", args = { "fmt", "--stdin" }, stdin = true },
+      hclfmt = { command = "hclfmt" }, -- conform pipes the buffer on stdin by default
+    },
     formatters_by_ft = {
-      lua = { "stylua" },
-      python = { "ruff format" },
+      css = { "prettier" },
+      django = { "djlint" },
+      hcl = { "hclfmt" },
+      html = { "superhtml" },
       javascript = { "biome" },
       json = { "biome" },
-      yaml = { "prettier" },
-      html = { "prettier" },
-      css = { "prettier" },
-      markdown = { "markdownlint-cli2" },
-      hcl = { "hclfmt" },
-      django = { "djlint" },
+      lua = { "stylua" },
+      markdown = { "rumdl" },
+      python = { "ruff_format" },
+      sh = { "shfmt" },
+      typescript = { "biome" },
+      yaml = { "yamlfmt" }, -- needs the `yamlfmt` binary installed to run
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
