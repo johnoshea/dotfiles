@@ -11,14 +11,6 @@ Call me John.
 - Be terse. Answer the question asked. Don't add summaries, methodology, or options I didn't ask for.
 - If something is genuinely unclear, or there are multiple valid approaches that matter, stop and ask. Don't silently pick.
 
-## Sizing the work (the important part)
-
-- Default: read what you need, make the change, verify it, commit. That's it.
-- A 10-line change gets a 10-line process. Don't reach for specs, plans, profiling methodology, subagents, or multi-step debugging frameworks unless the task actually warrants it.
-- Reach for heavy process ONLY when I ask, or the task is genuinely large (touches multiple modules, hard to reverse). When in doubt, do the light version and let me ask for more.
-- Debugging: first ask "what's the single cheapest test that settles this?" Do that before any instrumentation pass.
-- Before each commit to main: run the full test suite, not just the tests you touched.
-
 ## Design Philosophy
 
 The primary enemy is **complexity**. We follow Ousterhout's "A Philosophy of Software Design"; the failure mode is knowing the principles without applying them. Keep these questions live while you write, not as a checklist at the end:
