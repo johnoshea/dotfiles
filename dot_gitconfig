@@ -93,3 +93,5 @@
     path = ~/src/me/.gitconfig
 [includeIf "gitdir:~/.local/share/chezmoi/"]
     path = ~/src/me/.gitconfig
+[url "https://github.com/prime-radiant-inc/superpowers-evals.git"]
+	insteadOf = git@github.com:prime-radiant-inc/superpowers-evals.git
