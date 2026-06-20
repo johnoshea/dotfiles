@@ -32,7 +32,6 @@ The primary enemy is **complexity**. We follow Ousterhout's "A Philosophy of Sof
 ## Testing
 
 - Follow Kent Beck's [Canon TDD](https://tidyfirst.substack.com/p/canon-tdd)
-- Test real behavior. Never mock the thing under test; never mock in e2e.
 - TDD depth scales with the change. A real feature gets test-first; a tiny fix gets a test that proves it. Don't make every change a ceremony.
 
 ## Domain language
