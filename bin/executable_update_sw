@@ -8,6 +8,7 @@ echo "*** Homebrew"
 echo
 rm -f "${INSTALLED_CONFIG}/homebrew_packages"
 brew list --versions > "${INSTALLED_CONFIG}/homebrew_packages"
+brew bundle dump --global --force
 brew doctor
 brew update
 brew upgrade
