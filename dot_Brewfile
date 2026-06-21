@@ -154,12 +154,14 @@ brew "detect-secrets"
 brew "direnv"
 # Tool for exploring each layer in a docker image
 brew "dive"
+# Lint & Format HTML Templates
+brew "djlint"
 # Standard XML representation system for technical documents
 brew "docbook"
 # XML vocabulary to create presentation-neutral documents
 brew "docbook-xsl"
-# Bash, Zsh and Fish completion for Docker
-brew "docker-completion"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
 # Command-line DNS Client for Humans
 brew "doggo"
 # Binary-decimal and decimal-binary routines for IEEE doubles
@@ -198,8 +200,8 @@ brew "lame"
 brew "libvpx"
 # Audio codec
 brew "opus"
-# Low-level access to audio, keyboard, mouse, joystick, and graphics
-brew "sdl2"
+# SDL2 compatibility layer that uses SDL3 behind the scenes
+brew "sdl2-compat"
 # H.264/AVC encoder
 brew "x264"
 # H.265/HEVC encoder
@@ -280,6 +282,8 @@ brew "xvid"
 brew "zeromq"
 # Scaling, colorspace conversion, and dithering library
 brew "zimg"
+# Play, record, convert, and stream many audio and video codecs
+brew "ffmpeg-full"
 # Create thumbnails for your video files
 brew "ffmpegthumbnailer"
 # Banner-like program prints strings as ASCII art
@@ -626,6 +630,8 @@ brew "sevenzip"
 brew "shared-mime-info"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
 # Create beautiful image of your source code
 brew "silicon"
 # Python 2 and 3 compatibility utilities
@@ -640,6 +646,8 @@ brew "socat"
 brew "ssh-copy-id"
 # Use SQL to instantly query your cloud services
 brew "steampipe"
+# Opinionated Lua code formatter
+brew "stylua"
 # CI-Friendly tool to document a database
 brew "tbls"
 # Tool Command Language
@@ -733,8 +741,6 @@ cask "font-symbols-only-nerd-font"
 cask "inkscape"
 # Open-source keystroke visualiser
 cask "keycastr"
-# Web browser
-cask "librewolf"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Browse, manage, inspect containers and images
@@ -743,6 +749,70 @@ cask "podman-desktop"
 cask "powershell"
 # GUI for the Neovim text editor
 cask "vimr"
+mas "1Password for Safari", id: 1569813296
+mas "Apple Configurator", id: 1037126344
+mas "Be Focused Pro", id: 961632517
+mas "Cardhop", id: 1290358394
+mas "Color Picker", id: 1545870783
+mas "Compressor", id: 424390742
+mas "CotEditor", id: 1024640650
+mas "Current", id: 6758530974
+mas "Darkroom", id: 953286746
+mas "Day One", id: 1055511498
+mas "DeArrow", id: 6451469297
+mas "Developer", id: 640199958
+mas "Drafts", id: 1435957248
+mas "Eagle for Safari", id: 1526651672
+mas "Fantastical", id: 975937182
+mas "Final Cut Pro", id: 424389933
+mas "GarageBand", id: 682658836
+mas "Good Stopwatch", id: 1268456701
+mas "Goodnotes", id: 1444383602
+mas "GraphicConverter 10", id: 1090470302
+mas "Grocery", id: 1195676848
+mas "HazeOver", id: 430798174
+mas "iNet Network Scanner", id: 403304796
+mas "Instapaper", id: 288545208
+mas "iThoughtsX", id: 720669838
+mas "Jump Desktop", id: 524141863
+mas "Kagi Search", id: 1622835804
+mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
+mas "Kiwix", id: 997079563
+mas "Logic Pro", id: 634148309
+mas "MediaInfo", id: 510620098
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Microsoft Word", id: 462054704
+mas "Motion", id: 434290957
+mas "NepTunes", id: 1006739057
+mas "Nitro", id: 1591292532
+mas "Notability", id: 736189492
+mas "Numbers", id: 409203825
+mas "Obsidian Web Clipper", id: 6720708363
+mas "OmniOutliner Pro", id: 404647179
+mas "Pages", id: 409201541
+mas "Paprika Recipe Manager 3", id: 1303222628
+mas "Pastebot", id: 1179623856
+mas "Patterns", id: 429449079
+mas "PCalc", id: 403504866
+mas "Photomator", id: 1444636541
+mas "Pixelmator Pro", id: 1289583905
+mas "Prime Video", id: 545519333
+mas "Reeder", id: 1529448980
+mas "rubiTrack 6", id: 1557892760
+mas "Screens 4", id: 1224268771
+mas "SubnetCalc", id: 412946682
+mas "The Clock", id: 488764545
+mas "Trello", id: 1278508951
+mas "uBlock Origin Lite", id: 6745342698
+mas "Weathergraph", id: 1501958576
+mas "WireGuard", id: 1451685025
+mas "Xcode", id: 497799835
+mas "xScope", id: 889428659
+go "github.com/hashicorp/hcl/v2/cmd/hclfmt"
+go "github.com/google/yamlfmt/cmd/yamlfmt"
 cargo "cargo-bundle"
 cargo "cargo-update"
 cargo "cross"
