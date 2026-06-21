@@ -1,4 +1,4 @@
-<!-- CLAUDE.md version 2026-06-17 -->
+<!-- CLAUDE.md version 2026-06-20 -->
 
 Default to the smallest thing that solves the problem. Most tasks are small.
 Match effort to the task in front of you, not to the codebase it lives in.
@@ -23,7 +23,7 @@ The primary enemy is **complexity**. We follow Ousterhout's "A Philosophy of Sof
 4. **Are you patching around a design problem instead of fixing it?** If the right fix is restructuring an interface, do that. If out of scope, file a GitHub issue. (Strategic, not tactical.)
 5. **Before adding a try/except or null-check: can the interface be redesigned so this error is unrepresentable?** (Define errors out of existence.)
 
-## Non-negotiables (cheap, always on)
+## Non-negotiables
 
 - Never invent technical details (env vars, flags, APIs). Grep the source or say you don't know.
 - Never commit secrets. Validate input at system boundaries.
@@ -42,4 +42,4 @@ A project's `CONTEXT.md` (repo root) is the canonical glossary of domain terms â
 
 ## Toolchain
 
-- Python: `uv run`, `uv add`, `ruff`, `pytest`, `ty`, `rodney`. Prefer `just <task>` if present.
+- Python: `ast-grep`, `shellcheck`, `difftastic`, `uv run`, `uv add`, `ruff`, `pytest`, `ty`, `rodney`. Prefer `just <task>` if present.
