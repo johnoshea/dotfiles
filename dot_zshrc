@@ -131,6 +131,7 @@ EXTRA_PATHS=(
     /usr/local/opt/coreutils/libexec/gnubin
     /Library/Developer/Toolchains/swift-latest.xctoolchain
     ${HOME}/.cargo/bin
+    /Applications/Obsidian.app/Contents/MacOS
     /Applications/Araxis\ Merge.app/Contents/Utilities
     ${HOME}/src/wb/google-cloud-sdk/bin
     ${HOME}/bin/gam7
