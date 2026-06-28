@@ -191,6 +191,15 @@ fi
 # Keep this before atuin, so atuin defines ctrl-r
 if which fzf > /dev/null; then
     source "${HOME}/.local/completions/_fzf"
+    # `**<TAB>` opens fzf's fuzzy picker. Bare TAB falls back to zsh's native
+    # menu completion: an inline grid navigated with TAB / Shift-TAB / arrows,
+    # Enter to accept — not z4h's fzf box. menu-complete (not expand-or-complete)
+    # forces the interactive menu since z4h leaves auto_menu off.
+    fzf_default_completion=menu-complete
+    zmodload zsh/complist
+    zstyle ':completion:*' menu select
+    bindkey -M menuselect '^I'   menu-complete           # TAB       -> next match
+    bindkey -M menuselect '^[[Z' reverse-menu-complete   # Shift-TAB -> prev match
 fi
 
 if which atuin > /dev/null; then
