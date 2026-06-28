@@ -94,5 +94,6 @@
   "preferredNotifChannel": "ghostty",
   "feedbackSurveyState": {
     "lastShownTime": 1754083424518
-  }
+  },
+  "tui": "fullscreen"
 }
