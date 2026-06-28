@@ -37,6 +37,8 @@ link-url = true
 
 # Display features
 macos-non-native-fullscreen = true
+# Right Option = Alt/Meta (for ⌥-key zsh bindings); left Option still types accents
+macos-option-as-alt = right
 mouse-hide-while-typing = true
 
 # Behavior
