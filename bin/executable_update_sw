@@ -71,7 +71,7 @@ if which uv > /dev/null; then
     uvx --generate-shell-completion zsh >! "${HOME}/.local/completions/_uvx"
 fi
 if which mise > /dev/null; then
-    mise activate zsh >! "${HOME}/.local/completions/_mise"
+    mise completion zsh >! "${HOME}/.local/completions/_mise"
 fi
 if which just > /dev/null; then
     just --completions zsh >! "${HOME}/.local/completions/_just"
