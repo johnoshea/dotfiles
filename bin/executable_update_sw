@@ -14,23 +14,30 @@ brew update
 brew upgrade
 brew upgrade --cask
 
+echo
 echo "*** Cargo"
 echo
 cargo install-update -a
 
+echo
 echo "*** uv"
 echo
 uv python upgrade
 uv tool upgrade --all
 uv cache prune
 
+echo
 echo "*** llm"
+echo
 llm install llm-openai-plugin llm-anthropic llm-gemini llm-ollama llm-bedrock llm-openrouter llm-jq llm-cmd
 
+echo
 echo "*** Claude Code"
 echo
 ${HOME}/.local/bin/claude update
 
+
+echo
 echo "*** Neovim"
 echo
 brew uninstall neovim && brew uninstall --ignore-dependencies luajit && brew install luajit && brew install neovim
@@ -38,19 +45,24 @@ brew cleanup
 nvim --headless "+Lazy! sync" +qa
 nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'
 
+echo
 echo "*** Mise"
 echo
 mise upgrade
 
+echo
 echo "*** node"
 echo
 npm update -g
 
+echo
 echo "*** Go"
 echo
 go install github.com/hashicorp/hcl/v2/cmd/hclfmt@latest
 go install github.com/google/yamlfmt/cmd/yamlfmt@latest
 
+
+echo
 echo "*** Updating completions"
 echo
 rm -f "${HOME}/.cache/zcompcache*"
@@ -80,10 +92,12 @@ if which rumdl > /dev/null; then
     rumdl completions zsh >! "${HOME}/.local/completions/_rumdl"
 fi
 
+echo
 echo "*** tmux plugins"
 echo
 "${HOME}/.tmux/plugins/tpm/bin/update_plugins" all
 
+echo
 echo "*** zsh4humans"
 echo
 echo "Remember to run 'z4h update'"
