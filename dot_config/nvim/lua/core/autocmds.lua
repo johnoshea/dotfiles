@@ -76,7 +76,11 @@ vim.api.nvim_create_autocmd(
 vim.api.nvim_create_autocmd("LspNotify", {
   callback = function(args)
     if args.data.method == "textDocument/didOpen" then
-      vim.lsp.foldclose("imports", vim.fn.bufwinid(args.buf))
+      -- bufwinid is -1 when the buffer isn't shown in any window
+      local winid = vim.fn.bufwinid(args.buf)
+      if winid ~= -1 then
+        vim.lsp.foldclose("imports", winid)
+      end
     end
   end,
 })

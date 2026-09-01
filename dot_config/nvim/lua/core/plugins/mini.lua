@@ -1,5 +1,6 @@
 return { -- Collection of various small independent plugins/modules
   "echasnovski/mini.nvim",
+  dependencies = { "rafamadriz/friendly-snippets" },
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -31,6 +32,13 @@ return { -- Collection of various small independent plugins/modules
 
     require("mini.splitjoin").setup()
     require("mini.operators").setup()
+    require("mini.pairs").setup()
+
+    -- `from_lang()` reads the VSCode-format JSON that friendly-snippets ships.
+    require("mini.snippets").setup({
+      snippets = { require("mini.snippets").gen_loader.from_lang() },
+    })
+
     require("mini.move").setup({
       mappings = {
         -- Move visual selection in Visual mode

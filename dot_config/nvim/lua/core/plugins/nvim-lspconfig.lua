@@ -11,8 +11,8 @@ return {
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { "j-hui/fidget.nvim", opts = {} },
 
-    -- Allows extra capabilities provided by nvim-cmp
-    "hrsh7th/cmp-nvim-lsp",
+    -- Allows extra capabilities provided by blink.cmp
+    "saghen/blink.cmp",
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -62,27 +62,27 @@ return {
         -- Jump to the definition of the word under your cursor.
         --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-t>.
-        map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+        map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]efinition")
 
         -- Find references for the word under your cursor.
-        map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+        map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
 
         -- Jump to the implementation of the word under your cursor.
         --  Useful when your language has ways of declaring types without an actual implementation.
-        map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+        map("gI", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
 
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
-        map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
+        map("<leader>D", require("fzf-lua").lsp_typedefs, "Type [D]efinition")
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
-        map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+        map("<leader>ds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]ymbols")
 
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.
-        map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+        map("<leader>ws", require("fzf-lua").lsp_live_workspace_symbols, "[W]orkspace [S]ymbols")
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
@@ -152,10 +152,9 @@ return {
 
     -- LSP servers and clients are able to communicate to each other what features they support.
     --  By default, Neovim doesn't support everything that is in the LSP specification.
-    --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-    --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+    --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
+    --  So, we ask blink for its capabilities, and then broadcast those to the servers.
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
 
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -215,7 +214,7 @@ return {
     -- mason-lspconfig v2 auto-enables every installed server via `vim.lsp.enable()`
     -- and dropped the old `handlers` API. Per-server overrides from the `servers`
     -- table above are therefore applied through `vim.lsp.config()`; the "*" entry
-    -- broadcasts our nvim-cmp capabilities to every server.
+    -- broadcasts our blink.cmp capabilities to every server.
     require("mason-lspconfig").setup()
 
     vim.lsp.config("*", { capabilities = capabilities })

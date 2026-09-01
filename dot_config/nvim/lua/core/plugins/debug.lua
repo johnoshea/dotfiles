@@ -137,6 +137,10 @@ return {
     dap.listeners.before.event_terminated["dapui_config"] = dapui.close
     dap.listeners.before.event_exited["dapui_config"] = dapui.close
 
+    -- "uv" launches the adapter as `uv run --with debugpy`, so debugpy needs no
+    -- install. The debuggee still runs under the project's own interpreter.
+    require("dap-python").setup("uv")
+
     -- Install golang specific config
     require("dap-go").setup({
       delve = {
