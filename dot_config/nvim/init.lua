@@ -39,7 +39,7 @@ require("lazy").setup({
       },
     },
   },
-  install = { colorscheme = { "catppuccin" } }, -- colorscheme that will be used when installing plugins.
+  install = { colorscheme = { "rose-pine" } }, -- colorscheme that will be used when installing plugins.
   checker = { enabled = true, notify = false }, -- automatically check for plugin updates
   change_detection = {
     notify = false,
