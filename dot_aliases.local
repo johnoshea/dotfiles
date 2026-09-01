@@ -30,6 +30,9 @@ alias cm="chezmoi"
 # Git
 alias g='git'
 
+# Just
+alias j='just'
+
 # Git Branch (b)
 alias gb='git branch'
 alias gba='git branch --all --verbose'
