@@ -79,7 +79,7 @@ vim.opt.foldmethod = "expr"
 
 -- spelling
 vim.opt.spell = false -- don't spellcheck by default
-vim.opt.spellfile = "~/.config/nvim/custom-dictionary.utf-8.add"
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/custom-dictionary.utf-8.add"
 
 -- wildignore
 VOW = vim.opt.wildignore
