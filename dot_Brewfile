@@ -34,12 +34,12 @@ brew "autoconf-archive"
 brew "automake"
 # Mozilla CA certificate store
 brew "ca-certificates"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Extremely Fast Compression algorithm
 brew "lz4"
 # Library for decimal floating point arithmetic
 brew "mpdecimal"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # Library for command-line editing
 brew "readline"
 # General-purpose data compression with high compression ratio
@@ -104,6 +104,8 @@ brew "harfbuzz"
 brew "libtiff"
 # Color management engine supporting ICC profiles
 brew "little-cms2"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
 # Remove large files or passwords from Git history like git-filter-branch
 brew "bfg"
 # Collection of portable C++ source libraries
@@ -170,6 +172,8 @@ brew "double-conversion"
 brew "duf"
 # More intuitive version of du in rust
 brew "dust"
+# CLI utility to build and manage a PKI CA
+brew "easy-rsa"
 # Library for processing command-line flags
 brew "gflags"
 # Application-level logging library
@@ -234,18 +238,12 @@ brew "openexr"
 brew "jpeg-xl"
 # Library for JPEG-2000 image manipulation
 brew "openjpeg"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
 # Image processing and image analysis library
 brew "leptonica"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
 # Blu-Ray disc playback library for media players like VLC
 brew "libbluray"
-# HTTP/2 C Library
-brew "libnghttp2"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # Reliable Internet Stream Transport (RIST)
 brew "librist"
 # Library for sample rate conversion of audio data
@@ -264,6 +262,8 @@ brew "libvidstab"
 brew "opencore-amr"
 # Framework for layout and rendering of i18n text
 brew "pango"
+# QR Code generation
+brew "qrencode"
 # Fastest and safest AV1 video encoder
 brew "rav1e"
 # Audio time stretcher tool and library
@@ -450,6 +450,8 @@ brew "libev"
 brew "libffi"
 # C/C++ seam carving library
 brew "liblqr"
+# HTTP/2 C Library
+brew "libnghttp2"
 # Postgres C API library
 brew "libpq"
 # X.Org: pthread-stubs.pc
@@ -482,24 +484,20 @@ brew "luarocks"
 brew "luv"
 # Text-based web browser
 brew "lynx"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# Fast, flexible, config-based cli for linting Markdown/CommonMark files
-brew "markdownlint-cli2"
 # Mac App Store command-line interface
 brew "mas"
 # Cryptographic & SSL/TLS library
 brew "mbedtls"
 # Hash utilities
 brew "md5sha1sum", link: true
-# Show markdown documents on text terminals
-brew "mdcat"
 # Unified display of technical and tag data for audio/video
 brew "media-info"
 # Scalable distributed version control system
 brew "mercurial"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Deep clean and optimize your Mac
+brew "mole"
 # CLI tool for saving complete web pages as a single HTML file
 brew "monolith"
 # Collection of tools that nobody wrote when UNIX was young
@@ -540,6 +538,8 @@ brew "node-build"
 brew "noti"
 # Drop-in replacement for Terraform. Infrastructure as Code Tool
 brew "opentofu"
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
+brew "openvpn"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Swiss-army knife of markup format conversion
@@ -556,8 +556,6 @@ brew "pgcli"
 brew "pigz"
 # Python dependency management tool
 brew "pipenv"
-# Execute binaries from Python packages in isolated environments
-brew "pipx"
 # PNG image optimizing utility
 brew "pngquant"
 # Tool for managing OCI containers and pods
@@ -578,8 +576,6 @@ brew "powershell", link: false
 brew "pre-commit"
 # Fast Git hook manager written in Rust, drop-in alternative to pre-commit
 brew "prek"
-# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
-brew "prettier"
 # Wrapper to colorize and simplify ping's output
 brew "prettyping"
 # Unix pager optimized for psql
@@ -588,22 +584,18 @@ brew "pspg"
 brew "ptpython"
 # Monitor data's progress through a pipe
 brew "pv"
-# Python version management
-brew "pyenv"
-# Pyenv plugin to manage virtualenv
-brew "pyenv-virtualenv"
 # Generic syntax highlighter
 brew "pygments"
 # Generic machine emulator and virtualizer
 brew "qemu"
-# QR Code generation
-brew "qrencode"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # Ruby version manager
 brew "rbenv"
 # Makes shims aware of bundle install paths
 brew "rbenv-bundler"
+# Rsync for cloud storage
+brew "rclone"
 # Pack repository contents into a single AI-friendly file
 brew "repomix"
 # Search tool like grep and The Silver Searcher
@@ -613,7 +605,7 @@ brew "rlwrap"
 # Tool for downloading RTMP streaming media
 brew "rtmpdump"
 # Powerful, clean, object-oriented scripting language
-brew "ruby", link: false
+brew "ruby"
 # Safe, concurrent, practical language
 brew "rust"
 # Command-line tool for the Amazon S3 service
@@ -664,8 +656,6 @@ brew "terraform-docs"
 brew "terraform_landscape"
 # CLI tool to generate terraform files from existing infrastructure
 brew "terraformer"
-# Terraform version manager inspired by rbenv
-brew "tfenv"
 # Linter for Terraform files
 brew "tflint"
 # Static analysis security scanner for your terraform code
@@ -688,6 +678,8 @@ brew "trippy"
 brew "trivy"
 # Find and verify credentials
 brew "trufflehog"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Modern watch command
 brew "viddy"
 # Ncurses-based file manager with vi-like keybindings
@@ -741,14 +733,36 @@ cask "font-symbols-only-nerd-font"
 cask "inkscape"
 # Open-source keystroke visualiser
 cask "keycastr"
+# Local-first alternative to Logitech Options+ for HID++ devices
+cask "openlogi"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Browse, manage, inspect containers and images
 cask "podman-desktop"
-# Command-line shell and scripting language
 cask "powershell"
 # GUI for the Neovim text editor
 cask "vimr"
+vscode "adobe.extendscript-debug"
+vscode "christian-kohler.path-intellisense"
+vscode "dotjoshjohnson.xml"
+vscode "ecmel.vscode-html-css"
+vscode "editorconfig.editorconfig"
+vscode "esbenp.prettier-vscode"
+vscode "formulahendry.auto-close-tag"
+vscode "hashicorp.terraform"
+vscode "hennamann.jsx"
+vscode "marclipovsky.string-manipulation"
+vscode "ms-python.debugpy"
+vscode "ms-python.isort"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-vscode.powershell"
+vscode "qufiwefefwoyn.kanagawa"
+vscode "redhat.vscode-xml"
+vscode "redhat.vscode-yaml"
+vscode "vscodevim.vim"
+vscode "yzhang.markdown-all-in-one"
 go "github.com/hashicorp/hcl/v2/cmd/hclfmt"
 go "github.com/google/yamlfmt/cmd/yamlfmt"
 cargo "cargo-bundle"
