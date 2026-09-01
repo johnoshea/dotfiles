@@ -35,7 +35,16 @@ echo
 echo "*** Claude Code"
 echo
 ${HOME}/.local/bin/claude update
+bunx ctxline-claude  # update status line
+bunx cc-safety-net@latest update
 
+echo
+echo "*** Claude Code plugins"
+echo
+claude plugin list | awk '/❯/ {print $2}' | while read -r plugin; do
+  print -r -- "Updating $plugin"
+  claude plugin update -y "$plugin" || print -r -- "  failed: $plugin" >&2
+done
 
 echo
 echo "*** Neovim"
