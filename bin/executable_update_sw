@@ -70,6 +70,10 @@ echo
 go install github.com/hashicorp/hcl/v2/cmd/hclfmt@latest
 go install github.com/google/yamlfmt/cmd/yamlfmt@latest
 
+echo
+echo "*** gh"
+echo
+gh extension upgrade --all
 
 echo
 echo "*** Updating completions"
