@@ -23,6 +23,9 @@
     ad = difftool --tool=araxis --dir-diff
     ads = difftool --tool=araxis --dir-diff --staged
 [core]
+    ; default for repos outside ~/src/{me,wb} (e.g. Claude plugin installs);
+    ; the includeIf configs below override this per directory
+    sshCommand = /usr/bin/ssh -i ~/.ssh/github-personal-rsa -F /dev/null -o IdentitiesOnly=yes
 	excludesfile = /Users/johno/.gitignore_global
 	autocrlf = false
 	safecrlf = false
@@ -93,5 +96,9 @@
     path = ~/src/me/.gitconfig
 [includeIf "gitdir:~/.local/share/chezmoi/"]
     path = ~/src/me/.gitconfig
-[url "https://github.com/prime-radiant-inc/superpowers-evals.git"]
-	insteadOf = git@github.com:prime-radiant-inc/superpowers-evals.git
+; Claude Code clones plugin repos over ssh without applying core.sshCommand
+; above, so ssh auth fails; route the whole org over https instead.
+[url "https://github.com/prime-radiant-inc/"]
+	insteadOf = git@github.com:prime-radiant-inc/
+[branch]
+	sort = -committerdate
