@@ -119,6 +119,7 @@
   "skipWorkflowUsageWarning": true,
   "editorMode": "vim",
   "preferredNotifChannel": "ghostty",
+  "autoCompactEnabled": true,
   "agentPushNotifEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754083424518
