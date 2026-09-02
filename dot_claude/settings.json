@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 99999,
+  "env": {
+    "ENABLE_TOOL_SEARCH": "true"
+  },
+  "model": "claude-fable-5-1[1m]",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "MultiEdit|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sidekick hook"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/enforce-uv.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "MultiEdit|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sidekick hook"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/process-downshift.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/ask-dont-announce.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node \"/Users/johno/.claude/hooks/statusline.js\""
+  },
+  "subagentStatusLine": {
+    "type": "command",
+    "command": "node \"/Users/johno/.claude/hooks/statusline.js\" subagent"
+  },
+  "enabledPlugins": {
+    "hookify@claude-plugins-official": true,
+    "elements-of-style@superpowers-marketplace": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "crit@crit": true,
+    "episodic-memory@superpowers-marketplace": true,
+    "lua-lsp@claude-plugins-official": true,
+    "interface-design@interface-design": true,
+    "superpowers@superpowers-marketplace": false,
+    "cc-safety-net@cc-marketplace": true,
+    "nopus@nopus": false
+  },
+  "extraKnownMarketplaces": {
+    "prime-radiant-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "prime-radiant-inc/prime-radiant-marketplace"
+      }
+    },
+    "crit": {
+      "source": {
+        "source": "github",
+        "repo": "tomasz-tomczyk/crit"
+      }
+    },
+    "interface-design": {
+      "source": {
+        "source": "github",
+        "repo": "Dammyjay93/interface-design"
+      },
+      "autoUpdate": true
+    },
+    "nopus": {
+      "source": {
+        "source": "github",
+        "repo": "Vistyy/nopus"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "xhigh"
+    }
+  },
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "editorMode": "vim",
+  "preferredNotifChannel": "ghostty",
+  "agentPushNotifEnabled": true,
+  "feedbackSurveyState": {
+    "lastShownTime": 1754083424518
+  }
+}
