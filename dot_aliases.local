@@ -34,6 +34,12 @@ alias g='git'
 # Just
 alias j='just'
 
+# Reformat json on the clipboard
+alias jsontidy="pbpaste | (jq '.' || pbpaste) | pbcopy"
+
+# Reformat xml on the clipboard
+alias xmltidy="pbpaste | (xq || pbpaste) | pbcopy"
+
 # Git Branch (b)
 alias gb='git branch'
 alias gba='git branch --all --verbose'
